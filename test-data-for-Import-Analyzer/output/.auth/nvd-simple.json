@@ -1,0 +1,1191 @@
+[
+  {
+    "cveID": "CVE-2021-29441",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-27T21:15Z",
+    "lastModifiedDate": "2021-05-07T23:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Nacos is a platform designed for dynamic service discovery and configuration and service management. In Nacos before version 1.4.1, when configured to use authentication (-Dnacos.core.auth.enabled=true) Nacos uses the AuthFilter servlet filter to enforce authentication. This filter has a backdoor that enables Nacos servers to bypass this filter and therefore skip authentication checks. This mechanism relies on the user-agent HTTP header so it can be easily spoofed. This issue may allow any user to carry out any administrative tasks on the Nacos server."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/alibaba/nacos/issues/4701",
+        "name": "https://github.com/alibaba/nacos/issues/4701",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-36hp-jr8h-556f",
+        "name": "https://github.com/advisories/GHSA-36hp-jr8h-556f",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/alibaba/nacos/pull/4703",
+        "name": "https://github.com/alibaba/nacos/pull/4703",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-5945",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-02-11T12:15Z",
+    "lastModifiedDate": "2021-04-23T18:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple SQL injection vulnerabilities in D-Link DSR-150 with firmware before 1.08B44; DSR-150N with firmware before 1.05B64; DSR-250 and DSR-250N with firmware before 1.08B44; and DSR-500, DSR-500N, DSR-1000, and DSR-1000N with firmware before 1.08B77 allow remote attackers to execute arbitrary SQL commands via the password to (1) the login.authenticate function in share/lua/5.1/teamf1lualib/login.lua or (2) captivePortal.lua."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.exploit-db.com/exploits/30061",
+        "name": "http://www.exploit-db.com/exploits/30061",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://tsd.dlink.com.tw/temp/PMD/12966/DSR-150_A1_A2_Release_Notes_FW_v1.08B44_WW.pdf",
+        "name": "http://tsd.dlink.com.tw/temp/PMD/12966/DSR-150_A1_A2_Release_Notes_FW_v1.08B44_WW.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://tsd.dlink.com.tw/temp/PMD/13039/DSR-250_250N_A1_A2_Release_Notes_FW_v1.08B44_WW_RU.pdf",
+        "name": "http://tsd.dlink.com.tw/temp/PMD/13039/DSR-250_250N_A1_A2_Release_Notes_FW_v1.08B44_WW_RU.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://tsd.dlink.com.tw/temp/PMD/12879/DSR-500_500N_1000_1000N_A1_Release_Notes_FW_v1.08B77_WW.pdf",
+        "name": "http://tsd.dlink.com.tw/temp/PMD/12879/DSR-500_500N_1000_1000N_A1_Release_Notes_FW_v1.08B77_WW.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://tsd.dlink.com.tw/temp/PMD/12960/DSR-150N_A2_Release_Notes_FW_v1.05B64_WW.pdf",
+        "name": "http://tsd.dlink.com.tw/temp/PMD/12960/DSR-150N_A2_Release_Notes_FW_v1.05B64_WW.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-9480",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-06-23T22:15Z",
+    "lastModifiedDate": "2021-04-02T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Apache Spark 2.4.5 and earlier, a standalone resource manager's master may be configured to require authentication (spark.authenticate) via a shared secret. When enabled, however, a specially-crafted RPC to the master can succeed in starting an application's resources on the Spark cluster, even without the shared key. This can be leveraged to execute shell commands on the host machine. This does not affect Spark clusters using other resource managers (YARN, Mesos, etc)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://spark.apache.org/security.html#CVE-2020-9480",
+        "name": "https://spark.apache.org/security.html#CVE-2020-9480",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ree9e87aae81852330290a478692e36ea6db47a52a694545c7d66e3e2@%3Cdev.spark.apache.org%3E",
+        "name": "[spark-dev] 20200803 Re: CVE-2020-9480: Apache Spark RCE vulnerability in auth-enabled standalone master",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r03ad9fe7c07d6039fba9f2152d345274473cb0af3d8a4794a6645f4b@%3Cuser.spark.apache.org%3E",
+        "name": "[spark-user] 20200803 Re: CVE-2020-9480: Apache Spark RCE vulnerability in auth-enabled standalone master",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb3956440747e41940d552d377d50b144b60085e7ff727adb0e575d8d@%3Ccommits.submarine.apache.org%3E",
+        "name": "[submarine-commits] 20201209 [GitHub] [submarine] QiAnXinCodeSafe opened a new issue #475: There is a vulnerability in Apache Spark 2.3.4,upgrade recommended",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra0e62a18ad080c4ce6df5e0202a27eaada75222761efc3f7238b5a3b@%3Ccommits.doris.apache.org%3E",
+        "name": "[doris-commits] 20210402 [GitHub] [incubator-doris] zh0122 opened a new pull request #5593: [FE][Bug] Update Spark version to fix a security issue",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26250",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-12-01T21:15Z",
+    "lastModifiedDate": "2020-12-08T17:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OAuthenticator is an OAuth login mechanism for JupyterHub. In oauthenticator from version 0.12.0 and before 0.12.2, the deprecated (in jupyterhub 1.2) configuration `Authenticator.whitelist`, which should be transparently mapped to `Authenticator.allowed_users` with a warning, is instead ignored by OAuthenticator classes, resulting in the same behavior as if this configuration has not been set. If this is the only mechanism of authorization restriction (i.e. no group or team restrictions in configuration) then all authenticated users will be allowed. Provider-based restrictions, including deprecated values such as `GitHubOAuthenticator.org_whitelist` are **not** affected. All users of OAuthenticator 0.12.0 and 0.12.1 with JupyterHub 1.2 (JupyterHub Helm chart 0.10.0-0.10.5) who use the `admin.whitelist.users` configuration in the jupyterhub helm chart or the `c.Authenticator.whitelist` configuration directly. Users of other deprecated configuration, e.g. `c.GitHubOAuthenticator.team_whitelist` are **not** affected. If you see a log line like this and expect a specific list of allowed usernames: \"[I 2020-11-27 16:51:54.528 JupyterHub app:1717] Not using allowed_users. Any authenticated user will be allowed.\" you are likely affected. Updating oauthenticator to 0.12.2 is recommended. A workaround is to replace the deprecated `c.Authenticator.whitelist = ...` with `c.Authenticator.allowed_users = ...`. If any users have been authorized during this time who should not have been, they must be deleted via the API or admin interface, per the referenced documentation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/blob/master/docs/source/changelog.md#0122---2020-11-30",
+        "name": "https://github.com/jupyterhub/oauthenticator/blob/master/docs/source/changelog.md#0122---2020-11-30",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/commit/a4aac191c16cf6281f3d346615aefa75702b02d7",
+        "name": "https://github.com/jupyterhub/oauthenticator/commit/a4aac191c16cf6281f3d346615aefa75702b02d7",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://jupyterhub.readthedocs.io/en/1.2.2/getting-started/authenticators-users-basics.html#add-or-remove-users-from-the-hub",
+        "name": "https://jupyterhub.readthedocs.io/en/1.2.2/getting-started/authenticators-users-basics.html#add-or-remove-users-from-the-hub",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/security/advisories/GHSA-384w-5v3f-q499",
+        "name": "https://github.com/jupyterhub/oauthenticator/security/advisories/GHSA-384w-5v3f-q499",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-13927",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-11-10T16:15Z",
+    "lastModifiedDate": "2020-11-24T17:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The previous default setting for Airflow's Experimental API was to allow all API requests without authentication, but this poses security risks to users who miss this fact. From Airflow 1.10.11 the default has been changed to deny all requests by default and is documented at https://airflow.apache.org/docs/1.10.11/security.html#api-authentication. Note this change fixes it for new installs but existing users need to change their config to default `[api]auth_backend = airflow.api.auth.backend.deny_all` as mentioned in the Updating Guide: https://github.com/apache/airflow/blob/1.10.11/UPDATING.md#experimental-api-will-deny-all-request-by-default"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/r23a81b247aa346ff193670be565b2b8ea4b17ddbc7a35fc099c1aadd%40%3Cdev.airflow.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r23a81b247aa346ff193670be565b2b8ea4b17ddbc7a35fc099c1aadd%40%3Cdev.airflow.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-16764",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2019-11-25T17:15Z",
+    "lastModifiedDate": "2019-12-11T19:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The use of `String.to_atom/1` in PowAssent is susceptible to denial of service attacks. In `PowAssent.Phoenix.AuthorizationController` a value is fetched from the user provided params, and `String.to_atom/1` is used to convert the binary value to an atom so it can be used to fetch the provider configuration value. This is unsafe as it is user provided data, and can be used to fill up the whole atom table of ~1M which will cause the app to crash."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/pow-auth/pow_assent/commit/026105eeecc0e3c2f807e7109e745ea93c0fd9cf",
+        "name": "https://github.com/pow-auth/pow_assent/commit/026105eeecc0e3c2f807e7109e745ea93c0fd9cf",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://erlang.org/doc/efficiency_guide/commoncaveats.html#list_to_atom-1",
+        "name": "http://erlang.org/doc/efficiency_guide/commoncaveats.html#list_to_atom-1",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://github.com/pow-auth/pow_assent/security/advisories/GHSA-368c-xvrv-x986",
+        "name": "https://github.com/pow-auth/pow_assent/security/advisories/GHSA-368c-xvrv-x986",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://hex.pm/packages/pow_assent",
+        "name": "https://hex.pm/packages/pow_assent",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-13282",
+    "cveASSIGNER": "security@synology.com",
+    "publishedDate": "2018-10-31T16:29Z",
+    "lastModifiedDate": "2019-10-09T23:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Session fixation vulnerability in SYNO.PhotoStation.Auth in Synology Photo Station before 6.8.7-3481 allows remote attackers to hijack web sessions via the PHPSESSID parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.synology.com/en-global/support/security/Synology_SA_18_37",
+        "name": "https://www.synology.com/en-global/support/security/Synology_SA_18_37",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-4970",
+    "cveASSIGNER": "secure@dell.com",
+    "publishedDate": "2017-06-13T06:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Cloud Foundry Foundation cf-release v255 and Staticfile buildpack versions v1.4.0 - v1.4.3. A regression introduced in the Static file build pack causes the Staticfile.auth configuration to be ignored when the Static file file is not present in the application root. Applications containing a Staticfile.auth file but not a Static file had their basic auth turned off when an operator upgraded the Static file build pack in the foundation to one of the vulnerable versions. Note that Static file applications without a Static file are technically misconfigured, and will not successfully detect unless the Static file build pack is explicitly specified."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.cloudfoundry.org/cve-2017-4970/",
+        "name": "https://www.cloudfoundry.org/cve-2017-4970/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-11770",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2018-08-13T16:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "From version 1.3.0 onward, Apache Spark's standalone master exposes a REST API for job submission, in addition to the submission mechanism used by spark-submit. In standalone, the config property 'spark.authenticate.secret' establishes a shared secret for authenticating requests to submit jobs via spark-submit. However, the REST API does not use this or any other authentication mechanism, and this is not adequately documented. In this case, a user would be able to run a driver program without authenticating, but not launch executors, using the REST API. This REST API is also used by Mesos, when set up to run in cluster mode (i.e., when also running MesosClusterDispatcher), for job submission. Future versions of Spark will improve documentation on these points, and prohibit setting 'spark.authenticate.secret' when running the REST APIs, to make this clear. Future versions will also disable the REST API by default in the standalone master by changing the default value of 'spark.master.rest.enabled' to 'false'."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://spark.apache.org/security.html#CVE-2018-11770",
+        "name": "https://spark.apache.org/security.html#CVE-2018-11770",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/bd8e51314041451a2acd720e9223fc1c15a263ccacb396a75b1fc485@%3Cdev.spark.apache.org%3E",
+        "name": "[dev] 20180813 CVE-2018-11770: Apache Spark standalone master, Mesos REST APIs not controlled by authentication",
+        "refsource": "MLIST",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/105097",
+        "name": "105097",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-0128",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-01-23T02:00Z",
+    "lastModifiedDate": "2019-03-25T11:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The SingleSignOn Valve (org.apache.catalina.authenticator.SingleSignOn) in Apache Tomcat before 5.5.21 does not set the secure flag for the JSESSIONIDSSO cookie in an https session, which can cause the cookie to be sent in http requests and make it easier for remote attackers to capture this cookie."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://issues.apache.org/bugzilla/show_bug.cgi?id=41217",
+        "name": "http://issues.apache.org/bugzilla/show_bug.cgi?id=41217",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://security-tracker.debian.net/tracker/CVE-2008-0128",
+        "name": "http://security-tracker.debian.net/tracker/CVE-2008-0128",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1468",
+        "name": "DSA-1468",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/27365",
+        "name": "27365",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/28549",
+        "name": "28549",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/28552",
+        "name": "28552",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2008-03/msg00001.html",
+        "name": "SUSE-SR:2008:005",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/29242",
+        "name": "29242",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2008-0261.html",
+        "name": "RHSA-2008:0261",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2008-0630.html",
+        "name": "RHSA-2008:0630",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31493",
+        "name": "31493",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://community.ca.com/blogs/casecurityresponseblog/archive/2009/01/23.aspx",
+        "name": "http://community.ca.com/blogs/casecurityresponseblog/archive/2009/01/23.aspx",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://support.ca.com/irj/portal/anonymous/phpsupcontent?contentID=197540",
+        "name": "http://support.ca.com/irj/portal/anonymous/phpsupcontent?contentID=197540",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/33668",
+        "name": "33668",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/0233",
+        "name": "ADV-2009-0233",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/0192",
+        "name": "ADV-2008-0192",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/39804",
+        "name": "apache-singlesignon-information-disclosure(39804)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/500412/100/0/threaded",
+        "name": "20090127 CA20090123-01: Cohesion Tomcat Multiple Vulnerabilities (Updated - v1.1)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/500396/100/0/threaded",
+        "name": "20090124 CA20090123-01: Cohesion Tomcat Multiple Vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/29dc6c2b625789e70a9c4756b5a327e6547273ff8bde7e0327af48c5@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190319 svn commit: r1855831 [21/30] - in /tomcat/site/trunk: ./ docs/ xdocs/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/c62b0e3a7bf23342352a5810c640a94b6db69957c5c19db507004d74@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190325 svn commit: r1856174 [19/29] - in /tomcat/site/trunk: docs/ xdocs/ xdocs/stylesheets/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb71997f506c6cc8b530dd845c084995a9878098846c7b4eacfae8db3@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20200213 svn commit: r1873980 [24/34] - /tomcat/site/trunk/docs/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-6188",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-02-05T03:29Z",
+    "lastModifiedDate": "2019-03-12T17:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "django.contrib.auth.forms.AuthenticationForm in Django 2.0 before 2.0.2, and 1.11.8 and 1.11.9, allows remote attackers to obtain potentially sensitive information by leveraging data exposure from the confirm_login_allowed() method, as demonstrated by discovering whether a user account is inactive."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2018/feb/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2018/feb/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1040422",
+        "name": "1040422",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3559-1/",
+        "name": "USN-3559-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-20245",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2019-01-23T17:29Z",
+    "lastModifiedDate": "2019-02-20T17:47Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The LDAP auth backend (airflow.contrib.auth.backends.ldap_auth) prior to Apache Airflow 1.10.1 was misconfigured and contained improper checking of exceptions which disabled server certificate checking."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/b549c7573b342a6e457e5a3225c33054244343927bbfb2a4cdc4cf73@%3Cdev.airflow.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/b549c7573b342a6e457e5a3225c33054244343927bbfb2a4cdc4cf73@%3Cdev.airflow.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-0482",
+    "cveASSIGNER": "security@debian.org",
+    "publishedDate": "2014-08-26T14:55Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The contrib.auth.middleware.RemoteUserMiddleware middleware in Django before 1.4.14, 1.5.x before 1.5.9, 1.6.x before 1.6.6, and 1.7 before release candidate 3, when using the contrib.auth.backends.RemoteUserBackend backend, allows remote authenticated users to hijack web sessions via vectors related to the REMOTE_USER header."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-3010",
+        "name": "DSA-3010",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.djangoproject.com/weblog/2014/aug/20/security/",
+        "name": "https://www.djangoproject.com/weblog/2014/aug/20/security/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/59782",
+        "name": "59782",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-09/msg00023.html",
+        "name": "openSUSE-SU-2014:1132",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/61281",
+        "name": "61281",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/61276",
+        "name": "61276",
+        "refsource": "SECUNIA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-0412",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-02-03T20:30Z",
+    "lastModifiedDate": "2018-10-11T21:01Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The ProcessLogin function in class.auth.php in Interspire Shopping Cart (ISC) 4.0.1 Ultimate edition allows remote attackers to bypass authentication and obtain administrative access by reusing the RememberToken cookie after a failed admin login attempt."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/33212",
+        "name": "33212",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1021557",
+        "name": "1021557",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/47899",
+        "name": "interspire-classauth-security-bypass(47899)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/499967/100/0/threaded",
+        "name": "20090112 [BMSA-2009-01] Authentication bypass in Interspire Shopping Cart v4.0.1 and below",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-1277",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-04-06T16:30Z",
+    "lastModifiedDate": "2018-10-10T19:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "SQL injection vulnerability in the user.authenticate method in the API in Zabbix 1.8 before 1.8.2 allows remote attackers to execute arbitrary SQL commands via the user parameter in JSON data to api_jsonrpc.php."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/39148",
+        "name": "39148",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://archives.neohapsis.com/archives/fulldisclosure/2010-04/0001.html",
+        "name": "20100401 Zabbix <= 1.8.1 SQL Injection",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://legalhackers.com/advisories/zabbix181api-sql.txt",
+        "name": "http://legalhackers.com/advisories/zabbix181api-sql.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.zabbix.com/rn1.8.2.php",
+        "name": "http://www.zabbix.com/rn1.8.2.php",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/39119",
+        "name": "39119",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/63456",
+        "name": "63456",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://legalhackers.com/poc/zabbix181api.pl-poc",
+        "name": "http://legalhackers.com/poc/zabbix181api.pl-poc",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/0799",
+        "name": "ADV-2010-0799",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/510480/100/0/threaded",
+        "name": "20100401 Zabbix <= 1.8.1 SQL Injection",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-0404",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-05-19T12:08Z",
+    "lastModifiedDate": "2018-10-10T19:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple SQL injection vulnerabilities in phpGroupWare (phpgw) before 0.9.16.016 allow remote attackers to execute arbitrary SQL commands via unspecified parameters to (1) class.sessions_db.inc.php, (2) class.translation_sql.inc.php, or (3) class.auth_sql.inc.php in phpgwapi/inc/."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://forums.phpgroupware.org/index.php?t=msg&th=98662&start=0&rid=0",
+        "name": "http://forums.phpgroupware.org/index.php?t=msg&th=98662&start=0&rid=0",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://lists.gnu.org/archive/html/phpgroupware-users/2010-05/msg00004.html",
+        "name": "[phpgroupware-users] 20100512 Phpgroupware security release 0.9.16.016",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://download.phpgroupware.org/",
+        "name": "http://download.phpgroupware.org/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2046",
+        "name": "DSA-2046",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/39731",
+        "name": "39731",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/1146",
+        "name": "ADV-2010-1146",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/39665",
+        "name": "39665",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/1145",
+        "name": "ADV-2010-1145",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/511299/100/0/threaded",
+        "name": "20100514 phpGroupWare SQL Injections and Local File Inclusion Vulnerabilities (CVE-2010-0403 and CVE-2010-0404)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-2762",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2011-09-02T16:55Z",
+    "lastModifiedDate": "2018-10-09T19:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The web interface on the LifeSize Room appliance LS_RM1_3.5.3 (11) allows remote attackers to bypass authentication via unspecified data associated with a \"true\" authentication status, related to AMF data and the LSRoom_Remoting.authenticate function in gateway.php."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/213486",
+        "name": "VU#213486",
+        "refsource": "CERT-VN",
+        "tags": [
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.securestate.com/Documents/LifeSize_Room_Advisory.txt",
+        "name": "http://www.securestate.com/Documents/LifeSize_Room_Advisory.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/49330",
+        "name": "49330",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/8364",
+        "name": "8364",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/69445",
+        "name": "lifesize-room-security-bypass(69445)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/519463/100/0/threaded",
+        "name": "20110828 LifeSize Room Vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-2719",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2011-08-01T19:55Z",
+    "lastModifiedDate": "2018-10-09T19:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "libraries/auth/swekey/swekey.auth.lib.php in phpMyAdmin 3.x before 3.3.10.3 and 3.4.x before 3.4.3.2 does not properly manage sessions associated with Swekey authentication, which allows remote attackers to modify the SESSION superglobal array, other superglobal arrays, and certain swekey.auth.lib.php local variables via a crafted query string, a related issue to CVE-2011-2505."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/48874",
+        "name": "48874",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/07/25/4",
+        "name": "[oss-security] 20110725 CVE-Request -- phpMyAdmin -- PMASA-2011-11 and PMASA-2011-12",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/45365",
+        "name": "45365",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2286",
+        "name": "DSA-2286",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/07/26/10",
+        "name": "[oss-security] 20110726 Re: CVE-Request -- phpMyAdmin -- PMASA-2011-11 and PMASA-2011-12",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.xxor.se/advisories/phpMyAdmin_3.x_Conditional_Session_Manipulation.txt",
+        "name": "http://www.xxor.se/advisories/phpMyAdmin_3.x_Conditional_Session_Manipulation.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php",
+        "name": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=725384",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=725384",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2011/Jul/300",
+        "name": "20110724 phpMyAdmin 3.x Conditional Session Manipulation",
+        "refsource": "FULLDISC",
+        "tags": []
+      },
+      {
+        "url": "http://phpmyadmin.git.sourceforge.net/git/gitweb.cgi?p=phpmyadmin/phpmyadmin;a=commit;h=571cdc6ff4bf375871b594f4e06f8ad3159d1754",
+        "name": "http://phpmyadmin.git.sourceforge.net/git/gitweb.cgi?p=phpmyadmin/phpmyadmin;a=commit;h=571cdc6ff4bf375871b594f4e06f8ad3159d1754",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://phpmyadmin.git.sourceforge.net/git/gitweb.cgi?p=phpmyadmin/phpmyadmin;a=commit;h=e7bb42c002885c2aca7aba4d431b8c63ae4de9b7",
+        "name": "http://phpmyadmin.git.sourceforge.net/git/gitweb.cgi?p=phpmyadmin/phpmyadmin;a=commit;h=e7bb42c002885c2aca7aba4d431b8c63ae4de9b7",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://osvdb.org/74112",
+        "name": "74112",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-August/063410.html",
+        "name": "FEDORA-2011-9725",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/45515",
+        "name": "45515",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-August/063418.html",
+        "name": "FEDORA-2011-9734",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/45315",
+        "name": "45315",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/8322",
+        "name": "8322",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2011:124",
+        "name": "MDVSA-2011:124",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/68769",
+        "name": "phpmyadmin-swekey-file-overwrite(68769)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/519155/100/0/threaded",
+        "name": "20110804 Re: [Full-disclosure] phpMyAdmin 3.x Conditional Session Manipulation",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/518967/100/0/threaded",
+        "name": "20110724 phpMyAdmin 3.x Conditional Session Manipulation",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-2505",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2011-07-14T23:55Z",
+    "lastModifiedDate": "2018-10-09T19:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "libraries/auth/swekey/swekey.auth.lib.php in the Swekey authentication feature in phpMyAdmin 3.x before 3.3.10.2 and 3.4.x before 3.4.3.1 assigns values to arbitrary parameters referenced in the query string, which allows remote attackers to modify the SESSION superglobal array via a crafted request, related to a \"remote variable manipulation vulnerability.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://ha.xxor.se/2011/07/phpmyadmin-3x-multiple-remote-code.html",
+        "name": "http://ha.xxor.se/2011/07/phpmyadmin-3x-multiple-remote-code.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.xxor.se/advisories/phpMyAdmin_3.x_Multiple_Remote_Code_Executions.txt",
+        "name": "http://www.xxor.se/advisories/phpMyAdmin_3.x_Multiple_Remote_Code_Executions.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php",
+        "name": "http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/06/28/2",
+        "name": "[oss-security] 20110628 CVE Request: phpMyAdmin 3.4 Multiple Vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/73611",
+        "name": "73611",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/06/28/6",
+        "name": "[oss-security] 20110628 Re: CVE Request: phpMyAdmin 3.4 Multiple Vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/06/28/8",
+        "name": "[oss-security] 20110628 Re: [Phpmyadmin-security] CVE Request: phpMyAdmin 3.4 Multiple Vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://typo3.org/teams/security/security-bulletins/typo3-sa-2011-008/",
+        "name": "http://typo3.org/teams/security/security-bulletins/typo3-sa-2011-008/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/06/29/11",
+        "name": "[oss-security] 20110629 Re: CVE Request: phpMyAdmin 3.4 Multiple Vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/17514/",
+        "name": "17514",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/45139",
+        "name": "45139",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://phpmyadmin.git.sourceforge.net/git/gitweb.cgi?p=phpmyadmin/phpmyadmin;a=commit;h=7ebd958b2bf59f96fecd5b3322bdbd0b244a7967",
+        "name": "http://phpmyadmin.git.sourceforge.net/git/gitweb.cgi?p=phpmyadmin/phpmyadmin;a=commit;h=7ebd958b2bf59f96fecd5b3322bdbd0b244a7967",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-July/062719.html",
+        "name": "FEDORA-2011-9144",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/45292",
+        "name": "45292",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2286",
+        "name": "DSA-2286",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/45315",
+        "name": "45315",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/8306",
+        "name": "8306",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2011:124",
+        "name": "MDVSA-2011:124",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/518804/100/0/threaded",
+        "name": "20110707 phpMyAdmin 3.x Multiple Remote Code Executions",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-15700",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2017-12-18T20:29Z",
+    "lastModifiedDate": "2018-01-05T14:20Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw in the org.apache.sling.auth.core.AuthUtil#isRedirectValid method in Apache Sling Authentication Service 1.4.0 allows an attacker, through the Sling login form, to trick a victim to send over their credentials."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/182bed1dd6933824a81cc5f07639eeb813fbd8f2cc49d51b452ab621@%3Cdev.sling.apache.org%3E",
+        "name": "[dev] 20171218 CVE-2017-15700 - Apache Sling Authentication Service vulnerability",
+        "refsource": "MLIST",
+        "tags": [
+          "Issue Tracking",
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  }
+]

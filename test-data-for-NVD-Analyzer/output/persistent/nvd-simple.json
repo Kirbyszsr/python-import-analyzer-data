@@ -1,0 +1,844 @@
+[
+  {
+    "cveID": "CVE-2020-23263",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T22:15Z",
+    "lastModifiedDate": "2021-05-12T20:40Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Persistent Cross-site scripting vulnerability on Fork CMS version 5.8.2 allows remote attackers to inject arbitrary Javascript code via the \"navigation_title\" parameter and the \"title\" parameter in /private/en/pages/add."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/forkcms/forkcms/pull/3093",
+        "name": "https://github.com/forkcms/forkcms/pull/3093",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29509",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-11T17:15Z",
+    "lastModifiedDate": "2021-05-11T17:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Puma is a concurrent HTTP 1.1 server for Ruby/Rack applications. The fix for CVE-2019-16770 was incomplete. The original fix only protected existing connections that had already been accepted from having their requests starved by greedy persistent-connections saturating all threads in the same process. However, new connections may still be starved by greedy persistent-connections saturating all threads in all processes in the cluster. A `puma` server which received more concurrent `keep-alive` connections than the server had threads in its threadpool would service only a subset of connections, denying service to the unserved connections. This problem has been fixed in `puma` 4.3.8 and 5.3.1. Setting `queue_requests false` also fixes the issue. This is not advised when using `puma` without a reverse proxy, such as `nginx` or `apache`, because you will open yourself to slow client attacks (e.g. slowloris). The fix is very small and a git patch is available for those using unsupported versions of Puma."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://rubygems.org/gems/puma",
+        "name": "https://rubygems.org/gems/puma",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/puma/puma/security/policy",
+        "name": "https://github.com/puma/puma/security/policy",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/puma/puma/security/advisories/GHSA-q28m-8xjw-8vr5",
+        "name": "https://github.com/puma/puma/security/advisories/GHSA-q28m-8xjw-8vr5",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837",
+        "name": "https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-21987",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-27T18:15Z",
+    "lastModifiedDate": "2021-05-10T17:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HomeAutomation 3.3.2 is affected by persistent Cross Site Scripting (XSS). XSS vulnerabilities occur when input passed via several parameters to several scripts is not properly sanitized before being returned to the user. This can be exploited to execute arbitrary HTML and script code in a user's browser session."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exploit-db.com/exploits/47806",
+        "name": "Exploit Database",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5556.php",
+        "name": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5556.php",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31532",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-06T13:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "NXP LPC55S6x microcontrollers (0A and 1B), i.MX RT500 (silicon rev B1 and B2), i.MX RT600 (silicon rev A0, B0), LPC55S6x, LPC55S2x, LPC552x (silicon rev 0A, 1B), and LPC55S1x, LPC551x (silicon rev 0A) include an undocumented ROM patch peripheral that allows unsigned, non-persistent modification of the internal ROM. The peripheral is accessible from any execution mode (secure/privileged, secure/unprivileged, non-secure/privileged, non-secure/unprivileged). The ROM includes a set of APIs intended for use by a secure application to perform flash and in-application programming (IAP) operations. An attacker may use the ROM patch peripheral to modify the implementation of these ROM APIs from a non-secure, unprivileged context. If a non-secure application can also cause the secure application to invoke these ROM APIs, this provides privilege escalation and arbitrary code execution."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://oxide.computer/blog/lpc55/",
+        "name": "https://oxide.computer/blog/lpc55/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.nxp.com",
+        "name": "https://www.nxp.com",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29459",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-20T19:15Z",
+    "lastModifiedDate": "2021-04-29T20:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XWiki Platform is a generic wiki platform offering runtime services for applications built on top of it. It is possible to persistently inject scripts in XWiki versions prior to 12.6.3 and 12.8. Unregistred users can fill simple text fields. Registered users can fill in their personal information and (if they have edit rights) fill the values of static lists using App Within Minutes. There is no easy workaround except upgrading XWiki. The vulnerability has been patched on XWiki 12.8 and 12.6.3."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/xwiki/xwiki-platform/security/advisories/GHSA-5c66-v29h-xjh8",
+        "name": "https://github.com/xwiki/xwiki-platform/security/advisories/GHSA-5c66-v29h-xjh8",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29455",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-19T19:15Z",
+    "lastModifiedDate": "2021-04-28T13:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Grassroot Platform is an application to make it faster, cheaper and easier to persistently organize and mobilize people in low-income communities. Grassroot Platform before master deployment as of 2021-04-16 did not properly verify the signature of JSON Web Tokens when refreshing an existing JWT. This allows to forge a valid JWT. The problem has been patched in version 1.3.1 by deprecating the JWT refresh function, which was an overdue deprecation regardless (the \"refresh\" flow is no longer used)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/grassrootza/grassroot-platform/",
+        "name": "https://github.com/grassrootza/grassroot-platform/",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/grassrootza/grassroot-platform/commit/a2e6e885f8183a066d938cf909fd813a7af7d67f",
+        "name": "https://github.com/grassrootza/grassroot-platform/commit/a2e6e885f8183a066d938cf909fd813a7af7d67f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/grassrootza/grassroot-platform/security/advisories/GHSA-f65w-6xw8-6734",
+        "name": "https://github.com/grassrootza/grassroot-platform/security/advisories/GHSA-f65w-6xw8-6734",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28829",
+    "cveASSIGNER": "security@tibco.com",
+    "publishedDate": "2021-04-20T19:15Z",
+    "lastModifiedDate": "2021-04-23T21:19Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Administration GUI component of TIBCO Software Inc.'s TIBCO Administrator - Enterprise Edition, TIBCO Administrator - Enterprise Edition, TIBCO Administrator - Enterprise Edition Distribution for TIBCO Silver Fabric, TIBCO Administrator - Enterprise Edition Distribution for TIBCO Silver Fabric, TIBCO Administrator - Enterprise Edition for z/Linux, and TIBCO Administrator - Enterprise Edition for z/Linux contains an easily exploitable vulnerability that allows a low privileged attacker with network access to execute a persistent CSV injection attack from the affected system. A successful attack using this vulnerability requires human interaction from a person other than the attacker. Affected releases are TIBCO Software Inc.'s TIBCO Administrator - Enterprise Edition: versions 5.10.2 and below, TIBCO Administrator - Enterprise Edition: versions 5.11.0 and 5.11.1, TIBCO Administrator - Enterprise Edition Distribution for TIBCO Silver Fabric: versions 5.10.2 and below, TIBCO Administrator - Enterprise Edition Distribution for TIBCO Silver Fabric: versions 5.11.0 and 5.11.1, TIBCO Administrator - Enterprise Edition for z/Linux: versions 5.10.2 and below, and TIBCO Administrator - Enterprise Edition for z/Linux: versions 5.11.0 and 5.11.1."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.tibco.com/services/support/advisories",
+        "name": "http://www.tibco.com/services/support/advisories",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tibco.com/support/advisories/2021/04/tibco-security-advisory-april-20-2021-tibco-administrator-2021-28829",
+        "name": "https://www.tibco.com/support/advisories/2021/04/tibco-security-advisory-april-20-2021-tibco-administrator-2021-28829",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-25679",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-20T12:15Z",
+    "lastModifiedDate": "2021-04-23T20:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "** UNSUPPORTED WHEN ASSIGNED ** The AdTran Personal Phone Manager software is vulnerable to an authenticated stored cross-site scripting (XSS) issues. These issues impact at minimum versions 10.8.1 and below but potentially impact later versions as well since they have not previously been disclosed. Only version 10.8.1 was able to be confirmed during primary research. NOTE: The affected appliances NetVanta 7060 and NetVanta 7100 are considered End of Life and as such this issue will not be patched."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://adtran.com",
+        "name": "http://adtran.com",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/3ndG4me/AdTran-Personal-Phone-Manager-Vulns/blob/main/CVE-2021-25679.md",
+        "name": "https://github.com/3ndG4me/AdTran-Personal-Phone-Manager-Vulns/blob/main/CVE-2021-25679.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://depthsecurity.com/blog/vulnerability-disclosure",
+        "name": "https://depthsecurity.com/blog/vulnerability-disclosure",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/162268/Adtran-Personal-Phone-Manager-10.8.1-Persistent-Cross-Site-Scripting.html",
+        "name": "http://packetstormsecurity.com/files/162268/Adtran-Personal-Phone-Manager-10.8.1-Persistent-Cross-Site-Scripting.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-19742",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-12-18T13:15Z",
+    "lastModifiedDate": "2021-04-23T16:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On D-Link DIR-615 devices, the User Account Configuration page is vulnerable to blind XSS via the name field."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://medium.com/@infosecsanyam/d-link-dir-615-wireless-router-persistent-cross-site-scripting-6ee00f5c694d",
+        "name": "https://medium.com/@infosecsanyam/d-link-dir-615-wireless-router-persistent-cross-site-scripting-6ee00f5c694d",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.ftc.gov/system/files/documents/cases/dlink_proposed_order_and_judgment_7-2-19.pdf",
+        "name": "https://www.ftc.gov/system/files/documents/cases/dlink_proposed_order_and_judgment_7-2-19.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/47776",
+        "name": "https://www.exploit-db.com/exploits/47776",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.dlink.com/en/security-bulletin",
+        "name": "https://www.dlink.com/en/security-bulletin",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://pastebin.com/edit/MZV6DNg7",
+        "name": "https://pastebin.com/edit/MZV6DNg7",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://infosecsanyam.blogspot.com/2019/12/d-link-dir-615-wireless-router.html",
+        "name": "https://infosecsanyam.blogspot.com/2019/12/d-link-dir-615-wireless-router.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-29247",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-24T20:15Z",
+    "lastModifiedDate": "2021-04-22T13:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "WonderCMS 3.1.3 is affected by cross-site scripting (XSS) in the Admin Panel. An attacker can inject the XSS payload in Page keywords and each time any user will visit the website, the XSS triggers, and the attacker can able to steal the cookie according to the crafted payload."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exploit-db.com/exploits/49102",
+        "name": "https://www.exploit-db.com/exploits/49102",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://wondercms.com",
+        "name": "http://wondercms.com",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://systemweakness.com/cve-2020-29247-wondercms-3-1-3-page-persistent-cross-site-scripting-3dd2bb210beb",
+        "name": "https://systemweakness.com/cve-2020-29247-wondercms-3-1-3-page-persistent-cross-site-scripting-3dd2bb210beb",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20080",
+    "cveASSIGNER": "vulnreport@tenable.com",
+    "publishedDate": "2021-04-09T18:15Z",
+    "lastModifiedDate": "2021-04-19T18:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Insufficient output sanitization in ManageEngine ServiceDesk Plus before version 11200 and ManageEngine AssetExplorer before version 6800 allows a remote, unauthenticated attacker to conduct persistent cross-site scripting (XSS) attacks by uploading a crafted XML asset file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.tenable.com/security/research/tra-2021-11",
+        "name": "https://www.tenable.com/security/research/tra-2021-11",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28688",
+    "cveASSIGNER": "security@xen.org",
+    "publishedDate": "2021-04-06T19:15Z",
+    "lastModifiedDate": "2021-04-15T14:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The fix for XSA-365 includes initialization of pointers such that subsequent cleanup code wouldn't use uninitialized or stale values. This initialization went too far and may under certain conditions also overwrite pointers which are in need of cleaning up. The lack of cleanup would result in leaking persistent grants. The leak in turn would prevent fully cleaning up after a respective guest has died, leaving around zombie domains. All Linux versions having the fix for XSA-365 applied are vulnerable. XSA-365 was classified to affect versions back to at least 3.11."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://xenbits.xenproject.org/xsa/advisory-371.txt",
+        "name": "https://xenbits.xenproject.org/xsa/advisory-371.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-30146",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-06T16:15Z",
+    "lastModifiedDate": "2021-04-12T20:45Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Seafile 7.0.5 (2019) allows Persistent XSS via the \"share of library functionality.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/Security-AVS/CVE-2021-30146",
+        "name": "https://github.com/Security-AVS/CVE-2021-30146",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-30109",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-05T13:15Z",
+    "lastModifiedDate": "2021-04-08T20:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Froala Editor 3.2.6 is affected by Cross Site Scripting (XSS). Under certain conditions, a base64 crafted string leads to persistent Cross-site scripting (XSS) vulnerability within the hyperlink creation module."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://froala.com",
+        "name": "http://froala.com",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://github.com/Hackdwerg/CVE-2021-30109/blob/main/README.md",
+        "name": "https://github.com/Hackdwerg/CVE-2021-30109/blob/main/README.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-6504",
+    "cveASSIGNER": "vuln@ca.com",
+    "publishedDate": "2019-02-06T00:29Z",
+    "lastModifiedDate": "2021-04-07T18:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Insufficient output sanitization in the Automic Web Interface (AWI), in CA Automic Workload Automation 12.0 to 12.2, allow attackers to potentially conduct persistent cross site scripting (XSS) attacks via a crafted object."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.ca.com/us/product-content/recommended-reading/security-notices/CA20190124-01-security-notice-for-ca-automic-workload-automation.html",
+        "name": "https://support.ca.com/us/product-content/recommended-reading/security-notices/CA20190124-01-security-notice-for-ca-automic-workload-automation.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/fulldisclosure/2019/Jan/61",
+        "name": "20190124 CA20190124-01: Security Notice for CA Automic Workload Automation",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sec-consult.com/en/blog/advisories/cross-site-scripting-in-ca-automic-workload-automation-web-interface-formerly-automic-automation-engine/",
+        "name": "https://sec-consult.com/en/blog/advisories/cross-site-scripting-in-ca-automic-workload-automation-web-interface-formerly-automic-automation-engine/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://packetstormsecurity.com/files/151325/CA-Automic-Workload-Automation-12.x-Cross-Site-Scripting.html",
+        "name": "https://packetstormsecurity.com/files/151325/CA-Automic-Workload-Automation-12.x-Cross-Site-Scripting.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://marc.info/?l=bugtraq&m=154874504200510&w=2",
+        "name": "20190128 Fwd: CA20190124-01: Security Notice for CA Automic Workload Automation",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://communities.ca.com/community/product-vulnerability-response/blog/2019/01/24/ca20190124-01-security-notice-for-ca-automic-workload-automation",
+        "name": "https://communities.ca.com/community/product-vulnerability-response/blog/2019/01/24/ca20190124-01-security-notice-for-ca-automic-workload-automation",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/106755",
+        "name": "106755",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-3826",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2019-03-26T18:29Z",
+    "lastModifiedDate": "2021-03-31T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A stored, DOM based, cross-site scripting (XSS) flaw was found in Prometheus before version 2.7.1. An attacker could exploit this by convincing an authenticated user to visit a crafted URL on a Prometheus server, allowing for the execution and persistent storage of arbitrary scripts."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/prometheus/prometheus/pull/5163",
+        "name": "https://github.com/prometheus/prometheus/pull/5163",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/prometheus/prometheus/commit/62e591f9",
+        "name": "https://github.com/prometheus/prometheus/commit/62e591f9",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3826",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3826",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHBA-2019:0327",
+        "name": "RHBA-2019:0327",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdf2a0d94c3b5b523aeff7741ae71347415276062811b687f30ea6573@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200118 [zookeeper] branch branch-3.5 updated: ZOOKEEPER-3677: owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8e3f7da12bf5750b0a02e69a78a61073a2ac950eed7451ce70a65177@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200118 [zookeeper] branch master updated: ZOOKEEPER-3677: owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r48d5019bd42e0770f7e5351e420a63a41ff1f16924942442c6aff6a8@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200118 [zookeeper] branch branch-3.6 updated: ZOOKEEPER-3677: owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://advisory.checkmarx.net/advisory/CX-2019-4297",
+        "name": "https://advisory.checkmarx.net/advisory/CX-2019-4297",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22886",
+    "cveASSIGNER": "cve-assignments@hackerone.com",
+    "publishedDate": "2021-03-26T19:15Z",
+    "lastModifiedDate": "2021-03-30T20:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Rocket.Chat before 3.11, 3.10.5, 3.9.7, 3.8.8 is vulnerable to persistent cross-site scripting (XSS) using nested markdown tags allowing a remote attacker to inject arbitrary JavaScript in a message. This flaw leads to arbitrary file read and RCE on Rocket.Chat desktop app."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/RocketChat/Rocket.Chat/pull/20430",
+        "name": "https://github.com/RocketChat/Rocket.Chat/pull/20430",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.rocket.chat/guides/security/security-updates",
+        "name": "https://docs.rocket.chat/guides/security/security-updates",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://hackerone.com/reports/1014459",
+        "name": "https://hackerone.com/reports/1014459",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-2791",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2010-08-05T18:17Z",
+    "lastModifiedDate": "2021-03-30T17:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "mod_proxy in httpd in Apache HTTP Server 2.2.9, when running on Unix, does not close the backend connection if a timeout occurs when reading a response from a persistent connection, which allows remote attackers to obtain a potentially sensitive response intended for a different client in opportunistic circumstances via a normal HTTP request.  NOTE: this is the same issue as CVE-2010-2068, but for a different OS and set of affected versions."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/42102",
+        "name": "42102",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/07/30/1",
+        "name": "[oss-security] 20100730 CVE-2010-2791: mod_proxy information leak affecting 2.2.9 only",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2010-0659.html",
+        "name": "RHSA-2010:0659",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2013-1899555.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/cpuapr2013-1899555.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2013:150",
+        "name": "MDVSA-2013:150",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/60883",
+        "name": "apache-modproxy-info-disclsoure(60883)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8d63cb8e9100f28a99429b4328e4e7cebce861d5772ac9863ba2ae6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f7f95ac1cd9895db2714fa3ebaa0b94d0c6df360f742a40951384a53@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r57608dc51b79102f3952ae06f54d5277b649c86d6533dcd6a7d201f7@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfbaf647d52c1cb843e726a0933f156366a806cead84fbd430951591b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ea3538f229874c80a10af473856a81fbf5f694cd7f471cc679ba70b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r064df0985779b7ee044d3120d71ba59750427cf53f57ba3384e3773f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888222 - in /httpd/site/trunk/content/security/json: CVE-2010-2068.json CVE-2010-2791.json CVE-2011-0419.json CVE-2011-3368.json",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r688df6f16f141e966a0a47f817e559312b3da27886f59116a94b273d@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888194 [7/13] - /httpd/site/trunk/content/security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9f93cf6dde308d42a9c807784e8102600d0397f5f834890708bf6920@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdca61ae990660bacb682295f2a09d34612b7bb5f457577fe17f4d064@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073146 [2/3] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities-httpd.xml security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1d201e3da31a2c8aa870c8314623caef7debd74a13d0f25205e26f15@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [8/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re2e23465bbdb17ffe109d21b4f192e6b58221cd7aa8797d530b4cd75@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [7/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-8566",
+    "cveASSIGNER": "security@kubernetes.io",
+    "publishedDate": "2020-12-07T22:15Z",
+    "lastModifiedDate": "2021-03-29T19:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Kubernetes clusters using Ceph RBD as a storage provisioner, with logging level of at least 4, Ceph RBD admin secrets can be written to logs. This occurs in kube-controller-manager's logs during provisioning of Ceph RBD persistent claims. This affects < v1.19.3, < v1.18.10, < v1.17.13."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/kubernetes/kubernetes/issues/95624",
+        "name": "https://github.com/kubernetes/kubernetes/issues/95624",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/g/kubernetes-security-discuss/c/vm-HcrFUOCs/m/36utxAM5CwAJ",
+        "name": "Multiple secret leaks when verbose logging is enabled",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210122-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20210122-0006/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-24408",
+    "cveASSIGNER": "psirt@adobe.com",
+    "publishedDate": "2020-10-16T15:15Z",
+    "lastModifiedDate": "2021-03-25T16:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Magento versions 2.4.0 and 2.3.5p1 (and earlier) are affected by a persistent XSS vulnerability that allows users to upload malicious JavaScript via the file upload component. This vulnerability could be abused by an unauthenticated attacker to execute XSS attacks against other Magento users. This vulnerability requires a victim to browse to the uploaded file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://helpx.adobe.com/security/products/magento/apsb20-59.html",
+        "name": "https://helpx.adobe.com/security/products/magento/apsb20-59.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1435 @@
+[
+  {
+    "cveID": "CVE-2021-29510",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-13T19:15Z",
+    "lastModifiedDate": "2021-05-23T03:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Pydantic is a data validation and settings management using Python type hinting. In affected versions passing either `'infinity'`, `'inf'` or `float('inf')` (or their negatives) to `datetime` or `date` fields causes validation to run forever with 100% CPU usage (on one CPU). Pydantic has been patched with fixes available in the following versions: v1.8.2, v1.7.4, v1.6.2. All these versions are available on pypi(https://pypi.org/project/pydantic/#history), and will be available on conda-forge(https://anaconda.org/conda-forge/pydantic) soon. See the changelog(https://pydantic-docs.helpmanual.io/) for details. If you absolutely can't upgrade, you can work around this risk using a validator(https://pydantic-docs.helpmanual.io/usage/validators/) to catch these values. This is not an ideal solution (in particular you'll need a slightly different function for datetimes), instead of a hack like this you should upgrade pydantic. If you are not using v1.8.x, v1.7.x or v1.6.x and are unable to upgrade to a fixed version of pydantic, please create an issue at https://github.com/samuelcolvin/pydantic/issues requesting a back-port, and we will endeavour to release a patch for earlier versions of pydantic."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/samuelcolvin/pydantic/security/advisories/GHSA-5jqp-qgf6-3pvh",
+        "name": "https://github.com/samuelcolvin/pydantic/security/advisories/GHSA-5jqp-qgf6-3pvh",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/samuelcolvin/pydantic/commit/7e83fdd2563ffac081db7ecdf1affa65ef38c468",
+        "name": "https://github.com/samuelcolvin/pydantic/commit/7e83fdd2563ffac081db7ecdf1affa65ef38c468",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UMKAJX4O6IGBBCE32CO2G7PZQCCQSBLV/",
+        "name": "FEDORA-2021-f8bb3ba3ec",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/S2HT266L6Q7H6ICP7DFGXOGBJHNNKMKB/",
+        "name": "FEDORA-2021-4d3de3183f",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UEFWM7DYKD2ZHE7R5YT5EQWJPV4ZKYRB/",
+        "name": "FEDORA-2021-e7fabd81fb",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-9471",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-01-16T16:59Z",
+    "lastModifiedDate": "2020-12-08T15:18Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The parse_datetime function in GNU coreutils allows remote attackers to cause a denial of service (crash) or possibly execute arbitrary code via a crafted date string, as demonstrated by the \"--date=TZ=\"123\"345\" @1\" string to the touch or date command."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/11/25/4",
+        "name": "[oss-security] 20141125 AW: parse_datetime() bug in coreutils",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2015/01/03/11",
+        "name": "[oss-security] 20150103 Re: parse_datetime() bug in coreutils",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/62226",
+        "name": "62226",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-2473-1",
+        "name": "USN-2473-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=766147",
+        "name": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=766147",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/11/25/1",
+        "name": "[oss-security] 20141124 parse_datetime() bug in coreutils",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://debbugs.gnu.org/cgi/bugreport.cgi?bug=16872",
+        "name": "http://debbugs.gnu.org/cgi/bugreport.cgi?bug=16872",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://advisories.mageia.org/MGASA-2015-0029.html",
+        "name": "http://advisories.mageia.org/MGASA-2015-0029.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2015:179",
+        "name": "MDVSA-2015:179",
+        "refsource": "MANDRIVA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201612-22",
+        "name": "GLSA-201612-22",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26235",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-11-24T22:15Z",
+    "lastModifiedDate": "2020-12-03T19:42Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Rust time crate from version 0.2.7 and before version 0.2.23, unix-like operating systems may segfault due to dereferencing a dangling pointer in specific circumstances. This requires the user to set any environment variable in a different thread than the affected functions. The affected functions are time::UtcOffset::local_offset_at, time::UtcOffset::try_local_offset_at, time::UtcOffset::current_local_offset, time::UtcOffset::try_current_local_offset, time::OffsetDateTime::now_local and time::OffsetDateTime::try_now_local. Non-Unix targets are unaffected. This includes Windows and wasm. The issue was introduced in version 0.2.7 and fixed in version 0.2.23."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/time-rs/time/issues/293",
+        "name": "https://github.com/time-rs/time/issues/293",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/time-rs/time/security/advisories/GHSA-wcg3-cvx6-7396",
+        "name": "https://github.com/time-rs/time/security/advisories/GHSA-wcg3-cvx6-7396",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://crates.io/crates/time/0.2.23",
+        "name": "https://crates.io/crates/time/0.2.23",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14293",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-10-02T09:15Z",
+    "lastModifiedDate": "2020-10-09T03:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "conf_datetime in Secudos DOMOS 5.8 allows remote attackers to execute arbitrary commands as root via shell metacharacters in the zone field (obtained from the web interface)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2020-025.txt",
+        "name": "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2020-025.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/patrickhener/CVE-2020-14293",
+        "name": "https://github.com/patrickhener/CVE-2020-14293",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.syss.de/pentest-blog/syss-2020-024-und-syss-2020-025-zwei-schwachstellen-in-file-transfer-loesung-von-qiata",
+        "name": "https://www.syss.de/pentest-blog/syss-2020-024-und-syss-2020-025-zwei-schwachstellen-in-file-transfer-loesung-von-qiata",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.secudos.de/en/news-en/domos-release-5-9",
+        "name": "https://www.secudos.de/en/news-en/domos-release-5-9",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2020/Sep/51",
+        "name": "http://seclists.org/fulldisclosure/2020/Sep/51",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-3945",
+    "cveASSIGNER": "vulnreport@tenable.com",
+    "publishedDate": "2020-04-01T17:15Z",
+    "lastModifiedDate": "2020-04-07T19:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Web server running on Parrot ANAFI can be crashed due to the SDK command \"Common_CurrentDateTime\" being sent to control service with larger than expected date length."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.tenable.com/security/research/tra-2019-22",
+        "name": "https://www.tenable.com/security/research/tra-2019-22",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-17066",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-09-15T21:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered on D-Link DIR-816 A2 1.10 B05 devices. An HTTP request parameter is used in command string construction in the handler function of the /goform/form2systime.cgi route. This could lead to command injection via shell metacharacters in the datetime parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/PAGalaxyLab/VulInfo/tree/master/D-Link/DIR-816/cmd_injection_0",
+        "name": "https://github.com/PAGalaxyLab/VulInfo/tree/master/D-Link/DIR-816/cmd_injection_0",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-16411",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-09-24T20:15Z",
+    "lastModifiedDate": "2019-10-02T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Suricata 4.1.4. By sending multiple IPv4 packets that have invalid IPv4Options, the function IPV4OptValidateTimestamp in decode-ipv4.c tries to access a memory region that is not allocated. There is a check for o->len < 5 (corresponding to 2 bytes of header and 3 bytes of data). Then, \"flag = *(o->data + 3)\" places one beyond the 3 bytes, because the code should have been \"flag = *(o->data + 1)\" instead."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.openinfosecfoundation.org/pipermail/oisf-announce/",
+        "name": "https://lists.openinfosecfoundation.org/pipermail/oisf-announce/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://suricata-ids.org/2019/09/24/suricata-4-1-5-released/",
+        "name": "https://suricata-ids.org/2019/09/24/suricata-4-1-5-released/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.code-intelligence.com/cve-2019-16411",
+        "name": "https://www.code-intelligence.com/cve-2019-16411",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-2387",
+    "cveASSIGNER": "secure@microsoft.com",
+    "publishedDate": "2006-10-10T22:07Z",
+    "lastModifiedDate": "2018-10-30T16:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Unspecified vulnerability in Microsoft Excel 2000, 2002, 2003, 2004 for Mac, v.X for Mac, Excel Viewer 2003, and Microsoft Works Suite 2004 through 2006 allows user-assisted attackers to execute arbitrary code via a crafted DATETIME record in an XLS file, a different vulnerability than CVE-2006-3867 and CVE-2006-3875."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.zerodayinitiative.com/advisories/ZDI-06-033.html",
+        "name": "http://www.zerodayinitiative.com/advisories/ZDI-06-033.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/706668",
+        "name": "VU#706668",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://securitytracker.com/id?1017031",
+        "name": "1017031",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/20344",
+        "name": "20344",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/3978",
+        "name": "ADV-2006-3978",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A570",
+        "name": "oval:org.mitre.oval:def:570",
+        "refsource": "OVAL",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2006/ms06-059",
+        "name": "MS06-059",
+        "refsource": "MS",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/449179/100/0/threaded",
+        "name": "SSRT061264",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/448147/100/0/threaded",
+        "name": "20061010 ZDI-06-033: Microsoft Office Excel File Format DATETIME Record Parsing Vulnerability",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-5234",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-10-11T01:07Z",
+    "lastModifiedDate": "2018-10-17T21:41Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "** DISPUTED **  Multiple PHP remote file inclusion vulnerabilities in phpWebSite 0.10.2 allow remote attackers to execute arbitrary PHP code via a URL in the PHPWS_SOURCE_DIR parameter in (1) init.php, (2) users.php, (3) Cookie.php, (4) forms.php, (5) Groups.php, (6) ModSetting.php, (7) Calendar.php, (8) DateTime.php, (9) core.php, (10) ImgLibrary.php, (11) Manager.php, and (12) Template.php, and (13) EZform.php.  NOTE: CVE disputes this report, since \"PHPWS_SOURCE_DIR\" is defined as a constant, not accessed as a variable."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.attrition.org/pipermail/vim/2006-October/001079.html",
+        "name": "20061010 phpWebSite 0.10.2 RFI - CVE dispute",
+        "refsource": "VIM",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/20412",
+        "name": "20412",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/1716",
+        "name": "1716",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/448307/100/100/threaded",
+        "name": "20061011 Re: phpWebSite 0.10.2 Remote File Include Vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/448098/100/0/threaded",
+        "name": "20061009 phpWebSite 0.10.2 Remote File Include Vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-3143",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-08-01T14:41Z",
+    "lastModifiedDate": "2018-10-11T20:47Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple integer overflows in Python before 2.5.2 might allow context-dependent attackers to have an unknown impact via vectors related to (1) Include/pymem.h; (2) _csv.c, (3) _struct.c, (4) arraymodule.c, (5) audioop.c, (6) binascii.c, (7) cPickle.c, (8) cStringIO.c, (9) cjkcodecs/multibytecodec.c, (10) datetimemodule.c, (11) md5.c, (12) rgbimgmodule.c, and (13) stropmodule.c in Modules/; (14) bufferobject.c, (15) listobject.c, and (16) obmalloc.c in Objects/; (17) Parser/node.c; and (18) asdl.c, (19) ast.c, (20) bltinmodule.c, and (21) compile.c in Python/, as addressed by \"checks for integer overflows, contributed by Google.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://bugs.gentoo.org/show_bug.cgi?id=232137",
+        "name": "http://bugs.gentoo.org/show_bug.cgi?id=232137",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://svn.python.org/view?rev=60793&view=rev",
+        "name": "http://svn.python.org/view?rev=60793&view=rev",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.python.org/download/releases/2.5.2/NEWS.txt",
+        "name": "http://www.python.org/download/releases/2.5.2/NEWS.txt",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.python.org/download/releases/2.6/NEWS.txt",
+        "name": "http://www.python.org/download/releases/2.6/NEWS.txt",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200807-16.xml",
+        "name": "GLSA-200807-16",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31332",
+        "name": "31332",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://wiki.rpath.com/Advisories:rPSA-2008-0243",
+        "name": "http://wiki.rpath.com/Advisories:rPSA-2008-0243",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2008-08/msg00006.html",
+        "name": "SUSE-SR:2008:017",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2008:164",
+        "name": "MDVSA-2008:164",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.novell.com/support/search.do?cmd=displayKC&docType=kc&externalId=InfoDocument-patchbuilder-readme5032900",
+        "name": "http://www.novell.com/support/search.do?cmd=displayKC&docType=kc&externalId=InfoDocument-patchbuilder-readme5032900",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/30491",
+        "name": "30491",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2008:163",
+        "name": "MDVSA-2008:163",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31518",
+        "name": "31518",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "name": "USN-632-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31365",
+        "name": "31365",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31687",
+        "name": "31687",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31473",
+        "name": "31473",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/32793",
+        "name": "32793",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1667",
+        "name": "DSA-1667",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/3316",
+        "name": "ADV-2009-3316",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vmware.com/security/advisories/VMSA-2009-0016.html",
+        "name": "http://www.vmware.com/security/advisories/VMSA-2009-0016.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/37471",
+        "name": "37471",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/2288",
+        "name": "ADV-2008-2288",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A8996",
+        "name": "oval:org.mitre.oval:def:8996",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7720",
+        "name": "oval:org.mitre.oval:def:7720",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/507985/100/0/threaded",
+        "name": "20091120 VMSA-2009-0016 VMware vCenter and ESX update release and vMA patch release address multiple security issue in third party components",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/495445/100/0/threaded",
+        "name": "20080813 rPSA-2008-0243-1 idle python",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-10306",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-05-18T13:29Z",
+    "lastModifiedDate": "2018-06-19T15:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Services/Form/classes/class.ilDateDurationInputGUI.php and Services/Form/classes/class.ilDateTimeInputGUI.php in ILIAS 5.1.x through 5.3.x before 5.3.4 allow XSS via an invalid date."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.ilias.de/docu/goto_docu_pg_116799_35.html",
+        "name": "https://www.ilias.de/docu/goto_docu_pg_116799_35.html",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://github.com/ILIAS-eLearning/ILIAS/commit/eb0272c8023818b1eb10a93e115c9e7960b62a62",
+        "name": "https://github.com/ILIAS-eLearning/ILIAS/commit/eb0272c8023818b1eb10a93e115c9e7960b62a62",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/ILIAS-eLearning/ILIAS/commit/95870b2db3e71154102b2cd2f05334fc741c6e39",
+        "name": "https://github.com/ILIAS-eLearning/ILIAS/commit/95870b2db3e71154102b2cd2f05334fc741c6e39",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-5838",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-02-09T15:59Z",
+    "lastModifiedDate": "2018-01-05T02:31Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The gst_date_time_new_from_iso8601_string function in gst/gstdatetime.c in GStreamer before 1.10.3 allows remote attackers to cause a denial of service (out-of-bounds heap read) via a malformed datetime string."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://gstreamer.freedesktop.org/releases/1.10/#1.10.3",
+        "name": "https://gstreamer.freedesktop.org/releases/1.10/#1.10.3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.gnome.org/show_bug.cgi?id=777263",
+        "name": "https://bugzilla.gnome.org/show_bug.cgi?id=777263",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/96001",
+        "name": "96001",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2017/02/02/9",
+        "name": "[oss-security] 20170202 Re: Multiple memory access issues in gstreamer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2017/02/01/7",
+        "name": "[oss-security] 20170201 Multiple memory access issues in gstreamer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201705-10",
+        "name": "GLSA-201705-10",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2017/dsa-3822",
+        "name": "DSA-3822",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2060",
+        "name": "RHSA-2017:2060",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-7129",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2016-09-12T01:59Z",
+    "lastModifiedDate": "2018-01-05T02:31Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The php_wddx_process_data function in ext/wddx/wddx.c in PHP before 5.6.25 and 7.x before 7.0.10 allows remote attackers to cause a denial of service (segmentation fault) or possibly have unspecified other impact via an invalid ISO 8601 time value, as demonstrated by a wddx_deserialize call that mishandles a dateTime element in a wddxPacket XML document."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.php.net/ChangeLog-7.php",
+        "name": "http://www.php.net/ChangeLog-7.php",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://github.com/php/php-src/commit/426aeb2808955ee3d3f52e0cfb102834cdb836a5?w=1",
+        "name": "https://github.com/php/php-src/commit/426aeb2808955ee3d3f52e0cfb102834cdb836a5?w=1",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2016/09/02/9",
+        "name": "[oss-security] 20160902 Re: CVE assignment for PHP 5.6.25 and 7.0.10 - and libcurl",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List"
+        ]
+      },
+      {
+        "url": "http://www.php.net/ChangeLog-5.php",
+        "name": "http://www.php.net/ChangeLog-5.php",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://bugs.php.net/bug.php?id=72749",
+        "name": "https://bugs.php.net/bug.php?id=72749",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/92758",
+        "name": "92758",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201611-22",
+        "name": "GLSA-201611-22",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1036680",
+        "name": "1036680",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2016-19",
+        "name": "https://www.tenable.com/security/tns-2016-19",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2016-2750.html",
+        "name": "RHSA-2016:2750",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-0273",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2015-03-30T10:59Z",
+    "lastModifiedDate": "2018-01-05T02:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple use-after-free vulnerabilities in ext/date/php_date.c in PHP before 5.4.38, 5.5.x before 5.5.22, and 5.6.x before 5.6.6 allow remote attackers to execute arbitrary code via crafted serialized input containing a (1) R or (2) r type specifier in (a) DateTimeZone data handled by the php_date_timezone_initialize_from_hash function or (b) DateTime data handled by the php_date_initialize_from_hash function."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://git.php.net/?p=php-src.git;a=commit;h=71335e6ebabc1b12c057d8017fd811892ecdfd24",
+        "name": "http://git.php.net/?p=php-src.git;a=commit;h=71335e6ebabc1b12c057d8017fd811892ecdfd24",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1194730",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1194730",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://bugs.php.net/bug.php?id=68942",
+        "name": "https://bugs.php.net/bug.php?id=68942",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://php.net/ChangeLog-5.php",
+        "name": "http://php.net/ChangeLog-5.php",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00004.html",
+        "name": "openSUSE-SU-2015:0440",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00002.html",
+        "name": "SUSE-SU-2015:0424",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00003.html",
+        "name": "SUSE-SU-2015:0436",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2535-1",
+        "name": "USN-2535-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3195",
+        "name": "DSA-3195",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2015:079",
+        "name": "MDVSA-2015:079",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1031945",
+        "name": "1031945",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2015/Jun/msg00002.html",
+        "name": "APPLE-SA-2015-06-30-2",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "http://support.apple.com/kb/HT204942",
+        "name": "http://support.apple.com/kb/HT204942",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/HT205267",
+        "name": "https://support.apple.com/HT205267",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html",
+        "name": "APPLE-SA-2015-09-30-3",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/HT205375",
+        "name": "https://support.apple.com/HT205375",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2015/Oct/msg00005.html",
+        "name": "APPLE-SA-2015-10-21-4",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-1135.html",
+        "name": "RHSA-2015:1135",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=143403519711434&w=2",
+        "name": "SSRT102066",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=143748090628601&w=2",
+        "name": "HPSBMU03380",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=144050155601375&w=2",
+        "name": "HPSBMU03409",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/72701",
+        "name": "72701",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201606-10",
+        "name": "GLSA-201606-10",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-1066.html",
+        "name": "RHSA-2015:1066",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-1053.html",
+        "name": "RHSA-2015:1053",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-1218.html",
+        "name": "RHSA-2015:1218",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-0063",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2014-03-31T14:58Z",
+    "lastModifiedDate": "2017-12-16T02:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple stack-based buffer overflows in PostgreSQL before 8.4.20, 9.0.x before 9.0.16, 9.1.x before 9.1.12, 9.2.x before 9.2.7, and 9.3.x before 9.3.3 allow remote authenticated users to cause a denial of service (crash) or possibly execute arbitrary code via vectors related to an incorrect MAXDATELEN constant and datetime values involving (1) intervals, (2) timestamps, or (3) timezones, a different vulnerability than CVE-2014-0065."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://wiki.postgresql.org/wiki/20140220securityrelease",
+        "name": "http://wiki.postgresql.org/wiki/20140220securityrelease",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.postgresql.org/about/news/1506/",
+        "name": "http://www.postgresql.org/about/news/1506/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/postgres/postgres/commit/4318daecc959886d001a6e79c6ea853e8b1dfb4b",
+        "name": "https://github.com/postgres/postgres/commit/4318daecc959886d001a6e79c6ea853e8b1dfb4b",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "name": "DSA-2864",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.postgresql.org/support/security/",
+        "name": "http://www.postgresql.org/support/security/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "name": "DSA-2865",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1065226",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1065226",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0469.html",
+        "name": "RHSA-2014:0469",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://support.apple.com/kb/HT6448",
+        "name": "http://support.apple.com/kb/HT6448",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://archives.neohapsis.com/archives/bugtraq/2014-10/0103.html",
+        "name": "APPLE-SA-2014-10-16-3",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT6536",
+        "name": "https://support.apple.com/kb/HT6536",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705",
+        "name": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/65719",
+        "name": "65719",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/61307",
+        "name": "61307",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2120-1",
+        "name": "USN-2120-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0249.html",
+        "name": "RHSA-2014:0249",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0221.html",
+        "name": "RHSA-2014:0221",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0211.html",
+        "name": "RHSA-2014:0211",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-03/msg00038.html",
+        "name": "openSUSE-SU-2014:0368",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-03/msg00018.html",
+        "name": "openSUSE-SU-2014:0345",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2012-3901",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2012-09-16T10:34Z",
+    "lastModifiedDate": "2017-08-29T01:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The updateTime function in sensorApp on Cisco IPS 4200 series sensors 7.0 and 7.1 allows remote attackers to cause a denial of service (process crash and traffic-inspection outage) via network traffic, aka Bug ID CSCta96144."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.cisco.com/en/US/docs/security/ips/7.0/release/notes/22789_01.html",
+        "name": "http://www.cisco.com/en/US/docs/security/ips/7.0/release/notes/22789_01.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/78870",
+        "name": "cisco-ips-updatetime-dos(78870)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-2652",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-05-14T21:19Z",
+    "lastModifiedDate": "2017-07-29T01:31Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple unspecified vulnerabilities in Free-SA before 1.2.2 allow remote attackers to execute arbitrary code via unspecified vectors involving certain (1) sprintf and (2) vsprintf calls in (a) r_index.c, (b) r_reports.c, (c) r_topsites.c, (d) r_topuser.c, (e) r_typical.c, (f) r_userdatetime.c, and (g) r_users.c in reports/; and (h) w_fs.c, (i) w_internal.c, and (j) w_log_operations.c in work/, probably related to buffer overflows.  NOTE: some of these details are obtained from third party information."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://sourceforge.net/project/shownotes.php?release_id=500691&group_id=191513",
+        "name": "http://sourceforge.net/project/shownotes.php?release_id=500691&group_id=191513",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/23924",
+        "name": "23924",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/1757",
+        "name": "ADV-2007-1757",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/34218",
+        "name": "freesa-sprintf-vsprintf-bo(34218)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2004-0645",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2004-08-06T04:00Z",
+    "lastModifiedDate": "2017-07-11T01:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Buffer overflow in the wvHandleDateTimePicture function in wv library (wvWare) 0.7.4 through 0.7.6 and 1.0.0 allows remote attackers to execute arbitrary code via a document with a long DateTime field."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.idefense.com/application/poi/display?id=115&type=vulnerabilities",
+        "name": "20040709 wvWare Library Buffer Overflow Vulnerability",
+        "refsource": "IDEFENSE",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200407-11.xml",
+        "name": "GLSA-200407-11",
+        "refsource": "GENTOO",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2004/dsa-579",
+        "name": "DSA-579",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.fedora.us/show_bug.cgi?id=1906",
+        "name": "FLSA:1906",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandrakesecure.net/en/advisories/advisory.php?name=MDKSA-2004:077",
+        "name": "MDKSA-2004:077",
+        "refsource": "MANDRAKE",
+        "tags": []
+      },
+      {
+        "url": "http://www.freebsd.org/ports/portaudit/7a5430df-d562-11d8-b479-02e0185c0b53.html",
+        "name": "http://www.freebsd.org/ports/portaudit/7a5430df-d562-11d8-b479-02e0185c0b53.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://cpan.cybercomm.nl/pub/gentoo-portage/app-text/wv/files/wv-1.0.0-fix_overflow.patch",
+        "name": "http://cpan.cybercomm.nl/pub/gentoo-portage/app-text/wv/files/wv-1.0.0-fix_overflow.patch",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/7761",
+        "name": "7761",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000863",
+        "name": "CLA-2004:863",
+        "refsource": "CONECTIVA",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/16660",
+        "name": "wvware-wvhandledatetimepicture-bo(16660)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2002-1398",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2003-01-17T05:00Z",
+    "lastModifiedDate": "2016-10-18T02:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Buffer overflow in the date parser for PostgreSQL before 7.2.2 allows attackers to cause a denial of service and possibly execute arbitrary code via a long date string, aka a vulnerability \"in handling long datetime input.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://archives.postgresql.org/pgsql-announce/2002-08/msg00004.php",
+        "name": "http://archives.postgresql.org/pgsql-announce/2002-08/msg00004.php",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2002/dsa-165",
+        "name": "DSA-165",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.novell.com/linux/security/advisories/2002_038_postgresql.html",
+        "name": "SuSE-SA:2002:038",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2003-001.html",
+        "name": "RHSA-2003:001",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/8034",
+        "name": "8034",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=103036987114437&w=2",
+        "name": "20020826 GLSA: PostgreSQL",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=103021186622725&w=2",
+        "name": "20020824 Fwd: [GENERAL] PostgreSQL 7.2.2: Security Release",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=postgresql-announce&m=103062536330644",
+        "name": "http://marc.info/?l=postgresql-announce&m=103062536330644",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=102996089613404&w=2",
+        "name": "20020821 Re: @(#)Mordred Labs advisory 0x0003: Buffer overflow in PostgreSQL",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=102978152712430&w=2",
+        "name": "20020819 Re: @(#) Mordred Labs advisory 0x0001: Buffer overflow in PostgreSQL",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-7374",
+    "cveASSIGNER": "security@ubuntu.com",
+    "publishedDate": "2014-05-01T17:28Z",
+    "lastModifiedDate": "2014-07-18T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Ubuntu Date and Time Indicator (aka indicator-datetime) 13.10.0+13.10.x before 13.10.0+13.10.20131023.2-0ubuntu1.1 does not properly restrict access to Evolution, which allows local users to bypass the greeter screen restrictions by clicking the date."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/04/29/3",
+        "name": "[oss-security] 20140429 CVE Request: indicator-datetime issue",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2186-1",
+        "name": "USN-2186-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/indicator-datetime/%2Bbug/1246812",
+        "name": "https://bugs.launchpad.net/ubuntu/%2Bsource/indicator-datetime/%2Bbug/1246812",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/04/30/1",
+        "name": "[oss-security] 20140430 Re: CVE Request: indicator-datetime issue",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://bazaar.launchpad.net/~indicator-applet-developers/indicator-datetime/trunk.13.10/revision/282",
+        "name": "http://bazaar.launchpad.net/~indicator-applet-developers/indicator-datetime/trunk.13.10/revision/282",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "cveID": "CVE-2020-1747",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2020-03-24T15:15Z",
+    "lastModifiedDate": "2021-03-26T02:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability was discovered in the PyYAML library in versions before 5.3.1, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. An attacker could use this flaw to execute arbitrary code on the system by abusing the python/object/new constructor."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1747",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1747",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/yaml/pyyaml/pull/386",
+        "name": "https://github.com/yaml/pyyaml/pull/386",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WORRFHPQVAFKKXXWLSSW6XKUYLWM6CSH/",
+        "name": "FEDORA-2020-40c35d7b37",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBJA3SGNJKCAYPSHOHWY3KBCWNM5NYK2/",
+        "name": "FEDORA-2020-bdb0bfa928",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K5HEPD7LEVDPCITY5IMDYWXUMX37VFMY/",
+        "name": "FEDORA-2020-e9741a6a15",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00017.html",
+        "name": "openSUSE-SU-2020:0507",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00017.html",
+        "name": "openSUSE-SU-2020:0630",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MMQXSZXNJT6ERABJZAAICI3DQSQLCP3D/",
+        "name": "FEDORA-2021-3342569a0f",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7PPAS6C4SZRDQLR7C22A5U3QOLXY33JX/",
+        "name": "FEDORA-2021-eed7193502",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21371",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-10T22:15Z",
+    "lastModifiedDate": "2021-03-18T20:38Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Tenable for Jira Cloud is an open source project designed to pull Tenable.io vulnerability data, then generate Jira Tasks and sub-tasks based on the vulnerabilities' current state. It published in pypi as \"tenable-jira-cloud\". In tenable-jira-cloud before version 1.1.21, it is possible to run arbitrary commands through the yaml.load() method. This could allow an attacker with local access to the host to run arbitrary code by running the application with a specially crafted YAML configuration file. This is fixed in version 1.1.21 by using yaml.safe_load() instead of yaml.load()."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tenable/integration-jira-cloud/security/advisories/GHSA-8278-88vv-x98r",
+        "name": "https://github.com/tenable/integration-jira-cloud/security/advisories/GHSA-8278-88vv-x98r",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tenable/integration-jira-cloud/commit/f8c2095fd529e664e7fa25403a0a4a85bb3907d0",
+        "name": "https://github.com/tenable/integration-jira-cloud/commit/f8c2095fd529e664e7fa25403a0a4a85bb3907d0",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/tenable-jira-cloud/",
+        "name": "https://pypi.org/project/tenable-jira-cloud/",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pyyaml.docsforge.com/master/documentation/#loading-yaml",
+        "name": "https://pyyaml.docsforge.com/master/documentation/#loading-yaml",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14343",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-02-09T21:15Z",
+    "lastModifiedDate": "2021-02-16T16:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1860466",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1860466",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-18342",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-06-27T12:29Z",
+    "lastModifiedDate": "2020-10-14T13:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In PyYAML before 5.1, the yaml.load() API could execute arbitrary code if used with untrusted data. The load() function has been deprecated in version 5.1 and the 'UnsafeLoader' has been introduced for backward compatibility with the function."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/yaml/pyyaml/pull/74",
+        "name": "https://github.com/yaml/pyyaml/pull/74",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/yaml/pyyaml/blob/master/CHANGES",
+        "name": "https://github.com/yaml/pyyaml/blob/master/CHANGES",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M6JCFGEIEOFMWWIXGHSELMKQDD4CV2BA/",
+        "name": "FEDORA-2019-bed9afe622",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KSQQMRUQSXBSUXLCRD3TSZYQ7SEZRKCE/",
+        "name": "FEDORA-2019-779a9db46a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JEX7IPV5P2QJITAMA5Z63GQCZA5I6NVZ/",
+        "name": "FEDORA-2019-44643e8bcb",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation",
+        "name": "https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/marshmallow-code/apispec/issues/278",
+        "name": "https://github.com/marshmallow-code/apispec/issues/278",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/yaml/pyyaml/issues/193",
+        "name": "https://github.com/yaml/pyyaml/issues/193",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-45",
+        "name": "GLSA-202003-45",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-20477",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-02-19T04:15Z",
+    "lastModifiedDate": "2020-03-01T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "PyYAML 5.1 through 5.1.2 has insufficient restrictions on the load and load_all functions because of a class deserialization issue, e.g., Popen is a class in the subprocess module. NOTE: this issue exists because of an incomplete fix for CVE-2017-18342."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exploit-db.com/download/47655",
+        "name": "https://www.exploit-db.com/download/47655",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://github.com/yaml/pyyaml/blob/master/CHANGES",
+        "name": "https://github.com/yaml/pyyaml/blob/master/CHANGES",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/52N5XS73Z5S4ZN7I7R56ICCPCTKCUV4H/",
+        "name": "FEDORA-2020-3162499159",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/33VBUY73AA6CTTYL3LRWHNFDULV7PFPN/",
+        "name": "FEDORA-2020-e84e90dc4a",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,4870 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 59,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-16T14:57Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-15809",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-203"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tches.iacr.org/index.php/TCHES/article/view/7337",
+                "name": "https://tches.iacr.org/index.php/TCHES/article/view/7337",
+                "refsource": "MISC",
+                "tags": [
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.ssi.gouv.fr/certification_cc/bibliotheque-cryptographique-atmel-toolbox-00-03-11-05/",
+                "name": "https://www.ssi.gouv.fr/certification_cc/bibliotheque-cryptographique-atmel-toolbox-00-03-11-05/",
+                "refsource": "MISC",
+                "tags": [
+                  "Product"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2019/10/02/2",
+                "name": "[oss-security] 20191002 Minerva: ECDSA key recovery from bit-length leakage",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://minerva.crocs.fi.muni.cz/",
+                "name": "https://minerva.crocs.fi.muni.cz/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/details?source=ECDSA&number=214",
+                "name": "https://csrc.nist.gov/Projects/Cryptographic-Algorithm-Validation-Program/details?source=ECDSA&number=214",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory",
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "https://eprint.iacr.org/2011/232.pdf",
+                "name": "https://eprint.iacr.org/2011/232.pdf",
+                "refsource": "MISC",
+                "tags": [
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Smart cards from the Athena SCS manufacturer, based on the Atmel Toolbox 00.03.11.05 and the AT90SC chip, contain a timing side channel in ECDSA signature generation. This allows a local attacker, able to measure the duration of hundreds to thousands of signing operations, to compute the private key used. The issue occurs because the Atmel Toolbox 00.03.11.05 contains two versions of ECDSA signature functions, described as fast and secure, but the affected cards chose to use the fast version, which leaks the bit length of the random nonce via timing. This affects Athena IDProtect 010b.0352.0005, Athena IDProtect 010e.1245.0002, Athena IDProtect 0106.0130.0401, Athena IDProtect 010e.1245.0002, Valid S/A IDflex V 010b.0352.0005, SafeNet eToken 4300 010e.1245.0002, TecSec Armored Card 010e.0264.0001, and TecSec Armored Card 108.0264.0001."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microchip:atmel_toolbox:00.03.11.05:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:tecsec:armored_card:010e.0264.0001:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:cryptsoft:s\\/a_idflex_v:010b.0352.0005:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:athena-scs:idprotect:010e.1245.0002:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:athena-scs:idprotect:010b.0352.0005:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:tecsec:armored_card:108.0264.0001:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:thalesgroup:etoken_4300:010e.1245.0002:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:athena-scs:idprotect:0106.0130.0401:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:H/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.2
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 1.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-10-03T14:15Z",
+        "lastModifiedDate": "2021-04-13T19:31Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-20305",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-327"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1942533",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1942533",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was found in Nettle in versions before 3.7.2, where several Nettle signature verification functions (GOST DSA, EDDSA & ECDSA) result in the Elliptic Curve Cryptography point (ECC) multiply function being called with out-of-range scalers, possibly resulting in incorrect results. This flaw allows an attacker to force an invalid signature, causing an assertion failure or possible validation. The highest threat to this vulnerability is to confidentiality, integrity, as well as system availability."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nettle_project:nettle:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "3.7.2",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-04-05T22:15Z",
+        "lastModifiedDate": "2021-04-12T18:12Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-12438",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-200"
+                  },
+                  {
+                    "lang": "en",
+                    "value": "CWE-320"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "name": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The Elliptic Curve Cryptography library (aka sunec or libsunec) allows a memory-cache side-channel attack on ECDSA signatures, aka the Return Of the Hidden Number Problem or ROHNP. To discover an ECDSA key, the attacker needs access to either the local machine or a different virtual machine on the same physical host."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:libsunec_project:libsunec:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:P/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "attackVector": "PHYSICAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "CHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.5,
+            "impactScore": 4.0
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-06-15T02:29Z",
+        "lastModifiedDate": "2021-03-09T15:12Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-12433",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-200"
+                  },
+                  {
+                    "lang": "en",
+                    "value": "CWE-320"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "name": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "** DISPUTED ** cryptlib through 3.4.4 allows a memory-cache side-channel attack on DSA and ECDSA signatures, aka the Return Of the Hidden Number Problem or ROHNP. To discover a key, the attacker needs access to either the local machine or a different virtual machine on the same physical host. NOTE: the vendor does not include side-channel attacks within its threat model."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cryptlib:cryptlib:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "3.4.4",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:P/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "attackVector": "PHYSICAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "CHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.5,
+            "impactScore": 4.0
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-06-15T02:29Z",
+        "lastModifiedDate": "2021-03-09T15:10Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-12437",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-200"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "name": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/202007-53",
+                "name": "GLSA-202007-53",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "LibTomCrypt through 1.18.1 allows a memory-cache side-channel attack on ECDSA signatures, aka the Return Of the Hidden Number Problem or ROHNP. To discover an ECDSA key, the attacker needs access to either the local machine or a different virtual machine on the same physical host."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:libtom:libtomcrypt:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.18.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:P/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "attackVector": "PHYSICAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "CHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.5,
+            "impactScore": 4.0
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-06-15T02:29Z",
+        "lastModifiedDate": "2021-03-09T15:09Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-3011",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-203"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://ninjalab.io/wp-content/uploads/2021/01/a_side_journey_to_titan.pdf",
+                "name": "https://ninjalab.io/wp-content/uploads/2021/01/a_side_journey_to_titan.pdf",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://ninjalab.io/a-side-journey-to-titan/",
+                "name": "https://ninjalab.io/a-side-journey-to-titan/",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An electromagnetic-wave side-channel issue was discovered on NXP SmartMX / P5x security microcontrollers and A7x secure authentication microcontrollers, with CryptoLib through v2.9. It allows attackers to extract the ECDSA private key after extensive physical access (and consequently produce a clone). This was demonstrated on the Google Titan Security Key, based on an NXP A7005a chip. Other FIDO U2F security keys are also impacted (Yubico YubiKey Neo and Feitian K9, K13, K21, and K40) as well as several NXP JavaCard smartcards (J3A081, J2A081, J3A041, J3D145_M59, J2D145_M59, J3D120_M60, J3D082_M60, J2D120_M60, J2D082_M60, J3D081_M59, J2D081_M59, J3D081_M61, J2D081_M61, J3D081_M59_DF, J3D081_M61_DF, J3E081_M64, J3E081_M66, J2E081_M64, J3E041_M66, J3E016_M66, J3E016_M64, J3E041_M64, J3E145_M64, J3E120_M65, J3E082_M65, J2E145_M64, J2E120_M65, J2E082_M65, J3E081_M64_DF, J3E081_M66_DF, J3E041_M66_DF, J3E016_M66_DF, J3E041_M64_DF, and J3E016_M64_DF)."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:ftsafe:k13:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:ftsafe:k21:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:ftsafe:k40:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:ftsafe:k9:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:google:titan_security_key:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:3a081:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:a7005a:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2a081:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2d081_m59:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2d081_m61:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2d082_m60:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2d120_m60:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2d145_m59:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2e081_m64:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2e082_m65:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2e120_m65:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j2e145_m64:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3a041:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3d081_m59:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3d081_m59_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3d081_m61:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3d081_m61_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3d082_m60:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3d120_m60:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3d145_m59:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e016_m64:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e016_m64_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e016_m66:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e016_m66_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e041_m64:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e041_m64_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e041_m66:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e041_m66_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e081_m64:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e081_m64_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e081_m66:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e081_m66_df:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e082_m65:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e120_m65:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:j3e145_m64:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:p5010:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:p5020:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:p5021:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:p5040:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:smartmx2_p60:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:smartmx3_p71d320:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:nxp:smartmx3_p71d321:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:yubico:yubikey_neo:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:P/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "PHYSICAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.2,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.5,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-07T16:15Z",
+        "lastModifiedDate": "2021-01-20T16:03Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-14859",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-347"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14859",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14859",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/warner/python-ecdsa/releases/tag/python-ecdsa-0.13.3",
+                "name": "https://github.com/warner/python-ecdsa/releases/tag/python-ecdsa-0.13.3",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/warner/python-ecdsa/issues/114",
+                "name": "https://github.com/warner/python-ecdsa/issues/114",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://pypi.org/project/ecdsa/0.13.3/",
+                "name": "https://pypi.org/project/ecdsa/0.13.3/",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was found in all python-ecdsa versions before 0.13.3, where it did not correctly verify whether signatures used DER encoding. Without this verification, a malformed signature could be accepted, making the signature malleable. Without proper verification, an attacker could use a malleable signature to create false transactions."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:python-ecdsa_project:python-ecdsa:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "0.13.3",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:ceph_storage:2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:ceph_storage:3.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:openstack:13.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:openstack:14.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:openstack:15.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 9.1,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.4
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-01-02T15:15Z",
+        "lastModifiedDate": "2020-12-08T18:32Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-1000520",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-295"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/ARMmbed/mbedtls/issues/1561",
+                "name": "https://github.com/ARMmbed/mbedtls/issues/1561",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "ARM mbedTLS version 2.7.0 and earlier contains a Ciphersuite Allows Incorrectly Signed Certificates vulnerability in mbedtls_ssl_get_verify_result() that can result in ECDSA-signed certificates are accepted, when only RSA-signed ones should be.. This attack appear to be exploitable via Peers negotiate a TLS-ECDH-RSA-* ciphersuite. Any of the peers can then provide an ECDSA-signed certificate, when only an RSA-signed one should be accepted.."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.7.0",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-06-26T16:29Z",
+        "lastModifiedDate": "2020-11-05T15:42Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-12401",
+            "ASSIGNER": "security@mozilla.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-327"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.mozilla.org/security/advisories/mfsa2020-36/",
+                "name": "https://www.mozilla.org/security/advisories/mfsa2020-36/",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.mozilla.org/security/advisories/mfsa2020-39/",
+                "name": "https://www.mozilla.org/security/advisories/mfsa2020-39/",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1631573",
+                "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1631573",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Permissions Required",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "During ECDSA signature generation, padding applied in the nonce designed to ensure constant-time scalar multiplication was removed, resulting in variable-time execution dependent on secret data. This vulnerability affects Firefox < 80 and Firefox for Android < 80."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "80.0",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:android:*:*",
+                  "versionEndExcluding": "80.0",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-10-08T14:15Z",
+        "lastModifiedDate": "2020-10-26T16:05Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-3739",
+            "ASSIGNER": "secure@dell.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-203"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.dell.com/support/security/en-us/details/DOC-106556/DSA-2019-094-RSA-BSAFE&#174;-Crypto-J-Multiple-Security-Vulnerabilities",
+                "name": "https://www.dell.com/support/security/en-us/details/DOC-106556/DSA-2019-094-RSA-BSAFE&#174;-Crypto-J-Multiple-Security-Vulnerabilities",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+                "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+                "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "RSA BSAFE Crypto-J versions prior to 6.2.5 are vulnerable to Information Exposure Through Timing Discrepancy vulnerabilities during ECDSA key generation. A malicious remote attacker could potentially exploit those vulnerabilities to recover ECDSA keys."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rsa:bsafe_crypto-j:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "6.2.5",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rsa:bsafe_cert-j:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "6.2.4",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rsa:bsafe_ssl-j:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "6.2.4.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2019-09-18T23:15Z",
+        "lastModifiedDate": "2020-10-20T22:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-1547",
+            "ASSIGNER": "openssl-security@openssl.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-311"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=7c1709c2da5414f5b6133d00a03fc8c5bf996c7a",
+                "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=7c1709c2da5414f5b6133d00a03fc8c5bf996c7a",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=21c856b75d81eff61aa63b4f036bb64a85bf6d46",
+                "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=21c856b75d81eff61aa63b4f036bb64a85bf6d46",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=30c22fa8b1d840036b8e203585738df62a03cec8",
+                "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=30c22fa8b1d840036b8e203585738df62a03cec8",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.openssl.org/news/secadv/20190910.txt",
+                "name": "https://www.openssl.org/news/secadv/20190910.txt",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://arxiv.org/abs/1909.01785",
+                "name": "https://arxiv.org/abs/1909.01785",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/Sep/25",
+                "name": "20190912 [slackware-security] openssl (SSA:2019-254-03)",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://packetstormsecurity.com/files/154467/Slackware-Security-Advisory-openssl-Updates.html",
+                "name": "http://packetstormsecurity.com/files/154467/Slackware-Security-Advisory-openssl-Updates.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20190919-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20190919-0002/",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00054.html",
+                "name": "openSUSE-SU-2019:2158",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GY6SNRJP2S7Y42GIIDO3HXPNMDYN2U3A/",
+                "name": "FEDORA-2019-d15aac6c4e",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00072.html",
+                "name": "openSUSE-SU-2019:2189",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2019/09/msg00026.html",
+                "name": "[debian-lts-announce] 20190925 [SECURITY] [DLA 1932-1] openssl security update",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZN4VVQJ3JDCHGIHV4Y2YTXBYQZ6PWQ7E/",
+                "name": "FEDORA-2019-d51641f152",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/Oct/1",
+                "name": "20191001 [SECURITY] [DSA 4539-1] openssl security update",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/Oct/0",
+                "name": "20191001 [SECURITY] [DSA 4540-1] openssl1.0 security update",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "https://www.debian.org/security/2019/dsa-4539",
+                "name": "DSA-4539",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://www.debian.org/security/2019/dsa-4540",
+                "name": "DSA-4540",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00012.html",
+                "name": "openSUSE-SU-2019:2268",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00016.html",
+                "name": "openSUSE-SU-2019:2269",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://support.f5.com/csp/article/K73422160?utm_source=f5support&amp;utm_medium=RSS",
+                "name": "https://support.f5.com/csp/article/K73422160?utm_source=f5support&amp;utm_medium=RSS",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+                "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/201911-04",
+                "name": "GLSA-201911-04",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "https://www.tenable.com/security/tns-2019-08",
+                "name": "https://www.tenable.com/security/tns-2019-08",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://www.tenable.com/security/tns-2019-09",
+                "name": "https://www.tenable.com/security/tns-2019-09",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+                "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20200122-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20200122-0002/",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+                "name": "N/A",
+                "refsource": "N/A",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4376-1/",
+                "name": "USN-4376-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20200416-0003/",
+                "name": "https://security.netapp.com/advisory/ntap-20200416-0003/",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+                "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4376-2/",
+                "name": "USN-4376-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4504-1/",
+                "name": "USN-4504-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+                "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Normally in OpenSSL EC groups always have a co-factor present and this is used in side channel resistant code paths. However, in some cases, it is possible to construct a group using explicit parameters (instead of using a named curve). In those cases it is possible that such a group does not have the cofactor present. This can occur even where all the parameters match a known named curve. If such a curve is used then OpenSSL falls back to non-side channel resistant code paths which may result in full key recovery during an ECDSA signature operation. In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. For the avoidance of doubt libssl is not vulnerable because explicit parameters are never used. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s)."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.0.2",
+                  "versionEndIncluding": "1.0.2s",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.1.0",
+                  "versionEndIncluding": "1.1.0k",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.1.1",
+                  "versionEndIncluding": "1.1.1c",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-09-10T17:15Z",
+        "lastModifiedDate": "2020-10-20T22:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2016-1000342",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-347"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/bcgit/bc-java/commit/843c2e60f67d71faf81d236f448ebbe56c62c647#diff-25c3c78db788365f36839b3f2d3016b9",
+                "name": "https://github.com/bcgit/bc-java/commit/843c2e60f67d71faf81d236f448ebbe56c62c647#diff-25c3c78db788365f36839b3f2d3016b9",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2018/07/msg00009.html",
+                "name": "[debian-lts-announce] 20180707 [SECURITY] [DLA 1418-1] bouncycastle security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3727-1/",
+                "name": "USN-3727-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:2669",
+                "name": "RHSA-2018:2669",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:2927",
+                "name": "RHSA-2018:2927",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20181127-0004/",
+                "name": "https://security.netapp.com/advisory/ntap-20181127-0004/",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+                "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In the Bouncy Castle JCE Provider version 1.55 and earlier ECDSA does not fully validate ASN.1 encoding of signature on verification. It is possible to inject extra elements in the sequence making up the signature and still have it validate, which in some cases may allow the introduction of 'invisible' data into a signed structure."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.55",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-06-04T13:29Z",
+        "lastModifiedDate": "2020-10-20T22:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-0495",
+            "ASSIGNER": "security@debian.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-203"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "name": "https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000426.html",
+                "name": "https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000426.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=9010d1576e278a4274ad3f4aa15776c28f6ba965",
+                "name": "https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=9010d1576e278a4274ad3f4aa15776c28f6ba965",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://dev.gnupg.org/T4011",
+                "name": "https://dev.gnupg.org/T4011",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2018/dsa-4231",
+                "name": "DSA-4231",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3689-2/",
+                "name": "USN-3689-2",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3689-1/",
+                "name": "USN-3689-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1041147",
+                "name": "1041147",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1041144",
+                "name": "1041144",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3692-2/",
+                "name": "USN-3692-2",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3692-1/",
+                "name": "USN-3692-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2018/06/msg00013.html",
+                "name": "[debian-lts-announce] 20180629 [SECURITY] [DLA 1405-1] libgcrypt20 security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3221",
+                "name": "RHSA-2018:3221",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3505",
+                "name": "RHSA-2018:3505",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3850-1/",
+                "name": "USN-3850-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3850-2/",
+                "name": "USN-3850-2",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+                "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:1297",
+                "name": "RHSA-2019:1297",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:1296",
+                "name": "RHSA-2019:1296",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:1543",
+                "name": "RHSA-2019:1543",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:2237",
+                "name": "RHSA-2019:2237",
+                "refsource": "REDHAT",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Libgcrypt before 1.7.10 and 1.8.x before 1.8.3 allows a memory-cache side-channel attack on ECDSA signatures that can be mitigated through the use of blinding during the signing process in the _gcry_ecc_ecdsa_sign function in cipher/ecc-ecdsa.c, aka the Return Of the Hidden Number Problem or ROHNP. To discover an ECDSA key, the attacker needs access to either the local machine or a different virtual machine on the same physical host."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnupg:libgcrypt:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.8.0",
+                  "versionEndExcluding": "1.8.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnupg:libgcrypt:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.7.10",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:traffic_director:11.1.1.9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-06-13T23:29Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-0735",
+            "ASSIGNER": "openssl-security@openssl.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-327"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.openssl.org/news/secadv/20181029.txt",
+                "name": "https://www.openssl.org/news/secadv/20181029.txt",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b1d6d55ece1c26fa2829e2b819b038d7b6d692b4",
+                "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b1d6d55ece1c26fa2829e2b819b038d7b6d692b4",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=56fb454d281a023b3f950d969693553d3f3ceea1",
+                "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=56fb454d281a023b3f950d969693553d3f3ceea1",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1041986",
+                "name": "1041986",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/105750",
+                "name": "105750",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20181105-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20181105-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2018/11/msg00024.html",
+                "name": "[debian-lts-announce] 20181121 [SECURITY] [DLA 1586-1] openssl security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+                "name": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2018/dsa-4348",
+                "name": "DSA-4348",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3840-1/",
+                "name": "USN-3840-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+                "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+                "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+                "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:3700",
+                "name": "RHSA-2019:3700",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+                "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The OpenSSL ECDSA signature algorithm has been shown to be vulnerable to a timing side channel attack. An attacker could use variations in the signing algorithm to recover the private key. Fixed in OpenSSL 1.1.0j (Affected 1.1.0-1.1.0i). Fixed in OpenSSL 1.1.1a (Affected 1.1.1)."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openssl:openssl:1.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.1.0",
+                  "versionEndIncluding": "1.1.0i",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:lts:*:*:*",
+                  "versionStartIncluding": "10.13.0",
+                  "versionEndIncluding": "10.14.1",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "11.0.0",
+                  "versionEndIncluding": "11.4.0",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:netapp:cn1610_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:netapp:cn1610:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:snapdrive:-:*:*:*:*:unix:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:element_software:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:oncommand_unified_manager:*:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:santricity_smi-s_provider:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:oncommand_unified_manager:*:*:*:*:*:vsphere:*:*",
+                  "versionStartIncluding": "9.4",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:steelstore:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:snapdrive:-:*:*:*:*:windows:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:smi-s_provider:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:15.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "17.7",
+                  "versionEndIncluding": "17.12",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "6.0.0",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.55:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:enterprise_manager_base_platform:12.1.0.5.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:enterprise_manager_base_platform:13.2.0.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:enterprise_manager_base_platform:13.3.0.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:application_server:0.9.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.56:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.57:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:8.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:api_gateway:11.1.2.4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:enterprise_manager_ops_center:12.3.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:application_server:1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "5.6.42",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "8.0.0",
+                  "versionEndIncluding": "8.0.13",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "5.0.0",
+                  "versionEndExcluding": "5.2.24",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:15.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:18.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:tuxedo:12.1.1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:application_server:1.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "5.7.0",
+                  "versionEndIncluding": "5.7.24",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:secure_global_desktop:5.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-10-29T13:29Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-11976",
+            "ASSIGNER": "product-security@qualcomm.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-200"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.qualcomm.com/company/product-security/bulletins#_CVE-2018-11976",
+                "name": "https://www.qualcomm.com/company/product-security/bulletins#_CVE-2018-11976",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "ECDSA signature code leaks private keys from secure world to non-secure world in Snapdragon Auto, Snapdragon Compute, Snapdragon Connectivity, Snapdragon Consumer Electronics Connectivity, Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon IoT, Snapdragon Mobile, Snapdragon Voice & Music, Snapdragon Wearables, Snapdragon Wired Infrastructure and Networking in IPQ8074, MDM9150, MDM9206, MDM9607, MDM9650, MDM9655, MSM8909W, MSM8996AU, QCA8081, QCS605, Qualcomm 215, SD 210/SD 212/SD 205, SD 410/12, SD 425, SD 427, SD 430, SD 435, SD 439 / SD 429, SD 450, SD 615/16/SD 415, SD 625, SD 632, SD 636, SD 650/52, SD 712 / SD 710 / SD 670, SD 820, SD 820A, SD 835, SD 845 / SD 850, SD 8CX, SDA660, SDM439, SDM630, SDM660, Snapdragon_High_Med_2016, SXR1130"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:ipq8074_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:ipq8074:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:mdm9150_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:mdm9150:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:mdm9206_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:mdm9607_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:mdm9650_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:mdm9655_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:mdm9655:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:msm8909w_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:msm8996au_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:qca8081_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:qca8081:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:qcs605_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:qcs605:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:qm215_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:qm215:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_210_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_212_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_205_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_410_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_410:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_412_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_412:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_425_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_427_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_430_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_435_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_439_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_439:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_429_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_429:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_450_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_615_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_616_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_415_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_625_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_632_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_632:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_636_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_636:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_650_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_652_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_712_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_712:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_710_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_710:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_670_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_670:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_820_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_820a_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_835_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_845_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_850_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sd_8cx_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sd_8cx:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sda660_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sdm439_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sdm439:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sdm630_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sdm660_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:snapdragon_high_med_2016_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:snapdragon_high_med_2016:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:qualcomm:sxr1130_firmware:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:qualcomm:sxr1130:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-05-24T17:29Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-17478",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-203"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/FGasper/p5-Crypt-Perl/compare/0.32...0.33",
+                "name": "https://github.com/FGasper/p5-Crypt-Perl/compare/0.32...0.33",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "ECDSA/EC/Point.pm in Crypt::Perl before 0.33 does not properly consider timing attacks against the EC point multiplication algorithm."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:p5-crypt-perl_project:p5-crypt-perl:*:*:*:*:*:perl:*:*",
+                  "versionEndExcluding": "0.33",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-08-10T18:15Z",
+        "lastModifiedDate": "2020-08-12T15:31Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-14966",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-347"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/kjur/jsrsasign/releases/tag/8.0.17",
+                "name": "https://github.com/kjur/jsrsasign/releases/tag/8.0.17",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/kjur/jsrsasign/releases/tag/8.0.18",
+                "name": "https://github.com/kjur/jsrsasign/releases/tag/8.0.18",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.npmjs.com/package/jsrsasign",
+                "name": "https://www.npmjs.com/package/jsrsasign",
+                "refsource": "MISC",
+                "tags": [
+                  "Product",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/kjur/jsrsasign/issues/437",
+                "name": "https://github.com/kjur/jsrsasign/issues/437",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://kjur.github.io/jsrsasign/",
+                "name": "https://kjur.github.io/jsrsasign/",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20200724-0001/",
+                "name": "https://security.netapp.com/advisory/ntap-20200724-0001/",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in the jsrsasign package through 8.0.18 for Node.js. It allows a malleability in ECDSA signatures by not checking overflows in the length of a sequence and '0' characters appended or prepended to an integer. The modified signatures are verified as valid. This could have a security-relevant impact if an application relied on a single canonical signature."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:jsrsasign_project:jsrsasign:*:*:*:*:*:node.js:*:*",
+                  "versionEndIncluding": "8.0.18",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-06-22T12:15Z",
+        "lastModifiedDate": "2020-07-24T14:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-15316",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-798"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://pierrekim.github.io/blog/2020-03-09-zyxel-secumanager-0day-vulnerabilities.html",
+                "name": "https://pierrekim.github.io/blog/2020-03-09-zyxel-secumanager-0day-vulnerabilities.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.zyxel.com/support/vulnerabilities-of-CloudCNM-SecuManager.shtml",
+                "name": "https://www.zyxel.com/support/vulnerabilities-of-CloudCNM-SecuManager.shtml",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Zyxel CloudCNM SecuManager 3.1.0 and 3.1.1 has a hardcoded ECDSA SSH key for the root account within the /opt/axess chroot directory tree."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:zyxel:cloudcnm_secumanager:3.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:zyxel:cloudcnm_secumanager:3.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-06-29T16:15Z",
+        "lastModifiedDate": "2020-07-06T17:28Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-15313",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-798"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://pierrekim.github.io/blog/2020-03-09-zyxel-secumanager-0day-vulnerabilities.html",
+                "name": "https://pierrekim.github.io/blog/2020-03-09-zyxel-secumanager-0day-vulnerabilities.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.zyxel.com/support/vulnerabilities-of-CloudCNM-SecuManager.shtml",
+                "name": "https://www.zyxel.com/support/vulnerabilities-of-CloudCNM-SecuManager.shtml",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Zyxel CloudCNM SecuManager 3.1.0 and 3.1.1 has a hardcoded ECDSA SSH key for the root account."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:zyxel:cloudcnm_secumanager:3.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:zyxel:cloudcnm_secumanager:3.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-06-29T15:15Z",
+        "lastModifiedDate": "2020-07-02T18:09Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-13822",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-190"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://yondon.blog/2019/01/01/how-not-to-use-ecdsa/",
+                "name": "https://yondon.blog/2019/01/01/how-not-to-use-ecdsa/",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.npmjs.com/package/elliptic",
+                "name": "https://www.npmjs.com/package/elliptic",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/indutny/elliptic/issues/226",
+                "name": "https://github.com/indutny/elliptic/issues/226",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://medium.com/@herman_10687/malleability-attack-why-it-matters-7b5f59fb99a4",
+                "name": "https://medium.com/@herman_10687/malleability-attack-why-it-matters-7b5f59fb99a4",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The Elliptic package 6.5.2 for Node.js allows ECDSA signature malleability via variations in encoding, leading '\\0' bytes, or integer overflows. This could conceivably have a security-relevant impact if an application relied on a single canonical signature."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:elliptic_project:elliptic:6.5.2:*:*:*:*:node.js:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:L",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "LOW",
+              "baseScore": 7.7,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 5.5
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-06-04T15:15Z",
+        "lastModifiedDate": "2020-07-02T13:17Z"
+      }
+    ]
+  }
+}

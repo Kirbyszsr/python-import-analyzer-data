@@ -1,0 +1,82 @@
+[
+  {
+    "cveID": "CVE-2020-28975",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-21T21:15Z",
+    "lastModifiedDate": "2020-12-03T18:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "** DISPUTED ** svm_predict_values in svm.cpp in Libsvm v324, as used in scikit-learn 0.23.2 and other products, allows attackers to cause a denial of service (segmentation fault) via a crafted model SVM (introduced via pickle, json, or any other model permanence standard) with a large value in the _n_support array. NOTE: the scikit-learn vendor's position is that the behavior can only occur if the library's API is violated by an application that changes a private attribute."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/scikit-learn/scikit-learn/issues/18891",
+        "name": "https://github.com/scikit-learn/scikit-learn/issues/18891",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/cjlin1/libsvm/blob/9a3a9708926dec87d382c43b203f2ca19c2d56a0/svm.cpp#L2501",
+        "name": "https://github.com/cjlin1/libsvm/blob/9a3a9708926dec87d382c43b203f2ca19c2d56a0/svm.cpp#L2501",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2020/Nov/44",
+        "name": "20201130 scikit-learn 0.23.2 Local Denial of Service",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/160281/SciKit-Learn-0.23.2-Denial-Of-Service.html",
+        "name": "http://packetstormsecurity.com/files/160281/SciKit-Learn-0.23.2-Denial-Of-Service.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-13092",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-15T19:15Z",
+    "lastModifiedDate": "2020-05-19T19:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "** DISPUTED ** scikit-learn (aka sklearn) through 0.23.0 can unserialize and execute commands from an untrusted file that is passed to the joblib.load() function, if __reduce__ makes an os.system call. NOTE: third parties dispute this issue because the joblib.load() function is documented as unsafe and it is the user's responsibility to use the function in a secure manner."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/0FuzzingQ/vuln/blob/master/sklearn%20unserialize.md",
+        "name": "https://github.com/0FuzzingQ/vuln/blob/master/sklearn%20unserialize.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations",
+        "name": "https://scikit-learn.org/stable/modules/model_persistence.html#security-maintainability-limitations",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

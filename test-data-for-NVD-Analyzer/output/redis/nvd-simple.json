@@ -1,0 +1,986 @@
+[
+  {
+    "cveID": "CVE-2021-33026",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-13T23:15Z",
+    "lastModifiedDate": "2021-05-13T23:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Flask-Caching extension through 1.10.1 for Flask relies on Pickle for serialization, which may lead to remote code execution or local privilege escalation. If an attacker gains access to cache storage (e.g., filesystem, Memcached, Redis, etc.), they can construct a crafted payload, poison the cache, and execute Python code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/sh4nks/flask-caching/pull/209",
+        "name": "https://github.com/sh4nks/flask-caching/pull/209",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32030",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T15:15Z",
+    "lastModifiedDate": "2021-05-13T20:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The administrator application on ASUS GT-AC2900 devices before 3.0.0.4.386.42643 allows authentication bypass when processing remote input from an unauthenticated user, leading to unauthorized access to the administrator interface. This relates to handle_request in router/httpd/httpd.c and auth_check in web_hook.o. An attacker-supplied value of '\\0' matches the device's default value of '\\0' in some situations."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0010.md",
+        "name": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0010.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.asus.com/Networking-IoT-Servers/WiFi-Routers/ASUS-Gaming-Routers/RT-AC2900/HelpDesk_BIOS/",
+        "name": "https://www.asus.com/Networking-IoT-Servers/WiFi-Routers/ASUS-Gaming-Routers/RT-AC2900/HelpDesk_BIOS/",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29478",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-04T16:15Z",
+    "lastModifiedDate": "2021-05-12T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker. An integer overflow bug in Redis 6.2 before 6.2.3 could be exploited to corrupt the heap and potentially result with remote code execution. Redis 6.0 and earlier are not directly affected by this issue. The problem is fixed in version 6.2.3. An additional workaround to mitigate the problem without patching the `redis-server` executable is to prevent users from modifying the `set-max-intset-entries` configuration parameter. This can be done using ACL to restrict unprivileged users from using the `CONFIG SET` command."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/redis/redis/security/advisories/GHSA-qh52-crrg-44g3",
+        "name": "https://github.com/redis/redis/security/advisories/GHSA-qh52-crrg-44g3",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://redis.io/",
+        "name": "https://redis.io/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EZJ6JGQ2ETZB2DWTQSGCOGG7EF3ILV4V/",
+        "name": "FEDORA-2021-3b267a756c",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BPWBIZXA67JFIB63W2CNVVILCGIC2ME5/",
+        "name": "FEDORA-2021-8b19c99d6a",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29477",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-04T16:15Z",
+    "lastModifiedDate": "2021-05-12T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker. An integer overflow bug in Redis version 6.0 or newer could be exploited using the `STRALGO LCS` command to corrupt the heap and potentially result with remote code execution. The problem is fixed in version 6.2.3 and 6.0.13. An additional workaround to mitigate the problem without patching the redis-server executable is to use ACL configuration to prevent clients from using the `STRALGO LCS` command."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://redis.io/",
+        "name": "https://redis.io/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/redis/redis/security/advisories/GHSA-vqxj-26vj-996g",
+        "name": "https://github.com/redis/redis/security/advisories/GHSA-vqxj-26vj-996g",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EZJ6JGQ2ETZB2DWTQSGCOGG7EF3ILV4V/",
+        "name": "FEDORA-2021-3b267a756c",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BPWBIZXA67JFIB63W2CNVVILCGIC2ME5/",
+        "name": "FEDORA-2021-8b19c99d6a",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29469",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-23T18:15Z",
+    "lastModifiedDate": "2021-05-03T19:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Node-redis is a Node.js Redis client. Before version 3.1.1, when a client is in monitoring mode, the regex begin used to detected monitor messages could cause exponential backtracking on some strings. This issue could lead to a denial of service. The issue is patched in version 3.1.1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/NodeRedis/node-redis/releases/tag/v3.1.1",
+        "name": "https://github.com/NodeRedis/node-redis/releases/tag/v3.1.1",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/NodeRedis/node-redis/commit/2d11b6dc9b9774464a91fb4b448bad8bf699629e",
+        "name": "https://github.com/NodeRedis/node-redis/commit/2d11b6dc9b9774464a91fb4b448bad8bf699629e",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/NodeRedis/node-redis/security/advisories/GHSA-35q2-47q7-3pc3",
+        "name": "https://github.com/NodeRedis/node-redis/security/advisories/GHSA-35q2-47q7-3pc3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3470",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-03-31T14:15Z",
+    "lastModifiedDate": "2021-04-05T18:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A heap overflow issue was found in Redis in versions before 5.0.10, before 6.0.9 and before 6.2.0 when using a heap allocator other than jemalloc or glibc's malloc, leading to potential out of bound write or process crash. Effectively this flaw does not affect the vast majority of users, who use jemalloc or glibc malloc."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943623",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1943623",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21309",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-02-26T22:15Z",
+    "lastModifiedDate": "2021-03-31T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Redis is an open-source, in-memory database that persists on disk. In affected versions of Redis an integer overflow bug in 32-bit Redis version 4.0 or newer could be exploited to corrupt the heap and potentially result with remote code execution. Redis 4.0 or newer uses a configurable limit for the maximum supported bulk input size. By default, it is 512MB which is a safe value for all platforms. If the limit is significantly increased, receiving a large request from a client may trigger several integer overflow scenarios, which would result with buffer overflow and heap corruption. We believe this could in certain conditions be exploited for remote code execution. By default, authenticated Redis users have access to all configuration parameters and can therefore use the \u201cCONFIG SET proto-max-bulk-len\u201d to change the safe default, making the system vulnerable. **This problem only affects 32-bit Redis (on a 32-bit system, or as a 32-bit executable running on a 64-bit system).** The problem is fixed in version 6.2, and the fix is back ported to 6.0.11 and 5.0.11. Make sure you use one of these versions if you are running 32-bit Redis. An additional workaround to mitigate the problem without patching the redis-server executable is to prevent clients from directly executing `CONFIG SET`: Using Redis 6.0 or newer, ACL configuration can be used to block the command. Using older versions, the `rename-command` configuration directive can be used to rename the command to a random string unknown to users, rendering it inaccessible. Please note that this workaround may have an additional impact on users or operational systems that expect `CONFIG SET` to behave in certain ways."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/redis/redis/commit/c992857618db99776917f10bf4f2345a5fdc78b0",
+        "name": "https://github.com/redis/redis/commit/c992857618db99776917f10bf4f2345a5fdc78b0",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/redis/redis/security/advisories/GHSA-hgj8-vff2-7cjf",
+        "name": "https://github.com/redis/redis/security/advisories/GHSA-hgj8-vff2-7cjf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/redis/redis/pull/8522",
+        "name": "https://github.com/redis/redis/pull/8522",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-02",
+        "name": "GLSA-202103-02",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22194",
+    "cveASSIGNER": "cve@gitlab.com",
+    "publishedDate": "2021-03-26T20:15Z",
+    "lastModifiedDate": "2021-03-30T19:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In all versions of GitLab starting from 13.7, marshalled session keys were being stored in Redis."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/262107",
+        "name": "https://gitlab.com/gitlab-org/gitlab/-/issues/262107",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22194.json",
+        "name": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22194.json",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9741",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-13T08:29Z",
+    "lastModifiedDate": "2021-03-22T13:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in net/http in Go 1.11.5. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the second argument to http.NewRequest with \\r\\n followed by an HTTP header or a Redis command."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/golang/go/issues/30794",
+        "name": "https://github.com/golang/go/issues/30794",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/107432",
+        "name": "107432",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/04/msg00007.html",
+        "name": "[debian-lts-announce] 20190403 [SECURITY] [DLA 1749-1] golang security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TOOVCEPQM7TZA6VEZEEB7QZABXNHQEHH/",
+        "name": "FEDORA-2019-d05bc7e3df",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1300",
+        "name": "RHSA-2019:1300",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1519",
+        "name": "RHSA-2019:1519",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00015.html",
+        "name": "[debian-lts-announce] 20210313 [SECURITY] [DLA 2592-1] golang-1.8 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00014.html",
+        "name": "[debian-lts-announce] 20210313 [SECURITY] [DLA 2591-1] golang-1.7 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9947",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-23T18:29Z",
+    "lastModifiedDate": "2021-02-04T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the path component of a URL that lacks a ? character) followed by an HTTP header or a Redis command. This is similar to the CVE-2019-9740 query string issue. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.python.org/issue35906",
+        "name": "https://bugs.python.org/issue35906",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190404-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20190404-0004/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXASHCDD4PQFKTMKQN4YOP5ZH366ABN4/",
+        "name": "FEDORA-2019-1ffd6b6064",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1260",
+        "name": "RHSA-2019:1260",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JMWSKTNOHSUOT3L25QFJAVCFYZX46FYK/",
+        "name": "FEDORA-2019-ec26883852",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00023.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-1] python3.4 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00022.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1834-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00026.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-2] python3.4 regression update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2030",
+        "name": "RHSA-2019:2030",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-2/",
+        "name": "USN-4127-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-1/",
+        "name": "USN-4127-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00062.html",
+        "name": "openSUSE-SU-2019:2389",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00063.html",
+        "name": "openSUSE-SU-2019:2393",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3335",
+        "name": "RHSA-2019:3335",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3520",
+        "name": "RHSA-2019:3520",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3725",
+        "name": "RHSA-2019:3725",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00040.html",
+        "name": "openSUSE-SU-2020:0086",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-26",
+        "name": "GLSA-202003-26",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html",
+        "name": "[debian-lts-announce] 20200715 [SECURITY] [DLA 2280-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00034.html",
+        "name": "[debian-lts-announce] 20200822 [SECURITY] [DLA 2337-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/02/04/2",
+        "name": "[oss-security] 20210204 [CVE-2020-15693, CVE-2020-15694] Nim - stdlib Httpclient - Header Crlf Injection & Server Response Validation",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9740",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-13T03:29Z",
+    "lastModifiedDate": "2021-02-04T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the query string after a ? character) followed by an HTTP header or a Redis command. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.python.org/issue36276",
+        "name": "https://bugs.python.org/issue36276",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/107466",
+        "name": "107466",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXASHCDD4PQFKTMKQN4YOP5ZH366ABN4/",
+        "name": "FEDORA-2019-1ffd6b6064",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1260",
+        "name": "RHSA-2019:1260",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JMWSKTNOHSUOT3L25QFJAVCFYZX46FYK/",
+        "name": "FEDORA-2019-ec26883852",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190619-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20190619-0005/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00023.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-1] python3.4 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00022.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1834-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00026.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-2] python3.4 regression update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/44TS66GJMO5H3RLMVZEBGEFTB6O2LJJU/",
+        "name": "FEDORA-2019-7723d4774a",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2ORNTF62QPLMJXIQ7KTZQ2776LMIXEKL/",
+        "name": "FEDORA-2019-7df59302e0",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2030",
+        "name": "RHSA-2019:2030",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-2/",
+        "name": "USN-4127-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00039.html",
+        "name": "openSUSE-SU-2019:2131",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00041.html",
+        "name": "openSUSE-SU-2019:2133",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-1/",
+        "name": "USN-4127-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Oct/29",
+        "name": "20191021 [slackware-security] python (SSA:2019-293-01)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/154927/Slackware-Security-Advisory-python-Updates.html",
+        "name": "http://packetstormsecurity.com/files/154927/Slackware-Security-Advisory-python-Updates.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3335",
+        "name": "RHSA-2019:3335",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3520",
+        "name": "RHSA-2019:3520",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3725",
+        "name": "RHSA-2019:3725",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M34WOYCDKTDE5KLUACE2YIEH7D37KHRX/",
+        "name": "FEDORA-2019-b06ec6159b",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JCPGLTTOBB3QEARDX4JOYURP6ELNNA2V/",
+        "name": "FEDORA-2019-d202cda4f8",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4X3HW5JRZ7GCPSR7UHJOLD7AWLTQCDVR/",
+        "name": "FEDORA-2019-57462fa10d",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-26",
+        "name": "GLSA-202003-26",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html",
+        "name": "[debian-lts-announce] 20200715 [SECURITY] [DLA 2280-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00034.html",
+        "name": "[debian-lts-announce] 20200822 [SECURITY] [DLA 2337-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/02/04/2",
+        "name": "[oss-security] 20210204 [CVE-2020-15693, CVE-2020-15694] Nim - stdlib Httpclient - Header Crlf Injection & Server Response Validation",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14147",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-06-15T18:15Z",
+    "lastModifiedDate": "2021-01-20T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An integer overflow in the getnum function in lua_struct.c in Redis before 6.0.3 allows context-dependent attackers with permission to run Lua code in a Redis session to cause a denial of service (memory corruption and application crash) or possibly bypass intended sandbox restrictions via a large number, which triggers a stack-based buffer overflow. NOTE: this issue exists because of a CVE-2015-8080 regression."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/antirez/redis/commit/ef764dde1cca2f25d00686673d1bc89448819571",
+        "name": "https://github.com/antirez/redis/commit/ef764dde1cca2f25d00686673d1bc89448819571",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/antirez/redis/pull/6875",
+        "name": "https://github.com/antirez/redis/pull/6875",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4731",
+        "name": "DSA-4731",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00058.html",
+        "name": "openSUSE-SU-2020:1035",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202008-17",
+        "name": "GLSA-202008-17",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-23249",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-05T22:15Z",
+    "lastModifiedDate": "2021-01-08T16:04Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "GigaVUE-OS (GVOS) 5.4 - 5.9 stores a Redis database password in plaintext."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://community.gigamon.com/gigamoncp/s/article/Field-Notice-Gigamon-addressing-multiple-vulnerabilities-in-GigaVUE-OS",
+        "name": "https://community.gigamon.com/gigamoncp/s/article/Field-Notice-Gigamon-addressing-multiple-vulnerabilities-in-GigaVUE-OS",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-35668",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-23T23:15Z",
+    "lastModifiedDate": "2020-12-28T18:11Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "RedisGraph 2.x through 2.2.11 has a NULL Pointer Dereference that leads to a server crash because it mishandles an unquoted string, such as an alias that has not yet been introduced."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/RedisGraph/RedisGraph/issues/1502",
+        "name": "https://github.com/RedisGraph/RedisGraph/issues/1502",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/RedisGraph/RedisGraph/pull/1503",
+        "name": "https://github.com/RedisGraph/RedisGraph/pull/1503",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27486",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-16T21:15Z",
+    "lastModifiedDate": "2020-12-02T15:08Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Garmin Forerunner 235 before 8.20 is affected by: Buffer Overflow. The component is: ConnectIQ TVM. The attack vector is: To exploit the vulnerability, the attacker must upload a malicious ConnectIQ application to the ConnectIQ store. The ConnectIQ program interpreter trusts the string length provided in the data section of the PRG file. It allocates memory for the string immediately, and then copies the string into the TVM object by using a function similar to strcpy. This copy can exceed the length of the allocated string data and overwrite heap data. A successful exploit would allow a ConnectIQ app store application to escape and perform activities outside the restricted application execution environment."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0006.md",
+        "name": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0006.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27485",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-16T21:15Z",
+    "lastModifiedDate": "2020-12-02T15:02Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Garmin Forerunner 235 before 8.20 is affected by: Array index error. The component is: ConnectIQ TVM. The attack vector is: To exploit the vulnerability, the attacker must upload a malicious ConnectIQ application to the ConnectIQ store. The ConnectIQ program interpreter fails to check the index provided when accessing the local variable in the LGETV and LPUTV instructions. This provides the ability to both read and write memory outside the bounds of the TVM context allocation. It can be leveraged to construct a use-after-free scenario, leading to a constrained read/write primitive across the entire MAX32630 address space. A successful exploit would allow a ConnectIQ app store application to escape and perform activities outside the restricted application execution environment."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0005.md",
+        "name": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0005.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27484",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-16T21:15Z",
+    "lastModifiedDate": "2020-12-02T15:02Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Garmin Forerunner 235 before 8.20 is affected by: Integer Overflow. The component is: ConnectIQ TVM. The attack vector is: To exploit the vulnerability, the attacker must upload a malicious ConnectIQ application to the ConnectIQ store. The ConnectIQ program interpreter fails to check for overflow when allocating the array for the NEWA instruction. This a constrained read/write primitive across the entire MAX32630 address space. A successful exploit would allow a ConnectIQ app store application to escape and perform activities outside the restricted application execution environment."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0004.md",
+        "name": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0004.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27483",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-16T21:15Z",
+    "lastModifiedDate": "2020-12-02T14:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Garmin Forerunner 235 before 8.20 is affected by: Array index error. The component is: ConnectIQ TVM. The attack vector is: To exploit the vulnerability, the attacker must upload a malicious ConnectIQ application to the ConnectIQ store. The ConnectIQ program interpreter trusts the offset provided for the stack value duplication instruction, DUP. The offset is unchecked and memory prior to the start of the execution stack can be read and treated as a TVM object. A successful exploit could use the vulnerability to leak runtime information such as the heap handle or pointer for a number of TVM context variables. Some reachable values may be controlled enough to forge a TVM object on the stack, leading to possible remote code execution."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0007.md",
+        "name": "https://github.com/atredispartners/advisories/blob/master/ATREDIS-2020-0007.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27163",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-10-16T03:15Z",
+    "lastModifiedDate": "2020-10-26T17:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "phpRedisAdmin before 1.13.2 allows XSS via the login.php username parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/erikdubbelboer/phpRedisAdmin/commit/eddaa674536d2e76e6d0b4efeb00604e992eab8f",
+        "name": "https://github.com/erikdubbelboer/phpRedisAdmin/commit/eddaa674536d2e76e6d0b4efeb00604e992eab8f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-8165",
+    "cveASSIGNER": "cve-assignments@hackerone.com",
+    "publishedDate": "2020-06-19T18:15Z",
+    "lastModifiedDate": "2020-10-17T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A deserialization of untrusted data vulnernerability exists in rails < 5.2.4.3, rails < 6.0.3.1 that can allow an attacker to unmarshal user-provided objects in MemCacheStore and RedisCacheStore potentially resulting in an RCE."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://groups.google.com/g/rubyonrails-security/c/bv6fW4S0Y1c",
+        "name": "https://groups.google.com/g/rubyonrails-security/c/bv6fW4S0Y1c",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://hackerone.com/reports/413388",
+        "name": "https://hackerone.com/reports/413388",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/06/msg00022.html",
+        "name": "[debian-lts-announce] 20200619 [SECURITY] [DLA 2251-1] rails security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://weblog.rubyonrails.org/2020/5/18/Rails-5-2-4-3-and-6-0-3-1-have-been-released/",
+        "name": "https://weblog.rubyonrails.org/2020/5/18/Rails-5-2-4-3-and-6-0-3-1-have-been-released/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00013.html",
+        "name": "[debian-lts-announce] 20200720 [SECURITY] [DLA 2282-1] rails security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4766",
+        "name": "DSA-4766",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00031.html",
+        "name": "openSUSE-SU-2020:1677",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00034.html",
+        "name": "openSUSE-SU-2020:1679",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  }
+]

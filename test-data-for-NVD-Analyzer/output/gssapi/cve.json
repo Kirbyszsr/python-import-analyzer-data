@@ -1,0 +1,5322 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 36,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-16T15:00Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-25216",
+            "ASSIGNER": "security-officer@isc.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-617"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://kb.isc.org/v1/docs/cve-2021-25215",
+                "name": "https://kb.isc.org/v1/docs/cve-2021-25215",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Not Applicable"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/04/29/1",
+                "name": "[oss-security] 20210428 ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/04/29/2",
+                "name": "[oss-security] 20210429 Re: ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/04/29/3",
+                "name": "[oss-security] 20210429 Re: ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/04/29/4",
+                "name": "[oss-security] 20210429 Re: ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4909",
+                "name": "DSA-4909",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00001.html",
+                "name": "[debian-lts-announce] 20210504 [SECURITY] [DLA 2647-1] bind9 security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In BIND 9.5.0 -> 9.11.29, 9.12.0 -> 9.16.13, and versions BIND 9.11.3-S1 -> 9.11.29-S1 and 9.16.8-S1 -> 9.16.13-S1 of BIND Supported Preview Edition, as well as release versions 9.17.0 -> 9.17.1 of the BIND 9.17 development branch, BIND servers are vulnerable if they are running an affected version and are configured to use GSS-TSIG features. In a configuration which uses BIND's default settings the vulnerable code path is not exposed, but a server can be rendered vulnerable by explicitly setting values for the tkey-gssapi-keytab or tkey-gssapi-credential configuration options. Although the default configuration is not vulnerable, GSS-TSIG is frequently used in networks where BIND is integrated with Samba, as well as in mixed-server environments that combine BIND servers with Active Directory domain controllers. For servers that meet these conditions, the ISC SPNEGO implementation is vulnerable to various attacks, depending on the CPU architecture for which BIND was built: For named binaries compiled for 64-bit platforms, this flaw can be used to trigger a buffer over-read, leading to a server crash. For named binaries compiled for 32-bit platforms, this flaw can be used to trigger a server crash due to a buffer overflow and possibly also to achieve remote code execution. We have determined that standard SPNEGO implementations are available in the MIT and Heimdal Kerberos libraries, which support a broad range of operating systems, rendering the ISC implementation unnecessary and obsolete. Therefore, to reduce the attack surface for BIND users, we will be removing the ISC SPNEGO implementation in the April releases of BIND 9.11 and 9.16 (it had already been dropped from BIND 9.17). We would not normally remove something from a stable ESV (Extended Support Version) of BIND, but since system libraries can replace the ISC SPNEGO implementation, we have made an exception in this case for reasons of stability and security."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:*:*:*:*:-:*:*:*",
+                  "versionStartIncluding": "9.0.0",
+                  "versionEndExcluding": "9.11.31",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.9.3:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.9.12:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.9.13:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.10.5:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.10.7:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.3:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.5:s3:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.5:s5:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.5:s6:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.6:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.7:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.8:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.12:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.21:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.27:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.29:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:*:*:*:*:-:*:*:*",
+                  "versionStartIncluding": "9.12.0",
+                  "versionEndExcluding": "9.16.15",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.16.8:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.16.11:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.16.13:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:*:*:*:*:-:*:*:*",
+                  "versionStartIncluding": "9.17.0",
+                  "versionEndExcluding": "9.17.12",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-04-29T01:15Z",
+        "lastModifiedDate": "2021-05-12T17:09Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-8625",
+            "ASSIGNER": "security-officer@isc.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-120"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://kb.isc.org/v1/docs/cve-2020-8625",
+                "name": "https://kb.isc.org/v1/docs/cve-2020-8625",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Mitigation",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4857",
+                "name": "DSA-4857",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/02/19/1",
+                "name": "[oss-security] 20210218 BIND Operational Notification: Enabling the new BIND option \"stale-answer-client-timeout\" can result in unexpected server termination",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00029.html",
+                "name": "[debian-lts-announce] 20210219 [SECURITY] [DLA 2568-1] bind9 security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/02/20/2",
+                "name": "[oss-security] 20210220 BIND Operational Notification: Zone journal (.jnl) file incompatibility,after upgrading to BIND 9.16.12 and 9.17",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-195/",
+                "name": "https://www.zerodayinitiative.com/advisories/ZDI-21-195/",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QWCMBOSZOJIIET7BWTRYS3HLX5TSDKHX/",
+                "name": "FEDORA-2021-0595625865",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KYXAF7G45RXDVNUTWWCI2CVTHRZ67LST/",
+                "name": "FEDORA-2021-28f97e232d",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210319-0001/",
+                "name": "https://security.netapp.com/advisory/ntap-20210319-0001/",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EBTPWRQWRQEJNWY4NHO4WLS4KLJ3ERHZ/",
+                "name": "FEDORA-2021-8b4744f152",
+                "refsource": "FEDORA",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "BIND servers are vulnerable if they are running an affected version and are configured to use GSS-TSIG features. In a configuration which uses BIND's default settings the vulnerable code path is not exposed, but a server can be rendered vulnerable by explicitly setting valid values for the tkey-gssapi-keytab or tkey-gssapi-credentialconfiguration options. Although the default configuration is not vulnerable, GSS-TSIG is frequently used in networks where BIND is integrated with Samba, as well as in mixed-server environments that combine BIND servers with Active Directory domain controllers. The most likely outcome of a successful exploitation of the vulnerability is a crash of the named process. However, remote code execution, while unproven, is theoretically possible. Affects: BIND 9.5.0 -> 9.11.27, 9.12.0 -> 9.16.11, and versions BIND 9.11.3-S1 -> 9.11.27-S1 and 9.16.8-S1 -> 9.16.11-S1 of BIND Supported Preview Edition. Also release versions 9.17.0 -> 9.17.1 of the BIND 9.17 development branch"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "9.5.0",
+                  "versionEndIncluding": "9.11.27",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.3:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.5:s3:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.5:s5:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.6:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.7:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.8:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.21:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.11.27:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "9.12.0",
+                  "versionEndIncluding": "9.16.11",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.16.8:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.16.11:s1:*:*:supported_preview:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.17.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:isc:bind:9.17.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-02-17T23:15Z",
+        "lastModifiedDate": "2021-03-19T22:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-12658",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-667"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://pagure.io/gssproxy/c/cb761412e299ef907f22cd7c4146d50c8a792003?branch=master",
+                "name": "https://pagure.io/gssproxy/c/cb761412e299ef907f22cd7c4146d50c8a792003?branch=master",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/gssapi/gssproxy/commit/cb761412e299ef907f22cd7c4146d50c8a792003",
+                "name": "https://github.com/gssapi/gssproxy/commit/cb761412e299ef907f22cd7c4146d50c8a792003",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/gssapi/gssproxy/compare/v0.8.2...v0.8.3",
+                "name": "https://github.com/gssapi/gssproxy/compare/v0.8.2...v0.8.3",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/01/msg00004.html",
+                "name": "[debian-lts-announce] 20210104 [SECURITY] [DLA 2516-1] gssproxy security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "** DISPUTED ** gssproxy (aka gss-proxy) before 0.8.3 does not unlock cond_mutex before pthread exit in gp_worker_main() in gp_workers.c. NOTE: An upstream comment states \"We are already on a shutdown path when running the code in question, so a DoS there doesn't make any sense, and there has been no additional information provided us (as upstream) to indicate why this would be a problem.\""
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gssproxy_project:gssproxy:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "0.8.3",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-12-31T01:15Z",
+        "lastModifiedDate": "2021-02-08T13:46Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2015-2695",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-763"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/krb5/krb5/commit/b51b33f2bc5d1497ddf5bd107f791c101695000d",
+                "name": "https://github.com/krb5/krb5/commit/b51b33f2bc5d1497ddf5bd107f791c101695000d",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8244",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8244",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html",
+                "name": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/90687",
+                "name": "90687",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00022.html",
+                "name": "openSUSE-SU-2015:1997",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00014.html",
+                "name": "openSUSE-SU-2015:1928",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00007.html",
+                "name": "SUSE-SU-2015:1898",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00006.html",
+                "name": "SUSE-SU-2015:1897",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-2810-1",
+                "name": "USN-2810-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2015/dsa-3395",
+                "name": "DSA-3395",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1034084",
+                "name": "1034084",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/201611-14",
+                "name": "GLSA-201611-14",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "lib/gssapi/spnego/spnego_mech.c in MIT Kerberos 5 (aka krb5) before 1.14 relies on an inappropriate context handle, which allows remote attackers to cause a denial of service (incorrect pointer read and process crash) via a crafted SPNEGO packet that is mishandled during a gss_inquire_context call."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.14",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_desktop:11:sp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_desktop:11:sp4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_desktop:12:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_server:11:sp3:*:*:*:vmware:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_server:11:sp4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_server:12:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_software_development_kit:11:sp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_software_development_kit:11:sp4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2015-11-09T03:59Z",
+        "lastModifiedDate": "2021-02-02T19:05Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2014-4341",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-125"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/krb5/krb5/commit/e6ae703ae597d798e310368d52b8f38ee11c6a73",
+                "name": "https://github.com/krb5/krb5/commit/e6ae703ae597d798e310368d52b8f38ee11c6a73",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7949",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7949",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2014/dsa-3000",
+                "name": "DSA-3000",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://security.gentoo.org/glsa/glsa-201412-53.xml",
+                "name": "GLSA-201412-53",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0439.html",
+                "name": "RHSA-2015:0439",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1030706",
+                "name": "1030706",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/68909",
+                "name": "68909",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2014:165",
+                "name": "MDVSA-2014:165",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/60448",
+                "name": "60448",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/60082",
+                "name": "60082",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/59102",
+                "name": "59102",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2014-August/136360.html",
+                "name": "FEDORA-2014-8189",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://aix.software.ibm.com/aix/efixes/security/nas_advisory1.asc",
+                "name": "http://aix.software.ibm.com/aix/efixes/security/nas_advisory1.asc",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "name": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/94904",
+                "name": "mit-kerberos-cve20144341-dos(94904)",
+                "refsource": "XF",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "MIT Kerberos 5 (aka krb5) before 1.12.2 allows remote attackers to cause a denial of service (buffer over-read and application crash) by injecting invalid tokens into a GSSAPI application session."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.12.2",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_eus:7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_eus:7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_eus:7.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_eus:7.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:7.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_eus:7.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_tus:7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_tus:7.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_tus:7.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2014-07-20T11:12Z",
+        "lastModifiedDate": "2021-02-02T19:00Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2015-2696",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-18"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8244",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8244",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/krb5/krb5/commit/e04f0283516e80d2f93366e0d479d13c9b5c8c2a",
+                "name": "https://github.com/krb5/krb5/commit/e04f0283516e80d2f93366e0d479d13c9b5c8c2a",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/90675",
+                "name": "90675",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00022.html",
+                "name": "openSUSE-SU-2015:1997",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00014.html",
+                "name": "openSUSE-SU-2015:1928",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00006.html",
+                "name": "SUSE-SU-2015:1897",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-2810-1",
+                "name": "USN-2810-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2015/dsa-3395",
+                "name": "DSA-3395",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1034084",
+                "name": "1034084",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/201611-14",
+                "name": "GLSA-201611-14",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "lib/gssapi/krb5/iakerb.c in MIT Kerberos 5 (aka krb5) before 1.14 relies on an inappropriate context handle, which allows remote attackers to cause a denial of service (incorrect pointer read and process crash) via a crafted IAKERB packet that is mishandled during a gss_inquire_context call."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.14",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_desktop:12:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_server:12:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:linux_enterprise_software_development_kit:12:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:-:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:N/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.1
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2015-11-09T03:59Z",
+        "lastModifiedDate": "2021-02-02T18:51Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2007-2442",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://web.mit.edu/kerberos/www/advisories/MITKRB5-SA-2007-004.txt",
+                "name": "http://web.mit.edu/kerberos/www/advisories/MITKRB5-SA-2007-004.txt",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kb.cert.org/vuls/id/356961",
+                "name": "VU#356961",
+                "refsource": "CERT-VN",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory",
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://www.us-cert.gov/cas/techalerts/TA07-177A.html",
+                "name": "TA07-177A",
+                "refsource": "CERT",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory",
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://lists.grok.org.uk/pipermail/full-disclosure/2007-September/065902.html",
+                "name": "20070920 VMSA-2007-0006 Critical security updates for all supported versions of VMware ESX Server, VMware Server, VMware Workstation, VMware ACE, and VMware Player",
+                "refsource": "FULLDISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2007-004.txt",
+                "name": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2007-004.txt",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://issues.rpath.com/browse/RPL-1499",
+                "name": "https://issues.rpath.com/browse/RPL-1499",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://secure-support.novell.com/KanisaPlatform/Publishing/773/3248163_f.SAL_Public.html",
+                "name": "https://secure-support.novell.com/KanisaPlatform/Publishing/773/3248163_f.SAL_Public.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://docs.info.apple.com/article.html?artnum=306172",
+                "name": "http://docs.info.apple.com/article.html?artnum=306172",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce//2007/Jul/msg00004.html",
+                "name": "APPLE-SA-2007-07-31",
+                "refsource": "APPLE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2007/dsa-1323",
+                "name": "DSA-1323",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://security.gentoo.org/glsa/glsa-200707-11.xml",
+                "name": "GLSA-200707-11",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2007:137",
+                "name": "MDKSA-2007:137",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2007-0384.html",
+                "name": "RHSA-2007:0384",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2007-0562.html",
+                "name": "RHSA-2007:0562",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "ftp://patches.sgi.com/support/free/security/advisories/20070602-01-P.asc",
+                "name": "20070602-01-P",
+                "refsource": "SGI",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102914-1",
+                "name": "102914",
+                "refsource": "SUNALERT",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.novell.com/linux/security/advisories/2007_38_krb5.html",
+                "name": "SUSE-SA:2007:038",
+                "refsource": "SUSE",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.trustix.org/errata/2007/0021/",
+                "name": "2007-0021",
+                "refsource": "TRUSTIX",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/usn-477-1",
+                "name": "USN-477-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/24655",
+                "name": "24655",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/25159",
+                "name": "25159",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id?1018293",
+                "name": "1018293",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25821",
+                "name": "25821",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25870",
+                "name": "25870",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25890",
+                "name": "25890",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25894",
+                "name": "25894",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25800",
+                "name": "25800",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25801",
+                "name": "25801",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25814",
+                "name": "25814",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25841",
+                "name": "25841",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25888",
+                "name": "25888",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25911",
+                "name": "25911",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/26228",
+                "name": "26228",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/26235",
+                "name": "26235",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/26033",
+                "name": "26033",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/26909",
+                "name": "26909",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/27706",
+                "name": "27706",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2010/1574",
+                "name": "ADV-2010-1574",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/40346",
+                "name": "40346",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02257427",
+                "name": "SSRT100107",
+                "refsource": "HP",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/3229",
+                "name": "ADV-2007-3229",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/2354",
+                "name": "ADV-2007-2354",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/2491",
+                "name": "ADV-2007-2491",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/2732",
+                "name": "ADV-2007-2732",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/2337",
+                "name": "ADV-2007-2337",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://osvdb.org/36596",
+                "name": "36596",
+                "refsource": "OSVDB",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/35082",
+                "name": "kerberos-gssrpcsvcauthgssapi-code-execution(35082)",
+                "refsource": "XF",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7344",
+                "name": "oval:org.mitre.oval:def:7344",
+                "refsource": "OVAL",
+                "tags": [
+                  "Broken Link",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10631",
+                "name": "oval:org.mitre.oval:def:10631",
+                "refsource": "OVAL",
+                "tags": [
+                  "Broken Link",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/472507/30/5970/threaded",
+                "name": "20070629 TSLSA-2007-0021 - kerberos5",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/472432/100/0/threaded",
+                "name": "20070628 FLEA-2007-0029-1: krb5 krb5-workstation",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/472288/100/0/threaded",
+                "name": "20070626 MITKRB5-SA-2007-004: kadmind multiple RPC lib vulnerabilities",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The gssrpc__svcauth_gssapi function in the RPC library in MIT Kerberos 5 (krb5) 1.6.1 and earlier might allow remote attackers to execute arbitrary code via a zero-length RPC credential, which causes kadmind to free an uninitialized pointer during cleanup."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.6.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:3.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:6.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:7.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 10.0
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2007-06-26T22:30Z",
+        "lastModifiedDate": "2021-02-02T18:29Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2007-1216",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-415"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://web.mit.edu/kerberos/www/advisories/MITKRB5-SA-2007-003.txt",
+                "name": "http://web.mit.edu/kerberos/www/advisories/MITKRB5-SA-2007-003.txt",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2007/dsa-1276",
+                "name": "DSA-1276",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2007-0095.html",
+                "name": "RHSA-2007:0095",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/usn-449-1",
+                "name": "USN-449-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kb.cert.org/vuls/id/419344",
+                "name": "VU#419344",
+                "refsource": "CERT-VN",
+                "tags": [
+                  "Third Party Advisory",
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24706",
+                "name": "24706",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24736",
+                "name": "24736",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24757",
+                "name": "24757",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://security.gentoo.org/glsa/glsa-200704-02.xml",
+                "name": "GLSA-200704-02",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "ftp://patches.sgi.com/support/free/security/advisories/20070401-01-P.asc",
+                "name": "20070401-01-P",
+                "refsource": "SGI",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://lists.suse.com/archive/suse-security-announce/2007-Apr/0001.html",
+                "name": "SUSE-SA:2007:025",
+                "refsource": "SUSE",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/23282",
+                "name": "23282",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id?1017852",
+                "name": "1017852",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24740",
+                "name": "24740",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24750",
+                "name": "24750",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24785",
+                "name": "24785",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24786",
+                "name": "24786",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24817",
+                "name": "24817",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24735",
+                "name": "24735",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://docs.info.apple.com/article.html?artnum=305391",
+                "name": "http://docs.info.apple.com/article.html?artnum=305391",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://lists.apple.com/archives/Security-announce/2007/Apr/msg00001.html",
+                "name": "APPLE-SA-2007-04-19",
+                "refsource": "APPLE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/24966",
+                "name": "24966",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2007:077",
+                "name": "MDKSA-2007:077",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.us-cert.gov/cas/techalerts/TA07-093B.html",
+                "name": "TA07-093B",
+                "refsource": "CERT",
+                "tags": [
+                  "Third Party Advisory",
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://www.us-cert.gov/cas/techalerts/TA07-109A.html",
+                "name": "TA07-109A",
+                "refsource": "CERT",
+                "tags": [
+                  "Third Party Advisory",
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/25388",
+                "name": "25388",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/1218",
+                "name": "ADV-2007-1218",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/1916",
+                "name": "ADV-2007-1916",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/1470",
+                "name": "ADV-2007-1470",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c01056923",
+                "name": "HPSBUX02217",
+                "refsource": "HP",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/33413",
+                "name": "kerberos-kadmind-code-execution(33413)",
+                "refsource": "XF",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11135",
+                "name": "oval:org.mitre.oval:def:11135",
+                "refsource": "OVAL",
+                "tags": [
+                  "Broken Link",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/464814/30/7170/threaded",
+                "name": "20070405 FLEA-2007-0008-1: krb5",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/464666/100/0/threaded",
+                "name": "20070404 rPSA-2007-0063-1 krb5 krb5-server krb5-services krb5-test krb5-workstation",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/464591/100/0/threaded",
+                "name": "20070403 MITKRB5-SA-2007-003: double-free vulnerability in kadmind (via GSS-API library) [CVE-2007-1216]",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Double free vulnerability in the GSS-API library (lib/gssapi/krb5/k5unseal.c), as used by the Kerberos administration daemon (kadmind) in MIT krb5 before 1.6.1, when used with the authentication method provided by the RPCSEC_GSS RPC library, allows remote authenticated users to execute arbitrary code and modify the Kerberos key database via a message with an \"an invalid direction encoding\"."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.6.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:5.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:6.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:3.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 9.0
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.0,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": true,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2007-04-06T01:19Z",
+        "lastModifiedDate": "2021-02-02T18:22Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-10894",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-617"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.wireshark.org/security/wnpa-sec-2019-14.html",
+                "name": "https://www.wireshark.org/security/wnpa-sec-2019-14.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=b20e5d8aae2580e29c83ddaf0b6b2e640603e4aa",
+                "name": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=b20e5d8aae2580e29c83ddaf0b6b2e640603e4aa",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=15613",
+                "name": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=15613",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/107834",
+                "name": "107834",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PU3QA2DUO3XS24QE24CQRP4A4XQQY76R/",
+                "name": "FEDORA-2019-aef1dac6a0",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4LYIOOQIMFQ3PA7AFBK4DNXHISTEYUC5/",
+                "name": "FEDORA-2019-77b2d840ef",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00022.html",
+                "name": "openSUSE-SU-2019:1356",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00027.html",
+                "name": "openSUSE-SU-2019:1390",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3986-1/",
+                "name": "USN-3986-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2019/05/msg00034.html",
+                "name": "[debian-lts-announce] 20190525 [SECURITY] [DLA 1802-1] wireshark security update",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00027.html",
+                "name": "openSUSE-SU-2020:0362",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2020/10/msg00036.html",
+                "name": "[debian-lts-announce] 20201031 [SECURITY] [DLA 2423-1] wireshark security update",
+                "refsource": "MLIST",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In Wireshark 2.4.0 to 2.4.13, 2.6.0 to 2.6.7, and 3.0.0, the GSS-API dissector could crash. This was addressed in epan/dissectors/packet-gssapi.c by ensuring that a valid dissector is called."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:wireshark:wireshark:3.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.6.0",
+                  "versionEndIncluding": "2.6.7",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.4.0",
+                  "versionEndIncluding": "2.4.13",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-04-09T04:29Z",
+        "lastModifiedDate": "2020-11-02T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-2192",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-255"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://curl.haxx.se/curl-gssapi-delegation.patch",
+                "name": "http://curl.haxx.se/curl-gssapi-delegation.patch",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://curl.haxx.se/docs/adv_20110623.html",
+                "name": "http://curl.haxx.se/docs/adv_20110623.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=711454",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=711454",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1158-1",
+                "name": "USN-1158-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2011-0918.html",
+                "name": "RHSA-2011:0918",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/45088",
+                "name": "45088",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/45181",
+                "name": "45181",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/45144",
+                "name": "45144",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2271",
+                "name": "DSA-2271",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-June/061992.html",
+                "name": "FEDORA-2011-8586",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-July/062287.html",
+                "name": "FEDORA-2011-8640",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id?1025713",
+                "name": "1025713",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2011:116",
+                "name": "MDVSA-2011:116",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/45067",
+                "name": "45067",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/45047",
+                "name": "45047",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://support.apple.com/kb/HT5130",
+                "name": "http://support.apple.com/kb/HT5130",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce/2012/Feb/msg00000.html",
+                "name": "APPLE-SA-2012-02-01-1",
+                "refsource": "APPLE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://security.gentoo.org/glsa/glsa-201203-02.xml",
+                "name": "GLSA-201203-02",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/48256",
+                "name": "48256",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The Curl_input_negotiate function in http_negotiate.c in libcurl 7.10.6 through 7.21.6, as used in curl and other products, always performs credential delegation during GSSAPI authentication, which allows remote servers to impersonate clients via GSSAPI requests."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:haxx:libcurl:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "7.10.6",
+                  "versionEndIncluding": "7.21.6",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "10.7.3",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:14:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:15:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:5.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:8.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:11.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2011-07-07T21:55Z",
+        "lastModifiedDate": "2020-05-27T20:42Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2015-2698",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-119"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8273",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8273",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/krb5/krb5/commit/3db8dfec1ef50ddd78d6ba9503185995876a39fd",
+                "name": "https://github.com/krb5/krb5/commit/3db8dfec1ef50ddd78d6ba9503185995876a39fd",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2015-11/msg00116.html",
+                "name": "openSUSE-SU-2015:2055",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2015-12/msg00124.html",
+                "name": "openSUSE-SU-2015:2376",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-2810-1",
+                "name": "USN-2810-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The iakerb_gss_export_sec_context function in lib/gssapi/krb5/iakerb.c in MIT Kerberos 5 (aka krb5) 1.14 pre-release 2015-09-14 improperly accesses a certain pointer, which allows remote authenticated users to cause a denial of service (memory corruption) or possibly have unspecified other impact by interacting with an application that calls the gss_export_sec_context function.  NOTE: this vulnerability exists because of an incorrect fix for CVE-2015-2696."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.14:beta2:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:S/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 8.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 6.8,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2015-11-13T03:59Z",
+        "lastModifiedDate": "2020-01-21T15:47Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2014-5352",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt",
+                "name": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://web.mit.edu/kerberos/advisories/2015-001-patch-r113.txt",
+                "name": "http://web.mit.edu/kerberos/advisories/2015-001-patch-r113.txt",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://github.com/krb5/krb5/commit/82dc33da50338ac84c7b4102dc6513d897d0506a",
+                "name": "https://github.com/krb5/krb5/commit/82dc33da50338ac84c7b4102dc6513d897d0506a",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00016.html",
+                "name": "SUSE-SU-2015:0290",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2015/dsa-3153",
+                "name": "DSA-3153",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00011.html",
+                "name": "SUSE-SU-2015:0257",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/151103.html",
+                "name": "FEDORA-2015-2382",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0439.html",
+                "name": "RHSA-2015:0439",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2015-02/msg00044.html",
+                "name": "openSUSE-SU-2015:0255",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-2498-1",
+                "name": "USN-2498-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/151437.html",
+                "name": "FEDORA-2015-2347",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2015:069",
+                "name": "MDVSA-2015:069",
+                "refsource": "MANDRIVA",
+                "tags": []
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0794.html",
+                "name": "RHSA-2015:0794",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/72495",
+                "name": "72495",
+                "refsource": "BID",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The krb5_gss_process_context_token function in lib/gssapi/krb5/process_context_token.c in the libgssapi_krb5 library in MIT Kerberos 5 (aka krb5) through 1.11.5, 1.12.x through 1.12.2, and 1.13.x before 1.13.1 does not properly maintain security-context handles, which allows remote authenticated users to cause a denial of service (use-after-free and double free, and daemon crash) or possibly execute arbitrary code via crafted GSSAPI traffic, as demonstrated by traffic to kadmind."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.13:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 9.0
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.0,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2015-02-19T11:59Z",
+        "lastModifiedDate": "2020-01-21T15:46Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2014-9421",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/krb5/krb5/commit/a197e92349a4aa2141b5dff12e9dd44c2a2166e3",
+                "name": "https://github.com/krb5/krb5/commit/a197e92349a4aa2141b5dff12e9dd44c2a2166e3",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt",
+                "name": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://web.mit.edu/kerberos/advisories/2015-001-patch-r113.txt",
+                "name": "http://web.mit.edu/kerberos/advisories/2015-001-patch-r113.txt",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00016.html",
+                "name": "SUSE-SU-2015:0290",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2015/dsa-3153",
+                "name": "DSA-3153",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00011.html",
+                "name": "SUSE-SU-2015:0257",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/151103.html",
+                "name": "FEDORA-2015-2382",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0439.html",
+                "name": "RHSA-2015:0439",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2015-02/msg00044.html",
+                "name": "openSUSE-SU-2015:0255",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-2498-1",
+                "name": "USN-2498-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/151437.html",
+                "name": "FEDORA-2015-2347",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2015:069",
+                "name": "MDVSA-2015:069",
+                "refsource": "MANDRIVA",
+                "tags": []
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0794.html",
+                "name": "RHSA-2015:0794",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/72496",
+                "name": "72496",
+                "refsource": "BID",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The auth_gssapi_unwrap_data function in lib/rpc/auth_gssapi_misc.c in MIT Kerberos 5 (aka krb5) through 1.11.5, 1.12.x through 1.12.2, and 1.13.x before 1.13.1 does not properly handle partial XDR deserialization, which allows remote authenticated users to cause a denial of service (use-after-free and double free, and daemon crash) or possibly execute arbitrary code via malformed XDR data, as demonstrated by data sent to kadmind."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.13:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 9.0
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.0,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2015-02-19T11:59Z",
+        "lastModifiedDate": "2020-01-21T15:46Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2014-4342",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-119"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7949",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7949",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/krb5/krb5/commit/e6ae703ae597d798e310368d52b8f38ee11c6a73",
+                "name": "https://github.com/krb5/krb5/commit/e6ae703ae597d798e310368d52b8f38ee11c6a73",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2014/dsa-3000",
+                "name": "DSA-3000",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0439.html",
+                "name": "RHSA-2015:0439",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1030706",
+                "name": "1030706",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/68908",
+                "name": "68908",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2014:165",
+                "name": "MDVSA-2014:165",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/60082",
+                "name": "60082",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Not Applicable"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/59102",
+                "name": "59102",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Not Applicable"
+                ]
+              },
+              {
+                "url": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "name": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/94903",
+                "name": "mit-kerberos-cve20144342-dos(94903)",
+                "refsource": "XF",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html",
+                "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "MIT Kerberos 5 (aka krb5) 1.7.x through 1.12.x before 1.12.2 allows remote attackers to cause a denial of service (buffer over-read or NULL pointer dereference, and application crash) by injecting invalid tokens into a GSSAPI application session."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos:5-1.8:alpha1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.9.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.9.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos:5-1.10.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.9.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.9.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos:5-1.10.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos:5-1.10.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2014-07-20T11:12Z",
+        "lastModifiedDate": "2020-01-21T15:46Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2014-4343",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-415"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7969",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7969",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/krb5/krb5/commit/f18ddf5d82de0ab7591a36e465bc24225776940f",
+                "name": "https://github.com/krb5/krb5/commit/f18ddf5d82de0ab7591a36e465bc24225776940f",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2014/dsa-3000",
+                "name": "DSA-3000",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://security.gentoo.org/glsa/glsa-201412-53.xml",
+                "name": "GLSA-201412-53",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0439.html",
+                "name": "RHSA-2015:0439",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1121876",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1121876",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1030706",
+                "name": "1030706",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/69159",
+                "name": "69159",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/109390",
+                "name": "109390",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://support.f5.com/kb/en-us/solutions/public/15000/500/sol15553.html",
+                "name": "http://support.f5.com/kb/en-us/solutions/public/15000/500/sol15553.html",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/61052",
+                "name": "61052",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/60448",
+                "name": "60448",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/60082",
+                "name": "60082",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/59102",
+                "name": "59102",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2014-August/136360.html",
+                "name": "FEDORA-2014-8189",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://aix.software.ibm.com/aix/efixes/security/nas_advisory1.asc",
+                "name": "http://aix.software.ibm.com/aix/efixes/security/nas_advisory1.asc",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "name": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/95211",
+                "name": "kerberos-cve20144343-dos(95211)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Double free vulnerability in the init_ctx_reselect function in the SPNEGO initiator in lib/gssapi/spnego/spnego_mech.c in MIT Kerberos 5 (aka krb5) 1.10.x through 1.12.x before 1.12.2 allows remote attackers to cause a denial of service (memory corruption) or possibly execute arbitrary code via network traffic that appears to come from an intended acceptor, but specifies a security mechanism different from the one proposed by the initiator."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:H/Au:N/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.6
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 4.9,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2014-08-14T05:01Z",
+        "lastModifiedDate": "2020-01-21T15:46Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2014-4344",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-476"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/krb5/krb5/commit/a7886f0ed1277c69142b14a2c6629175a6331edc",
+                "name": "https://github.com/krb5/krb5/commit/a7886f0ed1277c69142b14a2c6629175a6331edc",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7970",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7970",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2014/dsa-3000",
+                "name": "DSA-3000",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2015-0439.html",
+                "name": "RHSA-2015:0439",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/krb5/krb5/commit/524688ce87a15fc75f87efc8c039ba4c7d5c197b",
+                "name": "https://github.com/krb5/krb5/commit/524688ce87a15fc75f87efc8c039ba4c7d5c197b",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1121877",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1121877",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1030706",
+                "name": "1030706",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/69160",
+                "name": "69160",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/109389",
+                "name": "109389",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2014:165",
+                "name": "MDVSA-2014:165",
+                "refsource": "MANDRIVA",
+                "tags": []
+              },
+              {
+                "url": "http://support.f5.com/kb/en-us/solutions/public/15000/500/sol15561.html",
+                "name": "http://support.f5.com/kb/en-us/solutions/public/15000/500/sol15561.html",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/61051",
+                "name": "61051",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/60448",
+                "name": "60448",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/60082",
+                "name": "60082",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/59102",
+                "name": "59102",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2014-August/136360.html",
+                "name": "FEDORA-2014-8189",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://aix.software.ibm.com/aix/efixes/security/nas_advisory1.asc",
+                "name": "http://aix.software.ibm.com/aix/efixes/security/nas_advisory1.asc",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "name": "http://advisories.mageia.org/MGASA-2014-0345.html",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/95210",
+                "name": "kerberos-cve20144344-dos(95210)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The acc_ctx_cont function in the SPNEGO acceptor in lib/gssapi/spnego/spnego_mech.c in MIT Kerberos 5 (aka krb5) 1.5.x through 1.12.x before 1.12.2 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via an empty continuation token at a certain point during a SPNEGO negotiation."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_hpc_node:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.12.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.8
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2014-08-14T05:01Z",
+        "lastModifiedDate": "2020-01-21T15:46Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-0628",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.kb.cert.org/vuls/id/839413",
+                "name": "VU#839413",
+                "refsource": "CERT-VN",
+                "tags": [
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-916-1",
+                "name": "USN-916-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=566258",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=566258",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-002.txt",
+                "name": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-002.txt",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/38904",
+                "name": "38904",
+                "refsource": "BID",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/39023",
+                "name": "39023",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/510281/100/0/threaded",
+                "name": "20100323 MITKRB5-SA-2010-002 denial of service in SPNEGO [CVE-2010-0628 VU#839413]",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The spnego_gss_accept_sec_context function in lib/gssapi/spnego/spnego_mech.c in the SPNEGO GSS-API functionality in MIT Kerberos 5 (aka krb5) 1.7 before 1.7.2 and 1.8 before 1.8.1 allows remote attackers to cause a denial of service (assertion failure and daemon crash) via an invalid packet that triggers incorrect preparation of an error token."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2010-03-25T22:30Z",
+        "lastModifiedDate": "2020-01-21T15:45Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2009-0845",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://src.mit.edu/fisheye/browse/krb5/trunk/src/lib/gssapi/spnego/spnego_mech.c?r1=21875&r2=22084",
+                "name": "http://src.mit.edu/fisheye/browse/krb5/trunk/src/lib/gssapi/spnego/spnego_mech.c?r1=21875&r2=22084",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/34257",
+                "name": "34257",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34347",
+                "name": "34347",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?user=guest&pass=guest&id=6402",
+                "name": "http://krbdev.mit.edu/rt/Ticket/Display.html?user=guest&pass=guest&id=6402",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/0847",
+                "name": "ADV-2009-0847",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://src.mit.edu/fisheye/changelog/krb5/?cs=22084",
+                "name": "http://src.mit.edu/fisheye/changelog/krb5/?cs=22084",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2009:082",
+                "name": "MDVSA-2009:082",
+                "refsource": "MANDRIVA",
+                "tags": []
+              },
+              {
+                "url": "http://www.kb.cert.org/vuls/id/662091",
+                "name": "VU#662091",
+                "refsource": "CERT-VN",
+                "tags": [
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2009-001.txt",
+                "name": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2009-001.txt",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/usn-755-1",
+                "name": "USN-755-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://wiki.rpath.com/Advisories:rPSA-2009-0058",
+                "name": "http://wiki.rpath.com/Advisories:rPSA-2009-0058",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://security.gentoo.org/glsa/glsa-200904-09.xml",
+                "name": "GLSA-200904-09",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/0976",
+                "name": "ADV-2009-0976",
+                "refsource": "VUPEN",
+                "tags": []
+              },
+              {
+                "url": "http://www.securitytracker.com/id?1021867",
+                "name": "1021867",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34640",
+                "name": "34640",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34617",
+                "name": "34617",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34594",
+                "name": "34594",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34637",
+                "name": "34637",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34622",
+                "name": "34622",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34630",
+                "name": "34630",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00205.html",
+                "name": "FEDORA-2009-2834",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00206.html",
+                "name": "FEDORA-2009-2852",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2009-0408.html",
+                "name": "RHSA-2009:0408",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "http://wiki.rpath.com/wiki/Advisories:rPSA-2009-0058",
+                "name": "http://wiki.rpath.com/wiki/Advisories:rPSA-2009-0058",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34628",
+                "name": "34628",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://support.avaya.com/elmodocs2/security/ASA-2009-142.htm",
+                "name": "http://support.avaya.com/elmodocs2/security/ASA-2009-142.htm",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-256728-1",
+                "name": "256728",
+                "refsource": "SUNALERT",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/1106",
+                "name": "ADV-2009-1106",
+                "refsource": "VUPEN",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/1057",
+                "name": "ADV-2009-1057",
+                "refsource": "VUPEN",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/34734",
+                "name": "34734",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://support.novell.com/docs/Readmes/InfoDocument/patchbuilder/readme_5047181.html",
+                "name": "http://support.novell.com/docs/Readmes/InfoDocument/patchbuilder/readme_5047181.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://support.novell.com/docs/Readmes/InfoDocument/patchbuilder/readme_5047180.html",
+                "name": "http://support.novell.com/docs/Readmes/InfoDocument/patchbuilder/readme_5047180.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/1297",
+                "name": "ADV-2009-1297",
+                "refsource": "VUPEN",
+                "tags": []
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce/2009/May/msg00002.html",
+                "name": "APPLE-SA-2009-05-12",
+                "refsource": "APPLE",
+                "tags": []
+              },
+              {
+                "url": "http://www.us-cert.gov/cas/techalerts/TA09-133A.html",
+                "name": "TA09-133A",
+                "refsource": "CERT",
+                "tags": [
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/35074",
+                "name": "35074",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://support.apple.com/kb/HT3549",
+                "name": "http://support.apple.com/kb/HT3549",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21396120",
+                "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21396120",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/2248",
+                "name": "ADV-2009-2248",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/49448",
+                "name": "kerberos-spnego-dos(49448)",
+                "refsource": "XF",
+                "tags": []
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6449",
+                "name": "oval:org.mitre.oval:def:6449",
+                "refsource": "OVAL",
+                "tags": []
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10044",
+                "name": "oval:org.mitre.oval:def:10044",
+                "refsource": "OVAL",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/502546/100/0/threaded",
+                "name": "20090407 rPSA-2009-0058-1 krb5 krb5-server krb5-services krb5-test krb5-workstation",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/502526/100/0/threaded",
+                "name": "20090407 MITKRB5-SA-2009-001: multiple vulnerabilities in SPNEGO, ASN.1 decoder [CVE-2009-0844 CVE-2009-0845 CVE-2009-0847]",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The spnego_gss_accept_sec_context function in lib/gssapi/spnego/spnego_mech.c in MIT Kerberos 5 (aka krb5) 1.5 through 1.6.3, when SPNEGO is used, allows remote attackers to cause a denial of service (NULL pointer dereference and daemon crash) via invalid ContextFlags data in the reqFlags field in a negTokenInit token."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.5.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.5.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.6.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.6.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:1.5.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos:5-1.6.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2009-03-27T16:30Z",
+        "lastModifiedDate": "2020-01-21T15:45Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2007-5894",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://bugs.gentoo.org/show_bug.cgi?id=199205",
+                "name": "http://bugs.gentoo.org/show_bug.cgi?id=199205",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/26750",
+                "name": "26750",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.novell.com/linux/security/advisories/suse_security_summary_report.html",
+                "name": "SUSE-SR:2008:002",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/28636",
+                "name": "28636",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://seclists.org/fulldisclosure/2007/Dec/0176.html",
+                "name": "20071208 MIT Kerberos 5: Multiple vulnerabilities",
+                "refsource": "FULLDISC",
+                "tags": []
+              },
+              {
+                "url": "http://seclists.org/fulldisclosure/2007/Dec/0321.html",
+                "name": "20071208 Venustech reports of MIT krb5 vulns [CVE-2007-5894 CVE-2007-5901 CVE-2007-5902 CVE-2007-5971 CVE-2007-5972]",
+                "refsource": "FULLDISC",
+                "tags": []
+              },
+              {
+                "url": "https://issues.rpath.com/browse/RPL-2012",
+                "name": "https://issues.rpath.com/browse/RPL-2012",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://wiki.rpath.com/Advisories:rPSA-2008-0112",
+                "name": "http://wiki.rpath.com/Advisories:rPSA-2008-0112",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://wiki.rpath.com/wiki/Advisories:rPSA-2008-0112",
+                "name": "http://wiki.rpath.com/wiki/Advisories:rPSA-2008-0112",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/29457",
+                "name": "29457",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://osvdb.org/44333",
+                "name": "44333",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/489883/100/0/threaded",
+                "name": "20080319 rPSA-2008-0112-1 krb5 krb5-server krb5-services krb5-test krb5-workstation",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "** DISPUTED **  The reply function in ftpd.c in the gssftp ftpd in MIT Kerberos 5 (krb5) does not initialize the length variable when auth_type has a certain value, which has unknown impact and remote authenticated attack vectors.  NOTE: the original disclosure misidentifies the conditions under which the uninitialized variable is used.  NOTE: the vendor disputes this issue, stating \" The 'length' variable is only uninitialized if 'auth_type' is neither the 'KERBEROS_V4' nor 'GSSAPI'; this condition cannot occur in the unmodified source code.\""
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mit:kerberos_5:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 9.3
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.6,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": true,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2007-12-06T02:46Z",
+        "lastModifiedDate": "2020-01-21T15:44Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-2659",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-287"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://secure.ucc.asn.au/hg/dropbear/rev/d7784616409a#l1.86",
+                "name": "https://secure.ucc.asn.au/hg/dropbear/rev/d7784616409a#l1.86",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2659",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2659",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "It was found that dropbear before version 2013.59 with GSSAPI leaks whether given username is valid or invalid. When an invalid username is given, the GSSAPI authentication failure was incorrectly counted towards the maximum allowed number of password attempts."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:dropbear_ssh_project:dropbear_ssh:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2013.59",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-03-21T15:59Z",
+        "lastModifiedDate": "2019-10-09T23:27Z"
+      }
+    ]
+  }
+}

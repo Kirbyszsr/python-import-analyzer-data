@@ -1,0 +1,3572 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 14999,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-16T14:45Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-22204",
+            "ASSIGNER": "cve@gitlab.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-74"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/exiftool/exiftool/commit/cf0f4e7dcd024ca99615bfd1102a841a25dde031#diff-fa0d652d10dbcd246e6b1df16c1e992931d3bb717a7e36157596b76bdadb3800",
+                "name": "https://github.com/exiftool/exiftool/commit/cf0f4e7dcd024ca99615bfd1102a841a25dde031#diff-fa0d652d10dbcd246e6b1df16c1e992931d3bb717a7e36157596b76bdadb3800",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://hackerone.com/reports/1154542",
+                "name": "https://hackerone.com/reports/1154542",
+                "refsource": "MISC",
+                "tags": [
+                  "Permissions Required",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22204.json",
+                "name": "https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22204.json",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4910",
+                "name": "DSA-4910",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DDKDLJLBTBBR66OOPXSXCG2PQRM5KCZL/",
+                "name": "FEDORA-2021-e3d8833d36",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/U4RF6PJCJ6NQOVJJJF6HN6BORUQVIXY6/",
+                "name": "FEDORA-2021-de850ed71e",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/F6UOBPU3LSHAPRRJNISNVXZ5DSUIALLV/",
+                "name": "FEDORA-2021-88d24aa32b",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/05/09/1",
+                "name": "[oss-security] 20210509 [CVE-2021-22204] ExifTool - Arbitrary code execution in the DjVu module when parsing a malicious image",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/05/10/5",
+                "name": "[oss-security] 20210510 Re: [CVE-2021-22204] ExifTool - Arbitrary code execution in the DjVu module when parsing a malicious image",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://packetstormsecurity.com/files/162558/ExifTool-DjVu-ANT-Perl-Injection.html",
+                "name": "http://packetstormsecurity.com/files/162558/ExifTool-DjVu-ANT-Perl-Injection.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00018.html",
+                "name": "[debian-lts-announce] 20210516 [SECURITY] [DLA 2663-1] libimage-exiftool-perl security update",
+                "refsource": "MLIST",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Improper neutralization of user data in the DjVu file format in ExifTool versions 7.44 and up allows arbitrary code execution when parsing the malicious image"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:exiftool_project:exiftool:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "7.44",
+                  "versionEndExcluding": "12.24",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-04-23T18:15Z",
+        "lastModifiedDate": "2021-05-16T12:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-3482",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-119"
+                  },
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1946314",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1946314",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2XQT5F5IINTDYDAFGVGQZ7PMMLG7I5ZZ/",
+                "name": "FEDORA-2021-10d7331a31",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/P2A5GMJEXQ5Q76JK6F6VKK5JYCLVFGKN/",
+                "name": "FEDORA-2021-be94728b95",
+                "refsource": "FEDORA",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was found in Exiv2 in versions before and including 0.27.4-RC1. Improper input validation of the rawData.size property in Jp2Image::readMetadata() in jp2image.cpp can lead to a heap-based buffer overflow via a crafted JPG image containing malicious EXIF data."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:exiv2:exiv2:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "0.27.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:exiv2:exiv2:0.27.4:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "LOW",
+              "baseScore": 6.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.5
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.4
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-04-08T23:15Z",
+        "lastModifiedDate": "2021-05-14T23:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-22866",
+            "ASSIGNER": "product-cna@github.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://docs.github.com/en/enterprise-server@3.0/admin/release-notes#3.0.7",
+                "name": "N/A",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://docs.github.com/en/enterprise-server@2.22/admin/release-notes#2.22.13",
+                "name": "N/A",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A UI misrepresentation vulnerability was identified in GitHub Enterprise Server that allowed more permissions to be granted during a GitHub App's user-authorization web flow than was displayed to the user during approval. To exploit this vulnerability, an attacker would need to create a GitHub App on the instance and have a user authorize the application through the web authentication flow. All permissions being granted would properly be shown during the first authorization, but in certain circumstances, if the user revisits the authorization flow after the GitHub App has configured additional user-level permissions, those additional permissions may not be shown, leading to more permissions being granted than the user potentially intended. This vulnerability affected GitHub Enterprise Server 3.0.x prior to 3.0.7 and 2.22.x prior to 2.22.13. It was fixed in versions 3.0.7 and 2.22.13. This vulnerability was reported via the GitHub Bug Bounty program."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-14T21:15Z",
+        "lastModifiedDate": "2021-05-14T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-25649",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-611"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/FasterXML/jackson-databind/issues/2589",
+                "name": "https://github.com/FasterXML/jackson-databind/issues/2589",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1887664",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1887664",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/ra1157e57a01d25e36b0dc17959ace758fc21ba36746de29ba1d8b130@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201205 [GitHub] [kafka] sirocchj opened a new pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r2b6ddb3a4f4cd11d8f6305011e1b7438ba813511f2e3ab3180c7ffda@%3Ccommits.druid.apache.org%3E",
+                "name": "[druid-commits] 20201208 [GitHub] [druid] jihoonson opened a new pull request #10655: Bump up jackson-databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r2882fc1f3032cd7be66e28787f04ec6f1874ac68d47e310e30ff7eb1@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201209 [GitHub] [kafka] ijuma commented on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r1b7ed0c4b6c4301d4dfd6fdbc5581b0a789d3240cab55d766f33c6c6@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201209 [GitHub] [kafka] sirocchj edited a comment on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rd317f15a675d114dbf5b488d27eeb2467b4424356b16116eb18a652d@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201209 [GitHub] [kafka] sirocchj commented on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/re96dc7a13e13e56190a5d80f9e5440a0d0c83aeec6467b562fbf2dca@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201209 [GitHub] [kafka] niteshmor commented on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rc15e90bbef196a5c6c01659e015249d6c9a73581ca9afb8aeecf00d2@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201210 [GitHub] [kafka] sirocchj commented on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r63c87aab97155f3f3cbe11d030c4a184ea0de440ee714977db02e956@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201210 [GitHub] [kafka] niteshmor edited a comment on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rc959cdb57c4fe198316130ff4a5ecbf9d680e356032ff2e9f4f05d54@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201210 [GitHub] [kafka] niteshmor commented on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/raf13235de6df1d47a717199e1ecd700dff3236632f5c9a1488d9845b@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201215 [GitHub] [kafka] ijuma commented on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r6b11eca1d646f45eb0d35d174e6b1e47cfae5295b92000856bfb6304@%3Cusers.kafka.apache.org%3E",
+                "name": "[kafka-users] 20201215 Re: [VOTE] 2.7.0 RC5",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r6b11eca1d646f45eb0d35d174e6b1e47cfae5295b92000856bfb6304@%3Cdev.kafka.apache.org%3E",
+                "name": "[kafka-dev] 20201215 Re: [VOTE] 2.7.0 RC5",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r5f8a1608d758936bd6bbc5eed980777437b611537bf6fff40663fc71@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201215 [GitHub] [kafka] ijuma merged pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r78d53a0a269c18394daf5940105dc8c7f9a2399503c2e78be20abe7e@%3Cjira.kafka.apache.org%3E",
+                "name": "[kafka-jira] 20201215 [GitHub] [kafka] ijuma edited a comment on pull request #9702: CVE-2020-25649: bumping jackson to patched version 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r31f4ee7d561d56a0c2c2c6eb1d6ce3e05917ff9654fdbfec05dc2b83@%3Ccommits.servicecomb.apache.org%3E",
+                "name": "https://lists.apache.org/thread.html/r31f4ee7d561d56a0c2c2c6eb1d6ce3e05917ff9654fdbfec05dc2b83@%3Ccommits.servicecomb.apache.org%3E",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r90d1e97b0a743cf697d89a792a9b669909cc5a1692d1e0083a22e66c@%3Cissues.zookeeper.apache.org%3E",
+                "name": "[zookeeper-issues] 20210105 [jira] [Updated] (ZOOKEEPER-4045) CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r900d4408c4189b376d1ec580ea7740ea6f8710dc2f0b7e9c9eeb5ae0@%3Cdev.zookeeper.apache.org%3E",
+                "name": "[zookeeper-dev] 20210105 [jira] [Created] (ZOOKEEPER-4045) CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r98bfe3b90ea9408f12c4b447edcb5638703d80bc782430aa0c210a54@%3Cissues.zookeeper.apache.org%3E",
+                "name": "[zookeeper-issues] 20210105 [jira] [Created] (ZOOKEEPER-4045) CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r8937a7160717fe8b2221767163c4de4f65bc5466405cb1c5310f9080@%3Cusers.kafka.apache.org%3E",
+                "name": "[kafka-users] 20210105 Re: [kafka-clients] Re: [VOTE] 2.6.1 RC3",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r8937a7160717fe8b2221767163c4de4f65bc5466405cb1c5310f9080@%3Cdev.kafka.apache.org%3E",
+                "name": "[kafka-dev] 20210105 Re: [kafka-clients] Re: [VOTE] 2.6.1 RC3",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r6e3d4f7991542119a4ca6330271d7fbf7b9fb3abab24ada82ddf1ee4@%3Cnotifications.zookeeper.apache.org%3E",
+                "name": "[zookeeper-notifications] 20210106 [GitHub] [zookeeper] edwin092 opened a new pull request #1572: ZOOKEEPER-4045: CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rd6f6bf848c2d47fa4a85c27d011d948778b8f7e58ba495968435a0b3@%3Cissues.zookeeper.apache.org%3E",
+                "name": "[zookeeper-issues] 20210106 [jira] [Updated] (ZOOKEEPER-4045) CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r0b8dc3acd4503e4ecb6fbd6ea7d95f59941168d8452ac0ab1d1d96bb@%3Cissues.zookeeper.apache.org%3E",
+                "name": "[zookeeper-issues] 20210106 [jira] [Commented] (ZOOKEEPER-4045) CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r68d029ee74ab0f3b0569d0c05f5688cb45dd3abe96a6534735252805@%3Cnotifications.zookeeper.apache.org%3E",
+                "name": "[zookeeper-notifications] 20210106 [GitHub] [zookeeper] asfgit closed pull request #1572: ZOOKEEPER-4045: CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rdf9a34726482222c90d50ae1b9847881de67dde8cfde4999633d2cdc@%3Ccommits.zookeeper.apache.org%3E",
+                "name": "[zookeeper-commits] 20210106 [zookeeper] branch branch-3.5 updated: ZOOKEEPER-4045: CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r04529cedaca40c2ff90af4880493f9c88a8ebf4d1d6c861d23108a5a@%3Cnotifications.zookeeper.apache.org%3E",
+                "name": "[zookeeper-notifications] 20210106 [GitHub] [zookeeper] nkalmar commented on pull request #1572: ZOOKEEPER-4045: CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r86c78bf7656fdb2dab69cbf17f3d7492300f771025f1a3a65d5e5ce5@%3Ccommits.zookeeper.apache.org%3E",
+                "name": "[zookeeper-commits] 20210106 [zookeeper] branch master updated: ZOOKEEPER-4045: CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rc88f2fa2b7bd6443921727aeee7704a1fb02433e722e2abf677e0d3d@%3Ccommits.zookeeper.apache.org%3E",
+                "name": "[zookeeper-commits] 20210106 [zookeeper] branch branch-3.5.9 updated: ZOOKEEPER-4045: CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r94c7e86e546120f157264ba5ba61fd29b3a8d530ed325a9b4fa334d7@%3Ccommits.zookeeper.apache.org%3E",
+                "name": "[zookeeper-commits] 20210106 [zookeeper] branch branch-3.6 updated: ZOOKEEPER-4045: CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210108-0007/",
+                "name": "https://security.netapp.com/advisory/ntap-20210108-0007/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rb674520b9f6c808c1bf263b1369e14048ec3243615f35cfd24e33604@%3Cissues.zookeeper.apache.org%3E",
+                "name": "[zookeeper-issues] 20210116 [jira] [Commented] (ZOOKEEPER-4045) CVE-2020-25649 - Upgrade jackson databind to 2.10.5.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/ra95faf968f3463acb3f31a6fbec31453fc5045325f99f396961886d3@%3Cissues.flink.apache.org%3E",
+                "name": "[flink-issues] 20210121 [GitHub] [flink-shaded] HuangXingBo opened a new pull request #93: [FLINK-21020][jackson] Bump version to 2.12.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r45e7350dfc92bb192f3f88e9971c11ab2be0953cc375be3dda5170bd@%3Cissues.flink.apache.org%3E",
+                "name": "[flink-issues] 20210122 [GitHub] [flink-shaded] HuangXingBo opened a new pull request #93: [FLINK-21020][jackson] Bump version to 2.12.1",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r95a297eb5fd1f2d3a2281f15340e2413f952e9d5503296c3adc7201a@%3Ccommits.tomee.apache.org%3E",
+                "name": "[tomee-commits] 20210127 [jira] [Created] (TOMEE-2965) CVE-2020-25649 - Update jackson databind",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6X2UT4X6M7DLQYBOOHMXBWGYJ65RL2CT/",
+                "name": "FEDORA-2021-1d8254899c",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/re16f81d3ad49a93dd2f0cba9f8fc88e5fb89f30bf9a2ad7b6f3e69c1@%3Ccommits.karaf.apache.org%3E",
+                "name": "[karaf-commits] 20210217 [GitHub] [karaf] svogt opened a new pull request #1296: Update jackson-databind to fix CVE-2020-25649 / BDSA-2020-2965",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r91722ecfba688b0c565675f8bf380269fde8ec62b54d6161db544c22@%3Ccommits.karaf.apache.org%3E",
+                "name": "[karaf-commits] 20210217 [karaf] branch master updated: Update jackson-databind to fix CVE-2020-25649 / BDSA-2020-2965",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r3e6ae311842de4e64c5d560a475b7f9cc7e0a9a8649363c6cf7537eb@%3Ccommits.karaf.apache.org%3E",
+                "name": "[karaf-commits] 20210217 [GitHub] [karaf] jbonofre merged pull request #1296: Update jackson-databind to fix CVE-2020-25649 / BDSA-2020-2965",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rf1809a1374041a969d77afab21fc38925de066bc97e86157d3ac3402@%3Ccommits.karaf.apache.org%3E",
+                "name": "[karaf-commits] 20210217 [GitHub] [karaf] jbonofre commented on pull request #1296: Update jackson-databind to fix CVE-2020-25649 / BDSA-2020-2965",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r0881e23bd9034c8f51fdccdc8f4d085ba985dcd738f8520569ca5c3d@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210223 [jira] [Assigned] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r5b130fe668503c4b7e2caf1b16f86b7f2070fd1b7ef8f26195a2ffbd@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210223 [jira] [Updated] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r2eb66c182853c69ecfb52f63d3dec09495e9b65be829fd889a081ae1@%3Cdev.hive.apache.org%3E",
+                "name": "[hive-dev] 20210223 [jira] [Created] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rd57c7582adc90e233f23f3727db3df9115b27a823b92374f11453f34@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210223 [jira] [Work logged] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r407538adec3185dd35a05c9a26ae2f74425b15132470cf540f41d85b@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210315 [jira] [Work logged] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r011d1430e8f40dff9550c3bc5d0f48b14c01ba8aecabd91d5e495386@%3Ccommits.turbine.apache.org%3E",
+                "name": "[turbine-commits] 20210316 svn commit: r1887732 - in /turbine/fulcrum/trunk/json: ./ jackson/ jackson/src/test/org/apache/fulcrum/json/jackson/ jackson2/ jackson2/src/test/org/apache/fulcrum/json/jackson/ jackson2/src/test/org/apache/fulcrum/json/jackson/mixins/",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r2f5c5479f99398ef344b7ebd4d90bc3316236c45d0f3bc42090efcd7@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210316 [jira] [Work logged] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r605764e05e201db33b3e9c2e66ff620658f07ad74f296abe483f7042@%3Creviews.iotdb.apache.org%3E",
+                "name": "[iotdb-reviews] 20210324 [GitHub] [iotdb] wangchao316 opened a new pull request #2896: [IOTDB-1256] Jackson have loopholes CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r765283e145049df9b8998f14dcd444345555aae02b1610cfb3188bf8@%3Cnotifications.iotdb.apache.org%3E",
+                "name": "[iotdb-notifications] 20210324 [jira] [Created] (IOTDB-1256) Jackson have loopholes CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r7cb5b4b3e4bd41a8042e5725b7285877a17bcbf07f4eb3f7b316af60@%3Creviews.iotdb.apache.org%3E",
+                "name": "[iotdb-reviews] 20210324 [GitHub] [iotdb] wangchao316 closed pull request #2896: [IOTDB-1256] Jackson have loopholes CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r73bef1bb601a9f093f915f8075eb49fcca51efade57b817afd5def07@%3Ccommits.iotdb.apache.org%3E",
+                "name": "[iotdb-commits] 20210325 [iotdb] branch master updated: [IOTDB-1256] upgrade Jackson to 2.11.0 because of loopholes CVE-2020-25649 (#2896)",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r6cbd599b80e787f02ff7a1391d9278a03f37d6a6f4f943f0f01a62fb@%3Creviews.iotdb.apache.org%3E",
+                "name": "[iotdb-reviews] 20210325 [GitHub] [iotdb] jixuan1989 merged pull request #2896: [IOTDB-1256] Jackson have loopholes CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/ra409f798a1e5a6652b7097429b388650ccd65fd958cee0b6f69bba00@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210503 [jira] [Work logged] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rdca8711bb7aa5d47a44682606cd0ea3497e2e922f22b7ee83e81e6c1@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210510 [jira] [Work logged] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r8ae961c80930e2717c75025414ce48a432cea1137c02f648b1fb9524@%3Cissues.hive.apache.org%3E",
+                "name": "[hive-issues] 20210514 [jira] [Work logged] (HIVE-24816) Upgrade jackson to 2.10.5.1 or 2.11.0+ due to CVE-2020-25649",
+                "refsource": "MLIST",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was found in FasterXML Jackson Databind, where it did not have entity expansion secured properly. This flaw allows vulnerability to XML external entity (XXE) attacks. The highest threat from this vulnerability is data integrity."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:fasterxml:jackson-databind:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.6.0",
+                  "versionEndExcluding": "2.6.7.4",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:fasterxml:jackson-databind:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.9.0",
+                  "versionEndExcluding": "2.9.10.7",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:fasterxml:jackson-databind:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.10.0",
+                  "versionEndExcluding": "2.10.5.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:oncommand_api_services:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:oncommand_workflow_automation:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:service_level_manager:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:quarkus:quarkus:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.6.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-12-03T17:15Z",
+        "lastModifiedDate": "2021-05-14T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-1520",
+            "ASSIGNER": "psirt@cisco.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-123"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-rv-34x-privesc-GLN8ZAQE",
+                "name": "20210505 Cisco RV340, RV340W, RV345, and RV345P Dual WAN Gigabit VPN Routers Local Privilege Escalation Vulnerability",
+                "refsource": "CISCO",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A vulnerability in the internal message processing of Cisco RV340, RV340W, RV345, and RV345P Dual WAN Gigabit VPN Routers could allow an authenticated, local attacker to run arbitrary commands with root privileges on the underlying operating system (OS). This vulnerability exists because an internal messaging service does not properly sanitize input. An attacker could exploit this vulnerability by first authenticating to the device and then sending a crafted request to the internal service. A successful exploit could allow the attacker to run arbitrary commands with root privileges on the underlying OS. To exploit this vulnerability, the attacker must have valid Administrator credentials for the device."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:rv340_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndExcluding": "1.0.03.21",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:rv340:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:rv340w_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndExcluding": "1.0.03.21",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:rv340w:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:rv345_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndExcluding": "1.0.03.21",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:rv345:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:rv345p_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndExcluding": "1.0.03.21",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:rv345p:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "HIGH",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 6.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T21:09Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-1397",
+            "ASSIGNER": "psirt@cisco.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-601"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-imc-openred-zAYrU6d2",
+                "name": "20210505 Cisco Integrated Management Controller Open Redirect Vulnerability",
+                "refsource": "CISCO",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A vulnerability in the web-based management interface of Cisco Integrated Management Controller (IMC) Software could allow an unauthenticated, remote attacker to redirect a user to a malicious web page. This vulnerability is due to improper input validation of the parameters in an HTTP request. An attacker could exploit this vulnerability by persuading a user to click a crafted link. A successful exploit could allow the attacker to redirect a user to a malicious website. This vulnerability is known as an open redirect attack, which is used in phishing attacks to get users to visit malicious sites without their knowledge."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:integrated_management_controller:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "3.2\\(12.4\\):",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:ucs_manager:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "4.1\\(3b\\):",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:encs_5100_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.4.2:",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:encs_5100:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:encs_5400_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.4.2:",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:encs_5400:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c220_m6_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c220_m6:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c225_m6_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c225_m6:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c240_m6_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c240_m6:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c245_m6_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c245_m6:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c125_m5_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c125_m5:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c220_m5_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c220_m5:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c240_m5_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c240_m5:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c480_m5_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c480_m5:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:c480_ml_m5_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.1\\(2f\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:c480_ml_m5:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e140s_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e140s:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e140d_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e140d:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e160d_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e160d:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e160s_m3_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e160s_m3:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e180d_m3_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e180d_m3:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e1120d_m3_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e1120d_m3:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e140s_m2_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e140s_m2:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e160d_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e160d:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e180d_m2_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e180d_m2:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e140s_m1_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e140s_m1:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e140d_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e140d:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e140dp_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e140dp:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e160d_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e160d:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_e160dp_m1_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "3.2\\(11.5\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_e160dp_m1:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            },
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:cisco:ucs_s3260_firmware:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "4.0\\(2o\\):",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:cisco:ucs_s3260:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "CHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.1,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 2.7
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T21:06Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-1365",
+            "ASSIGNER": "psirt@cisco.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-89"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-imp-inj-ereCOKjR",
+                "name": "20210505 Cisco Unified Communications Manager IM & Presence Service SQL Injection Vulnerabilities",
+                "refsource": "CISCO",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Multiple vulnerabilities in the web-based management interface of Cisco Unified Communications Manager IM &amp; Presence Service could allow an authenticated, remote attacker to conduct SQL injection attacks on an affected system. These vulnerabilities are due to improper validation of user-submitted parameters. An attacker could exploit these vulnerabilities by authenticating to the application and sending malicious requests to an affected system. A successful exploit could allow the attacker to obtain data or modify data that is stored in the underlying database."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:unified_communications_manager_im_and_presence_service:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "10.5:",
+                  "versionEndExcluding": "11.5\\(1\\)su9:",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:unified_communications_manager_im_and_presence_service:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "12.0",
+                  "versionEndExcluding": "12.5\\(1\\)su4",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 8.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T21:02Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-1363",
+            "ASSIGNER": "psirt@cisco.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-89"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-imp-inj-ereCOKjR",
+                "name": "20210505 Cisco Unified Communications Manager IM & Presence Service SQL Injection Vulnerabilities",
+                "refsource": "CISCO",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Multiple vulnerabilities in the web-based management interface of Cisco Unified Communications Manager IM &amp; Presence Service could allow an authenticated, remote attacker to conduct SQL injection attacks on an affected system. These vulnerabilities are due to improper validation of user-submitted parameters. An attacker could exploit these vulnerabilities by authenticating to the application and sending malicious requests to an affected system. A successful exploit could allow the attacker to obtain data or modify data that is stored in the underlying database."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:unified_communications_manager_im_and_presence_service:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "10.5:",
+                  "versionEndExcluding": "11.5\\(1\\)su9:",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:unified_communications_manager_im_and_presence_service:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "12.0",
+                  "versionEndExcluding": "12.5\\(1\\)su4",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 8.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T21:00Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29530",
+            "ASSIGNER": "security-advisories@github.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-476"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xcwj-wfcm-m23c",
+                "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xcwj-wfcm-m23c",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://github.com/tensorflow/tensorflow/commit/e6a7c7cc18c3aaad1ae0872cb0a959f5c923d2bd",
+                "name": "https://github.com/tensorflow/tensorflow/commit/e6a7c7cc18c3aaad1ae0872cb0a959f5c923d2bd",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a null pointer dereference by providing an invalid `permutation` to `tf.raw_ops.SparseMatrixSparseCholesky`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/080f1d9e257589f78b3ffb75debf584168aa6062/tensorflow/core/kernels/sparse/sparse_cholesky_op.cc#L85-L86) fails to properly validate the input arguments. Although `ValidateInputs` is called and there are checks in the body of this function, the code proceeds to the next line in `ValidateInputs` since `OP_REQUIRES`(https://github.com/tensorflow/tensorflow/blob/080f1d9e257589f78b3ffb75debf584168aa6062/tensorflow/core/framework/op_requires.h#L41-L48) is a macro that only exits the current function. Thus, the first validation condition that fails in `ValidateInputs` will cause an early return from that function. However, the caller will continue execution from the next line. The fix is to either explicitly check `context->status()` or to convert `ValidateInputs` to return a `Status`. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-14T20:15Z",
+        "lastModifiedDate": "2021-05-14T20:56Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-1530",
+            "ASSIGNER": "psirt@cisco.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-611"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-bwms-xxe-uSLrZgKs",
+                "name": "20210505 Cisco BroadWorks Messaging Server XML External Entity Injection Vulnerability",
+                "refsource": "CISCO",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A vulnerability in the web-based management interface of Cisco BroadWorks Messaging Server Software could allow an authenticated, remote attacker to access sensitive information or cause a partial denial of service (DoS) condition on an affected system. This vulnerability is due to improper handling of XML External Entity (XXE) entries when parsing certain XML files. An attacker could exploit this vulnerability by uploading a crafted XML file that contains references to external entities. A successful exploit could allow the attacker to retrieve files from the local system, resulting in the disclosure of sensitive information, or cause the application to consume available resources, resulting in a partial DoS condition on an affected system. There are workarounds that address this vulnerability."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:broadworks_messaging_server:22.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "LOW",
+              "baseScore": 7.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 4.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T20:47Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-4811",
+            "ASSIGNER": "psirt@us.ibm.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/189635",
+                "name": "ibm-cp4s-cve20204811-input-validation (189635)",
+                "refsource": "XF",
+                "tags": []
+              },
+              {
+                "url": "https://www.ibm.com/support/pages/node/6453115",
+                "name": "https://www.ibm.com/support/pages/node/6453115",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "IBM Cloud Pak for Security (CP4S) 1.4.0.0, 1.5.0.0, 1.5.0.1, 1.6.0.0, and 1.6.0.1 could allow a privileged user to inject inject malicious data using a specially crafted HTTP request due to improper input validation."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-14T17:15Z",
+        "lastModifiedDate": "2021-05-14T17:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-20564",
+            "ASSIGNER": "psirt@us.ibm.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/199235",
+                "name": "ibm-cp4s-cve202120564-info-disc (199235)",
+                "refsource": "XF",
+                "tags": []
+              },
+              {
+                "url": "https://www.ibm.com/support/pages/node/6453115",
+                "name": "https://www.ibm.com/support/pages/node/6453115",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "IBM Cloud Pak for Security (CP4S) 1.4.0.0, 1.5.0.0, 1.5.0.1, 1.6.0.0, and 1.6.0.1 could allow a remote attacker to obtain sensitive information, caused by the failure to properly enable HTTP Strict Transport Security. An attacker could exploit this vulnerability to obtain sensitive information using man in the middle techniques. IBM X-Force ID: 199235."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-14T17:15Z",
+        "lastModifiedDate": "2021-05-14T17:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-31907",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-732"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://blog.jetbrains.com/blog/2021/05/07/jetbrains-security-bulletin-q1-2021/",
+                "name": "https://blog.jetbrains.com/blog/2021/05/07/jetbrains-security-bulletin-q1-2021/",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://blog.jetbrains.com",
+                "name": "https://blog.jetbrains.com",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In JetBrains TeamCity before 2020.2.2, permission checks for changing TeamCity plugins were implemented improperly."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2020.2.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.3,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 1.4
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-11T12:15Z",
+        "lastModifiedDate": "2021-05-14T19:29Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-1490",
+            "ASSIGNER": "psirt@cisco.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-wsa-xss-mVjOWchB",
+                "name": "20210505 Cisco Web Security Appliance Cross-Site Scripting Vulnerability",
+                "refsource": "CISCO",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A vulnerability in the web-based management interface of Cisco AsyncOS for Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the interface of an affected device. This vulnerability is due to improper validation of user-supplied input in the web-based management interface. An attacker could exploit this vulnerability by persuading a user to retrieve a crafted file that contains malicious payload and upload it to the affected device. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or access sensitive, browser-based information."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cisco:web_security_appliance:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "14.0:",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "CHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.1,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 2.7
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T19:14Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29921",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/python/cpython/pull/25099",
+                "name": "https://github.com/python/cpython/pull/25099",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://sick.codes/sick-2021-014",
+                "name": "https://sick.codes/sick-2021-014",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+                "name": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/sickcodes",
+                "name": "https://github.com/sickcodes",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+                "name": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/python/cpython/pull/12577",
+                "name": "https://github.com/python/cpython/pull/12577",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://docs.python.org/3/library/ipaddress.html",
+                "name": "https://docs.python.org/3/library/ipaddress.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+                "name": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.python.org/issue36384",
+                "name": "https://bugs.python.org/issue36384",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Improper input validation of octal strings in Python stdlib ipaddress 3.10 and below allows unauthenticated remote attackers to perform indeterminate SSRF, RFI, and LFI attacks on many programs that rely on Python stdlib ipaddress. IP address octects are left stripped instead of evaluated as valid IP addresses."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "3.8.0:",
+                  "versionEndIncluding": "3.10.0:",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T18:43Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-24253",
+            "ASSIGNER": "contact@wpscan.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-434"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://wpscan.com/vulnerability/ee42c233-0ff6-4b27-a5ec-ad3246bef079",
+                "name": "https://wpscan.com/vulnerability/ee42c233-0ff6-4b27-a5ec-ad3246bef079",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/jinhuang1102/CVE-ID-Reports/blob/master/classyfrieds.md",
+                "name": "https://github.com/jinhuang1102/CVE-ID-Reports/blob/master/classyfrieds.md",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The Classyfrieds WordPress plugin through 3.8 does not properly check the uploaded file when an authenticated user adds a listing, only checking the content-type in the request. This allows any authenticated user to upload arbitrary PHP files via the Add Listing feature of the plugin, leading to RCE."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:classyfrieds_project:classyfrieds:*:*:*:*:*:wordpress:*:*",
+                  "versionEndIncluding": "3.8:",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T18:12Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-31461",
+            "ASSIGNER": "zdi-disclosures@trendmicro.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-843"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.foxitsoftware.com/support/security-bulletins.php",
+                "name": "https://www.foxitsoftware.com/support/security-bulletins.php",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-550/",
+                "name": "https://www.zerodayinitiative.com/advisories/ZDI-21-550/",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit Reader 10.1.1.37576. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the the handling of app.media objects. The issue results from the lack of proper validation of user-supplied data, which can result in a type confusion condition. An attacker can leverage this vulnerability to execute code in the context of the current process Was ZDI-CAN-13333."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:foxitsoftware:phantompdf:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "9.7.5.29616:",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:foxitsoftware:phantompdf:*:*:*:*:*:*:*:*",
+                      "versionStartIncluding": "10.0.0.0:",
+                      "versionEndIncluding": "10.1.3.37598:",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:foxitsoftware:reader:*:*:*:*:*:*:*:*",
+                      "versionEndIncluding": "10.1.3.37598:",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-05-07T21:15Z",
+        "lastModifiedDate": "2021-05-14T16:28Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-31933",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/chamilo/chamilo-lms/commit/229302139e8d23bf6862183cf219b967f6e2fbc1",
+                "name": "https://github.com/chamilo/chamilo-lms/commit/229302139e8d23bf6862183cf219b967f6e2fbc1",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.chamilo.org/projects/1/wiki/Security_issues#Issue-48-2021-04-17-Critical-impact-high-risk-Remote-Code-Execution",
+                "name": "https://support.chamilo.org/projects/1/wiki/Security_issues#Issue-48-2021-04-17-Critical-impact-high-risk-Remote-Code-Execution",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/chamilo/chamilo-lms/commit/f65d065061a77bb2e84f73217079ce3998cf3453",
+                "name": "https://github.com/chamilo/chamilo-lms/commit/f65d065061a77bb2e84f73217079ce3998cf3453",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://packetstormsecurity.com/files/162572/Chamilo-LMS-1.11.14-Remote-Code-Execution.html",
+                "name": "http://packetstormsecurity.com/files/162572/Chamilo-LMS-1.11.14-Remote-Code-Execution.html",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A remote code execution vulnerability exists in Chamilo through 1.11.14 due to improper input sanitization of a parameter used for file uploads, and improper file-extension filtering for certain filenames (e.g., .phar or .pht). A remote authenticated administrator is able to upload a file containing arbitrary PHP code into specific directories via main/inc/lib/fileUpload.lib.php directory traversal to achieve PHP code execution."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:chamilo:chamilo:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.11.14:",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "HIGH",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.2,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.2,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-04-30T21:15Z",
+        "lastModifiedDate": "2021-05-14T16:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-21550",
+            "ASSIGNER": "secure@dell.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-78"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.dell.com/support/kbdoc/000185978",
+                "name": "https://www.dell.com/support/kbdoc/000185978",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Dell EMC PowerScale OneFS 8.1.0-9.1.0 contain an improper neutralization of special elements used in an OS command vulnerability. This vulnerability can allow an authenticated user with ISI_PRIV_LOGIN_SSH or ISI_PRIV_LOGIN_CONSOLE privileges to escalate privileges."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:8.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:8.1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:8.2.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:8.2.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:9.0.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:9.1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "HIGH",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 6.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T15:56Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-21527",
+            "ASSIGNER": "secure@dell.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-78"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.dell.com/support/kbdoc/000185978",
+                "name": "https://www.dell.com/support/kbdoc/000185978",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Dell PowerScale OneFS 8.1.0-9.1.0 contain an improper neutralization of special elements used in an OS command vulnerability. This vulnerability may allow an authenticated user with ISI_PRIV_LOGIN_SSH or ISI_PRIV_LOGIN_CONSOLE privileges to escalate privileges."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:9.0.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:dell:emc_powerscale_onefs:9.1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "HIGH",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 6.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-14T15:56Z"
+      }
+    ]
+  }
+}

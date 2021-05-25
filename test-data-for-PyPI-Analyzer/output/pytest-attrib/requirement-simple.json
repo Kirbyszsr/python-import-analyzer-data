@@ -1,0 +1,14 @@
+{
+  "name": "pytest-attrib",
+  "description": ".. image:: https://travis-ci.org/AbdealiJK/pytest-attrib.svg?branch=master\n    :target: https://travis-ci.org/AbdealiJK/pytest-attrib\n\n.. image:: https://ci.appveyor.com/api/projects/status/1q5qdliai6hu4hrv/branch/master?svg=true\n    :target: https://ci.appveyor.com/project/AbdealiJK/pytest-attrib\n\npytest-attrib\n=============\n\nThe `pytest-attrib`_ plugin extends py.test with the ability to select tests\nbased on a criteria rather than just the filename or pytest.marks. For\nexample, you might want to run only tests that need internet connectivity,\nor tests that are slow.\n\nThe `pytest.mark <https://pytest.org/latest/mark.html>`__ plugin already\nprovides a featrure to mark tests and run only the marked tests. This plugin\nalso allows to run expressions on the attributes of the class, and does not\nrequire the pytest.mark decorator.\n\nIt offers features similar to the nose plugin\n`nose-attrib <http://nose.readthedocs.io/en/latest/plugins/attrib.html>`__.\n\nInstallation\n------------\n\nInstall the plugin with::\n\n    pip install pytest-attrib\n\nUsage examples\n--------------\n\nTo use the plugin, the ``-a`` CLI argument has been provided. Consider a\nproject with the test file::\n\n    import unittest\n\n    class MyTestCase(unittest.TestCase):\n        def test_function(self):\n            assert 1 == 1\n\n    class MySlowTestCase(unittest.TestCase):\n        slow = True\n\n        def test_slow_function(self):\n            import time\n            time.sleep(5)\n            assert 1 == 1\n\nUsing pytest-attrib, only the slow tests can be run using::\n\n    $ py.test -a slow\n\nOr run only the fast tests using::\n\n    $ py.test -a \"not slow\"\n\nThe expression given in the ``-a`` argument can be even more complex, for\nexample::\n\n    $ py.test -a \"slow and requires_internet\"\n    $ py.test -a \"slow and not requires_internet\"\n\nIt can also do conditional arguments like::\n\n    $ py.test -a \"speed=='slow' and requires_internet\"\n\nLICENSE\n-------\n\n.. image:: https://img.shields.io/github/license/AbdealiJK/pytest-attrib.svg\n   :target: https://opensource.org/licenses/MIT\n\nThis code falls under the\n`MIT License <https://tldrlegal.com/license/mit-license>`__.\nPlease note that some files or content may be copied from other places\nand have their own licenses. Dependencies that are being used to generate\nthe databases also have their own licenses.",
+  "requires_dist": null,
+  "requires_python": null,
+  "current_version": "0.1.3",
+  "released_versions": [
+    "0.1",
+    "0.1.1",
+    "0.1.2",
+    "0.1.3",
+    "0.1.3.dev0"
+  ]
+}

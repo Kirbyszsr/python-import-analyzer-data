@@ -1,0 +1,33 @@
+{
+  "name": "pytest-check-links",
+  "description": "# pytest-check-links\n\npytest plugin that checks URLs for HTML-containing files.\n\n[![codecov](https://codecov.io/gh/jupyterlab/pytest-check-links/branch/master/graph/badge.svg)](https://codecov.io/gh/jupyterlab/pytest-check-links)\n[![Tests](https://github.com/jupyterlab/pytest-check-links/workflows/Tests/badge.svg)](https://github.com/jupyterlab/pytest-check-links/actions?query=workflow%3ATests+branch%3Amaster)\n[![PyPI version](https://badge.fury.io/py/pytest-check-links.svg)](https://badge.fury.io/py/pytest-check-links)\n![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pytest-check-links)\n\n\n## Supported files\n\n- `.html`\n- `.rst`\n- `.md` (TODO: select renderer)\n- `.ipynb` (requires `nbconvert`)\n\n## Install\n\n    pip install pytest-check-links\n\n## Use\n\n    pytest --check-links mynotebook.ipynb\n\n## Configure\n\n#### --links-ext\n\n> default: `md,rst,html,ipynb`\n\nA comma-separated list of extensions to check\n\n#### --check-anchors\n\nAlso check whether links with `#anchors` HTML files (either local, or with\nserved with `html` in the `Content-Type`) actually exist, and point to _exactly one_\nnamed anchor.\n\n#### --check-links-ignore\n\nA regular expression that matches URIs that should not be checked.\nCan be specified multiple times for multiple ignore patterns.\nThis can be used for files that have a lot of links to GitHub pages,\nsuch as a Changelog.  GitHub has rate limiting, which would normally cause these files to take up to an hour to complete for larger repositories.  For example:\n\n    pytest --check-links --check-links-ignore \"https://github.com/.*/pull/.*\" CHANGELOG.md\n\n### Cache\n\nCaching requires the installation of `requests-cache`.\n\n    pip install requests-cache\n\nIf enabled, each occurance of a link will be checked, no matter how many times\nit appears in a collection of files to check.\n\n#### --check-links-cache\n\nCache requests when checking links. Caching is disabled by default, and this option\nmust be provided, even if other cache configuration options are provided.\n\n#### --check-links-cache-name\n\n> default: `.pytest-check-links-cache`\n\nName of link cache, either the base name of a file or similar, depending on backend.\n\n#### --check-links-cache-backend\n\n> default: `sqlite3`\n\nCache persistence backend. The other known backends are:\n- `memory`\n- `redis`\n- `mongodb`\n\nSee the [requests-cache documentation](https://requests-cache.readthedocs.io)\nfor more information.\n\n#### --check-links-cache-expire-after\n\n> default: `None` (unlimited)\n\nTime to cache link responses (seconds).\n\n#### --check-links-cache-backend-opt\n\nBackend-specific options for link cache, provided as `key:value`. These are passed\ndirectly to the `requests_cache.CachedSession` constructor, as they vary depending\non the backend.\n\nValues will be parsed as JSON first, so to overload the default of caching all\nHTTP response codes (which requires a list of `int`s):\n\n```bash\n--check-links-backend-opt allowable_codes:[200]\n```\n\n\n## TODO\n\n- pick a markdown renderer (probably commonmark) or make the markdown renderer pluggable\n- options for validating links (allow absolute links, only remote or local, etc.)\n- find URLs in Python docstrings\n\n\n\n",
+  "requires_dist": [
+    "docutils",
+    "html5lib",
+    "nbconvert",
+    "nbformat",
+    "pytest (>=4.6)",
+    "requests",
+    "requests-cache ; extra == 'cache'"
+  ],
+  "requires_python": ">=3.6",
+  "current_version": "0.5.1",
+  "released_versions": [
+    "0.0.1",
+    "0.0.2",
+    "0.1.0",
+    "0.2.0",
+    "0.3.0",
+    "0.3.2",
+    "0.3.4",
+    "0.4.0",
+    "0.4.1",
+    "0.4.2",
+    "0.4.3",
+    "0.4.3.dev7",
+    "0.4.4",
+    "0.5.0",
+    "0.5.1",
+    "4.3.3"
+  ]
+}

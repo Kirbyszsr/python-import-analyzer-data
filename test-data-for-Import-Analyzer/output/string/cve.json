@@ -1,0 +1,3122 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 3978,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-25T06:25Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36229",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-843"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9425",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9425",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/4bdfffd2889c0c5cdf58bebafbdc8fce4bb2bff0",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/4bdfffd2889c0c5cdf58bebafbdc8fce4bb2bff0",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in ldap_X509dn2bv in OpenLDAP before 2.4.57 leading to a slapd crash in the X.509 DN parsing in ad_keystring, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-33525",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/EyesOfNetworkCommunity/eonweb/releases",
+                "name": "https://github.com/EyesOfNetworkCommunity/eonweb/releases",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://github.com/ArianeBlow/LilacPathVUln/blob/main/eon-pwn.sh",
+                "name": "https://github.com/ArianeBlow/LilacPathVUln/blob/main/eon-pwn.sh",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "EyesOfNetwork eonweb through 5.3-11 allows Remote Command Execution (by authenticated users) via shell metacharacters in the nagios_path parameter to lilac/export.php, as demonstrated by %26%26+curl to insert an \"&& curl\" substring for the shell."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-24T20:15Z",
+        "lastModifiedDate": "2021-05-24T20:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-10062",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/aurelia/templating-resources/blob/0cef07a8cac8e99146d8e1c4b734491bb3dc4724/src/html-sanitizer.js",
+                "name": "https://github.com/aurelia/templating-resources/blob/0cef07a8cac8e99146d8e1c4b734491bb3dc4724/src/html-sanitizer.js",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://aurelia.io",
+                "name": "https://aurelia.io",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.gosecure.net/blog/2021/05/12/aurelia-framework-insecure-default-allows-xss/",
+                "name": "https://www.gosecure.net/blog/2021/05/12/aurelia-framework-insecure-default-allows-xss/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Mitigation",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The HTMLSanitizer class in html-sanitizer.ts in all released versions of the Aurelia framework 1.x repository is vulnerable to XSS. The sanitizer only attempts to filter SCRIPT elements, which makes it feasible for remote attackers to conduct XSS attacks via (for example) JavaScript code in an attribute of various other elements. An attacker might also exploit a bug in how the SCRIPT string is processed by splitting and nesting them for example."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:bluespire:aurelia_framework:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.0.0",
+                  "versionEndIncluding": "1.3.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "CHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.1,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 2.7
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-05-13T21:15Z",
+        "lastModifiedDate": "2021-05-24T16:01Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-24306",
+            "ASSIGNER": "contact@wpscan.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://wpscan.com/vulnerability/35516555-c50c-486a-886c-df49c9e51e2c",
+                "name": "https://wpscan.com/vulnerability/35516555-c50c-486a-886c-df49c9e51e2c",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The Ultimate Member \u00e2\u20ac\u201c User Profile, User Registration, Login & Membership Plugin WordPress plugin before 2.1.20 did not properly sanitise, validate or encode the query string when generating a link to edit user's own profile, leading to an authenticated reflected Cross-Site Scripting issue. Knowledge of the targeted username is required to exploit this, and attackers would then need to make the related logged in user open a malicious link."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-24T11:15Z",
+        "lastModifiedDate": "2021-05-24T11:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29921",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/python/cpython/pull/25099",
+                "name": "https://github.com/python/cpython/pull/25099",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://sick.codes/sick-2021-014",
+                "name": "https://sick.codes/sick-2021-014",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+                "name": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/sickcodes",
+                "name": "https://github.com/sickcodes",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+                "name": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/python/cpython/pull/12577",
+                "name": "https://github.com/python/cpython/pull/12577",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://docs.python.org/3/library/ipaddress.html",
+                "name": "https://docs.python.org/3/library/ipaddress.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+                "name": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.python.org/issue36384",
+                "name": "https://bugs.python.org/issue36384",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In Python before 3,9,5, the ipaddress library mishandles leading zero characters in the octets of an IP address string. This (in some situations) allows attackers to bypass access control that is based on IP addresses."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "3.8.0",
+                  "versionEndExcluding": "3.9.5",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-06T13:15Z",
+        "lastModifiedDate": "2021-05-24T05:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-1797",
+            "ASSIGNER": "product-security@apple.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-119"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://support.apple.com/kb/HT4292",
+                "name": "http://support.apple.com/kb/HT4292",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://osvdb.org/66828",
+                "name": "66828",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce/2010//Aug/msg00001.html",
+                "name": "APPLE-SA-2010-08-11-2",
+                "refsource": "APPLE",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.exploit-db.com/exploits/14538",
+                "name": "14538",
+                "refsource": "EXPLOIT-DB",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/40807",
+                "name": "40807",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce/2010//Aug/msg00000.html",
+                "name": "APPLE-SA-2010-08-11-1",
+                "refsource": "APPLE",
+                "tags": []
+              },
+              {
+                "url": "http://support.apple.com/kb/HT4291",
+                "name": "http://support.apple.com/kb/HT4291",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/42151",
+                "name": "42151",
+                "refsource": "BID",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-972-1",
+                "name": "USN-972-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/maverick/+source/freetype/+bug/617019",
+                "name": "https://bugs.launchpad.net/ubuntu/maverick/+source/freetype/+bug/617019",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2010/2106",
+                "name": "ADV-2010-2106",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2010/2018",
+                "name": "ADV-2010-2018",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.f-secure.com/weblog/archives/00002002.html",
+                "name": "http://www.f-secure.com/weblog/archives/00002002.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=018f5c27813dd7eef4648fe254632ecea0c85a50",
+                "name": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=018f5c27813dd7eef4648fe254632ecea0c85a50",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://freetype.sourceforge.net/index2.html#release-freetype-2.4.2",
+                "name": "http://freetype.sourceforge.net/index2.html#release-freetype-2.4.2",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=621144",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=621144",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/40816",
+                "name": "40816",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=11d65e8a1f1f14e56148fd991965424d9bd1cdbc",
+                "name": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=11d65e8a1f1f14e56148fd991965424d9bd1cdbc",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://sourceforge.net/projects/freetype/files/freetype2/2.4.2/NEWS/view",
+                "name": "http://sourceforge.net/projects/freetype/files/freetype2/2.4.2/NEWS/view",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/40982",
+                "name": "40982",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/48951",
+                "name": "48951",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/60856",
+                "name": "appleios-pdf-code-execution(60856)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Multiple stack-based buffer overflows in the cff_decoder_parse_charstrings function in the CFF Type2 CharStrings interpreter in cff/cffgload.c in FreeType before 2.4.2, as used in Apple iOS before 4.0.2 on the iPhone and iPod touch and before 3.2.2 on the iPad, allow remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via crafted CFF opcodes in embedded fonts in a PDF document, as demonstrated by JailbreakMe. NOTE: some of these details are obtained from third party information."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.0:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.3:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.3:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.0:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.2:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.2.1:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.2:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1.2:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.0.1:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.1:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.4:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.0:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.1:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1.3:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.2:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.0.2:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.2:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.4:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.1:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.1:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.1:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.0.1:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.0:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:4.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:4.0.1:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1.2:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.2.1:-:ipad:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.2:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:4.0:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.0:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.2:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.5:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:1.1.5:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.0.2:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.2.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:2.2.1:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.0:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:3.2.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:4.0.1:-:ipodtouch:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:iphone_os:4.0:-:iphone:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 9.3
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.6,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2010-08-16T18:39Z",
+        "lastModifiedDate": "2019-09-26T17:05Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-32921",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-362"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://blog.prosody.im/prosody-0.11.9-released/",
+                "name": "https://blog.prosody.im/prosody-0.11.9-released/",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/05/13/1",
+                "name": "[oss-security] 20210513 Prosody XMPP server advisory 2021-05-12 (multiple vulnerabilities)",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/05/14/2",
+                "name": "[oss-security] 20210514 Re: Prosody XMPP server advisory 2021-05-12 (multiple vulnerabilities)",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Mitigation",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4916",
+                "name": "DSA-4916",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6MFFBZWXKPZEVZNQSVJNCUE7WRF3T7DG/",
+                "name": "FEDORA-2021-b5d8c6d086",
+                "refsource": "FEDORA",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in Prosody before 0.11.9. It does not use a constant-time algorithm for comparing certain secret strings when running under Lua 5.2 or later. This can potentially be used in a timing attack to reveal the contents of secret strings to an attacker."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:prosody:prosody:*:*:*:*:*:*:*:*",
+                      "versionEndExcluding": "0.11.9",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:a:lua:lua:*:*:*:*:*:*:*:*",
+                      "versionStartIncluding": "5.2.0",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-13T16:15Z",
+        "lastModifiedDate": "2021-05-22T03:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-27840",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-125"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1941400",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1941400",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00036.html",
+                "name": "[debian-lts-announce] 20210331 [SECURITY] [DLA 2611-1] ldb security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210326-0007/",
+                "name": "https://security.netapp.com/advisory/ntap-20210326-0007/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.samba.org/samba/security/CVE-2020-27840.html",
+                "name": "https://www.samba.org/samba/security/CVE-2020-27840.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZXP3ONIY6MB4C5LDZV4YL5KJCES3UX24/",
+                "name": "FEDORA-2021-1a8e93a285",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VLZ74IF2N75VQSIHBL4B3P5WKWQCXSRY/",
+                "name": "FEDORA-2021-c93a3a5d3f",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4884",
+                "name": "DSA-4884",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X5J3B6PN5XMXF3OHYBNHDKZ3XFSUGY4L/",
+                "name": "FEDORA-2021-c2d8628d33",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was found in samba. Spaces used in a string around a domain name (DN), while supposed to be ignored, can cause invalid DN strings with spaces to instead write a zero-byte into out-of-bounds memory, resulting in a crash. The highest threat from this vulnerability is to system availability."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "4.0.0",
+                  "versionEndExcluding": "4.12.13",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "4.13.0",
+                  "versionEndExcluding": "4.13.6",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "4.14.0",
+                  "versionEndExcluding": "4.14.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-12T15:15Z",
+        "lastModifiedDate": "2021-05-21T18:32Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-26914",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-502"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.netmotionsoftware.com/security-advisories/security-vulnerability-in-mobility-web-server-november-19-2020",
+                "name": "https://www.netmotionsoftware.com/security-advisories/security-vulnerability-in-mobility-web-server-november-19-2020",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://ssd-disclosure.com/ssd-advisory-netmotion-mobility-server-multiple-deserialization-of-untrusted-data-lead-to-rce/",
+                "name": "https://ssd-disclosure.com/ssd-advisory-netmotion-mobility-server-multiple-deserialization-of-untrusted-data-lead-to-rce/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://ssd-disclosure.com/?p=4676",
+                "name": "https://ssd-disclosure.com/?p=4676",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://packetstormsecurity.com/files/162617/NetMotion-Mobility-Server-MvcUtil-Java-Deserialization.html",
+                "name": "http://packetstormsecurity.com/files/162617/NetMotion-Mobility-Server-MvcUtil-Java-Deserialization.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "NetMotion Mobility before 11.73 and 12.x before 12.02 allows unauthenticated remote attackers to execute arbitrary code as SYSTEM because of Java deserialization in MvcUtil valueStringToObject."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netmotionsoftware:netmotion_mobility:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "11.73",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netmotionsoftware:netmotion_mobility:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "12.0",
+                  "versionEndExcluding": "12.02",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 9.3
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.6,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-02-08T22:15Z",
+        "lastModifiedDate": "2021-05-21T16:52Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29519",
+            "ASSIGNER": "security-advisories@github.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-843"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5",
+                "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+                "name": "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "TensorFlow is an end-to-end open source platform for machine learning. The API of `tf.raw_ops.SparseCross` allows combinations which would result in a `CHECK`-failure and denial of service. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/3d782b7d47b1bf2ed32bd4a246d6d6cadc4c903d/tensorflow/core/kernels/sparse_cross_op.cc#L114-L116) is tricked to consider a tensor of type `tstring` which in fact contains integral elements. Fixing the type confusion by preventing mixing `DT_STRING` and `DT_INT64` types solves this issue. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.1.4",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.2.0",
+                  "versionEndExcluding": "2.2.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.3.0",
+                  "versionEndExcluding": "2.3.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.4.0",
+                  "versionEndExcluding": "2.4.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-14T20:15Z",
+        "lastModifiedDate": "2021-05-20T17:24Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-21053",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/fusionpbx/fusionpbx/commit/2ce613f1e9fe8ffab7a4cb9d1384444622285335",
+                "name": "https://github.com/fusionpbx/fusionpbx/commit/2ce613f1e9fe8ffab7a4cb9d1384444622285335",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://resp3ctblog.wordpress.com/2019/10/28/fusionpbx-xss-22/",
+                "name": "https://resp3ctblog.wordpress.com/2019/10/28/fusionpbx-xss-22/",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Cross Site Scriptiong (XSS) vulnerability exists in FusionPBX 4.5.7 allows remote malicious users to inject arbitrary web script or HTML via an unsanitized \"query_string\" variable in app\\devices\\device_imports.php."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-20T15:15Z",
+        "lastModifiedDate": "2021-05-20T17:16Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29541",
+            "ASSIGNER": "security-advisories@github.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-476"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/tensorflow/tensorflow/commit/ba424dd8f16f7110eea526a8086f1a155f14f22b",
+                "name": "https://github.com/tensorflow/tensorflow/commit/ba424dd8f16f7110eea526a8086f1a155f14f22b",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xqfj-35wv-m3cr",
+                "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xqfj-35wv-m3cr",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a dereference of a null pointer in `tf.raw_ops.StringNGrams`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/1cdd4da14282210cc759e468d9781741ac7d01bf/tensorflow/core/kernels/string_ngrams_op.cc#L67-L74) does not fully validate the `data_splits` argument. This would result in `ngrams_data`(https://github.com/tensorflow/tensorflow/blob/1cdd4da14282210cc759e468d9781741ac7d01bf/tensorflow/core/kernels/string_ngrams_op.cc#L106-L110) to be a null pointer when the output would be computed to have 0 or negative size. Later writes to the output tensor would then cause a null pointer dereference. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.1.4",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.2.0",
+                  "versionEndExcluding": "2.2.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.3.0",
+                  "versionEndExcluding": "2.3.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.4.0",
+                  "versionEndExcluding": "2.4.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-14T20:15Z",
+        "lastModifiedDate": "2021-05-20T16:21Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-32096",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-352"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://blog.sonarsource.com/code-vulnerabilities-in-nsa-application-revealed",
+                "name": "https://blog.sonarsource.com/code-vulnerabilities-in-nsa-application-revealed",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://portswigger.net/daily-swig/nsa-workflow-application-emissary-vulnerable-to-malicious-takeover",
+                "name": "https://portswigger.net/daily-swig/nsa-workflow-application-emissary-vulnerable-to-malicious-takeover",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The ConsoleAction component of U.S. National Security Agency (NSA) Emissary 5.9.0 allows a CSRF attack that results in injecting arbitrary Ruby code (for an eval call) via the CONSOLE_COMMAND_STRING parameter."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:nsa:emissary:5.9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-05-07T04:15Z",
+        "lastModifiedDate": "2021-05-19T17:44Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2016-6264",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2016/07/21/6",
+                "name": "[oss-security] 20160721 Re: CVE Request: uclibc-ng (and uclibc): ARM arch: code execution",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2016/07/21/2",
+                "name": "[oss-security] 20160720 Re: CVE Request: uclibc-ng (and uclibc): ARM arch: code execution",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2016/06/29/3",
+                "name": "[oss-security] 20160729 CVE Request: uclibc-ng (and uclibc): ARM arch: code execution",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://mailman.uclibc-ng.org/pipermail/devel/2016-May/000890.html",
+                "name": "[uclibc-ng-devel] 20160526 uClibc-ng and uClibc memset bug, ARM",
+                "refsource": "MLIST",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://mailman.uclibc-ng.org/pipermail/devel/2016-July/001067.html",
+                "name": "[uclibc-ng-devel] 20160703 new release 1.0.16",
+                "refsource": "MLIST",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/91492",
+                "name": "91492",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Integer signedness error in libc/string/arm/memset.S in uClibc and uClibc-ng before 1.0.16 allows context-dependent attackers to cause a denial of service (crash) via a negative length value to the memset function."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:uclibc:uclibc:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:uclibc-ng_project:uclibc-ng:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.0.16",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": true,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-01-27T22:59Z",
+        "lastModifiedDate": "2021-05-19T15:17Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29542",
+            "ASSIGNER": "security-advisories@github.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-131"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4hrh-9vmp-2jgg",
+                "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4hrh-9vmp-2jgg",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/tensorflow/tensorflow/commit/ba424dd8f16f7110eea526a8086f1a155f14f22b",
+                "name": "https://github.com/tensorflow/tensorflow/commit/ba424dd8f16f7110eea526a8086f1a155f14f22b",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a heap buffer overflow by passing crafted inputs to `tf.raw_ops.StringNGrams`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/1cdd4da14282210cc759e468d9781741ac7d01bf/tensorflow/core/kernels/string_ngrams_op.cc#L171-L185) fails to consider corner cases where input would be split in such a way that the generated tokens should only contain padding elements. If input is such that `num_tokens` is 0, then, for `data_start_index=0` (when left padding is present), the marked line would result in reading `data[-1]`. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.1.4",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.2.0",
+                  "versionEndExcluding": "2.2.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.3.0",
+                  "versionEndExcluding": "2.3.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.4.0",
+                  "versionEndExcluding": "2.4.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-14T20:15Z",
+        "lastModifiedDate": "2021-05-18T19:35Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-30145",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://devel0pment.de/?p=2217",
+                "name": "https://devel0pment.de/?p=2217",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://github.com/mpv-player/mpv/releases/tag/v0.33.1",
+                "name": "https://github.com/mpv-player/mpv/releases/tag/v0.33.1",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://mpv.io",
+                "name": "https://mpv.io",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://github.com/mpv-player/mpv/commit/d0c530919d8cd4d7a774e38ab064e0fabdae34e6",
+                "name": "https://github.com/mpv-player/mpv/commit/d0c530919d8cd4d7a774e38ab064e0fabdae34e6",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A format string vulnerability in mpv through 0.33.0 allows user-assisted remote attackers to achieve code execution via a crafted m3u playlist file."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-18T14:15Z",
+        "lastModifiedDate": "2021-05-18T15:48Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29425",
+            "ASSIGNER": "security@apache.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-22"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://issues.apache.org/jira/browse/IO-556",
+                "name": "https://issues.apache.org/jira/browse/IO-556",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rc359823b5500e9a9a2572678ddb8e01d3505a7ffcadfa8d13b8780ab%40%3Cuser.commons.apache.org%3E",
+                "name": "https://lists.apache.org/thread.html/rc359823b5500e9a9a2572678ddb8e01d3505a7ffcadfa8d13b8780ab%40%3Cuser.commons.apache.org%3E",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rfd01af05babc95b8949e6d8ea78d9834699e1b06981040dde419a330@%3Cdev.commons.apache.org%3E",
+                "name": "[commons-dev] 20210414 Re: [all] OSS Fuzz",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r8efcbabde973ea72f5e0933adc48ef1425db5cde850bf641b3993f31@%3Cdev.commons.apache.org%3E",
+                "name": "[commons-dev] 20210415 Re: [all] OSS Fuzz",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r873d5ddafc0a68fd999725e559776dc4971d1ab39c0f5cc81bd9bc04@%3Ccommits.pulsar.apache.org%3E",
+                "name": "[pulsar-commits] 20210420 [GitHub] [pulsar] lhotari opened a new pull request #10287: [Security] Upgrade commons-io to address CVE-2021-29425",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r0d73e2071d1f1afe1a15da14c5b6feb2cf17e3871168d5a3c8451436@%3Ccommits.pulsar.apache.org%3E",
+                "name": "[pulsar-commits] 20210420 [GitHub] [pulsar] merlimat merged pull request #10287: [Security] Upgrade commons-io to address CVE-2021-29425",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/raa053846cae9d497606027816ae87b4e002b2e0eb66cb0dee710e1f5@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210427 [jira] [Created] (RAT-281) Update commons-io to fix CVE-2021-29425 Moderate severity",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r8569a41d565ca880a4dee0e645dad1cd17ab4a92e68055ad9ebb7375@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210427 [jira] [Commented] (RAT-281) Update commons-io to fix CVE-2021-29425 Moderate severity",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r47ab6f68cbba8e730f42c4ea752f3a44eb95fb09064070f2476bb401@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210427 [jira] [Closed] (RAT-281) Update commons-io to fix CVE-2021-29425 Moderate severity",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rfa2f08b7c0caf80ca9f4a18bd875918fdd4e894e2ea47942a4589b9c@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210427 [jira] [Updated] (RAT-281) Update commons-io to fix CVE-2021-29425 Moderate severity",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r1c2f4683c35696cf6f863e3c107e37ec41305b1930dd40c17260de71@%3Ccommits.pulsar.apache.org%3E",
+                "name": "[pulsar-commits] 20210429 [pulsar] branch branch-2.7 updated: [Security] Upgrade commons-io to address CVE-2021-29425 (#10287)",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r27b1eedda37468256c4bb768fde1e8b79b37ec975cbbfd0d65a7ac34@%3Cdev.myfaces.apache.org%3E",
+                "name": "[myfaces-dev] 20210504 [GitHub] [myfaces-tobago] lofwyr14 opened a new pull request #808: build: CVE fix",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r2bc986a070457daca457a54fe71ee09d2584c24dc262336ca32b6a19@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210518 [jira] [Updated] (WHISKER-19) Update commons-io to fix CVE-2021-29425",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r523a6ffad58f71c4f3761e3cee72df878e48cdc89ebdce933be1475c@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210518 [jira] [Commented] (WHISKER-19) Update commons-io to fix CVE-2021-29425",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/ra8ef65aedc086d2d3d21492b4c08ae0eb8a3a42cc52e29ba1bc009d8@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210518 [jira] [Created] (WHISKER-19) Update commons-io to fix CVE-2021-29425",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rbebd3e19651baa7a4a5503a9901c95989df9d40602c8e35cb05d3eb5@%3Cdev.creadur.apache.org%3E",
+                "name": "[creadur-dev] 20210518 [jira] [Assigned] (WHISKER-19) Update commons-io to fix CVE-2021-29425",
+                "refsource": "MLIST",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In Apache Commons IO before 2.7, When invoking the method FileNameUtils.normalize with an improper input string, like \"//../foo\", or \"\\\\..\\foo\", the result would be the same value, thus possibly providing access to files in the parent directory, but not further above (thus \"limited\" path traversal), if the calling code would use the result to construct a path value."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:commons_io:2.2:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:commons_io:2.3:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:commons_io:2.4:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:commons_io:2.5:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:commons_io:2.6:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.3,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 1.4
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-04-13T07:15Z",
+        "lastModifiedDate": "2021-05-18T13:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-28092",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/sindresorhus/is-svg/releases",
+                "name": "https://github.com/sindresorhus/is-svg/releases",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.npmjs.com/package/is-svg",
+                "name": "https://www.npmjs.com/package/is-svg",
+                "refsource": "MISC",
+                "tags": [
+                  "Product"
+                ]
+              },
+              {
+                "url": "https://github.com/sindresorhus/is-svg/releases/tag/v4.2.2",
+                "name": "https://github.com/sindresorhus/is-svg/releases/tag/v4.2.2",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210513-0008/",
+                "name": "https://security.netapp.com/advisory/ntap-20210513-0008/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The is-svg package 2.1.0 through 4.2.1 for Node.js uses a regular expression that is vulnerable to Regular Expression Denial of Service (ReDoS). If an attacker provides a malicious string, is-svg will get stuck processing the input for a very long time."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:is-svg_project:is-svg:*:*:*:*:*:node.js:*:*",
+                  "versionStartIncluding": "2.1.0",
+                  "versionEndIncluding": "4.2.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-03-12T22:15Z",
+        "lastModifiedDate": "2021-05-17T20:14Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29617",
+            "ASSIGNER": "security-advisories@github.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-755"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/tensorflow/tensorflow/commit/890f7164b70354c57d40eda52dcdd7658677c09f",
+                "name": "https://github.com/tensorflow/tensorflow/commit/890f7164b70354c57d40eda52dcdd7658677c09f",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-mmq6-q8r3-48fm",
+                "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-mmq6-q8r3-48fm",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/tensorflow/issues/46974",
+                "name": "https://github.com/tensorflow/issues/46974",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://github.com/tensorflow/issues/46900",
+                "name": "https://github.com/tensorflow/issues/46900",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a denial of service via `CHECK`-fail in `tf.strings.substr` with invalid arguments. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.1.4",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.2.0",
+                  "versionEndIncluding": "2.2.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.3.0",
+                  "versionEndIncluding": "2.3.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:google:tensorflow:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.4.0",
+                  "versionEndIncluding": "2.4.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-14T20:15Z",
+        "lastModifiedDate": "2021-05-17T19:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2013-3893",
+            "ASSIGNER": "secure@microsoft.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-399"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://technet.microsoft.com/security/advisory/2887505",
+                "name": "http://technet.microsoft.com/security/advisory/2887505",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://blogs.technet.com/b/srd/archive/2013/09/17/cve-2013-3893-fix-it-workaround-available.aspx",
+                "name": "http://blogs.technet.com/b/srd/archive/2013/09/17/cve-2013-3893-fix-it-workaround-available.aspx",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://pastebin.com/raw.php?i=Hx1L5gu6",
+                "name": "http://pastebin.com/raw.php?i=Hx1L5gu6",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://blogs.technet.com/b/srd/archive/2013/10/08/ms13-080-addresses-two-vulnerabilities-under-limited-targeted-attacks.aspx",
+                "name": "http://blogs.technet.com/b/srd/archive/2013/10/08/ms13-080-addresses-two-vulnerabilities-under-limited-targeted-attacks.aspx",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.us-cert.gov/ncas/alerts/TA13-288A",
+                "name": "TA13-288A",
+                "refsource": "CERT",
+                "tags": [
+                  "US Government Resource"
+                ]
+              },
+              {
+                "url": "http://jvndb.jvn.jp/ja/contents/2013/JVNDB-2013-000093.html",
+                "name": "JVNDB-2013-000093",
+                "refsource": "JVNDB",
+                "tags": []
+              },
+              {
+                "url": "http://jvn.jp/en/jp/JVN27443259/index.html",
+                "name": "JVN#27443259",
+                "refsource": "JVN",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/62453",
+                "name": "62453",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18665",
+                "name": "oval:org.mitre.oval:def:18665",
+                "refsource": "OVAL",
+                "tags": []
+              },
+              {
+                "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2013/ms13-080",
+                "name": "MS13-080",
+                "refsource": "MS",
+                "tags": []
+              },
+              {
+                "url": "http://packetstormsecurity.com/files/162585/Microsoft-Internet-Explorer-8-SetMouseCapture-Use-After-Free.html",
+                "name": "http://packetstormsecurity.com/files/162585/Microsoft-Internet-Explorer-8-SetMouseCapture-Use-After-Free.html",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Use-after-free vulnerability in the SetMouseCapture implementation in mshtml.dll in Microsoft Internet Explorer 6 through 11 allows remote attackers to execute arbitrary code via crafted JavaScript strings, as demonstrated by use of an ms-help: URL that triggers loading of hxds.dll."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:11:release-preview:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:11:developer-preview:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:microsoft:internet_explorer:10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 9.3
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 8.6,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2013-09-18T10:08Z",
+        "lastModifiedDate": "2021-05-17T17:15Z"
+      }
+    ]
+  }
+}

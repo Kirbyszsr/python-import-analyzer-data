@@ -1,0 +1,43 @@
+{
+  "name": "pyOpenSSL",
+  "description": "========================================================\npyOpenSSL -- A Python wrapper around the OpenSSL library\n========================================================\n\n.. image:: https://readthedocs.org/projects/pyopenssl/badge/?version=stable\n   :target: https://pyopenssl.org/en/stable/\n   :alt: Stable Docs\n\n.. image:: https://travis-ci.com/pyca/pyopenssl.svg?branch=master\n   :target: https://travis-ci.com/pyca/pyopenssl\n   :alt: Build status\n\n.. image:: https://codecov.io/github/pyca/pyopenssl/branch/master/graph/badge.svg\n   :target: https://codecov.io/github/pyca/pyopenssl\n   :alt: Test coverage\n\n**Note:** The Python Cryptographic Authority **strongly suggests** the use of `pyca/cryptography`_\nwhere possible. If you are using pyOpenSSL for anything other than making a TLS connection \n**you should move to cryptography and drop your pyOpenSSL dependency**.\n\nHigh-level wrapper around a subset of the OpenSSL library. Includes\n\n* ``SSL.Connection`` objects, wrapping the methods of Python's portable sockets\n* Callbacks written in Python\n* Extensive error-handling mechanism, mirroring OpenSSL's error codes\n\n... and much more.\n\nYou can find more information in the documentation_.\nDevelopment takes place on GitHub_.\n\n\nDiscussion\n==========\n\nIf you run into bugs, you can file them in our `issue tracker`_.\n\nWe maintain a cryptography-dev_ mailing list for both user and development discussions.\n\nYou can also join ``#cryptography-dev`` on Freenode to ask questions or get involved.\n\n\n.. _documentation: https://pyopenssl.org/\n.. _`issue tracker`: https://github.com/pyca/pyopenssl/issues\n.. _cryptography-dev: https://mail.python.org/mailman/listinfo/cryptography-dev\n.. _GitHub: https://github.com/pyca/pyopenssl\n.. _`pyca/cryptography`: https://github.com/pyca/cryptography\n\n\nRelease Information\n===================\n\n20.0.1 (2020-12-15)\n-------------------\n\nBackward-incompatible changes:\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nDeprecations:\n^^^^^^^^^^^^^\n\nChanges:\n^^^^^^^^\n\n- Fixed compatibility with OpenSSL 1.1.0.\n\n20.0.0 (2020-11-27)\n-------------------\n\n\nBackward-incompatible changes:\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n- The minimum ``cryptography`` version is now 3.2.\n- Remove deprecated ``OpenSSL.tsafe`` module.\n- Removed deprecated ``OpenSSL.SSL.Context.set_npn_advertise_callback``, ``OpenSSL.SSL.Context.set_npn_select_callback``, and ``OpenSSL.SSL.Connection.get_next_proto_negotiated``.\n- Drop support for Python 3.4\n- Drop support for OpenSSL 1.0.1 and 1.0.2\n\nDeprecations:\n^^^^^^^^^^^^^\n\n- Deprecated ``OpenSSL.crypto.loads_pkcs7`` and ``OpenSSL.crypto.loads_pkcs12``.\n\nChanges:\n^^^^^^^^\n\n- Added a new optional ``chain`` parameter to ``OpenSSL.crypto.X509StoreContext()``\n  where additional untrusted certificates can be specified to help chain building.\n  `#948 <https://github.com/pyca/pyopenssl/pull/948>`_\n- Added ``OpenSSL.crypto.X509Store.load_locations`` to set trusted\n  certificate file bundles and/or directories for verification.\n  `#943 <https://github.com/pyca/pyopenssl/pull/943>`_\n- Added ``Context.set_keylog_callback`` to log key material.\n  `#910 <https://github.com/pyca/pyopenssl/pull/910>`_\n- Added ``OpenSSL.SSL.Connection.get_verified_chain`` to retrieve the\n  verified certificate chain of the peer.\n  `#894 <https://github.com/pyca/pyopenssl/pull/894>`_.\n- Make verification callback optional in ``Context.set_verify``.\n  If omitted, OpenSSL's default verification is used.\n  `#933 <https://github.com/pyca/pyopenssl/pull/933>`_\n- Fixed a bug that could truncate or cause a zero-length key error due to a\n  null byte in private key passphrase in ``OpenSSL.crypto.load_privatekey``\n  and ``OpenSSL.crypto.dump_privatekey``.\n  `#947 <https://github.com/pyca/pyopenssl/pull/947>`_\n\n19.1.0 (2019-11-18)\n-------------------\n\n\nBackward-incompatible changes:\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n- Removed deprecated ``ContextType``, ``ConnectionType``, ``PKeyType``, ``X509NameType``, ``X509ReqType``, ``X509Type``, ``X509StoreType``, ``CRLType``, ``PKCS7Type``, ``PKCS12Type``, and ``NetscapeSPKIType`` aliases.\n  Use the classes without the ``Type`` suffix instead.\n  `#814 <https://github.com/pyca/pyopenssl/pull/814>`_\n- The minimum ``cryptography`` version is now 2.8 due to issues on macOS with a transitive dependency.\n  `#875 <https://github.com/pyca/pyopenssl/pull/875>`_\n\nDeprecations:\n^^^^^^^^^^^^^\n\n- Deprecated ``OpenSSL.SSL.Context.set_npn_advertise_callback``, ``OpenSSL.SSL.Context.set_npn_select_callback``, and ``OpenSSL.SSL.Connection.get_next_proto_negotiated``.\n  ALPN should be used instead.\n  `#820 <https://github.com/pyca/pyopenssl/pull/820>`_\n\n\nChanges:\n^^^^^^^^\n\n- Support ``bytearray`` in ``SSL.Connection.send()`` by using cffi's from_buffer.\n  `#852 <https://github.com/pyca/pyopenssl/pull/852>`_\n- The ``OpenSSL.SSL.Context.set_alpn_select_callback`` can return a new ``NO_OVERLAPPING_PROTOCOLS`` sentinel value\n  to allow a TLS handshake to complete without an application protocol.\n\n`Full changelog <https://pyopenssl.org/en/stable/changelog.html>`_.\n\n\n\n",
+  "requires_dist": [
+    "cryptography (>=3.2)",
+    "six (>=1.5.2)",
+    "sphinx ; extra == 'docs'",
+    "sphinx-rtd-theme ; extra == 'docs'",
+    "flaky ; extra == 'test'",
+    "pretend ; extra == 'test'",
+    "pytest (>=3.0.1) ; extra == 'test'"
+  ],
+  "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+  "current_version": "20.0.1",
+  "released_versions": [
+    "0.10",
+    "0.11",
+    "0.12",
+    "0.13",
+    "0.13.1",
+    "0.14",
+    "0.15",
+    "0.15.1",
+    "0.6",
+    "0.7",
+    "0.8",
+    "0.9",
+    "16.0.0",
+    "16.1.0",
+    "16.2.0",
+    "17.0.0",
+    "17.1.0",
+    "17.2.0",
+    "17.3.0",
+    "17.4.0",
+    "17.5.0",
+    "18.0.0",
+    "19.0.0",
+    "19.1.0",
+    "20.0.0",
+    "20.0.1"
+  ]
+}

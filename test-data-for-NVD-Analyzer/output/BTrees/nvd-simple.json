@@ -1,0 +1,603 @@
+[
+  {
+    "cveID": "CVE-2010-2943",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2010-09-30T15:00Z",
+    "lastModifiedDate": "2020-08-10T16:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The xfs implementation in the Linux kernel before 2.6.35 does not look up inode allocation btrees before reading inode buffers, which allows remote authenticated users to read unlinked files, or read or overwrite disk blocks that are currently assigned to an active file but were previously assigned to an unlinked file, by accessing a stale NFS filehandle."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://article.gmane.org/gmane.comp.file-systems.xfs.general/33771",
+        "name": "[linux-xfs] 20100620 [PATCH 2/4] xfs: validate untrusted inode numbers during lookup",
+        "refsource": "MLIST",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/08/18/2",
+        "name": "[oss-security] 20100818 CVE request - kernel: xfs: stale data exposure",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://article.gmane.org/gmane.comp.file-systems.xfs.general/33767",
+        "name": "[linux-xfs] 20100620 [PATCH 0/4, V2] xfs: validate inode numbers in file handles correctly",
+        "refsource": "MLIST",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/08/19/5",
+        "name": "[oss-security] 20100819 Re: CVE request - kernel: xfs: stale data exposure",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/42527",
+        "name": "42527",
+        "refsource": "BID",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.35",
+        "name": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.35",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7124fe0a5b619d65b739477b3b55a20bf805b06d",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7124fe0a5b619d65b739477b3b55a20bf805b06d",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://article.gmane.org/gmane.comp.file-systems.xfs.general/33769",
+        "name": "[linux-xfs] 20100620 [PATCH 4/4] xfs: remove block number from inode lookup code",
+        "refsource": "MLIST",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=624923",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=624923",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://oss.sgi.com/archives/xfs/2010-06/msg00198.html",
+        "name": "[xfs] 20100618 Re: [PATCH] xfsqa: test open_by_handle() on unlinked and freed inode clusters V2",
+        "refsource": "MLIST",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://article.gmane.org/gmane.comp.file-systems.xfs.general/33768",
+        "name": "[linux-xfs] 20100620 [PATCH 3/4] xfs: rename XFS_IGET_BULKSTAT to XFS_IGET_UNTRUSTED",
+        "refsource": "MLIST",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://oss.sgi.com/archives/xfs/2010-06/msg00191.html",
+        "name": "[xfs] 20100617 [PATCH] xfsqa: test open_by_handle() on unlinked and freed inode clusters V2",
+        "refsource": "MLIST",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7b6259e7a83647948fa33a736cc832310c8d85aa",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7b6259e7a83647948fa33a736cc832310c8d85aa",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=1920779e67cbf5ea8afef317777c5bf2b8096188",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=1920779e67cbf5ea8afef317777c5bf2b8096188",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2010-0723.html",
+        "name": "RHSA-2010:0723",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/42758",
+        "name": "42758",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1041-1",
+        "name": "USN-1041-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0070",
+        "name": "ADV-2011-0070",
+        "refsource": "VUPEN",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/43161",
+        "name": "43161",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1057-1",
+        "name": "USN-1057-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0280",
+        "name": "ADV-2011-0280",
+        "refsource": "VUPEN",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://support.avaya.com/css/P8/documents/100113326",
+        "name": "http://support.avaya.com/css/P8/documents/100113326",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/46397",
+        "name": "46397",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.vmware.com/security/advisories/VMSA-2011-0012.html",
+        "name": "http://www.vmware.com/security/advisories/VMSA-2011-0012.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/520102/100/0/threaded",
+        "name": "20111013 VMSA-2011-0012 VMware ESXi and ESX updates to third party libraries and ESX Service Console",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-8111",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2015-04-21T17:59Z",
+    "lastModifiedDate": "2019-04-15T16:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Tomcat Connectors (mod_jk) before 1.2.41 ignores JkUnmount rules for subtrees of previous JkMount rules, which allows remote attackers to access otherwise restricted artifacts via unspecified vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-0848.html",
+        "name": "RHSA-2015:0848",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-0846.html",
+        "name": "RHSA-2015:0846",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-0847.html",
+        "name": "RHSA-2015:0847",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-0849.html",
+        "name": "RHSA-2015:0849",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-1642.html",
+        "name": "RHSA-2015:1642",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-1641.html",
+        "name": "RHSA-2015:1641",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/74265",
+        "name": "74265",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3278",
+        "name": "DSA-3278",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ba661b0edd913b39ff129a32d855620dd861883ade05fd88a8ce517d@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190319 svn commit: r1855831 [26/30] - in /tomcat/site/trunk: ./ docs/ xdocs/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8d2a579bbd977c225c70cb23b0ec54865fb0dab5da3eff1e060c9935@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190325 svn commit: r1856174 [25/29] - in /tomcat/site/trunk: docs/ xdocs/ xdocs/stylesheets/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/277d42b48b6e9aef50949c0dcc79ce21693091d73da246b3c1981925@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190413 svn commit: r1857494 [18/20] - in /tomcat/site/trunk: ./ docs/ xdocs/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/5b7a23e245c93235c503900da854a143596d901bf1a1f67e851a5de4@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190415 svn commit: r1857582 [20/22] - in /tomcat/site/trunk: docs/ xdocs/stylesheets/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf8e8c091182b45daa50d3557cad9b10bb4198e3f08cf8f1c66a1b08d@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20200203 svn commit: r1873527 [26/30] - /tomcat/site/trunk/docs/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5c616dfc49156e4b06ffab842800c80f4425924d0f20c452c127a53c@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20200213 svn commit: r1873980 [30/34] - /tomcat/site/trunk/docs/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-9898",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2018-06-11T21:29Z",
+    "lastModifiedDate": "2018-08-03T17:24Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Use-after-free resulting in potentially exploitable crash when manipulating DOM subtrees in the Editor. This vulnerability affects Firefox < 50.1, Firefox ESR < 45.6, and Thunderbird < 45.6."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2016-96/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2016-96/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2016-95/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2016-95/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2016-94/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2016-94/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1314442",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1314442",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2017/dsa-3757",
+        "name": "DSA-3757",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201701-15",
+        "name": "GLSA-201701-15",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1037461",
+        "name": "1037461",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/94885",
+        "name": "94885",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2016-2946.html",
+        "name": "RHSA-2016:2946",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-1761",
+    "cveASSIGNER": "product-security@apple.com",
+    "publishedDate": "2010-06-11T19:30Z",
+    "lastModifiedDate": "2017-09-19T01:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Use-after-free vulnerability in WebKit in Apple Safari before 5.0 on Mac OS X 10.5 through 10.6 and Windows, and before 4.1 on Mac OS X 10.4, allows remote attackers to execute arbitrary code or cause a denial of service (application crash) via vectors involving HTML document subtrees."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/40105",
+        "name": "40105",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/40620",
+        "name": "40620",
+        "refsource": "BID",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2010/Jun/msg00000.html",
+        "name": "APPLE-SA-2010-06-07-1",
+        "refsource": "APPLE",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://support.apple.com/kb/HT4196",
+        "name": "http://support.apple.com/kb/HT4196",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/1373",
+        "name": "ADV-2010-1373",
+        "refsource": "VUPEN",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://securitytracker.com/id?1024067",
+        "name": "1024067",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2010//Jun/msg00002.html",
+        "name": "APPLE-SA-2010-06-16-1",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/1512",
+        "name": "ADV-2010-1512",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://support.apple.com/kb/HT4220",
+        "name": "http://support.apple.com/kb/HT4220",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2010/Jun/msg00003.html",
+        "name": "APPLE-SA-2010-06-21-1",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/40196",
+        "name": "40196",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://support.apple.com/kb/HT4225",
+        "name": "http://support.apple.com/kb/HT4225",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/2722",
+        "name": "ADV-2010-2722",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/41856",
+        "name": "41856",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1006-1",
+        "name": "USN-1006-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00006.html",
+        "name": "SUSE-SR:2011:002",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/43068",
+        "name": "43068",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0212",
+        "name": "ADV-2011-0212",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2011:039",
+        "name": "MDVSA-2011:039",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0552",
+        "name": "ADV-2011-0552",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7157",
+        "name": "oval:org.mitre.oval:def:7157",
+        "refsource": "OVAL",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-100006",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-01-13T11:59Z",
+    "lastModifiedDate": "2017-09-08T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple cross-site scripting (XSS) vulnerabilities in modules_v3/googlemap/wt_v3_street_view.php in webtrees before 1.5.2 allow remote attackers to inject arbitrary web script or HTML via the (1) map, (2) streetview, or (3) reset parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/56870",
+        "name": "56870",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.rusty-ice.de/advisory/advisory_2014001.txt",
+        "name": "http://www.rusty-ice.de/advisory/advisory_2014001.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/91133",
+        "name": "webtrees-wtv3streetview-xss(91133)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  }
+]

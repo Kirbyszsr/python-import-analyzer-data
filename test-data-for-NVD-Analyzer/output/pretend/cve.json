@@ -1,0 +1,1067 @@
+{
+  "resultsPerPage": 8,
+  "startIndex": 0,
+  "totalResults": 8,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-16T14:40Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36128",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-290"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://marketing.paxtechnology.com/about-pax",
+                "name": "https://marketing.paxtechnology.com/about-pax",
+                "refsource": "MISC",
+                "tags": [
+                  "Product"
+                ]
+              },
+              {
+                "url": "https://www.whatspos.com/",
+                "name": "https://www.whatspos.com/",
+                "refsource": "MISC",
+                "tags": [
+                  "Product"
+                ]
+              },
+              {
+                "url": "https://blog.pridesec.com.br/p/4c972078-5f01-419e-8bea-cf31ff2e3670/",
+                "name": "https://blog.pridesec.com.br/p/4c972078-5f01-419e-8bea-cf31ff2e3670/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Pax Technology PAXSTORE v7.0.8_20200511171508 and lower is affected by a token spoofing vulnerability. Each payment terminal has a session token (called X-Terminal-Token) to access the marketplace. This allows the store to identify the terminal and make available the applications distributed by its reseller. By intercepting HTTPS traffic from the application store, it is possible to collect the request responsible for assigning the X-Terminal-Token to the terminal, which makes it possible to craft an X-Terminal-Token pretending to be another device. An attacker can use this behavior to authenticate its own payment terminal in the application store through token impersonation."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:paxtechnology:paxstore:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "7.0.8_20200511171508:",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 8.2,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 4.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.4
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-07T11:15Z",
+        "lastModifiedDate": "2021-05-13T14:49Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-26291",
+            "ASSIGNER": "security@apache.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-346"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E",
+                "name": "https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r06db4057b74e0598a412734f693a34a8836ac6f06d16d139e5e1027c@%3Cdev.maven.apache.org%3E",
+                "name": "[maven-dev] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00@%3Cusers.maven.apache.org%3E",
+                "name": "[maven-users] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/04/23/5",
+                "name": "[oss-security] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r0556ce5db7231025785477739ee416b169d8aff5ee9bac7854d64736@%3Cannounce.apache.org%3E",
+                "name": "[announce] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/ra88a0eba7f84658cefcecc0143fd8bbad52c229ee5dfcbfdde7b6457@%3Cdev.jena.apache.org%3E",
+                "name": "[jena-dev] 20210428 FYI: Maven CVE-2021-26291",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/r3f0450dcab7e63b5f233ccfbc6fca5f1867a75c8aa2493ea82732381@%3Cdev.jena.apache.org%3E",
+                "name": "[jena-dev] 20210429 Re: FYI: Maven CVE-2021-26291",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.apache.org/thread.html/rfc27e2727a20a574f39273e0432aa97486a332f9b3068f6ac1346594@%3Cdev.myfaces.apache.org%3E",
+                "name": "[myfaces-dev] 20210506 [GitHub] [myfaces-tobago] lofwyr14 opened a new pull request #817: build: CVE fix",
+                "refsource": "MLIST",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Apache Maven will follow repositories that are defined in a dependency\u2019s Project Object Model (pom) which may be surprising to some users, resulting in potential risk if a malicious actor takes over that repository or is able to insert themselves into a position to pretend to be that repository. Maven is changing the default behavior in 3.8.1+ to no longer follow http (non-SSL) repository references by default. More details available in the referenced urls. If you are currently using a repository manager to govern the repositories used by your builds, you are unaffected by the risks present in the legacy behavior, and are unaffected by this vulnerability and change to default behavior. See this link for more information about repository management: https://maven.apache.org/repository-management.html"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:maven:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "3.8.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 9.1,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.4
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-04-23T15:15Z",
+        "lastModifiedDate": "2021-05-06T14:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29437",
+            "ASSIGNER": "security-advisories@github.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-863"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/ScratchVerifier/ScratchOAuth2/security/advisories/GHSA-gvpg-23fh-8g75",
+                "name": "https://github.com/ScratchVerifier/ScratchOAuth2/security/advisories/GHSA-gvpg-23fh-8g75",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/ScratchVerifier/ScratchOAuth2/commit/9220c2a77eda3df37a84486ad722f1ad0985d8e7",
+                "name": "https://github.com/ScratchVerifier/ScratchOAuth2/commit/9220c2a77eda3df37a84486ad722f1ad0985d8e7",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "ScratchOAuth2 is an Oauth implementation for Scratch. Any ScratchOAuth2-related data normally accessible and modifiable by a user can be read and modified by a third party. 1. Scratch user visits 3rd party site. 2. 3rd party site asks user for Scratch username. 3. 3rd party site pretends to be user and gets login code from ScratchOAuth2. 4. 3rd party site gives code to user and instructs them to post it on their profile. 5. User posts code on their profile, not knowing it is a ScratchOAuth2 login code. 6. 3rd party site completes login with ScratchOAuth2. 7. 3rd party site has full access to anything the user could do if they directly logged in. See referenced GitHub security advisory for patch notes and workarounds."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:scratchoauth2_project:scratchoauth2:*:*:*:*:*:scratch:*:*",
+                  "versionEndExcluding": "2021-04-13",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.8,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.6,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:H/Au:N/C:P/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 4.9,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-04-13T20:15Z",
+        "lastModifiedDate": "2021-04-22T15:28Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-7875",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-787"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/derf/feh/commit/f7a547b7ef8fc8ebdeaa4c28515c9d72e592fb6d",
+                "name": "https://github.com/derf/feh/commit/f7a547b7ef8fc8ebdeaa4c28515c9d72e592fb6d",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://feh.finalrewind.org/",
+                "name": "https://feh.finalrewind.org/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Product"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/97689",
+                "name": "97689",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/201707-08",
+                "name": "GLSA-201707-08",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2020/05/msg00021.html",
+                "name": "[debian-lts-announce] 20200524 [SECURITY] [DLA 2219-1] feh security update",
+                "refsource": "MLIST",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In wallpaper.c in feh before v2.18.3, if a malicious client pretends to be the E17 window manager, it is possible to trigger an out-of-boundary heap write while receiving an IPC message. An integer overflow leads to a buffer overflow and/or a double free."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:feh_project:feh:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.18.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-04-14T18:59Z",
+        "lastModifiedDate": "2020-05-24T20:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-10262",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/Jian-Xian/CVE-POC/blob/master/CVE-2020-10262.md",
+                "name": "https://github.com/Jian-Xian/CVE-POC/blob/master/CVE-2020-10262.md",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.youtube.com/watch?v=Cr5DupGxmL4",
+                "name": "https://www.youtube.com/watch?v=Cr5DupGxmL4",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://sec.xiaomi.com",
+                "name": "https://sec.xiaomi.com",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered on XIAOMI XIAOAI speaker Pro LX06 1.58.10. Attackers can activate the failsafe mode during the boot process, and use the mi_console command cascaded by the SN code shown on the product to get the root shell password, and then the attacker can (i) read Wi-Fi SSID or password, (ii) read the dialogue text files between users and XIAOMI XIAOAI speaker Pro LX06, (iii) use Text-To-Speech tools pretend XIAOMI speakers' voice achieve social engineering attacks, (iv) eavesdrop on users and record what XIAOMI XIAOAI speaker Pro LX06 hears, (v) modify system files, (vi) use commands to send any IR code through IR emitter on XIAOMI XIAOAI Speaker Pro (LX06), (vii) stop voice assistant service, (viii) enable the XIAOMI XIAOAI Speaker Pro\u2019s SSH or TELNET service as a backdoor, (IX) tamper with the router configuration of the router in the local area networks."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:mi:xiaomi_xiaoai_speaker_pro_lx06_firmware:1.58.10:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:mi:xiaomi_xiaoai_speaker_pro_lx06:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "PHYSICAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 6.8,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-04-08T18:15Z",
+        "lastModifiedDate": "2020-04-09T18:21Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-10263",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/Jian-Xian/CVE-POC/blob/master/CVE-2020-10263.md",
+                "name": "https://github.com/Jian-Xian/CVE-POC/blob/master/CVE-2020-10263.md",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.youtube.com/watch?v=Cr5DupGxmL4",
+                "name": "https://www.youtube.com/watch?v=Cr5DupGxmL4",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://sec.xiaomi.com",
+                "name": "https://sec.xiaomi.com",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered on XIAOMI XIAOAI speaker Pro LX06 1.52.4. Attackers can get root shell by accessing the UART interface and then they can (i) read Wi-Fi SSID or password, (ii) read the dialogue text files between users and XIAOMI XIAOAI speaker Pro LX06, (iii) use Text-To-Speech tools pretend XIAOMI speakers' voice achieve social engineering attacks, (iv) eavesdrop on users and record what XIAOMI XIAOAI speaker Pro LX06 hears, (v) modify system files, (vi) use commands to send any IR code through IR emitter on XIAOMI XIAOAI Speaker Pro LX06, (vii) stop voice assistant service, (viii) enable the XIAOMI XIAOAI Speaker Pro\u2019 SSH or TELNET service as a backdoor, (IX) tamper with the router configuration of the router in the local area networks."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:mi:xiaomi_xiaoai_speaker_pro_lx06_firmware:1.52.4:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:mi:xiaomi_xiaoai_speaker_pro_lx06:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "PHYSICAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 6.8,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-04-08T18:15Z",
+        "lastModifiedDate": "2020-04-09T18:18Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-8994",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-522"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://youtu.be/yCadG38yZW8",
+                "name": "https://youtu.be/yCadG38yZW8",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.usenix.org/sites/default/files/soups2018posters-lau.pdf",
+                "name": "https://www.usenix.org/sites/default/files/soups2018posters-lau.pdf",
+                "refsource": "MISC",
+                "tags": [
+                  "Technical Description",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/Jian-Xian/CVE-POC/blob/master/CVE-2020-8994.md",
+                "name": "https://github.com/Jian-Xian/CVE-POC/blob/master/CVE-2020-8994.md",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered on XIAOMI AI speaker MDZ-25-DT 1.34.36, and 1.40.14. Attackers can get root shell by accessing the UART interface and then they can read Wi-Fi SSID or password, read the dialogue text files between users and XIAOMI AI speaker, use Text-To-Speech tools pretend XIAOMI speakers' voice achieve social engineering attacks, eavesdrop on users and record what XIAOMI AI speaker hears, delete the entire XIAOMI AI speaker system, modify system files, stop voice assistant service, start the XIAOMI AI speaker\u2019s SSH service as a backdoor"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:mi:mdz-25-dt_firmware:1.34.36:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:mi:mdz-25-dt_firmware:1.40.14:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:mi:mdz-25-dt:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "PHYSICAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 6.8,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-03-05T16:15Z",
+        "lastModifiedDate": "2020-03-06T19:42Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2006-1365",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://trifinite.org/trifinite_stuff_helomoto.html",
+                "name": "http://trifinite.org/trifinite_stuff_helomoto.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://www.digitalmunition.com/DMA[2006-0321a].txt",
+                "name": "http://www.digitalmunition.com/DMA[2006-0321a].txt",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/428431/100/0/threaded",
+                "name": "20060321 DMA[2006-0321a] - 'Motorola P2K Platform setpath() overflow and Blueline attack'",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The Motorola PEBL U6, the Motorola V600, and possibly the Motorola E398 and other Motorola phones allow remote attackers to add an entry for their own Bluetooth device to a target device's list of trusted devices (aka Device History), and possibly obtain AT level access to the target device, by initiating and interrupting an OBEX Push Profile that pretends to send a vCard, aka a \"HeloMoto\" attack."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:motorola:pebl_u6:08.83.76r:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:motorola:v600:*:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:h:motorola:e398:*:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2006-03-23T23:06Z",
+        "lastModifiedDate": "2018-10-18T16:32Z"
+      }
+    ]
+  }
+}

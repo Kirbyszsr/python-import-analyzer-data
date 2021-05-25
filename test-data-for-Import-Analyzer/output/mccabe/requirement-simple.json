@@ -1,0 +1,21 @@
+{
+  "name": "mccabe",
+  "description": "McCabe complexity checker\n=========================\n\nNed's script to check McCabe complexity.\n\nThis module provides a plugin for ``flake8``, the Python code checker.\n\n\nInstallation\n------------\n\nYou can install, upgrade, uninstall ``mccabe`` with these commands::\n\n  $ pip install mccabe\n  $ pip install --upgrade mccabe\n  $ pip uninstall mccabe\n\n\nStandalone script\n-----------------\n\nThe complexity checker can be used directly::\n\n  $ python -m mccabe --min 5 mccabe.py\n  (\"185:1: 'PathGraphingAstVisitor.visitIf'\", 5)\n  (\"71:1: 'PathGraph.to_dot'\", 5)\n  (\"245:1: 'McCabeChecker.run'\", 5)\n  (\"283:1: 'main'\", 7)\n  (\"203:1: 'PathGraphingAstVisitor.visitTryExcept'\", 5)\n  (\"257:1: 'get_code_complexity'\", 5)\n\n\nPlugin for Flake8\n-----------------\n\nWhen both ``flake8 2.0`` and ``mccabe`` are installed, the plugin is\navailable in ``flake8``::\n\n  $ flake8 --version\n  2.0 (pep8: 1.4.2, pyflakes: 0.6.1, mccabe: 0.2)\n\nBy default the plugin is disabled.  Use the ``--max-complexity`` switch to\nenable it.  It will emit a warning if the McCabe complexity of a function is\nhigher that the value::\n\n    $ flake8 --max-complexity 10 coolproject\n    ...\n    coolproject/mod.py:1204:1: C901 'CoolFactory.prepare' is too complex (14)\n\nThis feature is quite useful to detect over-complex code.  According to McCabe,\nanything that goes beyond 10 is too complex.\n\n\nLinks\n-----\n\n* Feedback and ideas: http://mail.python.org/mailman/listinfo/code-quality\n\n* Cyclomatic complexity: http://en.wikipedia.org/wiki/Cyclomatic_complexity.\n\n* Ned Batchelder's script:\n  http://nedbatchelder.com/blog/200803/python_code_complexity_microtool.html\n\n\nChanges\n-------\n\n0.6.1 - 2017-01-26\n``````````````````\n\n* Fix signature for ``PathGraphingAstVisitor.default`` to match the signature\n  for ``ASTVisitor``\n\n0.6.0 - 2017-01-23\n``````````````````\n\n* Add support for Python 3.6\n\n* Fix handling for missing statement types\n\n0.5.3 - 2016-12-14\n``````````````````\n\n* Report actual column number of violation instead of the start of the line\n\n0.5.2 - 2016-07-31\n``````````````````\n\n* When opening files ourselves, make sure we always name the file variable\n\n0.5.1 - 2016-07-28\n``````````````````\n\n* Set default maximum complexity to -1 on the class itself\n\n0.5.0 - 2016-05-30\n``````````````````\n\n* PyCon 2016 PDX release\n\n* Add support for Flake8 3.0\n\n0.4.0 - 2016-01-27\n``````````````````\n\n* Stop testing on Python 3.2\n\n* Add support for async/await keywords on Python 3.5 from PEP 0492\n\n0.3.1 - 2015-06-14\n``````````````````\n\n* Include ``test_mccabe.py`` in releases.\n\n* Always coerce the ``max_complexity`` value from Flake8's entry-point to an\n  integer.\n\n0.3 - 2014-12-17\n````````````````\n\n* Computation was wrong: the mccabe complexity starts at 1, not 2.\n\n* The ``max-complexity`` value is now inclusive.  E.g.: if the\n  value is 10 and the reported complexity is 10, then it passes.\n\n* Add tests.\n\n\n0.2.1 - 2013-04-03\n``````````````````\n\n* Do not require ``setuptools`` in setup.py.  It works around an issue\n  with ``pip`` and Python 3.\n\n\n0.2 - 2013-02-22\n````````````````\n\n* Rename project to ``mccabe``.\n\n* Provide ``flake8.extension`` setuptools entry point.\n\n* Read ``max-complexity`` from the configuration file.\n\n* Rename argument ``min_complexity`` to ``threshold``.\n\n\n0.1 - 2013-02-11\n````````````````\n* First release\n\n\n",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "0.6.1",
+  "released_versions": [
+    "0.0.0",
+    "0.2",
+    "0.2.1",
+    "0.3",
+    "0.3.1",
+    "0.4.0",
+    "0.5.0",
+    "0.5.1",
+    "0.5.2",
+    "0.5.3",
+    "0.6.0",
+    "0.6.1"
+  ]
+}

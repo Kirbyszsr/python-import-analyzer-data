@@ -1,0 +1,10 @@
+{
+  "name": "editdistance-s",
+  "description": "[![Build Status](https://dev.azure.com/asottile/asottile/_apis/build/status/asottile.editdistance-s?branchName=master)](https://dev.azure.com/asottile/asottile/_build/latest?definitionId=70&branchName=master)\n[![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/asottile/asottile/70/master.svg)](https://dev.azure.com/asottile/asottile/_build/latest?definitionId=70&branchName=master)\n[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/asottile/editdistance-s/master.svg)](https://results.pre-commit.ci/latest/github/asottile/editdistance-s/master)\n\neditdistance-s\n==============\n\nFast implementation of the edit distance (Levenshtein distance).\n\n### fork\n\nthis is a fork of [editdistance] with the following changes:\n\n- `__hash__` based support is removed as it makes incorrect assumptions\n- only strings (type `str`) are supported\n- cffi replaces cython (so `abi3` wheels can be produced)\n- the module is renamed to `editdistance_s`\n- the public api does not contain `eval` (only `distance`)\n\n[editdistance]: https://github.com/roy-ht/editdistance\n\n### installation\n\n```bash\npip install editdistance-s\n```\n\n- wheels should be available on pypi in most cases\n\n### api\n\n#### `distance(s1: str, s2: str) -> int`\n\ncompute the edit distance\n\n```pycon\n>>> import editdistance_s\n>>> editdistance_s.distance('hello', 'hell\u2603')\n1\n```",
+  "requires_dist": null,
+  "requires_python": ">=3.6.1",
+  "current_version": "1.0.0",
+  "released_versions": [
+    "1.0.0"
+  ]
+}

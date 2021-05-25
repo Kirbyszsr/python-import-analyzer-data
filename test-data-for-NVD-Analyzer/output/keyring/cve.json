@@ -1,0 +1,3979 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 47,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-16T14:47Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-20781",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-522"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://gitlab.gnome.org/GNOME/gnome-keyring/tags/3.27.2",
+                "name": "https://gitlab.gnome.org/GNOME/gnome-keyring/tags/3.27.2",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://gitlab.gnome.org/GNOME/gnome-keyring/issues/3",
+                "name": "https://gitlab.gnome.org/GNOME/gnome-keyring/issues/3",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.gnome.org/show_bug.cgi?id=781486",
+                "name": "https://bugzilla.gnome.org/show_bug.cgi?id=781486",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/gnome-keyring/+bug/1772919",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/gnome-keyring/+bug/1772919",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3894-1/",
+                "name": "USN-3894-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/huntergregal/mimipenguin/tree/d95f1e08ce79783794f38433bbf7de5abd9792da",
+                "name": "https://github.com/huntergregal/mimipenguin/tree/d95f1e08ce79783794f38433bbf7de5abd9792da",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/huntergregal/mimipenguin",
+                "name": "https://github.com/huntergregal/mimipenguin",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+                "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In pam/gkr-pam-module.c in GNOME Keyring before 3.27.2, the user's password is kept in a session-child process spawned from the LightDM daemon. This can expose the credential in cleartext."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnome:gnome_keyring:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "3.27.2",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:zfs_storage_appliance_kit:8.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-02-12T17:29Z",
+        "lastModifiedDate": "2021-03-16T14:02Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-3374",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-347"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480",
+                "name": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518",
+                "name": "https://snyk.io/vuln/SNYK-LINUX-APT-116518",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/security/cve/cve-2011-3374",
+                "name": "https://access.redhat.com/security/cve/cve-2011-3374",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374",
+                "name": "https://security-tracker.debian.org/tracker/CVE-2011-3374",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html",
+                "name": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://seclists.org/fulldisclosure/2011/Sep/221",
+                "name": "https://seclists.org/fulldisclosure/2011/Sep/221",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://ubuntu.com/security/CVE-2011-3374",
+                "name": "https://ubuntu.com/security/CVE-2011-3374",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "It was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:*:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 3.7,
+              "baseSeverity": "LOW"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 1.4
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-11-26T00:15Z",
+        "lastModifiedDate": "2021-02-09T16:08Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-26541",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://lkml.org/lkml/2020/9/15/1871",
+                "name": "https://lkml.org/lkml/2020/9/15/1871",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The Linux kernel through 5.8.13 does not properly enforce the Secure Boot Forbidden Signature Database (aka dbx) protection mechanism. This affects certs/blacklist.c and certs/system_keyring.c."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "5.8.13",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "HIGH",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 6.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.6,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 6.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.4,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2020-10-02T19:15Z",
+        "lastModifiedDate": "2020-10-05T02:17Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2014-0102",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-310"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2014/03/04/21",
+                "name": "[oss-security] 20140304 CVE-2014-0102 -- Linux kernel: security: keyring cycle detector DoS",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lkml.org/lkml/2014/2/27/507",
+                "name": "[linux-kernel] 20140227 kernel BUG at security/keys/keyring.c:1003!",
+                "refsource": "MLIST",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1072419",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1072419",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kernelhub.org/?msg=425013&p=2",
+                "name": "http://www.kernelhub.org/?msg=425013&p=2",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The keyring_detect_cycle_iterator function in security/keys/keyring.c in the Linux kernel through 3.13.6 does not properly determine whether keyrings are identical, which allows local users to cause a denial of service (OOPS) via crafted keyctl commands."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "3.13.6",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:A/AC:M/Au:S/C:N/I:N/A:C",
+              "accessVector": "ADJACENT_NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 5.2
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 4.4,
+            "impactScore": 6.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2014-03-11T13:01Z",
+        "lastModifiedDate": "2020-08-27T16:58Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-19358",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.youtube.com/watch?v=Do4E9ZQaPck",
+                "name": "https://www.youtube.com/watch?v=Do4E9ZQaPck",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/sungjungk/keyring_crack",
+                "name": "https://github.com/sungjungk/keyring_crack",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/gnome-keyring/+bug/1780365",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/gnome-keyring/+bug/1780365",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "GNOME Keyring through 3.28.2 allows local users to retrieve login credentials via a Secret Service API call and the D-Bus interface if the keyring is unlocked, a similar issue to CVE-2008-7320. One perspective is that this occurs because available D-Bus protection mechanisms (involving the busconfig and policy XML elements) are not used."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnome:gnome-keyring:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "3.28.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-11-18T19:29Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-12749",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-59"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.openwall.com/lists/oss-security/2019/06/11/2",
+                "name": "https://www.openwall.com/lists/oss-security/2019/06/11/2",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2019/06/11/2",
+                "name": "[oss-security] 20190611 CVE-2019-12749: DBusServer DBUS_COOKIE_SHA1 authentication bypass",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Mitigation",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/4015-1/",
+                "name": "USN-4015-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/4015-2/",
+                "name": "USN-4015-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://www.debian.org/security/2019/dsa-4462",
+                "name": "DSA-4462",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/Jun/16",
+                "name": "20190613 [SECURITY] [DSA 4462-1] dbus security update",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/108751",
+                "name": "108751",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00005.html",
+                "name": "[debian-lts-announce] 20190614 [SECURITY] [DLA 1818-1] dbus security update",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V2CQF37O73VH2JDVX2ILX2KD2KLXLQOU/",
+                "name": "FEDORA-2019-d5ded5326b",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00059.html",
+                "name": "openSUSE-SU-2019:1604",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00092.html",
+                "name": "openSUSE-SU-2019:1671",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:1726",
+                "name": "RHSA-2019:1726",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00026.html",
+                "name": "openSUSE-SU-2019:1750",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/201909-08",
+                "name": "GLSA-201909-08",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:2870",
+                "name": "RHSA-2019:2870",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:2868",
+                "name": "RHSA-2019:2868",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2019:3707",
+                "name": "RHSA-2019:3707",
+                "refsource": "REDHAT",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "dbus before 1.10.28, 1.12.x before 1.12.16, and 1.13.x before 1.13.12, as used in DBusServer in Canonical Upstart in Ubuntu 14.04 (and in some, less common, uses of dbus-daemon), allows cookie spoofing because of symlink mishandling in the reference implementation of DBUS_COOKIE_SHA1 in the libdbus library. (This only affects the DBUS_COOKIE_SHA1 authentication mechanism.) A malicious client with write access to its own home directory could manipulate a ~/.dbus-keyrings symlink to cause a DBusServer with a different uid to read and write in unintended locations. In the worst case, this could result in the DBusServer reusing a cookie that is known to the malicious client, and treating that cookie as evidence that a subsequent client connection came from an attacker-chosen uid, allowing authentication bypass."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:freedesktop:dbus:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.12.0",
+                  "versionEndExcluding": "1.12.16",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:freedesktop:dbus:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.10.28",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:freedesktop:dbus:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.13.0",
+                  "versionEndExcluding": "1.13.12",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:P/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 3.6
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 4.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-06-11T17:29Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-18270",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.13.5",
+                "name": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.13.5",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Release Notes"
+                ]
+              },
+              {
+                "url": "https://github.com/torvalds/linux/commit/237bbd29f7a049d310d907f4b2716a7feef9abf3",
+                "name": "https://github.com/torvalds/linux/commit/237bbd29f7a049d310d907f4b2716a7feef9abf3",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=237bbd29f7a049d310d907f4b2716a7feef9abf3",
+                "name": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=237bbd29f7a049d310d907f4b2716a7feef9abf3",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/104254",
+                "name": "104254",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3754-1/",
+                "name": "USN-3754-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1856774#c11",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1856774#c11",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1856774#c9",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1856774#c9",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "https://support.f5.com/csp/article/K37301725",
+                "name": "https://support.f5.com/csp/article/K37301725",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1580979",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1580979",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In the Linux kernel before 4.13.5, a local user could create keyrings for other users via keyctl commands, setting unwanted defaults or causing a denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "4.13.5",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:P/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 3.6
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 4.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-05-18T16:29Z",
+        "lastModifiedDate": "2020-08-14T20:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-2524",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://marc.info/?l=oss-security&m=128080755321157&w=2",
+                "name": "[oss-security] 20100803 Re: CVE-2010-2524 kernel: dns_resolver upcall security issue",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.35",
+                "name": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.35",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://marc.info/?l=oss-security&m=128078387328921&w=2",
+                "name": "[oss-security] 20100802 Re: CVE-2010-2524 kernel: dns_resolver upcall security issue",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=612166",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=612166",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://marc.info/?l=oss-security&m=128072090331700&w=2",
+                "name": "[oss-security] 20100802 CVE-2010-2524 kernel: dns_resolver upcall security issue",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=4c0c03ca54f72fdd5912516ad0a23ec5cf01bda7",
+                "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=4c0c03ca54f72fdd5912516ad0a23ec5cf01bda7",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2010-0610.html",
+                "name": "RHSA-2010:0610",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:172",
+                "name": "MDVSA-2010:172",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00004.html",
+                "name": "SUSE-SA:2010:040",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1000-1",
+                "name": "USN-1000-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vmware.com/security/advisories/VMSA-2011-0003.html",
+                "name": "http://www.vmware.com/security/advisories/VMSA-2011-0003.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/43315",
+                "name": "43315",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/516397/100/0/threaded",
+                "name": "20110211 VMSA-2011-0003 Third party component updates for VMware vCenter Server, vCenter Update Manager, ESXi and ESX",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The DNS resolution functionality in the CIFS implementation in the Linux kernel before 2.6.35, when CONFIG_CIFS_DFS_UPCALL is enabled, relies on a user's keyring for the dns_resolver upcall in the cifs.upcall userspace helper, which allows local users to spoof the results of DNS queries and perform arbitrary CIFS mounts via vectors involving an add_key call, related to a \"cache stuffing\" issue and MS-DFS referrals."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.6.35",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:vmware:esx:4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:vmware:esx:4.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:8.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:9.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:9.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:suse_linux_enterprise_desktop:11:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 4.6
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2010-09-08T20:00Z",
+        "lastModifiedDate": "2020-08-14T15:59Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-2960",
+            "ASSIGNER": "security@ubuntu.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-476"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://securitytracker.com/id?1024384",
+                "name": "1024384",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/42932",
+                "name": "42932",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2010/09/02/1",
+                "name": "[oss-security] 20100902 CVE-2010-2960 kernel: keyctl_session_to_parent null ptr deref",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://twitter.com/taviso/statuses/22777866582",
+                "name": "http://twitter.com/taviso/statuses/22777866582",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=627440",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=627440",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/41263",
+                "name": "41263",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2010-10/msg00003.html",
+                "name": "SUSE-SA:2010:050",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1000-1",
+                "name": "USN-1000-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2011-02/msg00000.html",
+                "name": "SUSE-SA:2011:007",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2011/0298",
+                "name": "ADV-2011-0298",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/61557",
+                "name": "linux-kernel-keyctl-dos(61557)",
+                "refsource": "XF",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The keyctl_session_to_parent function in security/keys/keyctl.c in the Linux kernel 2.6.35.4 and earlier expects that a certain parent session keyring exists, which allows local users to cause a denial of service (NULL pointer dereference and system crash) or possibly have unspecified other impact via a KEYCTL_SESSION_TO_PARENT argument to the keyctl function."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.6.35.4",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:6.06:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:8.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:9.04:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:9.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:-:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:suse_linux_enterprise_desktop:11:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:suse:suse_linux_enterprise_server:11:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2010-09-08T20:00Z",
+        "lastModifiedDate": "2020-08-11T14:27Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-2184",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-476"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2011/06/03/2",
+                "name": "[oss-security] 20110603 CVE request: kernel: set cred->user_ns in key_replace_session_keyring",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://alt.swiecki.net/linux_kernel/sys_open-kmem_cache_alloc-2.6.39-rc4.txt",
+                "name": "http://alt.swiecki.net/linux_kernel/sys_open-kmem_cache_alloc-2.6.39-rc4.txt",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://lkml.org/lkml/2011/5/23/199",
+                "name": "[linux-kernel] 20110523 Oops (bad memory deref) in slab_alloc() due to filp_cachep holding incorrect values",
+                "refsource": "MLIST",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2011/06/06/2",
+                "name": "[oss-security] 20110606 Re: CVE request: kernel: set cred->user_ns in key_replace_session_keyring",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lkml.org/lkml/2011/5/24/502",
+                "name": "[linux-kernel] 20110524 Re: Fwd: Oops (bad memory deref) in slab_alloc() due to filp_cachep holding incorrect values",
+                "refsource": "MLIST",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lkml.org/lkml/2011/5/25/265",
+                "name": "[linux-kernel] 20110525 Re: [Security] Fwd: Oops (bad memory deref) in slab_alloc() due to filp_cachep holding incorrect values",
+                "refsource": "MLIST",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f7285b5d631fd6096b11c6af0058ed3a2b30ef4e",
+                "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f7285b5d631fd6096b11c6af0058ed3a2b30ef4e",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.39.1",
+                "name": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.39.1",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "http://securityreason.com/securityalert/8371",
+                "name": "8371",
+                "refsource": "SREASON",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The key_replace_session_keyring function in security/keys/process_keys.c in the Linux kernel before 2.6.39.1 does not initialize a certain structure member, which allows local users to cause a denial of service (NULL pointer dereference and OOPS) or possibly have unspecified other impact via a KEYCTL_SESSION_TO_PARENT argument to the keyctl function, a different vulnerability than CVE-2010-2960."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.6.39.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2011-09-06T16:55Z",
+        "lastModifiedDate": "2020-07-31T20:22Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-0954",
+            "ASSIGNER": "security@ubuntu.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.securityfocus.com/bid/54046",
+                "name": "54046",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://seclists.org/fulldisclosure/2012/Jun/271",
+                "name": "20120614 Using second gpg keyring may be misleading?",
+                "refsource": "FULLDISC",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1477-1",
+                "name": "USN-1477-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013681",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013681",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1475-1",
+                "name": "USN-1475-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013639",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013639",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://seclists.org/fulldisclosure/2012/Jun/289",
+                "name": "20120615 ubuntu apt-key (part 3)",
+                "refsource": "FULLDISC",
+                "tags": []
+              },
+              {
+                "url": "http://seclists.org/fulldisclosure/2012/Jun/267",
+                "name": "20120612 Strange gpg key shadowing",
+                "refsource": "FULLDISC",
+                "tags": []
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013128",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013128",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "APT 0.7.x before 0.7.25 and 0.8.x before 0.8.16, when using the apt-key net-update to import keyrings, relies on GnuPG argument order and does not check GPG subkeys, which might allow remote attackers to install altered packages via a man-in-the-middle (MITM) attack.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-3587."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.24:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.23.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.23:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.22.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.16:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:exp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:exp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.22.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.21:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.18:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:exp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.14:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:exp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.20.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.20:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.2-0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.13:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.14:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.13.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.13.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.13:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.0:pre2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.0:pre1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.22:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.20.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.19:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:exp2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:exp2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.14.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:H/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.6
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 4.9,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2012-06-19T20:55Z",
+        "lastModifiedDate": "2020-01-08T15:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-3587",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1477-1",
+                "name": "USN-1477-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013128",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1013128",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1475-1",
+                "name": "USN-1475-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://seclists.org/fulldisclosure/2012/Jun/267",
+                "name": "20120612 Strange gpg key shadowing",
+                "refsource": "FULLDISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "APT 0.7.x before 0.7.25 and 0.8.x before 0.8.16, when using the apt-key net-update to import keyrings, relies on GnuPG argument order and does not check GPG subkeys, which might allow remote attackers to install Trojan horse packages via a man-in-the-middle (MITM) attack."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.21:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.20.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.20.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.20:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:exp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.14:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.13:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.14.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.14:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.0:pre2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.0:pre1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.23.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.22.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.22:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.2-0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.19:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.16:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:exp2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:exp2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.13.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.24:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:exp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.23:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.22.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.18:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.17:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.15:exp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:exp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.15:exp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.13.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.13:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:debian:advanced_package_tool:0.8.10.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:H/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.6
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 4.9,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2012-06-19T20:55Z",
+        "lastModifiedDate": "2020-01-08T15:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-6111",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://security-tracker.debian.org/tracker/CVE-2012-6111",
+                "name": "https://security-tracker.debian.org/tracker/CVE-2012-6111",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.gnome.org/show_bug.cgi?id=690466",
+                "name": "https://bugzilla.gnome.org/show_bug.cgi?id=690466",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2013/01/17/4",
+                "name": "http://www.openwall.com/lists/oss-security/2013/01/17/4",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/security/cve/cve-2012-6111",
+                "name": "Red Hat",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "gnome-keyring does not discard stored secrets when using gnome_keyring_lock_all_sync function"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnome:gnome_keyring:3.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnome:gnome_keyring:3.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-12-20T15:15Z",
+        "lastModifiedDate": "2020-01-02T15:24Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-5578",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-276"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/python-keyring/+bug/1031465",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/python-keyring/+bug/1031465",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/security/cve/cve-2012-5578",
+                "name": "Red Hat",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security-tracker.debian.org/tracker/CVE-2012-5578",
+                "name": "Debian",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.suse.com/show_bug.cgi?id=CVE-2012-5578",
+                "name": "https://bugzilla.suse.com/show_bug.cgi?id=CVE-2012-5578",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2012/11/27/4",
+                "name": "http://www.openwall.com/lists/oss-security/2012/11/27/4",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2012-5578",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2012-5578",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Python keyring has insecure permissions on new databases allowing world-readable files to be created"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:python:keyring:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "0.10",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.2,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.5,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-11-25T13:15Z",
+        "lastModifiedDate": "2019-12-04T15:55Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2015-1606",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-416"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2015/02/14/6",
+                "name": "http://www.openwall.com/lists/oss-security/2015/02/14/6",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1031876",
+                "name": "http://www.securitytracker.com/id/1031876",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=commit;h=f0f71a721ccd7ab9e40b8b6b028b59632c0cc648",
+                "name": "http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=commit;h=f0f71a721ccd7ab9e40b8b6b028b59632c0cc648",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2015/dsa-3184",
+                "name": "http://www.debian.org/security/2015/dsa-3184",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://blog.fuzzing-project.org/5-Multiple-issues-in-GnuPG-found-through-keyring-fuzzing-TFPA-0012015.html",
+                "name": "https://blog.fuzzing-project.org/5-Multiple-issues-in-GnuPG-found-through-keyring-fuzzing-TFPA-0012015.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2015/02/13/14",
+                "name": "http://www.openwall.com/lists/oss-security/2015/02/13/14",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The keyring DB in GnuPG before 2.1.2 does not properly handle invalid packets, which allows remote attackers to cause a denial of service (invalid read and use-after-free) via a crafted keyring file."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnupg:gnupg:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.1.2",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2019-11-20T19:15Z",
+        "lastModifiedDate": "2019-11-22T16:33Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2015-1607",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html",
+                "name": "https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000361.html",
+                "name": "https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000361.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/72610",
+                "name": "http://www.securityfocus.com/bid/72610",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2015/02/14/6",
+                "name": "http://www.openwall.com/lists/oss-security/2015/02/14/6",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000362.html",
+                "name": "https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000362.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=commit;h=2183683bd633818dd031b090b5530951de76f392",
+                "name": "http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=commit;h=2183683bd633818dd031b090b5530951de76f392",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/usn-2554-1/",
+                "name": "http://www.ubuntu.com/usn/usn-2554-1/",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://blog.fuzzing-project.org/5-Multiple-issues-in-GnuPG-found-through-keyring-fuzzing-TFPA-0012015.html",
+                "name": "https://blog.fuzzing-project.org/5-Multiple-issues-in-GnuPG-found-through-keyring-fuzzing-TFPA-0012015.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2015/02/13/14",
+                "name": "http://www.openwall.com/lists/oss-security/2015/02/13/14",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "kbx/keybox-search.c in GnuPG before 1.4.19, 2.0.x before 2.0.27, and 2.1.x before 2.1.2 does not properly handle bitwise left-shifts, which allows remote attackers to cause a denial of service (invalid read operation) via a crafted keyring file, related to sign extensions and \"memcpy with overlapping ranges.\""
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnupg:gnupg:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.4.19",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnupg:gnupg:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.0",
+                  "versionEndExcluding": "2.0.27",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnupg:gnupg:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.1.0",
+                  "versionEndExcluding": "2.1.2",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:10.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2019-11-20T19:15Z",
+        "lastModifiedDate": "2019-11-22T16:19Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-5577",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-276"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://security-tracker.debian.org/tracker/CVE-2012-5577",
+                "name": "https://security-tracker.debian.org/tracker/CVE-2012-5577",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2012-5577",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2012-5577",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bitbucket.org/kang/python-keyring-lib/issue/67/set-go-rwx-on-keyring_passcfg",
+                "name": "https://bitbucket.org/kang/python-keyring-lib/issue/67/set-go-rwx-on-keyring_passcfg",
+                "refsource": "MISC",
+                "tags": [
+                  "Permissions Required"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2012/11/27/3",
+                "name": "http://www.openwall.com/lists/oss-security/2012/11/27/3",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bitbucket.org/kang/python-keyring-lib/commits/049cd181470f1ee6c540e1d64acf1def7b1de0c1",
+                "name": "https://bitbucket.org/kang/python-keyring-lib/commits/049cd181470f1ee6c540e1d64acf1def7b1de0c1",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Python keyring lib before 0.10 created keyring files with world-readable permissions."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:python:keyring:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "0.10",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-10-28T17:15Z",
+        "lastModifiedDate": "2019-10-31T20:11Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2016-9604",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-347"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ee8f844e3c5a73b999edf733df1c529d6503ec2f",
+                "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ee8f844e3c5a73b999edf733df1c529d6503ec2f",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9604",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9604",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.novell.com/show_bug.cgi?id=1035576",
+                "name": "https://bugzilla.novell.com/show_bug.cgi?id=1035576",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-9604.html",
+                "name": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-9604.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2017:2669",
+                "name": "RHSA-2017:2669",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2017:2077",
+                "name": "RHSA-2017:2077",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2017:1842",
+                "name": "RHSA-2017:1842",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/102135",
+                "name": "102135",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "It was discovered in the Linux kernel before 4.11-rc8 that root can gain direct access to an internal keyring, such as '.dns_resolver' in RHEL-7 or '.builtin_trusted_keys' upstream, by joining it as its session keyring. This allows root to bypass module signature verification by adding a new public key of its own devising to the keyring."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:4.11:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:4.11:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:4.11:rc3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:4.11:rc4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:4.11:rc6:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "4.11",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:4.11:rc5:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:4.11:rc7:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "HIGH",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.4,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-07-11T13:29Z",
+        "lastModifiedDate": "2019-10-09T23:20Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-12155",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-306"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1489360",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1489360",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Mitigation"
+                ]
+              },
+              {
+                "url": "https://bugs.launchpad.net/tripleo/+bug/1720787",
+                "name": "https://bugs.launchpad.net/tripleo/+bug/1720787",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:0602",
+                "name": "RHSA-2018:0602",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:1627",
+                "name": "RHSA-2018:1627",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:1593",
+                "name": "RHSA-2018:1593",
+                "refsource": "REDHAT",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A resource-permission flaw was found in the openstack-tripleo-heat-templates package where ceph.client.openstack.keyring is created as world-readable. A local attacker with access to the key could read or modify data on Ceph cluster pools for OpenStack as though the attacker were the OpenStack service, thus potentially reading or modifying data in an OpenStack Block Storage volume."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ceph:ceph:-:*:*:*:*:openstack:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.3,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 5.2
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:P/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 3.3
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 4.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-12-12T20:29Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-17807",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-862"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.6",
+                "name": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.6",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Mailing List",
+                  "Release Notes"
+                ]
+              },
+              {
+                "url": "https://github.com/torvalds/linux/commit/4dca6ea1d9432052afb06baf2e3ae78188a4410b",
+                "name": "https://github.com/torvalds/linux/commit/4dca6ea1d9432052afb06baf2e3ae78188a4410b",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4dca6ea1d9432052afb06baf2e3ae78188a4410b",
+                "name": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4dca6ea1d9432052afb06baf2e3ae78188a4410b",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2017/dsa-4073",
+                "name": "DSA-4073",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/102301",
+                "name": "102301",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2018/dsa-4082",
+                "name": "DSA-4082",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2018/01/msg00004.html",
+                "name": "[debian-lts-announce] 20180107 [SECURITY] [DLA 1232-1] linux security update",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3617-2/",
+                "name": "USN-3617-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3617-1/",
+                "name": "USN-3617-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3620-2/",
+                "name": "USN-3620-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3620-1/",
+                "name": "USN-3620-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3619-1/",
+                "name": "USN-3619-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3617-3/",
+                "name": "USN-3617-3",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3619-2/",
+                "name": "USN-3619-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/3632-1/",
+                "name": "USN-3632-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The KEYS subsystem in the Linux kernel before 4.14.6 omitted an access-control check when adding a key to the current task's \"default request-key keyring\" via the request_key() system call, allowing a local user to use a sequence of crafted system calls to add keys to a keyring with only Search permission (not Write permission) to that keyring, related to construct_get_dest_keyring() in security/keys/request_key.c."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "4.14.6",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 3.3,
+              "baseSeverity": "LOW"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 1.4
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-12-20T23:29Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      }
+    ]
+  }
+}

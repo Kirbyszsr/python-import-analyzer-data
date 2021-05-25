@@ -1,0 +1,28 @@
+{
+  "name": "pytest-enabler",
+  "description": ".. image:: https://img.shields.io/pypi/v/pytest-enabler.svg\n   :target: `PyPI link`_\n\n.. image:: https://img.shields.io/pypi/pyversions/pytest-enabler.svg\n   :target: `PyPI link`_\n\n.. _PyPI link: https://pypi.org/project/pytest-enabler\n\n.. image:: https://github.com/jaraco/pytest-enabler/workflows/tests/badge.svg\n   :target: https://github.com/jaraco/pytest-enabler/actions?query=workflow%3A%22tests%22\n   :alt: tests\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n   :target: https://github.com/psf/black\n   :alt: Code style: Black\n\n.. .. image:: https://readthedocs.org/projects/skeleton/badge/?version=latest\n..    :target: https://skeleton.readthedocs.io/en/latest/?badge=latest\n\nThe 'enabler' plugin allows configuration of plugins if present, but omits the settings if the plugin is not present. For example, to configure black to be enabled if the plugin is present, but not when it is not, add the following to your pyproject.toml::\n\n    [pytest.enabler.black]\n    addopts = \"--black\"\n\nKnown to work with the following plugins:\n\n- pytest-black\n- pytest-cov\n- pytest-flake8\n- pytest-mypy\n- pytest-xdist\n\n\n",
+  "requires_dist": [
+    "toml",
+    "jaraco.functools",
+    "jaraco.context",
+    "more-itertools",
+    "sphinx ; extra == 'docs'",
+    "jaraco.packaging (>=8.2) ; extra == 'docs'",
+    "rst.linker (>=1.9) ; extra == 'docs'",
+    "pytest (!=3.7.3,>=3.5) ; extra == 'testing'",
+    "pytest-checkdocs (>=1.2.3) ; extra == 'testing'",
+    "pytest-flake8 ; extra == 'testing'",
+    "pytest-cov ; extra == 'testing'",
+    "pytest-enabler ; extra == 'testing'",
+    "pytest-black (>=0.3.7) ; (platform_python_implementation != \"PyPy\") and extra == 'testing'",
+    "pytest-mypy ; (platform_python_implementation != \"PyPy\") and extra == 'testing'"
+  ],
+  "requires_python": ">=3.6",
+  "current_version": "1.2.0",
+  "released_versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.1.0",
+    "1.2.0"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "click-default-group",
+  "description": "Click Default Group\n===================\n\n`DefaultGroup` is a sub class of [`click.Group`](http://click.pocoo.org/6/api/#click.Group).  But it invokes a default\nsubcommand instead of showing a help message when a subcommand is not passed.\n\n[![Build Status](https://img.shields.io/travis/click-contrib/click-default-group.svg)](https://travis-ci.org/click-contrib/click-default-group)\n[![Coverage Status](https://img.shields.io/coveralls/click-contrib/click-default-group.svg)](https://coveralls.io/r/click-contrib/click-default-group)\n\nUsage\n-----\n\nDefine a default subcommand by `default=NAME`:\n\n```python\nimport click\nfrom click_default_group import DefaultGroup\n\n@click.group(cls=DefaultGroup, default='foo', default_if_no_args=True)\ndef cli():\n    pass\n\n@cli.command()\ndef foo():\n    click.echo('foo')\n\n@cli.command()\ndef bar():\n    click.echo('bar')\n```\n\nThen you can invoke that without explicit subcommand name:\n\n```console\n$ cli.py --help\nUsage: cli.py [OPTIONS] COMMAND [ARGS]...\n\nOptions:\n  --help    Show this message and exit.\n\nCommand:\n  foo*\n  bar\n\n$ cli.py\nfoo\n$ cli.py foo\nfoo\n$ cli.py bar\nbar\n```\n\nCompatibility\n-------------\n\n`click-default-group` is compatible with these Click versions:\n\n- Click-7.0\n- Click-6.x\n- Click-5.1\n- Click-5.0\n- Click-4.1\n- Click-4.0\n\nSee the [latest build status](https://travis-ci.org/click-contrib/click-default-group)\nat Travis CI.\n\nLicensing\n---------\n\nWritten by [Heungsub Lee], and distributed under the [BSD 3-Clause] license.\n\n[Heungsub Lee]: http://subl.ee/\n[BSD 3-Clause]: http://opensource.org/licenses/BSD-3-Clause",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "1.2.2",
+  "released_versions": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.2.1",
+    "1.2.2"
+  ]
+}

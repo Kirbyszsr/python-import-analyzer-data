@@ -1,0 +1,400 @@
+[
+  {
+    "cveID": "CVE-2020-8554",
+    "cveASSIGNER": "security@kubernetes.io",
+    "publishedDate": "2021-01-21T17:15Z",
+    "lastModifiedDate": "2021-03-30T12:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Kubernetes API server in all versions allow an attacker who is able to create a ClusterIP service and set the spec.externalIPs field, to intercept traffic to that IP address. Additionally, an attacker who is able to patch the status (which is considered a privileged operation and should not typically be granted to users) of a LoadBalancer service can set the status.loadBalancer.ingress.ip to similar effect."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/kubernetes/kubernetes/issues/97076",
+        "name": "N/A",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/g/kubernetes-security-announce/c/iZWsF9nbKE8",
+        "name": "N/A",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcafa485d63550657f068775801aeb706b7a07140a8ebbdef822b3bb3@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210201 [GitHub] [druid] jon-wei opened a new pull request #10826: Address CVE-2020-8570, suppress CVE-2020-8554",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0c76b3d0be348f788cd947054141de0229af00c540564711e828fd40@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210202 [GitHub] [druid] jon-wei opened a new pull request #10826: Address CVE-2020-8570, suppress CVE-2020-8554",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdb223e1b82e3d7d8e4eaddce8dd1ab87252e3935cc41c859f49767b6@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210203 [GitHub] [druid] jihoonson commented on pull request #10826: Address CVE-2020-8570, suppress CVE-2020-8554",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1975078e44d96f2a199aa90aa874b57a202eaf7f25f2fde6d1c44942@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210203 [GitHub] [druid] jihoonson merged pull request #10826: Address CVE-2020-8570, suppress CVE-2020-8554",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3199",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2020-02-06T15:02Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementation of GraniteDS, version 3.1.1.GA, AMF3 deserializers derives class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97382",
+        "name": "97382",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3207",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2019-10-09T23:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementations of AMF3 deserializers in WebORB for Java by Midnight Coders, version 5.1.1.0, derive class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97384",
+        "name": "97384",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3203",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2019-10-09T23:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementations of AMF3 deserializers in Pivotal/Spring Spring-flex derive class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.securityfocus.com/bid/97376",
+        "name": "97376",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3201",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2019-10-09T23:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementation of AMF3 deserializers used in Flamingo amf-serializer by Exadel, version 2.2.0 derives class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97380",
+        "name": "97380",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-1999-1093",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "1999-12-31T05:00Z",
+    "lastModifiedDate": "2018-10-12T21:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Buffer overflow in the Window.External function in the JScript Scripting Engine in Internet Explorer 4.01 SP1 and earlier allows remote attackers to execute arbitrary commands via a malicious web page."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://support.microsoft.com/support/kb/articles/q191/2/00.asp",
+        "name": "Q191200",
+        "refsource": "MSKB",
+        "tags": []
+      },
+      {
+        "url": "http://www.iss.net/security_center/static/1276.php",
+        "name": "java-script-patch(1276)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/1998/ms98-011",
+        "name": "MS98-011",
+        "refsource": "MS",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-5916",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-01-21T02:30Z",
+    "lastModifiedDate": "2017-08-08T01:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "gitweb/gitweb.perl in gitweb in Git 1.6.x before 1.6.0.6, 1.5.6.x before 1.5.6.6, 1.5.5.x before 1.5.5.6, 1.5.4.x before 1.5.4.7, and other versions after 1.4.3 allows local repository owners to execute arbitrary commands by modifying the diff.external configuration variable and executing a crafted gitweb query."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://marc.info/?l=git&m=122975564100860&w=2",
+        "name": "[git] 20081220 [Security] gitweb local privilege escalation (fix)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2009/01/15/2",
+        "name": "[oss-security] 20090115 CVE request -- git",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2009/01/20/2",
+        "name": "[oss-security] 20090120 Re: CVE request -- git",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=linux-kernel&m=122975564100863&w=2:",
+        "name": "[linux-kernel] 20081220 [Security] gitweb local privilege escalation (fix)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/4922",
+        "name": "4922",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-723-1",
+        "name": "USN-723-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/33964",
+        "name": "33964",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/34194",
+        "name": "34194",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.gentoo.org/security/en/glsa/glsa-200903-15.xml",
+        "name": "GLSA-200903-15",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2008-December/msg01170.html",
+        "name": "FEDORA-2008-11653",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/33282",
+        "name": "33282",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://osvdb.org/50918",
+        "name": "50918",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2008-December/msg01169.html",
+        "name": "FEDORA-2008-11650",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/47528",
+        "name": "git-gitweb-privilege-escalation(47528)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  }
+]

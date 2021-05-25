@@ -1,0 +1,933 @@
+{
+  "resultsPerPage": 5,
+  "startIndex": 0,
+  "totalResults": 5,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-16T15:01Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-17546",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-787"
+                  },
+                  {
+                    "lang": "en",
+                    "value": "CWE-190"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16443",
+                "name": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16443",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://gitlab.com/libtiff/libtiff/commit/4bb584a35f87af42d6cf09d15e9ce8909a839145",
+                "name": "https://gitlab.com/libtiff/libtiff/commit/4bb584a35f87af42d6cf09d15e9ce8909a839145",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/OSGeo/gdal/commit/21674033ee246f698887604c7af7ba1962a40ddf",
+                "name": "https://github.com/OSGeo/gdal/commit/21674033ee246f698887604c7af7ba1962a40ddf",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2019/11/msg00027.html",
+                "name": "[debian-lts-announce] 20191126 [SECURITY] [DLA 2009-1] tiff security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2020/Jan/32",
+                "name": "20200121 [SECURITY] [DSA 4608-1] tiff security update",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "https://www.debian.org/security/2020/dsa-4608",
+                "name": "DSA-4608",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LM5ZW7E3IEW7LT2BPJP7D3RN6OUOE3MX/",
+                "name": "FEDORA-2020-2e9bd06377",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M3S4WNIMZ7XSLY2LD5FPRPZMGNUBVKOG/",
+                "name": "FEDORA-2020-6f1209bb45",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/202003-25",
+                "name": "GLSA-202003-25",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2020/03/msg00020.html",
+                "name": "[debian-lts-announce] 20200318 [SECURITY] [DLA 2147-1] gdal security update",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "https://www.debian.org/security/2020/dsa-4670",
+                "name": "DSA-4670",
+                "refsource": "DEBIAN",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "tif_getimage.c in LibTIFF through 4.0.10, as used in GDAL through 3.0.1 and other products, has an integer overflow that potentially causes a heap-based buffer overflow via a crafted RGBA image, related to a \"Negative-size-param\" condition."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "4.1.0",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:osgeo:gdal:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "3.0.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2019-10-14T02:15Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-17545",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-415"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/OSGeo/gdal/commit/148115fcc40f1651a5d15fa34c9a8c528e7147bb",
+                "name": "https://github.com/OSGeo/gdal/commit/148115fcc40f1651a5d15fa34c9a8c528e7147bb",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16178",
+                "name": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16178",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2019/11/msg00005.html",
+                "name": "[debian-lts-announce] 20191109 [SECURITY] [DLA 1984-1] gdal security update",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00022.html",
+                "name": "openSUSE-SU-2019:2466",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XVRC3EBQBFBVQC26XJE3AI3KQXC2NGTP/",
+                "name": "FEDORA-2019-a6960910d8",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CB7RRPCQP253XA5MYUOLHLRPKNGKVZNT/",
+                "name": "FEDORA-2019-f511b38b1f",
+                "refsource": "FEDORA",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "GDAL through 3.0.1 has a poolDestroy double free in OGRExpatRealloc in ogr/ogr_expat.cpp when the 10MB threshold is exceeded."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:osgeo:gdal:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "3.0.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-10-14T02:15Z",
+        "lastModifiedDate": "2019-11-09T11:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-10989",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-125"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://sqlite.org/src/info/66de6f4a",
+                "name": "https://sqlite.org/src/info/66de6f4a",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.launchpad.net/ubuntu/+source/sqlite3/+bug/1700937",
+                "name": "https://bugs.launchpad.net/ubuntu/+source/sqlite3/+bug/1700937",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=2405",
+                "name": "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=2405",
+                "refsource": "MISC",
+                "tags": [
+                  "Permissions Required"
+                ]
+              },
+              {
+                "url": "https://sqlite.org/src/vpatch?from=0db20efe201736b3&to=66de6f4a9504ec26",
+                "name": "https://sqlite.org/src/vpatch?from=0db20efe201736b3&to=66de6f4a9504ec26",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://marc.info/?l=sqlite-users&m=149933696214713&w=2",
+                "name": "http://marc.info/?l=sqlite-users&m=149933696214713&w=2",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/99502",
+                "name": "99502",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1039427",
+                "name": "1039427",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/HT208144",
+                "name": "https://support.apple.com/HT208144",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/HT208115",
+                "name": "https://support.apple.com/HT208115",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/HT208113",
+                "name": "https://support.apple.com/HT208113",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/HT208112",
+                "name": "https://support.apple.com/HT208112",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+                "name": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2019/01/msg00009.html",
+                "name": "[debian-lts-announce] 20190111 [SECURITY] [DLA 1633-1] sqlite3 security update",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00050.html",
+                "name": "openSUSE-SU-2019:1426",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4019-1/",
+                "name": "USN-4019-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4019-2/",
+                "name": "USN-4019-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The getNodeSize function in ext/rtree/rtree.c in SQLite through 3.19.3, as used in GDAL and other products, mishandles undersized RTree blobs in a crafted database, leading to a heap-based buffer over-read or possibly unspecified other impact."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:sqlite:sqlite:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "3.19.3",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-07-07T12:29Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-1173",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-189"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://secunia.com/advisories/48757",
+                "name": "48757",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/48893",
+                "name": "48893",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://bugzilla.maptools.org/attachment.cgi?id=477&action=diff",
+                "name": "http://bugzilla.maptools.org/attachment.cgi?id=477&action=diff",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://bugzilla.maptools.org/show_bug.cgi?id=2369",
+                "name": "http://bugzilla.maptools.org/show_bug.cgi?id=2369",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2012/dsa-2447",
+                "name": "DSA-2447",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://hermes.opensuse.org/messages/14302713",
+                "name": "openSUSE-SU-2012:0539",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2012-0468.html",
+                "name": "RHSA-2012:0468",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/52891",
+                "name": "52891",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "https://downloads.avaya.com/css/P8/documents/100161772",
+                "name": "https://downloads.avaya.com/css/P8/documents/100161772",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/81025",
+                "name": "81025",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/48684",
+                "name": "48684",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/48735",
+                "name": "48735",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://home.gdal.org/private/zdi-can-1221/zdi-can-1221.txt",
+                "name": "http://home.gdal.org/private/zdi-can-1221/zdi-can-1221.txt",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://ubuntu.com/usn/usn-1416-1",
+                "name": "USN-1416-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/48722",
+                "name": "48722",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-April/078403.html",
+                "name": "FEDORA-2012-5406",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-April/078835.html",
+                "name": "FEDORA-2012-5410",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077463.html",
+                "name": "FEDORA-2012-5463",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html",
+                "name": "APPLE-SA-2012-09-19-2",
+                "refsource": "APPLE",
+                "tags": []
+              },
+              {
+                "url": "http://support.apple.com/kb/HT5501",
+                "name": "http://support.apple.com/kb/HT5501",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://support.apple.com/kb/HT5503",
+                "name": "http://support.apple.com/kb/HT5503",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce/2012/Sep/msg00003.html",
+                "name": "APPLE-SA-2012-09-19-1",
+                "refsource": "APPLE",
+                "tags": []
+              },
+              {
+                "url": "http://www.securitytracker.com/id?1026895",
+                "name": "1026895",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/50726",
+                "name": "50726",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://security.gentoo.org/glsa/glsa-201209-02.xml",
+                "name": "GLSA-201209-02",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/74656",
+                "name": "libtiff-gttileseparate-bo(74656)",
+                "refsource": "XF",
+                "tags": []
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2012:054",
+                "name": "MDVSA-2012:054",
+                "refsource": "MANDRIVA",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Multiple integer overflows in tiff_getimage.c in LibTIFF 3.9.4 allow remote attackers to execute arbitrary code via a crafted tile size in a TIFF file, which is not properly handled by the (1) gtTileSeparate or (2) gtStripSeparate function, leading to a heap-based buffer overflow."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:libtiff:libtiff:3.9.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2012-06-04T20:55Z",
+        "lastModifiedDate": "2018-01-18T02:29Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2005-3581",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-Other"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.gentoo.org/security/en/glsa/glsa-200511-02.xml",
+                "name": "GLSA-200511-02",
+                "refsource": "GENTOO",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/17427/",
+                "name": "17427",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/15120",
+                "name": "15120",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/20529",
+                "name": "20529",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2005/2281",
+                "name": "ADV-2005-2281",
+                "refsource": "VUPEN",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "GDAL before 1.3.0-r1 allows local users in the portage group to increase privileges via a shared object in the Portage temporary build directory, which is added to the search path allowing objects in it to be loaded at runtime."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gdal:gdal:1.2.6_r3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gdal:gdal:1.2.6_r4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gdal:gdal:1.3.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gdal:gdal:1.2.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gdal:gdal:1.2.5_r1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gdal:gdal:1.2.6_r1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gdal:gdal:1.2.6_r2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": true,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2005-11-16T07:42Z",
+        "lastModifiedDate": "2011-03-08T02:26Z"
+      }
+    ]
+  }
+}

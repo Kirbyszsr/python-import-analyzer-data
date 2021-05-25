@@ -1,0 +1,542 @@
+{
+  "resultsPerPage": 4,
+  "startIndex": 0,
+  "totalResults": 4,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-25T06:33Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-7739",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://blog.codecatoctin.com/2018/02/antman-authentication-bypass.html",
+                "name": "http://blog.codecatoctin.com/2018/02/antman-authentication-bypass.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.exploit-db.com/exploits/44262/",
+                "name": "44262",
+                "refsource": "EXPLOIT-DB",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://www.exploit-db.com/exploits/44220/",
+                "name": "44220",
+                "refsource": "EXPLOIT-DB",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "antsle antman before 0.9.1a allows remote attackers to bypass authentication via invalid characters in the username and password parameters, as demonstrated by a username=>&password=%0a string to the /login URI. This allows obtaining root permissions within the web management console, because the login process uses Java's ProcessBuilder class and a bash script called antsle-auth with insufficient input validation."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:antsle:antman:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "0.9.0c",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-03-07T02:29Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-19530",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/httl/httl/issues/225",
+                "name": "https://github.com/httl/httl/issues/225",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "HTTL (aka Hyper-Text Template Language) through 1.0.11 allows remote command execution because the decodeXml function uses XStream unsafely when configured with an xml.codec=httl.spi.codecs.XstreamCodec setting."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:httl_project:httl:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.0.11",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-11-26T02:29Z",
+        "lastModifiedDate": "2018-12-19T15:23Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-19531",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/httl/httl/issues/224",
+                "name": "https://github.com/httl/httl/issues/224",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "HTTL (aka Hyper-Text Template Language) through 1.0.11 allows remote command execution because the decodeXml function uses java.beans.XMLEncoder unsafely when configured without an xml.codec= setting."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:httl_project:httl:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.0.11",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-11-26T02:29Z",
+        "lastModifiedDate": "2018-12-19T15:22Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-1634",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://drupal.org/node/1401838",
+                "name": "http://drupal.org/node/1401838",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2012/04/07/1",
+                "name": "[oss-security] 20120406 CVE's for Drupal Contrib 2012 001 through 057 (67 new CVE assignments)",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://justin.madirish.net/content/drupal-video-filter-6x-28-xss-vulnerability",
+                "name": "http://justin.madirish.net/content/drupal-video-filter-6x-28-xss-vulnerability",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/51381",
+                "name": "51381",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://drupalcode.org/project/video_filter.git/commit/49680a6",
+                "name": "http://drupalcode.org/project/video_filter.git/commit/49680a6",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://drupalcode.org/project/video_filter.git/commit/c90c86e",
+                "name": "http://drupalcode.org/project/video_filter.git/commit/c90c86e",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/72359",
+                "name": "videofilter-unspecified-xss(72359)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Cross-site scripting (XSS) vulnerability in video_filter.codecs.inc in the Video Filter module 6.x-2.x and 7.x-2.x for Drupal allows remote attackers to inject arbitrary web script or HTML via the EMBEDLOOKUP parameter for Blip.tv links."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.6:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.5:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:7.x-2.x:dev:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.3:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.2:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.8:beta1:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.8:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.7:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.1:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.0:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.x:dev:*:*:*:*:*:*",
+                      "cpe_name": []
+                    },
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:a:hans_nilsson:video_filter:6.x-2.4:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:a:drupal:drupal:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2012-10-06T21:55Z",
+        "lastModifiedDate": "2017-08-29T01:31Z"
+      }
+    ]
+  }
+}

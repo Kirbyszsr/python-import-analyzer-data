@@ -1,0 +1,30 @@
+{
+  "name": "sphinx-issues",
+  "description": "=============\nsphinx-issues\n=============\n\n.. image:: https://travis-ci.org/sloria/sphinx-issues.svg?branch=master\n    :target: https://travis-ci.org/sloria/sphinx-issues\n\nA Sphinx extension for linking to your project's issue tracker. Includes roles for linking to issues, pull requests, user profiles, with built-in support for GitHub (though this works with other services).\n\nExample\n*******\n\nFor an example usage, check out `marshmallow's changelog <http://marshmallow.readthedocs.org/en/latest/changelog.html>`_, which makes use of the roles in this library.\n\nInstallation and Configuration\n******************************\n\n.. code-block:: console\n\n    pip install sphinx-issues\n\n\nAdd ``sphinx_issues`` to ``extensions`` in your ``conf.py``. If your project is on GitHub, add the ``issues_github_path`` config variable. Otherwise, use ``issues_uri`` and ``issues_pr_uri``.\n\n.. code-block:: python\n\n    # docs/conf.py\n\n    # ...\n    extensions = [\n        # ...\n        \"sphinx_issues\"\n    ]\n\n    # Github repo\n    issues_github_path = \"sloria/marshmallow\"\n\n    # equivalent to\n    issues_uri = \"https://github.com/sloria/marshmallow/issues/{issue}\"\n    issues_pr_uri = \"https://github.com/sloria/marshmallow/pull/{pr}\"\n    issues_commit_uri = \"https://github.com/sloria/marshmallow/commit/{commit}\"\n\nUsage\n*****\n\nUse the ``:issue:``  and ``:pr:`` roles in your docs like so:\n\n.. code-block:: rst\n\n    See issue :issue:`42`\n\n    See issues :issue:`12,13`\n\n    See :issue:`sloria/konch#45`.\n\n    See PR :pr:`58`\n\n\nUse the ``:user:`` role in your docs to link to user profiles (Github by default, but can be configured via the ``issues_user_uri`` config variable).\n\n.. code-block:: rst\n\n    Thanks to :user:`bitprophet` for the idea!\n\nYou can also use explicit names if you want to use a different name than the github user name:\n\n.. code-block:: rst\n\n    This change is due to :user:`Andreas Mueller <amueller>`.\n\n\nUse the ``:commit:`` role to link to commits.\n\n.. code-block:: rst\n\n    Fixed in :commit:`6bb9124d5e9dbb2f7b52864c3d8af7feb1b69403`.\n\nUse the ``:cve:`` role to link to CVEs on https://cve.mitre.org.\n\n.. code-block:: rst\n\n    :cve:`CVE-2018-17175` - Addresses possible vulnerability when...\n\nCredits\n*******\n\nCredit goes to Jeff Forcier for his work on the `releases <https://github.com/bitprophet/releases>`_ extension, which is a full-featured solution for generating changelogs. I just needed a quick way to reference Github issues in my docs, so I yoinked the bits that I needed.\n\nLicense\n*******\n\nMIT licensed. See the bundled `LICENSE <https://github.com/sloria/sphinx-issues/blob/master/LICENSE>`_ file for more details.\n\n\nChangelog\n*********\n\n1.2.0 (2018-12-26)\n------------------\n\n- Add ``:commit:`` role for linking to commits.\n- Add support for linking to external repos.\n- Test against Python 3.7.\n\n1.1.0 (2018-09-18)\n------------------\n\n- Add ``:cve:`` role for linking to CVEs on https://cve.mitre.org.\n\n1.0.0 (2018-07-14)\n------------------\n\n- Add ``:pr:`` role. Thanks @jnotham for the suggestion.\n- Drop support for Python 3.4.\n\n0.4.0 (2017-11-25)\n------------------\n\n- Raise ``ValueError`` if neither ``issues_uri`` nor ``issues_github_path`` is set. Thanks @jnothman for the PR.\n- Drop support for Python 2.6 and 3.3.\n\n0.3.1 (2017-01-16)\n------------------\n\n- ``setup`` returns metadata, preventing warnings about parallel reads and writes. Thanks @jfinkels for reporting.\n\n0.3.0 (2016-10-20)\n------------------\n\n- Support anchor text for ``:user:`` role. Thanks @jnothman for the suggestion and thanks @amueller for the PR.\n\n0.2.0 (2014-12-22)\n------------------\n\n- Add ``:user:`` role for linking to Github user profiles.\n\n0.1.0 (2014-12-21)\n------------------\n\n- Initial release.\n\n\n",
+  "requires_dist": [
+    "sphinx",
+    "pytest ; extra == 'dev'",
+    "flake8 (==3.6.0) ; extra == 'dev'",
+    "pre-commit (==1.13.0) ; extra == 'dev'",
+    "tox ; extra == 'dev'",
+    "mock ; (python_version < \"3.0\") and extra == 'dev'",
+    "flake8-bugbear (==18.8.0) ; (python_version >= \"3.5\") and extra == 'dev'",
+    "flake8 (==3.6.0) ; extra == 'lint'",
+    "pre-commit (==1.13.0) ; extra == 'lint'",
+    "flake8-bugbear (==18.8.0) ; (python_version >= \"3.5\") and extra == 'lint'",
+    "pytest ; extra == 'tests'",
+    "mock ; (python_version < \"3.0\") and extra == 'tests'"
+  ],
+  "requires_python": "",
+  "current_version": "1.2.0",
+  "released_versions": [
+    "0.1.0",
+    "0.2.0",
+    "0.3.0",
+    "0.3.1",
+    "0.4.0",
+    "1.0.0",
+    "1.1.0",
+    "1.2.0"
+  ]
+}

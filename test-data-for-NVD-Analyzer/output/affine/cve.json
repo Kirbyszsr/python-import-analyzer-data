@@ -1,0 +1,523 @@
+{
+  "resultsPerPage": 4,
+  "startIndex": 0,
+  "totalResults": 4,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-16T14:59Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-12400",
+            "ASSIGNER": "security@mozilla.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-200"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.mozilla.org/security/advisories/mfsa2020-36/",
+                "name": "https://www.mozilla.org/security/advisories/mfsa2020-36/",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.mozilla.org/security/advisories/mfsa2020-39/",
+                "name": "https://www.mozilla.org/security/advisories/mfsa2020-39/",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1623116",
+                "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1623116",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Permissions Required",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "When converting coordinates from projective to affine, the modular inversion was not performed in constant time, resulting in a possible timing-based side channel attack. This vulnerability affects Firefox < 80 and Firefox for Android < 80."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "80.0",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:android:*:*",
+                  "versionEndExcluding": "80.0",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.7,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:H/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.2
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 1.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-10-08T14:15Z",
+        "lastModifiedDate": "2020-10-19T18:32Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-11735",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-326"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/wolfSSL/wolfssl/releases/tag/v4.4.0-stable",
+                "name": "https://github.com/wolfSSL/wolfssl/releases/tag/v4.4.0-stable",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Release Notes",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/wolfSSL/wolfssl/commit/1de07da61f0c8e9926dcbd68119f73230dae283f",
+                "name": "https://github.com/wolfSSL/wolfssl/commit/1de07da61f0c8e9926dcbd68119f73230dae283f",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The private-key operations in ecc.c in wolfSSL before 4.4.0 do not use a constant-time modular inverse when mapping to affine coordinates, aka a \"projective coordinates leak.\""
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "4.4.0",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.3,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 1.4
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-06-25T14:15Z",
+        "lastModifiedDate": "2020-07-02T23:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-10932",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-327"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2020-04",
+                "name": "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2020-04",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://tls.mbed.org/tech-updates/releases/mbedtls-2.16.6-and-2.7.15-released",
+                "name": "https://tls.mbed.org/tech-updates/releases/mbedtls-2.16.6-and-2.7.15-released",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://tls.mbed.org/tech-updates/security-advisories",
+                "name": "https://tls.mbed.org/tech-updates/security-advisories",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FCWN5HIF4CJ2LZTOMEBJ7Q4IMMV7ZU2V/",
+                "name": "FEDORA-2020-9a6e8e63e9",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZNOS2IIBH5WNJXZUV546PY7666DE7Y3L/",
+                "name": "FEDORA-2020-42564738a1",
+                "refsource": "FEDORA",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in Arm Mbed TLS before 2.16.6 and 2.7.x before 2.7.15. An attacker that can get precise enough side-channel measurements can recover the long-term ECDSA private key by (1) reconstructing the projective coordinate of the result of scalar multiplication by exploiting side channels in the conversion to affine coordinates; (2) using an attack described by Naccache, Smart, and Stern in 2003 to recover a few bits of the ephemeral scalar from those projective coordinates via several measurements; and (3) using a lattice attack to get from there to the long-term ECDSA private key used for the signatures. Typically an attacker would have sufficient access when attacking an SGX enclave and controlling the untrusted OS."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.7.0",
+                  "versionEndExcluding": "2.7.15",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "2.16.0",
+                  "versionEndExcluding": "2.16.6",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 1.9
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.4,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-04-15T14:15Z",
+        "lastModifiedDate": "2020-06-05T05:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-7781",
+            "ASSIGNER": "security@mozilla.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.mozilla.org/security/advisories/mfsa2017-18/",
+                "name": "https://www.mozilla.org/security/advisories/mfsa2017-18/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1352039",
+                "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1352039",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1039124",
+                "name": "1039124",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/100383",
+                "name": "100383",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An error occurs in the elliptic curve point addition algorithm that uses mixed Jacobian-affine coordinates where it can yield a result \"POINT_AT_INFINITY\" when it should not. A man-in-the-middle attacker could use this to interfere with a connection, resulting in an attacked party computing an incorrect shared secret. This vulnerability affects Firefox < 55."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:mozilla:firefox:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "55.0",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.9,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2018-06-11T21:29Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      }
+    ]
+  }
+}

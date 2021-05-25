@@ -1,0 +1,1191 @@
+[
+  {
+    "cveID": "CVE-2021-3148",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-02-27T05:15Z",
+    "lastModifiedDate": "2021-03-31T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in SaltStack Salt before 3002.5. Sending crafted web requests to the Salt API can result in salt.utils.thin.gen_thin() command injection because of different handling of single versus double quotes. This is related to salt/utils/thin.py."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/saltstack/salt/releases",
+        "name": "https://github.com/saltstack/salt/releases",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/",
+        "name": "https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YOGNT2XWPOYV7YT75DN7PS4GIYWFKOK5/",
+        "name": "FEDORA-2021-904a2dbc0c",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7GRVZ5WAEI3XFN2BDTL6DDXFS5HYSDVB/",
+        "name": "FEDORA-2021-5756fbf8a6",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FUGLOJ6NXLCIFRD2JTXBYQEMAEF2B6XH/",
+        "name": "FEDORA-2021-43eb5584ad",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-01",
+        "name": "GLSA-202103-01",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3281",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-02-02T07:15Z",
+    "lastModifiedDate": "2021-03-05T19:19Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Django 2.2 before 2.2.18, 3.0 before 3.0.12, and 3.1 before 3.1.6, the django.utils.archive.extract method (used by \"startapp --template\" and \"startproject --template\") allows directory traversal via an archive with absolute paths or relative paths with dot segments."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://docs.djangoproject.com/en/3.1/releases/security/",
+        "name": "https://docs.djangoproject.com/en/3.1/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.djangoproject.com/weblog/2021/feb/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2021/feb/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!forum/django-announce",
+        "name": "https://groups.google.com/forum/#!forum/django-announce",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YF52FKEH5S2P5CM4X7IXSYG67YY2CDOO/",
+        "name": "FEDORA-2021-5329c680f7",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210226-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20210226-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21251",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-01-15T21:15Z",
+    "lastModifiedDate": "2021-01-21T14:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OneDev is an all-in-one devops platform. In OneDev before version 4.0.3 there is a critical \"zip slip\" vulnerability. This issue may lead to arbitrary file write. The KubernetesResource REST endpoint untars user controlled data from the request body using TarUtils. TarUtils is a custom library method leveraging Apache Commons Compress. During the untar process, there are no checks in place to prevent an untarred file from traversing the file system and overriding an existing file. For a successful exploitation, the attacker requires a valid __JobToken__ which may not be possible to get without using any of the other reported vulnerabilities. But this should be considered a vulnerability in `io.onedev.commons.utils.TarUtils` since it lives in a different artifact and can affect other projects using it. This issue was addressed in 4.0.3 by validating paths in tar archive to only allow them to be in specified folder when extracted."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/theonedev/onedev/security/advisories/GHSA-2w6j-wc8c-9mq2",
+        "name": "https://github.com/theonedev/onedev/security/advisories/GHSA-2w6j-wc8c-9mq2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-11030",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-22T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Mirasys VMS before V7.6.1 and 8.x before V8.3.2 mishandles the Mirasys.Common.Utils.Security.DataCrypt method in Common.dll in AuditTrailService in SMServer.exe. This method triggers insecure deserialization within the .NET garbage collector, in which a gadget (contained in a serialized object) may be executed with SYSTEM privileges. The attacker must properly encrypt the object; however, the hardcoded keys are available."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kyberturvallisuuskeskus.fi/en/vulnerabilities-mirasys-vms-video-management-solution",
+        "name": "https://www.kyberturvallisuuskeskus.fi/en/vulnerabilities-mirasys-vms-video-management-solution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14232",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-02T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 1.11.x before 1.11.23, 2.1.x before 2.1.11, and 2.2.x before 2.2.4. If django.utils.text.Truncator's chars() and words() methods were passed the html=True argument, they were extremely slow to evaluate certain inputs due to a catastrophic backtracking vulnerability in a regular expression. The chars() and words() methods are used to implement the truncatechars_html and truncatewords_html template filters, which were thus vulnerable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+        "name": "openSUSE-SU-2019:1839",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/15",
+        "name": "20190812 [SECURITY] [DSA 4498-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4498",
+        "name": "DSA-4498",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+        "name": "openSUSE-SU-2019:1872",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STVX7X7IDWAH5SKE6MBMY3TEI6ZODBTK/",
+        "name": "FEDORA-2019-647f74ce51",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202004-17",
+        "name": "GLSA-202004-17",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14233",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-02T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 1.11.x before 1.11.23, 2.1.x before 2.1.11, and 2.2.x before 2.2.4. Due to the behaviour of the underlying HTMLParser, django.utils.html.strip_tags would be extremely slow to evaluate certain inputs containing large sequences of nested incomplete HTML entities."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+        "name": "openSUSE-SU-2019:1839",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/15",
+        "name": "20190812 [SECURITY] [DSA 4498-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4498",
+        "name": "DSA-4498",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+        "name": "openSUSE-SU-2019:1872",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STVX7X7IDWAH5SKE6MBMY3TEI6ZODBTK/",
+        "name": "FEDORA-2019-647f74ce51",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202004-17",
+        "name": "GLSA-202004-17",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14235",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-02T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 1.11.x before 1.11.23, 2.1.x before 2.1.11, and 2.2.x before 2.2.4. If passed certain inputs, django.utils.encoding.uri_to_iri could lead to significant memory usage due to a recursion when repercent-encoding invalid UTF-8 octet sequences."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+        "name": "openSUSE-SU-2019:1839",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/15",
+        "name": "20190812 [SECURITY] [DSA 4498-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4498",
+        "name": "DSA-4498",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+        "name": "openSUSE-SU-2019:1872",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STVX7X7IDWAH5SKE6MBMY3TEI6ZODBTK/",
+        "name": "FEDORA-2019-647f74ce51",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202004-17",
+        "name": "GLSA-202004-17",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-6975",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-02-11T13:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Django 1.11.x before 1.11.19, 2.0.x before 2.0.11, and 2.1.x before 2.1.6 allows Uncontrolled Memory Consumption via a malicious attacker-supplied value to the django.utils.numberformat.format() function."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2019/02/11/1",
+        "name": "https://www.openwall.com/lists/oss-security/2019/02/11/1",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/feb/11/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/feb/11/security-releases/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/WTwEAprR0IQ",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/WTwEAprR0IQ",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/106964",
+        "name": "106964",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3890-1/",
+        "name": "USN-3890-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HVXDOVCXLD74SHR2BENGCE2OOYYYWJHZ/",
+        "name": "FEDORA-2019-5ad2149e99",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/66WMXHGBXD7GSM3PEXVCMCAGLMQYHZCU/",
+        "name": "FEDORA-2019-f528d75a69",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4476",
+        "name": "DSA-4476",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Jul/10",
+        "name": "20190708 [SECURITY] [DSA 4476-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3199",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2020-02-06T15:02Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementation of GraniteDS, version 3.1.1.GA, AMF3 deserializers derives class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97382",
+        "name": "97382",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-14658",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2018-11-13T19:29Z",
+    "lastModifiedDate": "2019-10-09T23:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was found in JBOSS Keycloak 3.2.1.Final. The Redirect URL for both Login and Logout are not normalized in org.keycloak.protocol.oidc.utils.RedirectUtils before the redirect url is verified. This can lead to an Open Redirection attack"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14658",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14658",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3595",
+        "name": "RHSA-2018:3595",
+        "refsource": "REDHAT",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3593",
+        "name": "RHSA-2018:3593",
+        "refsource": "REDHAT",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3592",
+        "name": "RHSA-2018:3592",
+        "refsource": "REDHAT",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3207",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2019-10-09T23:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementations of AMF3 deserializers in WebORB for Java by Midnight Coders, version 5.1.1.0, derive class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97384",
+        "name": "97384",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3203",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2019-10-09T23:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementations of AMF3 deserializers in Pivotal/Spring Spring-flex derive class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.securityfocus.com/bid/97376",
+        "name": "97376",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-3201",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-06-11T17:29Z",
+    "lastModifiedDate": "2019-10-09T23:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Java implementation of AMF3 deserializers used in Flamingo amf-serializer by Exadel, version 2.2.0 derives class instances from java.io.Externalizable rather than the AMF3 specification's recommendation of flash.utils.IExternalizable. A remote attacker with the ability to spoof or control an RMI server connection may be able to send serialized Java objects that execute arbitrary code when deserialized."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/307983",
+        "name": "VU#307983",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "name": "https://codewhitesec.blogspot.com/2017/04/amf.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "name": "http://www.securityweek.com/flaws-java-amf-libraries-allow-remote-code-execution",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97380",
+        "name": "97380",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-2166",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2016-04-12T14:59Z",
+    "lastModifiedDate": "2019-04-23T12:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The (1) proton.reactor.Connector, (2) proton.reactor.Container, and (3) proton.utils.BlockingConnection classes in Apache Qpid Proton before 0.12.1 improperly use an unencrypted connection for an amqps URI scheme when SSL support is unavailable, which might allow man-in-the-middle attackers to obtain sensitive information or modify data via unspecified vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://qpid.apache.org/releases/qpid-proton-0.12.1/release-notes.html",
+        "name": "http://qpid.apache.org/releases/qpid-proton-0.12.1/release-notes.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git-wip-us.apache.org/repos/asf?p=qpid-proton.git;h=a058585",
+        "name": "https://git-wip-us.apache.org/repos/asf?p=qpid-proton.git;h=a058585",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://issues.apache.org/jira/browse/PROTON-1157",
+        "name": "https://issues.apache.org/jira/browse/PROTON-1157",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/136403/Apache-Qpid-Proton-0.12.0-SSL-Failure.html",
+        "name": "http://packetstormsecurity.com/files/136403/Apache-Qpid-Proton-0.12.0-SSL-Failure.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2016-April/182414.html",
+        "name": "FEDORA-2016-e6e8436b98",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/537864/100/0/threaded",
+        "name": "20160323 CVE-2016-2166: Apache Qpid Proton python binding silently ignores request for 'amqps' if SSL/TLS not supported",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/914424e4d798a340f523b6169aaf39b626971d9bb00fcdeb1d5d6c0d@%3Ccommits.qpid.apache.org%3E",
+        "name": "[qpid-commits] 20190423 [qpid-site] branch asf-site updated: update site content for CVE-2019-0223",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-11340",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-04-19T14:29Z",
+    "lastModifiedDate": "2019-04-22T17:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "util/emailutils.py in Matrix Sydent before 1.0.2 mishandles registration restrictions that are based on e-mail domain, if the allowed_local_3pids option is enabled. This occurs because of potentially unwanted behavior in Python, in which an email.utils.parseaddr call on user@bad.example.net@good.example.com returns the user@bad.example.net substring."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://twitter.com/matrixdotorg/status/1118934335963500545",
+        "name": "https://twitter.com/matrixdotorg/status/1118934335963500545",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/",
+        "name": "https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/matrix-org/sydent/compare/7c002cd...09278fb",
+        "name": "https://github.com/matrix-org/sydent/compare/7c002cd...09278fb",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/matrix-org/sydent/commit/4e1cfff53429c49c87d5c457a18ed435520044fc",
+        "name": "https://github.com/matrix-org/sydent/commit/4e1cfff53429c49c87d5c457a18ed435520044fc",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-7537",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-03-09T20:29Z",
+    "lastModifiedDate": "2019-02-28T22:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 2.0 before 2.0.3, 1.11 before 1.11.11, and 1.8 before 1.8.19. If django.utils.text.Truncator's chars() and words() methods were passed the html=True argument, they were extremely slow to evaluate certain inputs due to a catastrophic backtracking vulnerability in a regular expression. The chars() and words() methods are used to implement the truncatechars_html and truncatewords_html template filters, which were thus vulnerable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2018/mar/06/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2018/mar/06/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/03/msg00006.html",
+        "name": "[debian-lts-announce] 20180308 [SECURITY] [DLA 1303-1] python-django security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/103357",
+        "name": "103357",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3591-1/",
+        "name": "USN-3591-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4161",
+        "name": "DSA-4161",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2927",
+        "name": "RHSA-2018:2927",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0265",
+        "name": "RHSA-2019:0265",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-7536",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-03-09T20:29Z",
+    "lastModifiedDate": "2019-02-28T21:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 2.0 before 2.0.3, 1.11 before 1.11.11, and 1.8 before 1.8.19. The django.utils.html.urlize() function was extremely slow to evaluate certain inputs due to catastrophic backtracking vulnerabilities in two regular expressions (only one regular expression for Django 1.8.x). The urlize() function is used to implement the urlize and urlizetrunc template filters, which were thus vulnerable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2018/mar/06/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2018/mar/06/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/03/msg00006.html",
+        "name": "[debian-lts-announce] 20180308 [SECURITY] [DLA 1303-1] python-django security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/103361",
+        "name": "103361",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3591-1/",
+        "name": "USN-3591-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4161",
+        "name": "DSA-4161",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2927",
+        "name": "RHSA-2018:2927",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0082",
+        "name": "RHSA-2019:0082",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0051",
+        "name": "RHSA-2019:0051",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0265",
+        "name": "RHSA-2019:0265",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-17886",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-10-02T18:29Z",
+    "lastModifiedDate": "2018-11-16T21:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in JEESNS 1.3. The XSS filter in com.lxinet.jeesns.core.utils.XssHttpServletRequestWrapper.java could be bypassed, as demonstrated by a <svg/onLoad=confirm substring. NOTE: this vulnerability exists because of an incomplete fix for CVE-2018-12429."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/Jayl1n/CVE/blob/master/jeesns/jeesns-1.3-xss-filter-bypass.md",
+        "name": "https://github.com/Jayl1n/CVE/blob/master/jeesns/jeesns-1.3-xss-filter-bypass.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-7231",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-10-08T19:55Z",
+    "lastModifiedDate": "2018-11-16T15:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The strutils.mask_password function in the OpenStack Oslo utility library, Cinder, Nova, and Trove before 2013.2.4 and 2014.1 before 2014.1.3 does not properly mask passwords when logging commands, which allows local users to obtain passwords by reading the log."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/70184",
+        "name": "70184",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://seclists.org/oss-sec/2014/q3/853",
+        "name": "[oss-security] 20140929 Re: CVE request for vulnerability in OpenStack Cinder, Nova and Trove",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/oslo.utils/+bug/1345233",
+        "name": "https://bugs.launchpad.net/oslo.utils/+bug/1345233",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-1939.html",
+        "name": "RHSA-2014:1939",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/96726",
+        "name": "openstack-nova-cve20147231-info-disc(96726)",
+        "refsource": "XF",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-7233",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-04-04T17:59Z",
+    "lastModifiedDate": "2018-10-17T10:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Django 1.10 before 1.10.7, 1.9 before 1.9.13, and 1.8 before 1.8.18 relies on user input in some cases to redirect the user to an \"on success\" URL. The security check for these redirects (namely ``django.utils.http.is_safe_url()``) considered some numeric URLs \"safe\" when they shouldn't be, aka an open redirect vulnerability. Also, if a developer relies on ``is_safe_url()`` to provide safe redirect targets and puts such a URL into a link, they could suffer from an XSS attack."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2017/apr/04/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2017/apr/04/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97406",
+        "name": "97406",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1038177",
+        "name": "1038177",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2017/dsa-3835",
+        "name": "DSA-3835",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3093",
+        "name": "RHSA-2017:3093",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1596",
+        "name": "RHSA-2017:1596",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1470",
+        "name": "RHSA-2017:1470",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1462",
+        "name": "RHSA-2017:1462",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1451",
+        "name": "RHSA-2017:1451",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1445",
+        "name": "RHSA-2017:1445",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2927",
+        "name": "RHSA-2018:2927",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  }
+]

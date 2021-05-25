@@ -1,0 +1,2947 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 30122,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-25T06:37Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36230",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-617"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9423",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9423",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/8c1d96ee36ed98b32cd0e28b7069c7b8ea09d793",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/8c1d96ee36ed98b32cd0e28b7069c7b8ea09d793",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212531",
+                "name": "https://support.apple.com/kb/HT212531",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading in an assertion failure in slapd in the X.509 DN parsing in decode.c ber_next_element, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36229",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-843"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9425",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9425",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/4bdfffd2889c0c5cdf58bebafbdc8fce4bb2bff0",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/4bdfffd2889c0c5cdf58bebafbdc8fce4bb2bff0",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in ldap_X509dn2bv in OpenLDAP before 2.4.57 leading to a slapd crash in the X.509 DN parsing in ad_keystring, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36228",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-191"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9427",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9427",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/91dccd25c347733b365adc74cb07d074512ed5ad",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/91dccd25c347733b365adc74cb07d074512ed5ad",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An integer underflow was discovered in OpenLDAP before 2.4.57 leading to a slapd crash in the Certificate List Exact Assertion processing, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36227",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-835"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9428",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9428",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/9d0e8485f3113505743baabf1167e01e4558ccf5",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/9d0e8485f3113505743baabf1167e01e4558ccf5",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading to an infinite loop in slapd with the cancel_extop Cancel operation, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36226",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/5a2017d4e61a6ddc4dcb4415028e0d08eb6bca26",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/5a2017d4e61a6ddc4dcb4415028e0d08eb6bca26",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/c0b61a9486508e5202aa2e0cfb68c9813731b439",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/c0b61a9486508e5202aa2e0cfb68c9813731b439",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/554dff1927176579d652f2fe60c90e9abbad4c65",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/554dff1927176579d652f2fe60c90e9abbad4c65",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/d169e7958a3e0dc70f59c8374bf8a59833b7bdd8",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/d169e7958a3e0dc70f59c8374bf8a59833b7bdd8",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9413",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9413",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212531",
+                "name": "https://support.apple.com/kb/HT212531",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading to a memch->bv_len miscalculation and slapd crash in the saslAuthzTo processing, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36225",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-415"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/5a2017d4e61a6ddc4dcb4415028e0d08eb6bca26",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/5a2017d4e61a6ddc4dcb4415028e0d08eb6bca26",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/c0b61a9486508e5202aa2e0cfb68c9813731b439",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/c0b61a9486508e5202aa2e0cfb68c9813731b439",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/554dff1927176579d652f2fe60c90e9abbad4c65",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/554dff1927176579d652f2fe60c90e9abbad4c65",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/d169e7958a3e0dc70f59c8374bf8a59833b7bdd8",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/d169e7958a3e0dc70f59c8374bf8a59833b7bdd8",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9412",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9412",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading to a double free and slapd crash in the saslAuthzTo processing, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36224",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-763"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/5a2017d4e61a6ddc4dcb4415028e0d08eb6bca26",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/5a2017d4e61a6ddc4dcb4415028e0d08eb6bca26",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9409",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9409",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/c0b61a9486508e5202aa2e0cfb68c9813731b439",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/c0b61a9486508e5202aa2e0cfb68c9813731b439",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/554dff1927176579d652f2fe60c90e9abbad4c65",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/554dff1927176579d652f2fe60c90e9abbad4c65",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/d169e7958a3e0dc70f59c8374bf8a59833b7bdd8",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/d169e7958a3e0dc70f59c8374bf8a59833b7bdd8",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212531",
+                "name": "https://support.apple.com/kb/HT212531",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading to an invalid pointer free and slapd crash in the saslAuthzTo processing, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36223",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-125"
+                  },
+                  {
+                    "lang": "en",
+                    "value": "CWE-415"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9408",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9408",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/21981053a1195ae1555e23df4d9ac68d34ede9dd",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/21981053a1195ae1555e23df4d9ac68d34ede9dd",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212531",
+                "name": "https://support.apple.com/kb/HT212531",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading to a slapd crash in the Values Return Filter control handling, resulting in denial of service (double free and out-of-bounds read)."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36222",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-617"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9407",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9407",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/6ed057b5b728b50746c869bcc9c1f85d0bbbf6ed",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/6ed057b5b728b50746c869bcc9c1f85d0bbbf6ed",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9406",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9406",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/02dfc32d658fadc25e4040f78e36592f6e1e1ca0",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/02dfc32d658fadc25e4040f78e36592f6e1e1ca0",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/6ed057b5b728b50746c869bcc9c1f85d0bbbf6ed.aa",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/6ed057b5b728b50746c869bcc9c1f85d0bbbf6ed.aa",
+                "refsource": "MISC",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212531",
+                "name": "https://support.apple.com/kb/HT212531",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading to an assertion failure in slapd in the saslAuthzTo validation, resulting in denial of service."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-36221",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-191"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9404",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9404",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/58c1748e81c843c5b6e61648d2a4d1d82b47e842",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/58c1748e81c843c5b6e61648d2a4d1d82b47e842",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+                "refsource": "MISC",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.openldap.org/show_bug.cgi?id=9424",
+                "name": "https://bugs.openldap.org/show_bug.cgi?id=9424",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://git.openldap.org/openldap/openldap/-/commit/38ac838e4150c626bbfa0082b7e2cf3a2bb4df31",
+                "name": "https://git.openldap.org/openldap/openldap/-/commit/38ac838e4150c626bbfa0082b7e2cf3a2bb4df31",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+                "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2021/dsa-4845",
+                "name": "DSA-4845",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212529",
+                "name": "https://support.apple.com/kb/HT212529",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212531",
+                "name": "https://support.apple.com/kb/HT212531",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An integer underflow was discovered in OpenLDAP before 2.4.57 leading to slapd crashes in the Certificate Exact Assertion processing, resulting in denial of service (schema_init.c serialNumberAndIssuerCheck)."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.57",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-26T18:15Z",
+        "lastModifiedDate": "2021-05-24T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-24740",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-352"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/pluck-cms/pluck/issues/81",
+                "name": "https://github.com/pluck-cms/pluck/issues/81",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in Pluck 4.7.10-dev2. There is a CSRF vulnerability that can editpage via a /admin.php?action=editpage"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:pluck-cms:pluck:4.7.10:dev2:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 1.4
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-05-18T16:15Z",
+        "lastModifiedDate": "2021-05-24T20:32Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-24026",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/stavyan/TinyShop-UniApp",
+                "name": "https://github.com/stavyan/TinyShop-UniApp",
+                "refsource": "MISC",
+                "tags": [
+                  "Product",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/jianyan74/TinyShop/issues/14",
+                "name": "https://github.com/jianyan74/TinyShop/issues/14",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/jianyan74/TinyShop",
+                "name": "https://github.com/jianyan74/TinyShop",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "TinyShop, a free and open source mall based on RageFrame2, has a stored XSS vulnerability that affects version 1.2.0. TinyShop allows XSS via the explain_first and again_explain parameters of the /evaluate/index.php page. The vulnerability may be exploited remotely, resulting in cross-site scripting (XSS) or information disclosure."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:tinyshop_project:tinyshop:1.2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "CHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.1,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 2.7
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2021-05-18T15:15Z",
+        "lastModifiedDate": "2021-05-24T19:59Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-25709",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-617"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00008.html",
+                "name": "[debian-lts-announce] 20201204 [SECURITY] [DLA 2481-1] openldap security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2020/dsa-4792",
+                "name": "DSA-4792",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1899675",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1899675",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://seclists.org/fulldisclosure/2021/Feb/14",
+                "name": "20210201 APPLE-SA-2021-02-01-1 macOS Big Sur 11.2, Security Update 2021-001 Catalina, Security Update 2021-001 Mojave",
+                "refsource": "FULLDISC",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.apple.com/kb/HT212147",
+                "name": "https://support.apple.com/kb/HT212147",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A flaw was found in OpenLDAP. This flaw allows an attacker who can send a malicious packet to be processed by OpenLDAP\u2019s slapd server, to trigger an assertion failure. The highest threat from this vulnerability is to system availability."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.4.56",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "10.14.0",
+                  "versionEndExcluding": "10.14.6",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2019-004:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2019-005:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2019-006:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2019-007:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2020-001:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2020-002:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2020-003:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2020-004:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2020-005:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2020-006:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.14.6:security_update_2020-007:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "10.15",
+                  "versionEndExcluding": "10.15.7",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.15.7:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.15.7:security_update_2020-005:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.15.7:security_update_2020-007:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:mac_os_x:10.15.7:supplemental_update:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "11.0",
+                  "versionEndExcluding": "11.0.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:jboss_core_services:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-18T12:15Z",
+        "lastModifiedDate": "2021-05-24T19:55Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-15279",
+            "ASSIGNER": "cve-requests@bitdefender.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-863"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.bitdefender.com/support/security-advisories/scanning-exclusion-paths-disclosure-in-best-for-windows-va-9380",
+                "name": "N/A",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An Improper Access Control vulnerability in the logging component of Bitdefender Endpoint Security Tools for Windows versions prior to 6.6.23.320 allows a regular user to learn the scanning exclusion paths. This issue was discovered during external security research."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:bitdefender:endpoint_security_tools:*:*:*:*:*:windows:*:*",
+                  "versionEndExcluding": "6.6.23.320",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 3.3,
+              "baseSeverity": "LOW"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 1.4
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-18T11:15Z",
+        "lastModifiedDate": "2021-05-24T19:36Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-24295",
+            "ASSIGNER": "contact@wpscan.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-89"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.wordfence.com/blog/2021/05/sql-injection-vulnerability-patched-in-cleantalk-antispam-plugin/",
+                "name": "https://www.wordfence.com/blog/2021/05/sql-injection-vulnerability-patched-in-cleantalk-antispam-plugin/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://wpscan.com/vulnerability/152171fc-888c-4275-a118-5a1e664ef28b",
+                "name": "https://wpscan.com/vulnerability/152171fc-888c-4275-a118-5a1e664ef28b",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "It was possible to exploit an Unauthenticated Time-Based Blind SQL Injection vulnerability in the Spam protection, AntiSpam, FireWall by CleanTalk WordPress Plugin before 5.153.4. The update_log function in lib/Cleantalk/ApbctWP/Firewall/SFW.php included a vulnerable query that could be injected via the User-Agent Header by manipulating the cookies set by the Spam protection, AntiSpam, FireWall by CleanTalk WordPress plugin before 5.153.4, sending an initial request to obtain a ct_sfw_pass_key cookie and then manually setting a separate ct_sfw_passed cookie and disallowing it from being reset."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:cleantalk:spam_protection\\,_antispam\\,_firewall:*:*:*:*:*:wordpress:*:*",
+                  "versionEndExcluding": "5.153.4",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-17T17:15Z",
+        "lastModifiedDate": "2021-05-24T19:08Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-25645",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-312"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.couchbase.com/resources/security#SecurityAlerts",
+                "name": "https://www.couchbase.com/resources/security#SecurityAlerts",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://www.couchbase.com/downloads",
+                "name": "https://www.couchbase.com/downloads",
+                "refsource": "MISC",
+                "tags": [
+                  "Product",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in Couchbase Server before 6.0.5, 6.1.x through 6.5.x before 6.5.2, and 6.6.x before 6.6.1. An internal user with administrator privileges, @ns_server, leaks credentials in cleartext in the cbcollect_info.log, debug.log, ns_couchdb.log, indexer.log, and stats.log files. NOTE: updating the product does not automatically address leaks that occurred in the past."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:couchbase:couchbase_server:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "6.0.5",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:couchbase:couchbase_server:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "6.1.0",
+                  "versionEndExcluding": "6.5.2",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:couchbase:couchbase_server:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "6.6.0",
+                  "versionEndExcluding": "6.6.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "HIGH",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.4,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 0.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-10T13:15Z",
+        "lastModifiedDate": "2021-05-24T18:35Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-33509",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-732"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://plone.org/security/hotfix/20210518/writing-arbitrary-files-via-docutils-and-python-script",
+                "name": "https://plone.org/security/hotfix/20210518/writing-arbitrary-files-via-docutils-and-python-script",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2021/05/22/1",
+                "name": "[oss-security] 20210522 Re: Plone security hotfix 20210518",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Plone through 5.2.4 allows remote authenticated managers to perform disk I/O via crafted keyword arguments to the ReStructuredText transform in a Python script."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:plone:plone:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "5.2.4",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "CHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.9,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.1,
+            "impactScore": 6.0
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:S/C:C/I:C/A:C",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 8.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 6.8,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-05-21T22:15Z",
+        "lastModifiedDate": "2021-05-24T18:27Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-29256",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://developer.arm.com/support/arm-security-updates/mali-gpu-kernel-driver",
+                "name": "https://developer.arm.com/support/arm-security-updates/mali-gpu-kernel-driver",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": ". The Arm Mali GPU kernel driver allows an unprivileged user to achieve access to freed memory, leading to information disclosure or root privilege escalation. This affects Bifrost r16p0 through r29p0 before r30p0, Valhall r19p0 through r29p0 before r30p0, and Midgard r28p0 through r30p0."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-24T18:15Z",
+        "lastModifiedDate": "2021-05-24T18:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-30081",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/emlog/emlog/issues/74",
+                "name": "https://github.com/emlog/emlog/issues/74",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in emlog 6.0.0stable. There is a SQL Injection vulnerability that can execute any SQL statement and query server sensitive data via admin/navbar.php?action=add_page."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-24T18:15Z",
+        "lastModifiedDate": "2021-05-24T18:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-30082",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": []
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/dignajar/gris/issues/3",
+                "name": "https://github.com/dignajar/gris/issues/3",
+                "refsource": "MISC",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in Gris CMS v0.1. There is a Persistent XSS vulnerability which allows remote attackers to inject arbitrary web script or HTML via admin/dashboard."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": []
+        },
+        "impact": {},
+        "publishedDate": "2021-05-24T18:15Z",
+        "lastModifiedDate": "2021-05-24T18:15Z"
+      }
+    ]
+  }
+}

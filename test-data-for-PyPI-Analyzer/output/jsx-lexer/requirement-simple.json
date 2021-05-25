@@ -1,0 +1,20 @@
+{
+  "name": "jsx-lexer",
+  "description": "jsx-lexer\n=========\n\n.. image:: https://travis-ci.org/fcurella/jsx-lexer.svg?branch=master\n    :target: https://travis-ci.org/fcurella/jsx-lexer\n\n.. image:: https://coveralls.io/repos/github/fcurella/jsx-lexer/badge.svg?branch=master\n    :target: https://coveralls.io/github/fcurella/jsx-lexer?branch=master\n\nA JSX lexer for Pygments\n\nInstallation\n------------\n.. code-block:: sh\n\n    $ pip install jsx-lexer\n\nUsage with Sphinx\n-----------------\n\nTo use within Sphinx, simply specify ``jsx`` for your ``code-block``::\n\n    .. code-block:: jsx\n\n        const BlogTitle = ({ children }) => (\n          <h3>{children}</h3>\n        );\n        // class component\n        class BlogPost extends React.Component {\n          renderTitle(title) {\n            return <BlogTitle>{title}</BlogTitle>\n          };\n          render() {\n            return (\n            <div className=\"blog-body\">\n              {this.renderTitle(this.props.title)}\n              <p>{this.props.body}</p>\n            </div>\n            );\n          }\n        }\n\nUsage with mkdocs\n-----------------\n\nFirst, you need to create the ``CSS`` for the highlighting:\n\n.. code-block:: bash\n\n  $ pygmentize -S default -f html -a .codehilite > code/pygments.css\n\nThen, add the following to your ``mkdocs.yml``:\n\n.. code-block:: yaml\n\n  markdown_extensions:\n    - codehilite\n  extra_css: [pygments.css]\n\nNow, you can use ``jsx`` in your code blocks::\n\n    ```jsx\n    const BlogTitle = ({ children }) => (\n      <h3>{children}</h3>\n    );\n    // class component\n    class BlogPost extends React.Component {\n      renderTitle(title) {\n        return <BlogTitle>{title}</BlogTitle>\n      };\n      render() {\n        return (\n        <div className=\"blog-body\">\n          {this.renderTitle(this.props.title)}\n          <p>{this.props.body}</p>\n        </div>\n        );\n      }\n    }\n    ```\n\n\n",
+  "requires_dist": [
+    "Pygments (>=2.7)"
+  ],
+  "requires_python": "",
+  "current_version": "1.0.0",
+  "released_versions": [
+    "0.0.1",
+    "0.0.2",
+    "0.0.3",
+    "0.0.4",
+    "0.0.5",
+    "0.0.6",
+    "0.0.7",
+    "0.0.8",
+    "1.0.0"
+  ]
+}

@@ -1,0 +1,924 @@
+[
+  {
+    "cveID": "CVE-2020-0822",
+    "cveASSIGNER": "secure@microsoft.com",
+    "publishedDate": "2020-03-12T16:15Z",
+    "lastModifiedDate": "2021-05-25T10:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An elevation of privilege vulnerability exists when the Windows Language Pack Installer improperly handles file operations, aka 'Windows Language Pack Installer Elevation of Privilege Vulnerability'."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0822",
+        "name": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0822",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5be80ba868a11a1f64e4922399f171b8619bca4bc2039f79cf913928@%3Cjava-dev.axis.apache.org%3E",
+        "name": "[axis-java-dev] 20210228 axis2 1.7.9 is exposed to CVE-2020-8022 via tomcat dependency",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r393d4f431683e99c839b4aed68f720b8583bca6c35cd84adccaa02be@%3Cjava-dev.axis.apache.org%3E",
+        "name": "[axis-java-dev] 20210307 Re: axis2 1.7.9 is exposed to CVE-2020-8022 via tomcat dependency",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r31d9c450e6d84e82e85c2dd1a7586f56ae4ed6776e5b8765c30fe2ac@%3Cjava-user.axis.apache.org%3E",
+        "name": "[axis-java-user] 20210419 RE: Axis2 1.8.0 Release timelines",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r492afeeeb1bfe484f2f4a1f5d296eee49b13eb0c579ac460e3d7d957@%3Cjava-user.axis.apache.org%3E",
+        "name": "[axis-java-user] 20210419 Re: Axis2 1.8.0 Release timelines",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r02687681920bb91816b735cc48847eef77c473a749678d855fbb565d@%3Cjava-dev.axis.apache.org%3E",
+        "name": "[axis-java-dev] 20210525 [jira] [Created] (AXIS2-6002) AXIS 2 1.7.9 jars with vulnerability CVE-2020-0822",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23841",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2021-02-16T17:15Z",
+    "lastModifiedDate": "2021-05-25T01:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The OpenSSL public API function X509_issuer_and_serial_hash() attempts to create a unique hash value based on the issuer and serial number data contained within an X509 certificate. However it fails to correctly handle any errors that may occur while parsing the issuer field (which might occur if the issuer field is maliciously constructed). This may subsequently result in a NULL pointer deref and a crash leading to a potential denial of service attack. The function X509_issuer_and_serial_hash() is never directly called by OpenSSL itself so applications are only vulnerable if they use this function directly and they use it on certificates that may have been obtained from untrusted sources. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20210216.txt",
+        "name": "https://www.openssl.org/news/secadv/20210216.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8252ee4d90f3f2004d3d0aeeed003ad49c9a7807",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8252ee4d90f3f2004d3d0aeeed003ad49c9a7807",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=122a19ab48091c657f7cb1fb3af9fc07bd557bbf",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=122a19ab48091c657f7cb1fb3af9fc07bd557bbf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4855",
+        "name": "DSA-4855",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210219-0009/",
+        "name": "https://security.netapp.com/advisory/ntap-20210219-0009/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-03",
+        "name": "https://www.tenable.com/security/tns-2021-03",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "name": "GLSA-202103-03",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212529",
+        "name": "https://support.apple.com/kb/HT212529",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212528",
+        "name": "https://support.apple.com/kb/HT212528",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212534",
+        "name": "https://support.apple.com/kb/HT212534",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-36223",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-26T18:15Z",
+    "lastModifiedDate": "2021-05-24T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was discovered in OpenLDAP before 2.4.57 leading to a slapd crash in the Values Return Filter control handling, resulting in denial of service (double free and out-of-bounds read)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.openldap.org/show_bug.cgi?id=9408",
+        "name": "https://bugs.openldap.org/show_bug.cgi?id=9408",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+        "name": "https://git.openldap.org/openldap/openldap/-/tags/OPENLDAP_REL_ENG_2_4_57",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openldap.org/openldap/openldap/-/commit/21981053a1195ae1555e23df4d9ac68d34ede9dd",
+        "name": "https://git.openldap.org/openldap/openldap/-/commit/21981053a1195ae1555e23df4d9ac68d34ede9dd",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00005.html",
+        "name": "[debian-lts-announce] 20210203 [SECURITY] [DLA 2544-1] openldap security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4845",
+        "name": "DSA-4845",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210226-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212529",
+        "name": "https://support.apple.com/kb/HT212529",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212531",
+        "name": "https://support.apple.com/kb/HT212531",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29043",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-17T11:15Z",
+    "lastModifiedDate": "2021-05-24T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Portal Store module in Liferay Portal 7.0.0 through 7.3.5, and Liferay DXP 7.0 before fix pack 97, 7.1 before fix pack 21, 7.2 before fix pack 10 and 7.3 before fix pack 1 does not obfuscate the S3 store's proxy password, which allows attackers to steal the proxy password via man-in-the-middle attacks or shoulder surfing."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743515",
+        "name": "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743515",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://liferay.com",
+        "name": "http://liferay.com",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29047",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-16T16:15Z",
+    "lastModifiedDate": "2021-05-24T20:45Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The SimpleCaptcha implementation in Liferay Portal 7.3.4, 7.3.5 and Liferay DXP 7.3 before fix pack 1 does not invalidate CAPTCHA answers after it is used, which allows remote attackers to repeatedly perform actions protected by a CAPTCHA challenge by reusing the same CAPTCHA answer."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743467",
+        "name": "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743467",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://liferay.com",
+        "name": "http://liferay.com",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29692",
+    "cveASSIGNER": "psirt@us.ibm.com",
+    "publishedDate": "2021-05-20T15:15Z",
+    "lastModifiedDate": "2021-05-24T20:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "IBM Security Identity Manager 7.0.2 could allow a remote attacker to obtain sensitive information, caused by the failure to properly enable HTTP Strict Transport Security. An attacker could exploit this vulnerability to obtain sensitive information using man in the middle techniques. IBM X-Force ID: 200253."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/200253",
+        "name": "ibm-sim-cve202129692-info-disc (200253)",
+        "refsource": "XF",
+        "tags": [
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.ibm.com/support/pages/node/6454587",
+        "name": "https://www.ibm.com/support/pages/node/6454587",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27342",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-17T13:15Z",
+    "lastModifiedDate": "2021-05-24T20:14Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An authentication brute-force protection mechanism bypass in telnetd in D-Link Router model DIR-842 firmware version 3.0.2 allows a remote attacker to circumvent the anti-brute-force cool-down delay period via a timing-based side-channel attack"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/guywhataguy/D-Link-CVE-2021-27342-exploit/blob/main/dlink-telnet-exploit-CVE-2021-27342.py",
+        "name": "https://github.com/guywhataguy/D-Link-CVE-2021-27342-exploit/blob/main/dlink-telnet-exploit-CVE-2021-27342.py",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://blog.whtaguy.com/2021/05/d-link-router-cve-2021-27342.html",
+        "name": "https://blog.whtaguy.com/2021/05/d-link-router-cve-2021-27342.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://supportannouncement.us.dlink.com/announcement/publication.aspx?name=SAP10225",
+        "name": "https://supportannouncement.us.dlink.com/announcement/publication.aspx?name=SAP10225",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-33033",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-14T23:15Z",
+    "lastModifiedDate": "2021-05-24T19:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Linux kernel before 5.11.14 has a use-after-free in cipso_v4_genopt in net/ipv4/cipso_ipv4.c because the CIPSO and CALIPSO refcounting for the DOI definitions is mishandled, aka CID-ad5d07f4a9cd. This leads to writing an arbitrary value."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ad5d07f4a9cd671233ae20983848874731102c08",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ad5d07f4a9cd671233ae20983848874731102c08",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.14",
+        "name": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.14",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.7",
+        "name": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.11.7",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1165affd484889d4986cf3b724318935a0b120d8",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1165affd484889d4986cf3b724318935a0b120d8",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://sites.google.com/view/syzscope/kasan-use-after-free-read-in-cipso_v4_genopt",
+        "name": "https://sites.google.com/view/syzscope/kasan-use-after-free-read-in-cipso_v4_genopt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://syzkaller.appspot.com/bug?id=96e7d345748d8814901c91cd92084ed04b46701e",
+        "name": "https://syzkaller.appspot.com/bug?id=96e7d345748d8814901c91cd92084ed04b46701e",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-33508",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-21T22:15Z",
+    "lastModifiedDate": "2021-05-24T18:24Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Plone through 5.2.4 allows XSS via a full name that is mishandled during rendering of the ownership tab of a content item."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://plone.org/security/hotfix/20210518/stored-xss-from-user-fullname",
+        "name": "https://plone.org/security/hotfix/20210518/stored-xss-from-user-fullname",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/22/1",
+        "name": "[oss-security] 20210522 Re: Plone security hotfix 20210518",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26558",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-24T18:15Z",
+    "lastModifiedDate": "2021-05-24T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Bluetooth LE and BR/EDR secure pairing in Bluetooth Core Specification 2.1 through 5.2 may permit a nearby man-in-the-middle attacker to identify the Passkey used during pairing (in the Passkey authentication procedure) by reflection of the public key and the authentication evidence of the initiating device, potentially permitting this attacker to complete authenticated pairing with the responding device using the correct Passkey for the pairing session. The attack methodology determines the Passkey value one bit at a time."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.cert.org/vuls/id/799380",
+        "name": "https://kb.cert.org/vuls/id/799380",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.bluetooth.com/learn-about-bluetooth/key-attributes/bluetooth-security/reporting-security/",
+        "name": "https://www.bluetooth.com/learn-about-bluetooth/key-attributes/bluetooth-security/reporting-security/",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-21831",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-17T22:15Z",
+    "lastModifiedDate": "2021-05-24T17:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A heap based buffer overflow vulnerability exists in GNU LibreDWG 0.10 via read_2004_section_handles ../../src/decode.c:2637."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/LibreDWG/libredwg/issues/188#issuecomment-574493267",
+        "name": "https://github.com/LibreDWG/libredwg/issues/188#issuecomment-574493267",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://gnu.com",
+        "name": "http://gnu.com",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27184",
+    "cveASSIGNER": "vulnerability@kaspersky.com",
+    "publishedDate": "2021-05-14T13:15Z",
+    "lastModifiedDate": "2021-05-24T15:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The NPort IA5000A Series devices use Telnet as one of the network device management services. Telnet does not support the encryption of client-server communications, making it vulnerable to Man-in-the-Middle attacks."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.moxa.com/en/support/product-support/security-advisory/nport-ia5000a-serial-device-servers-vulnerabilities",
+        "name": "https://www.moxa.com/en/support/product-support/security-advisory/nport-ia5000a-serial-device-servers-vulnerabilities",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://ics-cert.kaspersky.com/advisories/klcert-advisories/2021/05/11/klcert-20-020,",
+        "name": "https://ics-cert.kaspersky.com/advisories/klcert-advisories/2021/05/11/klcert-20-020,",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3485",
+    "cveASSIGNER": "cve-requests@bitdefender.com",
+    "publishedDate": "2021-05-24T14:15Z",
+    "lastModifiedDate": "2021-05-24T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An Improper Input Validation vulnerability in the Product Update feature of Bitdefender Endpoint Security Tools for Linux allows a man-in-the-middle attacker to abuse the DownloadFile function of the Product Update to achieve remote code execution. This issue affects: Bitdefender Endpoint Security Tools for Linux versions prior to 6.2.21.155."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.bitdefender.com/support/security-advisories/improper-input-validation-in-bitdefender-endpoint-security-tools-for-linux-va-9769",
+        "name": "https://www.bitdefender.com/support/security-advisories/improper-input-validation-in-bitdefender-endpoint-security-tools-for-linux-va-9769",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20291",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-04-01T18:15Z",
+    "lastModifiedDate": "2021-05-24T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A deadlock vulnerability was found in 'github.com/containers/storage' in versions before 1.28.1. When a container image is processed, each layer is unpacked using `tar`. If one of those layers is not a valid `tar` archive this causes an error leading to an unexpected situation where the code indefinitely waits for the tar unpacked stream, which never finishes. An attacker could use this vulnerability to craft a malicious image, which when downloaded and stored by an application using containers/storage, would then cause a deadlock leading to a Denial of Service (DoS)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939485",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1939485",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R5D7XL7FL24TWFMGQ3K2S72EOUSLZMKL/",
+        "name": "FEDORA-2021-ec00da7faa",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZNMB7O2UIXE34PGSCSOULGHPX5LIJBMM/",
+        "name": "FEDORA-2021-83b3740389",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WX24EITRXVHDM5M223BVTJA2ODF2FSHI/",
+        "name": "FEDORA-2021-a3703b9dc8",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SPYOHNG2Q7DCAQZMGYLMENLKALGDLG3X/",
+        "name": "FEDORA-2021-c56a213327",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://unit42.paloaltonetworks.com/cve-2021-20291/",
+        "name": "https://unit42.paloaltonetworks.com/cve-2021-20291/",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14145",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-06-29T18:15Z",
+    "lastModifiedDate": "2021-05-24T14:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The client side in OpenSSH 5.7 through 8.4 has an Observable Discrepancy leading to an information leak in the algorithm negotiation. This allows man-in-the-middle attackers to target initial connection attempts (where no host key for the server has been cached by the client). NOTE: some reports state that 8.5 and 8.6 are also affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/openssh/openssh-portable/compare/V_8_3_P1...V_8_4_P1",
+        "name": "https://github.com/openssh/openssh-portable/compare/V_8_3_P1...V_8_4_P1",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.fzi.de/en/news/news/detail-en/artikel/fsa-2020-2-ausnutzung-eines-informationslecks-fuer-gezielte-mitm-angriffe-auf-ssh-clients/",
+        "name": "https://www.fzi.de/en/news/news/detail-en/artikel/fsa-2020-2-ausnutzung-eines-informationslecks-fuer-gezielte-mitm-angriffe-auf-ssh-clients/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200709-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20200709-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2020/12/02/1",
+        "name": "[oss-security] 20201202 Some mitigation for openssh CVE-2020-14145",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://anongit.mindrot.org/openssh.git/commit/?id=b3855ff053f5078ec3d3c653cdaedefaa5fc362d",
+        "name": "https://anongit.mindrot.org/openssh.git/commit/?id=b3855ff053f5078ec3d3c653cdaedefaa5fc362d",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/ssh-mitm/ssh-mitm/blob/master/ssh_proxy_server/plugins/session/cve202014145.py",
+        "name": "https://github.com/ssh-mitm/ssh-mitm/blob/master/ssh_proxy_server/plugins/session/cve202014145.py",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.ssh-mitm.at/CVE-2020-14145.html",
+        "name": "https://docs.ssh-mitm.at/CVE-2020-14145.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-28910",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-24T13:15Z",
+    "lastModifiedDate": "2021-05-24T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Creation of a Temporary Directory with Insecure Permissions in Nagios XI 5.7.5 and earlier allows for Privilege Escalation via creation of symlinks, which are mishandled in getprofile.sh."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://skylightcyber.com/2021/05/20/13-nagios-vulnerabilities-7-will-shock-you/",
+        "name": "https://skylightcyber.com/2021/05/20/13-nagios-vulnerabilities-7-will-shock-you/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.nagios.com/downloads/nagios-xi/change-log/",
+        "name": "https://www.nagios.com/downloads/nagios-xi/change-log/",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20722",
+    "cveASSIGNER": "vultures@jpcert.or.jp",
+    "publishedDate": "2021-05-24T04:15Z",
+    "lastModifiedDate": "2021-05-24T04:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Untrusted search path vulnerability in the installers of ScanSnap Manager prior to versions V7.0L20 and the Software Download Installer prior to WinSSInst2JP.exe and WinSSInst2iX1500JP.exe allows an attacker to gain privileges and execute arbitrary code with the privilege of the user invoking the installer via a Trojan horse DLL in an unspecified directory."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://scansnap.fujitsu.com/global/dl/",
+        "name": "https://scansnap.fujitsu.com/global/dl/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://jvn.jp/en/jp/JVN65733194/index.html",
+        "name": "https://jvn.jp/en/jp/JVN65733194/index.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20726",
+    "cveASSIGNER": "vultures@jpcert.or.jp",
+    "publishedDate": "2021-05-24T04:15Z",
+    "lastModifiedDate": "2021-05-24T04:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Untrusted search path vulnerability in The Installer of Overwolf 2.168.0.n and earlier allows an attacker to gain privileges and execute arbitrary code with the privilege of the user invoking the installer via a Trojan horse DLL in an unspecified directory."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://jvn.jp/en/jp/JVN78254777/index.html",
+        "name": "https://jvn.jp/en/jp/JVN78254777/index.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.overwolf.com/",
+        "name": "https://www.overwolf.com/",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29921",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-24T05:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Python before 3,9,5, the ipaddress library mishandles leading zero characters in the octets of an IP address string. This (in some situations) allows attackers to bypass access control that is based on IP addresses."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/python/cpython/pull/25099",
+        "name": "https://github.com/python/cpython/pull/25099",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sick.codes/sick-2021-014",
+        "name": "https://sick.codes/sick-2021-014",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+        "name": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/sickcodes",
+        "name": "https://github.com/sickcodes",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+        "name": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/python/cpython/pull/12577",
+        "name": "https://github.com/python/cpython/pull/12577",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.python.org/3/library/ipaddress.html",
+        "name": "https://docs.python.org/3/library/ipaddress.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+        "name": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.python.org/issue36384",
+        "name": "https://bugs.python.org/issue36384",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31215",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-13T06:15Z",
+    "lastModifiedDate": "2021-05-24T04:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "SchedMD Slurm before 20.02.7 and 20.03.x through 20.11.x before 20.11.7 allows remote code execution as SlurmUser because use of a PrologSlurmctld or EpilogSlurmctld script leads to environment mishandling."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.schedmd.com/pipermail/slurm-announce/2021/000055.html",
+        "name": "https://lists.schedmd.com/pipermail/slurm-announce/2021/000055.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.schedmd.com/news.php?id=248#OPT_248",
+        "name": "https://www.schedmd.com/news.php?id=248#OPT_248",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PRHTASFAU5FNB2MJOG67YID2ONQS5MCQ/",
+        "name": "FEDORA-2021-f75a803ff3",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3ODMJQNY4FAV7G3DSKVIO5KY7Q7DKBPU/",
+        "name": "FEDORA-2021-335cd3eab7",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  }
+]

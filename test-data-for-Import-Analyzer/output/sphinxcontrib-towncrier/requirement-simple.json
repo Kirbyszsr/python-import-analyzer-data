@@ -1,0 +1,14 @@
+{
+  "name": "sphinxcontrib-towncrier",
+  "description": "sphinxcontrib-towncrier\n=======================\n\nAn RST directive for injecting a Towncrier-generated changelog draft\ncontaining fragments for the unreleased (next) project version.\n\n\nHow to use this?\n----------------\n\n.. code-block:: shell-session\n\n    $ pip install sphinxcontrib-towncrier\n\n.. code-block:: python\n\n    extensions = ['sphinxcontrib.towncrier']\n\n    # Options: draft/sphinx-version/sphinx-release\n    towncrier_draft_autoversion_mode = 'draft'\n    towncrier_draft_include_empty = True\n    towncrier_draft_working_directory = PROJECT_ROOT_DIR\n    # Not yet supported:\n    # towncrier_draft_config_path = 'pyproject.toml'  # relative to cwd\n\nMake sure to point to the dir with ``pyproject.toml`` and pre-configure\ntowncrier itself in the config.\n\nIf everything above is  set up correctly, you should be able to add\n\n.. code-block:: rst\n\n    .. towncrier-draft-entries::\n\nto your documents, like ``changelog.rst``. With no argument, the version\ntitle will be generated using the strategy set up in the\n``towncrier_draft_autoversion_mode`` setting.\n\nIf you want to be in control, override it with an argument you like:\n\n.. code-block:: rst\n\n    .. towncrier-draft-entries:: |release| [UNRELEASED DRAFT]\n\nNative RST substitutions in the argument work, just make sure to declare\nany non-default ones via ``rst_epilog`` or at the end of the document\nwhere the ``towncrier-draft-entries`` directive is being used.\n\n\nDoes anybody actually use this?\n-------------------------------\n\nSo far we know about two projects using ``sphinxcontrib-towncrier`` \u2014\nansible/pylibssh and pypa/pip. Also, this Sphinx extension is inspired\nby and somewhat based on the ideas used in pytest-dev/pytest and\ntox-dev/tox. We believe that these projects are full of wonderful tricks\nthat you may want to explore regardless of whether you'll use our\nproject.\n\n\n",
+  "requires_dist": [
+    "sphinx",
+    "towncrier"
+  ],
+  "requires_python": ">=3.6",
+  "current_version": "0.2.0a0",
+  "released_versions": [
+    "0.1.0a1",
+    "0.2.0a0"
+  ]
+}

@@ -1,0 +1,3611 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 82,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-25T06:25Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-25533",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-362"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://wojciechregula.blog/post/learn-xpc-exploitation-part-2-say-no-to-the-pid/",
+                "name": "https://wojciechregula.blog/post/learn-xpc-exploitation-part-2-say-no-to-the-pid/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An issue was discovered in Malwarebytes before 4.0 on macOS. A malicious application was able to perform a privileged action within the Malwarebytes launch daemon. The privileged service improperly validated XPC connections by relying on the PID instead of the audit token. An attacker can construct a situation where the same PID is used for running two different programs at different times, by leveraging a race condition during crafted use of posix_spawn."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:malwarebytes:malwarebytes:*:*:*:*:-:macos:*:*",
+                  "versionEndExcluding": "4.0",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.0,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 6.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.4,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-01-15T22:15Z",
+        "lastModifiedDate": "2021-01-26T21:47Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-12617",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-190"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://lists.gnu.org/archive/html/qemu-devel/2018-06/msg03385.html",
+                "name": "https://lists.gnu.org/archive/html/qemu-devel/2018-06/msg03385.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://gist.github.com/fakhrizulkifli/c7740d28efa07dafee66d4da5d857ef6",
+                "name": "https://gist.github.com/fakhrizulkifli/c7740d28efa07dafee66d4da5d857ef6",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/104531",
+                "name": "104531",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://www.exploit-db.com/exploits/44925/",
+                "name": "44925",
+                "refsource": "EXPLOIT-DB",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3826-1/",
+                "name": "USN-3826-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2019/02/msg00041.html",
+                "name": "[debian-lts-announce] 20190228 [SECURITY] [DLA 1694-1] qemu security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2019/dsa-4454",
+                "name": "DSA-4454",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/May/76",
+                "name": "20190531 [SECURITY] [DSA 4454-1] qemu security update",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "qmp_guest_file_read in qga/commands-posix.c and qga/commands-win32.c in qemu-ga (aka QEMU Guest Agent) in QEMU 2.12.50 has an integer overflow causing a g_malloc0() call to trigger a segmentation fault when trying to allocate a large memory chunk. The vulnerability can be exploited by sending a crafted QMP command (including guest-file-read with a large count value) to the agent via the listening socket."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.12.50",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-06-21T18:29Z",
+        "lastModifiedDate": "2020-11-19T16:35Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-2527",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-264"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2011/07/12/15",
+                "name": "[oss-security] 20110712 Re: CVE Request: qemu -runas does not clear  supplementary groups",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://ubuntu.com/usn/usn-1177-1",
+                "name": "USN-1177-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/47992",
+                "name": "47992",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugs.launchpad.net/qemu/+bug/807893",
+                "name": "https://bugs.launchpad.net/qemu/+bug/807893",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2011/07/12/5",
+                "name": "[oss-security] 20110712 CVE Request: qemu -runas does not clear  supplementary groups",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/47157",
+                "name": "47157",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/45188",
+                "name": "45188",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.osvdb.org/74752",
+                "name": "74752",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/48659",
+                "name": "48659",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/45187",
+                "name": "45187",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-June/081972.html",
+                "name": "FEDORA-2012-8604",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2012-02/msg00009.html",
+                "name": "openSUSE-SU-2012:0207",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/45419",
+                "name": "45419",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://rhn.redhat.com/errata/RHSA-2011-1531.html",
+                "name": "RHSA-2011:1531",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://www.debian.org/security/2011/dsa-2282",
+                "name": "DSA-2282",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/68539",
+                "name": "qemu-runas-priv-escalation(68539)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The change_process_uid function in os-posix.c in Qemu 0.14.0 and earlier does not properly drop group privileges when the -runas option is used, which allows local guest users to access restricted files on the host."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.0:rc0:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.10.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.9.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.3.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.15.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.1.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.0-rc1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.13.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.13.0:rc0:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.10.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.9.1-5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.6.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.13.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "0.14.0",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.10.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.10.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.8.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.4.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.14.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.12.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.10.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.14.0:rc0:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.14.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.15.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.1.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.1.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.1.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.8.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.4.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.4.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.14.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.0-rc0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:qemu:qemu:0.11.0-rc2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2012-06-21T15:55Z",
+        "lastModifiedDate": "2020-11-02T14:39Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2016-3706",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://sourceware.org/git/gitweb.cgi?p=glibc.git;h=4ab2ab03d4351914ee53248dc5aef4a8c88ff8b9",
+                "name": "https://sourceware.org/git/gitweb.cgi?p=glibc.git;h=4ab2ab03d4351914ee53248dc5aef4a8c88ff8b9",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=20010",
+                "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=20010",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2016-06/msg00030.html",
+                "name": "openSUSE-SU-2016:1527",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2016-07/msg00039.html",
+                "name": "openSUSE-SU-2016:1779",
+                "refsource": "SUSE",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/88440",
+                "name": "88440",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21995039",
+                "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21995039",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://source.android.com/security/bulletin/2017-12-01",
+                "name": "https://source.android.com/security/bulletin/2017-12-01",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/102073",
+                "name": "102073",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Stack-based buffer overflow in the getaddrinfo function in sysdeps/posix/getaddrinfo.c in the GNU C Library (aka glibc or libc6) allows remote attackers to cause a denial of service (crash) via vectors involving hostent conversion. NOTE: this vulnerability exists because of an incomplete fix for CVE-2013-4458."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.23",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2016-06-10T15:59Z",
+        "lastModifiedDate": "2020-10-29T20:19Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-18344",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-125"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/torvalds/linux/commit/cef31d9af908243421258f1df35a4a644604efbe",
+                "name": "https://github.com/torvalds/linux/commit/cef31d9af908243421258f1df35a4a644604efbe",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.8",
+                "name": "https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.8",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/104909",
+                "name": "104909",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1041414",
+                "name": "1041414",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://www.exploit-db.com/exploits/45175/",
+                "name": "45175",
+                "refsource": "EXPLOIT-DB",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3742-2/",
+                "name": "USN-3742-2",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/3742-1/",
+                "name": "USN-3742-1",
+                "refsource": "UBUNTU",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3096",
+                "name": "RHSA-2018:3096",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3083",
+                "name": "RHSA-2018:3083",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:2948",
+                "name": "RHSA-2018:2948",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3459",
+                "name": "RHSA-2018:3459",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3591",
+                "name": "RHSA-2018:3591",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3590",
+                "name": "RHSA-2018:3590",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3586",
+                "name": "RHSA-2018:3586",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3540",
+                "name": "RHSA-2018:3540",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The timer_create syscall implementation in kernel/time/posix-timers.c in the Linux kernel before 4.14.8 doesn't properly validate the sigevent->sigev_notify field, which leads to out-of-bounds access in the show_timer function (called when /proc/$PID/timers is read). This allows userspace applications to read arbitrary kernel memory (on a kernel built with CONFIG_POSIX_TIMERS and CONFIG_CHECKPOINT_RESTORE)."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "4.14.8",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_tus:7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_tus:7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_tus:7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:mrg_realtime:2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.1
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-07-26T19:29Z",
+        "lastModifiedDate": "2020-10-15T13:28Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-1148",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-476"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://secunia.com/advisories/39344",
+                "name": "39344",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=579445",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=579445",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.samba.org/archive/linux-cifs-client/2010-April/005741.html",
+                "name": "[linux-cifs-client] 20100402 [patch] skip posix open if nameidata is null",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/39186",
+                "name": "39186",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://marc.info/?l=oss-security&m=127045754521927&w=2",
+                "name": "[oss-security] 20100405 CVE request: kernel: cifs: cifs_create() NULL pointer dereference",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.samba.org/archive/linux-cifs-client/2010-April/005746.html",
+                "name": "[linux-cifs-client] 20100402 [patch] skip posix open if nameidata is null",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://xorl.wordpress.com/2010/04/05/linux-kernel-unix-extensions-cifs-null-pointer-dereference/",
+                "name": "http://xorl.wordpress.com/2010/04/05/linux-kernel-unix-extensions-cifs-null-pointer-dereference/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.samba.org/archive/linux-cifs-client/2010-April/005757.html",
+                "name": "[linux-cifs-client] 20100404 [patch] skip posix open if nameidata is null",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://openwall.com/lists/oss-security/2010/04/06/2",
+                "name": "[oss-security] 20100405 Re: CVE request: kernel: cifs: cifs_create() NULL pointer dereference",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://marc.info/?l=oss-security&m=127045779122119&w=2",
+                "name": "[oss-security] 20100405 Re: CVE request: kernel: cifs: cifs_create() NULL pointer dereference",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.samba.org/archive/linux-cifs-client/2010-April/005742.html",
+                "name": "[linux-cifs-client] 20100402 [patch] skip posix open if nameidata is null",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/57561",
+                "name": "linux-kernel-cifscreate-dos(57561)",
+                "refsource": "XF",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The cifs_create function in fs/cifs/dir.c in the Linux kernel 2.6.33.2 and earlier allows local users to cause a denial of service (NULL pointer dereference and OOPS) or possibly have unspecified other impact via a NULL nameidata (aka nd) field in a POSIX file-creation request to a server that supports UNIX extensions."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.6.33.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:N/I:N/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 4.7
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.4,
+            "impactScore": 6.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2010-04-12T17:30Z",
+        "lastModifiedDate": "2020-08-28T16:22Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-6485",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-787"
+                  },
+                  {
+                    "lang": "en",
+                    "value": "CWE-190"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=22343",
+                "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=22343",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://bugs.debian.org/878159",
+                "name": "http://bugs.debian.org/878159",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/102912",
+                "name": "102912",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:3092",
+                "name": "RHSA-2018:3092",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20190404-0003/",
+                "name": "https://security.netapp.com/advisory/ntap-20190404-0003/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+                "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHBA-2019:0327",
+                "name": "RHBA-2019:0327",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://usn.ubuntu.com/4218-1/",
+                "name": "USN-4218-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4416-1/",
+                "name": "USN-4416-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An integer overflow in the implementation of the posix_memalign in memalign functions in the GNU C Library (aka glibc or libc6) 2.26 and earlier could cause these functions to return a pointer to a heap area that is too small, potentially leading to heap corruption."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.26",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:redhat:virtualization_host:4.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:enterprise_communications_broker:3.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:communications_session_border_controller:8.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:communications_session_border_controller:8.2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:communications_session_border_controller:8.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:oracle:enterprise_communications_broker:3.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:virtual_storage_console:*:*:*:*:*:vmware_vsphere:*:*",
+                  "versionStartIncluding": "7.2",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:element_software:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:cloud_backup:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:data_ontap_edge:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:vasa_provider:6.x:*:*:*:*:clustered_data_ontap:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:storage_replication_adapter:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "7.2",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:virtual_storage_console:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:vasa_provider:*:*:*:*:*:clustered_data_ontap:*:*",
+                  "versionStartIncluding": "7.2",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:element_software_management:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-02-01T14:29Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-13351",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/jackaudio/jack2/pull/480",
+                "name": "https://github.com/jackaudio/jack2/pull/480",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/xbmc/xbmc/issues/16258",
+                "name": "https://github.com/xbmc/xbmc/issues/16258",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "posix/JackSocket.cpp in libjack in JACK2 1.9.1 through 1.9.12 (as distributed with alsa-plugins 1.1.7 and later) has a \"double file descriptor close\" issue during a failed connection attempt when jackd2 is not running. Exploitation success depends on multithreaded timing of that double close, which can result in unintended information disclosure, crashes, or file corruption due to having the wrong file associated with the file descriptor."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:jackaudio:jack2:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "1.9.1",
+                  "versionEndIncluding": "1.9.12",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:alsa-project:alsa:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.1.7",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.1,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.2,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-07-05T20:15Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-9192",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-674"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=24269",
+                "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=24269",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS",
+                "name": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "** DISPUTED ** In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.29",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-02-26T18:29Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-4248",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-362"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2010/11/24/9",
+                "name": "[oss-security] 20101124 Re: CVE request: kernel: posix-cpu-timers: workaround to suppress the problems with mt exec",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e0a70217107e6f9844628120412cb27bb4cea194",
+                "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e0a70217107e6f9844628120412cb27bb4cea194",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kernel.org/pub/linux/kernel/v2.6/testing/ChangeLog-2.6.37-rc2",
+                "name": "http://www.kernel.org/pub/linux/kernel/v2.6/testing/ChangeLog-2.6.37-rc2",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=656264",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=656264",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2010/11/23/2",
+                "name": "[oss-security] 20101123 CVE request: kernel: posix-cpu-timers: workaround to suppress the problems with mt exec",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/45028",
+                "name": "45028",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2011-0004.html",
+                "name": "RHSA-2011:0004",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2011/0024",
+                "name": "ADV-2011-0024",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/42789",
+                "name": "42789",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/42890",
+                "name": "42890",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2011-0007.html",
+                "name": "RHSA-2011:0007",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2011:029",
+                "name": "MDVSA-2011:029",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/46397",
+                "name": "46397",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vmware.com/security/advisories/VMSA-2011-0012.html",
+                "name": "http://www.vmware.com/security/advisories/VMSA-2011-0012.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/520102/100/0/threaded",
+                "name": "20111013 VMSA-2011-0012 VMware ESXi and ESX updates to third party libraries and ESX Service Console",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Race condition in the __exit_signal function in kernel/exit.c in the Linux kernel before 2.6.37-rc2 allows local users to cause a denial of service via vectors related to multithreaded exec, the use of a thread group leader in kernel/posix-cpu-timers.c, and the selection of a new thread group leader in the de_thread function in fs/exec.c."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.6.37",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:2.6.37:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:2.6.37:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 4.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2010-11-30T21:38Z",
+        "lastModifiedDate": "2020-08-13T13:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2016-2854",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-269"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.halfdog.net/Security/2016/AufsPrivilegeEscalationInUserNamespaces/",
+                "name": "http://www.halfdog.net/Security/2016/AufsPrivilegeEscalationInUserNamespaces/",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2016/02/24/9",
+                "name": "[oss-security] 20160224 Aufs Union Filesystem Privilege Escalation In User Namespaces",
+                "refsource": "MLIST",
+                "tags": [
+                  "Exploit",
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://sourceforge.net/p/aufs/mailman/message/34864744/",
+                "name": "[aufs] 20160219 aufs3 and aufs4 GIT release",
+                "refsource": "MLIST",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/96838",
+                "name": "96838",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The aufs module for the Linux kernel 3.x and 4.x does not properly maintain POSIX ACL xattr data, which allows local users to gain privileges by leveraging a group-writable setgid directory."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "3.0.0",
+                  "versionEndIncluding": "3.19.8",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionStartIncluding": "4.0.0",
+                  "versionEndIncluding": "4.20.15",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 4.6
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2016-05-02T10:59Z",
+        "lastModifiedDate": "2020-08-07T19:53Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-0727",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-399"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2010/03/12/1",
+                "name": "[oss-security] 20100312 CVE-2010-0727 kernel: gfs/gfs2 locking code DoS flaw",
+                "refsource": "MLIST",
+                "tags": [
+                  "Exploit",
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=570863",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=570863",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Exploit",
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://lkml.org/lkml/2010/3/11/269",
+                "name": "[linux-kernel] 20100311 [PATCH 3/3] GFS2: Skip check for mandatory locks when unlocking",
+                "refsource": "MLIST",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kernel.org/pub/linux/kernel/v2.6/next/patch-v2.6.34-rc1-next-20100312.bz2",
+                "name": "http://www.kernel.org/pub/linux/kernel/v2.6/next/patch-v2.6.34-rc1-next-20100312.bz2",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:066",
+                "name": "MDVSA-2010:066",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2010-0330.html",
+                "name": "RHSA-2010:0330",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://securitytracker.com/id?1023809",
+                "name": "1023809",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2010-0380.html",
+                "name": "RHSA-2010:0380",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/39830",
+                "name": "39830",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2010/dsa-2053",
+                "name": "DSA-2053",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2010-0521.html",
+                "name": "RHSA-2010:0521",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11392",
+                "name": "oval:org.mitre.oval:def:11392",
+                "refsource": "OVAL",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The gfs2_lock function in the Linux kernel before 2.6.34-rc1-next-20100312, and the gfs_lock function in the Linux kernel on Red Hat Enterprise Linux (RHEL) 5 and 6, does not properly remove POSIX locks on files that are setgid without group-execute permission, which allows local users to cause a denial of service (BUG and system crash) by locking a file on a (1) GFS or (2) GFS2 filesystem, and then changing this file's permissions."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.6.33.1",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:5.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 4.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2010-03-16T19:30Z",
+        "lastModifiedDate": "2020-08-07T15:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-7458",
+            "ASSIGNER": "secteam@freebsd.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-787"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:18.posix_spawnp.asc",
+                "name": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:18.posix_spawnp.asc",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20200724-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20200724-0002/",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In FreeBSD 12.1-STABLE before r362281, 11.4-STABLE before r362281, and 11.4-RELEASE before p1, long values in the user-controlled PATH environment variable cause posix_spawnp to write beyond the end of the heap allocated stack possibly leading to arbitrary code execution."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:freebsd:freebsd:11.4:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:freebsd:freebsd:11.4:beta1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:freebsd:freebsd:12.1:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-07-09T14:15Z",
+        "lastModifiedDate": "2020-07-24T14:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-9169",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-125"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commit;h=583dd860d5b833037175247230a328f0050dbfe9",
+                "name": "https://sourceware.org/git/gitweb.cgi?p=glibc.git;a=commit;h=583dd860d5b833037175247230a328f0050dbfe9",
+                "refsource": "MISC",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=24114",
+                "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=24114",
+                "refsource": "MISC",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34142",
+                "name": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34142",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34140",
+                "name": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34140",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/107160",
+                "name": "107160",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20190315-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20190315-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10278",
+                "name": "https://kc.mcafee.com/corporate/index?page=content&id=SB10278",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://support.f5.com/csp/article/K54823184",
+                "name": "https://support.f5.com/csp/article/K54823184",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/202006-04",
+                "name": "GLSA-202006-04",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4416-1/",
+                "name": "USN-4416-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In the GNU C Library (aka glibc or libc6) through 2.29, proceed_next_node in posix/regexec.c has a heap-based buffer over-read via an attempted case-insensitive regular-expression match."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.29",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:cloud_backup:*:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-02-26T02:29Z",
+        "lastModifiedDate": "2020-07-09T20:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-7631",
+            "ASSIGNER": "report@snyk.io"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-74"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/iximiuz/node-diskusage-ng/blob/master/lib/posix.js#L11",
+                "name": "https://github.com/iximiuz/node-diskusage-ng/blob/master/lib/posix.js#L11",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://snyk.io/vuln/SNYK-JS-DISKUSAGENG-564425",
+                "name": "https://snyk.io/vuln/SNYK-JS-DISKUSAGENG-564425",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "diskusage-ng through 0.2.4 is vulnerable to Command Injection.It allows execution of arbitrary commands via the path argument."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:diskusage-ng_project:diskusage-ng:*:*:*:*:*:node.js:*:*",
+                  "versionEndIncluding": "0.2.4",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-04-06T13:15Z",
+        "lastModifiedDate": "2020-04-06T18:09Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-0220",
+            "ASSIGNER": "product-security@apple.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://opensource.apple.com/source/mDNSResponder/mDNSResponder-541/mDNSPosix/ReadMe.txt",
+                "name": "https://opensource.apple.com/source/mDNSResponder/mDNSResponder-541/mDNSPosix/ReadMe.txt",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Apple Bonjour before 2011 allows a crash via a crafted multicast DNS packet."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apple:bonjour:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2011",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 4.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-02-05T20:15Z",
+        "lastModifiedDate": "2020-02-07T19:24Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2018-20796",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-674"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://lists.gnu.org/archive/html/bug-gnulib/2019-01/msg00108.html",
+                "name": "https://lists.gnu.org/archive/html/bug-gnulib/2019-01/msg00108.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Vendor Advisory",
+                  "Mailing List"
+                ]
+              },
+              {
+                "url": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34141",
+                "name": "https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34141",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/107160",
+                "name": "107160",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://security.netapp.com/advisory/ntap-20190315-0002/",
+                "name": "https://security.netapp.com/advisory/ntap-20190315-0002/",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS",
+                "name": "https://support.f5.com/csp/article/K26346590?utm_source=f5support&amp;utm_medium=RSS",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.29",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:steelstore_cloud_integrated_storage:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:ontap_select_deploy_administration_utility:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:netapp:cloud_backup:*:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.5,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-02-26T02:29Z",
+        "lastModifiedDate": "2019-11-05T21:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-16773",
+            "ASSIGNER": "security@synology.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-863"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.synology.com/en-global/support/security/Synology_SA_18_27",
+                "name": "https://www.synology.com/en-global/support/security/Synology_SA_18_27",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Improper authorization vulnerability in Highlight Preview in Synology Universal Search before 1.0.5-0135 allows remote authenticated users to bypass permission checks for directories in POSIX mode."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:synology:universal_search:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "1.0.5-0135",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2018-07-05T13:29Z",
+        "lastModifiedDate": "2019-10-09T23:25Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-1087",
+            "ASSIGNER": "secteam@freebsd.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-22"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-17:09.shm.asc",
+                "name": "FreeBSD-SA-17:09",
+                "refsource": "FREEBSD",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1039810",
+                "name": "1039810",
+                "refsource": "SECTRACK",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/101867",
+                "name": "101867",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In FreeBSD 10.x before 10.4-STABLE, 10.4-RELEASE-p3, and 10.3-RELEASE-p24 named paths are globally scoped, meaning a process located in one jail can read and modify the content of POSIX shared memory objects created by a process in another jail or the host system. As a result, a malicious user that has access to a jailed system is able to abuse shared memory by injecting malicious content in the shared memory region. This memory region might be executed by applications trusting the shared memory, like Squid. This issue could lead to a Denial of Service or local privilege escalation."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:freebsd:freebsd:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 4.6
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.4,
+            "acInsufInfo": true,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-11-16T20:29Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-5551",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "NVD-CWE-noinfo"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/torvalds/linux/commit/497de07d89c1410d76a15bec2bb41f24a2a89f31",
+                "name": "https://github.com/torvalds/linux/commit/497de07d89c1410d76a15bec2bb41f24a2a89f31",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1416126",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1416126",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2017/01/21/3",
+                "name": "[oss-security] 20170120 Re: CVE REQUEST: linux kernel: process with pgid zero able to crash kernel",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.6",
+                "name": "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.6",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=497de07d89c1410d76a15bec2bb41f24a2a89f31",
+                "name": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=497de07d89c1410d76a15bec2bb41f24a2a89f31",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/95717",
+                "name": "95717",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1038053",
+                "name": "1038053",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2017/dsa-3791",
+                "name": "DSA-3791",
+                "refsource": "DEBIAN",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The simple_set_acl function in fs/posix_acl.c in the Linux kernel before 4.9.6 preserves the setgid bit during a setxattr call involving a tmpfs filesystem, which allows local users to gain group privileges by leveraging the existence of a setgid program with restrictions on execute permissions.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2016-7097."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "4.9.5",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.4,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 2.5
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:P/I:P/A:N",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 3.6
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 3.9,
+            "impactScore": 4.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-02-06T06:59Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      }
+    ]
+  }
+}

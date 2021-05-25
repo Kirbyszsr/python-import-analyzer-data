@@ -1,0 +1,23 @@
+{
+  "name": "pytest-tornado",
+  "description": "pytest-tornado\n==============\n\n.. image:: https://travis-ci.org/eugeniy/pytest-tornado.svg?branch=master\n    :target: https://travis-ci.org/eugeniy/pytest-tornado\n\n.. image:: https://coveralls.io/repos/eugeniy/pytest-tornado/badge.svg\n    :target: https://coveralls.io/r/eugeniy/pytest-tornado\n\nA py.test_ plugin providing fixtures and markers to simplify testing\nof asynchronous tornado applications.\n\nInstallation\n------------\n\n::\n\n    pip install pytest-tornado\n\n\nExample\n-------\n\n.. code-block:: python\n\n    import pytest\n    import tornado.web\n\n    class MainHandler(tornado.web.RequestHandler):\n        def get(self):\n            self.write(\"Hello, world\")\n\n    application = tornado.web.Application([\n        (r\"/\", MainHandler),\n    ])\n\n    @pytest.fixture\n    def app():\n        return application\n\n    @pytest.mark.gen_test\n    def test_hello_world(http_client, base_url):\n        response = yield http_client.fetch(base_url)\n        assert response.code == 200\n\n\nRunning tests\n-------------\n\n::\n\n    py.test\n\n\nFixtures\n--------\n\nio_loop\n    creates an instance of the `tornado.ioloop.IOLoop`_ for each test case\n\nhttp_port\n    get a port used by the test server\n\nbase_url\n    Get an absolute base url for the test server,\n    for example ``http://localhost:59828``.\n    Can also be used in a test with HTTPS fixture and will then return\n    a corresponding url, for example ``http://localhost:48372``.\n\nhttp_server\n    start a tornado HTTP server, you must create an ``app`` fixture,\n    which returns the `tornado.web.Application`_ to be tested\n\nhttp_client\n    get an asynchronous HTTP client\n\n\nThere is also the possibility to test applications with HTTPS.\nFor running a server with HTTPS you need a certificate.\n\nhttps_port\n    Get a port used by the test server.\n\nhttps_server\n    Start a tornado HTTPS server. You must create an ``app`` fixture,\n    which returns the `tornado.web.Application`_ to be tested, and\n    an ``ssl_options`` fixture which returns the SSL options for the\n    `tornado.httpserver.HTTPServer`_.\n\nhttps_client\n    Get an asynchronous HTTP client.\n    In case your test uses an self-signed certificate you can set\n    ``verify=False`` on the fetch method.\n\n\nShow fixtures provided by the plugin::\n\n    py.test --fixtures\n\n\nMarkers\n-------\n\nA ``gen_test`` marker lets you write a coroutine-style tests used with the\n`tornado.gen`_ module:\n\n.. code-block:: python\n\n    @pytest.mark.gen_test\n    def test_tornado(http_client):\n        response = yield http_client.fetch('http://www.tornadoweb.org/')\n        assert response.code == 200\n\n\nThis marker supports writing tests with async/await syntax as well:\n\n.. code-block:: python\n\n    @pytest.mark.gen_test\n    async def test_tornado(http_client):\n        response = await http_client.fetch('http://www.tornadoweb.org/')\n        assert response.code == 200\n\n\nMarked tests will time out after 5 seconds. The timeout can be modified by\nsetting an ``ASYNC_TEST_TIMEOUT`` environment variable,\n``--async-test-timeout`` command line argument or a marker argument.\n\n.. code-block:: python\n\n    @pytest.mark.gen_test(timeout=5)\n    def test_tornado(http_client):\n        yield http_client.fetch('http://www.tornadoweb.org/')\n\nThe mark can also receive a run_sync flag, which if turned off will, instead of running the test synchronously, will add it as a coroutine and run the IOLoop (until the timeout). For instance, this allows to test things on both a client and a server at the same time.\n\n.. code-block:: python\n\n    @pytest.mark.gen_test(run_sync=False)\n    def test_tornado(http_server, http_client):\n        response = yield http_client.fetch('http://localhost:5555/my_local_server_test/')\n        assert response.body == 'Run on the same IOLoop!'\n\n\nShow markers provided by the plugin::\n\n    py.test --markers\n\n\n.. _py.test: http://pytest.org/\n.. _`tornado.httpserver.HTTPServer`: https://www.tornadoweb.org/en/latest/httpserver.html#http-server\n.. _`tornado.ioloop.IOLoop`: http://tornado.readthedocs.org/en/latest/ioloop.html#ioloop-objects\n.. _`tornado.web.Application`: http://tornado.readthedocs.org/en/latest/web.html#application-configuration\n.. _`tornado.gen`: http://tornado.readthedocs.org/en/latest/gen.html\n\n\n",
+  "requires_dist": [
+    "pytest (>=3.6)",
+    "tornado (>=4.1)",
+    "setuptools"
+  ],
+  "requires_python": "",
+  "current_version": "0.8.1",
+  "released_versions": [
+    "0.4.1",
+    "0.4.2",
+    "0.4.3",
+    "0.4.4",
+    "0.4.5",
+    "0.5.0",
+    "0.6.0",
+    "0.7.0",
+    "0.8.0",
+    "0.8.1"
+  ]
+}

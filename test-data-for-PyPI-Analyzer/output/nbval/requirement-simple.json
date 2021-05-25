@@ -1,0 +1,33 @@
+{
+  "name": "nbval",
+  "description": "# Py.test plugin for validating Jupyter notebooks\n\n[![Build Status](https://travis-ci.org/computationalmodelling/nbval.svg)](https://travis-ci.org/computationalmodelling/nbval)\n[![PyPI Version](https://badge.fury.io/py/nbval.svg)](https://pypi.python.org/pypi/nbval)\n[![Documentation Status](https://readthedocs.org/projects/nbval/badge/)](https://nbval.readthedocs.io/)\n\nThe plugin adds functionality to py.test to recognise and collect Jupyter\nnotebooks. The intended purpose of the tests is to determine whether execution\nof the stored inputs match the stored outputs of the `.ipynb` file. Whilst also\nensuring that the notebooks are running without errors.\n\nThe tests were designed to ensure that Jupyter notebooks (especially those for\nreference and documentation), are executing consistently.\n\nEach cell is taken as a test, a cell that doesn't reproduce the expected\noutput will fail.\n\nSee [`docs/source/index.ipynb`](http://nbviewer.jupyter.org/github/computationalmodelling/nbval/blob/master/docs/source/index.ipynb) for the full documentation.\n\n## Installation\nAvailable on PyPi:\n\n    pip install nbval\n\nor install the latest version from cloning the repository and running:\n\n    pip install .\n\nfrom the main directory. To uninstall:\n\n    pip uninstall nbval\n\n\n## How it works\nThe extension looks through every cell that contains code in an IPython notebook\nand then the `py.test` system compares the outputs stored in the notebook\nwith the outputs of the cells when they are executed. Thus, the notebook itself is\nused as a testing function.\nThe output lines when executing the notebook can be sanitized passing an\nextra option and file, when calling the `py.test` command. This file\nis a usual configuration file for the `ConfigParser` library.\n\nRegarding the execution, roughly, the script initiates an\nIPython Kernel with a `shell` and\nan `iopub` sockets. The `shell` is needed to execute the cells in\nthe notebook (it sends requests to the Kernel) and the `iopub` provides\nan interface to get the messages from the outputs. The contents\nof the messages obtained from the Kernel are organised in dictionaries\nwith different information, such as time stamps of executions,\ncell data types, cell types, the status of the Kernel, username, etc.\n\nIn general, the functionality of the IPython notebook system is\nquite complex, but a detailed explanation of the messages\nand how the system works, can be found here\n\nhttps://jupyter-client.readthedocs.io/en/latest/messaging.html#messaging\n\n## Execution\nTo execute this plugin, you need to execute `py.test` with the `nbval` flag\nto differentiate the testing from the usual python files:\n\n    py.test --nbval\n\nYou can also specify `--nbval-lax`, which runs notebooks and checks for\nerrors, but only compares the outputs of cells with a `#NBVAL_CHECK_OUTPUT`\nmarker comment.\n\n    py.test --nbval-lax\n\nThe commands above will execute all the `.ipynb` files and 'pytest' tests in the current folder.\nSpecify `-p no:python` if you would like to execute notebooks only. Alternatively, you can execute a specific notebook:\n\n    py.test --nbval my_notebook.ipynb\n\nIf the output lines are going to be sanitized, an extra flag, `--sanitize-with`\ntogether with the path to a confguration file with regex expressions, must be passed,\ni.e.\n\n    py.test --nbval my_notebook.ipynb --sanitize-with path/to/my_sanitize_file\n\nwhere `my_sanitize_file` has the following structure.\n\n```\n[Section1]\nregex: [a-z]*\nreplace: abcd\n\nregex: [1-9]*\nreplace: 0000\n\n[Section2]\nregex: foo\nreplace: bar\n```\n\nThe `regex` option contains the expression that is going to be matched in the outputs, and\n`replace` is the string that will replace the `regex` match. Currently, the section\nnames do not have any meaning or influence in the testing system, it will take\nall the sections and replace the corresponding options.\n\n\n### Coverage\n\nTo use notebooks to generate coverage for imported code, use the pytest-cov plugin.\nnbval should automatically detect the relevant options and configure itself with it.\n\n\n### Parallel execution\n\nnbval is compatible with the pytest-xdist plugin for parallel running of tests. It does\nhowever require the use of the `--dist loadscope` flag to ensure that all cells of one\nnotebook are run on the same kernel.\n\n\n## Help\nThe `py.test` system help can be obtained with `py.test -h`, which will\nshow all the flags that can be passed to the command, such as the\nverbose `-v` option. The IPython notebook plugin can be found under the\n`general` section.\n\n\n## Acknowledgements\nThis plugin was inspired by Andrea Zonca's py.test plugin for collecting unit\ntests in the IPython notebooks (https://github.com/zonca/pytest-ipynb).\n\nThe original prototype was based on the template in\nhttps://gist.github.com/timo/2621679 and the code of a testing system\nfor notebooks https://gist.github.com/minrk/2620735 which we\nintegrated and mixed with the `py.test` system.\n\nWe acknowledge financial support from\n\n- OpenDreamKit Horizon 2020 European Research Infrastructures project (#676541), http://opendreamkit.org\n\n- EPSRC\u00e2\u20ac\u2122s Centre for Doctoral Training in Next Generation\n  Computational Modelling, http://ngcm.soton.ac.uk (#EP/L015382/1) and\n  EPSRC\u00e2\u20ac\u2122s Doctoral Training Centre in Complex System Simulation\n  ((EP/G03690X/1),\n\n- The Gordon and Betty Moore Foundation through Grant GBMF #4856,by the\n  Alfred P. Sloan Foundation and by the Helmsley Trust.\n\n\n## Authors\n\n2014 - 2017 David Cortes-Ortuno, Oliver Laslett, T. Kluyver, Vidar\nFauske, Maximilian Albert, MinRK, Ondrej Hovorka, Hans Fangohr\n\n\n",
+  "requires_dist": [
+    "pytest (>=2.8)",
+    "six",
+    "jupyter-client",
+    "nbformat",
+    "ipykernel",
+    "coverage"
+  ],
+  "requires_python": "",
+  "current_version": "0.9.6",
+  "released_versions": [
+    "0.3.2",
+    "0.3.4",
+    "0.3.5",
+    "0.3.6",
+    "0.4.0",
+    "0.4.1",
+    "0.5",
+    "0.6",
+    "0.7",
+    "0.8.0",
+    "0.9.0",
+    "0.9.1",
+    "0.9.2",
+    "0.9.3",
+    "0.9.4",
+    "0.9.5",
+    "0.9.6"
+  ]
+}

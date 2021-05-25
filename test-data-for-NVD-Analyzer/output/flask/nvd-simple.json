@@ -1,0 +1,782 @@
+[
+  {
+    "cveID": "CVE-2021-33026",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-13T23:15Z",
+    "lastModifiedDate": "2021-05-13T23:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Flask-Caching extension through 1.10.1 for Flask relies on Pickle for serialization, which may lead to remote code execution or local privilege escalation. If an attacker gains access to cache storage (e.g., filesystem, Memcached, Redis, etc.), they can construct a crafted payload, poison the cache, and execute Python code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/sh4nks/flask-caching/pull/209",
+        "name": "https://github.com/sh4nks/flask-caching/pull/209",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21241",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-01-11T21:15Z",
+    "lastModifiedDate": "2021-01-19T15:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Python \"Flask-Security-Too\" package is used for adding security features to your Flask application. It is an is a independently maintained version of Flask-Security based on the 3.0.0 version of Flask-Security. In Flask-Security-Too from version 3.3.0 and before version 3.4.5, the /login and /change endpoints can return the authenticated user's authentication token in response to a GET request. Since GET requests aren't protected with a CSRF token, this could lead to a malicious 3rd party site acquiring the authentication token. Version 3.4.5 and version 4.0.0 are patched. As a workaround, if you aren't using authentication tokens - you can set the SECURITY_TOKEN_MAX_AGE to \"0\" (seconds) which should make the token unusable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/Flask-Middleware/flask-security/releases/tag/3.4.5",
+        "name": "https://github.com/Flask-Middleware/flask-security/releases/tag/3.4.5",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/Flask-Security-Too",
+        "name": "https://pypi.org/project/Flask-Security-Too",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/Flask-Middleware/flask-security/commit/61d313150b5f620d0b800896c4f2199005e84b1f",
+        "name": "https://github.com/Flask-Middleware/flask-security/commit/61d313150b5f620d0b800896c4f2199005e84b1f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/Flask-Middleware/flask-security/security/advisories/GHSA-hh7m-rx4f-4vpv",
+        "name": "https://github.com/Flask-Middleware/flask-security/security/advisories/GHSA-hh7m-rx4f-4vpv",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/Flask-Middleware/flask-security/pull/422",
+        "name": "https://github.com/Flask-Middleware/flask-security/pull/422",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/Flask-Middleware/flask-security/commit/6d50ee9169acf813257c37b75babe9c28e83542a",
+        "name": "https://github.com/Flask-Middleware/flask-security/commit/6d50ee9169acf813257c37b75babe9c28e83542a",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-17513",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-12-14T10:15Z",
+    "lastModifiedDate": "2020-12-15T15:40Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Apache Airflow versions prior to 1.10.13, the Charts and Query View of the old (Flask-admin based) UI were vulnerable for SSRF attack."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/rb3647269f07cc2775ca6568cbfd4994d862c842a58120d2aba9c658a%40%3Cusers.airflow.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/rb3647269f07cc2775ca6568cbfd4994d862c842a58120d2aba9c658a%40%3Cusers.airflow.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-28724",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-18T15:15Z",
+    "lastModifiedDate": "2020-12-01T16:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Open redirect vulnerability in werkzeug before 0.11.6 via a double slash in the URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/pallets/werkzeug/issues/822",
+        "name": "https://github.com/pallets/werkzeug/issues/822",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/pallets/werkzeug/pull/890/files",
+        "name": "https://github.com/pallets/werkzeug/pull/890/files",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/pallets/flask/issues/1639",
+        "name": "https://github.com/pallets/flask/issues/1639",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-25032",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-08-31T04:15Z",
+    "lastModifiedDate": "2020-10-21T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Flask-CORS (aka CORS Middleware for Flask) before 3.0.9. It allows ../ directory traversal to access private resources because resource matching does not ensure that pathnames are in a canonical format."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/corydolphin/flask-cors/releases/tag/3.0.9",
+        "name": "https://github.com/corydolphin/flask-cors/releases/tag/3.0.9",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00028.html",
+        "name": "openSUSE-SU-2020:1393",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00032.html",
+        "name": "openSUSE-SU-2020:1415",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00039.html",
+        "name": "openSUSE-SU-2020:1423",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00048.html",
+        "name": "openSUSE-SU-2020:1446",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4775",
+        "name": "DSA-4775",
+        "refsource": "DEBIAN",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-1010083",
+    "cveASSIGNER": "cve-assign@distributedweaknessfiling.org",
+    "publishedDate": "2019-07-17T14:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Pallets Project Flask before 1.0 is affected by: unexpected memory usage. The impact is: denial of service. The attack vector is: crafted encoded JSON data. The fixed version is: 1. NOTE: this may overlap CVE-2018-1000656."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.palletsprojects.com/blog/flask-1-0-released/",
+        "name": "https://www.palletsprojects.com/blog/flask-1-0-released/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-16516",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-09-05T14:29Z",
+    "lastModifiedDate": "2020-07-08T03:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "helpers.py in Flask-Admin 1.5.2 has Reflected XSS via a crafted URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/flask-admin/flask-admin/pull/1699",
+        "name": "https://github.com/flask-admin/flask-admin/pull/1699",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZU2VKULURVXEU4YFTLMBQGYMPSXQ4MBN/",
+        "name": "FEDORA-2020-e8f384af5f",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UJIYCWIH3BRLI2QNC53CQXLKVP27X7EH/",
+        "name": "FEDORA-2020-4aaf6e6d7c",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-1000656",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-08-20T19:31Z",
+    "lastModifiedDate": "2020-06-09T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Pallets Project flask version Before 0.12.3 contains a CWE-20: Improper Input Validation vulnerability in flask that can result in Large amount of memory usage possibly leading to denial of service. This attack appear to be exploitable via Attacker provides JSON data in incorrect encoding. This vulnerability appears to have been fixed in 0.12.3. NOTE: this may overlap CVE-2019-1010083."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/pallets/flask/releases/tag/0.12.3",
+        "name": "https://github.com/pallets/flask/releases/tag/0.12.3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/pallets/flask/pull/2691",
+        "name": "https://github.com/pallets/flask/pull/2691",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190221-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20190221-0001/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/08/msg00025.html",
+        "name": "[debian-lts-announce] 20190820 [SECURITY] [DLA 1892-1] flask security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4378-1/",
+        "name": "USN-4378-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7965",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-01-29T15:15Z",
+    "lastModifiedDate": "2020-02-03T16:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "flaskparser.py in Webargs 5.x through 5.5.2 doesn't check that the Content-Type header is application/json when receiving JSON input. If the request body is valid JSON, it will accept it even if the content type is application/x-www-form-urlencoded. This allows for JSON POST requests to be made across domains, leading to CSRF."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://webargs.readthedocs.io/en/latest/changelog.html",
+        "name": "https://webargs.readthedocs.io/en/latest/changelog.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-10516",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-10-23T16:29Z",
+    "lastModifiedDate": "2018-02-04T02:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site scripting (XSS) vulnerability in the render_full function in debug/tbtools.py in the debugger in Pallets Werkzeug before 0.11.11 (as used in Pallets Flask and other products) allows remote attackers to inject arbitrary web script or HTML via a field that contains an exception message."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/pallets/werkzeug/pull/1001",
+        "name": "https://github.com/pallets/werkzeug/pull/1001",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://blog.neargle.com/2016/09/21/flask-src-review-get-a-xss-from-debuger/",
+        "name": "http://blog.neargle.com/2016/09/21/flask-src-review-get-a-xss-from-debuger/",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2017/11/msg00037.html",
+        "name": "[debian-lts-announce] 20171124 [SECURITY] [DLA 1191-1] python-werkzeug security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-3687",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-08-14T22:41Z",
+    "lastModifiedDate": "2017-08-08T01:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Heap-based buffer overflow in the flask_security_label function in Xen 3.3, when compiled with the XSM:FLASK module, allows unprivileged domain users (domU) to execute arbitrary code via the flask_op hypercall."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.nabble.com/-PATCH--XSM--FLASK--Argument-handling-bugs-in-XSM:FLASK-to18536032.html",
+        "name": "[xen-dev] 20080718 [PATCH][XSM][FLASK] Argument handling bugs in XSM:FLASK",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://invisiblethingslab.com/bh08/part2.pdf",
+        "name": "http://invisiblethingslab.com/bh08/part2.pdf",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://theinvisiblethings.blogspot.com/2008/08/our-xen-0wning-trilogy-highlights.html",
+        "name": "http://theinvisiblethings.blogspot.com/2008/08/our-xen-0wning-trilogy-highlights.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1020731",
+        "name": "1020731",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/30834",
+        "name": "30834",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://xenbits.xensource.com/xen-3.3-testing.hg?rev/fa66b33f975a",
+        "name": "http://xenbits.xensource.com/xen-3.3-testing.hg?rev/fa66b33f975a",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31561",
+        "name": "31561",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/2426",
+        "name": "ADV-2008-2426",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/44608",
+        "name": "xen-flasksecuritylabel-bo(44608)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-1000001",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2016-10-07T18:59Z",
+    "lastModifiedDate": "2017-02-19T06:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "flask-oidc version 0.1.2 and earlier is vulnerable to an open redirect"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/puiterwijk/flask-oidc/blob/master/flask_oidc/__init__.py#L293",
+        "name": "https://github.com/puiterwijk/flask-oidc/blob/master/flask_oidc/__init__.py#L293",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1895",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-04-01T06:35Z",
+    "lastModifiedDate": "2017-01-07T02:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Off-by-one error in the flask_security_avc_cachestats function in xsm/flask/flask_op.c in Xen 4.2.x and 4.3.x, when the maximum number of physical CPUs are in use, allows local users to cause a denial of service (host crash) or obtain sensitive information from hypervisor memory by leveraging a FLASK_AVC_CACHESTAT hypercall, which triggers a buffer over-read."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/10/6",
+        "name": "[oss-security] 20140210 Xen Security Advisory 85 (CVE-2014-1895) - Off-by-one error in FLASK_AVC_CACHESTAT hypercall",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/07/12",
+        "name": "[oss-security] 20140207 Re: Xen Security Advisory 84 - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-85.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-85.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00011.html",
+        "name": "SUSE-SU-2014:0373",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201407-03.xml",
+        "name": "GLSA-201407-03",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1894",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-04-01T06:35Z",
+    "lastModifiedDate": "2017-01-07T02:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple integer overflows in unspecified suboperations in the flask hypercall in Xen 3.2.x and earlier, when XSM is enabled, allow local users to cause a denial of service (processor fault) via unspecified vectors, a different vulnerability than CVE-2014-1891, CVE-2014-1892, and CVE-2014-1893."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-84.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-84.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/07/4",
+        "name": "[oss-security] 20140207 Re: Xen Security Advisory 84 - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/07/12",
+        "name": "[oss-security] 20140207 Re: Xen Security Advisory 84 - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/10/8",
+        "name": "[oss-security] 20140210 Xen Security Advisory 84 (CVE-2014-1891,CVE-2014-1892,CVE-2014-1893,CVE-2014-1894) - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00021.html",
+        "name": "SUSE-SU-2014:0446",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00010.html",
+        "name": "SUSE-SU-2014:0372",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00011.html",
+        "name": "SUSE-SU-2014:0373",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201407-03.xml",
+        "name": "GLSA-201407-03",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1893",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-04-01T06:35Z",
+    "lastModifiedDate": "2017-01-07T02:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple integer overflows in the (1) FLASK_GETBOOL and (2) FLASK_SETBOOL suboperations in the flask hypercall in Xen 4.1.x, 3.3.x, 3.2.x, and earlier, when XSM is enabled, allow local users to cause a denial of service (processor fault) via unspecified vectors, a different vulnerability than CVE-2014-1891, CVE-2014-1892, and CVE-2014-1894."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/07/12",
+        "name": "[oss-security] 20140207 Re: Xen Security Advisory 84 - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-84.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-84.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/07/4",
+        "name": "[oss-security] 20140207 Re: Xen Security Advisory 84 - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/10/8",
+        "name": "[oss-security] 20140210 Xen Security Advisory 84 (CVE-2014-1891,CVE-2014-1892,CVE-2014-1893,CVE-2014-1894) - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00021.html",
+        "name": "SUSE-SU-2014:0446",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00010.html",
+        "name": "SUSE-SU-2014:0372",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00011.html",
+        "name": "SUSE-SU-2014:0373",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201407-03.xml",
+        "name": "GLSA-201407-03",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1891",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-04-01T06:35Z",
+    "lastModifiedDate": "2017-01-07T02:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple integer overflows in the (1) FLASK_GETBOOL, (2) FLASK_SETBOOL, (3) FLASK_USER, and (4) FLASK_CONTEXT_TO_SID suboperations in the flask hypercall in Xen 4.3.x, 4.2.x, 4.1.x, 3.2.x, and earlier, when XSM is enabled, allow local users to cause a denial of service (processor fault) via unspecified vectors, a different vulnerability than CVE-2014-1892, CVE-2014-1893, and CVE-2014-1894."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/07/12",
+        "name": "[oss-security] 20140207 Re: Xen Security Advisory 84 - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-84.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-84.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/07/4",
+        "name": "[oss-security] 20140207 Re: Xen Security Advisory 84 - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/02/10/8",
+        "name": "[oss-security] 20140210 Xen Security Advisory 84 (CVE-2014-1891,CVE-2014-1892,CVE-2014-1893,CVE-2014-1894) - integer overflow in several XSM/Flask hypercalls",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00021.html",
+        "name": "SUSE-SU-2014:0446",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00010.html",
+        "name": "SUSE-SU-2014:0372",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-03/msg00011.html",
+        "name": "SUSE-SU-2014:0373",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201407-03.xml",
+        "name": "GLSA-201407-03",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-5306",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2015-11-25T20:59Z",
+    "lastModifiedDate": "2016-12-07T18:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OpenStack Ironic Inspector (aka ironic-inspector or ironic-discoverd), when debug mode is enabled, might allow remote attackers to access the Flask console and execute arbitrary Python code by triggering an error."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1273698",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1273698",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/ironic-inspector/+bug/1506419",
+        "name": "https://bugs.launchpad.net/ironic-inspector/+bug/1506419",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2015:1929",
+        "name": "RHSA-2015:1929",
+        "refsource": "REDHAT",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-2685.html",
+        "name": "RHSA-2015:2685",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-2567",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-03-21T10:55Z",
+    "lastModifiedDate": "2014-03-26T00:20Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The OpenConnectionTask::handleStateHelper function in Imap/Tasks/OpenConnectionTask.cpp in Trojita before 0.4.1 allows man-in-the-middle attackers to trigger use of cleartext for saving a message into a (1) sent or (2) draft folder via a PREAUTH response that prevents later use of the STARTTLS command."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jktjkt/trojita/commit/25fffa3e25cbad85bbca804193ad336b090a9ce1",
+        "name": "https://github.com/jktjkt/trojita/commit/25fffa3e25cbad85bbca804193ad336b090a9ce1",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://jkt.flaska.net/blog/Trojita_0_4_1__a_security_update_for_CVE_2014_2567.html",
+        "name": "http://jkt.flaska.net/blog/Trojita_0_4_1__a_security_update_for_CVE_2014_2567.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  }
+]

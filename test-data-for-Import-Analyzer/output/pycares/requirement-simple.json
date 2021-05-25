@@ -1,0 +1,42 @@
+{
+  "name": "pycares",
+  "description": "Looking for new maintainers\n===========================\n\nhttps://github.com/saghul/pycares/issues/139\n\npycares: Python interface for c-ares\n====================================\n\n.. image:: https://badge.fury.io/py/pycares.png\n    :target: https://pypi.org/project/pycares/\n\n.. image:: https://github.com/saghul/pycares/workflows/Test/badge.svg\n    :target: https://github.com/saghul/pycares/actions\n\npycares is a Python module which provides an interface to c-ares.\n`c-ares <http://c-ares.haxx.se>`_ is a C library that performs\nDNS requests and name resolutions asynchronously.\n\n\nDocumentation\n-------------\n\nhttp://readthedocs.org/docs/pycares/\n\n\nBundled c-ares\n--------------\n\npycares currently bundles c-ares as a submodule for ease of building. Using the system\nprovided c-ares is possible if the ``PYCARES_USE_SYSTEM_LIB`` environment variable is\nset to ``1`` when building.\n\nNOTE: Versions prior to 4.0.0 used to embed a modified c-ares with extended TTL support.\nThat is no longer the case and as a result only A and AAAA records will have TTL information.\nFollow this PR in uppstream c-ares, looks like TTLs will be added: https://github.com/c-ares/c-ares/pull/393\n\n\nInstallation\n------------\n\nGNU/Linux, macOS, Windows, others:\n\n::\n\n    pip install pycares\n\nFreeBSD:\n\n::\n\n    cd /usr/ports/dns/py-pycares && make install\n\n\nIDNA 2008 support\n^^^^^^^^^^^^^^^^^\n\nIf the ``idna`` package is installed, pycares will support IDNA 2008 encodingm otherwise the builtin idna codec will be used,\nwhich provides IDNA 2003 support.\n\nYou can force this at installation time as follows:\n\n::\n\n   pip install pycares[idna]\n\n\nRunning the test suite\n----------------------\n\nThere are several ways of running the test suite:\n\n- Run the test with the current Python interpreter:\n\n  From the toplevel directory, run: ``python tests/tests.py``\n\n- Use Tox to run the test suite in several virtualenvs with several interpreters\n\n  From the toplevel directory, run: ``tox -e py36,py37,py38,py39`` this will run the test suite\n  on Python 3.6 through 3.9 (you'll need to have them installed beforehand)\n\n\nUsing it from the cli, a la dig\n-------------------------------\n\nThis module can be used directly from the command line in a similar fashion to dig (limited, of course):\n\n::\n\n   $ python -m pycares google.com\n   ;; QUESTION SECTION:\n   ;google.com\t\t\tIN\tA\n\n   ;; ANSWER SECTION:\n   google.com\t\t300\tIN\tA\t172.217.17.142\n\n   $ python -m pycares mx google.com\n   ;; QUESTION SECTION:\n   ;google.com\t\t\tIN\tMX\n\n   ;; ANSWER SECTION:\n   google.com\t\t600\tIN\tMX\t50 alt4.aspmx.l.google.com\n   google.com\t\t600\tIN\tMX\t10 aspmx.l.google.com\n   google.com\t\t600\tIN\tMX\t40 alt3.aspmx.l.google.com\n   google.com\t\t600\tIN\tMX\t20 alt1.aspmx.l.google.com\n   google.com\t\t600\tIN\tMX\t30 alt2.aspmx.l.google.com\n\n\nAuthor\n------\n\nSa\u00fal Ibarra Corretg\u00e9 <s@saghul.net>\n\n\nLicense\n-------\n\nUnless stated otherwise on-file pycares uses the MIT license, check LICENSE file.\n\n\nSupported Python versions\n-------------------------\n\nPython >= 3.6 are supported. Both CPython and PyPy are supported.\n\n\nContributing\n------------\n\nIf you'd like to contribute, fork the project, make a patch and send a pull\nrequest. Have a look at the surrounding code and please, make yours look\nalike :-)\n\n\n",
+  "requires_dist": [
+    "cffi (>=1.5.0)",
+    "idna (>=2.1) ; extra == 'idna'"
+  ],
+  "requires_python": "",
+  "current_version": "4.0.0",
+  "released_versions": [
+    "0.1.0",
+    "0.2.0",
+    "0.3.0",
+    "0.4.0",
+    "0.5.0",
+    "0.6.0",
+    "0.6.1",
+    "0.6.2",
+    "0.6.3",
+    "0.7.0",
+    "1.0.0",
+    "2.0.0",
+    "2.0.1",
+    "2.1.0",
+    "2.1.1",
+    "2.2.0",
+    "2.3.0",
+    "2.4.0",
+    "3.0.0",
+    "3.0.0b0",
+    "3.0.0b1",
+    "3.0.0b2",
+    "3.0.0b3",
+    "3.0.0b4",
+    "3.0.0b5",
+    "3.1.0",
+    "3.1.1",
+    "3.2.0",
+    "3.2.3",
+    "4.0.0"
+  ]
+}

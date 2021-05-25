@@ -1,0 +1,21 @@
+{
+  "name": "nose-exclude",
+  "description": "Overview\n========\n\nnose-exclude is a `Nose`_ plugin that allows you to easily specify\ndirectories to be excluded from testing.\n\n.. _Nose: http://somethingaboutorange.com/mrl/projects/nose\n\n\nExclude Directories\n===================\n\nThe ``--exclude-dir=`` option is made available after installation of the\nplugin. The option may be used multiple times to exclude multiple directories \nfrom testing. The directory paths provided may be absolute or relative.\n\nExample::\n\n    $ nosetests --exclude-dir=test_dirs/build \\\n        --exclude-dir=test_dirs/test_not_me test_dirs\n    ....\n    ----------------------------------------------------------------------\n    Ran 4 tests in 0.006s\n\n    OK\n\nThis example will exclude the directories test_dirs/build and\ntest_dirs/test_not_me from nosetests' test searching.\n\nUsing File-Based Exclusion List\n-------------------------------\n\nThe ``--exclude-dir-file=`` option can be used to pass in a predefined\nlist of directories contained within a file. ``nose-exclude`` expects each\ndirectory to be excluded to be on its own line.\n\nExample::\n\n    $ nosetests --exclude-dir-file=test_dirs/exclude_dirs.txt \\\n        test_dirs\n    ....\n    ----------------------------------------------------------------------\n    Ran 4 tests in 0.006s\n\n    OK\n\nwhere ``exclude_dirs.txt`` might look like: ::\n\n    test_dirs/build\n    # Start a line with a '#' to include\n    # Comments\n    test_dirs/test_not_me\n\n\nExcluding Specific Test Methods and Classes\n-------------------------------------------\n\nTests can now be excluded by specifying their fully qualified test paths.\nTests can be excluded using either ``--exclude-test`` or ``--exclude-test-file``.\n\nTo exclude test methods:\n\n``--exclude-test=module1.module2.TestClass.test_method``\n\nTo exclude test classes:\n\n``--exclude-test=module1.module2.TestClass``\n\nTo exclude test functions:\n\n``--exclude-test=module1.module2.test_function``\n\n\nUsing Environment Variables\n---------------------------\n\n``--exclude-dir=`` and ``--exclude-test=`` can be set by the environment\nvariables ``NOSE_EXCLUDE_DIRS`` and ``NOSE_EXCLUDE_TESTS`` respectively.\nMultiple exclude paths may be entered by separating them using a ``;``. The\nenvironment variable ``NOSE_EXCLUDE_DIRS_FILE`` when set to the path of a\nfile-based exclusion list functions as though it were passed in with\n``--exclude-dir-file=``.\n\nNose Configuration Files\n========================\n\n``nose-exclude`` options can also be passed to ``nosetests`` using a ``.noserc`` or ``nose.cfg`` file. If you more than one directory are to be excluded \nseparate their values with newlines using the same configuration key: ::\n\n    [nosetests]\n    exclude-dir=test_dirs/exclude_dirs\n                test_dirs/more_excludes\n\n\n\nBugs\n====\nPlease report all bugs (and patches) to https://github.com/kgrandis/nose-exclude/\n\nNOTE: The previous bitbucket repository is no longer actively maintained.",
+  "requires_dist": null,
+  "requires_python": null,
+  "current_version": "0.5.0",
+  "released_versions": [
+    "0.1.10",
+    "0.1.4",
+    "0.1.5",
+    "0.1.6",
+    "0.1.7",
+    "0.1.8",
+    "0.1.9",
+    "0.2.0",
+    "0.3.0",
+    "0.4.0",
+    "0.4.1",
+    "0.5.0"
+  ]
+}

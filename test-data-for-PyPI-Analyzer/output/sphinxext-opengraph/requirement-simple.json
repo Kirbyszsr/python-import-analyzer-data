@@ -1,0 +1,18 @@
+{
+  "name": "sphinxext-opengraph",
+  "description": "# sphinxext-opengraph\n![Build](https://github.com/wpilibsuite/sphinxext-opengraph/workflows/Test%20and%20Deploy/badge.svg)\n[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)\n\nSphinx extension to generate OpenGraph metadata (https://ogp.me/)\n\n## Installation\n\n`python -m pip install sphinxext-opengraph`\n\n## Usage\nJust add `sphinxext.opengraph` to your extensions list in your `conf.py`\n\n```python\nextensions = [\n   \"sphinxext.opengraph\",\n]\n```\n## Options\nThese values are placed in the conf.py of your sphinx project.\n\nUsers hosting documentation on Read The Docs *do not* need to set any of the following unless custom configuration is wanted. The extension will automatically retrieve your site url.\n\n* `ogp_site_url`\n    * This config option is very important, set it to the URL the site is being hosted on. \n* `ogp_description_length`\n    * Configure the amount of characters taken from a page. The default of 200 is probably good for most people. If something other than a number is used, it defaults back to 200. \n* `ogp_site_name`\n    * This is not required. Name of the site. This is displayed above the title.\n* `ogp_image`\n    * This is not required. Link to image to show.\n* `ogp_image_alt`\n    * This is not required. Alt text for image. Defaults to using `ogp_site_name` or the document's title as alt text, if available. Set to `False` if you want to turn off alt text completely.\n* `ogp_use_first_image`\n    * This is not required. Set to True to use each page's first image, if available. If set to True but no image is found, Sphinx will use `ogp_image` instead.\n* `ogp_type`\n    * This sets the ogp type attribute, for more information on the types available please take a look at https://ogp.me/#types. By default it is set to `website`, which should be fine for most use cases.\n* `ogp_custom_meta_tags`\n    * This is not required. List of custom html snippets to insert.\n\n## Example Config\n\n### Simple Config\n\n```python\nogp_site_url = \"http://example.org/\"\nogp_image = \"http://example.org/image.png\"\n```\n\n### Advanced Config\n\n```python\nogp_site_url = \"http://example.org/\"\nogp_image = \"http://example.org/image.png\"\nogp_description_length = 300\nogp_type = \"article\"\n\nogp_custom_meta_tags = [\n    '<meta property=\"og:ignore_canonical\" content=\"true\" />',\n]\n\n```\n\n\n",
+  "requires_dist": [
+    "sphinx (>=2.0)"
+  ],
+  "requires_python": ">=3.6",
+  "current_version": "0.4.1",
+  "released_versions": [
+    "0.1.2",
+    "0.1.3",
+    "0.2.0",
+    "0.3.0",
+    "0.3.1",
+    "0.4.0",
+    "0.4.1"
+  ]
+}

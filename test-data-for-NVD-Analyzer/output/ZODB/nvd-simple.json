@@ -1,0 +1,955 @@
+[
+  {
+    "cveID": "CVE-2021-21336",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-08T21:15Z",
+    "lastModifiedDate": "2021-03-12T13:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Products.PluggableAuthService is a pluggable Zope authentication and authorization framework. In Products.PluggableAuthService before version 2.6.0 there is an information disclosure vulnerability - everyone can list the names of roles defined in the ZODB Role Manager plugin if the site uses this plugin. The problem has been fixed in version 2.6.0. Depending on how you have installed Products.PluggableAuthService, you should change the buildout version pin to 2.6.0 and re-run the buildout, or if you used pip simply do `pip install \"Products.PluggableAuthService>=2.6.0\"`."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/zopefoundation/Products.PluggableAuthService/security/advisories/GHSA-p75f-g7gx-2r7p",
+        "name": "https://github.com/zopefoundation/Products.PluggableAuthService/security/advisories/GHSA-p75f-g7gx-2r7p",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/Products.PluggableAuthService/",
+        "name": "https://pypi.org/project/Products.PluggableAuthService/",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/zopefoundation/Products.PluggableAuthService/commit/2dad81128250cb2e5d950cddc9d3c0314a80b4bb",
+        "name": "https://github.com/zopefoundation/Products.PluggableAuthService/commit/2dad81128250cb2e5d950cddc9d3c0314a80b4bb",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14232",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-02T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 1.11.x before 1.11.23, 2.1.x before 2.1.11, and 2.2.x before 2.2.4. If django.utils.text.Truncator's chars() and words() methods were passed the html=True argument, they were extremely slow to evaluate certain inputs due to a catastrophic backtracking vulnerability in a regular expression. The chars() and words() methods are used to implement the truncatechars_html and truncatewords_html template filters, which were thus vulnerable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+        "name": "openSUSE-SU-2019:1839",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/15",
+        "name": "20190812 [SECURITY] [DSA 4498-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4498",
+        "name": "DSA-4498",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+        "name": "openSUSE-SU-2019:1872",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STVX7X7IDWAH5SKE6MBMY3TEI6ZODBTK/",
+        "name": "FEDORA-2019-647f74ce51",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202004-17",
+        "name": "GLSA-202004-17",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14233",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-02T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 1.11.x before 1.11.23, 2.1.x before 2.1.11, and 2.2.x before 2.2.4. Due to the behaviour of the underlying HTMLParser, django.utils.html.strip_tags would be extremely slow to evaluate certain inputs containing large sequences of nested incomplete HTML entities."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+        "name": "openSUSE-SU-2019:1839",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/15",
+        "name": "20190812 [SECURITY] [DSA 4498-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4498",
+        "name": "DSA-4498",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+        "name": "openSUSE-SU-2019:1872",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STVX7X7IDWAH5SKE6MBMY3TEI6ZODBTK/",
+        "name": "FEDORA-2019-647f74ce51",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202004-17",
+        "name": "GLSA-202004-17",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14235",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-02T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 1.11.x before 1.11.23, 2.1.x before 2.1.11, and 2.2.x before 2.2.4. If passed certain inputs, django.utils.encoding.uri_to_iri could lead to significant memory usage due to a recursion when repercent-encoding invalid UTF-8 octet sequences."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+        "name": "openSUSE-SU-2019:1839",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/15",
+        "name": "20190812 [SECURITY] [DSA 4498-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4498",
+        "name": "DSA-4498",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+        "name": "openSUSE-SU-2019:1872",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STVX7X7IDWAH5SKE6MBMY3TEI6ZODBTK/",
+        "name": "FEDORA-2019-647f74ce51",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202004-17",
+        "name": "GLSA-202004-17",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-3493",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-10-19T20:00Z",
+    "lastModifiedDate": "2019-10-25T11:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple race conditions in smtpd.py in the smtpd module in Python 2.6, 2.7, 3.1, and 3.2 alpha allow remote attackers to cause a denial of service (daemon outage) by establishing and then immediately closing a TCP connection, leading to the accept function having an unexpected return value of None, an unexpected value of None for the address, or an ECONNABORTED, EAGAIN, or EWOULDBLOCK error, or the getpeername function having an ENOTCONN error, a related issue to CVE-2010-3492."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://svn.python.org/view/python/branches/py3k/Lib/smtpd.py?r1=84289&r2=84288&pathrev=84289",
+        "name": "http://svn.python.org/view/python/branches/py3k/Lib/smtpd.py?r1=84289&r2=84288&pathrev=84289",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/24/3",
+        "name": "[oss-security] 20100924 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/11/2",
+        "name": "[oss-security] 20100910 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/22/3",
+        "name": "[oss-security] 20100922 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=632200",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=632200",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.python.org/issue9129",
+        "name": "http://bugs.python.org/issue9129",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://svn.python.org/view?view=rev&revision=84289",
+        "name": "http://svn.python.org/view?view=rev&revision=84289",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "name": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/09/6",
+        "name": "[oss-security] 20100909 CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.python.org/issue6706",
+        "name": "http://bugs.python.org/issue6706",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:216",
+        "name": "MDVSA-2010:216",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:215",
+        "name": "MDVSA-2010:215",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/44533",
+        "name": "44533",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2010-12/msg00006.html",
+        "name": "SUSE-SR:2010:024",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0212",
+        "name": "ADV-2011-0212",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/43068",
+        "name": "43068",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00006.html",
+        "name": "SUSE-SR:2011:002",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1596-1",
+        "name": "USN-1596-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-2",
+        "name": "USN-1613-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-1",
+        "name": "USN-1613-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/51040",
+        "name": "51040",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/50858",
+        "name": "50858",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/51024",
+        "name": "51024",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A12210",
+        "name": "oval:org.mitre.oval:def:12210",
+        "refsource": "OVAL",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14234",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-09T13:15Z",
+    "lastModifiedDate": "2019-08-28T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 1.11.x before 1.11.23, 2.1.x before 2.1.11, and 2.2.x before 2.2.4. Due to an error in shallow key transformation, key and index lookups for django.contrib.postgres.fields.JSONField, and key lookups for django.contrib.postgres.fields.HStoreField, were subject to SQL injection. This could, for example, be exploited via crafted use of \"OR 1=1\" in a key or index name to return all records, using a suitably crafted dictionary, with dictionary expansion, as the **kwargs passed to the QuerySet.filter() function."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2019/aug/01/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "name": "https://docs.djangoproject.com/en/dev/releases/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "name": "https://groups.google.com/forum/#!topic/django-announce/jIoju2-KLDs",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/15",
+        "name": "20190812 [SECURITY] [DSA 4498-1] python-django security update",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4498",
+        "name": "DSA-4498",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+        "name": "openSUSE-SU-2019:1872",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/STVX7X7IDWAH5SKE6MBMY3TEI6ZODBTK/",
+        "name": "FEDORA-2019-647f74ce51",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190828-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202004-17",
+        "name": "GLSA-202004-17",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-0669",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-08-07T19:30Z",
+    "lastModifiedDate": "2017-08-17T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Zope Object Database (ZODB) before 3.8.2, when certain Zope Enterprise Objects (ZEO) database sharing is enabled, allows remote attackers to bypass authentication via vectors involving the ZEO network protocol."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/36205",
+        "name": "36205",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://mail.zope.org/pipermail/zope-announce/2009-August/002220.html",
+        "name": "[zope-announce] 20090806 CVE-2009-0668 and CVE-2009-0669: Releases to fix ZODB ZEO server vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://pypi.python.org/pypi/ZODB3/3.8.2#whats-new-in-zodb-3-8-2",
+        "name": "http://pypi.python.org/pypi/ZODB3/3.8.2#whats-new-in-zodb-3-8-2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/36204",
+        "name": "36204",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://osvdb.org/56826",
+        "name": "56826",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/35987",
+        "name": "35987",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/2217",
+        "name": "ADV-2009-2217",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/52379",
+        "name": "zope-protocol-auth-bypass(52379)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-0668",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-08-07T19:30Z",
+    "lastModifiedDate": "2017-08-17T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Unspecified vulnerability in Zope Object Database (ZODB) before 3.8.2, when certain Zope Enterprise Objects (ZEO) database sharing is enabled, allows remote attackers to execute arbitrary Python code via vectors involving the ZEO network protocol."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://mail.zope.org/pipermail/zope-announce/2009-August/002220.html",
+        "name": "[zope-announce] 20090806 CVE-2009-0668 and CVE-2009-0669: Releases to fix ZODB ZEO server vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/36204",
+        "name": "36204",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://pypi.python.org/pypi/ZODB3/3.8.2#whats-new-in-zodb-3-8-2",
+        "name": "http://pypi.python.org/pypi/ZODB3/3.8.2#whats-new-in-zodb-3-8-2",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/36205",
+        "name": "36205",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://osvdb.org/56827",
+        "name": "56827",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/2217",
+        "name": "ADV-2009-2217",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/35987",
+        "name": "35987",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/52377",
+        "name": "zope-protocol-code-execution(52377)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-3495",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-10-19T20:00Z",
+    "lastModifiedDate": "2011-01-22T06:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Race condition in ZEO/StorageServer.py in Zope Object Database (ZODB) before 3.10.0 allows remote attackers to cause a denial of service (daemon outage) by establishing and then immediately closing a TCP connection, leading to the accept function having an unexpected return value of None, an unexpected value of None for the address, or an ECONNABORTED, EAGAIN, or EWOULDBLOCK error, a related issue to CVE-2010-3492."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/11/2",
+        "name": "[oss-security] 20100910 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/41755",
+        "name": "41755",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://pypi.python.org/pypi/ZODB3/3.10.0#id1",
+        "name": "http://pypi.python.org/pypi/ZODB3/3.10.0#id1",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/22/3",
+        "name": "[oss-security] 20100922 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/24/3",
+        "name": "[oss-security] 20100924 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.python.org/issue6706",
+        "name": "http://bugs.python.org/issue6706",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/09/6",
+        "name": "[oss-security] 20100909 CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "name": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2010-12/msg00006.html",
+        "name": "SUSE-SR:2010:024",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-5010",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-10-19T20:00Z",
+    "lastModifiedDate": "2010-10-20T04:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Race condition in the FTPHandler class in ftpserver.py in pyftpdlib before 0.5.1 allows remote attackers to cause a denial of service (daemon outage) by establishing and then immediately closing a TCP connection, leading to the accept function having an unexpected return value of None, a different vulnerability than CVE-2010-3494."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://code.google.com/p/pyftpdlib/source/detail?r=439",
+        "name": "http://code.google.com/p/pyftpdlib/source/detail?r=439",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "name": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/24/3",
+        "name": "[oss-security] 20100924 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://code.google.com/p/pyftpdlib/issues/detail?id=91",
+        "name": "http://code.google.com/p/pyftpdlib/issues/detail?id=91",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://code.google.com/p/pyftpdlib/source/diff?spec=svn439&r=439&format=side&path=/trunk/pyftpdlib/ftpserver.py",
+        "name": "http://code.google.com/p/pyftpdlib/source/diff?spec=svn439&r=439&format=side&path=/trunk/pyftpdlib/ftpserver.py",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.python.org/issue6706",
+        "name": "http://bugs.python.org/issue6706",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://code.google.com/p/pyftpdlib/source/browse/trunk/HISTORY",
+        "name": "http://code.google.com/p/pyftpdlib/source/browse/trunk/HISTORY",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/09/6",
+        "name": "[oss-security] 20100909 CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/22/3",
+        "name": "[oss-security] 20100922 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/11/2",
+        "name": "[oss-security] 20100910 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-3494",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-10-19T20:00Z",
+    "lastModifiedDate": "2010-10-20T04:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Race condition in the FTPHandler class in ftpserver.py in pyftpdlib before 0.5.2 allows remote attackers to cause a denial of service (daemon outage) by establishing and then immediately closing a TCP connection, leading to the accept function having an unexpected value of None for the address, or an ECONNABORTED, EAGAIN, or EWOULDBLOCK error, a related issue to CVE-2010-3492."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://code.google.com/p/pyftpdlib/source/diff?spec=svn556&r=556&format=side&path=/trunk/pyftpdlib/ftpserver.py",
+        "name": "http://code.google.com/p/pyftpdlib/source/diff?spec=svn556&r=556&format=side&path=/trunk/pyftpdlib/ftpserver.py",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://code.google.com/p/pyftpdlib/issues/detail?id=105",
+        "name": "http://code.google.com/p/pyftpdlib/issues/detail?id=105",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://code.google.com/p/pyftpdlib/source/detail?r=556",
+        "name": "http://code.google.com/p/pyftpdlib/source/detail?r=556",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/24/3",
+        "name": "[oss-security] 20100924 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "name": "https://bugs.launchpad.net/zodb/+bug/135108",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.python.org/issue6706",
+        "name": "http://bugs.python.org/issue6706",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/22/3",
+        "name": "[oss-security] 20100922 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/11/2",
+        "name": "[oss-security] 20100910 Re: CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2010/09/09/6",
+        "name": "[oss-security] 20100909 CVE Request -- Python -- accept() implementation in async core is broken => more subcases",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://code.google.com/p/pyftpdlib/source/browse/trunk/HISTORY",
+        "name": "http://code.google.com/p/pyftpdlib/source/browse/trunk/HISTORY",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://code.google.com/p/pyftpdlib/issues/detail?id=104",
+        "name": "http://code.google.com/p/pyftpdlib/issues/detail?id=104",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-2701",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-09-08T18:30Z",
+    "lastModifiedDate": "2009-09-09T04:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Unspecified vulnerability in the Zope Enterprise Objects (ZEO) storage-server functionality in Zope Object Database (ZODB) 3.8 before 3.8.3 and 3.9.x before 3.9.0c2, when certain ZEO database sharing and blob support are enabled, allows remote authenticated users to read or delete arbitrary files via unknown vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://mail.zope.org/pipermail/zope-announce/2009-September/002221.html",
+        "name": "[zope-announce] 20090901 CVE-2009-2701: Releases to fix ZODB ZEO server vulnerability",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://pypi.python.org/pypi/ZODB3/3.9.0c2",
+        "name": "http://pypi.python.org/pypi/ZODB3/3.9.0c2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://pypi.python.org/pypi/ZODB3/3.8.3",
+        "name": "http://pypi.python.org/pypi/ZODB3/3.8.3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/2534",
+        "name": "ADV-2009-2534",
+        "refsource": "VUPEN",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  }
+]

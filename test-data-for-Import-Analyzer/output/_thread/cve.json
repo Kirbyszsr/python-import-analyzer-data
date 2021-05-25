@@ -1,0 +1,4460 @@
+{
+  "resultsPerPage": 20,
+  "startIndex": 0,
+  "totalResults": 89,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-25T06:33Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-14970",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-787"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.videolan.org/security/sb-vlc308.html",
+                "name": "https://www.videolan.org/security/sb-vlc308.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/Aug/36",
+                "name": "20190821 [SECURITY] [DSA 4504-1] vlc security update",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://www.debian.org/security/2019/dsa-4504",
+                "name": "DSA-4504",
+                "refsource": "DEBIAN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://git.videolan.org/?p=vlc.git&a=search&h=refs/heads/master&st=commit&s=cve-2019",
+                "name": "http://git.videolan.org/?p=vlc.git&a=search&h=refs/heads/master&st=commit&s=cve-2019",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://security.gentoo.org/glsa/201909-02",
+                "name": "GLSA-201909-02",
+                "refsource": "GENTOO",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4131-1/",
+                "name": "USN-4131-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00036.html",
+                "name": "openSUSE-SU-2020:0545",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00046.html",
+                "name": "openSUSE-SU-2020:0562",
+                "refsource": "SUSE",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "A vulnerability in mkv::event_thread_t in VideoLAN VLC media player 3.0.7.1 allows remote attackers to trigger a heap-based buffer overflow via a crafted .mkv file."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:videolan:vlc_media_player:3.0.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2019-08-29T19:15Z",
+        "lastModifiedDate": "2020-08-24T17:37Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2010-4248",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-362"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2010/11/24/9",
+                "name": "[oss-security] 20101124 Re: CVE request: kernel: posix-cpu-timers: workaround to suppress the problems with mt exec",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e0a70217107e6f9844628120412cb27bb4cea194",
+                "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e0a70217107e6f9844628120412cb27bb4cea194",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.kernel.org/pub/linux/kernel/v2.6/testing/ChangeLog-2.6.37-rc2",
+                "name": "http://www.kernel.org/pub/linux/kernel/v2.6/testing/ChangeLog-2.6.37-rc2",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=656264",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=656264",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2010/11/23/2",
+                "name": "[oss-security] 20101123 CVE request: kernel: posix-cpu-timers: workaround to suppress the problems with mt exec",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/45028",
+                "name": "45028",
+                "refsource": "BID",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2011-0004.html",
+                "name": "RHSA-2011:0004",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2011/0024",
+                "name": "ADV-2011-0024",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/42789",
+                "name": "42789",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/42890",
+                "name": "42890",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.redhat.com/support/errata/RHSA-2011-0007.html",
+                "name": "RHSA-2011:0007",
+                "refsource": "REDHAT",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2011:029",
+                "name": "MDVSA-2011:029",
+                "refsource": "MANDRIVA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/46397",
+                "name": "46397",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.vmware.com/security/advisories/VMSA-2011-0012.html",
+                "name": "http://www.vmware.com/security/advisories/VMSA-2011-0012.html",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/520102/100/0/threaded",
+                "name": "20111013 VMSA-2011-0012 VMware ESXi and ESX updates to third party libraries and ESX Service Console",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Race condition in the __exit_signal function in kernel/exit.c in the Linux kernel before 2.6.37-rc2 allows local users to cause a denial of service via vectors related to multithreaded exec, the use of a thread group leader in kernel/posix-cpu-timers.c, and the selection of a new thread group leader in the de_thread function in fs/exec.c."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "2.6.37",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:2.6.37:-:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:2.6.37:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 4.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2010-11-30T21:38Z",
+        "lastModifiedDate": "2020-08-13T13:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-0192",
+            "ASSIGNER": "security@android.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-125"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://source.android.com/security/bulletin/pixel/2020-06-01",
+                "name": "https://source.android.com/security/bulletin/pixel/2020-06-01",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In ih264d_decode_slice_thread of ih264d_thread_parse_decode.c, there is a possible out of bounds read due to improper input validation. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is needed for exploitation.Product: AndroidVersions: Android-10Android ID: A-144687080"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2020-06-11T15:15Z",
+        "lastModifiedDate": "2020-06-12T19:24Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2020-0030",
+            "ASSIGNER": "security@android.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-416"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://source.android.com/security/bulletin/2020-02-01",
+                "name": "https://source.android.com/security/bulletin/2020-02-01",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In binder_thread_release of binder.c, there is a possible use after free due to a race condition. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-145286050References: Upstream kernel"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "HIGH",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.0,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.0,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 6.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.4,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-02-13T15:15Z",
+        "lastModifiedDate": "2020-02-18T16:06Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-16971",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/fusionpbx/fusionpbx/commit/c48a160af53352ad1a43518b7d0faab16b8dfbcc",
+                "name": "https://github.com/fusionpbx/fusionpbx/commit/c48a160af53352ad1a43518b7d0faab16b8dfbcc",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://resp3ctblog.wordpress.com/2019/10/19/fusionpbx-xss-4/",
+                "name": "https://resp3ctblog.wordpress.com/2019/10/19/fusionpbx-xss-4/",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In FusionPBX up to 4.5.7, the file app\\messages\\messages_thread.php uses an unsanitized \"contact_uuid\" variable coming from the URL, which is reflected on 3 occasions in HTML, leading to XSS."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:fusionpbx:fusionpbx:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "4.5.7",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "REQUIRED",
+              "scope": "CHANGED",
+              "confidentialityImpact": "LOW",
+              "integrityImpact": "LOW",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.1,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 2.7
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2019-10-22T22:15Z",
+        "lastModifiedDate": "2019-10-23T15:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-7472",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-404"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.13",
+                "name": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.10.13",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Release Notes",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://lkml.org/lkml/2017/4/3/724",
+                "name": "https://lkml.org/lkml/2017/4/3/724",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://lkml.org/lkml/2017/4/1/235",
+                "name": "https://lkml.org/lkml/2017/4/1/235",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Broken Link"
+                ]
+              },
+              {
+                "url": "https://github.com/torvalds/linux/commit/c9f838d104fed6f2f61d68164712e3204bf5271b",
+                "name": "https://github.com/torvalds/linux/commit/c9f838d104fed6f2f61d68164712e3204bf5271b",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1442086",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1442086",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://bugzilla.novell.com/show_bug.cgi?id=1034862",
+                "name": "https://bugzilla.novell.com/show_bug.cgi?id=1034862",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://openwall.com/lists/oss-security/2017/05/11/1",
+                "name": "http://openwall.com/lists/oss-security/2017/05/11/1",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Mailing List",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c9f838d104fed6f2f61d68164712e3204bf5271b",
+                "name": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c9f838d104fed6f2f61d68164712e3204bf5271b",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/98422",
+                "name": "98422",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1038471",
+                "name": "1038471",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "https://www.exploit-db.com/exploits/42136/",
+                "name": "42136",
+                "refsource": "EXPLOIT-DB",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2018-01/msg00007.html",
+                "name": "SUSE-SU-2018:0011",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:0181",
+                "name": "RHSA-2018:0181",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:0152",
+                "name": "RHSA-2018:0152",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2018:0151",
+                "name": "RHSA-2018:0151",
+                "refsource": "REDHAT",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The KEYS subsystem in the Linux kernel before 4.10.13 allows local users to cause a denial of service (memory consumption) via a series of KEY_REQKEY_DEFL_THREAD_KEYRING keyctl_set_reqkey_keyring calls."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "4.10.12",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "HIGH",
+              "baseScore": 5.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:N/I:N/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 4.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.9,
+            "impactScore": 6.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2017-05-11T19:29Z",
+        "lastModifiedDate": "2019-10-03T00:03Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-1572",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-22"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=695568",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=695568",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/46473",
+                "name": "46473",
+                "refsource": "BID",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://seclists.org/oss-sec/2011/q2/197",
+                "name": "[oss-security] 20110409 CVE id request: gitolite",
+                "refsource": "MLIST",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://seclists.org/oss-sec/2011/q2/209",
+                "name": "[oss-security] 20110411 Re: CVE id request: gitolite",
+                "refsource": "MLIST",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://github.com/sitaramc/gitolite/commit/4ce00aef84d1ff7c35f7adbbb99a6241cfda00cc",
+                "name": "https://github.com/sitaramc/gitolite/commit/4ce00aef84d1ff7c35f7adbbb99a6241cfda00cc",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2215",
+                "name": "DSA-2215",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "http://groups.google.com/group/gitolite/browse_thread/thread/797a93ec26e1dcbc?pli=1",
+                "name": "http://groups.google.com/group/gitolite/browse_thread/thread/797a93ec26e1dcbc?pli=1",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/65542",
+                "name": "gitolite-adc-security-bypass(65542)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Directory traversal vulnerability in the Admin Defined Commands (ADC) feature in gitolite before 1.5.9.1 allows remote attackers to execute arbitrary commands via .. (dot dot) sequences in admin-defined commands."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.55:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.60:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.5.9",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.80:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.85:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.90:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.4.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.50:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.95:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.4.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.65:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:0.70:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:gitolite:gitolite:1.5.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2011-10-04T10:55Z",
+        "lastModifiedDate": "2019-09-09T18:02Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-4319",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://openwall.com/lists/oss-security/2011/11/18/8",
+                "name": "[oss-security] 20111118 Re: CVE Request -- Ruby on Rails / rubygem-actionpack -- XSS in the 'translate' helper method",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://groups.google.com/group/rubyonrails-security/msg/c65c24fbc4b6dd82?dmode=source&output=gplain",
+                "name": "[rubyonrails-security] 20111118 XSS vulnerability in the translate helper method in Ruby on Rails",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://weblog.rubyonrails.org/2011/11/18/rails-3-0-11-has-been-released",
+                "name": "http://weblog.rubyonrails.org/2011/11/18/rails-3-0-11-has-been-released",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://weblog.rubyonrails.org/2011/11/18/rails-3-1-2-has-been-released",
+                "name": "http://weblog.rubyonrails.org/2011/11/18/rails-3-1-2-has-been-released",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/50722",
+                "name": "50722",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://groups.google.com/group/rubyonrails-security/browse_thread/thread/2b61d70fb73c7cc5?pli=1",
+                "name": "http://groups.google.com/group/rubyonrails-security/browse_thread/thread/2b61d70fb73c7cc5?pli=1",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://osvdb.org/77199",
+                "name": "77199",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.securitytracker.com/id?1026342",
+                "name": "1026342",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/71364",
+                "name": "rubyonrails-translatehelper-xss(71364)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Cross-site scripting (XSS) vulnerability in the i18n translations helper method in Ruby on Rails 3.0.x before 3.0.11 and 3.1.x before 3.1.2, and the rails_xss plugin in Ruby on Rails 2.3.x, allows remote attackers to inject arbitrary web script or HTML via vectors related to a translations string whose name ends with an \"html\" substring."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.6:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.7:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.2:pre:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.5:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.7:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.4:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc5:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.1:pre:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.10:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:rc:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:3.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.6:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": false,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.5:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:3.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc5:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.10:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.6:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.6:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.7:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.8:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.7:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.4:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.1:pre:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.2:pre:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:rc:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.0.0:beta2:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc5:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.1:rc3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.1:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.1:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:beta1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc8:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc6:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:3.1.0:rc7:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2011-11-28T11:55Z",
+        "lastModifiedDate": "2019-08-08T15:42Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2009-4214",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/3352",
+                "name": "ADV-2009-3352",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Patch",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://github.com/rails/rails/commit/bfe032858077bb2946abe25e95e485ba6da86bd5",
+                "name": "http://github.com/rails/rails/commit/bfe032858077bb2946abe25e95e485ba6da86bd5",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.securitytracker.com/id?1023245",
+                "name": "1023245",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2009/11/27/2",
+                "name": "[oss-security] 20091127 CVE request: ruby on rails XSS Weakness in strip_tags",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/37446",
+                "name": "37446",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/37142",
+                "name": "37142",
+                "refsource": "BID",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://weblog.rubyonrails.org/2009/11/30/ruby-on-rails-2-3-5-released",
+                "name": "http://weblog.rubyonrails.org/2009/11/30/ruby-on-rails-2-3-5-released",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://groups.google.com/group/rubyonrails-security/browse_thread/thread/4d4f71f2aef4c0ab?pli=1",
+                "name": "[rubyonrails-security] 20091127 XSS Weakness in strip_tags",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2009/12/08/3",
+                "name": "[oss-security] 20091208 Re: CVE request: ruby on rails XSS Weakness in strip_tags",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/38915",
+                "name": "38915",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2010-03/msg00004.html",
+                "name": "SUSE-SR:2010:006",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html",
+                "name": "APPLE-SA-2010-03-29-1",
+                "refsource": "APPLE",
+                "tags": []
+              },
+              {
+                "url": "http://support.apple.com/kb/HT4077",
+                "name": "http://support.apple.com/kb/HT4077",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2260",
+                "name": "DSA-2260",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2301",
+                "name": "DSA-2301",
+                "refsource": "DEBIAN",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Cross-site scripting (XSS) vulnerability in the strip_tags function in Ruby on Rails before 2.2.s, and 2.3.x before 2.3.5, allows remote attackers to inject arbitrary web script or HTML via vectors involving non-printing ASCII characters, related to HTML::Tokenizer and actionpack/lib/action_controller/vendor/html-scanner/html/node.rb."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.3.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.9.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.2.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.1.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.1.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.9.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.5.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.5.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.13.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.14.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.11.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.0.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.0.0:rc2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.6.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.12.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.2.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.2.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.2.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.9.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.9.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.9.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.9.4.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.14.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.13.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.14.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.14.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.10.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.0.0:rc1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.2.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.2.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.1.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:1.1.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.8.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.9.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.5.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:0.5.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.11.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.12.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:0.10.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:ruby_on_rails:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.1.2",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2009-12-07T17:30Z",
+        "lastModifiedDate": "2019-08-08T14:43Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2008-7248",
+            "ASSIGNER": "secalert@redhat.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.vupen.com/english/advisories/2009/2544",
+                "name": "ADV-2009-2544",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.rorsecurity.info/journal/2008/11/19/circumvent-rails-csrf-protection.html",
+                "name": "http://www.rorsecurity.info/journal/2008/11/19/circumvent-rails-csrf-protection.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2009/11/28/1",
+                "name": "[oss-security] 20091128 CVE request: Ruby on Rails: CSRF circumvention (from 2008)",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://pseudo-flaw.net/content/web-browsers/form-data-encoding-roundup/",
+                "name": "http://pseudo-flaw.net/content/web-browsers/form-data-encoding-roundup/",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://groups.google.com/group/rubyonrails-security/browse_thread/thread/d741ee286e36e301?hl=en",
+                "name": "http://groups.google.com/group/rubyonrails-security/browse_thread/thread/d741ee286e36e301?hl=en",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2009/12/02/2",
+                "name": "[oss-security] 20091202 Re: CVE request: Ruby on Rails: CSRF circumvention (from 2008)",
+                "refsource": "MLIST",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/36600",
+                "name": "36600",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://weblog.rubyonrails.org/2008/11/18/potential-circumvention-of-csrf-protection-in-rails-2-1",
+                "name": "http://weblog.rubyonrails.org/2008/11/18/potential-circumvention-of-csrf-protection-in-rails-2-1",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-security-announce/2010-03/msg00004.html",
+                "name": "SUSE-SR:2010:006",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/38915",
+                "name": "38915",
+                "refsource": "SECUNIA",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Ruby on Rails 2.1 before 2.1.3 and 2.2.x before 2.2.2 does not verify tokens for requests with certain content types, which allows remote attackers to bypass cross-site request forgery (CSRF) protection for requests to applications that rely on this protection, as demonstrated using text/plain."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.2.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:rubyonrails:rails:2.1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.8
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2009-12-16T01:30Z",
+        "lastModifiedDate": "2019-08-08T14:38Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-3872",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://groups.google.com/group/puppet-announce/browse_thread/thread/e7edc3a71348f3e1",
+                "name": "http://groups.google.com/group/puppet-announce/browse_thread/thread/e7edc3a71348f3e1",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://secunia.com/advisories/46578",
+                "name": "46578",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1238-1",
+                "name": "USN-1238-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://puppetlabs.com/blog/important-security-announcement-altnames-vulnerability/",
+                "name": "http://puppetlabs.com/blog/important-security-announcement-altnames-vulnerability/",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1238-2",
+                "name": "USN-1238-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/46550",
+                "name": "46550",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/50356",
+                "name": "50356",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/46934",
+                "name": "46934",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/46964",
+                "name": "46964",
+                "refsource": "SECUNIA",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/70970",
+                "name": "puppet-x509-spoofing(70970)",
+                "refsource": "XF",
+                "tags": []
+              },
+              {
+                "url": "https://puppet.com/security/cve/cve-2011-3872",
+                "name": "https://puppet.com/security/cve/cve-2011-3872",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Puppet 2.6.x before 2.6.12 and 2.7.x before 2.7.6, and Puppet Enterprise (PE) Users 1.0, 1.1, and 1.2 before 1.2.4, when signing an agent certificate, adds the Puppet master's certdnsnames values to the X.509 Subject Alternative Name field of the certificate, which allows remote attackers to spoof a Puppet master via a man-in-the-middle (MITM) attack against an agent that uses an alternate DNS name for the master, aka \"AltNames Vulnerability.\""
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.11:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet_enterprise:1.2.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet_enterprise:1.2.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet_enterprise_users:1.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet_enterprise:1.2.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet_enterprise_users:1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet_enterprise:1.2.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:H/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 2.6
+            },
+            "severity": "LOW",
+            "exploitabilityScore": 4.9,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2011-10-27T20:55Z",
+        "lastModifiedDate": "2019-07-11T15:09Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-3869",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-59"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1223-1",
+                "name": "USN-1223-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1223-2",
+                "name": "USN-1223-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2314",
+                "name": "DSA-2314",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/46458",
+                "name": "46458",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068061.html",
+                "name": "FEDORA-2011-13633",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "http://groups.google.com/group/puppet-announce/browse_thread/thread/91e3b46d2328a1cb",
+                "name": "http://groups.google.com/group/puppet-announce/browse_thread/thread/91e3b46d2328a1cb",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068053.html",
+                "name": "FEDORA-2011-13636",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068093.html",
+                "name": "FEDORA-2011-13623",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://puppet.com/security/cve/cve-2011-3869",
+                "name": "https://puppet.com/security/cve/cve-2011-3869",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Puppet 2.7.x before 2.7.5, 2.6.x before 2.6.11, and 0.25.x allows local users to overwrite arbitrary files via a symlink attack on the .k5login file."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:N/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 6.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.4,
+            "impactScore": 9.2,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2011-10-27T20:55Z",
+        "lastModifiedDate": "2019-07-10T14:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-3870",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-59"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://secunia.com/advisories/46458",
+                "name": "46458",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://groups.google.com/group/puppet-announce/browse_thread/thread/91e3b46d2328a1cb",
+                "name": "http://groups.google.com/group/puppet-announce/browse_thread/thread/91e3b46d2328a1cb",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068093.html",
+                "name": "FEDORA-2011-13623",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1223-1",
+                "name": "USN-1223-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2314",
+                "name": "DSA-2314",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1223-2",
+                "name": "USN-1223-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068061.html",
+                "name": "FEDORA-2011-13633",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068053.html",
+                "name": "FEDORA-2011-13636",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "https://puppet.com/security/cve/cve-2011-3870",
+                "name": "https://puppet.com/security/cve/cve-2011-3870",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Puppet 2.7.x before 2.7.5, 2.6.x before 2.6.11, and 0.25.x allows local users to modify the permissions of arbitrary files via a symlink attack on the SSH authorized_keys file."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:N/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 6.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.4,
+            "impactScore": 9.2,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2011-10-27T20:55Z",
+        "lastModifiedDate": "2019-07-10T14:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-3871",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-264"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://secunia.com/advisories/46458",
+                "name": "46458",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068061.html",
+                "name": "FEDORA-2011-13633",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://groups.google.com/group/puppet-announce/browse_thread/thread/91e3b46d2328a1cb",
+                "name": "http://groups.google.com/group/puppet-announce/browse_thread/thread/91e3b46d2328a1cb",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068093.html",
+                "name": "FEDORA-2011-13623",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1223-1",
+                "name": "USN-1223-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1223-2",
+                "name": "USN-1223-2",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://lists.fedoraproject.org/pipermail/package-announce/2011-October/068053.html",
+                "name": "FEDORA-2011-13636",
+                "refsource": "FEDORA",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2314",
+                "name": "DSA-2314",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://puppet.com/security/cve/cve-2011-3871",
+                "name": "https://puppet.com/security/cve/cve-2011-3871",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Puppet 2.7.x before 2.7.5, 2.6.x before 2.6.11, and 0.25.x, when running in --edit mode, uses a predictable file name, which allows local users to run arbitrary Puppet code or trick a user into editing arbitrary files."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.10:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:0.25.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:H/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "HIGH",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 6.2
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 1.9,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2011-10-27T20:55Z",
+        "lastModifiedDate": "2019-07-10T14:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2011-3848",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-22"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://secunia.com/advisories/46628",
+                "name": "46628",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.debian.org/security/2011/dsa-2314",
+                "name": "DSA-2314",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://groups.google.com/group/puppet-announce/browse_thread/thread/e57ce2740feb9406",
+                "name": "https://groups.google.com/group/puppet-announce/browse_thread/thread/e57ce2740feb9406",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Patch"
+                ]
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-1217-1",
+                "name": "USN-1217-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://lists.opensuse.org/opensuse-updates/2011-10/msg00033.html",
+                "name": "openSUSE-SU-2011:1190",
+                "refsource": "SUSE",
+                "tags": []
+              },
+              {
+                "url": "https://puppet.com/security/cve/cve-2011-3848",
+                "name": "https://puppet.com/security/cve/cve-2011-3848",
+                "refsource": "CONFIRM",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Directory traversal vulnerability in Puppet 2.6.x before 2.6.10 and 2.7.x before 2.7.4 allows remote attackers to write X.509 Certificate Signing Request (CSR) to arbitrary locations via (1) a double-encoded key parameter in the URI in 2.7.x, (2) the CN in the Subject of a CSR in 2.6 and 0.25."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppetlabs:puppet:2.7.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.8:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.9:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.6:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.7:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.4:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.6.5:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:puppet:puppet:2.7.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2011-10-27T20:55Z",
+        "lastModifiedDate": "2019-07-10T14:13Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-2025",
+            "ASSIGNER": "security@android.com"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-416"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://source.android.com/security/bulletin/2019-03-01",
+                "name": "https://source.android.com/security/bulletin/2019-03-01",
+                "refsource": "MISC",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "In binder_thread_read of binder.c, there is a possible use-after-free due to improper locking. This could lead to local escalation of privilege in the kernel with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-116855682References: Upstream kernel"
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "LOCAL",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 7.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 1.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 7.2
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 3.9,
+            "impactScore": 10.0,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-06-19T21:15Z",
+        "lastModifiedDate": "2019-06-21T15:05Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-10723",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-119"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/ethanhunnt/IoT_vulnerabilities/blob/master/Shekar_boriscope_sec_issues.pdf",
+                "name": "https://github.com/ethanhunnt/IoT_vulnerabilities/blob/master/Shekar_boriscope_sec_issues.pdf",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://packetstormsecurity.com/files/153241/Shekar-Endoscope-Weak-Default-Settings-Memory-Corruption.html",
+                "name": "http://packetstormsecurity.com/files/153241/Shekar-Endoscope-Weak-Default-Settings-Memory-Corruption.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/Jun/8",
+                "name": "20190609 Newly releases IoT security issues",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Recently it was discovered as a part of the research on IoT devices in the most recent firmware for Shekar Endoscope that an attacker connected to the device Wi-Fi SSID can exploit a memory corruption issue and execute remote code on the device. This device acts as an Endoscope camera that allows its users to use it in various industrial systems and settings, car garages, and also in some cases in the medical clinics to get access to areas that are difficult for a human being to reach. Any breach of this system can allow an attacker to get access to video feed and pictures viewed by that user and might allow them to get a foot hold in air gapped networks especially in case of nation critical infrastructure/industries. The firmware contains binary uvc_stream that is the UDP daemon which is responsible for handling all the UDP requests that the device receives. The client application sends a UDP request to change the Wi-Fi name which contains the following format: \"SETCMD0001+0001+[2 byte length of wifiname]+[Wifiname]. This request is handled by \"control_Dev_thread\" function which at address \"0x00409AE0\" compares the incoming request and determines if the 10th byte is 01 and if it is then it redirects to 0x0040A74C which calls the function \"setwifiname\". The function \"setwifiname\" uses a memcpy function but uses the length of the payload obtained by using strlen function as the third parameter which is the number of bytes to copy and this allows an attacker to overflow the function and control the $PC value."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:ishekar:endoscope_camera_firmware:*:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:ishekar:endoscope_camera:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-06-17T22:15Z",
+        "lastModifiedDate": "2019-06-20T19:10Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2017-10724",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-119"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://github.com/ethanhunnt/IoT_vulnerabilities/blob/master/Shekar_boriscope_sec_issues.pdf",
+                "name": "https://github.com/ethanhunnt/IoT_vulnerabilities/blob/master/Shekar_boriscope_sec_issues.pdf",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://packetstormsecurity.com/files/153241/Shekar-Endoscope-Weak-Default-Settings-Memory-Corruption.html",
+                "name": "http://packetstormsecurity.com/files/153241/Shekar-Endoscope-Weak-Default-Settings-Memory-Corruption.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Third Party Advisory",
+                  "VDB Entry"
+                ]
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2019/Jun/8",
+                "name": "20190609 Newly releases IoT security issues",
+                "refsource": "BUGTRAQ",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Recently it was discovered as a part of the research on IoT devices in the most recent firmware for Shekar Endoscope that an attacker connected to the device Wi-Fi SSID can exploit a memory corruption issue and execute remote code on the device. This device acts as an Endoscope camera that allows its users to use it in various industrial systems and settings, car garages, and also in some cases in the medical clinics to get access to areas that are difficult for a human being to reach. Any breach of this system can allow an attacker to get access to video feed and pictures viewed by that user and might allow them to get a foot hold in air gapped networks especially in case of nation critical infrastructure/industries. The firmware contains binary uvc_stream that is the UDP daemon which is responsible for handling all the UDP requests that the device receives. The client application sends a UDP request to change the Wi-Fi name which contains the following format: \"SETCMD0001+0002+[2 byte length of wifipassword]+[Wifipassword]. This request is handled by \"control_Dev_thread\" function which at address \"0x00409AE4\" compares the incoming request and determines if the 10th byte is 02 and if it is then it redirects to 0x0040A7D8, which calls the function \"setwifipassword\". The function \"setwifipassword\" uses a memcpy function but uses the length of the payload obtained by using strlen function as the third parameter which is the number of bytes to copy and this allows an attacker to overflow the function and control the $PC value."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "AND",
+              "children": [
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": true,
+                      "cpe23Uri": "cpe:2.3:o:ishekar:endoscope_camera_firmware:*:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                },
+                {
+                  "operator": "OR",
+                  "children": [],
+                  "cpe_match": [
+                    {
+                      "vulnerable": false,
+                      "cpe23Uri": "cpe:2.3:h:ishekar:endoscope_camera:-:*:*:*:*:*:*:*",
+                      "cpe_name": []
+                    }
+                  ]
+                }
+              ],
+              "cpe_match": []
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.0",
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 8.8,
+              "baseSeverity": "HIGH"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 6.5
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2019-06-17T22:15Z",
+        "lastModifiedDate": "2019-06-20T18:50Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2006-6696",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-119"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://www.securityfocus.com/bid/21688",
+                "name": "21688",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.determina.com/security.research/vulnerabilities/csrss-harderror.html",
+                "name": "http://www.determina.com/security.research/vulnerabilities/csrss-harderror.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://www.security.nnov.ru/files/messagebox.c",
+                "name": "http://www.security.nnov.ru/files/messagebox.c",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://blogs.technet.com/msrc/archive/2006/12/22/new-report-of-a-windows-vulnerability.aspx",
+                "name": "http://blogs.technet.com/msrc/archive/2006/12/22/new-report-of-a-windows-vulnerability.aspx",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://lists.grok.org.uk/pipermail/full-disclosure/2006-December/051394.html",
+                "name": "20061221 Microsoft Windows XP/2003/Vista memory corruption 0day",
+                "refsource": "FULLDISC",
+                "tags": []
+              },
+              {
+                "url": "http://www.security.nnov.ru/Gnews944.html",
+                "name": "http://www.security.nnov.ru/Gnews944.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://groups.google.ca/group/microsoft.public.win32.programmer.kernel/browse_thread/thread/c5946bf40f227058/7bd7b5d66a4e5aff",
+                "name": "http://groups.google.ca/group/microsoft.public.win32.programmer.kernel/browse_thread/thread/c5946bf40f227058/7bd7b5d66a4e5aff",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://www.kuban.ru/forum_new/forum2/files/19124.html",
+                "name": "http://www.kuban.ru/forum_new/forum2/files/19124.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://isc.sans.org/diary.php?n&storyid=1965",
+                "name": "http://isc.sans.org/diary.php?n&storyid=1965",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://research.eeye.com/html/alerts/zeroday/20061215.html",
+                "name": "http://research.eeye.com/html/alerts/zeroday/20061215.html",
+                "refsource": "MISC",
+                "tags": []
+              },
+              {
+                "url": "http://securitytracker.com/id?1017433",
+                "name": "1017433",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://secunia.com/advisories/23448",
+                "name": "23448",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/23324",
+                "name": "23324",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2006/5120",
+                "name": "ADV-2006-5120",
+                "refsource": "VUPEN",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2007/1325",
+                "name": "ADV-2007-1325",
+                "refsource": "VUPEN",
+                "tags": []
+              },
+              {
+                "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1816",
+                "name": "oval:org.mitre.oval:def:1816",
+                "refsource": "OVAL",
+                "tags": []
+              },
+              {
+                "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2007/ms07-021",
+                "name": "MS07-021",
+                "refsource": "MS",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/466331/100/200/threaded",
+                "name": "HPSBST02208",
+                "refsource": "HP",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/455546/100/0/threaded",
+                "name": "20061230 csrss.exe double-free vulnerability - arbitrary DWORD overwrite exploit",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/455158/100/0/threaded",
+                "name": "20061222 Re: Re: [Full-disclosure] Microsoft Windows XP/2003/Vista memory corruption 0day",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/455104/100/0/threaded",
+                "name": "20061221 Re: [Full-disclosure] Microsoft Windows XP/2003/Vista memory corruption 0day",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/455088/100/0/threaded",
+                "name": "20061221 Re: [Full-disclosure] Microsoft Windows XP/2003/Vista memorycorruption 0day",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/455061/100/0/threaded",
+                "name": "20061221 Microsoft Windows XP/2003/Vista memory corruption 0day",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Double free vulnerability in Microsoft Windows 2000, XP, 2003, and Vista allows local users to gain privileges by calling the MessageBox function with a MB_SERVICE_NOTIFICATION message with crafted data, which sends a HardError message to Client/Server Runtime Server Subsystem (CSRSS) process, which is not properly handled when invoking the UserHardError and GetHardErrorText functions in WINSRV.DLL."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2000:*:sp3:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:datacenter_edition:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:datacenter_edition:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:standard:sp1_beta_1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:web:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:*:home:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:*:media_center:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:gold:professional:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2000:*:sp4:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:enterprise_edition:sp1_beta_1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:sp1:*:enterprise:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_vista:*:*:december_ctp:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_vista:*:beta:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:sp2:home:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:sp2:media_center:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:standard:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:standard:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_vista:*:beta1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_vista:*:beta2:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:sp2:tablet_pc:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:datacenter_edition:sp1_beta_1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:enterprise_edition:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:web:sp1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_2003_server:web:sp1_beta_1:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:sp1:home:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:microsoft:windows_xp:*:sp1:media_center:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:L/AC:M/Au:N/C:C/I:C/A:C",
+              "accessVector": "LOCAL",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "COMPLETE",
+              "integrityImpact": "COMPLETE",
+              "availabilityImpact": "COMPLETE",
+              "baseScore": 6.9
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 3.4,
+            "impactScore": 10.0,
+            "obtainAllPrivilege": true,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2006-12-22T02:28Z",
+        "lastModifiedDate": "2019-04-30T14:27Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2015-6826",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-20"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=3197c0aa87a3b7190e17d49e6fbc7b554e4b3f0a",
+                "name": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=3197c0aa87a3b7190e17d49e6fbc7b554e4b3f0a",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "http://www.ubuntu.com/usn/USN-2944-1",
+                "name": "USN-2944-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              },
+              {
+                "url": "http://www.securitytracker.com/id/1033483",
+                "name": "1033483",
+                "refsource": "SECTRACK",
+                "tags": []
+              },
+              {
+                "url": "http://ffmpeg.org/security.html",
+                "name": "http://ffmpeg.org/security.html",
+                "refsource": "CONFIRM",
+                "tags": []
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2018/12/msg00009.html",
+                "name": "[debian-lts-announce] 20181220 [SECURITY] [DLA 1611-1] libav security update",
+                "refsource": "MLIST",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "The ff_rv34_decode_init_thread_copy function in libavcodec/rv34.c in FFmpeg before 2.7.2 does not initialize certain structure members, which allows remote attackers to cause a denial of service (invalid pointer access) or possibly have unspecified other impact via crafted (1) RV30 or (2) RV40 RealVideo data."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "2.7.1",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2015-09-06T02:59Z",
+        "lastModifiedDate": "2018-12-21T11:29Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "tempstorage",
+  "description": "Overview\n========\n\nA storage implementation which uses RAM to persist objects, much like\nMappingStorage. Unlike MappingStorage, it needs not be packed to get rid of\nnon-cyclic garbage and it does rudimentary conflict resolution. This is a\nripoff of Jim's Packless bsddb3 storage.\n\n**Please note: Usage of this package is deprecated, as it is known to randomly lose data, especially with Zope 4.**\n\nFor a detailed discussion see `#8 <https://github.com/zopefoundation/tempstorage/issues/8>`_ as well as `#12 <https://github.com/zopefoundation/tempstorage/issues/12>`_\n\nTo replace server-side sessions, cookies are probably your best bet, as these also get rid of any denial of service problems that server side sessions are vulnerable to.\n\nIf you need server side storage of sessions, consider using a normal store rather than tempstorage for your session data.\nFor details and suggestions see `this discussion in the pull request <https://github.com/zopefoundation/tempstorage/pull/14#issuecomment-520318459>`_ as well as the discussion in the aforementioned bug reports as well as `the discussion in Zope about the removal of the generated configuration <https://github.com/zopefoundation/Zope/pull/684>`_.\n\nChangelog\n=========\n\n5.1 (2019-08-15)\n----------------\n\n- Package is now officially deprecated as it was broken for many years. This \n  was/ is common knowledge in the zope community, but was not documented \n  anywhere and thus this package was still used by many community members \n  without knowing this. See\n  (`#8 <https://github.com/zopefoundation/tempstorage/issues/8>`_)\n  (`#12 <https://github.com/zopefoundation/tempstorage/issues/12>`_)\n\n\n5.0 (2019-05-10)\n----------------\n\n- Update PyPy version.\n\n- Drop Python 3.4 support.\n\n- Add support for Python 3.7.\n\n- Avoid RuntimeError in _takeOutGarbage. See `issue 7\n  <https://github.com/zopefoundation/tempstorage/issues/7>`_.\n\n\n4.0.1 (2017-11-27)\n------------------\n- Raise POSKeyError instead of KeyError in loadBefore.\n\n\n4.0 - 2017-03-09\n----------------\n\n- Drop Python 3.3 compatibility, add Python 3.6 compatibility.\n\n- Require ZODB 5.0 or newer.\n\n- Use `storage._lock` as a context manager.\n\n- Declare PyPy compatibility.\n\n\n3.0 - 2016-04-03\n----------------\n\n- Python 3.3-3.5 compatibility.\n\n\n2.12.2 - 2012-10-14\n-------------------\n\n- Explicitly state distribution dependencies instead of re-using the\n  ZODB test requirements.\n\n2.12.1 - 2010-09-29\n-------------------\n\n- Disabled ``check_tid_ordering_w_commit`` test from BasicStorage, as it uses\n  invalid test data.\n\n\n2.12.0 - 2010-09-25\n-------------------\n\n- Require at least ZODB 3.9 and adjusted method signatures to disuse versions.\n\n- Expanded dependency on ZODB3 to include the test extra.\n\n\n2.11.3 - 2010-06-05\n-------------------\n\n- Approximate PEP8 compliance.\n\n- Split out the ZODB protocol tests from the tests specific to the module.\n  Make the local tests use \"normal\" unittest conventions.\n\n- Comply with repository policy.\n\n- Clean imports, docstrings;  add an instance-level hook for GC parms.\n\n- Fix a test failure due to never-unghostified root in second connection.\n\n\n2.11.2 - 2009-08-03\n-------------------\n\n- Added change log and readme.\n\n- Lauchpad #143736, #271395: fixed AttributeError' on _ltid in TempStorage\n\n\n2.11.1 - 2008-08-05\n-------------------\n\n- Initial release as a stand-alone package.\n\n\n",
+  "requires_dist": [
+    "setuptools",
+    "ZODB (>=5.0)",
+    "zope.testing",
+    "mock ; extra == 'test'",
+    "zope.testrunner ; extra == 'test'"
+  ],
+  "requires_python": "",
+  "current_version": "5.1",
+  "released_versions": [
+    "2.11.0b1",
+    "2.11.1",
+    "2.11.2",
+    "2.11.3",
+    "2.12.0",
+    "2.12.1",
+    "2.12.2",
+    "3.0",
+    "4.0",
+    "4.0.1",
+    "5.0",
+    "5.1"
+  ]
+}

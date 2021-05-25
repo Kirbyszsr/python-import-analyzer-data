@@ -1,0 +1,23 @@
+{
+  "name": "async-timeout",
+  "description": "async-timeout\n=============\n.. image:: https://travis-ci.org/aio-libs/async-timeout.svg?branch=master\n    :target: https://travis-ci.org/aio-libs/async-timeout\n.. image:: https://codecov.io/gh/aio-libs/async-timeout/branch/master/graph/badge.svg\n    :target: https://codecov.io/gh/aio-libs/async-timeout\n.. image:: https://img.shields.io/pypi/v/async-timeout.svg\n    :target: https://pypi.python.org/pypi/async-timeout\n.. image:: https://badges.gitter.im/Join%20Chat.svg\n    :target: https://gitter.im/aio-libs/Lobby\n    :alt: Chat on Gitter\n\nasyncio-compatible timeout context manager.\n\n\nUsage example\n-------------\n\n\nThe context manager is useful in cases when you want to apply timeout\nlogic around block of code or in cases when ``asyncio.wait_for()`` is\nnot suitable. Also it's much faster than ``asyncio.wait_for()``\nbecause ``timeout`` doesn't create a new task.\n\nThe ``timeout(timeout, *, loop=None)`` call returns a context manager\nthat cancels a block on *timeout* expiring::\n\n   async with timeout(1.5):\n       await inner()\n\n1. If ``inner()`` is executed faster than in ``1.5`` seconds nothing\n   happens.\n2. Otherwise ``inner()`` is cancelled internally by sending\n   ``asyncio.CancelledError`` into but ``asyncio.TimeoutError`` is\n   raised outside of context manager scope.\n\n*timeout* parameter could be ``None`` for skipping timeout functionality.\n\n\nContext manager has ``.expired`` property for check if timeout happens\nexactly in context manager::\n\n   async with timeout(1.5) as cm:\n       await inner()\n   print(cm.expired)\n\nThe property is ``True`` if ``inner()`` execution is cancelled by\ntimeout context manager.\n\nIf ``inner()`` call explicitly raises ``TimeoutError`` ``cm.expired``\nis ``False``.\n\nInstallation\n------------\n\n::\n\n   $ pip install async-timeout\n\nThe library is Python 3 only!\n\n\n\nAuthors and License\n-------------------\n\nThe module is written by Andrew Svetlov.\n\nIt's *Apache 2* licensed and freely available.\n\n\nCHANGES\n=======\n\n3.0.1 (2018-10-09)\n------------------\n\n- More aggressive typing (#48)\n\n3.0.0 (2018-05-05)\n------------------\n\n- Drop Python 3.4, the minimal supported version is Python 3.5.3\n\n- Provide type annotations\n\n2.0.1 (2018-03-13)\n------------------\n\n* Fix ``PendingDeprecationWarning`` on Python 3.7 (#33)\n\n\n2.0.0 (2017-10-09)\n------------------\n\n* Changed `timeout <= 0` behaviour\n\n  * Backward incompatibility change, prior this version `0` was\n    shortcut for `None`\n  * when timeout <= 0 `TimeoutError` raised faster\n\n1.4.0 (2017-09-09)\n------------------\n\n* Implement `remaining` property (#20)\n\n  * If timeout is not started yet or started unconstrained:\n    `remaining` is `None`\n  * If timeout is expired: `remaining` is `0.0`\n  * All others: roughly amount of time before `TimeoutError` is triggered\n\n1.3.0 (2017-08-23)\n------------------\n\n* Don't suppress nested exception on timeout. Exception context points\n  on cancelled line with suspended `await` (#13)\n\n* Introduce `.timeout` property (#16)\n\n* Add methods for using as async context manager (#9)\n\n1.2.1 (2017-05-02)\n------------------\n\n* Support unpublished event loop's \"current_task\" api.\n\n\n1.2.0 (2017-03-11)\n------------------\n\n* Extra check on context manager exit\n\n* 0 is no-op timeout\n\n\n1.1.0 (2016-10-20)\n------------------\n\n* Rename to `async-timeout`\n\n1.0.0 (2016-09-09)\n------------------\n\n* The first release.\n\n\n",
+  "requires_dist": null,
+  "requires_python": ">=3.5.3",
+  "current_version": "3.0.1",
+  "released_versions": [
+    "1.0.0",
+    "1.1.0",
+    "1.2.0",
+    "1.2.1",
+    "1.3.0",
+    "1.4.0",
+    "2.0.0",
+    "2.0.1",
+    "3.0.0",
+    "3.0.1",
+    "4.0.0a0",
+    "4.0.0a1",
+    "4.0.0a2",
+    "4.0.0a3"
+  ]
+}

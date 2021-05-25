@@ -1,0 +1,965 @@
+[
+  {
+    "cveID": "CVE-2021-29046",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-17T11:15Z",
+    "lastModifiedDate": "2021-05-24T20:24Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site scripting (XSS) vulnerability in the Asset module's category selector input field in Liferay Portal 7.3.5 and Liferay DXP 7.3 before fix pack 1, allows remote attackers to inject arbitrary web script or HTML via the _com_liferay_asset_categories_admin_web_portlet_AssetCategoriesAdminPortlet_title parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://liferay.com",
+        "name": "http://liferay.com",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743501",
+        "name": "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/120743501",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32629",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-24T16:15Z",
+    "lastModifiedDate": "2021-05-24T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cranelift is an open-source code generator maintained by Bytecode Alliance. It translates a target-independent intermediate representation into executable machine code. There is a bug in 0.73 of the Cranelift x64 backend that can create a scenario that could result in a potential sandbox escape in a Wasm program. This bug was introduced in the new backend on 2020-09-08 and first included in a release on 2020-09-30, but the new backend was not the default prior to 0.73. The recently-released version 0.73 with default settings, and prior versions with an explicit build flag to select the new backend, are vulnerable. The bug in question performs a sign-extend instead of a zero-extend on a value loaded from the stack, under a specific set of circumstances. If those circumstances occur, the bug could allow access to memory addresses upto 2GiB before the start of the Wasm program heap. If the heap bound is larger than 2GiB, then it would be possible to read memory from a computable range dependent on the size of the heaps bound. The impact of this bug is highly dependent on heap implementation, specifically: * if the heap has bounds checks, and * does not rely exclusively on guard pages, and * the heap bound is 2GiB or smaller * then this bug cannot be used to reach memory from another Wasm program heap. The impact of the vulnerability is mitigated if there is no memory mapped in the range accessible using this bug, for example, if there is a 2 GiB guard region before the Wasm program heap. The bug in question performs a sign-extend instead of a zero-extend on a value loaded from the stack, when the register allocator reloads a spilled integer value narrower than 64 bits. This interacts poorly with another optimization: the instruction selector elides a 32-to-64-bit zero-extend operator when we know that an instruction producing a 32-bit value actually zeros the upper 32 bits of its destination register. Hence, we rely on these zeroed bits, but the type of the value is still i32, and the spill/reload reconstitutes those bits as the sign extension of the i32\u2019s MSB. The issue would thus occur when: * An i32 value in a Wasm program is greater than or equal to 0x8000_0000; * The value is spilled and reloaded by the register allocator due to high register pressure in the program between the value\u2019s definition and its use; * The value is produced by an instruction that we know to be \u201cspecial\u201d in that it zeroes the upper 32 bits of its destination: add, sub, mul, and, or; * The value is then zero-extended to 64 bits in the Wasm program; * The resulting 64-bit value is used. Under these circumstances there is a potential sandbox escape when the i32 value is a pointer. The usual code emitted for heap accesses zero-extends the Wasm heap address, adds it to a 64-bit heap base, and accesses the resulting address. If the zero-extend becomes a sign-extend, the program could reach backward and access memory up to 2GiB before the start of its heap. In addition to assessing the nature of the code generation bug in Cranelift, we have also determined that under specific circumstances, both Lucet and Wasmtime using this version of Cranelift may be exploitable. See referenced GitHub Advisory for more details."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/bytecodealliance/wasmtime/commit/95559c01aaa7c061088a433040f31e8291fb09d0",
+        "name": "https://github.com/bytecodealliance/wasmtime/commit/95559c01aaa7c061088a433040f31e8291fb09d0",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hpqh-2wqx-7qp5",
+        "name": "https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hpqh-2wqx-7qp5",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.fastly.com/security-advisories/memory-access-due-to-code-generation-flaw-in-cranelift-module",
+        "name": "https://www.fastly.com/security-advisories/memory-access-due-to-code-generation-flaw-in-cranelift-module",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://crates.io/crates/cranelift-codegen",
+        "name": "https://crates.io/crates/cranelift-codegen",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-1029",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-03-19T21:30Z",
+    "lastModifiedDate": "2019-09-26T17:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Stack consumption vulnerability in the WebCore::CSSSelector function in WebKit, as used in Apple Safari 4.0.4, Apple Safari on iPhone OS and iPhone OS for iPod touch, and Google Chrome 4.0.249, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a STYLE element composed of a large number of *> sequences."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/38398",
+        "name": "38398",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/11567",
+        "name": "11567",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/11574",
+        "name": "11574",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/43068",
+        "name": "43068",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00006.html",
+        "name": "SUSE-SR:2011:002",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0212",
+        "name": "ADV-2011-0212",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56527",
+        "name": "webkit-cssselector-dos(56527)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56524",
+        "name": "safari-chrome-css-bo(56524)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14301",
+        "name": "oval:org.mitre.oval:def:14301",
+        "refsource": "OVAL",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24287",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-14T12:15Z",
+    "lastModifiedDate": "2021-05-21T20:39Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The settings page of the Select All Categories and Taxonomies, Change Checkbox to Radio Buttons WordPress plugin before 1.3.2 did not properly sanitise the tab parameter before outputting it back, leading to a reflected Cross-Site Scripting issue"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wpscan.com/vulnerability/56e1bb56-bfc5-40dd-b2d0-edef43d89bdf",
+        "name": "https://wpscan.com/vulnerability/56e1bb56-bfc5-40dd-b2d0-edef43d89bdf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26146",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-11T20:15Z",
+    "lastModifiedDate": "2021-05-21T19:01Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered on Samsung Galaxy S3 i9305 4.4.4 devices. The WPA, WPA2, and WPA3 implementations reassemble fragments with non-consecutive packet numbers. An adversary can abuse this to exfiltrate selected fragments. This vulnerability is exploitable when another device sends fragmented frames and the WEP, CCMP, or GCMP data-confidentiality protocol is used. Note that WEP is vulnerable to this attack by design."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.fragattacks.com",
+        "name": "https://www.fragattacks.com",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "name": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+        "name": "[oss-security] 20210511 various 802.11 security issues - fragattacks.com",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32077",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T23:15Z",
+    "lastModifiedDate": "2021-05-19T18:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Primary Source Verification in VerityStream MSOW Solutions before 3.1.1 allows an anonymous internet user to discover Social Security Number (SSN) values via a brute-force attack on a (sometimes hidden) search field, because the last four SSN digits are part of the supported combination of search selectors. This discloses doctors' and nurses' social security numbers and PII."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.marbasec.com/blog/cve-2021-32077-fun-with-social-security-numbers",
+        "name": "https://www.marbasec.com/blog/cve-2021-32077-fun-with-social-security-numbers",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.veritystream.com/legacy/msow-solutions",
+        "name": "https://www.veritystream.com/legacy/msow-solutions",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32053",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-10T21:15Z",
+    "lastModifiedDate": "2021-05-19T17:11Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "JPA Server in HAPI FHIR before 5.4.0 allows a user to deny service (e.g., disable access to the database after the attack stops) via history requests. This occurs because of a SELECT COUNT statement that requires a full index scan, with an accompanying large amount of server resources if there are many simultaneous history requests."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/hapifhir/hapi-fhir/issues/2641",
+        "name": "https://github.com/hapifhir/hapi-fhir/issues/2641",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/hapifhir/hapi-fhir/pull/2642",
+        "name": "https://github.com/hapifhir/hapi-fhir/pull/2642",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://hapifhir.io",
+        "name": "https://hapifhir.io",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-24587",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-11T20:15Z",
+    "lastModifiedDate": "2021-05-19T14:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The 802.11 standard that underpins Wi-Fi Protected Access (WPA, WPA2, and WPA3) and Wired Equivalent Privacy (WEP) doesn't require that all fragments of a frame are encrypted under the same key. An adversary can abuse this to decrypt selected fragments when another device sends fragmented frames and the WEP, CCMP, or GCMP encryption key is periodically renewed."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.fragattacks.com",
+        "name": "https://www.fragattacks.com",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "name": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+        "name": "[oss-security] 20210511 various 802.11 security issues - fragattacks.com",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23383",
+    "cveASSIGNER": "report@snyk.io",
+    "publishedDate": "2021-05-04T09:15Z",
+    "lastModifiedDate": "2021-05-12T12:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The package handlebars before 4.7.7 are vulnerable to Prototype Pollution when selecting certain compiling options to compile templates coming from an untrusted source."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1279032",
+        "name": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1279032",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1279031",
+        "name": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1279031",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/handlebars-lang/handlebars.js/commit/f0589701698268578199be25285b2ebea1c1e427",
+        "name": "https://github.com/handlebars-lang/handlebars.js/commit/f0589701698268578199be25285b2ebea1c1e427",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1279030",
+        "name": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1279030",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-JS-HANDLEBARS-1279029",
+        "name": "https://snyk.io/vuln/SNYK-JS-HANDLEBARS-1279029",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26147",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-11T20:15Z",
+    "lastModifiedDate": "2021-05-11T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Linux kernel 5.8.9. The WEP, WPA, WPA2, and WPA3 implementations reassemble fragments even though some of them were sent in plaintext. This vulnerability can be abused to inject packets and/or exfiltrate selected fragments when another device sends fragmented frames and the WEP, CCMP, or GCMP data-confidentiality protocol is used."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.fragattacks.com",
+        "name": "https://www.fragattacks.com",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "name": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+        "name": "[oss-security] 20210511 various 802.11 security issues - fragattacks.com",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-15225",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-29T21:15Z",
+    "lastModifiedDate": "2021-05-10T17:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "django-filter is a generic system for filtering Django QuerySets based on user selections. In django-filter before version 2.4.0, automatically generated `NumberFilter` instances, whose value was later converted to an integer, were subject to potential DoS from maliciously input using exponential format with sufficiently large exponents. Version 2.4.0+ applies a `MaxValueValidator` with a a default `limit_value` of 1e50 to the form field used by `NumberFilter` instances. In addition, `NumberFilter` implements the new `get_max_validator()` which should return a configured validator instance to customise the limit, or else `None` to disable the additional validation. Users may manually apply an equivalent validator if they are not able to upgrade."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/carltongibson/django-filter/security/advisories/GHSA-x7gm-rfgv-w973",
+        "name": "https://github.com/carltongibson/django-filter/security/advisories/GHSA-x7gm-rfgv-w973",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/carltongibson/django-filter/commit/340cf7a23a2b3dcd7183f6a0d6c383e85b130d2b",
+        "name": "https://github.com/carltongibson/django-filter/commit/340cf7a23a2b3dcd7183f6a0d6c383e85b130d2b",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/django-filter/",
+        "name": "https://pypi.org/project/django-filter/",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/carltongibson/django-filter/releases/tag/2.4.0",
+        "name": "https://github.com/carltongibson/django-filter/releases/tag/2.4.0",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3393",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-04-01T14:15Z",
+    "lastModifiedDate": "2021-05-07T05:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An information leak was discovered in postgresql in versions before 13.2, before 12.6 and before 11.11. A user having UPDATE permission but not SELECT permission to a particular column could craft queries which, under some circumstances, might disclose values from that column in error messages. An attacker could use this flaw to obtain information stored in a column they are allowed to write but not read."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924005",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1924005",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210507-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20210507-0006/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-0778",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-02-19T00:02Z",
+    "lastModifiedDate": "2021-04-29T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple SQL injection vulnerabilities in XMB Forums 1.9.3 and earlier allow remote attackers to execute arbitrary SQL commands via the (1) $u2u_select array parameter to u2u.inc.php and (2) $val variable (fidpw0 cookie value) in today.php."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.gulftech.org/?node=research&article_id=00100-02122006",
+        "name": "http://www.gulftech.org/?node=research&article_id=00100-02122006",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.xmbforum.com/",
+        "name": "http://www.xmbforum.com/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/23117",
+        "name": "23117",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/23118",
+        "name": "23118",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/18821",
+        "name": "18821",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/16604",
+        "name": "16604",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/0529",
+        "name": "ADV-2006-0529",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24646",
+        "name": "xmbforum-multiple-sql-injection(24646)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/425084/100/0/threaded",
+        "name": "20060212 XMB Forums Multiple Vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://docs.xmbforum2.com/index.php?title=Security_Issue_History",
+        "name": "https://docs.xmbforum2.com/index.php?title=Security_Issue_History",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-2175",
+    "cveASSIGNER": "secalert_us@oracle.com",
+    "publishedDate": "2021-04-22T22:15Z",
+    "lastModifiedDate": "2021-04-23T19:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Vulnerability in the Database Vault component of Oracle Database Server. Supported versions that are affected are 12.1.0.2, 12.2.0.1, 18c and 19c. Easily exploitable vulnerability allows high privileged attacker having Create Any View, Select Any View privilege with network access via Oracle Net to compromise Database Vault. Successful attacks of this vulnerability can result in unauthorized read access to a subset of Database Vault accessible data. CVSS 3.1 Base Score 2.7 (Confidentiality impacts). CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpuapr2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20227",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-03-23T17:15Z",
+    "lastModifiedDate": "2021-04-23T06:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was found in SQLite's SELECT query functionality (src/select.c). This flaw allows an attacker who is capable of running SQL queries locally on the SQLite database to cause a denial of service or possible code execution by triggering a use-after-free. The highest threat from this vulnerability is to system availability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924886",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1924886",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.sqlite.org/releaselog/3_34_1.html",
+        "name": "https://www.sqlite.org/releaselog/3_34_1.html",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-04",
+        "name": "GLSA-202103-04",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210423-0010/",
+        "name": "https://security.netapp.com/advisory/ntap-20210423-0010/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-30459",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-14T18:15Z",
+    "lastModifiedDate": "2021-04-21T15:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A SQL Injection issue in the SQL Panel in Jazzband Django Debug Toolbar before 1.11.1, 2.x before 2.2.1, and 3.x before 3.2.1 allows attackers to execute SQL statements by changing the raw_sql input field of the SQL explain, analyze, or select form."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jazzband/django-debug-toolbar/security/advisories/GHSA-pghf-347x-c2gj",
+        "name": "https://github.com/jazzband/django-debug-toolbar/security/advisories/GHSA-pghf-347x-c2gj",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.djangoproject.com/weblog/2021/apr/14/debug-toolbar-security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2021/apr/14/debug-toolbar-security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jazzband/django-debug-toolbar/releases",
+        "name": "https://github.com/jazzband/django-debug-toolbar/releases",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28174",
+    "cveASSIGNER": "cve@cert.org.tw",
+    "publishedDate": "2021-04-08T04:15Z",
+    "lastModifiedDate": "2021-04-20T20:01Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Mitake smart stock selection system contains a broken authentication vulnerability. By manipulating the parameters in the URL, remote attackers can gain the privileged permissions to access transaction record, and fraudulent trading without login."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.twcert.org.tw/tw/cp-132-4625-4ccc6-1.html",
+        "name": "https://www.twcert.org.tw/tw/cp-132-4625-4ccc6-1.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23369",
+    "cveASSIGNER": "report@snyk.io",
+    "publishedDate": "2021-04-12T14:15Z",
+    "lastModifiedDate": "2021-04-19T19:51Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The package handlebars before 4.7.7 are vulnerable to Remote Code Execution (RCE) when selecting certain compiling options to compile templates coming from an untrusted source."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074952",
+        "name": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074952",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/handlebars-lang/handlebars.js/commit/b6d3de7123eebba603e321f04afdbae608e8fea8",
+        "name": "https://github.com/handlebars-lang/handlebars.js/commit/b6d3de7123eebba603e321f04afdbae608e8fea8",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/handlebars-lang/handlebars.js/commit/f0589701698268578199be25285b2ebea1c1e427",
+        "name": "https://github.com/handlebars-lang/handlebars.js/commit/f0589701698268578199be25285b2ebea1c1e427",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-JS-HANDLEBARS-1056767",
+        "name": "https://snyk.io/vuln/SNYK-JS-HANDLEBARS-1056767",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074951",
+        "name": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074951",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074950",
+        "name": "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074950",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20229",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-02-23T18:15Z",
+    "lastModifiedDate": "2021-03-30T15:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was found in PostgreSQL in versions before 13.2, before 12.6, before 11.11, before 10.16, before 9.6.21 and before 9.5.25. This flaw allows a user with SELECT privilege on one column to craft a special query that returns all columns of the table. The highest threat from this vulnerability is to confidentiality."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1925296",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1925296",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210326-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20210326-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-0736",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2017-07-27T21:29Z",
+    "lastModifiedDate": "2021-03-30T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Apache HTTP Server versions 2.4.0 to 2.4.23, mod_session_crypto was encrypting its data/cookie using the configured ciphers with possibly either CBC or ECB modes of operation (AES256-CBC by default), hence no selectable or builtin authenticated encryption. This made it vulnerable to padding oracle attacks, particularly with CBC."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2016-0736",
+        "name": "https://httpd.apache.org/security/vulnerabilities_24.html#CVE-2016-0736",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201701-36",
+        "name": "GLSA-201701-36",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbux03725en_us",
+        "name": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbux03725en_us",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1037508",
+        "name": "1037508",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/95078",
+        "name": "95078",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/40961/",
+        "name": "40961",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2017-04",
+        "name": "https://www.tenable.com/security/tns-2017-04",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2017/dsa-3796",
+        "name": "DSA-3796",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/HT208221",
+        "name": "https://support.apple.com/HT208221",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1414",
+        "name": "RHSA-2017:1414",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1413",
+        "name": "RHSA-2017:1413",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1161",
+        "name": "RHSA-2017:1161",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:0906",
+        "name": "RHSA-2017:0906",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2017-1415.html",
+        "name": "RHSA-2017:1415",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20180423-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20180423-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/56c2e7cc9deb1c12a843d0dc251ea7fd3e7e80293cde02fcd65286ba@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/84a3714f0878781f6ed84473d1a503d2cc382277e100450209231830@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd18c3c43602e66f9cdcf09f1de233804975b9572b0456cc582390b6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re3d27b6250aa8548b8845d314bb8a350b3df326cacbbfdfe4d455234@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc998b18880df98bafaade071346690c2bc1444adaa1a1ea464b93f0a@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r04e89e873d54116a0635ef2f7061c15acc5ed27ef7500997beb65d6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [10/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re1e3a24664d35bcd0a0e793e0b5fc6ca6c107f99a1b2c545c5d4b467@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888194 [10/13] - /httpd/site/trunk/content/security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9f93cf6dde308d42a9c807784e8102600d0397f5f834890708bf6920@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  }
+]

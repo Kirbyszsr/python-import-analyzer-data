@@ -1,0 +1,722 @@
+[
+  {
+    "cveID": "CVE-2020-17891",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TP-Link Archer C1200 firmware version 1.13 Build 2018/01/24 rel.52299 EU has a XSS vulnerability allowing a remote attacker to execute arbitrary code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/sandboxescape/TP-Link-wireless-router-Archer-C1200---Cross-Site-Scripting/",
+        "name": "https://github.com/sandboxescape/TP-Link-wireless-router-Archer-C1200---Cross-Site-Scripting/",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29523",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in `tf.raw_ops.AddManySparseToTensorsMap`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/kernels/sparse_tensors_map_ops.cc#L257) takes the values specified in `sparse_shape` as dimensions for the output shape. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "name": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29534",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in `tf.raw_ops.SparseConcat`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/b432a38fe0e1b4b904a6c222cbce794c39703e87/tensorflow/core/kernels/sparse_concat_op.cc#L76) takes the values specified in `shapes[0]` as dimensions for the output shape. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "name": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6j9c-grc6-5m6g",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6j9c-grc6-5m6g",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29584",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in caused by an integer overflow in constructing a new tensor shape. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/0908c2f2397c099338b901b067f6495a5b96760b/tensorflow/core/kernels/sparse_split_op.cc#L66-L70) builds a dense shape without checking that the dimensions would not result in overflow. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xvjm-fvxx-q3hv",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xvjm-fvxx-q3hv",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/4c0ee937c0f61c4fc5f5d32d9bb4c67428012a60",
+        "name": "https://github.com/tensorflow/tensorflow/commit/4c0ee937c0f61c4fc5f5d32d9bb4c67428012a60",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29608",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Due to lack of validation in `tf.raw_ops.RaggedTensorToTensor`, an attacker can exploit an undefined behavior if input arguments are empty. The implementation(https://github.com/tensorflow/tensorflow/blob/656e7673b14acd7835dc778867f84916c6d1cac2/tensorflow/core/kernels/ragged_tensor_to_tensor_op.cc#L356-L360) only checks that one of the tensors is not empty, but does not check for the other ones. There are multiple `DCHECK` validations to prevent heap OOB, but these are no-op in release builds, hence they don't prevent anything. The fix will be included in TensorFlow 2.5.0. We will also cherrypick these commits on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/c4d7afb6a5986b04505aca4466ae1951686c80f6",
+        "name": "https://github.com/tensorflow/tensorflow/commit/c4d7afb6a5986b04505aca4466ae1951686c80f6",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/f94ef358bb3e91d517446454edff6535bcfe8e4a",
+        "name": "https://github.com/tensorflow/tensorflow/commit/f94ef358bb3e91d517446454edff6535bcfe8e4a",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-rgvq-pcvf-hx75",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-rgvq-pcvf-hx75",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/b761c9b652af2107cfbc33efd19be0ce41daa33e",
+        "name": "https://github.com/tensorflow/tensorflow/commit/b761c9b652af2107cfbc33efd19be0ce41daa33e",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-0222",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2013-11-23T18:55Z",
+    "lastModifiedDate": "2021-05-13T20:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The SUSE coreutils-i18n.patch for GNU coreutils allows context-dependent attackers to cause a denial of service (segmentation fault and crash) via a long string to the uniq command, which triggers a stack-based buffer overflow in the alloca function."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.novell.com/show_bug.cgi?id=796243",
+        "name": "https://bugzilla.novell.com/show_bug.cgi?id=796243",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://build.opensuse.org/request/show/149348#diff_headline_coreutils-i18n-patch_diff_action_0_submit_0_19",
+        "name": "https://build.opensuse.org/request/show/149348#diff_headline_coreutils-i18n-patch_diff_action_0_submit_0_19",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1652.html",
+        "name": "RHSA-2013:1652",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=903465",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=903465",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-0221",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2013-11-23T18:55Z",
+    "lastModifiedDate": "2021-05-13T20:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The SUSE coreutils-i18n.patch for GNU coreutils allows context-dependent attackers to cause a denial of service (segmentation fault and crash) via a long string to the sort command, when using the (1) -d or (2) -M switch, which triggers a stack-based buffer overflow in the alloca function."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=903464",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=903464",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "https://build.opensuse.org/request/show/149348#diff_headline_coreutils-i18n-patch_diff_action_0_submit_0_19",
+        "name": "https://build.opensuse.org/request/show/149348#diff_headline_coreutils-i18n-patch_diff_action_0_submit_0_19",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://bugzilla.novell.com/show_bug.cgi?id=798538",
+        "name": "https://bugzilla.novell.com/show_bug.cgi?id=798538",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1652.html",
+        "name": "RHSA-2013:1652",
+        "refsource": "REDHAT",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-0223",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2013-11-23T18:55Z",
+    "lastModifiedDate": "2021-05-13T20:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The SUSE coreutils-i18n.patch for GNU coreutils allows context-dependent attackers to cause a denial of service (segmentation fault and crash) via a long string to the join command, when using the -i switch, which triggers a stack-based buffer overflow in the alloca function."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.novell.com/show_bug.cgi?id=798541",
+        "name": "https://bugzilla.novell.com/show_bug.cgi?id=798541",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1652.html",
+        "name": "RHSA-2013:1652",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=903466",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=903466",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://build.opensuse.org/request/show/149348#diff_headline_coreutils-i18n-patch_diff_action_0_submit_0_19",
+        "name": "https://build.opensuse.org/request/show/149348#diff_headline_coreutils-i18n-patch_diff_action_0_submit_0_19",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24243",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-13T17:40Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An AJAX action registered by the WPBakery Page Builder (Visual Composer) Clipboard WordPress plugin before 4.5.6 did not have capability checks nor sanitization, allowing low privilege users (subscriber+) to call it and set XSS payloads, which will be triggered in all backend pages."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wpscan.com/vulnerability/3bc0733a-b949-40c9-a5fb-f56814fc4af3",
+        "name": "https://wpscan.com/vulnerability/3bc0733a-b949-40c9-a5fb-f56814fc4af3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://codecanyon.net/item/visual-composer-clipboard/8897711",
+        "name": "https://codecanyon.net/item/visual-composer-clipboard/8897711",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24244",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-13T17:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An AJAX action registered by the WPBakery Page Builder (Visual Composer) Clipboard WordPress plugin before 4.5.8 did not have capability checks, allowing low privilege users, such as subscribers, to update the license options (key, email)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wpscan.com/vulnerability/354b98d8-46a1-4189-b347-198701ea59b9",
+        "name": "https://wpscan.com/vulnerability/354b98d8-46a1-4189-b347-198701ea59b9",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://codecanyon.net/item/visual-composer-clipboard/8897711",
+        "name": "https://codecanyon.net/item/visual-composer-clipboard/8897711",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-10196",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-05-30T21:29Z",
+    "lastModifiedDate": "2021-05-13T11:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "NULL pointer dereference vulnerability in the rebuild_vlists function in lib/dotgen/conc.c in the dotgen library in Graphviz 2.40.1 allows remote attackers to cause a denial of service (application crash) via a crafted file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TWUEEJPMS5LAROYJYY6FREOTI6VPN3M4/",
+        "name": "FEDORA-2018-fd850e033d",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/N6VR2CT3LD52GWAQUZAOSEXSYE3O7HGN/",
+        "name": "FEDORA-2018-25674bb48e",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://gitlab.com/graphviz/graphviz/issues/1367",
+        "name": "https://gitlab.com/graphviz/graphviz/issues/1367",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1579254",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1579254",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3731-1/",
+        "name": "USN-3731-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00014.html",
+        "name": "[debian-lts-announce] 20210513 [SECURITY] [DLA 2659-1] graphviz security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-28018",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-13T03:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Exim 4 before 4.94.2 allows Use After Free in smtp_reset in certain situations that may be common for builds with OpenSSL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exim.org/static/doc/security/CVE-2020-qualys/CVE-2020-28018-OCORK.txt",
+        "name": "https://www.exim.org/static/doc/security/CVE-2020-qualys/CVE-2020-28018-OCORK.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/5",
+        "name": "[oss-security] 20210511 [CVE-2020-28018] Use-After-Free on Exim Question",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/6",
+        "name": "[oss-security] 20210511 Re: [CVE-2020-28018] Use-After-Free on Exim Question",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/17",
+        "name": "[oss-security] 20210511 Re: [CVE-2020-28018] Use-After-Free on Exim Question",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/15",
+        "name": "[oss-security] 20210511 Re: [CVE-2020-28018] Use-After-Free on Exim Question",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/14",
+        "name": "[oss-security] 20210511 Re: [CVE-2020-28018] Use-After-Free on Exim Question",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/12/2",
+        "name": "[oss-security] 20210512 Re: [CVE-2020-28018] Use-After-Free on Exim Question",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/12/3",
+        "name": "[oss-security] 20210512 Re: [CVE-2020-28018] Use-After-Free on Exim Question",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-3475",
+    "cveASSIGNER": "security@microfocus.com",
+    "publishedDate": "2019-02-20T22:29Z",
+    "lastModifiedDate": "2021-05-12T20:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A local privilege escalation vulnerability in the famtd component of Micro Focus Filr 3.0 allows a local attacker authenticated as a low privilege user to escalate to root. This vulnerability affects all versions of Filr 3.x prior to Security Update 6."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.microfocus.com/kb/doc.php?id=7023727",
+        "name": "https://support.microfocus.com/kb/doc.php?id=7023727",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://download.novell.com/Download?buildid=nZUCSDkvpxk~",
+        "name": "https://download.novell.com/Download?buildid=nZUCSDkvpxk~",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/46450/",
+        "name": "46450",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-3474",
+    "cveASSIGNER": "security@microfocus.com",
+    "publishedDate": "2019-02-20T22:29Z",
+    "lastModifiedDate": "2021-05-12T20:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A path traversal vulnerability in the web application component of Micro Focus Filr 3.x allows a remote attacker authenticated as a low privilege user to download arbitrary files from the Filr server. This vulnerability affects all versions of Filr 3.x prior to Security Update 6."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.microfocus.com/kb/doc.php?id=7023726",
+        "name": "https://support.microfocus.com/kb/doc.php?id=7023726",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://download.novell.com/Download?buildid=nZUCSDkvpxk~",
+        "name": "https://download.novell.com/Download?buildid=nZUCSDkvpxk~",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/46450/",
+        "name": "46450",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21264",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-03T16:15Z",
+    "lastModifiedDate": "2021-05-12T20:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "October is a free, open-source, self-hosted CMS platform based on the Laravel PHP Framework. A bypass of CVE-2020-26231 (fixed in 1.0.470/471 and 1.1.1) was discovered that has the same impact as CVE-2020-26231 & CVE-2020-15247. An authenticated backend user with the `cms.manage_pages`, `cms.manage_layouts`, or `cms.manage_partials` permissions who would **normally** not be permitted to provide PHP code to be executed by the CMS due to `cms.enableSafeMode` being enabled is able to write specific Twig code to escape the Twig sandbox and execute arbitrary PHP. This is not a problem for anyone that trusts their users with those permissions to normally write & manage PHP within the CMS by not having `cms.enableSafeMode` enabled, but would be a problem for anyone relying on `cms.enableSafeMode` to ensure that users with those permissions in production do not have access to write & execute arbitrary PHP. Issue has been patched in Build 472 (v1.0.472) and v1.1.2. As a workaround, apply https://github.com/octobercms/october/commit/f63519ff1e8d375df30deba63156a2fc97aa9ee7 to your installation manually if unable to upgrade to Build 472 or v1.1.2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/octobercms/october/security/advisories/GHSA-fcr8-6q7r-m4wg",
+        "name": "https://github.com/octobercms/october/security/advisories/GHSA-fcr8-6q7r-m4wg",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24266",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-05T19:15Z",
+    "lastModifiedDate": "2021-05-11T16:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The \u201cThe Plus Addons for Elementor Page Builder Lite\u201d WordPress Plugin before 2.0.6 has four widgets that are vulnerable to stored Cross-Site Scripting (XSS) by lower-privileged users such as contributors, all via a similar method."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wpscan.com/vulnerability/78014ddd-1cc2-4723-8194-4bf478888578",
+        "name": "https://wpscan.com/vulnerability/78014ddd-1cc2-4723-8194-4bf478888578",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/",
+        "name": "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27617",
+    "cveASSIGNER": "cna@sap.com",
+    "publishedDate": "2021-05-11T15:15Z",
+    "lastModifiedDate": "2021-05-11T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Integration Builder Framework of SAP Process Integration versions - 7.10, 7.11, 7.20, 7.30, 7.31, 7.40, 7.50, does not sufficiently validate an XML document uploaded from local source. An attacker can craft a malicious XML which when uploaded and parsed by the application, could lead to Denial-of-service conditions due to consumption of a large amount of system memory, thus highly impacting system availability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://launchpad.support.sap.com/#/notes/3012021",
+        "name": "https://launchpad.support.sap.com/#/notes/3012021",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=576094655",
+        "name": "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=576094655",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27618",
+    "cveASSIGNER": "cna@sap.com",
+    "publishedDate": "2021-05-11T15:15Z",
+    "lastModifiedDate": "2021-05-11T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Integration Builder Framework of SAP Process Integration versions - 7.10, 7.11, 7.20, 7.30, 7.31, 7.40, 7.50, does not check the file type extension of the file uploaded from local source. An attacker could craft a malicious file and upload it to the application, which could lead to denial of service and impact the availability of the application."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://launchpad.support.sap.com/#/notes/3012021",
+        "name": "https://launchpad.support.sap.com/#/notes/3012021",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=576094655",
+        "name": "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=576094655",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24261",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-05T19:15Z",
+    "lastModifiedDate": "2021-05-11T15:14Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The \u201cHT Mega \u2013 Absolute Addons for Elementor Page Builder\u201d WordPress Plugin before 1.5.7 has several widgets that are vulnerable to stored Cross-Site Scripting (XSS) by lower-privileged users such as contributors, all via a similar method."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wpscan.com/vulnerability/0377705d-29e9-47db-a5bb-8acaf311a38f",
+        "name": "https://wpscan.com/vulnerability/0377705d-29e9-47db-a5bb-8acaf311a38f",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/",
+        "name": "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24262",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-05T19:15Z",
+    "lastModifiedDate": "2021-05-11T15:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The \u201cWooLentor \u2013 WooCommerce Elementor Addons + Builder\u201d WordPress Plugin before 1.8.6 has a widget that is vulnerable to stored Cross-Site Scripting (XSS) by lower-privileged users such as contributors, all via a similar method."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/",
+        "name": "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://wpscan.com/vulnerability/d6d16357-2bc3-4053-8274-d0275026e56b",
+        "name": "https://wpscan.com/vulnerability/d6d16357-2bc3-4053-8274-d0275026e56b",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

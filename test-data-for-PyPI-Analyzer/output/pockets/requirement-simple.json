@@ -1,0 +1,40 @@
+{
+  "name": "pockets",
+  "description": "Pockets full of useful Python tools!\n====================================\n\n*Let me check my pockets...*\n----------------------------\n\nThe Pockets library pulls together many of the Python helper functions I've\nfound useful over the years.\n\nIf you've worked on a project that exports an API and accesses a data store,\nyou've probably seen some code that looks like this::\n\n    # Receive a data type with underscores from some API\n    data_type = 'user_preference'\n\n    # Convert underscored data type to CamelCase to match the data model\n    model_name = camel(data_type)\n\n    # Resolve the model name into a model class\n    model_class = resolve(model_name, modules=[\"webapp.model.admin\",\n                                               \"webapp.model.user\",\n                                               \"webapp.model.businesslogic\"]\n\n    # Instantiate the model class and do stuff with the instance...\n    instance = model_class()\n\n\nThere's an impedance mismatch any time you work with two different frameworks;\nespecially when you want to update your back-end while maintaining legacy\ncompatibility with an external API.\n\nPockets is full of highly tested, well maintained functions that help bridge\nthe gap. Here are just a few examples...\n\n.. rubric :: Easily get the right logger no matter where you are\n\n::\n\n    >>> from pockets.autolog import log\n    >>> log.error(\"Always log from the correct module.Class!\")\n    mymodule.MyClass: Always log from the correct module.Class!\n\n.. rubric :: Convert underscore_separated string to CamelCase\n\n::\n\n    >>> from pockets import camel\n    >>> camel(\"xml_http_request\", upper_segments=[1])\n    'XmlHTTPRequest'\n\n.. rubric :: Convert CamelCase string to underscore_separated\n\n::\n\n    >>> from pockets import uncamel\n    >>> uncamel(\"XmlHTTPRequest\")\n    'xml_http_request'\n\n.. rubric :: Resolve a string into an object\n\n::\n\n    >>> from pockets import resolve\n    >>> resolve(\"calendar.TextCalendar\")\n    <class 'calendar.TextCalendar'>\n\n.. rubric :: Peek ahead iterator\n\n::\n\n    >>> from pockets import iterpeek\n    >>> p = iterpeek([\"a\", \"b\", \"c\", \"d\", \"e\"])\n    >>> p.peek()\n    'a'\n    >>> p.next()\n    'a'\n    >>> p.peek(3)\n    ['b', 'c', 'd']\n\n\nDownloads and Docs\n------------------\n\nFull documentation is available on `Read the Docs\n<http://pockets.readthedocs.org>`_.\n\nBuilt packages are available on `PyPI <https://pypi.python.org/pypi/pockets>`_.\n\n`Source code <https://github.com/RobRuana/pockets>`_ is available on `GitHub\n<https://github.com/RobRuana/pockets>`_. Feel free to:\n\n- `Create an issue <https://github.com/RobRuana/pockets/issues>`_ to request a\n  feature or a report a bug.\n- `Fork the repository <https://github.com/RobRuana/pockets/fork>`_ and make\n  changes to the **master** branch for next release.\n- Send a pull request and pester the maintainer until it's merged. Make sure\n  to add yourself to `AUTHORS\n  <https://github.com/RobRuana/pockets/blob/master/AUTHORS>`_ and update\n  `CHANGES <https://github.com/RobRuana/pockets/blob/master/CHANGES>`_.\n\n\nBuild Status\n------------\n\n.. image:: https://travis-ci.org/RobRuana/pockets.svg\n    :target: https://travis-ci.org/RobRuana/pockets\n    :alt: Build Status\n\n\n.. image:: https://coveralls.io/repos/RobRuana/pockets/badge.svg\n    :target: https://coveralls.io/r/RobRuana/pockets\n    :alt: Coverage Status\n\n\n.. image:: https://readthedocs.org/projects/pockets/badge/?version=latest\n    :target: https://readthedocs.org/projects/pockets/?badge=latest\n    :alt: Documentation Status\n\n\n\n",
+  "requires_dist": [
+    "six (>=1.5.2)"
+  ],
+  "requires_python": "",
+  "current_version": "0.9.1",
+  "released_versions": [
+    "0.1",
+    "0.2",
+    "0.2.1",
+    "0.2.2",
+    "0.2.3",
+    "0.2.4",
+    "0.3",
+    "0.3.1",
+    "0.3.2",
+    "0.4",
+    "0.4.1",
+    "0.4.2",
+    "0.5.0",
+    "0.5.1",
+    "0.6",
+    "0.6.1",
+    "0.6.2",
+    "0.6.3",
+    "0.6.4",
+    "0.6.5",
+    "0.6.6",
+    "0.6.7",
+    "0.6.8",
+    "0.7",
+    "0.7.1",
+    "0.7.2",
+    "0.8",
+    "0.9",
+    "0.9.1"
+  ]
+}

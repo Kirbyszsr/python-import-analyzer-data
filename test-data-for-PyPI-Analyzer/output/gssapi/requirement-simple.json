@@ -1,0 +1,32 @@
+{
+  "name": "gssapi",
+  "description": "=============\nPython-GSSAPI\n=============\n\n\n\n\n\n.. image:: https://badge.fury.io/gh/pythongssapi%2Fpython-gssapi.svg\n    :target: http://badge.fury.io/gh/pythongssapi%2Fpython-gssapi\n\n.. image:: https://badge.fury.io/py/gssapi.svg\n    :target: http://badge.fury.io/py/gssapi\n\nPython-GSSAPI provides both low-level and high level wrappers around the GSSAPI\nC libraries.  While it focuses on the Kerberos mechanism, it should also be\nuseable with other GSSAPI mechanisms.\n\nDocumentation for the latest released version (including pre-release versions)\ncan be found at\n`https://pythongssapi.github.io/python-gssapi/stable <https://pythongssapi.github.io/python-gssapi/stable>`_.\n\nDocumentation for the latest commit on main can be found at\n`https://pythongssapi.github.io/python-gssapi/latest <https://pythongssapi.github.io/python-gssapi/latest>`_.\n\nRequirements\n============\n\nBasic\n-----\n\n* A working implementation of GSSAPI (such as from MIT Kerberos)\n  which supports delegation and includes header files\n\n* a C compiler (such as GCC)\n\n* Python 3.6+ (older releases support older versions, but are unsupported)\n\n* the `decorator` python package\n\nCompiling from Scratch\n----------------------\n\nTo compile from scratch, you will need Cython >= 0.21.1.\n\nFor Running the Tests\n---------------------\n\n* the `nose` package\n\n* the `k5test` package\n\nTo install test dependencies using pip:\n\n::\n\n    $ pip install -r test-requirements.txt # Optional, for running test suite\n\nInstallation\n============\n\nEasy Way\n--------\n\n::\n\n    $ pip install gssapi\n\nFrom the Git Repo\n-----------------\n\nAfter being sure to install all the requirements,\n\n::\n\n    $ git clone https://github.com/pythongssapi/python-gssapi.git\n    $ python setup.py build\n    $ python setup.py install\n\nTests\n=====\n\nThe tests for for Python-GSSAPI live in `gssapi.tests`.  In order to\nrun the tests, you must have an MIT Kerberos installation (including\nthe KDC).  The tests create a self-contained Kerberos setup, so running\nthe tests will not interfere with any existing Kerberos installations.\n\nStructure\n=========\n\nPython-GSSAPI is composed of two parts: a low-level C-style API which\nthinly wraps the underlying RFC 2744 methods, and a high-level, Pythonic\nAPI (which is itself a wrapper around the low-level API).  Examples may\nbe found in the `examples` directory.\n\nLow-Level API\n-------------\n\nThe low-level API lives in `gssapi.raw`.  The methods contained therein\nare designed to match closely with the original GSSAPI C methods.  All\nrelevant methods and classes may be imported directly from `gssapi.raw`.\nExtension methods will only be imported if they are present.  The low-level\nAPI follows the given format:\n\n* Names match the RFC 2744 specification, with the `gssapi_`\n  prefix removed\n\n* Parameters which use C int constants as enums have\n  `enum.IntEnum` classes defined, and thus may be passed\n  either the enum members or integers\n\n* In cases where a specific constant is passed in the C API to represent\n  a default value, `None` should be passed instead\n\n* In cases where non-integer constants would be used in the API (i.e.\n  OIDs), enum-like objects have been defined containing named references\n  to values specified in RFC 2744.\n\n* Major and minor error codes are returned by raising\n  `gssapi.raw.GSSError`.  The major error codes have exceptions\n  defined in in `gssapi.raw.exceptions` to make it easier to catch specific\n  errors or categories of errors.\n\n* All other relevant output values are returned via named tuples.\n\nHigh-Level API\n--------------\n\nThe high-level API lives directly under `gssapi`.  The classes\ncontained in each file are designed to provide a more Pythonic, Object-Oriented\nview of GSSAPI.  The exceptions from the low-level API, plus several additional\nexceptions, live in `gssapi.exceptions`.  The rest of the classes may be\nimported directly from `gssapi`.  Only classes are exported by `gssapi` --\nall functions are methods of classes in the high-level API.\n\nPlease note that QoP is not supported in the high-level API, since it has been\ndeprecated.\n\nExtensions\n----------\n\nIn addition to RFC 2743/2744, Python-GSSAPI also has support for:\n\n* RFC 5587 (Extended GSS Mechanism Inquiry APIs)\n\n* RFC 5588 (GSS-API Extension for Storing Delegated Credentials)\n\n* (Additional) Credential Store Extension\n\n* Services4User\n\n* Credentials import-export\n\n* RFC 6680 (GSS-API Naming Extensions)\n\n* DCE and IOV MIC extensions\n\n* `acquire_cred_with_password` and `add_cred_with_password`\n\n* GGF Extensions\n\nThe Team\n========\n\n(GitHub usernames in parentheses)\n\n* Robbie Harwood (@frozencemetery) - current maintainer and developer\n* Simo Sorce (@simo5) - developer\n* Solly Ross (@directxman12) - author emeritus\n* Hugh Cole-Baker (@sigmaris) - author emeritus\n\nGet Involved\n============\n\nWe welcome new contributions in the form of Issues and Pull Requests on\nGithub.  If you would like to join our discussions, you can find us on\n`Freenode <https://webchat.freenode.net/>`_ IRC, channel `#python-gssapi\n<irc://freenode.net/python-gssapi>`_.\n\n\n",
+  "requires_dist": [
+    "decorator"
+  ],
+  "requires_python": ">=3.6.*",
+  "current_version": "1.6.12",
+  "released_versions": [
+    "1.0.0",
+    "1.1.0",
+    "1.1.1",
+    "1.1.3",
+    "1.1.4",
+    "1.2.0",
+    "1.2.4a1",
+    "1.3.0",
+    "1.4.1",
+    "1.5.0",
+    "1.5.1",
+    "1.6.0",
+    "1.6.1",
+    "1.6.10",
+    "1.6.11",
+    "1.6.12",
+    "1.6.2",
+    "1.6.5",
+    "1.6.6",
+    "1.6.8",
+    "1.6.9"
+  ]
+}

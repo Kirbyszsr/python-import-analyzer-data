@@ -1,0 +1,1577 @@
+[
+  {
+    "cveID": "CVE-2020-7385",
+    "cveASSIGNER": "cve@rapid7.com",
+    "publishedDate": "2021-04-23T16:15Z",
+    "lastModifiedDate": "2021-05-14T14:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "By launching the drb_remote_codeexec exploit, a Metasploit Framework user will inadvertently expose Metasploit to the same deserialization issue that is exploited by that module, due to the reliance on the vulnerable Distributed Ruby class functions. Since Metasploit Framework typically runs with elevated privileges, this can lead to a system compromise on the Metasploit workstation. Note that an attacker would have to lie in wait and entice the Metasploit user to run the affected module against a malicious endpoint in a \"hack-back\" type of attack. Metasploit is only vulnerable when the drb_remote_codeexec module is running. In most cases, this cannot happen automatically."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/rapid7/metasploit-framework/pull/14335",
+        "name": "https://github.com/rapid7/metasploit-framework/pull/14335",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/rapid7/metasploit-framework/pull/14300",
+        "name": "https://github.com/rapid7/metasploit-framework/pull/14300",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://help.rapid7.com/metasploit/release-notes/archive/2020/10/",
+        "name": "https://help.rapid7.com/metasploit/release-notes/archive/2020/10/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-36128",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-07T11:15Z",
+    "lastModifiedDate": "2021-05-13T14:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Pax Technology PAXSTORE v7.0.8_20200511171508 and lower is affected by a token spoofing vulnerability. Each payment terminal has a session token (called X-Terminal-Token) to access the marketplace. This allows the store to identify the terminal and make available the applications distributed by its reseller. By intercepting HTTPS traffic from the application store, it is possible to collect the request responsible for assigning the X-Terminal-Token to the terminal, which makes it possible to craft an X-Terminal-Token pretending to be another device. An attacker can use this behavior to authenticate its own payment terminal in the application store through token impersonation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://marketing.paxtechnology.com/about-pax",
+        "name": "https://marketing.paxtechnology.com/about-pax",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://www.whatspos.com/",
+        "name": "https://www.whatspos.com/",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://blog.pridesec.com.br/p/4c972078-5f01-419e-8bea-cf31ff2e3670/",
+        "name": "https://blog.pridesec.com.br/p/4c972078-5f01-419e-8bea-cf31ff2e3670/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21300",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-09T20:15Z",
+    "lastModifiedDate": "2021-05-05T14:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Git is an open-source distributed revision control system. In affected versions of Git a specially crafted repository that contains symbolic links as well as files using a clean/smudge filter such as Git LFS, may cause just-checked out script to be executed while cloning onto a case-insensitive file system such as NTFS, HFS+ or APFS (i.e. the default file systems on Windows and macOS). Note that clean/smudge filters have to be configured for that. Git for Windows configures Git LFS by default, and is therefore vulnerable. The problem has been patched in the versions published on Tuesday, March 9th, 2021. As a workaound, if symbolic link support is disabled in Git (e.g. via `git config --global core.symlinks false`), the described attack won't work. Likewise, if no clean/smudge filters such as Git LFS are configured globally (i.e. _before_ cloning), the attack is foiled. As always, it is best to avoid cloning repositories from untrusted sources. The earliest impacted version is 2.14.2. The fix versions are: 2.30.1, 2.29.3, 2.28.1, 2.27.1, 2.26.3, 2.25.5, 2.24.4, 2.23.4, 2.22.5, 2.21.4, 2.20.5, 2.19.6, 2.18.5, 2.17.62.17.6."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/git/git/commit/684dd4c2b414bcf648505e74498a608f28de4592",
+        "name": "https://github.com/git/git/commit/684dd4c2b414bcf648505e74498a608f28de4592",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://git-scm.com/docs/gitattributes#_filter",
+        "name": "https://git-scm.com/docs/gitattributes#_filter",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/git/git/security/advisories/GHSA-8prw-h3cq-mghm",
+        "name": "https://github.com/git/git/security/advisories/GHSA-8prw-h3cq-mghm",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lore.kernel.org/git/xmqqim6019yd.fsf@gitster.c.googlers.com/",
+        "name": "https://lore.kernel.org/git/xmqqim6019yd.fsf@gitster.c.googlers.com/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresymlinks",
+        "name": "https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresymlinks",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/09/3",
+        "name": "[oss-security] 20210309 git: malicious repositories can execute remote code while cloning",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LCLJJLKKMS5WRFO6C475AOUZTWQLIARX/",
+        "name": "FEDORA-2021-63fcbd126e",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LMXX2POK5X576BSDWSXGU7EIK6I72ERU/",
+        "name": "FEDORA-2021-ffd0b2108d",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BBPNGLQSYJHLZZ37BO42YY6S5OTIF4L4/",
+        "name": "FEDORA-2021-03e61a6647",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212320",
+        "name": "https://support.apple.com/kb/HT212320",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Apr/60",
+        "name": "20210427 APPLE-SA-2021-04-26-10 Xcode 12.5",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-01",
+        "name": "GLSA-202104-01",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0214",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-28T22:42Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the distributed or centralized periodic packet management daemon (PPMD) of Juniper Networks Junos OS may cause receipt of a malformed packet to crash and restart the PPMD process, leading to network destabilization, service interruption, and a Denial of Service (DoS) condition. Continued receipt and processing of these malformed packets will repeatedly crash the PPMD process and sustain the Denial of Service (DoS) condition. Due to the nature of the specifically crafted packet, exploitation of this issue requires direct, adjacent connectivity to the vulnerable component. This issue affects Juniper Networks Junos OS: 17.3 versions prior to 17.3R3-S11; 17.4 versions prior to 17.4R2-S12, 17.4R3-S4; 18.1 versions prior to 18.1R3-S12; 18.2 versions prior to 18.2R2-S8, 18.2R3-S7; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R1-S8, 18.4R2-S7, 18.4R3-S6; 19.1 versions prior to 19.1R1-S6, 19.1R2-S2, 19.1R3-S4; 19.2 versions prior to 19.2R1-S5, 19.2R3-S1; 19.3 versions prior to 19.3R2-S5, 19.3R3-S1; 19.4 versions prior to 19.4R2-S2, 19.4R3; 20.1 versions prior to 20.1R2; 20.2 versions prior to 20.2R1-S2, 20.2R2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11117",
+        "name": "https://kb.juniper.net/JSA11117",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-35448",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-27T04:15Z",
+    "lastModifiedDate": "2021-04-28T19:38Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils 2.35.1. A heap-based buffer over-read can occur in bfd_getl_signed_32 in libbfd.c because sh_entsize is not validated in _bfd_elf_slurp_secondary_reloc_section in elf.c."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=8642dafaef21aa6747cec01df1977e9c52eb4679",
+        "name": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=8642dafaef21aa6747cec01df1977e9c52eb4679",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=26574",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=26574",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210129-0008/",
+        "name": "https://security.netapp.com/advisory/ntap-20210129-0008/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0228",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-27T18:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An improper check for unusual or exceptional conditions vulnerability in Juniper Networks MX Series platforms with Trio-based MPC (Modular Port Concentrator) deployed in (Ethernet VPN) EVPN-(Virtual Extensible LAN) VXLAN configuration, may allow an attacker sending specific Layer 2 traffic to cause Distributed Denial of Service (DDoS) protection to trigger unexpectedly, resulting in traffic impact. Continued receipt and processing of this specific Layer 2 frames will sustain the Denial of Service (DoS) condition. An indication of compromise is to check DDOS LACP violations: user@device> show ddos-protection protocols statistics brief | match lacp This issue only affects the MX Series platforms with Trio-based MPC. No other products or platforms are affected. This issue affects: Juniper Networks Junos OS on MX Series: 15.1 versions prior to 15.1R7-S9; 17.3 versions prior to 17.3R3-S11; 17.4 versions prior to 17.4R3-S4; 18.1 versions prior to 18.1R3-S12; 18.2 versions prior to 18.2R2-S8, 18.2R3-S8; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R1-S8, 18.4R2-S7, 18.4R3-S7; 19.1 versions prior to 19.1R3-S4; 19.2 versions prior to 19.2R1-S6; 19.3 versions prior to 19.3R3-S2; 19.4 versions prior to 19.4R2-S4, 19.4R3-S2; 20.1 versions prior to 20.1R2, 20.1R3; 20.2 versions prior to 20.2R2-S1, 20.2R3; 20.3 versions prior to 20.3R1-S1, 20.3R2;"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11123",
+        "name": "https://kb.juniper.net/JSA11123",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0234",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-27T15:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Due to an improper Initialization vulnerability on Juniper Networks Junos OS QFX5100-96S devices with QFX 5e Series image installed, ddos-protection configuration changes will not take effect beyond the default DDoS (Distributed Denial of Service) settings when configured from the CLI. The DDoS protection (jddosd) daemon allows the device to continue to function while protecting the packet forwarding engine (PFE) during the DDoS attack. When this issue occurs, the default DDoS settings within the PFE apply, as CPU bound packets will be throttled and dropped in the PFE when the limits are exceeded. To check if the device has this issue, the administrator can execute the following command to monitor the status of DDoS protection: user@device> show ddos-protection protocols error: the ddos-protection subsystem is not running This issue affects only QFX5100-96S devices. No other products or platforms are affected by this issue. This issue affects: Juniper Networks Junos OS on QFX5100-96S: 17.3 versions prior to 17.3R3-S10; 17.4 versions prior to 17.4R3-S4; 18.1 versions prior to 18.1R3-S10; 18.2 versions prior to 18.2R3-S3; 18.3 versions prior to 18.3R3-S2; 18.4 versions prior to 18.4R2-S4, 18.4R3-S1; 19.1 versions prior to 19.1R3, 19.1R3-S4; 19.2 versions prior to 19.2R2; 19.3 versions prior to 19.3R3; 19.4 versions prior to 19.4R2;"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11129",
+        "name": "https://kb.juniper.net/JSA11129",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29943",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-04-13T07:15Z",
+    "lastModifiedDate": "2021-04-19T16:38Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "When using ConfigurableInternodeAuthHadoopPlugin for authentication, Apache Solr versions prior to 8.8.2 would forward/proxy distributed requests using server credentials instead of original client credentials. This would result in incorrect authorization resolution on the receiving hosts."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/r91dd0ff556e0c9aab4c92852e0e540c59d4633718ce12881558cf44d%40%3Cusers.solr.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r91dd0ff556e0c9aab4c92852e0e540c59d4633718ce12881558cf44d%40%3Cusers.solr.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-16599",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-09T21:15Z",
+    "lastModifiedDate": "2021-04-16T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A Null Pointer Dereference vulnerability exists in the Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils 2.35, in _bfd_elf_get_symbol_version_string, as demonstrated in nm-new, that can cause a denial of service via a crafted file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25842",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=25842",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=8d55d10ac0d112c586eaceb92e75bd9b80aadcc4",
+        "name": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=8d55d10ac0d112c586eaceb92e75bd9b80aadcc4",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210122-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20210122-0003/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-16593",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-09T21:15Z",
+    "lastModifiedDate": "2021-04-16T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A Null Pointer Dereference vulnerability exists in the Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils 2.35, in scan_unit_for_symbols, as demonstrated in addr2line, that can cause a denial of service via a crafted file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25827",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=25827",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=aec72fda3b320c36eb99fc1c4cf95b10fc026729",
+        "name": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=aec72fda3b320c36eb99fc1c4cf95b10fc026729",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210122-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20210122-0003/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20674",
+    "cveASSIGNER": "vultures@jpcert.or.jp",
+    "publishedDate": "2021-03-12T02:15Z",
+    "lastModifiedDate": "2021-03-19T18:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Untrusted search path vulnerability in Installer of MagicConnect Client program distributed before 2021 March 1 allows an attacker to gain privileges and via a Trojan horse DLL in an unspecified directory and to execute arbitrary code with the privilege of the user invoking the installer when a terminal is connected remotely using Remote desktop."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.magicconnect.net/information/202103110900-2",
+        "name": "https://www.magicconnect.net/information/202103110900-2",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://jvn.jp/en/jp/JVN18056666/index.html",
+        "name": "https://jvn.jp/en/jp/JVN18056666/index.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-0800",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2013-04-03T11:56Z",
+    "lastModifiedDate": "2021-03-11T15:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Integer signedness error in the pixman_fill_sse2 function in pixman-sse2.c in Pixman, as distributed with Cairo and used in Mozilla Firefox before 20.0, Firefox ESR 17.x before 17.0.5, Thunderbird before 17.0.5, Thunderbird ESR 17.x before 17.0.5, SeaMonkey before 2.17, and other products, allows remote attackers to execute arbitrary code via crafted values that trigger attempted use of a (1) negative box boundary or (2) negative box size, leading to an out-of-bounds write operation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=825721",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=825721",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-31.html",
+        "name": "http://www.mozilla.org/security/announce/2013/mfsa2013-31.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0697.html",
+        "name": "RHSA-2013:0697",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2013-04/msg00009.html",
+        "name": "openSUSE-SU-2013:0630",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0696.html",
+        "name": "RHSA-2013:0696",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1791-1",
+        "name": "USN-1791-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2013-04/msg00010.html",
+        "name": "openSUSE-SU-2013:0631",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2013-04/msg00013.html",
+        "name": "SUSE-SU-2013:0645",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2013-05/msg00019.html",
+        "name": "SUSE-SU-2013:0850",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2699",
+        "name": "DSA-2699",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-06/msg00012.html",
+        "name": "openSUSE-SU-2013:0875",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A16909",
+        "name": "oval:org.mitre.oval:def:16909",
+        "refsource": "OVAL",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21513",
+    "cveASSIGNER": "secure@dell.com",
+    "publishedDate": "2021-03-02T16:15Z",
+    "lastModifiedDate": "2021-03-09T17:40Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Dell EMC OpenManage Server Administrator (OMSA) version 9.5 Microsoft Windows installations with Distributed Web Server (DWS) enabled configuration contains an authentication bypass vulnerability. A remote unauthenticated attacker could potentially exploit this vulnerability to gain admin access on the affected system."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.dell.com/support/kbdoc/en-us/000183670/dsa-2021-040-dell-emc-openmanage-server-administrator-omsa-security-update-for-multiple-vulnerabilities",
+        "name": "N/A",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14312",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-02-06T00:15Z",
+    "lastModifiedDate": "2021-02-08T22:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was found in the default configuration of dnsmasq, as shipped with Fedora versions prior to 31 and in all versions Red Hat Enterprise Linux, where it listens on any interface and accepts queries from addresses outside of its local subnet. In particular, the option `local-service` is not enabled. Running dnsmasq in this manner may inadvertently make it an open resolver accessible from any address on the internet. This flaw allows an attacker to conduct a Distributed Denial of Service (DDoS) against other systems."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1851342",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1851342",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-0114",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2014-04-30T10:49Z",
+    "lastModifiedDate": "2021-01-26T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Commons BeanUtils, as distributed in lib/commons-beanutils-1.8.0.jar in Apache Struts 1.x through 1.3.10 and in other products requiring commons-beanutils through 1.9.2, does not suppress the class property, which allows remote attackers to \"manipulate\" the ClassLoader and execute arbitrary code via the class parameter, as demonstrated by the passing of this parameter to the getClass method of the ActionForm object in Struts 1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1091938",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1091938",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59704",
+        "name": "59704",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21676303",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21676303",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://issues.apache.org/jira/browse/BEANUTILS-463",
+        "name": "https://issues.apache.org/jira/browse/BEANUTILS-463",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1116665",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1116665",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21676931",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21676931",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59014",
+        "name": "59014",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/solutions/869353",
+        "name": "https://access.redhat.com/solutions/869353",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://commons.apache.org/proper/commons-beanutils/javadocs/v1.9.2/RELEASE-NOTES.txt",
+        "name": "http://commons.apache.org/proper/commons-beanutils/javadocs/v1.9.2/RELEASE-NOTES.txt",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2014/07/08/1",
+        "name": "[oss-security] 20140707 Re: CVE request for commons-beanutils: 'class' property is exposed, potentially leading to RCE",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/58851",
+        "name": "58851",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2014/06/15/10",
+        "name": "[oss-security] 20140616 CVE request for commons-beanutils: 'class' property is exposed, potentially leading to RCE",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21676375",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21676375",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/60703",
+        "name": "60703",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/60177",
+        "name": "60177",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2014-August/136958.html",
+        "name": "FEDORA-2014-9380",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2014-1972960.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/cpuoct2014-1972960.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2940",
+        "name": "DSA-2940",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=141451023707502&w=2",
+        "name": "HPSBST03160",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://www.vmware.com/security/advisories/VMSA-2014-0012.html",
+        "name": "http://www.vmware.com/security/advisories/VMSA-2014-0012.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2014/Dec/23",
+        "name": "20141205 NEW: VMSA-2014-0012 - VMware vSphere product updates address security vulnerabilities",
+        "refsource": "FULLDISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21676091",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21676091",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=140119284401582&w=2",
+        "name": "HPSBGN03041",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=140801096002766&w=2",
+        "name": "HPSBMU03090",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05324755",
+        "name": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05324755",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/67121",
+        "name": "67121",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201607-09",
+        "name": "GLSA-201607-09",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg27042296",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg27042296",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21677110",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21677110",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21676110",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21676110",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21675972",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21675972",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21675898",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21675898",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21675689",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21675689",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21675387",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21675387",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21675266",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21675266",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21674812",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21674812",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21674128",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21674128",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.vmware.com/security/advisories/VMSA-2014-0008.html",
+        "name": "http://www.vmware.com/security/advisories/VMSA-2014-0008.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2014:095",
+        "name": "MDVSA-2014:095",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ibm.com/support/docview.wss?uid=swg21675496",
+        "name": "http://www.ibm.com/support/docview.wss?uid=swg21675496",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59718",
+        "name": "59718",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59480",
+        "name": "59480",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59479",
+        "name": "59479",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59464",
+        "name": "59464",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59430",
+        "name": "59430",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59246",
+        "name": "59246",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59245",
+        "name": "59245",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59228",
+        "name": "59228",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59118",
+        "name": "59118",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/58947",
+        "name": "58947",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/58710",
+        "name": "58710",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/57477",
+        "name": "57477",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://advisories.mageia.org/MGASA-2014-0219.html",
+        "name": "http://advisories.mageia.org/MGASA-2014-0219.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20140911-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20140911-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://apache-ignite-developers.2346864.n4.nabble.com/CVE-2014-0114-Apache-Ignite-is-vulnerable-to-existing-CVE-2014-0114-td31205.html",
+        "name": "[apache-ignite-developers] 20180601  [CVE-2014-0114]: Apache Ignite is vulnerable to existing CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20180629-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20180629-0006/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2669",
+        "name": "RHSA-2018:2669",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/534161/100/0/threaded",
+        "name": "20141205 NEW: VMSA-2014-0012 - VMware vSphere product updates address security vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/c70da3cb6e3f03e0ad8013e38b6959419d866c4a7c80fdd34b73f25c@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20190329 [GitHub] [pulsar] massakam opened a new pull request #3938: Upgrade third party libraries with security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/37e1ed724a1b0e5d191d98c822c426670bdfde83804567131847d2a3@%3Cdevnull.infra.apache.org%3E",
+        "name": "[infra-devnull] 20190329 [GitHub] [pulsar] massakam opened pull request #3938: Upgrade third party libraries with security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/97fc033dad4233a5d82fcb75521eabdd23dd99ef32eb96f407f96a1a@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190521 [jira] [Created] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ffde3f266d3bde190b54c9202169e7918a92de7e7e0337d792dc7263@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/ffde3f266d3bde190b54c9202169e7918a92de7e7e0337d792dc7263@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8e2bdfabd5b14836aa3cf900aa0a62ff9f4e22a518bb4e553ebcf55f@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190522 [jira] [Commented] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/65b39fa6d700e511927e5668a4038127432178a210aff81500eb36e5@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/65b39fa6d700e511927e5668a4038127432178a210aff81500eb36e5@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/080af531a9113e29d3f6a060e3f992dc9f40315ec7234e15c3b339e3@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190522 [jira] [Work logged] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/40fc236a35801a535cd49cf1979dbeab034b833c63a284941bce5bf1@%3Cdev.commons.apache.org%3E",
+        "name": "[commons-dev] 20190522 [beanutils2] CVE-2014-0114 Pull Request",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/15fcdf27fa060de276edc0b4098526afc21c236852eb3de9be9594f3@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/15fcdf27fa060de276edc0b4098526afc21c236852eb3de9be9594f3@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/4c3fd707a049bfe0577dba8fc9c4868ffcdabe68ad86586a0a49242e@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/4c3fd707a049bfe0577dba8fc9c4868ffcdabe68ad86586a0a49242e@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/0340493a1ddf3660dee09a5c503449cdac5bec48cdc478de65858859@%3Cdev.commons.apache.org%3E",
+        "name": "[commons-dev] 20190525 Re: [beanutils2] CVE-2014-0114 Pull Request",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/fda473f46e51019a78ab217a7a3a3d48dafd90846e75bd5536ef72f3@%3Cnotifications.commons.apache.org%3E",
+        "name": "[commons-notifications] 20190528 Build failed in Jenkins: commons-beanutils #74",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/c24c0b931632a397142882ba248b7bd440027960f22845c6f664c639@%3Ccommits.commons.apache.org%3E",
+        "name": "[commons-commits] 20190528 [commons-beanutils] branch master updated: [BEANUTILS-520] BeanUtils2 mitigate CVE-2014-0114.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/42ad6326d62ea8453d0d0ce12eff39bbb7c5b4fca9639da007291346@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190528 [jira] [Work logged] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/31f9dc2c9cb68e390634a4202f84b8569f64b6569bfcce46348fd9fd@%3Ccommits.commons.apache.org%3E",
+        "name": "[commons-commits] 20190528 [commons-beanutils] branch master updated: BEANUTILS-520: Mitigate CVE-2014-0114 by enabling SuppressPropertiesBeanIntrospector.SUPPRESS_CLASS by default. (#7)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/2ba22f2e3de945039db735cf6cbf7f8be901ab2537337c7b1dd6a0f0@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/2ba22f2e3de945039db735cf6cbf7f8be901ab2537337c7b1dd6a0f0@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/098e9aae118ac5c06998a9ba4544ab2475162981d290fdef88e6f883@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190528 [jira] [Closed] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ebc4f019798f6ce2a39f3e0c26a9068563a9ba092cdf3ece398d4e2f@%3Cnotifications.commons.apache.org%3E",
+        "name": "[commons-notifications] 20190528 Build failed in Jenkins: commons-beanutils #75",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/df093c662b5e49fe9e38ef91f78ffab09d0839dea7df69a747dffa86@%3Cdev.commons.apache.org%3E",
+        "name": "[commons-dev] 20190605 Re: [beanutils] Towards 1.10",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/9b5505632f5683ee17bda4f7878525e672226c7807d57709283ffa64@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/9b5505632f5683ee17bda4f7878525e672226c7807d57709283ffa64@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/df1c385f2112edffeff57a6b21d12e8d24031a9f578cb8ba22a947a8@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190615 [jira] [Reopened] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/cee6b1c4533be1a753614f6a7d7c533c42091e7cafd7053b8f62792a@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190615 [jira] [Updated] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/2454e058fd05ba30ca29442fdeb7ea47505d47a888fbc9f3a53f31d0@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190615 [jira] [Resolved] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/869c08899f34c1a70c9fb42f92ac0d043c98781317e0c19d7ba3f5e3@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/869c08899f34c1a70c9fb42f92ac0d043c98781317e0c19d7ba3f5e3@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/084ae814e69178d2ce174cfdf149bc6e46d7524f3308c08d3adb43cb@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/084ae814e69178d2ce174cfdf149bc6e46d7524f3308c08d3adb43cb@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f3682772e62926b5c009eed63c62767021be6da0bb7427610751809f@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/f3682772e62926b5c009eed63c62767021be6da0bb7427610751809f@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/aa4ca069c7aea5b1d7329bc21576c44a39bcc4eb7bb2760c4b16f2f6@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/aa4ca069c7aea5b1d7329bc21576c44a39bcc4eb7bb2760c4b16f2f6@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/0a35108a56e2d575e3b3985588794e39fbf264097aba66f4c5569e4f@%3Cuser.commons.apache.org%3E",
+        "name": "[commons-user] 20190814 [SECURITY] CVE-2019-10086. Apache Commons Beanutils does not suppresses the class property in PropertyUtilsBean by default.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/88c497eead24ed517a2bb3159d3dc48725c215e97fe7a98b2cf3ea25@%3Cdev.commons.apache.org%3E",
+        "name": "[commons-dev] 20190814 [SECURITY] CVE-2019-10086. Apache Commons Beanutils does not suppresses the class property in PropertyUtilsBean by default.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/918ec15a80fc766ff46c5d769cb8efc88fed6674faadd61a7105166b@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20190814 [SECURITY] CVE-2019-10086. Apache Commons Beanutils does not suppresses the class property in PropertyUtilsBean by default.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/c7e31c3c90b292e0bafccc4e1b19c9afc1503a65d82cb7833dfd7478@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190818 [jira] [Commented] (BEANUTILS-520) BeanUtils2 mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/d27c51b3c933f885460aa6d3004eb228916615caaaddbb8e8bfeeb40@%3Cgitbox.activemq.apache.org%3E",
+        "name": "[activemq-gitbox] 20190903 [GitHub] [activemq-artemis] jeloba opened a new pull request #2820: Updated Apache BeanUtils to address CVE",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/3f500972dceb48e3cb351f58565aecf6728b1ea7a69593af86c30b30@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190904 [jira] [Created] (ARTEMIS-2470) Update Apache BeanUtils to Address CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/1f78f1e32cc5614ec0c5b822ba4bd7fc8e8b5c46c8e038b6bd609cb5@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190906 [jira] [Closed] (CONFIGURATION-755) [CVE-2014-0114] Update Apache Commons BeanUtils from 1.9.3 to 1.9.4.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/956995acee0d8bc046f1df0a55b7fbeb65dd2f82864e5de1078bacb0@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20190906 [jira] [Updated] (CONFIGURATION-755) [CVE-2014-0114] Update Apache Commons BeanUtils from 1.9.3 to 1.9.4.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/1565e8b786dff4cb3b48ecc8381222c462c92076c9e41408158797b5@%3Ccommits.commons.apache.org%3E",
+        "name": "[commons-commits] 20190906 [commons-configuration] branch master updated: [CONFIGURATION-755][CVE-2014-0114] Update Apache Commons BeanUtils from 1.9.3 to 1.9.4.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/0efed939139f5b9dcd62b8acf7cb8a9789227d14abdc0c6f141c4a4c@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190909 [jira] [Work logged] (ARTEMIS-2470) Update Apache BeanUtils to Address CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/09981ae3df188a2ad1ce20f62ef76a5b2d27cf6b9ebab366cf1d6cc6@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/09981ae3df188a2ad1ce20f62ef76a5b2d27cf6b9ebab366cf1d6cc6@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/6b30629b32d020c40d537f00b004d281c37528d471de15ca8aec2cd4@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/6b30629b32d020c40d537f00b004d281c37528d471de15ca8aec2cd4@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/6afe2f935493e69a332b9c5a4f23cafe95c15ede1591a492cf612293@%3Cissues.commons.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/6afe2f935493e69a332b9c5a4f23cafe95c15ede1591a492cf612293@%3Cissues.commons.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2995",
+        "name": "RHSA-2019:2995",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/66176fa3caeca77058d9f5b0316419a43b4c3fa2b572e05b87132226@%3Cissues.commons.apache.org%3E",
+        "name": "[commons-issues] 20191014 [jira] [Updated] (BEANUTILS-520) Mitigate CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191017 Dependencies used by Drill contain known vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+        "name": "[drill-issues] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/708d94141126eac03011144a971a6411fcac16d9c248d1d535a39451@%3Csolr-user.lucene.apache.org%3E",
+        "name": "[lucene-solr-user] 20190104 Re: SOLR v7 Security Issues Caused Denial of Use - Sonatype Application Composition Report",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/9317fd092b257a0815434b116a8af8daea6e920b6673f4fd5583d5fe@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20191115 [GitHub] [incubator-druid] ccaominh opened a new pull request #8878: Address security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r75d67108e557bb5d4c4318435067714a0180de525314b7e8dab9d04e@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200109 [jira] [Resolved] (ARTEMIS-2470) Update Apache BeanUtils to Address CVE-2014-0114",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r204ba2a9ea750f38d789d2bb429cc0925ad6133deea7cbc3001d96b5@%3Csolr-user.lucene.apache.org%3E",
+        "name": "[lucene-solr-user] 20200320 CVEs (vulnerabilities) that apply to Solr 8.4.1",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf5230a049d989dbfdd404b4320a265dceeeba459a4d04ec21873bd55@%3Csolr-user.lucene.apache.org%3E",
+        "name": "[lucene-solr-user] 20200320 Re: CVEs (vulnerabilities) that apply to Solr 8.4.1",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r458d61eaeadecaad04382ebe583230bc027f48d9e85e4731bc573477@%3Ccommits.dolphinscheduler.apache.org%3E",
+        "name": "[dolphinscheduler-commits] 20210121 [GitHub] [incubator-dolphinscheduler] c-f-cooper commented on issue #4506: There is a vulnerability in beanutils 1.7.0,upgrade recommended",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23930",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-12T22:15Z",
+    "lastModifiedDate": "2021-01-14T20:48Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OX App Suite through 7.10.4 allows XSS via use of the conversion API for a distributedFile."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://packetstormsecurity.com/files/160853/OX-App-Suite-OX-Documents-7.10.x-XSS-SSRF.html",
+        "name": "https://packetstormsecurity.com/files/160853/OX-App-Suite-OX-Documents-7.10.x-XSS-SSRF.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11093",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-12-24T20:15Z",
+    "lastModifiedDate": "2020-12-31T19:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Hyperledger Indy Node is the server portion of a distributed ledger purpose-built for decentralized identity. In Hyperledger Indy before version 1.12.4, there is lack of signature verification on a specific transaction which enables an attacker to make certain unauthorized alterations to the ledger. Updating a DID with a nym transaction will be written to the ledger if neither ROLE or VERKEY are being changed, regardless of sender. A malicious DID with no particular role can ask an update for another DID (but cannot modify its verkey or role). This is bad because 1) Any DID can write a nym transaction to the ledger (i.e., any DID can spam the ledger with nym transactions), 2) Any DID can change any other DID's alias, 3) The update transaction modifies the ledger metadata associated with a DID."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/hyperledger/indy-node/security/advisories/GHSA-wh2w-39f4-rpv2",
+        "name": "https://github.com/hyperledger/indy-node/security/advisories/GHSA-wh2w-39f4-rpv2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/hyperledger/indy-node/blob/master/CHANGELOG.md#1124",
+        "name": "https://github.com/hyperledger/indy-node/blob/master/CHANGELOG.md#1124",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/hyperledger/indy-node/blob/master/docs/source/auth_rules.md",
+        "name": "https://github.com/hyperledger/indy-node/blob/master/docs/source/auth_rules.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/hyperledger/indy-node/commit/55056f22c83b7c3520488b615e1577e0f895d75a",
+        "name": "https://github.com/hyperledger/indy-node/commit/55056f22c83b7c3520488b615e1577e0f895d75a",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9075",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-02-24T00:29Z",
+    "lastModifiedDate": "2020-11-02T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils 2.32. It is a heap-based buffer overflow in _bfd_archive_64_bit_slurp_armap in archive64.c."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=24236",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=24236",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190314-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20190314-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K42059040",
+        "name": "https://support.f5.com/csp/article/K42059040",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4336-1/",
+        "name": "USN-4336-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-11/msg00004.html",
+        "name": "openSUSE-SU-2020:1804",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00078.html",
+        "name": "openSUSE-SU-2020:1790",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9074",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-02-24T00:29Z",
+    "lastModifiedDate": "2020-11-02T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils 2.32. It is an out-of-bounds read leading to a SEGV in bfd_getl32 in libbfd.c, when called from pex64_get_runtime_function in pei-x86_64.c."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=24235",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=24235",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190314-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20190314-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K09092524",
+        "name": "https://support.f5.com/csp/article/K09092524",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4336-1/",
+        "name": "USN-4336-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-11/msg00004.html",
+        "name": "openSUSE-SU-2020:1804",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00078.html",
+        "name": "openSUSE-SU-2020:1790",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-17451",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-10T17:15Z",
+    "lastModifiedDate": "2020-11-02T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Binary File Descriptor (BFD) library (aka libbfd), as distributed in GNU Binutils 2.32. It is an integer overflow leading to a SEGV in _bfd_dwarf2_find_nearest_line in dwarf2.c, as demonstrated by nm."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25070",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=25070",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=336bfbeb1848f4b9558456fdcf283ee8a32d7fd1",
+        "name": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=336bfbeb1848f4b9558456fdcf283ee8a32d7fd1",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20191024-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20191024-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4336-1/",
+        "name": "USN-4336-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202007-39",
+        "name": "GLSA-202007-39",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-11/msg00004.html",
+        "name": "openSUSE-SU-2020:1804",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00078.html",
+        "name": "openSUSE-SU-2020:1790",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  }
+]

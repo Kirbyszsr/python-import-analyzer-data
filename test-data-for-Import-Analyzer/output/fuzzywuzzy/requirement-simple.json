@@ -1,0 +1,38 @@
+{
+  "name": "fuzzywuzzy",
+  "description": ".. image:: https://travis-ci.org/seatgeek/fuzzywuzzy.svg?branch=master\n    :target: https://travis-ci.org/seatgeek/fuzzywuzzy\n\nFuzzyWuzzy\n==========\n\nFuzzy string matching like a boss. It uses `Levenshtein Distance <https://en.wikipedia.org/wiki/Levenshtein_distance>`_ to calculate the differences between sequences in a simple-to-use package.\n\nRequirements\n============\n\n-  Python 2.7 or higher\n-  difflib\n-  `python-Levenshtein <https://github.com/ztane/python-Levenshtein/>`_ (optional, provides a 4-10x speedup in String\n   Matching, though may result in `differing results for certain cases <https://github.com/seatgeek/fuzzywuzzy/issues/128>`_)\n\nFor testing\n~~~~~~~~~~~\n-  pycodestyle\n-  hypothesis\n-  pytest\n\nInstallation\n============\n\nUsing PIP via PyPI\n\n.. code:: bash\n\n    pip install fuzzywuzzy\n\nor the following to install `python-Levenshtein` too\n\n.. code:: bash\n\n    pip install fuzzywuzzy[speedup]\n\n\nUsing PIP via Github\n\n.. code:: bash\n\n    pip install git+git://github.com/seatgeek/fuzzywuzzy.git@0.18.0#egg=fuzzywuzzy\n\nAdding to your ``requirements.txt`` file (run ``pip install -r requirements.txt`` afterwards)\n\n.. code:: bash\n\n    git+ssh://git@github.com/seatgeek/fuzzywuzzy.git@0.18.0#egg=fuzzywuzzy\n\nManually via GIT\n\n.. code:: bash\n\n    git clone git://github.com/seatgeek/fuzzywuzzy.git fuzzywuzzy\n    cd fuzzywuzzy\n    python setup.py install\n\n\nUsage\n=====\n\n.. code:: python\n\n    >>> from fuzzywuzzy import fuzz\n    >>> from fuzzywuzzy import process\n\nSimple Ratio\n~~~~~~~~~~~~\n\n.. code:: python\n\n    >>> fuzz.ratio(\"this is a test\", \"this is a test!\")\n        97\n\nPartial Ratio\n~~~~~~~~~~~~~\n\n.. code:: python\n\n    >>> fuzz.partial_ratio(\"this is a test\", \"this is a test!\")\n        100\n\nToken Sort Ratio\n~~~~~~~~~~~~~~~~\n\n.. code:: python\n\n    >>> fuzz.ratio(\"fuzzy wuzzy was a bear\", \"wuzzy fuzzy was a bear\")\n        91\n    >>> fuzz.token_sort_ratio(\"fuzzy wuzzy was a bear\", \"wuzzy fuzzy was a bear\")\n        100\n\nToken Set Ratio\n~~~~~~~~~~~~~~~\n\n.. code:: python\n\n    >>> fuzz.token_sort_ratio(\"fuzzy was a bear\", \"fuzzy fuzzy was a bear\")\n        84\n    >>> fuzz.token_set_ratio(\"fuzzy was a bear\", \"fuzzy fuzzy was a bear\")\n        100\n\nProcess\n~~~~~~~\n\n.. code:: python\n\n    >>> choices = [\"Atlanta Falcons\", \"New York Jets\", \"New York Giants\", \"Dallas Cowboys\"]\n    >>> process.extract(\"new york jets\", choices, limit=2)\n        [('New York Jets', 100), ('New York Giants', 78)]\n    >>> process.extractOne(\"cowboys\", choices)\n        (\"Dallas Cowboys\", 90)\n\nYou can also pass additional parameters to ``extractOne`` method to make it use a specific scorer. A typical use case is to match file paths:\n\n.. code:: python\n\n    >>> process.extractOne(\"System of a down - Hypnotize - Heroin\", songs)\n        ('/music/library/good/System of a Down/2005 - Hypnotize/01 - Attack.mp3', 86)\n    >>> process.extractOne(\"System of a down - Hypnotize - Heroin\", songs, scorer=fuzz.token_sort_ratio)\n        (\"/music/library/good/System of a Down/2005 - Hypnotize/10 - She's Like Heroin.mp3\", 61)\n\n.. |Build Status| image:: https://api.travis-ci.org/seatgeek/fuzzywuzzy.png?branch=master\n   :target: https:travis-ci.org/seatgeek/fuzzywuzzy\n\nKnown Ports\n============\n\nFuzzyWuzzy is being ported to other languages too! Here are a few ports we know about:\n\n-  Java: `xpresso's fuzzywuzzy implementation <https://github.com/WantedTechnologies/xpresso/wiki/Approximate-string-comparison-and-pattern-matching-in-Java>`_\n-  Java: `fuzzywuzzy (java port) <https://github.com/xdrop/fuzzywuzzy>`_\n-  Rust: `fuzzyrusty (Rust port) <https://github.com/logannc/fuzzyrusty>`_\n-  JavaScript: `fuzzball.js (JavaScript port) <https://github.com/nol13/fuzzball.js>`_\n-  C++: `Tmplt/fuzzywuzzy <https://github.com/Tmplt/fuzzywuzzy>`_\n-  C#: `fuzzysharp (.Net port) <https://github.com/BoomTownRoi/BoomTown.FuzzySharp>`_\n-  Go: `go-fuzzywuzz (Go port) <https://github.com/paul-mannino/go-fuzzywuzzy>`_\n-  Free Pascal: `FuzzyWuzzy.pas (Free Pascal port) <https://github.com/DavidMoraisFerreira/FuzzyWuzzy.pas>`_\n-  Kotlin multiplatform: `FuzzyWuzzy-Kotlin <https://github.com/willowtreeapps/fuzzywuzzy-kotlin>`_\n-  R: `fuzzywuzzyR (R port) <https://github.com/mlampros/fuzzywuzzyR>`_\n\n\n",
+  "requires_dist": [
+    "python-levenshtein (>=0.12) ; extra == 'speedup'"
+  ],
+  "requires_python": "",
+  "current_version": "0.18.0",
+  "released_versions": [
+    "0.1",
+    "0.10.0",
+    "0.11.0",
+    "0.11.1",
+    "0.12.0",
+    "0.13.0",
+    "0.14.0",
+    "0.15.0",
+    "0.15.1",
+    "0.16.0",
+    "0.17.0",
+    "0.18.0",
+    "0.2",
+    "0.3.0",
+    "0.3.1",
+    "0.3.2",
+    "0.3.3",
+    "0.4.0",
+    "0.5.0",
+    "0.6.0",
+    "0.6.1",
+    "0.6.2",
+    "0.7.0",
+    "0.8.0",
+    "0.8.1",
+    "0.8.2",
+    "0.9.0"
+  ]
+}

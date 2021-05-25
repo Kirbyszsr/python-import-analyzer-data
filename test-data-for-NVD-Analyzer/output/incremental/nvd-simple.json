@@ -1,0 +1,962 @@
+[
+  {
+    "cveID": "CVE-2021-0272",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-05-04T20:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A kernel memory leak in QFX10002-32Q, QFX10002-60C, QFX10002-72Q, QFX10008, QFX10016 devices Flexible PIC Concentrators (FPCs) on Juniper Networks Junos OS allows an attacker to send genuine packets destined to the device to cause a Denial of Service (DoS) to the device. On QFX10002-32Q, QFX10002-60C, QFX10002-72Q devices the device will crash and restart. On QFX10008, QFX10016 devices, depending on the number of FPCs involved in an attack, one more more FPCs may crash and traffic through the device may be degraded in other ways, until the attack traffic stops. A reboot is required to restore service and clear the kernel memory. Continued receipt and processing of these genuine packets will create a sustained Denial of Service (DoS) condition. On QFX10008, QFX10016 devices, an indicator of compromise may be the existence of DCPFE core files. You can also monitor PFE memory utilization for incremental growth: user@qfx-RE:0% cprod -A fpc0 -c \"show heap 0\" | grep -i ke 0 3788a1b0 3221225048 2417120656 804104392 24 Kernel user@qfx-RE:0% cprod -A fpc0 -c \"show heap 0\" | grep -i ke 0 3788a1b0 3221225048 2332332200 888892848 27 Kernel This issue affects: Juniper Networks Junos OS on QFX10002-32Q, QFX10002-60C, QFX10002-72Q, QFX10008, QFX10016: 16.1 versions 16.1R1 and above prior to 17.3 versions prior to 17.3R3-S9; 17.4 versions prior to 17.4R3-S2; 18.1 versions prior to 18.1R3-S11; 18.2 versions prior to 18.2R3-S5; 18.3 versions prior to 18.3R3-S3; 18.4 versions prior to 18.4R2-S5, 18.4R3-S4; 19.1 versions prior to 19.1R3-S2; 19.2 versions prior to 19.2R3; 19.3 versions prior to 19.3R3; 19.4 versions prior to 19.4R3; 20.1 versions prior to 20.1R2. This issue does not affect releases prior to Junos OS 16.1R1. This issue does not affect EX Series devices. This issue does not affect Junos OS Evolved."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11163",
+        "name": "https://kb.juniper.net/JSA11163",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.juniper.net/KB32854",
+        "name": "https://kb.juniper.net/KB32854",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2002-2285",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2002-12-31T05:00Z",
+    "lastModifiedDate": "2021-04-09T17:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "eTrust InoculateIT 6.0 with the \"Incremental Scan\" option enabled may certify that a file is free of viruses before the file has been completely downloaded, which allows remote attackers to bypass virus detection."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.derkeiler.com/Mailing-Lists/NT-Bugtraq/2002-12/0003.html",
+        "name": "20021129 CA InoculateIT 6.0 Realtime Scanner may fail to detect vira",
+        "refsource": "NTBUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://securitytracker.com/id?1005740",
+        "name": "1005740",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/10770",
+        "name": "etrust-inoculateit-protection-bypass(10770)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-5087",
+    "cveASSIGNER": "talos-cna@cisco.com",
+    "publishedDate": "2019-11-21T16:15Z",
+    "lastModifiedDate": "2021-03-26T21:04Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An exploitable integer overflow vulnerability exists in the flattenIncrementally function in the xcf2png and xcf2pnm binaries of xcftools 1.0.7. An integer overflow can occur while calculating the row's allocation size, that could be exploited to corrupt memory and eventually execute arbitrary code. In order to trigger this vulnerability, a victim would need to open a specially crafted XCF file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2019-0879",
+        "name": "https://talosintelligence.com/vulnerability_reports/TALOS-2019-0879",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.talosintelligence.com/vulnerability_reports/TALOS-2019-0879",
+        "name": "https://www.talosintelligence.com/vulnerability_reports/TALOS-2019-0879",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00014.html",
+        "name": "[debian-lts-announce] 20210210 [SECURITY] [DLA 2553-1] xcftools security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00008.html",
+        "name": "[debian-lts-announce] 20210308 [SECURITY] [DLA 2553-2] xcftools regression update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-5086",
+    "cveASSIGNER": "talos-cna@cisco.com",
+    "publishedDate": "2019-11-21T16:15Z",
+    "lastModifiedDate": "2021-03-26T21:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An exploitable integer overflow vulnerability exists in the flattenIncrementally function in the xcf2png and xcf2pnm binaries of xcftools, version 1.0.7. An integer overflow can occur while walking through tiles that could be exploited to corrupt memory and execute arbitrary code. In order to trigger this vulnerability, a victim would need to open a specially crafted XCF file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2019-0878",
+        "name": "https://talosintelligence.com/vulnerability_reports/TALOS-2019-0878",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.talosintelligence.com/vulnerability_reports/TALOS-2019-0878",
+        "name": "https://www.talosintelligence.com/vulnerability_reports/TALOS-2019-0878",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00014.html",
+        "name": "[debian-lts-announce] 20210210 [SECURITY] [DLA 2553-1] xcftools security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00008.html",
+        "name": "[debian-lts-announce] 20210308 [SECURITY] [DLA 2553-2] xcftools regression update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21324",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-08T17:15Z",
+    "lastModifiedDate": "2021-03-17T14:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "GLPI is an open-source asset and IT management software package that provides ITIL Service Desk features, licenses tracking and software auditing. In GLPI before version 9.5.4 there is an Insecure Direct Object Reference (IDOR) on \"Solutions\". This vulnerability gives an unauthorized user the ability to enumerate GLPI items names (including users logins) using the knowbase search form (requires authentication). To Reproduce: Perform a valid authentication at your GLPI instance, Browse the ticket list and select any open ticket, click on Solution form, then Search a solution form that will redirect you to the endpoint /\"glpi/front/knowbaseitem.php?item_itemtype=Ticket&item_items_id=18&forcetab=Knowbase$1\", and the item_itemtype=Ticket parameter present in the previous URL will point to the PHP alias of glpi_tickets table, so just replace it with \"Users\" to point to glpi_users table instead; in the same way, item_items_id=18 will point to the related column id, so changing it too you should be able to enumerate all the content which has an alias. Since such id(s) are obviously incremental, a malicious party could exploit the vulnerability simply by guessing-based attempts."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/glpi-project/glpi/security/advisories/GHSA-jvwm-gq36-3v7v",
+        "name": "https://github.com/glpi-project/glpi/security/advisories/GHSA-jvwm-gq36-3v7v",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/glpi-project/glpi/commit/aade65b7f67d46f23d276a8acb0df70651c3b1dc",
+        "name": "https://github.com/glpi-project/glpi/commit/aade65b7f67d46f23d276a8acb0df70651c3b1dc",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/glpi-project/glpi/releases/tag/9.5.4",
+        "name": "https://github.com/glpi-project/glpi/releases/tag/9.5.4",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-18688",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-07T18:15Z",
+    "lastModifiedDate": "2021-01-14T18:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Portable Document Format (PDF) specification does not provide any information regarding the concrete procedure of how to validate signatures. Consequently, an Incremental Saving vulnerability exists in multiple products. When an attacker uses the Incremental Saving feature to add pages or annotations, Body Updates are displayed to the user without any action by the signature-validation logic. This affects Foxit Reader before 9.4 and PhantomPDF before 8.3.9 and 9.x before 9.4. It also affects LibreOffice, Master PDF Editor, Nitro Pro, Nitro Reader, Nuance Power PDF Standard, PDF Editor 6 Pro, PDFelement6 Pro, PDF Studio Viewer 2018, PDF Studio Pro, Perfect PDF 10 Premium, and Perfect PDF Reader."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.foxitsoftware.com/support/security-bulletins.php",
+        "name": "https://www.foxitsoftware.com/support/security-bulletins.php",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://pdf-insecurity.org/signature/evaluation_2018.html",
+        "name": "https://pdf-insecurity.org/signature/evaluation_2018.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pdf-insecurity.org/signature/signature.html",
+        "name": "https://pdf-insecurity.org/signature/signature.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.pdfa.org/recently-identified-pdf-digital-signature-vulnerabilities/",
+        "name": "https://www.pdfa.org/recently-identified-pdf-digital-signature-vulnerabilities/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-35931",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-31T21:15Z",
+    "lastModifiedDate": "2021-01-07T19:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Foxit Reader before 10.1.1 (and before 4.1.1 on macOS) and PhantomPDF before 9.7.5 and 10.x before 10.1.1 (and before 4.1.1 on macOS). An attacker can spoof a certified PDF document via an Evil Annotation Attack because the products fail to consider a null value for a Subtype entry of the Annotation dictionary, in an incremental update."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.foxitsoftware.com/support/security-bulletins.html",
+        "name": "https://www.foxitsoftware.com/support/security-bulletins.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-20909",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-01T15:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "cPanel before 70.0.23 allows arbitrary file-chmod operations during legacy incremental backups (SEC-338)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://documentation.cpanel.net/display/CL/70+Change+Log",
+        "name": "https://documentation.cpanel.net/display/CL/70+Change+Log",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-2293",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2013-03-12T11:28Z",
+    "lastModifiedDate": "2020-03-18T17:38Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The CTransaction::FetchInputs method in bitcoind and Bitcoin-Qt before 0.8.0rc1 copies transactions from disk to memory without incrementally checking for spent prevouts, which allows remote attackers to cause a denial of service (disk I/O consumption) via a Bitcoin transaction with many inputs corresponding to many different parts of the stored block chain."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://en.bitcoin.it/wiki/CVEs",
+        "name": "https://en.bitcoin.it/wiki/CVEs",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://bitcointalk.org/?topic=144122",
+        "name": "https://bitcointalk.org/?topic=144122",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://en.bitcoin.it/wiki/CVE-2013-2293",
+        "name": "https://en.bitcoin.it/wiki/CVE-2013-2293",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-18390",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-02T13:15Z",
+    "lastModifiedDate": "2019-08-08T15:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "cPanel before 68.0.15 allows code execution in the context of the root account because of weak permissions on incremental backups (SEC-322)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://documentation.cpanel.net/display/CL/68+Change+Log",
+        "name": "https://documentation.cpanel.net/display/CL/68+Change+Log",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Product",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://news.cpanel.com/cpanel-tsr-2017-0006-full-disclosure/",
+        "name": "https://news.cpanel.com/cpanel-tsr-2017-0006-full-disclosure/",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-18407",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-10-17T04:29Z",
+    "lastModifiedDate": "2019-03-29T16:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A heap-based buffer over-read was discovered in the tcpreplay-edit binary of Tcpreplay 4.3.0 beta1, during the incremental checksum operation. The issue gets triggered in the function csum_replace4() in incremental_checksum.h, causing a denial of service."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/SegfaultMasters/covering360/blob/master/tcpreplay/README.md#user-content-heap-overflow-in-csum_replace4",
+        "name": "https://github.com/SegfaultMasters/covering360/blob/master/tcpreplay/README.md#user-content-heap-overflow-in-csum_replace4",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/appneta/tcpreplay/issues/488",
+        "name": "https://github.com/appneta/tcpreplay/issues/488",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MLPY6W7Z7G6PF2JN4LXXHCACYLD4RBG6/",
+        "name": "FEDORA-2019-a9c08d4b40",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4V3SADKXUSHWTVAPU3WLXBDEQUHRA6ZO/",
+        "name": "FEDORA-2019-e40253f67e",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-5410",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2018-06-11T21:29Z",
+    "lastModifiedDate": "2018-08-07T13:20Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Memory corruption resulting in a potentially exploitable crash during garbage collection of JavaScript due errors in how incremental sweeping is managed for memory cleanup. This vulnerability affects Firefox < 52, Firefox ESR < 45.8, Thunderbird < 52, and Thunderbird < 45.8."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2017-09/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2017-09/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2017-07/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2017-07/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2017-06/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2017-06/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2017-05/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2017-05/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1330687",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1330687",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2017/dsa-3832",
+        "name": "DSA-3832",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2017/dsa-3805",
+        "name": "DSA-3805",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201705-07",
+        "name": "GLSA-201705-07",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201705-06",
+        "name": "GLSA-201705-06",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1037966",
+        "name": "1037966",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/96693",
+        "name": "96693",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2017-0498.html",
+        "name": "RHSA-2017:0498",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2017-0461.html",
+        "name": "RHSA-2017:0461",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2017-0459.html",
+        "name": "RHSA-2017:0459",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-18195",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-02-26T17:29Z",
+    "lastModifiedDate": "2018-03-22T13:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in tools/conversations/view_ajax.php in Concrete5 before 8.3.0. An unauthenticated user can enumerate comments from all blog posts by POSTing requests to /index.php/tools/required/conversations/view_ajax with incremental 'cnvID' integers."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/r3naissance/NSE/blob/master/http-vuln-cve2017-18195.nse",
+        "name": "https://github.com/r3naissance/NSE/blob/master/http-vuln-cve2017-18195.nse",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/concrete5/concrete5/releases/tag/8.3.0",
+        "name": "https://github.com/concrete5/concrete5/releases/tag/8.3.0",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/concrete5/concrete5/pull/6008/files",
+        "name": "https://github.com/concrete5/concrete5/pull/6008/files",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/44194/",
+        "name": "44194",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-14947",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-09-30T01:29Z",
+    "lastModifiedDate": "2017-10-05T14:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Artifex GSView 6.0 Beta on Windows allows attackers to execute arbitrary code or cause a denial of service via a crafted .xps file, related to a \"Read Access Violation on Block Data Move starting at mupdfnet64!mIncrementalSaveFile+0x0000000000193359.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.ghostscript.com/show_bug.cgi?id=698551",
+        "name": "https://bugs.ghostscript.com/show_bug.cgi?id=698551",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-14946",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-09-30T01:29Z",
+    "lastModifiedDate": "2017-10-05T14:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Artifex GSView 6.0 Beta on Windows allows attackers to cause a denial of service or possibly have unspecified other impact via a crafted .pdf file, related to \"Data from Faulting Address controls Branch Selection starting at mupdfnet64!mIncrementalSaveFile+0x000000000000344e.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.ghostscript.com/show_bug.cgi?id=698538",
+        "name": "https://bugs.ghostscript.com/show_bug.cgi?id=698538",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-0923",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-03-17T19:30Z",
+    "lastModifiedDate": "2017-09-29T01:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Unspecified vulnerability in Kerberos Incremental Propagation in Solaris 10 and OpenSolaris snv_01 through snv_110 allows remote attackers to cause a denial of service (loss of incremental propagation requests to slave KDC servers) via unknown vectors related to the master Key Distribution Center (KDC) server."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/34298",
+        "name": "34298",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/34139",
+        "name": "34139",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/0741",
+        "name": "ADV-2009-0741",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-249926-1",
+        "name": "249926",
+        "refsource": "SUNALERT",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/0875",
+        "name": "ADV-2009-0875",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://support.avaya.com/elmodocs2/security/ASA-2009-102.htm",
+        "name": "http://support.avaya.com/elmodocs2/security/ASA-2009-102.htm",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1021851",
+        "name": "1021851",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/34487",
+        "name": "34487",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/49276",
+        "name": "solaris-kerberos-dos(49276)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6174",
+        "name": "oval:org.mitre.oval:def:6174",
+        "refsource": "OVAL",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-3156",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2017-08-11T21:29Z",
+    "lastModifiedDate": "2017-08-25T14:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The _write_config function in trove/guestagent/datastore/experimental/mongodb/service.py, reset_configuration function in trove/guestagent/datastore/experimental/postgresql/service/config.py, write_config function in trove/guestagent/datastore/experimental/redis/service.py, _write_mycnf function in trove/guestagent/datastore/mysql/service.py, InnoBackupEx::_run_prepare function in trove/guestagent/strategies/restore/mysql_impl.py, InnoBackupEx::cmd function in trove/guestagent/strategies/backup/mysql_impl.py, MySQLDump::cmd in trove/guestagent/strategies/backup/mysql_impl.py, InnoBackupExIncremental::cmd function in trove/guestagent/strategies/backup/mysql_impl.py, _get_actual_db_status function in trove/guestagent/datastore/experimental/cassandra/system.py and trove/guestagent/datastore/experimental/cassandra/service.py, and multiple class CbBackup methods in trove/guestagent/strategies/backup/experimental/couchbase_impl.py in Openstack DBaaS (aka Trove) as packaged in Openstack before 2015.1.0 (aka Kilo) allows local users to write to configuration files via a symlink attack on a temporary file."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/restore/mysql_impl.py#L194",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/restore/mysql_impl.py#L194",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/mysql_impl.py#L55",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/mysql_impl.py#L55",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/mysql_impl.py#L36",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/mysql_impl.py#L36",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/mysql_impl.py#L110",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/mysql_impl.py#L110",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/experimental/couchbase_impl.py#L30",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/strategies/backup/experimental/couchbase_impl.py#L30",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/mysql/service.py#L790",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/mysql/service.py#L790",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/experimental/redis/service.py#L236",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/experimental/redis/service.py#L236",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/experimental/mongodb/service.py#L176",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/experimental/mongodb/service.py#L176",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/experimental/cassandra/service.py#L230",
+        "name": "https://github.com/openstack/trove/blob/master/trove/guestagent/datastore/experimental/cassandra/service.py#L230",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1216073",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1216073",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/trove/+bug/1398195",
+        "name": "https://bugs.launchpad.net/trove/+bug/1398195",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-5255",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2016-08-05T01:59Z",
+    "lastModifiedDate": "2017-08-16T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Use-after-free vulnerability in the js::PreliminaryObjectArray::sweep function in Mozilla Firefox before 48.0 allows remote attackers to execute arbitrary code via crafted JavaScript that is mishandled during incremental garbage collection."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1212356",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1212356",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Permissions Required"
+        ]
+      },
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-71.html",
+        "name": "http://www.mozilla.org/security/announce/2016/mfsa2016-71.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/92260",
+        "name": "92260",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3044-1",
+        "name": "USN-3044-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00004.html",
+        "name": "openSUSE-SU-2016:1964",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00029.html",
+        "name": "openSUSE-SU-2016:2026",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201701-15",
+        "name": "GLSA-201701-15",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1036508",
+        "name": "1036508",
+        "refsource": "SECTRACK",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-2175",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-06-23T21:30Z",
+    "lastModifiedDate": "2011-01-04T05:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Stack-based buffer overflow in the flattenIncrementally function in flatten.c in xcftools 1.0.4, as reachable from the (1) xcf2pnm and (2) xcf2png utilities, allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a crafted image that causes a conversion to a location \"above or to the left of the canvas.\" NOTE: some of these details are obtained from third party information."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/35397",
+        "name": "35397",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://osvdb.org/55187",
+        "name": "55187",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=533361",
+        "name": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=533361",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/1638",
+        "name": "ADV-2009-1638",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2010-November/050542.html",
+        "name": "FEDORA-2010-17035",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2010-November/050526.html",
+        "name": "FEDORA-2010-17041",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/43883",
+        "name": "43883",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2010-November/050562.html",
+        "name": "FEDORA-2010-17004",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  }
+]

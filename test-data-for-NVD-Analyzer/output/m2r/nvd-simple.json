@@ -1,0 +1,2175 @@
+[
+  {
+    "cveID": "CVE-2019-1559",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2019-02-27T23:29Z",
+    "lastModifiedDate": "2021-01-20T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "If an application encounters a fatal protocol error and then calls SSL_shutdown() twice (once to send a close_notify, and once to receive one) then OpenSSL can respond differently to the calling application if a 0 byte record is received with invalid padding compared to if a 0 byte record is received with an invalid MAC. If the application then behaves differently based on that in a way that is detectable to the remote peer, then this amounts to a padding oracle that could be used to decrypt data. In order for this to be exploitable \"non-stitched\" ciphersuites must be in use. Stitched ciphersuites are optimised implementations of certain commonly used ciphersuites. Also the application must call SSL_shutdown() twice even if a protocol error has occurred (applications should not do this but some do anyway). Fixed in OpenSSL 1.0.2r (Affected 1.0.2-1.0.2q)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20190226.txt",
+        "name": "https://www.openssl.org/news/secadv/20190226.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e9bbefbf0f24c57645e7ad6a5a71ae649d18ac8e",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e9bbefbf0f24c57645e7ad6a5a71ae649d18ac8e",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3899-1/",
+        "name": "USN-3899-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/107174",
+        "name": "107174",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4400",
+        "name": "DSA-4400",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/03/msg00003.html",
+        "name": "[debian-lts-announce] 20190301 [SECURITY] [DLA 1701-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190301-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190301-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190301-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20190301-0001/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201903-10",
+        "name": "GLSA-201903-10",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K18549143",
+        "name": "https://support.f5.com/csp/article/K18549143",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2019-02",
+        "name": "https://www.tenable.com/security/tns-2019-02",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-03/msg00041.html",
+        "name": "openSUSE-SU-2019:1076",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00019.html",
+        "name": "openSUSE-SU-2019:1105",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00047.html",
+        "name": "openSUSE-SU-2019:1175",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00046.html",
+        "name": "openSUSE-SU-2019:1173",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190423-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190423-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2019-03",
+        "name": "https://www.tenable.com/security/tns-2019-03",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10282",
+        "name": "https://kc.mcafee.com/corporate/index?page=content&id=SB10282",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00049.html",
+        "name": "openSUSE-SU-2019:1432",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00080.html",
+        "name": "openSUSE-SU-2019:1637",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2304",
+        "name": "RHSA-2019:2304",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2437",
+        "name": "RHSA-2019:2437",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2439",
+        "name": "RHSA-2019:2439",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2471",
+        "name": "RHSA-2019:2471",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EWC42UXL5GHTU5G77VKBF6JYUUNGSHOM/",
+        "name": "FEDORA-2019-db06efdea1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBEV5QGDRFUZDMNECFXUSN5FMYOZDE4V/",
+        "name": "FEDORA-2019-00c25b9379",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y3IVFGSERAZLNJCK35TEM2R4726XIH3Z/",
+        "name": "FEDORA-2019-9a0a7c0986",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K18549143?utm_source=f5support&amp;utm_medium=RSS",
+        "name": "https://support.f5.com/csp/article/K18549143?utm_source=f5support&amp;utm_medium=RSS",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3929",
+        "name": "RHSA-2019:3929",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3931",
+        "name": "RHSA-2019:3931",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4376-2/",
+        "name": "USN-4376-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-0732",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2018-06-12T13:29Z",
+    "lastModifiedDate": "2021-01-20T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "During key agreement in a TLS handshake using a DH(E) based ciphersuite a malicious server can send a very large prime value to the client. This will cause the client to spend an unreasonably long period of time generating a key for this prime resulting in a hang until the client has finished. This could be exploited in a Denial Of Service attack. Fixed in OpenSSL 1.1.0i-dev (Affected 1.1.0-1.1.0h). Fixed in OpenSSL 1.0.2p-dev (Affected 1.0.2-1.0.2o)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20180612.txt",
+        "name": "https://www.openssl.org/news/secadv/20180612.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ea7abeeabf92b7aca160bdd0208636d4da69f4f4",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ea7abeeabf92b7aca160bdd0208636d4da69f4f4",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3984ef0b72831da8b3ece4745cac4f8575b19098",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=3984ef0b72831da8b3ece4745cac4f8575b19098",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1041090",
+        "name": "1041090",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/104442",
+        "name": "104442",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3692-2/",
+        "name": "USN-3692-2",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3692-1/",
+        "name": "USN-3692-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/07/msg00043.html",
+        "name": "[debian-lts-announce] 20180728 [SECURITY] [DLA 1449-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2553",
+        "name": "RHSA-2018:2553",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2552",
+        "name": "RHSA-2018:2552",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/",
+        "name": "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-12",
+        "name": "https://www.tenable.com/security/tns-2018-12",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://securityadvisories.paloaltonetworks.com/Home/Detail/133",
+        "name": "https://securityadvisories.paloaltonetworks.com/Home/Detail/133",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-14",
+        "name": "https://www.tenable.com/security/tns-2018-14",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-13",
+        "name": "https://www.tenable.com/security/tns-2018-13",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3221",
+        "name": "RHSA-2018:3221",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20181105-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20181105-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3505",
+        "name": "RHSA-2018:3505",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-03",
+        "name": "GLSA-201811-03",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4348",
+        "name": "DSA-4348",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4355",
+        "name": "DSA-4355",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-17",
+        "name": "https://www.tenable.com/security/tns-2018-17",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190118-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190118-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1297",
+        "name": "RHSA-2019:1297",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1296",
+        "name": "RHSA-2019:1296",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1543",
+        "name": "RHSA-2019:1543",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EWC42UXL5GHTU5G77VKBF6JYUUNGSHOM/",
+        "name": "FEDORA-2019-db06efdea1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBEV5QGDRFUZDMNECFXUSN5FMYOZDE4V/",
+        "name": "FEDORA-2019-00c25b9379",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y3IVFGSERAZLNJCK35TEM2R4726XIH3Z/",
+        "name": "FEDORA-2019-9a0a7c0986",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-1552",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2019-07-30T17:15Z",
+    "lastModifiedDate": "2020-12-23T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OpenSSL has internal defaults for a directory tree where it can find a configuration file as well as certificates used for verification in TLS. This directory is most commonly referred to as OPENSSLDIR, and is configurable with the --prefix / --openssldir configuration options. For OpenSSL versions 1.1.0 and 1.1.1, the mingw configuration targets assume that resulting programs and libraries are installed in a Unix-like environment and the default prefix for program installation as well as for OPENSSLDIR should be '/usr/local'. However, mingw programs are Windows programs, and as such, find themselves looking at sub-directories of 'C:/usr/local', which may be world writable, which enables untrusted users to modify OpenSSL's default configuration, insert CA certificates, modify (or even replace) existing engine modules, etc. For OpenSSL 1.0.2, '/usr/local/ssl' is used as default for OPENSSLDIR on all Unix and Windows targets, including Visual C builds. However, some build instructions for the diverse Windows targets on 1.0.2 encourage you to specify your own --prefix. OpenSSL versions 1.1.1, 1.1.0 and 1.0.2 are affected by this issue. Due to the limited scope of affected deployments this has been assessed as low severity and therefore we are not creating new releases at this time. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=d333ebaf9c77332754a9d5e111e2f53e1de54fdd",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=d333ebaf9c77332754a9d5e111e2f53e1de54fdd",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e32bc855a81a2d48d215c506bdeb4f598045f7e9",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e32bc855a81a2d48d215c506bdeb4f598045f7e9",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b15a19c148384e73338aa7c5b12652138e35ed28",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b15a19c148384e73338aa7c5b12652138e35ed28",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=54aa9d51b09d67e90db443f682cface795f5af9e",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=54aa9d51b09d67e90db443f682cface795f5af9e",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20190730.txt",
+        "name": "https://www.openssl.org/news/secadv/20190730.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190823-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20190823-0006/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EWC42UXL5GHTU5G77VKBF6JYUUNGSHOM/",
+        "name": "FEDORA-2019-db06efdea1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBEV5QGDRFUZDMNECFXUSN5FMYOZDE4V/",
+        "name": "FEDORA-2019-00c25b9379",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y3IVFGSERAZLNJCK35TEM2R4726XIH3Z/",
+        "name": "FEDORA-2019-9a0a7c0986",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K94041354",
+        "name": "https://support.f5.com/csp/article/K94041354",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K94041354?utm_source=f5support&amp;utm_medium=RSS",
+        "name": "https://support.f5.com/csp/article/K94041354?utm_source=f5support&amp;utm_medium=RSS",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2019-08",
+        "name": "https://www.tenable.com/security/tns-2019-08",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2019-09",
+        "name": "https://www.tenable.com/security/tns-2019-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.kb.cert.org/vuls/id/429301",
+        "name": "VU#429301",
+        "refsource": "CERT-VN",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-0734",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2018-10-30T12:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The OpenSSL DSA signature algorithm has been shown to be vulnerable to a timing side channel attack. An attacker could use variations in the signing algorithm to recover the private key. Fixed in OpenSSL 1.1.1a (Affected 1.1.1). Fixed in OpenSSL 1.1.0j (Affected 1.1.0-1.1.0i). Fixed in OpenSSL 1.0.2q (Affected 1.0.2-1.0.2p)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20181030.txt",
+        "name": "https://www.openssl.org/news/secadv/20181030.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ef11e19d1365eea2b1851e6f540a0bf365d303e7",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ef11e19d1365eea2b1851e6f540a0bf365d303e7",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8abfe72e8c1de1b95f50aa0d9134803b4d00070f",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8abfe72e8c1de1b95f50aa0d9134803b4d00070f",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=43e6a58d4991a451daf4891ff05a48735df871ac",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=43e6a58d4991a451daf4891ff05a48735df871ac",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/105758",
+        "name": "105758",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20181105-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20181105-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+        "name": "https://nodejs.org/en/blog/vulnerability/november-2018-security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4348",
+        "name": "DSA-4348",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3840-1/",
+        "name": "USN-3840-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4355",
+        "name": "DSA-4355",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-17",
+        "name": "https://www.tenable.com/security/tns-2018-17",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-16",
+        "name": "https://www.tenable.com/security/tns-2018-16",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190118-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190118-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190423-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190423-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00030.html",
+        "name": "openSUSE-SU-2019:1547",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00056.html",
+        "name": "openSUSE-SU-2019:1814",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2304",
+        "name": "RHSA-2019:2304",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EWC42UXL5GHTU5G77VKBF6JYUUNGSHOM/",
+        "name": "FEDORA-2019-db06efdea1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBEV5QGDRFUZDMNECFXUSN5FMYOZDE4V/",
+        "name": "FEDORA-2019-00c25b9379",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y3IVFGSERAZLNJCK35TEM2R4726XIH3Z/",
+        "name": "FEDORA-2019-9a0a7c0986",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3700",
+        "name": "RHSA-2019:3700",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3935",
+        "name": "RHSA-2019:3935",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3933",
+        "name": "RHSA-2019:3933",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3932",
+        "name": "RHSA-2019:3932",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18420",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-31T14:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.12.x allowing x86 PV guest OS users to cause a denial of service via a VCPUOP_initialise hypercall. hypercall_create_continuation() is a variadic function which uses a printf-like format string to interpret its parameters. Error handling for a bad format character was done using BUG(), which crashes Xen. One path, via the VCPUOP_initialise hypercall, has a bad format character. The BUG() can be hit if VCPUOP_initialise executes for a sufficiently long period of time for a continuation to be created. Malicious guests may cause a hypervisor crash, resulting in a Denial of Service (DoS). Xen versions 4.6 and newer are vulnerable. Xen versions 4.5 and earlier are not vulnerable. Only x86 PV guests can exploit the vulnerability. HVM and PVH guests, and guests on ARM systems, cannot exploit the vulnerability."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-296.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-296.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/10/31/1",
+        "name": "[oss-security] 20191031 Xen Security Advisory 296 v4 (CVE-2019-18420) - VCPUOP_initialise DoS",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00037.html",
+        "name": "openSUSE-SU-2019:2506",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2BQKX7M2RHCWDBKNPX4KEBI3MJIH6AYZ/",
+        "name": "FEDORA-2019-865bb16900",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I5WWPW4BSZDDW7VHU427XTVXV7ROOFFW/",
+        "name": "FEDORA-2019-376ec5c107",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IZYATWNUGHRBG6I3TC24YHP5Y3J7I6KH/",
+        "name": "FEDORA-2019-cbb732f760",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4602",
+        "name": "DSA-4602",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Jan/21",
+        "name": "20200114 [SECURITY] [DSA 4602-1] xen security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-56",
+        "name": "GLSA-202003-56",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18423",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-31T14:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.12.x allowing ARM guest OS users to cause a denial of service via a XENMEM_add_to_physmap hypercall. p2m->max_mapped_gfn is used by the functions p2m_resolve_translation_fault() and p2m_get_entry() to sanity check guest physical frame. The rest of the code in the two functions will assume that there is a valid root table and check that with BUG_ON(). The function p2m_get_root_pointer() will ignore the unused top bits of a guest physical frame. This means that the function p2m_set_entry() will alias the frame. However, p2m->max_mapped_gfn will be updated using the original frame. It would be possible to set p2m->max_mapped_gfn high enough to cover a frame that would lead p2m_get_root_pointer() to return NULL in p2m_get_entry() and p2m_resolve_translation_fault(). Additionally, the sanity check on p2m->max_mapped_gfn is off-by-one allowing \"highest mapped + 1\" to be considered valid. However, p2m_get_root_pointer() will return NULL. The problem could be triggered with a specially crafted hypercall XENMEM_add_to_physmap{, _batch} followed by an access to an address (via hypercall or direct access) that passes the sanity check but cause p2m_get_root_pointer() to return NULL. A malicious guest administrator may cause a hypervisor crash, resulting in a Denial of Service (DoS). Xen version 4.8 and newer are vulnerable. Only Arm systems are vulnerable. x86 systems are not affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-301.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-301.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/10/31/4",
+        "name": "[oss-security] 20191031 Xen Security Advisory 301 v3 (CVE-2019-18423) - add-to-physmap can be abused to DoS Arm hosts",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2BQKX7M2RHCWDBKNPX4KEBI3MJIH6AYZ/",
+        "name": "FEDORA-2019-865bb16900",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I5WWPW4BSZDDW7VHU427XTVXV7ROOFFW/",
+        "name": "FEDORA-2019-376ec5c107",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IZYATWNUGHRBG6I3TC24YHP5Y3J7I6KH/",
+        "name": "FEDORA-2019-cbb732f760",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4602",
+        "name": "DSA-4602",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Jan/21",
+        "name": "20200114 [SECURITY] [DSA 4602-1] xen security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-56",
+        "name": "GLSA-202003-56",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11866",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-11T16:15Z",
+    "lastModifiedDate": "2020-06-18T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "libEMF (aka ECMA-234 Metafile Library) through 1.0.11 allows a use-after-free."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "name": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "name": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "name": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2DFYDSKWFM2R5NKZOO2IN6X7SM3T2PWL/",
+        "name": "FEDORA-2020-c696d8604b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00036.html",
+        "name": "openSUSE-SU-2020:0831",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11865",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-11T16:15Z",
+    "lastModifiedDate": "2020-06-18T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "libEMF (aka ECMA-234 Metafile Library) through 1.0.11 allows out-of-bounds memory access."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "name": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "name": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "name": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2DFYDSKWFM2R5NKZOO2IN6X7SM3T2PWL/",
+        "name": "FEDORA-2020-c696d8604b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00036.html",
+        "name": "openSUSE-SU-2020:0831",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11864",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-11T16:15Z",
+    "lastModifiedDate": "2020-06-18T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "libEMF (aka ECMA-234 Metafile Library) through 1.0.11 allows denial of service (issue 2 of 2)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "name": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "name": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "name": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2DFYDSKWFM2R5NKZOO2IN6X7SM3T2PWL/",
+        "name": "FEDORA-2020-c696d8604b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00036.html",
+        "name": "openSUSE-SU-2020:0831",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11863",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-11T16:15Z",
+    "lastModifiedDate": "2020-06-18T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "libEMF (aka ECMA-234 Metafile Library) through 1.0.11 allows denial of service (issue 1 of 2)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "name": "https://sourceforge.net/p/libemf/news/2020/05/re-release-of-libemf-1012/",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "name": "https://sourceforge.net/p/libemf/code/commit_browser",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "name": "https://sourceforge.net/p/libemf/mailman/libemf-devel/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2DFYDSKWFM2R5NKZOO2IN6X7SM3T2PWL/",
+        "name": "FEDORA-2020-c696d8604b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-06/msg00036.html",
+        "name": "openSUSE-SU-2020:0831",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18422",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-31T14:15Z",
+    "lastModifiedDate": "2019-11-17T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.12.x allowing ARM guest OS users to cause a denial of service or gain privileges by leveraging the erroneous enabling of interrupts. Interrupts are unconditionally unmasked in exception handlers. When an exception occurs on an ARM system which is handled without changing processor level, some interrupts are unconditionally enabled during exception entry. So exceptions which occur when interrupts are masked will effectively unmask the interrupts. A malicious guest might contrive to arrange for critical Xen code to run with interrupts erroneously enabled. This could lead to data corruption, denial of service, or possibly even privilege escalation. However a precise attack technique has not been identified."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-303.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-303.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/10/31/5",
+        "name": "[oss-security] 20191031 Xen Security Advisory 303 v4 (CVE-2019-18422) - ARM: Interrupts are unconditionally unmasked in exception handlers",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2BQKX7M2RHCWDBKNPX4KEBI3MJIH6AYZ/",
+        "name": "FEDORA-2019-865bb16900",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I5WWPW4BSZDDW7VHU427XTVXV7ROOFFW/",
+        "name": "FEDORA-2019-376ec5c107",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IZYATWNUGHRBG6I3TC24YHP5Y3J7I6KH/",
+        "name": "FEDORA-2019-cbb732f760",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4602",
+        "name": "DSA-4602",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Jan/21",
+        "name": "20200114 [SECURITY] [DSA 4602-1] xen security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18425",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-31T14:15Z",
+    "lastModifiedDate": "2019-11-14T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.12.x allowing 32-bit PV guest OS users to gain guest OS privileges by installing and using descriptors. There is missing descriptor table limit checking in x86 PV emulation. When emulating certain PV guest operations, descriptor table accesses are performed by the emulating code. Such accesses should respect the guest specified limits, unless otherwise guaranteed to fail in such a case. Without this, emulation of 32-bit guest user mode calls through call gates would allow guest user mode to install and then use descriptors of their choice, as long as the guest kernel did not itself install an LDT. (Most OSes don't install any LDT by default). 32-bit PV guest user mode can elevate its privileges to that of the guest kernel. Xen versions from at least 3.2 onwards are affected. Only 32-bit PV guest user mode can leverage this vulnerability. HVM, PVH, as well as 64-bit PV guests cannot leverage this vulnerability. Arm systems are unaffected."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-298.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-298.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/10/31/2",
+        "name": "[oss-security] 20191031 Xen Security Advisory 298 v3 (CVE-2019-18425) - missing descriptor table limit checking in x86 PV emulation",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00037.html",
+        "name": "openSUSE-SU-2019:2506",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2BQKX7M2RHCWDBKNPX4KEBI3MJIH6AYZ/",
+        "name": "FEDORA-2019-865bb16900",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I5WWPW4BSZDDW7VHU427XTVXV7ROOFFW/",
+        "name": "FEDORA-2019-376ec5c107",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IZYATWNUGHRBG6I3TC24YHP5Y3J7I6KH/",
+        "name": "FEDORA-2019-cbb732f760",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4602",
+        "name": "DSA-4602",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Jan/21",
+        "name": "20200114 [SECURITY] [DSA 4602-1] xen security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-56",
+        "name": "GLSA-202003-56",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18424",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-31T14:15Z",
+    "lastModifiedDate": "2019-11-14T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.12.x allowing attackers to gain host OS privileges via DMA in a situation where an untrusted domain has access to a physical device. This occurs because passed through PCI devices may corrupt host memory after deassignment. When a PCI device is assigned to an untrusted domain, it is possible for that domain to program the device to DMA to an arbitrary address. The IOMMU is used to protect the host from malicious DMA by making sure that the device addresses can only target memory assigned to the guest. However, when the guest domain is torn down, or the device is deassigned, the device is assigned back to dom0, thus allowing any in-flight DMA to potentially target critical host data. An untrusted domain with access to a physical device can DMA into host memory, leading to privilege escalation. Only systems where guests are given direct access to physical devices capable of DMA (PCI pass-through) are vulnerable. Systems which do not use PCI pass-through are not vulnerable."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-302.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-302.html",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/10/31/6",
+        "name": "[oss-security] 20191031 Xen Security Advisory 302 v5 (CVE-2019-18424) - passed through PCI devices may corrupt host memory after deassignment",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00037.html",
+        "name": "openSUSE-SU-2019:2506",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2BQKX7M2RHCWDBKNPX4KEBI3MJIH6AYZ/",
+        "name": "FEDORA-2019-865bb16900",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I5WWPW4BSZDDW7VHU427XTVXV7ROOFFW/",
+        "name": "FEDORA-2019-376ec5c107",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IZYATWNUGHRBG6I3TC24YHP5Y3J7I6KH/",
+        "name": "FEDORA-2019-cbb732f760",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4602",
+        "name": "DSA-4602",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Jan/21",
+        "name": "20200114 [SECURITY] [DSA 4602-1] xen security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-56",
+        "name": "GLSA-202003-56",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18421",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-31T14:15Z",
+    "lastModifiedDate": "2019-11-14T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.12.x allowing x86 PV guest OS users to gain host OS privileges by leveraging race conditions in pagetable promotion and demotion operations. There are issues with restartable PV type change operations. To avoid using shadow pagetables for PV guests, Xen exposes the actual hardware pagetables to the guest. In order to prevent the guest from modifying these page tables directly, Xen keeps track of how pages are used using a type system; pages must be \"promoted\" before being used as a pagetable, and \"demoted\" before being used for any other type. Xen also allows for \"recursive\" promotions: i.e., an operating system promoting a page to an L4 pagetable may end up causing pages to be promoted to L3s, which may in turn cause pages to be promoted to L2s, and so on. These operations may take an arbitrarily large amount of time, and so must be re-startable. Unfortunately, making recursive pagetable promotion and demotion operations restartable is incredibly complicated, and the code contains several races which, if triggered, can cause Xen to drop or retain extra type counts, potentially allowing guests to get write access to in-use pagetables. A malicious PV guest administrator may be able to escalate their privilege to that of the host. All x86 systems with untrusted PV guests are vulnerable. HVM and PVH guests cannot exercise this vulnerability."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://xenbits.xen.org/xsa/advisory-299.html",
+        "name": "http://xenbits.xen.org/xsa/advisory-299.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/10/31/3",
+        "name": "[oss-security] 20191031 Xen Security Advisory 299 v4 (CVE-2019-18421) - Issues with restartable PV type change operations",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00037.html",
+        "name": "openSUSE-SU-2019:2506",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2BQKX7M2RHCWDBKNPX4KEBI3MJIH6AYZ/",
+        "name": "FEDORA-2019-865bb16900",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I5WWPW4BSZDDW7VHU427XTVXV7ROOFFW/",
+        "name": "FEDORA-2019-376ec5c107",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IZYATWNUGHRBG6I3TC24YHP5Y3J7I6KH/",
+        "name": "FEDORA-2019-cbb732f760",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4602",
+        "name": "DSA-4602",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Jan/21",
+        "name": "20200114 [SECURITY] [DSA 4602-1] xen security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-56",
+        "name": "GLSA-202003-56",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-10359",
+    "cveASSIGNER": "jenkinsci-cert@googlegroups.com",
+    "publishedDate": "2019-07-31T13:15Z",
+    "lastModifiedDate": "2019-10-09T23:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A cross-site request forgery vulnerability in Jenkins Maven Release Plugin 0.14.0 and earlier in the M2ReleaseAction#doSubmit method allowed attackers to perform releases with attacker-specified options."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://jenkins.io/security/advisory/2019-07-31/#SECURITY-1098",
+        "name": "https://jenkins.io/security/advisory/2019-07-31/#SECURITY-1098",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/07/31/1",
+        "name": "[oss-security] 20190731 Multiple vulnerabilities in Jenkins plugins",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-0737",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2018-04-16T18:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The OpenSSL RSA Key generation algorithm has been shown to be vulnerable to a cache timing side channel attack. An attacker with sufficient access to mount cache timing attacks during the RSA key generation process could recover the private key. Fixed in OpenSSL 1.1.0i-dev (Affected 1.1.0-1.1.0h). Fixed in OpenSSL 1.0.2p-dev (Affected 1.0.2b-1.0.2o)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20180416.txt",
+        "name": "https://www.openssl.org/news/secadv/20180416.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6939eab03a6e23d2bd2c3f5e34fe1d48e542e787",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6939eab03a6e23d2bd2c3f5e34fe1d48e542e787",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=349a41da1ad88ad87825414752a8ff5fdd6a6c3f",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=349a41da1ad88ad87825414752a8ff5fdd6a6c3f",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1040685",
+        "name": "1040685",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/103766",
+        "name": "103766",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3628-2/",
+        "name": "USN-3628-2",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3628-1/",
+        "name": "USN-3628-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3692-2/",
+        "name": "USN-3692-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/3692-1/",
+        "name": "USN-3692-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20180726-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20180726-0003/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/07/msg00043.html",
+        "name": "[debian-lts-announce] 20180728 [SECURITY] [DLA 1449-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/",
+        "name": "https://nodejs.org/en/blog/vulnerability/august-2018-security-releases/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-12",
+        "name": "https://www.tenable.com/security/tns-2018-12",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://securityadvisories.paloaltonetworks.com/Home/Detail/133",
+        "name": "https://securityadvisories.paloaltonetworks.com/Home/Detail/133",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-14",
+        "name": "https://www.tenable.com/security/tns-2018-14",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-13",
+        "name": "https://www.tenable.com/security/tns-2018-13",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3221",
+        "name": "RHSA-2018:3221",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3505",
+        "name": "RHSA-2018:3505",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-21",
+        "name": "GLSA-201811-21",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4348",
+        "name": "DSA-4348",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4355",
+        "name": "DSA-4355",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2018-17",
+        "name": "https://www.tenable.com/security/tns-2018-17",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EWC42UXL5GHTU5G77VKBF6JYUUNGSHOM/",
+        "name": "FEDORA-2019-db06efdea1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBEV5QGDRFUZDMNECFXUSN5FMYOZDE4V/",
+        "name": "FEDORA-2019-00c25b9379",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y3IVFGSERAZLNJCK35TEM2R4726XIH3Z/",
+        "name": "FEDORA-2019-9a0a7c0986",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3935",
+        "name": "RHSA-2019:3935",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3933",
+        "name": "RHSA-2019:3933",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3932",
+        "name": "RHSA-2019:3932",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-1543",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2019-03-06T21:29Z",
+    "lastModifiedDate": "2019-06-03T20:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "ChaCha20-Poly1305 is an AEAD cipher, and requires a unique nonce input for every encryption operation. RFC 7539 specifies that the nonce value (IV) should be 96 bits (12 bytes). OpenSSL allows a variable nonce length and front pads the nonce with 0 bytes if it is less than 12 bytes. However it also incorrectly allows a nonce to be set of up to 16 bytes. In this case only the last 12 bytes are significant and any additional leading bytes are ignored. It is a requirement of using this cipher that nonce values are unique. Messages encrypted using a reused nonce value are susceptible to serious confidentiality and integrity attacks. If an application changes the default nonce length to be longer than 12 bytes and then makes a change to the leading bytes of the nonce expecting the new value to be a new unique nonce then such an application could inadvertently encrypt messages with a reused nonce. Additionally the ignored bytes in a long nonce are not covered by the integrity guarantee of this cipher. Any application that relies on the integrity of these ignored leading bytes of a long nonce may be further affected. Any OpenSSL internal use of this cipher, including in SSL/TLS, is safe because no such use sets such a long nonce value. However user applications that use this cipher directly and set a non-default nonce length to be longer than 12 bytes may be vulnerable. OpenSSL versions 1.1.1 and 1.1.0 are affected by this issue. Due to the limited scope of affected deployments this has been assessed as low severity and therefore we are not creating new releases at this time. Fixed in OpenSSL 1.1.1c (Affected 1.1.1-1.1.1b). Fixed in OpenSSL 1.1.0k (Affected 1.1.0-1.1.0j)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20190306.txt",
+        "name": "https://www.openssl.org/news/secadv/20190306.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f426625b6ae9a7831010750490a5f0ad689c5ba3",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f426625b6ae9a7831010750490a5f0ad689c5ba3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory",
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ee22257b1418438ebaf54df98af4e24f494d1809",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ee22257b1418438ebaf54df98af4e24f494d1809",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Jul/3",
+        "name": "20190701 [SECURITY] [DSA 4475-1] openssl security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4475",
+        "name": "DSA-4475",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00056.html",
+        "name": "openSUSE-SU-2019:1814",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBEV5QGDRFUZDMNECFXUSN5FMYOZDE4V/",
+        "name": "FEDORA-2019-00c25b9379",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Y3IVFGSERAZLNJCK35TEM2R4726XIH3Z/",
+        "name": "FEDORA-2019-9a0a7c0986",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3700",
+        "name": "RHSA-2019:3700",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-1088",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2011-03-14T19:55Z",
+    "lastModifiedDate": "2018-10-09T19:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Tomcat 7.x before 7.0.10 does not follow ServletSecurity annotations, which allows remote attackers to bypass intended access restrictions via HTTP requests to a web application."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0563",
+        "name": "ADV-2011-0563",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://tomcat.apache.org/security-7.html",
+        "name": "http://tomcat.apache.org/security-7.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://mail-archives.apache.org/mod_mbox/www-announce/201103.mbox/%3C4D6E74FF.7050106@apache.org%3E",
+        "name": "[announce] 20110302 [SECURITY] Tomcat 7 ignores @ServletSecurity annotations",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://svn.apache.org/viewvc?view=revision&revision=1077995",
+        "name": "http://svn.apache.org/viewvc?view=revision&revision=1077995",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://markmail.org/message/lzx5273wsgl5pob6",
+        "name": "[users] 20110302 Re: @DenyAll does nothing",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://svn.apache.org/viewvc?view=revision&revision=1076587",
+        "name": "http://svn.apache.org/viewvc?view=revision&revision=1076587",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/43684",
+        "name": "43684",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://markmail.org/message/yzmyn44f5aetmm2r",
+        "name": "[users] 20110302 Re: @DenyAll does nothing",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://svn.apache.org/viewvc?view=revision&revision=1076586",
+        "name": "http://svn.apache.org/viewvc?view=revision&revision=1076586",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/71027",
+        "name": "71027",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/46685",
+        "name": "46685",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1025215",
+        "name": "1025215",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/65971",
+        "name": "tomcat-servletsecurity-sec-bypass(65971)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/517013/100/0/threaded",
+        "name": "20110315 [SECURITY] CVE-2011-1088 Apache Tomcat security constraint bypass",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-1419",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2011-03-14T19:55Z",
+    "lastModifiedDate": "2017-08-17T01:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Tomcat 7.x before 7.0.11, when web.xml has no security constraints, does not follow ServletSecurity annotations, which allows remote attackers to bypass intended access restrictions via HTTP requests to a web application.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2011-1088."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://markmail.org/message/yzmyn44f5aetmm2r",
+        "name": "[users] 20110302 Re: @DenyAll does nothing",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://markmail.org/message/lzx5273wsgl5pob6",
+        "name": "[users] 20110302 Re: @DenyAll does nothing",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://mail-archives.apache.org/mod_mbox/www-announce/201103.mbox/%3C4D6E74FF.7050106@apache.org%3E",
+        "name": "[announce] 20110302 [SECURITY] Tomcat 7 ignores @ServletSecurity annotations",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://svn.apache.org/viewvc?view=revision&revision=1079752",
+        "name": "http://svn.apache.org/viewvc?view=revision&revision=1079752",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/43684",
+        "name": "43684",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/71027",
+        "name": "71027",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0563",
+        "name": "ADV-2011-0563",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://tomcat.apache.org/security-7.html",
+        "name": "http://tomcat.apache.org/security-7.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/46685",
+        "name": "46685",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=tomcat-user&m=129966773405409&w=2",
+        "name": "[users] 20110309 [SECURITY] Tomcat 7 ignores @ServletSecurity annotations",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/8131",
+        "name": "8131",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/66154",
+        "name": "apache-servletsecurity-sec-bypass(66154)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/65971",
+        "name": "tomcat-servletsecurity-sec-bypass(65971)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2003-1200",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2003-12-29T05:00Z",
+    "lastModifiedDate": "2017-07-11T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Stack-based buffer overflow in FORM2RAW.exe in Alt-N MDaemon 6.5.2 through 6.8.5 allows remote attackers to execute arbitrary code via a long From parameter to Form2Raw.cgi."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/348454",
+        "name": "20031229 [Hat-Squad] Remote buffer overflow in Mdaemon Raw message Handler",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://hat-squad.com/bugreport/mdaemon-raw.txt",
+        "name": "http://hat-squad.com/bugreport/mdaemon-raw.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/9317",
+        "name": "9317",
+        "refsource": "BID",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/3255",
+        "name": "3255",
+        "refsource": "OSVDB",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/10512",
+        "name": "10512",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=107936753929354&w=2",
+        "name": "20040314 Rosiello Security's exploit for MDaemon",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/14097",
+        "name": "mdaemon-form2raw-from-bo(14097)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  }
+]

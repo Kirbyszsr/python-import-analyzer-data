@@ -1,0 +1,20 @@
+{
+  "name": "docstring_parser",
+  "description": "docstring_parser\n================\n\nParse Python docstrings. Currently support ReST, Google, and Numpydoc-style\ndocstrings.\n\nExample usage:\n\n```python\n>>> from docstring_parser import parse\n>>>\n>>>\n>>> docstring = parse(\n...     '''\n...     Short description\n...\n...     Long description spanning multiple lines\n...     - First line\n...     - Second line\n...     - Third line\n...\n...     :param name: description 1\n...     :param int priority: description 2\n...     :param str sender: description 3\n...     :raises ValueError: if name is invalid\n...     ''')\n>>>\n>>> docstring.long_description\n'Long description spanning multiple lines\\n- First line\\n- Second line\\n- Third line'\n>>> docstring.params[1].arg_name\n'priority'\n>>> docstring.raises[0].type_name\n'ValueError'\n```\n\n# Contributing\n\nThis project uses [Black](https://github.com/psf/black) with `-l79` setting as\nwell as [isort](https://github.com/timothycrosley/isort).",
+  "requires_dist": null,
+  "requires_python": "~=3.5",
+  "current_version": "0.7.3",
+  "released_versions": [
+    "0.1",
+    "0.2",
+    "0.3",
+    "0.4",
+    "0.5",
+    "0.6",
+    "0.6.1",
+    "0.7",
+    "0.7.1",
+    "0.7.2",
+    "0.7.3"
+  ]
+}

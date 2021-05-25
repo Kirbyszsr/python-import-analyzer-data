@@ -1,0 +1,866 @@
+[
+  {
+    "cveID": "CVE-2021-29475",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-26T19:15Z",
+    "lastModifiedDate": "2021-05-14T13:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HedgeDoc (formerly known as CodiMD) is an open-source collaborative markdown editor. An attacker is able to receive arbitrary files from the file system when exporting a note to PDF. Since the code injection has to take place as note content, there fore this exploit requires the attackers ability to modify a note. This will affect all instances, which have pdf export enabled. This issue has been fixed by https://github.com/hedgedoc/hedgedoc/commit/c1789474020a6d668d616464cb2da5e90e123f65 and is available in version 1.5.0. Starting the CodiMD/HedgeDoc instance with `CMD_ALLOW_PDF_EXPORT=false` or set `\"allowPDFExport\": false` in config.json can mitigate this issue for those who cannot upgrade. This exploit works because while PhantomJS doesn't actually render the `file:///` references to the PDF file itself, it still uses them internally, and exfiltration is possible, and easy through JavaScript rendering. The impact is pretty bad, as the attacker is able to read the CodiMD/HedgeDoc `config.json` file as well any other files on the filesystem. Even though the suggested Docker deploy option doesn't have many interesting files itself, the `config.json` still often contains sensitive information, database credentials, and maybe OAuth secrets among other things."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/hedgedoc/hedgedoc/commit/c1789474020a6d668d616464cb2da5e90e123f65",
+        "name": "https://github.com/hedgedoc/hedgedoc/commit/c1789474020a6d668d616464cb2da5e90e123f65",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-pxxg-px9v-6qf3",
+        "name": "https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-pxxg-px9v-6qf3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21391",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-29T01:15Z",
+    "lastModifiedDate": "2021-05-10T18:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "CKEditor 5 provides a WYSIWYG editing solution. This CVE affects the following npm packages: ckeditor5-engine, ckeditor5-font, ckeditor5-image, ckeditor5-list, ckeditor5-markdown-gfm, ckeditor5-media-embed, ckeditor5-paste-from-office, and ckeditor5-widget. Following an internal audit, a regular expression denial of service (ReDoS) vulnerability has been discovered in multiple CKEditor 5 packages. The vulnerability allowed to abuse particular regular expressions, which could cause a significant performance drop resulting in a browser tab freeze. It affects all users using the CKEditor 5 packages listed above at version <= 26.0.0. The problem has been recognized and patched. The fix will be available in version 27.0.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-markdown-gfm",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-markdown-gfm",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-engine",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-engine",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-image",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-image",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-media-embed",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-media-embed",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-3rh3-wfr4-76mj",
+        "name": "https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-3rh3-wfr4-76mj",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-list",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-list",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-font",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-font",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-paste-from-office",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-paste-from-office",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-widget",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-widget",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-26813",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-03T16:15Z",
+    "lastModifiedDate": "2021-05-10T03:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "markdown2 >=1.0.1.18, fixed in 2.4.0, is affected by a regular expression denial of service vulnerability. If an attacker provides a malicious string, it can make markdown2 processing difficult or delayed for an extended period of time."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/trentm/python-markdown2/pull/387",
+        "name": "https://github.com/trentm/python-markdown2/pull/387",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BRP5RN35JZTSJ3JT4722F447ZDK7LZS5/",
+        "name": "FEDORA-2021-0337384e41",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JTIX5UXRDJZJ57DO4V33ZNJTNKWGBQLY/",
+        "name": "FEDORA-2021-e235a0da4a",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/J752422YELXLMLZJPVJVKD2KKHHQRVEH/",
+        "name": "FEDORA-2021-77191478ad",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-30027",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-29T15:15Z",
+    "lastModifiedDate": "2021-05-09T01:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "md_analyze_line in md4c.c in md4c 0.4.7 allows attackers to trigger use of uninitialized memory, and cause a denial of service via a malformed Markdown document."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/mity/md4c/commit/4fc808d8fe8d8904f8525bb4231d854f45e23a19",
+        "name": "https://github.com/mity/md4c/commit/4fc808d8fe8d8904f8525bb4231d854f45e23a19",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/mity/md4c/issues/155",
+        "name": "https://github.com/mity/md4c/issues/155",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29474",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-26T22:15Z",
+    "lastModifiedDate": "2021-05-07T18:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HedgeDoc (formerly known as CodiMD) is an open-source collaborative markdown editor. An attacker can read arbitrary `.md` files from the server's filesystem due to an improper input validation, which results in the ability to perform a relative path traversal. To verify if you are affected, you can try to open the following URL: `http://localhost:3000/..%2F..%2FREADME#` (replace `http://localhost:3000` with your instance's base-URL e.g. `https://demo.hedgedoc.org/..%2F..%2FREADME#`). If you see a README page being rendered, you run an affected version. The attack works due the fact that the internal router passes the url-encoded alias to the `noteController.showNote`-function. This function passes the input directly to findNote() utility function, that will pass it on the the parseNoteId()-function, that tries to make sense out of the noteId/alias and check if a note already exists and if so, if a corresponding file on disk was updated. If no note exists the note creation-function is called, which pass this unvalidated alias, with a `.md` appended, into a path.join()-function which is read from the filesystem in the follow up routine and provides the pre-filled content of the new note. This allows an attacker to not only read arbitrary `.md` files from the filesystem, but also observes changes to them. The usefulness of this attack can be considered limited, since mainly markdown files are use the file-ending `.md` and all markdown files contained in the hedgedoc project, like the README, are public anyway. If other protections such as a chroot or container or proper file permissions are in place, this attack's usefulness is rather limited. On a reverse-proxy level one can force a URL-decode, which will prevent this attack because the router will not accept such a path."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-p528-555r-pf87",
+        "name": "https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-p528-555r-pf87",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28796",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-18T16:15Z",
+    "lastModifiedDate": "2021-04-05T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Increments Qiita::Markdown before 0.33.0 allows XSS in transformers."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/increments/qiita-markdown/compare/v0.32.0...v0.33.0",
+        "name": "https://github.com/increments/qiita-markdown/compare/v0.32.0...v0.33.0",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://vuln.ryotak.me/advisories/15",
+        "name": "https://vuln.ryotak.me/advisories/15",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21372",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-26T22:15Z",
+    "lastModifiedDate": "2021-03-31T15:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Nimble is a package manager for the Nim programming language. In Nim release version before versions 1.2.10 and 1.4.4, Nimble doCmd is used in different places and can be leveraged to execute arbitrary commands. An attacker can craft a malicious entry in the packages.json package list to trigger code execution."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/nim-lang/nimble/blob/master/changelog.markdown#0130",
+        "name": "https://github.com/nim-lang/nimble/blob/master/changelog.markdown#0130",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/nim-lang/security/security/advisories/GHSA-rg9f-w24h-962p",
+        "name": "https://github.com/nim-lang/security/security/advisories/GHSA-rg9f-w24h-962p",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/nim-lang/nimble/commit/7bd63d504a4157b8ed61a51af47fb086ee818c37",
+        "name": "https://github.com/nim-lang/nimble/commit/7bd63d504a4157b8ed61a51af47fb086ee818c37",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://consensys.net/diligence/vulnerabilities/nim-insecure-ssl-tls-defaults-remote-code-execution/",
+        "name": "https://consensys.net/diligence/vulnerabilities/nim-insecure-ssl-tls-defaults-remote-code-execution/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21373",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-26T22:15Z",
+    "lastModifiedDate": "2021-03-31T15:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Nimble is a package manager for the Nim programming language. In Nim release versions before versions 1.2.10 and 1.4.4, \"nimble refresh\" fetches a list of Nimble packages over HTTPS by default. In case of error it falls back to a non-TLS URL http://irclogs.nim-lang.org/packages.json. An attacker able to perform MitM can deliver a modified package list containing malicious software packages. If the packages are installed and used the attack escalates to untrusted code execution."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/nim-lang/nimble/blob/master/changelog.markdown#0130",
+        "name": "https://github.com/nim-lang/nimble/blob/master/changelog.markdown#0130",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/nim-lang/security/security/advisories/GHSA-8w52-r35x-rgp8",
+        "name": "https://github.com/nim-lang/security/security/advisories/GHSA-8w52-r35x-rgp8",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://consensys.net/diligence/vulnerabilities/nim-insecure-ssl-tls-defaults-remote-code-execution/",
+        "name": "https://consensys.net/diligence/vulnerabilities/nim-insecure-ssl-tls-defaults-remote-code-execution/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21374",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-26T22:15Z",
+    "lastModifiedDate": "2021-03-30T21:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Nimble is a package manager for the Nim programming language. In Nim release versions before versions 1.2.10 and 1.4.4, \"nimble refresh\" fetches a list of Nimble packages over HTTPS without full verification of the SSL/TLS certificate due to the default setting of httpClient. An attacker able to perform MitM can deliver a modified package list containing malicious software packages. If the packages are installed and used the attack escalates to untrusted code execution."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/nim-lang/nimble/blob/master/changelog.markdown#0130",
+        "name": "https://github.com/nim-lang/nimble/blob/master/changelog.markdown#0130",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/nim-lang/Nim/pull/16940",
+        "name": "https://github.com/nim-lang/Nim/pull/16940",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/nim-lang/security/security/advisories/GHSA-c2wm-v66h-xhxx",
+        "name": "https://github.com/nim-lang/security/security/advisories/GHSA-c2wm-v66h-xhxx",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://consensys.net/diligence/vulnerabilities/nim-insecure-ssl-tls-defaults-remote-code-execution/",
+        "name": "https://consensys.net/diligence/vulnerabilities/nim-insecure-ssl-tls-defaults-remote-code-execution/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22886",
+    "cveASSIGNER": "cve-assignments@hackerone.com",
+    "publishedDate": "2021-03-26T19:15Z",
+    "lastModifiedDate": "2021-03-30T20:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Rocket.Chat before 3.11, 3.10.5, 3.9.7, 3.8.8 is vulnerable to persistent cross-site scripting (XSS) using nested markdown tags allowing a remote attacker to inject arbitrary JavaScript in a message. This flaw leads to arbitrary file read and RCE on Rocket.Chat desktop app."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/RocketChat/Rocket.Chat/pull/20430",
+        "name": "https://github.com/RocketChat/Rocket.Chat/pull/20430",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.rocket.chat/guides/security/security-updates",
+        "name": "https://docs.rocket.chat/guides/security/security-updates",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://hackerone.com/reports/1014459",
+        "name": "https://hackerone.com/reports/1014459",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27224",
+    "cveASSIGNER": "security@eclipse.org",
+    "publishedDate": "2021-02-24T17:15Z",
+    "lastModifiedDate": "2021-03-25T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Eclipse Theia versions up to and including 1.2.0, the Markdown Preview (@theia/preview), can be exploited to execute arbitrary code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/eclipse-theia/theia/issues/7954",
+        "name": "https://github.com/eclipse-theia/theia/issues/7954",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://omespino.com/write-up-google-bug-bounty-xss-to-cloud-shell-instance-takeover-rce-as-root-5000-usd/",
+        "name": "https://omespino.com/write-up-google-bug-bounty-xss-to-cloud-shell-instance-takeover-rce-as-root-5000-usd/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-28493",
+    "cveASSIGNER": "report@snyk.io",
+    "publishedDate": "2021-02-01T20:15Z",
+    "lastModifiedDate": "2021-03-22T16:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "This affects the package jinja2 from 0.0.0 and before 2.11.3. The ReDoS vulnerability is mainly due to the `_punctuation_re regex` operator and its use of multiple wildcards. The last wildcard is the most exploitable as it searches for trailing punctuation. This issue can be mitigated by Markdown to format user content instead of the urlize filter, or by implementing request timeouts and limiting process memory."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/pallets/jinja/blob/ab81fd9c277900c85da0c322a2ff9d68a235b2e6/src/jinja2/utils.py%23L20",
+        "name": "https://github.com/pallets/jinja/blob/ab81fd9c277900c85da0c322a2ff9d68a235b2e6/src/jinja2/utils.py%23L20",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://github.com/pallets/jinja/pull/1343",
+        "name": "https://github.com/pallets/jinja/pull/1343",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994",
+        "name": "https://snyk.io/vuln/SNYK-PYTHON-JINJA2-1012994",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PVAKCOO7VBVUBM3Q6CBBTPBFNP5NDXF4/",
+        "name": "FEDORA-2021-2ab8ebcabc",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27907",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-03-05T12:15Z",
+    "lastModifiedDate": "2021-03-12T17:07Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Superset up to and including 0.38.0 allowed the creation of a Markdown component on a Dashboard page for describing chart's related information. Abusing this functionality, a malicious user could inject javascript code executing unwanted action in the context of the user's browser. The javascript code will be automatically executed (Stored XSS) when a legitimate user surfs on the dashboard page. The vulnerability is exploitable creating a \u201cdiv\u201d section and embedding in it a \u201csvg\u201d element with javascript code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/r09293fb09f1d617f0d2180c42210e739e2211f8da9bc5c1873bea67a%40%3Cdev.superset.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r09293fb09f1d617f0d2180c42210e739e2211f8da9bc5c1873bea67a%40%3Cdev.superset.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r09293fb09f1d617f0d2180c42210e739e2211f8da9bc5c1873bea67a@%3Cdev.superset.apache.org%3E",
+        "name": "[superset-dev] 20210305 CVE-2021-27907: Apache Superset stored XSS on Dashboard markdown",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-8031",
+    "cveASSIGNER": "security@suse.com",
+    "publishedDate": "2021-02-11T15:15Z",
+    "lastModifiedDate": "2021-02-17T17:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Open Build Service allows remote attackers to store JS code in markdown that is not properly escaped, impacting confidentiality and integrity. This issue affects: Open Build Service versions prior to 2.10.8."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.suse.com/show_bug.cgi?id=1178880",
+        "name": "https://bugzilla.suse.com/show_bug.cgi?id=1178880",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21306",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-02-08T22:15Z",
+    "lastModifiedDate": "2021-02-11T21:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Marked is an open-source markdown parser and compiler (npm package \"marked\"). In marked from version 1.1.1 and before version 2.0.0, there is a Regular expression Denial of Service vulnerability. This vulnerability can affect anyone who runs user generated code through marked. This vulnerability is fixed in version 2.0.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.npmjs.com/package/marked",
+        "name": "https://www.npmjs.com/package/marked",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/markedjs/marked/commit/7293251c438e3ee968970f7609f1a27f9007bccd",
+        "name": "https://github.com/markedjs/marked/commit/7293251c438e3ee968970f7609f1a27f9007bccd",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/markedjs/marked/pull/1864",
+        "name": "https://github.com/markedjs/marked/pull/1864",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/markedjs/marked/issues/1927",
+        "name": "https://github.com/markedjs/marked/issues/1927",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/markedjs/marked/security/advisories/GHSA-4r62-v4vq-hr96",
+        "name": "https://github.com/markedjs/marked/security/advisories/GHSA-4r62-v4vq-hr96",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-8294",
+    "cveASSIGNER": "cve-assignments@hackerone.com",
+    "publishedDate": "2021-02-03T17:15Z",
+    "lastModifiedDate": "2021-02-05T19:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A missing link validation in Nextcloud Server before 20.0.2, 19.0.5, 18.0.11 allows execution of a stored XSS attack using Internet Explorer when saving a 'javascript:' URL in markdown format."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://hackerone.com/reports/1023787",
+        "name": "https://hackerone.com/reports/1023787",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://nextcloud.com/security/advisory/?id=NC-SA-2021-002",
+        "name": "https://nextcloud.com/security/advisory/?id=NC-SA-2021-002",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21254",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-01-29T22:15Z",
+    "lastModifiedDate": "2021-02-01T19:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "CKEditor 5 is an open source rich text editor framework with a modular architecture. The CKEditor 5 Markdown plugin (@ckeditor/ckeditor5-markdown-gfm) before version 25.0.0 has a regex denial of service (ReDoS) vulnerability. The vulnerability allowed to abuse link recognition regular expression, which could cause a significant performance drop resulting in browser tab freeze. It affects all users using CKEditor 5 Markdown plugin at version <= 24.0.0. The problem has been recognized and patched. The fix will be available in version 25.0.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/ckeditor/ckeditor5/releases/tag/v25.0.0",
+        "name": "https://github.com/ckeditor/ckeditor5/releases/tag/v25.0.0",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/@ckeditor/ckeditor5-markdown-gfm",
+        "name": "https://www.npmjs.com/package/@ckeditor/ckeditor5-markdown-gfm",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-hgmg-hhc8-g5wr",
+        "name": "https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-hgmg-hhc8-g5wr",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21259",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-01-22T17:15Z",
+    "lastModifiedDate": "2021-02-01T15:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HedgeDoc is open source software which lets you create real-time collaborative markdown notes. In HedgeDoc before version 1.7.2, an attacker can inject arbitrary JavaScript into a HedgeDoc note, which is executed when the note is viewed in slide mode. Depending on the configuration of the instance, the attacker may not need authentication to create or edit notes. The problem is patched in HedgeDoc 1.7.2. ### Workarounds Disallow loading JavaScript from 3rd party sites using the `Content-Security-Policy` header. Note that this will break some embedded content. ### References This issue was discovered by @TobiasHoll and reported to hackmdio/codimd: https://github.com/hackmdio/codimd/issues/1648 ### For more information If you have any questions or comments about this advisory: * Open an topic on our community forum * Join our matrix room"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/hedgedoc/hedgedoc/releases/tag/1.7.2",
+        "name": "https://github.com/hedgedoc/hedgedoc/releases/tag/1.7.2",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/hedgedoc/hedgedoc/commit/35b0d39a12aa35f27fba8c1f50b1886706e7efef",
+        "name": "https://github.com/hedgedoc/hedgedoc/commit/35b0d39a12aa35f27fba8c1f50b1886706e7efef",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-44w9-vm8p-3cxw",
+        "name": "https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-44w9-vm8p-3cxw",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-20269",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-26T18:15Z",
+    "lastModifiedDate": "2021-01-30T00:07Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A specially crafted Markdown document could cause the execution of malicious JavaScript code in Caret Editor before 4.0.0-rc22."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Jan/59",
+        "name": "20210122 CVE-2020-20269 - Caret Editor v4.0.0-rc21 Remote Code Execution",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/careteditor/issues/issues/841",
+        "name": "https://github.com/careteditor/issues/issues/841",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/fulldisclosure/2021/Jan/59",
+        "name": "https://seclists.org/fulldisclosure/2021/Jan/59",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/careteditor/releases-beta/releases/tag/4.0.0-rc22",
+        "name": "https://github.com/careteditor/releases-beta/releases/tag/4.0.0-rc22",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/161072/Caret-Editor-4.0.0-rc21-Remote-Code-Execution.html",
+        "name": "http://packetstormsecurity.com/files/161072/Caret-Editor-4.0.0-rc21-Remote-Code-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://caret.io",
+        "name": "https://caret.io",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26298",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-01-11T19:15Z",
+    "lastModifiedDate": "2021-01-16T04:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Redcarpet is a Ruby library for Markdown processing. In Redcarpet before version 3.5.1, there is an injection vulnerability which can enable a cross-site scripting attack. In affected versions no HTML escaping was being performed when processing quotes. This applies even when the `:escape_html` option was being used. This is fixed in version 3.5.1 by the referenced commit."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/vmg/redcarpet/commit/a699c82292b17c8e6a62e1914d5eccc252272793",
+        "name": "https://github.com/vmg/redcarpet/commit/a699c82292b17c8e6a62e1914d5eccc252272793",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://rubygems.org/gems/redcarpet",
+        "name": "https://rubygems.org/gems/redcarpet",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/vmg/redcarpet/blob/master/CHANGELOG.md#version-351-security",
+        "name": "https://github.com/vmg/redcarpet/blob/master/CHANGELOG.md#version-351-security",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-q3wr-qw3g-3p4h",
+        "name": "https://github.com/advisories/GHSA-q3wr-qw3g-3p4h",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/01/msg00014.html",
+        "name": "[debian-lts-announce] 20210115 [SECURITY] [DLA 2526-1] ruby-redcarpet security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4831",
+        "name": "DSA-4831",
+        "refsource": "DEBIAN",
+        "tags": []
+      }
+    ]
+  }
+]

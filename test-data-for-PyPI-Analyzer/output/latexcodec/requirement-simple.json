@@ -1,0 +1,26 @@
+{
+  "name": "latexcodec",
+  "description": "* Download: http://pypi.python.org/pypi/latexcodec/#downloads\n\n* Documentation: http://latexcodec.readthedocs.org/\n\n* Development: http://github.com/mcmtroffaes/latexcodec/\n\n.. |travis| image:: https://travis-ci.org/mcmtroffaes/latexcodec.png?branch=develop\n    :target: https://travis-ci.org/mcmtroffaes/latexcodec\n    :alt: travis-ci\n\n.. |codecov| image:: https://codecov.io/gh/mcmtroffaes/latexcodec/branch/develop/graph/badge.svg\n    :target: https://codecov.io/gh/mcmtroffaes/latexcodec\n    :alt: codecov\n\nThe codec provides a convenient way of going between text written in\nLaTeX and unicode. Since it is not a LaTeX compiler, it is more\nappropriate for short chunks of text, such as a paragraph or the\nvalues of a BibTeX entry, and it is not appropriate for a full LaTeX\ndocument. In particular, its behavior on the LaTeX commands that do\nnot simply select characters is intended to allow the unicode\nrepresentation to be understandable by a human reader, but is not\ncanonical and may require hand tuning to produce the desired effect.\n\nThe encoder does a best effort to replace unicode characters outside\nof the range used as LaTeX input (ascii by default) with a LaTeX\ncommand that selects the character. More technically, the unicode code\npoint is replaced by a LaTeX command that selects a glyph that\nreasonably represents the code point. Unicode characters with special\nuses in LaTeX are replaced by their LaTeX equivalents. For example,\n\n====================== ===================\noriginal text          encoded LaTeX\n====================== ===================\n``\u00a5``                  ``\\yen``\n``\u00fc``                  ``\\\"u``\n``\\N{NO-BREAK SPACE}`` ``~``\n``~``                  ``\\textasciitilde``\n``%``                  ``\\%``\n``#``                  ``\\#``\n``\\textbf{x}``         ``\\textbf{x}``\n====================== ===================\n\nThe decoder does a best effort to replace LaTeX commands that select\ncharacters with the unicode for the character they are selecting. For\nexample,\n\n===================== ======================\noriginal LaTeX        decoded unicode\n===================== ======================\n``\\yen``              ``\u00a5``\n``\\\"u``               ``\u00fc``\n``~``                 ``\\N{NO-BREAK SPACE}``\n``\\textasciitilde``   ``~``\n``\\%``                ``%``\n``\\#``                ``#``\n``\\textbf{x}``        ``\\textbf {x}``\n``#``                 ``#``\n===================== ======================\n\nIn addition, comments are dropped (including the final newline that\nmarks the end of a comment), paragraphs are canonicalized into double\nnewlines, and other newlines are left as is. Spacing after LaTeX\ncommands is also canonicalized.\n\nFor example,\n\n::\n\n  hi % bye\n  there\\par world\n  \\textbf     {awesome}\n\nis decoded as\n\n::\n\n  hi there\n\n  world\n  \\textbf {awesome}\n\nWhen decoding, LaTeX commands not directly selecting characters (for\nexample, macros and formatting commands) are passed through\nunchanged. The same happens for LaTeX commands that select characters\nbut are not yet recognized by the codec.  Either case can result in a\nhybrid unicode string in which some characters are understood as\nliterally the character and others as parts of unexpanded commands.\nConsequently, at times, backslashes will be left intact for denoting\nthe start of a potentially unrecognized control sequence.\n\nGiven the numerous and changing packages providing such LaTeX\ncommands, the codec will never be complete, and new translations of\nunrecognized unicode or unrecognized LaTeX symbols are always welcome.\n\n\n",
+  "requires_dist": [
+    "six (>=1.4.1)"
+  ],
+  "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+  "current_version": "2.0.1",
+  "released_versions": [
+    "0.1",
+    "0.2",
+    "0.3.0",
+    "0.3.1",
+    "0.3.2",
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.0.3",
+    "1.0.4",
+    "1.0.5",
+    "1.0.6",
+    "1.0.7",
+    "2.0.0",
+    "2.0.1"
+  ]
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "cveID": "CVE-2009-2287",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-07-01T13:00Z",
+    "lastModifiedDate": "2020-08-19T19:41Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The kvm_arch_vcpu_ioctl_set_sregs function in the KVM in Linux kernel 2.6 before 2.6.30, when running on x86 systems, does not validate the page table root in a KVM_SET_SREGS call, which allows local users to cause a denial of service (crash or hang) via a crafted cr3 value, which triggers a NULL pointer dereference in the gfn_to_rmap function."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://sourceforge.net/tracker/?func=detail&atid=893831&aid=2687641&group_id=180599",
+        "name": "http://sourceforge.net/tracker/?func=detail&atid=893831&aid=2687641&group_id=180599",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2009/06/30/1",
+        "name": "[oss-security] 20090630 CVE Request: kernel: kvm: failure to validate cr3 after KVM_SET_SREGS",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=59839dfff5eabca01cc4e20b45797a60a80af8cb",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=59839dfff5eabca01cc4e20b45797a60a80af8cb",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/stable-queue.git;a=blob;f=queue-2.6.30/kvm-x86-check-for-cr3-validity-in-ioctl_set_sregs.patch;h=b48a47dad2cf76358b327368f80c0805e6370c68;hb=e7c45b24f298b5d9efd7d401150f64a1b51aaac4",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/stable/stable-queue.git;a=blob;f=queue-2.6.30/kvm-x86-check-for-cr3-validity-in-ioctl_set_sregs.patch;h=b48a47dad2cf76358b327368f80c0805e6370c68;hb=e7c45b24f298b5d9efd7d401150f64a1b51aaac4",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/35675",
+        "name": "35675",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-807-1",
+        "name": "USN-807-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/36054",
+        "name": "36054",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/36045",
+        "name": "36045",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1845",
+        "name": "DSA-1845",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:198",
+        "name": "MDVSA-2010:198",
+        "refsource": "MANDRIVA",
+        "tags": [
+          "Broken Link"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2012-4461",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2013-01-22T23:55Z",
+    "lastModifiedDate": "2013-06-21T03:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The KVM subsystem in the Linux kernel before 3.6.9, when running on hosts that use qemu userspace without XSAVE, allows local users to cause a denial of service (kernel OOPS) by using the KVM_SET_SREGS ioctl to set the X86_CR4_OSXSAVE bit in the guest cr4 register, then calling the KVM_RUN ioctl."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2012/11/06/14",
+        "name": "[oss-security] 20121106 CVE-2012-4461 -- kernel: kvm: invalid opcode oops on SET_SREGS with OSXSAVE bit set",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.6.9",
+        "name": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.6.9",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commit;h=6d1068b3a98519247d8ba4ec85cd40ac136dbdf9",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commit;h=6d1068b3a98519247d8ba4ec85cd40ac136dbdf9",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://article.gmane.org/gmane.comp.emulators.kvm.devel/100742",
+        "name": "http://article.gmane.org/gmane.comp.emulators.kvm.devel/100742",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.suse.com/support/update/announcement/2012/suse-su-20121679-1.html",
+        "name": "SUSE-SU-2012:1679",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=862900",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=862900",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/56414",
+        "name": "56414",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0223.html",
+        "name": "RHSA-2013:0223",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/51160",
+        "name": "51160",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0882.html",
+        "name": "RHSA-2013:0882",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00005.html",
+        "name": "openSUSE-SU-2013:0925",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  }
+]

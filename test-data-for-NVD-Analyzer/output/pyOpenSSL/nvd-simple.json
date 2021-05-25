@@ -1,0 +1,179 @@
+[
+  {
+    "cveID": "CVE-2018-1000808",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-10-08T15:29Z",
+    "lastModifiedDate": "2020-10-15T13:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Python Cryptographic Authority pyopenssl version Before 17.5.0 contains a CWE - 401 : Failure to Release Memory Before Removing Last Reference vulnerability in PKCS #12 Store that can result in Denial of service if memory runs low or is exhausted. This attack appear to be exploitable via Depends upon calling application, however it could be as simple as initiating a TLS connection. Anything that would cause the calling application to reload certificates from a PKCS #12 store.. This vulnerability appears to have been fixed in 17.5.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/pyca/pyopenssl/pull/723",
+        "name": "https://github.com/pyca/pyopenssl/pull/723",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3813-1/",
+        "name": "USN-3813-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0085",
+        "name": "RHSA-2019:0085",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00014.html",
+        "name": "openSUSE-SU-2019:1104",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-1000807",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-10-08T15:29Z",
+    "lastModifiedDate": "2019-09-27T12:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Python Cryptographic Authority pyopenssl version prior to version 17.5.0 contains a CWE-416: Use After Free vulnerability in X509 object handling that can result in Use after free can lead to possible denial of service or remote code execution.. This attack appear to be exploitable via Depends on the calling application and if it retains a reference to the memory.. This vulnerability appears to have been fixed in 17.5.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/pyca/pyopenssl/pull/723",
+        "name": "https://github.com/pyca/pyopenssl/pull/723",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3813-1/",
+        "name": "USN-3813-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0085",
+        "name": "RHSA-2019:0085",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00014.html",
+        "name": "openSUSE-SU-2019:1104",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-9015",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-01-11T16:59Z",
+    "lastModifiedDate": "2017-01-13T13:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Versions 1.17 and 1.18 of the Python urllib3 library suffer from a vulnerability that can cause them, in certain configurations, to not correctly validate TLS certificates. This places users of the library with those configurations at risk of man-in-the-middle and information leakage attacks. This vulnerability affects users using versions 1.17 and 1.18 of the urllib3 library, who are using the optional PyOpenSSL support for TLS instead of the regular standard library TLS backend, and who are using OpenSSL 1.1.0 via PyOpenSSL. This is an extremely uncommon configuration, so the security impact of this vulnerability is low."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/93941",
+        "name": "93941",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2016/10/27/6",
+        "name": "[oss-security] 20161027 CVE-2016-9015: Python urllib3 1.17 and 1.18 certificate verification failure",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Mitigation"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-4314",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2013-09-30T21:55Z",
+    "lastModifiedDate": "2013-12-08T06:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The X509Extension in pyOpenSSL before 0.13.1 does not properly handle a '\\0' character in a domain name in the Subject Alternative Name field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2013/09/06/2",
+        "name": "[oss-security] 20130906 Re: CVE request: pyOpenSSL hostname check bypassing  vulnerability",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://mail.python.org/pipermail/pyopenssl-users/2013-September/000478.html",
+        "name": "[pyOpenSSL-Users] 20130904 pyOpenSSL 0.13.1",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1005325",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1005325",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1965-1",
+        "name": "USN-1965-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2763",
+        "name": "DSA-2763",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-11/msg00015.html",
+        "name": "openSUSE-SU-2013:1648",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  }
+]

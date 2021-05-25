@@ -1,0 +1,37 @@
+{
+  "name": "traitlets",
+  "description": "# Traitlets\n\n[![Build Status](https://travis-ci.org/ipython/traitlets.svg?branch=master)](https://travis-ci.org/ipython/traitlets)\n[![Documentation Status](https://readthedocs.org/projects/traitlets/badge/?version=latest)](https://traitlets.readthedocs.io/en/latest/?badge=latest)\n\n|               |                                        |\n|---------------|----------------------------------------|\n| **home**      |   https://github.com/ipython/traitlets |\n| **pypi-repo** |   https://pypi.org/project/traitlets/  |\n| **docs**      |   https://traitlets.readthedocs.io/    |\n| **license**   |   Modified BSD License                 |\n\nTraitlets is a pure Python library enabling:\n\n- the enforcement of strong typing for attributes of Python objects\n (typed attributes are called *\"traits\"*);\n- dynamically calculated default values;\n- automatic validation and coercion of trait attributes when attempting a\n  change;\n- registering for receiving notifications when trait values change;\n- reading configuring values from files or from command line\n  arguments - a distinct layer on top of traitlets, so you may use\n  traitlets without the configuration machinery.\n\nIts implementation relies on the [descriptor](https://docs.python.org/howto/descriptor.html)\npattern, and it is a lightweight pure-python alternative of the\n[*traits* library](http://code.enthought.com/pages/traits.html).\n\nTraitlets powers the configuration system of IPython and Jupyter\nand the declarative API of IPython interactive widgets.\n\n## Installation\n\nFor a local installation, make sure you have\n[pip installed](https://pip.pypa.io/en/stable/installing/) and run:\n\n```bash\npip install traitlets\n```\n\nFor a **development installation**, clone this repository, change into the\n`traitlets` root directory, and run pip:\n\n```bash\ngit clone https://github.com/ipython/traitlets.git\ncd traitlets\npip install -e .\n```\n\n## Running the tests\n\n```bash\npip install \"traitlets[test]\"\npy.test traitlets\n```\n\n## Usage\n\nAny class with trait attributes must inherit from `HasTraits`.\nFor the list of available trait types and their properties, see the\n[Trait Types](https://traitlets.readthedocs.io/en/latest/trait_types.html)\nsection of the documentation.\n\n### Dynamic default values\n\nTo calculate a default value dynamically, decorate a method of your class with\n`@default({traitname})`. This method will be called on the instance, and\nshould return the default value. In this example, the `_username_default`\nmethod is decorated with `@default('username')`:\n\n```Python\nimport getpass\nfrom traitlets import HasTraits, Unicode, default\n\nclass Identity(HasTraits):\n    username = Unicode()\n\n    @default('username')\n    def _username_default(self):\n        return getpass.getuser()\n```\n\n### Callbacks when a trait attribute changes\n\nWhen a trait changes, an application can follow this trait change with\nadditional actions.\n\nTo do something when a trait attribute is changed, decorate a method with\n[`traitlets.observe()`](https://traitlets.readthedocs.io/en/latest/api.html?highlight=observe#traitlets.observe).\nThe method will be called with a single argument, a dictionary which contains\nan owner, new value, old value, name of the changed trait, and the event type.\n\nIn this example, the `_num_changed` method is decorated with ``@observe(`num`)``:\n\n```Python\nfrom traitlets import HasTraits, Integer, observe\n\nclass TraitletsExample(HasTraits):\n    num = Integer(5, help=\"a number\").tag(config=True)\n\n    @observe('num')\n    def _num_changed(self, change):\n        print(\"{name} changed from {old} to {new}\".format(**change))\n```\n\nand is passed the following dictionary when called:\n\n```Python\n{\n  'owner': object,  # The HasTraits instance\n  'new': 6,         # The new value\n  'old': 5,         # The old value\n  'name': \"foo\",    # The name of the changed trait\n  'type': 'change', # The event type of the notification, usually 'change'\n}\n```\n\n### Validation and coercion\n\nEach trait type (`Int`, `Unicode`, `Dict` etc.) may have its own validation or\ncoercion logic. In addition, we can register custom cross-validators\nthat may depend on the state of other attributes. For example:\n\n```Python\nfrom traitlets import HasTraits, TraitError, Int, Bool, validate\n\nclass Parity(HasTraits):\n    value = Int()\n    parity = Int()\n\n    @validate('value')\n    def _valid_value(self, proposal):\n        if proposal['value'] % 2 != self.parity:\n            raise TraitError('value and parity should be consistent')\n        return proposal['value']\n\n    @validate('parity')\n    def _valid_parity(self, proposal):\n        parity = proposal['value']\n        if parity not in [0, 1]:\n            raise TraitError('parity should be 0 or 1')\n        if self.value % 2 != parity:\n            raise TraitError('value and parity should be consistent')\n        return proposal['value']\n\nparity_check = Parity(value=2)\n\n# Changing required parity and value together while holding cross validation\nwith parity_check.hold_trait_notifications():\n    parity_check.value = 1\n    parity_check.parity = 1\n```\n\nHowever, we **recommend** that custom cross-validators don't modify the state\nof the HasTraits instance.\n\n### Release build:\n\n```bash\n$ pip install build\n$ python -m build .\n```\n\n\n",
+  "requires_dist": [
+    "ipython-genutils",
+    "pytest ; extra == 'test'"
+  ],
+  "requires_python": ">=3.7",
+  "current_version": "5.0.5",
+  "released_versions": [
+    "0.0.1",
+    "0.0.2",
+    "4.0.0",
+    "4.0.0.dev",
+    "4.0.0.dev0",
+    "4.1.0",
+    "4.1.0.b1",
+    "4.1.0b1",
+    "4.2.0",
+    "4.2.1",
+    "4.2.2",
+    "4.3.0",
+    "4.3.0b1",
+    "4.3.1",
+    "4.3.2",
+    "4.3.3",
+    "4.3.3.dev0",
+    "5.0.0",
+    "5.0.0b1",
+    "5.0.0rc2",
+    "5.0.1",
+    "5.0.2",
+    "5.0.3",
+    "5.0.4",
+    "5.0.5"
+  ]
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "cveID": "CVE-2020-15123",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-07-20T18:15Z",
+    "lastModifiedDate": "2020-07-27T19:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In codecov (npm package) before version 3.7.1 the upload method has a command injection vulnerability. Clients of the codecov-node library are unlikely to be aware of this, so they might unwittingly write code that contains a vulnerability. A similar CVE (CVE-2020-7597 for GHSA-5q88-cjfq-g2mh) was issued but the fix was incomplete. It only blocked &, and command injection is still possible using backticks instead to bypass the sanitizer. The attack surface is low in this case. Particularly in the standard use of codecov, where the module is used directly in a build pipeline, not built against as a library in another application that may supply malicious input and perform command injection."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/codecov/codecov-node/commit/c0711c656686e902af2cd92d6aecc8074de4d83d",
+        "name": "https://github.com/codecov/codecov-node/commit/c0711c656686e902af2cd92d6aecc8074de4d83d",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lgtm.com/query/7714424068617023832",
+        "name": "https://lgtm.com/query/7714424068617023832",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/codecov/codecov-node/pull/180",
+        "name": "https://github.com/codecov/codecov-node/pull/180",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/advisories/GHSA-5q88-cjfq-g2mh",
+        "name": "https://github.com/advisories/GHSA-5q88-cjfq-g2mh",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/codecov/codecov-node/security/advisories/GHSA-xp63-6vf5-xf3v",
+        "name": "https://github.com/codecov/codecov-node/security/advisories/GHSA-xp63-6vf5-xf3v",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7597",
+    "cveASSIGNER": "report@snyk.io",
+    "publishedDate": "2020-02-17T19:15Z",
+    "lastModifiedDate": "2020-02-20T21:14Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "codecov-node npm module before 3.6.5 allows remote attackers to execute arbitrary commands.The value provided as part of the gcov-root argument is executed by the exec function within lib/codecov.js. This vulnerability exists due to an incomplete fix of CVE-2020-7596."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/codecov/codecov-node/commit/02cf13d8b93ac547b5b4c2cfe186b7d874fd234f",
+        "name": "https://github.com/codecov/codecov-node/commit/02cf13d8b93ac547b5b4c2cfe186b7d874fd234f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-JS-CODECOV-548879",
+        "name": "https://snyk.io/vuln/SNYK-JS-CODECOV-548879",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7596",
+    "cveASSIGNER": "report@snyk.io",
+    "publishedDate": "2020-01-25T19:15Z",
+    "lastModifiedDate": "2020-01-28T20:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Codecov npm module before 3.6.2 allows remote attackers to execute arbitrary commands via the \"gcov-args\" argument."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://snyk.io/vuln/SNYK-JS-CODECOV-543183",
+        "name": "https://snyk.io/vuln/SNYK-JS-CODECOV-543183",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

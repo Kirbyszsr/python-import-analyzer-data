@@ -1,0 +1,31 @@
+{
+  "name": "service-identity",
+  "description": "=============================\nService Identity Verification\n=============================\n\n.. image:: https://readthedocs.org/projects/service-identity/badge/?version=stable\n   :target: https://service-identity.readthedocs.io/en/stable/?badge=stable\n   :alt: Documentation Status\n\n.. image:: https://travis-ci.org/pyca/service_identity.svg?branch=master\n   :target: https://travis-ci.org/pyca/service_identity\n   :alt: CI status\n\n.. image:: https://codecov.io/github/pyca/service_identity/branch/master/graph/badge.svg\n   :target: https://codecov.io/github/pyca/service_identity\n   :alt: Test Coverage\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n   :target: https://github.com/ambv/black\n   :alt: Code style: black\n\n.. image:: https://www.irccloud.com/invite-svg?channel=%23cryptography-dev&amp;hostname=irc.freenode.net&amp;port=6697&amp;ssl=1\n    :target: https://www.irccloud.com/invite?channel=%23cryptography-dev&amp;hostname=irc.freenode.net&amp;port=6697&amp;ssl=1\n\n.. begin\n\nUse this package if:\n\n- you use pyOpenSSL_ and don\u2019t want to be MITM_\\ ed or\n- if you want to verify that a `PyCA cryptography`_ certificate is valid for a certain hostname or IP address.\n\n``service_identity`` aspires to give you all the tools you need for verifying whether a certificate is valid for the intended purposes.\n\nIn the simplest case, this means *host name verification*.\nHowever, ``service_identity`` implements `RFC 6125`_ fully and plans to add other relevant RFCs too.\n\n``service_identity``\\ \u2019s documentation lives at `Read the Docs <https://service-identity.readthedocs.io/>`_, the code on `GitHub <https://github.com/pyca/service_identity>`_.\n\n\n.. _Twisted: https://twistedmatrix.com/\n.. _pyOpenSSL: https://pypi.org/project/pyOpenSSL/\n.. _MITM: https://en.wikipedia.org/wiki/Man-in-the-middle_attack\n.. _RFC 6125: https://www.rfc-editor.org/info/rfc6125\n.. _PyCA cryptography: https://cryptography.io/\n\n\nRelease Information\n===================\n\n18.1.0 (2018-12-05)\n-------------------\n\nChanges:\n^^^^^^^^\n\n- pyOpenSSL is optional now if you use ``service_identity.cryptography.*`` only.\n- Added support for ``iPAddress`` ``subjectAltName``\\ s.\n  You can now verify whether a connection or a certificate is valid for an IP address using ``service_identity.pyopenssl.verify_ip_address()`` and ``service_identity.cryptography.verify_certificate_ip_address()``.\n  `#12 <https://github.com/pyca/service_identity/pull/12>`_\n\n`Full changelog <https://service-identity.readthedocs.io/en/stable/changelog.html>`_.\n\nAuthors\n=======\n\n``service_identity`` is written and maintained by `Hynek Schlawack <https://hynek.me/>`_.\n\nThe development is kindly supported by `Variomedia AG <https://www.variomedia.de/>`_.\n\nOther contributors can be found in `GitHub's overview <https://github.com/pyca/service_identity/graphs/contributors>`_.\n\n\n",
+  "requires_dist": [
+    "attrs (>=16.0.0)",
+    "pyasn1-modules",
+    "pyasn1",
+    "cryptography",
+    "ipaddress ; python_version < \"3.3\"",
+    "coverage (>=4.2.0) ; extra == 'dev'",
+    "pytest ; extra == 'dev'",
+    "sphinx ; extra == 'dev'",
+    "idna ; extra == 'dev'",
+    "pyOpenSSL ; extra == 'dev'",
+    "sphinx ; extra == 'docs'",
+    "idna ; extra == 'idna'",
+    "coverage (>=4.2.0) ; extra == 'tests'",
+    "pytest ; extra == 'tests'"
+  ],
+  "requires_python": "",
+  "current_version": "18.1.0",
+  "released_versions": [
+    "0.1",
+    "0.2",
+    "1.0.0",
+    "14.0.0",
+    "16.0.0",
+    "17.0.0",
+    "18.1.0"
+  ]
+}

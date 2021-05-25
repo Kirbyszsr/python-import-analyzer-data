@@ -1,0 +1,826 @@
+[
+  {
+    "cveID": "CVE-2020-26275",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-12-21T18:15Z",
+    "lastModifiedDate": "2021-03-30T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Jupyter Server provides the backend (i.e. the core services, APIs, and REST endpoints) for Jupyter web applications like Jupyter notebook, JupyterLab, and Voila. In Jupyter Server before version 1.1.1, an open redirect vulnerability could cause the jupyter server to redirect the browser to a different malicious website. All jupyter servers running without a base_url prefix are technically affected, however, these maliciously crafted links can only be reasonably made for known jupyter server hosts. A link to your jupyter server may *appear* safe, but ultimately redirect to a spoofed server on the public internet. This same vulnerability was patched in upstream notebook v5.7.8. This is fixed in jupyter_server 1.1.1. If upgrade is not available, a workaround can be to run your server on a url prefix: \"jupyter server --ServerApp.base_url=/jupyter/\"."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-9f66-54xg-pc2c",
+        "name": "https://github.com/jupyter-server/jupyter_server/security/advisories/GHSA-9f66-54xg-pc2c",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/jupyter-server/",
+        "name": "https://pypi.org/project/jupyter-server/",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter-server/jupyter_server/commit/85e4abccf6ea9321d29153f73b0bd72ccb3a6bca",
+        "name": "https://github.com/jupyter-server/jupyter_server/commit/85e4abccf6ea9321d29153f73b0bd72ccb3a6bca",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://advisory.checkmarx.net/advisory/CX-2020-4291",
+        "name": "https://advisory.checkmarx.net/advisory/CX-2020-4291",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27225",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-01T01:15Z",
+    "lastModifiedDate": "2021-03-05T20:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Dataiku DSS before 8.0.6, insufficient access control in the Jupyter notebooks integration allows users (who have coding permissions) to read and overwrite notebooks in projects that they are not authorized to access."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://doc.dataiku.com/dss/8.0/security/advisories/cve-2021-27225.html",
+        "name": "https://doc.dataiku.com/dss/8.0/security/advisories/cve-2021-27225.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://doc.dataiku.com/dss/latest/",
+        "name": "https://doc.dataiku.com/dss/latest/",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-36191",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-13T04:15Z",
+    "lastModifiedDate": "2021-01-19T19:58Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "JupyterHub 1.1.0 allows CSRF in the admin panel via a request that lacks an _xsrf field, as demonstrated by a /hub/api/user request (to add or remove a user account)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyterhub/jupyterhub/releases",
+        "name": "https://github.com/jupyterhub/jupyterhub/releases",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/jupyterhub/issues/3304",
+        "name": "https://github.com/jupyterhub/jupyterhub/issues/3304",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-7206",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-02-18T03:29Z",
+    "lastModifiedDate": "2021-01-13T14:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Project Jupyter JupyterHub OAuthenticator 0.6.x before 0.6.2 and 0.7.x before 0.7.3. When using JupyterHub with GitLab group whitelisting for access control, group membership was not checked correctly, allowing members not in the whitelisted groups to create accounts on the Hub. (Users were not allowed to access other users' accounts, but could create their own accounts on the Hub linked to their GitLab account. GitLab authentication not using gitlab_group_whitelist is unaffected. No other Authenticators are affected.)"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://blog.jupyter.org/security-fix-for-jupyterhub-gitlab-oauthenticator-7b14571d1f76",
+        "name": "https://blog.jupyter.org/security-fix-for-jupyterhub-gitlab-oauthenticator-7b14571d1f76",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/commit/1845c0e4b1bff3462c91c3108c85205acd3c75a2",
+        "name": "https://github.com/jupyterhub/oauthenticator/commit/1845c0e4b1bff3462c91c3108c85205acd3c75a2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/blob/8499dc2/CHANGELOG.md#073---2018-02-16",
+        "name": "https://github.com/jupyterhub/oauthenticator/blob/8499dc2/CHANGELOG.md#073---2018-02-16",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26261",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-12-09T17:15Z",
+    "lastModifiedDate": "2020-12-10T21:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "jupyterhub-systemdspawner enables JupyterHub to spawn single-user notebook servers using systemd. In jupyterhub-systemdspawner before version 0.15 user API tokens issued to single-user servers are specified in the environment of systemd units. These tokens are incorrectly accessible to all users. In particular, the-littlest-jupyterhub is affected, which uses systemdspawner by default. This is patched in jupyterhub-systemdspawner v0.15"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyterhub/systemdspawner/security/advisories/GHSA-cg54-gpgr-4rm6",
+        "name": "https://github.com/jupyterhub/systemdspawner/security/advisories/GHSA-cg54-gpgr-4rm6",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/systemdspawner/commit/a4d08fd2ade1cfd0ef2c29dc221e649345f23580",
+        "name": "https://github.com/jupyterhub/systemdspawner/commit/a4d08fd2ade1cfd0ef2c29dc221e649345f23580",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/jupyterhub-systemdspawner/",
+        "name": "https://pypi.org/project/jupyterhub-systemdspawner/",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/systemdspawner/blob/master/CHANGELOG.md#v015",
+        "name": "https://github.com/jupyterhub/systemdspawner/blob/master/CHANGELOG.md#v015",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26250",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-12-01T21:15Z",
+    "lastModifiedDate": "2020-12-08T17:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OAuthenticator is an OAuth login mechanism for JupyterHub. In oauthenticator from version 0.12.0 and before 0.12.2, the deprecated (in jupyterhub 1.2) configuration `Authenticator.whitelist`, which should be transparently mapped to `Authenticator.allowed_users` with a warning, is instead ignored by OAuthenticator classes, resulting in the same behavior as if this configuration has not been set. If this is the only mechanism of authorization restriction (i.e. no group or team restrictions in configuration) then all authenticated users will be allowed. Provider-based restrictions, including deprecated values such as `GitHubOAuthenticator.org_whitelist` are **not** affected. All users of OAuthenticator 0.12.0 and 0.12.1 with JupyterHub 1.2 (JupyterHub Helm chart 0.10.0-0.10.5) who use the `admin.whitelist.users` configuration in the jupyterhub helm chart or the `c.Authenticator.whitelist` configuration directly. Users of other deprecated configuration, e.g. `c.GitHubOAuthenticator.team_whitelist` are **not** affected. If you see a log line like this and expect a specific list of allowed usernames: \"[I 2020-11-27 16:51:54.528 JupyterHub app:1717] Not using allowed_users. Any authenticated user will be allowed.\" you are likely affected. Updating oauthenticator to 0.12.2 is recommended. A workaround is to replace the deprecated `c.Authenticator.whitelist = ...` with `c.Authenticator.allowed_users = ...`. If any users have been authorized during this time who should not have been, they must be deleted via the API or admin interface, per the referenced documentation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/blob/master/docs/source/changelog.md#0122---2020-11-30",
+        "name": "https://github.com/jupyterhub/oauthenticator/blob/master/docs/source/changelog.md#0122---2020-11-30",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/commit/a4aac191c16cf6281f3d346615aefa75702b02d7",
+        "name": "https://github.com/jupyterhub/oauthenticator/commit/a4aac191c16cf6281f3d346615aefa75702b02d7",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://jupyterhub.readthedocs.io/en/1.2.2/getting-started/authenticators-users-basics.html#add-or-remove-users-from-the-hub",
+        "name": "https://jupyterhub.readthedocs.io/en/1.2.2/getting-started/authenticators-users-basics.html#add-or-remove-users-from-the-hub",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/oauthenticator/security/advisories/GHSA-384w-5v3f-q499",
+        "name": "https://github.com/jupyterhub/oauthenticator/security/advisories/GHSA-384w-5v3f-q499",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26215",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-11-18T22:15Z",
+    "lastModifiedDate": "2020-12-03T15:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jupyter Notebook before version 6.1.5 has an Open redirect vulnerability. A maliciously crafted link to a notebook server could redirect the browser to a different website. All notebook servers are technically affected, however, these maliciously crafted links can only be reasonably made for known notebook server hosts. A link to your notebook server may appear safe, but ultimately redirect to a spoofed server on the public internet. The issue is patched in version 6.1.5."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter/notebook/security/advisories/GHSA-c7vm-f5p4-8fqh",
+        "name": "https://github.com/jupyter/notebook/security/advisories/GHSA-c7vm-f5p4-8fqh",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/3cec4bbe21756de9f0c4bccf18cf61d840314d74",
+        "name": "https://github.com/jupyter/notebook/commit/3cec4bbe21756de9f0c4bccf18cf61d840314d74",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00004.html",
+        "name": "[debian-lts-announce] 20201202 [SECURITY] [DLA 2477-1] jupyter-notebook security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26232",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-11-24T21:15Z",
+    "lastModifiedDate": "2020-12-02T20:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jupyter Server before version 1.0.6 has an Open redirect vulnerability. A maliciously crafted link to a jupyter server could redirect the browser to a different website. All jupyter servers are technically affected, however, these maliciously crafted links can only be reasonably made for known jupyter server hosts. A link to your jupyter server may appear safe, but ultimately redirect to a spoofed server on the public internet."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter/jupyter_server/security/advisories/GHSA-grfj-wjv9-4f9v",
+        "name": "https://github.com/jupyter/jupyter_server/security/advisories/GHSA-grfj-wjv9-4f9v",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter-server/jupyter_server/blob/master/CHANGELOG.md#106---2020-11-18",
+        "name": "https://github.com/jupyter-server/jupyter_server/blob/master/CHANGELOG.md#106---2020-11-18",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter-server/jupyter_server/commit/3d83e49090289c431da253e2bdb8dc479cbcb157",
+        "name": "https://github.com/jupyter-server/jupyter_server/commit/3d83e49090289c431da253e2bdb8dc479cbcb157",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-8768",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-03-18T06:29Z",
+    "lastModifiedDate": "2020-11-19T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Jupyter Notebook before 5.4.1, a maliciously forged notebook file can bypass sanitization to execute JavaScript in the notebook context. Specifically, invalid HTML is 'fixed' by jQuery after sanitization, making it dangerous."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://openwall.com/lists/oss-security/2018/03/15/2",
+        "name": "http://openwall.com/lists/oss-security/2018/03/15/2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/11/msg00033.html",
+        "name": "[debian-lts-announce] 20201119 [SECURITY] [DLA 2432-1] jupyter-notebook security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-21030",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-31T15:15Z",
+    "lastModifiedDate": "2020-11-19T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jupyter Notebook before 5.5.0 does not use a CSP header to treat served files as belonging to a separate origin. Thus, for example, an XSS payload can be placed in an SVG document."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter/notebook/releases/tag/5.5.0",
+        "name": "https://github.com/jupyter/notebook/releases/tag/5.5.0",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/pull/3341",
+        "name": "https://github.com/jupyter/notebook/pull/3341",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/11/msg00033.html",
+        "name": "[debian-lts-announce] 20201119 [SECURITY] [DLA 2432-1] jupyter-notebook security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-19351",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-11-18T17:29Z",
+    "lastModifiedDate": "2020-11-19T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jupyter Notebook before 5.7.1 allows XSS via an untrusted notebook because nbconvert responses are considered to have the same origin as the notebook server. In other words, nbconvert endpoints can execute JavaScript with access to the server API. In notebook/nbconvert/handlers.py, NbconvertFileHandler and NbconvertPostHandler do not set a Content Security Policy to prevent this."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://pypi.org/project/notebook/#history",
+        "name": "https://pypi.org/project/notebook/#history",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/jupyter/hWzu2BSsplY",
+        "name": "https://groups.google.com/forum/#!topic/jupyter/hWzu2BSsplY",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/107a89fce5f413fb5728c1c5d2c7788e1fb17491",
+        "name": "https://github.com/jupyter/notebook/commit/107a89fce5f413fb5728c1c5d2c7788e1fb17491",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/blob/master/docs/source/changelog.rst",
+        "name": "https://github.com/jupyter/notebook/blob/master/docs/source/changelog.rst",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/11/msg00033.html",
+        "name": "[debian-lts-announce] 20201119 [SECURITY] [DLA 2432-1] jupyter-notebook security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-16977",
+    "cveASSIGNER": "secure@microsoft.com",
+    "publishedDate": "2020-10-16T23:15Z",
+    "lastModifiedDate": "2020-10-20T16:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A remote code execution vulnerability exists in Visual Studio Code when the Python extension loads a Jupyter notebook file, aka 'Visual Studio Code Python Extension Remote Code Execution Vulnerability'."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-16977",
+        "name": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-16977",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-15110",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-07-17T21:15Z",
+    "lastModifiedDate": "2020-07-22T20:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In jupyterhub-kubespawner before 0.12, certain usernames will be able to craft particular server names which will grant them access to the default server of other users who have matching usernames. This has been fixed in 0.12."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyterhub/kubespawner/security/advisories/GHSA-v7m9-9497-p9gr",
+        "name": "https://github.com/jupyterhub/kubespawner/security/advisories/GHSA-v7m9-9497-p9gr",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyterhub/kubespawner/commit/3dfe870a7f5e98e2e398b01996ca6b8eff4bb1d0",
+        "name": "https://github.com/jupyterhub/kubespawner/commit/3dfe870a7f5e98e2e398b01996ca6b8eff4bb1d0",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9644",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-12T09:29Z",
+    "lastModifiedDate": "2019-04-12T03:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An XSSI (cross-site inclusion) vulnerability in Jupyter Notebook before 5.7.6 allows inclusion of resources on malicious pages when visited by users who are authenticated with a Jupyter server. Access to the content of resources has been demonstrated with Internet Explorer through capturing of error messages, though not reproduced with other browsers. This occurs because Internet Explorer's error messages can include the content of any invalid JavaScript that was encountered."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter/notebook/compare/f3f00df...05aa4b2",
+        "name": "https://github.com/jupyter/notebook/compare/f3f00df...05aa4b2",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UP5RLEES2JBBNSNLBR65XM6PCD4EMF7D/",
+        "name": "FEDORA-2019-a6e1287e76",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VMDPJBVXOVO6LYGAT46VZNHH6JKSCURO/",
+        "name": "FEDORA-2019-9e67979b2a",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-10255",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-28T16:29Z",
+    "lastModifiedDate": "2019-04-12T03:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An Open Redirect vulnerability for all browsers in Jupyter Notebook before 5.7.7 and some browsers (Chrome, Firefox) in JupyterHub before 0.9.5 allows crafted links to the login page, which will redirect to a malicious site after successful login. Servers running on a base_url prefix are not affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter/notebook/compare/05aa4b2...16cf97c",
+        "name": "https://github.com/jupyter/notebook/compare/05aa4b2...16cf97c",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/d65328d4841892b412aef9015165db1eb029a8ed",
+        "name": "https://github.com/jupyter/notebook/commit/d65328d4841892b412aef9015165db1eb029a8ed",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/70fe9f0ddb3023162ece21fbb77d5564306b913b",
+        "name": "https://github.com/jupyter/notebook/commit/70fe9f0ddb3023162ece21fbb77d5564306b913b",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/08c4c898182edbe97aadef1815cce50448f975cb",
+        "name": "https://github.com/jupyter/notebook/commit/08c4c898182edbe97aadef1815cce50448f975cb",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://blog.jupyter.org/open-redirect-vulnerability-in-jupyter-jupyterhub-adf43583f1e4",
+        "name": "https://blog.jupyter.org/open-redirect-vulnerability-in-jupyter-jupyterhub-adf43583f1e4",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UP5RLEES2JBBNSNLBR65XM6PCD4EMF7D/",
+        "name": "FEDORA-2019-a6e1287e76",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VMDPJBVXOVO6LYGAT46VZNHH6JKSCURO/",
+        "name": "FEDORA-2019-9e67979b2a",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-10856",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-04-04T16:29Z",
+    "lastModifiedDate": "2019-04-05T19:45Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Jupyter Notebook before 5.7.8, an open redirect can occur via an empty netloc. This issue exists because of an incomplete fix for CVE-2019-10255."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter/notebook/compare/16cf97c...b8e30ea",
+        "name": "https://github.com/jupyter/notebook/compare/16cf97c...b8e30ea",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://blog.jupyter.org/open-redirect-vulnerability-in-jupyter-jupyterhub-adf43583f1e4",
+        "name": "https://blog.jupyter.org/open-redirect-vulnerability-in-jupyter-jupyterhub-adf43583f1e4",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-19352",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-11-18T17:29Z",
+    "lastModifiedDate": "2018-12-17T19:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jupyter Notebook before 5.7.2 allows XSS via a crafted directory name because notebook/static/tree/js/notebooklist.js handles certain URLs unsafely."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://pypi.org/project/notebook/#history",
+        "name": "https://pypi.org/project/notebook/#history",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/288b73e1edbf527740e273fcc69b889460871648",
+        "name": "https://github.com/jupyter/notebook/commit/288b73e1edbf527740e273fcc69b889460871648",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/blob/master/docs/source/changelog.rst",
+        "name": "https://github.com/jupyter/notebook/blob/master/docs/source/changelog.rst",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-6938",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-09-21T19:59Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site scripting (XSS) vulnerability in the file browser in notebook/notebookapp.py in IPython Notebook before 3.2.2 and Jupyter Notebook 4.0.x before 4.0.5 allows remote attackers to inject arbitrary web script or HTML via a folder name.  NOTE: this was originally reported as a cross-site request forgery (CSRF) vulnerability, but this may be inaccurate."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://seclists.org/oss-sec/2015/q3/474",
+        "name": "[oss-security] 20150902 CVE Request : CSRF in IPython/Jupyter notebook Tree.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/35f32dd2da804d108a3a3585b69ec3295b2677ed",
+        "name": "https://github.com/jupyter/notebook/commit/35f32dd2da804d108a3a3585b69ec3295b2677ed",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://seclists.org/oss-sec/2015/q3/544",
+        "name": "[oss-security] 20150914 Re: CVE Request : CSRF in IPython/Jupyter notebook Tree.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/ipython/ipython/commit/3ab41641cf6fce3860c73d5cf4645aa12e1e5892",
+        "name": "https://github.com/ipython/ipython/commit/3ab41641cf6fce3860c73d5cf4645aa12e1e5892",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-September/166471.html",
+        "name": "FEDORA-2015-14901",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/jupyter/notebook/commit/dd9876381f0ef09873d8c5f6f2063269172331e3",
+        "name": "https://github.com/jupyter/notebook/commit/dd9876381f0ef09873d8c5f6f2063269172331e3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1259405",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1259405",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-September/166460.html",
+        "name": "FEDORA-2015-14902",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167670.html",
+        "name": "FEDORA-2015-16128",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2015-10/msg00016.html",
+        "name": "openSUSE-SU-2015:1699",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-7337",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-09-29T19:59Z",
+    "lastModifiedDate": "2016-12-07T18:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The editor in IPython Notebook before 3.2.2 and Jupyter Notebook 4.0.x before 4.0.5 allows remote attackers to execute arbitrary JavaScript code via a crafted file, which triggers a redirect to files/, related to MIME types."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jupyter/notebook/commit/9e63dd89b603dfbe3a7e774d8a962ee0fa30c0b5",
+        "name": "https://github.com/jupyter/notebook/commit/9e63dd89b603dfbe3a7e774d8a962ee0fa30c0b5",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/ipython/ipython/commit/0a8096adf165e2465550bd5893d7e352544e5967",
+        "name": "https://github.com/ipython/ipython/commit/0a8096adf165e2465550bd5893d7e352544e5967",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://seclists.org/oss-sec/2015/q3/558",
+        "name": "[oss-security] 20150916 CVE Request: Maliciously crafted text files in IPython/Jupyter editor",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://seclists.org/oss-sec/2015/q3/634",
+        "name": "[oss-security] 20150924 Re: CVE Request: Maliciously crafted text files in IPython/Jupyter editor",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167670.html",
+        "name": "FEDORA-2015-16128",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1264067",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1264067",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201512-02",
+        "name": "GLSA-201512-02",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  }
+]

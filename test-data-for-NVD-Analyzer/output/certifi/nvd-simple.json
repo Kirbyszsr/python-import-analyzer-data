@@ -1,0 +1,1575 @@
+[
+  {
+    "cveID": "CVE-2021-29495",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-07T16:15Z",
+    "lastModifiedDate": "2021-05-14T16:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Nim is a statically typed compiled systems programming language. In Nim standard library before 1.4.2, httpClient SSL/TLS certificate verification was disabled by default. Users can upgrade to version 1.4.2 to receive a patch or, as a workaround, set \"verifyMode = CVerifyPeer\" as documented."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/nim-lang/security/security/advisories/GHSA-9vqv-2jj9-7mqr",
+        "name": "https://github.com/nim-lang/security/security/advisories/GHSA-9vqv-2jj9-7mqr",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32919",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-13T16:15Z",
+    "lastModifiedDate": "2021-05-14T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Prosody before 0.11.9. The undocumented dialback_without_dialback option in mod_dialback enables an experimental feature for server-to-server authentication. It does not correctly authenticate remote server certificates, allowing a remote server to impersonate another server (when this option is enabled)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://blog.prosody.im/prosody-0.11.9-released/",
+        "name": "https://blog.prosody.im/prosody-0.11.9-released/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/13/1",
+        "name": "[oss-security] 20210513 Prosody XMPP server advisory 2021-05-12 (multiple vulnerabilities)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/14/2",
+        "name": "[oss-security] 20210514 Re: Prosody XMPP server advisory 2021-05-12 (multiple vulnerabilities)",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22138",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-05-13T18:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Logstash versions after 6.4.0 and before 6.8.15 and 7.12.0 a TLS certificate validation flaw was found in the monitoring feature. When specifying a trusted server CA certificate Logstash would not properly verify the certificate returned by the monitoring server. This could result in a man in the middle style attack against the Logstash monitoring data."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23841",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2021-02-16T17:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The OpenSSL public API function X509_issuer_and_serial_hash() attempts to create a unique hash value based on the issuer and serial number data contained within an X509 certificate. However it fails to correctly handle any errors that may occur while parsing the issuer field (which might occur if the issuer field is maliciously constructed). This may subsequently result in a NULL pointer deref and a crash leading to a potential denial of service attack. The function X509_issuer_and_serial_hash() is never directly called by OpenSSL itself so applications are only vulnerable if they use this function directly and they use it on certificates that may have been obtained from untrusted sources. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20210216.txt",
+        "name": "https://www.openssl.org/news/secadv/20210216.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8252ee4d90f3f2004d3d0aeeed003ad49c9a7807",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8252ee4d90f3f2004d3d0aeeed003ad49c9a7807",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=122a19ab48091c657f7cb1fb3af9fc07bd557bbf",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=122a19ab48091c657f7cb1fb3af9fc07bd557bbf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4855",
+        "name": "DSA-4855",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210219-0009/",
+        "name": "https://security.netapp.com/advisory/ntap-20210219-0009/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-03",
+        "name": "https://www.tenable.com/security/tns-2021-03",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "name": "GLSA-202103-03",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-1971",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2020-12-08T16:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20201208.txt",
+        "name": "https://www.openssl.org/news/secadv/20201208.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4807",
+        "name": "DSA-4807",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:33.openssl.asc",
+        "name": "FreeBSD-SA-20:33",
+        "refsource": "FREEBSD",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00021.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2493-1] openssl1.0 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00020.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2492-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DGSI34Y5LQ5RYXN4M2I5ZQT65LFVDOUU/",
+        "name": "FEDORA-2020-ef1870065a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbb769f771711fb274e0a4acb1b5911c8aab544a6ac5e8c12d40c5143@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201216 [GitHub] [pulsar] phijohns-tibco opened a new issue #8978: OpenSSL needs to be updated to 1.1.1i current version is unsupported.",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PWPSSZNZOBJU2YR6Z4TGHXKYW3YP5QG7/",
+        "name": "FEDORA-2020-a31b01e945",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2020-11",
+        "name": "https://www.tenable.com/security/tns-2020-11",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202012-13",
+        "name": "GLSA-202012-13",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "name": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r63c6f2dd363d9b514d0a4bcf624580616a679898cc14c109a49b750c@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20210207 [Bug 65126] New: A security vulnerability cve-2020-1971 in Tomcat dependency Library in version 9.0.40.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-36127",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-07T11:15Z",
+    "lastModifiedDate": "2021-05-13T15:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Pax Technology PAXSTORE v7.0.8_20200511171508 and lower is affected by an information disclosure vulnerability. Through the PUK signature functionality, an administrator will not have access to the current p12 certificate and password. When accessing this functionality, the administrator has the option to replace the current certificate and it is not possible to view the certificate password (p12) already deployed on the platform. The replacement p12 certificate returns to users in base64 with its password, which can be accessed by non-administrator users."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://marketing.paxtechnology.com/about-pax",
+        "name": "https://marketing.paxtechnology.com/about-pax",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://www.whatspos.com/",
+        "name": "https://www.whatspos.com/",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://blog.pridesec.com.br/p/4c972078-5f01-419e-8bea-cf31ff2e3670/",
+        "name": "https://blog.pridesec.com.br/p/4c972078-5f01-419e-8bea-cf31ff2e3670/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3450",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2021-03-25T15:15Z",
+    "lastModifiedDate": "2021-05-11T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The X509_V_FLAG_X509_STRICT flag enables additional security checks of the certificates present in a certificate chain. It is not set by default. Starting from OpenSSL version 1.1.1h a check to disallow certificates in the chain that have explicitly encoded elliptic curve parameters was added as an additional strict check. An error in the implementation of this check meant that the result of a previous check to confirm that certificates in the chain are valid CA certificates was overwritten. This effectively bypasses the check that non-CA certificates must not be able to issue other certificates. If a \"purpose\" has been configured then there is a subsequent opportunity for checks that the certificate is a valid CA. All of the named \"purpose\" values implemented in libcrypto perform this check. Therefore, where a purpose is set the certificate chain will still be rejected even when the strict flag has been used. A purpose is set by default in libssl client and server certificate verification routines, but it can be overridden or removed by an application. In order to be affected, an application must explicitly set the X509_V_FLAG_X509_STRICT verification flag and either not set a purpose for the certificate verification or, in the case of TLS client or server applications, override the default purpose. OpenSSL versions 1.1.1h and newer are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1h-1.1.1j)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2a40b7bc7b94dd7de897a74571e7024f0cf0d63b",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2a40b7bc7b94dd7de897a74571e7024f0cf0d63b",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20210325.txt",
+        "name": "https://www.openssl.org/news/secadv/20210325.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-openssl-2021-GHY28dJd",
+        "name": "20210325 Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2021",
+        "refsource": "CISCO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210326-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20210326-0006/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:07.openssl.asc",
+        "name": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:07.openssl.asc",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/27/1",
+        "name": "[oss-security] 20210327 OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/27/2",
+        "name": "[oss-security] 20210327 Re: OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/28/3",
+        "name": "[oss-security] 20210328 Re: OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/28/4",
+        "name": "[oss-security] 20210328 Re: OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "name": "GLSA-202103-03",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-05",
+        "name": "https://www.tenable.com/security/tns-2021-05",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CCBFLLVQVILIVGZMBJL3IXZGKWQISYNP/",
+        "name": "FEDORA-2021-cbf14ab8f9",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-08",
+        "name": "https://www.tenable.com/security/tns-2021-08",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10356",
+        "name": "https://kc.mcafee.com/corporate/index?page=content&id=SB10356",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://mta.openssl.org/pipermail/openssl-announce/2021-March/000198.html",
+        "name": "https://mta.openssl.org/pipermail/openssl-announce/2021-March/000198.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-5859",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-03-10T10:59Z",
+    "lastModifiedDate": "2021-05-11T13:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On Cambium Networks cnPilot R200/201 devices before 4.3, there is a vulnerability involving the certificate of the device and its RSA keys, aka RBN-183."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.cambiumnetworks.com/file/3f88842a39f37b0d4ce5d43e5aa21bf1c4f9f1ca",
+        "name": "https://support.cambiumnetworks.com/file/3f88842a39f37b0d4ce5d43e5aa21bf1c4f9f1ca",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Permissions Required"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21542",
+    "cveASSIGNER": "secure@dell.com",
+    "publishedDate": "2021-04-30T21:15Z",
+    "lastModifiedDate": "2021-05-10T17:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Dell EMC iDRAC9 versions prior to 4.40.10.00 contain multiple stored cross-site scripting vulnerabilities. A remote authenticated malicious user with high privileges could potentially exploit these vulnerabilities to store malicious HTML or JavaScript code through multiple affected while generating a certificate. When victim users access the submitted data through their browsers, the malicious code gets executed by the web browser in the context of the vulnerable application."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.dell.com/support/kbdoc/000185293",
+        "name": "https://www.dell.com/support/kbdoc/000185293",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2012-5781",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2012-11-04T22:55Z",
+    "lastModifiedDate": "2012-11-06T05:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Amazon Elastic Load Balancing API Tools does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate, related to overriding the default JDK X509TrustManager."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf",
+        "name": "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-9488",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-04-27T16:15Z",
+    "lastModifiedDate": "2021-05-10T11:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Improper validation of certificate with host mismatch in Apache Log4j SMTP appender. This could allow an SMTPS connection to be intercepted by a man-in-the-middle attack which could leak any log messages sent through that appender."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://issues.apache.org/jira/browse/LOG4J2-2819",
+        "name": "https://issues.apache.org/jira/browse/LOG4J2-2819",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Mitigation",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8c001b9a95c0bbec06f4457721edd94935a55932e64b82cc5582b846@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200504 [jira] [Created] (ZOOKEEPER-3817) owasp failing due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2f209d271349bafd91537a558a279c08ebcff8fa3e547357d58833e6@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20200504 [jira] [Created] (ZOOKEEPER-3817) owasp failing due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200504-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20200504-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7641ee788e1eb1be4bb206a7d15f8a64ec6ef23e5ec6132d5a567695@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20200504 Build failed in Jenkins: zookeeper-master-maven-owasp #489",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4285398e5585a0456d3d9db021a4fce6e6fcf3ec027dfa13a450ec98@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200504 [jira] [Commented] (ZOOKEEPER-3817) owasp failing due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0df3d7a5acb98c57e64ab9266aa21eeee1d9b399addb96f9cf1cbe05@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20200504 log4j SmtpAppender related CVE",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd8e87c4d69df335d0ba7d815b63be8bd8a6352f429765c52eb07ddac@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200504 [jira] [Assigned] (ZOOKEEPER-3817) owasp failing due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7e739f2961753af95e2a3a637828fb88bfca68e5d6b0221d483a9ee5@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20200504 [GitHub] [zookeeper] symat opened a new pull request #1346: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9a79175c393d14d760a0ae3731b4a873230a16ef321aa9ca48a810cd@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200504 [jira] [Updated] (ZOOKEEPER-3817) owasp failing due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r48efc7cb5aeb4e1f67aaa06fb4b5479a5635d12f07d0b93fc2d08809@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200504 [zookeeper] branch branch-3.6 updated: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc6b81c013618d1de1b5d6b8c1088aaf87b4bacc10c2371f15a566701@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20200504 [GitHub] [zookeeper] symat commented on pull request #1346: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbc45eb0f53fd6242af3e666c2189464f848a851d408289840cecc6e3@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200504 [zookeeper] branch master updated: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rec34b1cccf907898e7cb36051ffac3ccf1ea89d0b261a2a3b3fb267f@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200504 [zookeeper] branch branch-3.5 updated: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd55f65c6822ff235eda435d31488cfbb9aa7055cdf47481ebee777cc@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200504 [jira] [Resolved] (ZOOKEEPER-3817) owasp failing due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7e5c10534ed06bf805473ac85e8412fe3908a8fa4cabf5027bf11220@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20200514 [jira] [Created] (KAFKA-9996) upgrade zookeeper to 3.5.8 to address security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8e96c340004b7898cad3204ea51280ef6e4b553a684e1452bf1b18b1@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200514 [jira] [Created] (KAFKA-9996) upgrade zookeeper to 3.5.8 to address security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf1c2a81a08034c688b8f15cf58a4cfab322d00002ca46d20133bee20@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20200514 [jira] [Created] (KAFKA-9997) upgrade log4j lib to address CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0a2699f724156a558afd1abb6c044fb9132caa66dce861b82699722a@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200514 [jira] [Created] (KAFKA-9997) upgrade log4j lib to address CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r48bcd06049c1779ef709564544c3d8a32ae6ee5c3b7281a606ac4463@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200515 [jira] [Commented] (KAFKA-9997) upgrade log4j lib to address CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r393943de452406f0f6f4b3def9f8d3c071f96323c1f6ed1a098f7fe4@%3Ctorque-dev.db.apache.org%3E",
+        "name": "[db-torque-dev] 20200715 Build failed in Jenkins: Torque4-trunk #685",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4ed1f49616a8603832d378cb9d13e7a8b9b27972bb46d946ccd8491f@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20201207 [jira] [Updated] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4db540cafc5d7232c62e076051ef661d37d345015b2e59b3f81a932f@%3Cdev.hive.apache.org%3E",
+        "name": "[hive-dev] 20201207 [jira] [Created] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra632b329b2ae2324fabbad5da204c4ec2e171ff60348ec4ba698fd40@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20201207 [jira] [Assigned] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1fc73f0e16ec2fa249d3ad39a5194afb9cc5afb4c023dc0bab5a5881@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20201207 [jira] [Work started] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9776e71e3c67c5d13a91c1eba0dc025b48b802eb7561cc6956d6961c@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20201208 [jira] [Work logged] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r65578f3761a89bc164e8964acd5d913b9f8fd997967b195a89a97ca3@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20201208 [jira] [Updated] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re024d86dffa72ad800f2848d0c77ed93f0b78ee808350b477a6ed987@%3Cgitbox.hive.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/re024d86dffa72ad800f2848d0c77ed93f0b78ee808350b477a6ed987@%3Cgitbox.hive.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201215 [GitHub] [pulsar] yanshuchong opened a new issue #8967: CVSS issue list",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbc7642b9800249553f13457e46b813bea1aec99d2bc9106510e00ff3@%3Ctorque-dev.db.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/rbc7642b9800249553f13457e46b813bea1aec99d2bc9106510e00ff3@%3Ctorque-dev.db.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3d1d00441c55144a4013adda74b051ae7864128ebcfb6ee9721a2eb3@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210125 [jira] [Work logged] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Issue Tracking",
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc2dbc4633a6eea1fcbce6831876cfa17b73759a98c65326d1896cb1a@%3Ctorque-dev.db.apache.org%3E",
+        "name": "[db-torque-dev] 20210127 Re: Items for our (delayed) quarterly report to the board?",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd5d58088812cf8e677d99b07f73c654014c524c94e7fedbdee047604@%3Ctorque-dev.db.apache.org%3E",
+        "name": "[db-torque-dev] 20210128 Antwort: Re: Items for our (delayed) quarterly report to the board?",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r33864a0fc171c1c4bf680645ebb6d4f8057899ab294a43e1e4fe9d04@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210209 [jira] [Resolved] (HIVE-24500) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r22a56beb76dd8cf18e24fda9072f1e05990f49d6439662d3782a392f@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210216 [jira] [Resolved] (HIVE-24787) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4d5dc9f3520071338d9ebc26f9f158a43ae28a91923d176b550a807b@%3Cdev.hive.apache.org%3E",
+        "name": "[hive-dev] 20210216 [jira] [Created] (HIVE-24787) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5a68258e5ab12532dc179edae3d6e87037fa3b50ab9d63a90c432507@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210216 [jira] [Assigned] (HIVE-24787) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra051e07a0eea4943fa104247e69596f094951f51512d42c924e86c75@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210218 [jira] [Updated] (HIVE-24787) Hive - upgrade log4j 2.12.1 to 2.13.2+ due to CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+        "name": "[mina-dev] 20210225 [jira] [Created] (FTPSERVER-500) Security vulnerability in common/lib/log4j-1.2.17.jar",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r45916179811a32cbaa500f972de9098e6ee80ee81c7f134fce83e03a@%3Cissues.flink.apache.org%3E",
+        "name": "[flink-issues] 20210510 [GitHub] [flink] zentol opened a new pull request #15879: [FLINK-22407][build] Bump log4j to 2.24.1",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3494",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-04-26T15:15Z",
+    "lastModifiedDate": "2021-05-04T14:14Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A smart proxy that provides a restful API to various sub-systems of the Foreman is affected by the flaw which can cause a Man-in-the-Middle attack. The FreeIPA module of Foreman smart proxy does not check the SSL certificate, thus, an unauthenticated attacker can perform actions in FreeIPA if certain conditions are met. The highest threat from this flaw is to system confidentiality. This flaw affects Foreman versions before 2.5.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1948005",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1948005",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-8286",
+    "cveASSIGNER": "cve-assignments@hackerone.com",
+    "publishedDate": "2020-12-14T20:15Z",
+    "lastModifiedDate": "2021-05-03T20:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "curl 7.41.0 through 7.73.0 is vulnerable to an improper check for certificate revocation due to insufficient verification of the OCSP response."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://hackerone.com/reports/1048457",
+        "name": "https://hackerone.com/reports/1048457",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://curl.se/docs/CVE-2020-8286.html",
+        "name": "https://curl.se/docs/CVE-2020-8286.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NZUVSQHN2ESHMJXNQ2Z7T2EELBB5HJXG/",
+        "name": "FEDORA-2020-ceaf490686",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00029.html",
+        "name": "[debian-lts-announce] 20201219 [SECURITY] [DLA 2500-1] curl security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DAEHE2S2QLO4AO4MEEYL75NB7SAH5PSL/",
+        "name": "FEDORA-2020-7ab62c73bc",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202012-14",
+        "name": "GLSA-202012-14",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210122-0007/",
+        "name": "https://security.netapp.com/advisory/ntap-20210122-0007/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4881",
+        "name": "DSA-4881",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212325",
+        "name": "https://support.apple.com/kb/HT212325",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212326",
+        "name": "https://support.apple.com/kb/HT212326",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212327",
+        "name": "https://support.apple.com/kb/HT212327",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Apr/51",
+        "name": "20210427 APPLE-SA-2021-04-26-3 Security Update 2021-002 Catalina",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20695",
+    "cveASSIGNER": "vultures@jpcert.or.jp",
+    "publishedDate": "2021-04-26T01:15Z",
+    "lastModifiedDate": "2021-05-03T19:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Improper following of a certificate's chain of trust vulnerability in DAP-1880AC firmware version 1.21 and earlier allows a remote authenticated attacker to gain root privileges via unspecified vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.dlink-jp.com/support/release/jvnvu92898656_dap-1880ac.html",
+        "name": "https://www.dlink-jp.com/support/release/jvnvu92898656_dap-1880ac.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://jvn.jp/en/vu/JVNVU92898656/index.html",
+        "name": "https://jvn.jp/en/vu/JVNVU92898656/index.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-15705",
+    "cveASSIGNER": "security@ubuntu.com",
+    "publishedDate": "2020-07-29T18:15Z",
+    "lastModifiedDate": "2021-05-01T02:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "GRUB2 fails to validate kernel signature when booted directly without shim, allowing secure boot to be bypassed. This only affects systems where the kernel signing certificate has been imported directly into the secure boot database and the GRUB image is booted directly without the use of shim. This issue affects GRUB2 version 2.04 and prior versions."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.suse.com/support/kb/doc/?id=000019673",
+        "name": "https://www.suse.com/support/kb/doc/?id=000019673",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://ubuntu.com/security/notices/USN-4432-1",
+        "name": "http://ubuntu.com/security/notices/USN-4432-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.gnu.org/archive/html/grub-devel/2020-07/msg00034.html",
+        "name": "https://lists.gnu.org/archive/html/grub-devel/2020-07/msg00034.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/GRUB2SecureBootBypass",
+        "name": "https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/GRUB2SecureBootBypass",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot",
+        "name": "https://www.debian.org/security/2020-GRUB-UEFI-SecureBoot",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200011",
+        "name": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200011",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/security/vulnerabilities/grub2bootloader",
+        "name": "https://access.redhat.com/security/vulnerabilities/grub2bootloader",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.eclypsium.com/2020/07/29/theres-a-hole-in-the-boot/",
+        "name": "https://www.eclypsium.com/2020/07/29/theres-a-hole-in-the-boot/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.suse.com/c/suse-addresses-grub2-secure-boot-issue/",
+        "name": "https://www.suse.com/c/suse-addresses-grub2-secure-boot-issue/",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2020/07/29/3",
+        "name": "https://www.openwall.com/lists/oss-security/2020/07/29/3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2020/07/29/3",
+        "name": "[oss-security] 20200729 multiple secure boot grub2 and linux kernel vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200731-0008/",
+        "name": "https://security.netapp.com/advisory/ntap-20200731-0008/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4432-1/",
+        "name": "USN-4432-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00067.html",
+        "name": "openSUSE-SU-2020:1280",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00069.html",
+        "name": "openSUSE-SU-2020:1282",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/02/3",
+        "name": "[oss-security] 20210302 Multiple GRUB2 vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-05",
+        "name": "GLSA-202104-05",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31597",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T19:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The xmlhttprequest-ssl package before 1.6.1 for Node.js disables SSL certificate validation by default, because rejectUnauthorized (when the property exists but is undefined) is considered to be false within the https.request function of Node.js. In other words, no certificate is ever rejected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://people.kingsds.network/wesgarland/xmlhttprequest-ssl-vuln.txt",
+        "name": "https://people.kingsds.network/wesgarland/xmlhttprequest-ssl-vuln.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/mjwwit/node-XMLHttpRequest/commit/bf53329b61ca6afc5d28f6b8d2dc2e3ca740a9b2",
+        "name": "https://github.com/mjwwit/node-XMLHttpRequest/commit/bf53329b61ca6afc5d28f6b8d2dc2e3ca740a9b2",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/mjwwit/node-XMLHttpRequest/compare/v1.6.0...1.6.1",
+        "name": "https://github.com/mjwwit/node-XMLHttpRequest/compare/v1.6.0...1.6.1",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29653",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-22T17:15Z",
+    "lastModifiedDate": "2021-04-29T13:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HashiCorp Vault and Vault Enterprise 1.5.1 and newer, under certain circumstances, may exclude revoked but unexpired certificates from the CRL. Fixed in 1.5.8, 1.6.4, and 1.7.1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.hashicorp.com/t/hcsec-2021-09-vault-s-pki-engine-crl-may-exclude-revoked-but-unexpired-certificates-after-tidy/23461/2",
+        "name": "https://discuss.hashicorp.com/t/hcsec-2021-09-vault-s-pki-engine-crl-may-exclude-revoked-but-unexpired-certificates-after-tidy/23461/2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27400",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-22T17:15Z",
+    "lastModifiedDate": "2021-04-27T20:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HashiCorp Vault and Vault Enterprise Cassandra integrations (storage backend and database secrets engine plugin) did not validate TLS certificates when connecting to Cassandra clusters. Fixed in 1.6.4 and 1.7.1"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.hashicorp.com/t/hcsec-2021-10-vault-s-cassandra-integrations-did-not-validate-tls-certificates/23463",
+        "name": "https://discuss.hashicorp.com/t/hcsec-2021-10-vault-s-cassandra-integrations-did-not-validate-tls-certificates/23463",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14334",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-01T13:15Z",
+    "lastModifiedDate": "2021-04-23T17:58Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered on D-Link 6600-AP, DWL-3600AP, and DWL-8610AP Ax 4.2.0.14 21/03/2019 devices. There is post-authenticated Certificate and RSA Private Key extraction through an insecure sslcert-get.cgi HTTP command."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://us.dlink.com/en/security-advisory",
+        "name": "https://us.dlink.com/en/security-advisory",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.dlink.com/en/security-bulletin",
+        "name": "https://www.dlink.com/en/security-bulletin",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/153840/D-Link-6600-AP-XSS-DoS-Information-Disclosure.html",
+        "name": "http://packetstormsecurity.com/files/153840/D-Link-6600-AP-XSS-DoS-Information-Disclosure.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2012-5783",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2012-11-04T22:55Z",
+    "lastModifiedDate": "2021-04-23T17:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Commons HttpClient 3.x, as used in Amazon Flexible Payments Service (FPS) merchant Java SDK and other products, does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf",
+        "name": "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Technical Description",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0270.html",
+        "name": "RHSA-2013:0270",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00078.html",
+        "name": "openSUSE-SU-2013:0354",
+        "refsource": "SUSE",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0681.html",
+        "name": "RHSA-2013:0681",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0679.html",
+        "name": "RHSA-2013:0679",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-04/msg00040.html",
+        "name": "openSUSE-SU-2013:0622",
+        "refsource": "SUSE",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-04/msg00053.html",
+        "name": "openSUSE-SU-2013:0638",
+        "refsource": "SUSE",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0680.html",
+        "name": "RHSA-2013:0680",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0682.html",
+        "name": "RHSA-2013:0682",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-04/msg00041.html",
+        "name": "openSUSE-SU-2013:0623",
+        "refsource": "SUSE",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1147.html",
+        "name": "RHSA-2013:1147",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1853.html",
+        "name": "RHSA-2013:1853",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0224.html",
+        "name": "RHSA-2014:0224",
+        "refsource": "REDHAT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2769-1",
+        "name": "USN-2769-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/58073",
+        "name": "58073",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/79984",
+        "name": "apache-commons-ssl-spoofing(79984)",
+        "refsource": "XF",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://issues.apache.org/jira/browse/HTTPCLIENT-1265",
+        "name": "https://issues.apache.org/jira/browse/HTTPCLIENT-1265",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:0868",
+        "name": "RHSA-2017:0868",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

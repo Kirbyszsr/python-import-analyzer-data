@@ -1,0 +1,1042 @@
+[
+  {
+    "cveID": "CVE-2021-31800",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-05T11:15Z",
+    "lastModifiedDate": "2021-05-16T04:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple path traversal vulnerabilities exist in smbserver.py in Impacket through 0.9.22. An attacker that connects to a running smbserver instance can list and write to arbitrary files via ../ directory traversal. This could potentially be abused to achieve arbitrary code execution by replacing /etc/shadow or an SSH authorized key."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L2008",
+        "name": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L2008",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SecureAuthCorp/impacket/releases",
+        "name": "https://github.com/SecureAuthCorp/impacket/releases",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L876",
+        "name": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L876",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L2958",
+        "name": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L2958",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SecureAuthCorp/impacket/commit/49c643bf66620646884ed141c94e5fdd85bcdd2f",
+        "name": "https://github.com/SecureAuthCorp/impacket/commit/49c643bf66620646884ed141c94e5fdd85bcdd2f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L3485",
+        "name": "https://github.com/SecureAuthCorp/impacket/blob/cb6d43a677c338db930bc4e9161620832c1ec624/impacket/smbserver.py#L3485",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UF56LYB27LHEIFJTFHU3M75NMNNK2SCG/",
+        "name": "FEDORA-2021-52dfb60726",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IPXDPWCAPVX3UWYZ3N2T5OLBSBBUHJP6/",
+        "name": "FEDORA-2021-888ccfd5b6",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KRV2C5DATXBHG6TF6CEEX54KZ75THQS3/",
+        "name": "FEDORA-2021-ab09c9a7a1",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27833",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-05-14T21:15Z",
+    "lastModifiedDate": "2021-05-14T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A Zip Slip vulnerability was found in the oc binary in openshift-clients where an arbitrary file write is achieved by using a specially crafted raw container image (.tar file) which contains symbolic links. The vulnerability is limited to the command `oc image extract`. If a symbolic link is first created pointing within the tarball, this allows further symbolic links to bypass the existing path check. This flaw allows the tarball to create links outside the tarball's parent directory, allowing for executables or configuration files to be overwritten, resulting in arbitrary code execution. The highest threat from this vulnerability is to confidentiality, integrity, as well as system availability. Versions up to and including openshift-clients-4.7.0-202104250659.p0.git.95881af are affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1905945",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1905945",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/security/cve/CVE-2020-27833",
+        "name": "https://access.redhat.com/security/cve/CVE-2020-27833",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-1532",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the video endpoint API (xAPI) of Cisco TelePresence Collaboration Endpoint (CE) Software and Cisco RoomOS Software could allow an authenticated, remote attacker to read arbitrary files from the underlying operating system. This vulnerability is due to insufficient path validation of command arguments. An attacker could exploit this vulnerability by sending a crafted command request to the xAPI. A successful exploit could allow the attacker to read the contents of any file that is located on the device filesystem."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-tp-rmos-fileread-pE9sL3g",
+        "name": "20210505 Cisco TelePresence Collaboration Endpoint and RoomOS Software Arbitrary File Read Vulnerability",
+        "refsource": "CISCO",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29561",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a denial of service by exploiting a `CHECK`-failure coming from `tf.raw_ops.LoadAndRemapMatrix`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/d94227d43aa125ad8b54115c03cece54f6a1977b/tensorflow/core/kernels/ragged_tensor_to_tensor_op.cc#L219-L222) assumes that the `ckpt_path` is always a valid scalar. However, an attacker can send any other tensor as the first argument of `LoadAndRemapMatrix`. This would cause the rank `CHECK` in `scalar<T>()()` to trigger and terminate the process. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/77dd114513d7796e1e2b8aece214a380af26fbf4",
+        "name": "https://github.com/tensorflow/tensorflow/commit/77dd114513d7796e1e2b8aece214a380af26fbf4",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gvm4-h8j3-rjrq",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gvm4-h8j3-rjrq",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29101",
+    "cveASSIGNER": "psirt@esri.com",
+    "publishedDate": "2021-05-05T19:15Z",
+    "lastModifiedDate": "2021-05-14T18:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "ArcGIS GeoEvent Server versions 10.8.1 and below has a read-only directory path traversal vulnerability that could allow an unauthenticated, remote attacker to perform directory traversal attacks and read arbitrary files on the system."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.esri.com/arcgis-blog/products/ext-server-geoevent/administration/arcgis-geoevent-server-security-update-2021-patch-1",
+        "name": "https://www.esri.com/arcgis-blog/products/ext-server-geoevent/administration/arcgis-geoevent-server-security-update-2021-patch-1",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-10247",
+    "cveASSIGNER": "security@eclipse.org",
+    "publishedDate": "2019-04-22T20:29Z",
+    "lastModifiedDate": "2021-05-14T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Eclipse Jetty version 7.x, 8.x, 9.2.27 and older, 9.3.26 and older, and 9.4.16 and older, the server running on any OS and Jetty version combination will reveal the configured fully qualified directory base resource location on the output of the 404 error for not finding a Context that matches the requested path. The default server behavior on jetty-distribution and jetty-home will include at the end of the Handler tree a DefaultHandler, which is responsible for reporting this 404 error, it presents the various configured contexts as HTML for users to click through to. This produced HTML includes output that contains the configured fully qualified directory base resource location for each context."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=546577",
+        "name": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=546577",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190509-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20190509-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ac51944aef91dd5006b8510b0bef337adaccfe962fb90e7af9c22db4@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190723 [jira] [Created] (AMQ-7249) Security Vulnerabilities in the ActiveMQ dependent jars.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/053d9ce4d579b02203db18545fee5e33f35f2932885459b74d1e4272@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190820 [jira] [Created] (AMQ-7279) Security Vulnerabilities in Libraries - jackson-databind-2.9.8.jar, tomcat-servlet-api-8.0.53.jar, tomcat-websocket-api-8.0.53.jar, zookeeper-3.4.6.jar, guava-18.0.jar, jetty-all-9.2.26.v20180806.jar, scala-library-2.11.0.jar",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+        "name": "[drill-issues] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/bcce5a9c532b386c68dab2f6b3ce8b0cc9b950ec551766e76391caa3@%3Ccommits.nifi.apache.org%3E",
+        "name": "[nifi-commits] 20191113 svn commit: r1869773 - /nifi/site/trunk/security.html",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E",
+        "name": "[nifi-commits] 20200123 svn commit: r1873083 - /nifi/site/trunk/security.html",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00016.html",
+        "name": "[debian-lts-announce] 20210514 [SECURITY] [DLA 2661-1] jetty9 security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-12536",
+    "cveASSIGNER": "security@eclipse.org",
+    "publishedDate": "2018-06-27T17:29Z",
+    "lastModifiedDate": "2021-05-14T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Eclipse Jetty Server, all 9.x versions, on webapps deployed using default Error Handling, when an intentionally bad query arrives that doesn't match a dynamic url-pattern, and is eventually handled by the DefaultServlet's static file serving, the bad characters can trigger a java.nio.file.InvalidPathException which includes the full path to the base resource directory that the DefaultServlet and/or webapp is using. If this InvalidPathException is then handled by the default Error Handler, the InvalidPathException message is included in the error response, revealing the full server path to the requesting system."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=535670",
+        "name": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=535670",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1041194",
+        "name": "1041194",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20181014-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20181014-0001/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/053d9ce4d579b02203db18545fee5e33f35f2932885459b74d1e4272@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190820 [jira] [Created] (AMQ-7279) Security Vulnerabilities in Libraries - jackson-databind-2.9.8.jar, tomcat-servlet-api-8.0.53.jar, tomcat-websocket-api-8.0.53.jar, zookeeper-3.4.6.jar, guava-18.0.jar, jetty-all-9.2.26.v20180806.jar, scala-library-2.11.0.jar",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03953en_us",
+        "name": "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03953en_us",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00016.html",
+        "name": "[debian-lts-announce] 20210514 [SECURITY] [DLA 2661-1] jetty9 security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-23995",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-13T20:15Z",
+    "lastModifiedDate": "2021-05-13T20:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An information disclosure vulnerability in ILIAS before 5.3.19, 5.4.12 and 6.0 allows remote authenticated attackers to get the upload data path via a workspace upload."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://docu.ilias.de/goto_docu_pg_124761_35.html",
+        "name": "https://docu.ilias.de/goto_docu_pg_124761_35.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://docu.ilias.de/goto_docu_pg_122177_35.html",
+        "name": "https://docu.ilias.de/goto_docu_pg_122177_35.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/ILIAS-eLearning/ILIAS/commit/94d9b16010ec3abeae8d2cbb05622ccd999119ad",
+        "name": "https://github.com/ILIAS-eLearning/ILIAS/commit/94d9b16010ec3abeae8d2cbb05622ccd999119ad",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://docu.ilias.de/goto_docu_pg_118817_35.html",
+        "name": "https://docu.ilias.de/goto_docu_pg_118817_35.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-5421",
+    "cveASSIGNER": "security@pivotal.io",
+    "publishedDate": "2020-09-19T04:15Z",
+    "lastModifiedDate": "2021-05-13T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Spring Framework versions 5.2.0 - 5.2.8, 5.1.0 - 5.1.17, 5.0.0 - 5.0.18, 4.3.0 - 4.3.28, and older unsupported versions, the protections against RFD attacks from CVE-2015-5211 may be bypassed depending on the browser used through the use of a jsessionid path parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tanzu.vmware.com/security/cve-2020-5421",
+        "name": "https://tanzu.vmware.com/security/cve-2020-5421",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re014a49d77f038ba70e5e9934d400af6653e8c9ac110d32b1254127e@%3Cdev.ranger.apache.org%3E",
+        "name": "[ranger-dev] 20201007 Re: Review Request 72934: RANGER-3022: Upgrade Spring framework to version 4.3.29.RELEASE",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1eccdbd7986618a7319ee7a533bd9d9bf6e8678e59dd4cca9b5b2d7a@%3Cissues.ambari.apache.org%3E",
+        "name": "[ambari-issues] 20201013 [jira] [Created] (AMBARI-25571) Vulnerable Spring components in Ambari - CVE-2020-5398, CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9f13cccb214495e14648d2c9b8f2c6072fd5219e74502dd35ede81e1@%3Cdev.ambari.apache.org%3E",
+        "name": "[ambari-dev] 20201019 [GitHub] [ambari] dlysnichenko opened a new pull request #3246: AMBARI-25571. Vulnerable Spring components in Ambari - CVE-2020-5398, CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1c679c43fa4f7846d748a937955c7921436d1b315445978254442163@%3Ccommits.ambari.apache.org%3E",
+        "name": "[ambari-commits] 20201019 [ambari] branch branch-2.7 updated: AMBARI-25571. Vulnerable Spring components in Ambari - CVE-2020-5398, CVE-2020-5421 (dlysnichenko) (#3246)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8b496b1743d128e6861ee0ed3c3c48cc56c505b38f84fa5baf7ae33a@%3Cdev.ambari.apache.org%3E",
+        "name": "[ambari-dev] 20201019 [GitHub] [ambari] dlysnichenko merged pull request #3246: AMBARI-25571. Vulnerable Spring components in Ambari - CVE-2020-5398, CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5c95eff679dfc642e9e4ab5ac6d202248a59cb1e9457cfbe8b729ac5@%3Cissues.ambari.apache.org%3E",
+        "name": "[ambari-issues] 20201021 [jira] [Resolved] (AMBARI-25571) Vulnerable Spring components in Ambari - CVE-2020-5398, CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf00d8f4101a1c1ea4de6ea1e09ddf7472cfd306745c90d6da87ae074@%3Cdev.hive.apache.org%3E",
+        "name": "[hive-dev] 20201022 [jira] [Created] (HIVE-24303) Upgrade spring framework to 4.3.29.RELEASE+ due to CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7e6a213eea7f04fc6d9e3bd6eb8d68c4df92a22e956e95cb2c482865@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20201022 [jira] [Updated] (HIVE-24303) Upgrade spring framework to 4.3.29.RELEASE+ due to CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc9efaf6db98bee19db1bc911d0fa442287dac5cb229d4aaa08b6a13d@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20201022 [jira] [Assigned] (HIVE-24303) Upgrade spring framework to 4.3.29.RELEASE+ due to CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r503e64b43a57fd68229cac4a869d1a9a2eac9e75f8719cad3a840211@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201022 [GitHub] [pulsar] Ghatage opened a new pull request #8355: [Issue 8354][pulsar-io] Upgrade spring framework version to patch CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r918caad55dcc640a16753b00d8d6acb90b4e36de4b6156d0867246ec@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201023 [GitHub] [pulsar] Ghatage commented on pull request #8355: [Issue 8354][pulsar-io] Upgrade spring framework version to patch CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3589ed0d18edeb79028615080d5a0e8878856436bb91774a3196d9eb@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201026 [GitHub] [pulsar] wolfstudy commented on pull request #8355: [Issue 8354][pulsar-io] Upgrade spring framework version to patch CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb18ed999153ef0f0cb7af03efe0046c42c7242fd77fbd884a75ecfdc@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201028 [GitHub] [pulsar] merlimat merged pull request #8355: [Issue 8354][pulsar-io] Upgrade spring framework version to patch CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raf7ca57033e537e4f9d7df7f192fa6968c1e49409b2348e08d807ccb@%3Cuser.ignite.apache.org%3E",
+        "name": "[ignite-user] 20201117 Query on CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra889d95141059c6cbe77dd80249bb488ae53b274b5f3abad09d9511d@%3Cuser.ignite.apache.org%3E",
+        "name": "[ignite-user] 20201119 Re: Query on CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd462a8b0dfab4c15e67c0672cd3c211ecd0e4f018f824082ed54f665@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210107 [jira] [Resolved] (HIVE-24303) Upgrade spring framework to 4.3.29.RELEASE+ due to CVE-2020-5421",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0009/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0009/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-13954",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-11-12T13:15Z",
+    "lastModifiedDate": "2021-05-13T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "By default, Apache CXF creates a /services page containing a listing of the available endpoint names and addresses. This webpage is vulnerable to a reflected Cross-Site Scripting (XSS) attack via the styleSheetPath, which allows a malicious actor to inject javascript into the web page. This vulnerability affects all versions of Apache CXF prior to 3.4.1 and 3.3.8. Please note that this is a separate issue to CVE-2019-17573."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://cxf.apache.org/security-advisories.data/CVE-2020-13954.txt.asc?version=1&modificationDate=1605183670659&api=v2",
+        "name": "http://cxf.apache.org/security-advisories.data/CVE-2020-13954.txt.asc?version=1&modificationDate=1605183670659&api=v2",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r51fdd73548290b2dfd0b48f7ab69bf9ae064dd100364cd8a15f0b3ec@%3Cdev.cxf.apache.org%3E",
+        "name": "[cxf-dev] 20201112 CVE-2020-13954: Apache CXF Reflected XSS in the services listing page via the styleSheetPath",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd49aabd984ed540c8ff7916d4d79405f3fa311d2fdbcf9ed307839a6@%3Ccommits.cxf.apache.org%3E",
+        "name": "[cxf-commits] 20201112 svn commit: r1067927 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2020-13954.txt.asc security-advisories.html",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r51fdd73548290b2dfd0b48f7ab69bf9ae064dd100364cd8a15f0b3ec@%3Cusers.cxf.apache.org%3E",
+        "name": "[cxf-users] 20201112 CVE-2020-13954: Apache CXF Reflected XSS in the services listing page via the styleSheetPath",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2020/11/12/2",
+        "name": "[oss-security] 20201112 CVE-2020-13954: Apache CXF Reflected XSS in the services listing page via the styleSheetPath",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r51fdd73548290b2dfd0b48f7ab69bf9ae064dd100364cd8a15f0b3ec@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20201112 CVE-2020-13954: Apache CXF Reflected XSS in the services listing page via the styleSheetPath",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r81a41a2915985d49bc3ea57dde2018b03584a863878a8532a89f993f@%3Cusers.cxf.apache.org%3E",
+        "name": "[cxf-users] 20201125 RE: CVE-2020-13954: Apache CXF Reflected XSS in the services listing page via the styleSheetPath",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rec7160382badd3ef4ad017a22f64a266c7188b9ba71394f0d321e2d4@%3Ccommits.cxf.apache.org%3E",
+        "name": "[cxf-commits] 20210402 svn commit: r1073270 - in /websites/production/cxf/content: cache/main.pageCache security-advisories.data/CVE-2021-22696.txt.asc security-advisories.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0010/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0010/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-13551",
+    "cveASSIGNER": "ics-cert@hq.dhs.gov",
+    "publishedDate": "2019-10-31T21:15Z",
+    "lastModifiedDate": "2019-11-06T00:04Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Advantech WISE-PaaS/RMM, Versions 3.3.29 and prior. Path traversal vulnerabilities are caused by a lack of proper validation of a user-supplied path prior to use in file operations. An attacker can leverage these vulnerabilities to remotely execute code while posing as an administrator."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.us-cert.gov/ics/advisories/icsa-19-304-01",
+        "name": "https://www.us-cert.gov/ics/advisories/icsa-19-304-01",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-19-950/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-19-950/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-19-941/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-19-941/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-19-935/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-19-935/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-19-958/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-19-958/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31776",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-29T01:15Z",
+    "lastModifiedDate": "2021-05-13T14:17Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Aviatrix VPN Client before 2.14.14 on Windows has an unquoted search path that enables local privilege escalation to the SYSTEM user, if the machine is misconfigured to allow unprivileged users to write to directories that are supposed to be restricted to administrators."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://docs.aviatrix.com/Downloads/samlclient.html",
+        "name": "https://docs.aviatrix.com/Downloads/samlclient.html",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.aviatrix.com/Downloads/samlclient.html#windows-win",
+        "name": "https://docs.aviatrix.com/Downloads/samlclient.html#windows-win",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.aviatrix.com/HowTos/changelog.html#aviatrix-vpn-client-changelog",
+        "name": "https://docs.aviatrix.com/HowTos/changelog.html#aviatrix-vpn-client-changelog",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-19275",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-12T18:15Z",
+    "lastModifiedDate": "2021-05-12T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An Information Disclosure vulnerability exists in dhcms 2017-09-18 when entering invalid characters after the normal interface, which causes an error that will leak the physical path."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/ShaoGongBra/dhcms/issues/4",
+        "name": "https://github.com/ShaoGongBra/dhcms/issues/4",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-30048",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-29T17:15Z",
+    "lastModifiedDate": "2021-05-12T20:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Directory Traversal in the fileDownload function in com/java2nb/common/controller/FileController.java in Novel-plus (?????-plus) 3.5.1 allows attackers to read arbitrary files via the filePath parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/201206030/novel-plus/issues/39",
+        "name": "https://github.com/201206030/novel-plus/issues/39",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/49724",
+        "name": "https://www.exploit-db.com/exploits/49724",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-3474",
+    "cveASSIGNER": "security@microfocus.com",
+    "publishedDate": "2019-02-20T22:29Z",
+    "lastModifiedDate": "2021-05-12T20:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A path traversal vulnerability in the web application component of Micro Focus Filr 3.x allows a remote attacker authenticated as a low privilege user to download arbitrary files from the Filr server. This vulnerability affects all versions of Filr 3.x prior to Security Update 6."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.microfocus.com/kb/doc.php?id=7023726",
+        "name": "https://support.microfocus.com/kb/doc.php?id=7023726",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://download.novell.com/Download?buildid=nZUCSDkvpxk~",
+        "name": "https://download.novell.com/Download?buildid=nZUCSDkvpxk~",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/46450/",
+        "name": "46450",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-11654",
+    "cveASSIGNER": "security@microfocus.com",
+    "publishedDate": "2019-08-23T18:15Z",
+    "lastModifiedDate": "2021-05-12T20:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Path traversal vulnerability in Micro Focus Verastream Host Integrator (VHI), versions 7.7 SP2 and earlier, The vulnerability allows remote unauthenticated attackers to read arbitrary files."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.microfocus.com/kb/doc.php?id=7024061",
+        "name": "https://support.microfocus.com/kb/doc.php?id=7024061",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27571",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-07T19:31Z",
+    "lastModifiedDate": "2021-05-12T19:17Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Emote Remote Mouse through 4.0.0.0. Attackers can retrieve recently used and running applications, their icons, and their file paths. This information is sent in cleartext and is not protected by any authentication logic."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://axelp.io/MouseTrap",
+        "name": "https://axelp.io/MouseTrap",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://remotemouse.net/blog/",
+        "name": "https://remotemouse.net/blog/",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-36326",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-28T03:15Z",
+    "lastModifiedDate": "2021-05-12T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "PHPMailer 6.1.8 through 6.4.0 allows object injection through Phar Deserialization via addAttachment with a UNC pathname. NOTE: this is similar to CVE-2018-19296, but arose because 6.1.8 fixed a functionality problem in which UNC pathnames were always considered unreadable by PHPMailer, even in safe contexts. As an unintended side effect, this fix eliminated the code that blocked addAttachment exploitation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/PHPMailer/PHPMailer/commit/e2e07a355ee8ff36aba21d0242c5950c56e4c6f9",
+        "name": "https://github.com/PHPMailer/PHPMailer/commit/e2e07a355ee8ff36aba21d0242c5950c56e4c6f9",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KPU66INRFY5BQ3ESVPRUXJR4DXQAFJVT/",
+        "name": "FEDORA-2021-b21bbfa198",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3B5WDPGUFNPG4NAZ6G4BZX43BKLAVA5B/",
+        "name": "FEDORA-2021-ecf4fed550",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-25216",
+    "cveASSIGNER": "security-officer@isc.org",
+    "publishedDate": "2021-04-29T01:15Z",
+    "lastModifiedDate": "2021-05-12T17:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In BIND 9.5.0 -> 9.11.29, 9.12.0 -> 9.16.13, and versions BIND 9.11.3-S1 -> 9.11.29-S1 and 9.16.8-S1 -> 9.16.13-S1 of BIND Supported Preview Edition, as well as release versions 9.17.0 -> 9.17.1 of the BIND 9.17 development branch, BIND servers are vulnerable if they are running an affected version and are configured to use GSS-TSIG features. In a configuration which uses BIND's default settings the vulnerable code path is not exposed, but a server can be rendered vulnerable by explicitly setting values for the tkey-gssapi-keytab or tkey-gssapi-credential configuration options. Although the default configuration is not vulnerable, GSS-TSIG is frequently used in networks where BIND is integrated with Samba, as well as in mixed-server environments that combine BIND servers with Active Directory domain controllers. For servers that meet these conditions, the ISC SPNEGO implementation is vulnerable to various attacks, depending on the CPU architecture for which BIND was built: For named binaries compiled for 64-bit platforms, this flaw can be used to trigger a buffer over-read, leading to a server crash. For named binaries compiled for 32-bit platforms, this flaw can be used to trigger a server crash due to a buffer overflow and possibly also to achieve remote code execution. We have determined that standard SPNEGO implementations are available in the MIT and Heimdal Kerberos libraries, which support a broad range of operating systems, rendering the ISC implementation unnecessary and obsolete. Therefore, to reduce the attack surface for BIND users, we will be removing the ISC SPNEGO implementation in the April releases of BIND 9.11 and 9.16 (it had already been dropped from BIND 9.17). We would not normally remove something from a stable ESV (Extended Support Version) of BIND, but since system libraries can replace the ISC SPNEGO implementation, we have made an exception in this case for reasons of stability and security."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.isc.org/v1/docs/cve-2021-25215",
+        "name": "https://kb.isc.org/v1/docs/cve-2021-25215",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/04/29/1",
+        "name": "[oss-security] 20210428 ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/04/29/2",
+        "name": "[oss-security] 20210429 Re: ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/04/29/3",
+        "name": "[oss-security] 20210429 Re: ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/04/29/4",
+        "name": "[oss-security] 20210429 Re: ISC discloses three BIND vulnerabilities (CVE-2021-25214, CVE-2021-25215, and CVE-2021-25216)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4909",
+        "name": "DSA-4909",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00001.html",
+        "name": "[debian-lts-announce] 20210504 [SECURITY] [DLA 2647-1] bind9 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-26807",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-30T11:15Z",
+    "lastModifiedDate": "2021-05-12T12:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "GalaxyClient version 2.0.28.9 loads unsigned DLLs such as zlib1.dll, libgcc_s_dw2-1.dll and libwinpthread-1.dll from PATH, which allows an attacker to potentially run code locally through unsigned DLL loading."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://illuminati.services/2021/04/29/cve-2021-26807-gog-galaxy-v2-0-35-dll-load-order-hijacking/",
+        "name": "https://illuminati.services/2021/04/29/cve-2021-26807-gog-galaxy-v2-0-35-dll-load-order-hijacking/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.gog.com",
+        "name": "https://www.gog.com",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  }
+]

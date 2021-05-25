@@ -1,0 +1,1541 @@
+[
+  {
+    "cveID": "CVE-2021-29614",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-20T18:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. The implementation of `tf.io.decode_raw` produces incorrect results and crashes the Python interpreter when combining `fixed_length` and wider datatypes. The implementation of the padded version(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc) is buggy due to a confusion about pointer arithmetic rules. First, the code computes(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc#L61) the width of each output element by dividing the `fixed_length` value to the size of the type argument. The `fixed_length` argument is also used to determine the size needed for the output tensor(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc#L63-L79). This is followed by reencoding code(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc#L85-L94). The erroneous code is the last line above: it is moving the `out_data` pointer by `fixed_length * sizeof(T)` bytes whereas it only copied at most `fixed_length` bytes from the input. This results in parts of the input not being decoded into the output. Furthermore, because the pointer advance is far wider than desired, this quickly leads to writing to outside the bounds of the backing data. This OOB write leads to interpreter crash in the reproducer mentioned here, but more severe attacks can be mounted too, given that this gadget allows writing to periodically placed locations in memory. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/698e01511f62a3c185754db78ebce0eee1f0184d",
+        "name": "https://github.com/tensorflow/tensorflow/commit/698e01511f62a3c185754db78ebce0eee1f0184d",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8pmx-p244-g88h",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8pmx-p244-g88h",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29519",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-20T17:24Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. The API of `tf.raw_ops.SparseCross` allows combinations which would result in a `CHECK`-failure and denial of service. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/3d782b7d47b1bf2ed32bd4a246d6d6cadc4c903d/tensorflow/core/kernels/sparse_cross_op.cc#L114-L116) is tricked to consider a tensor of type `tstring` which in fact contains integral elements. Fixing the type confusion by preventing mixing `DT_STRING` and `DT_INT64` types solves this issue. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+        "name": "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29513",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-17T18:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Calling TF operations with tensors of non-numeric types when the operations expect numeric tensors result in null pointer dereferences. The conversion from Python array to C++ array(https://github.com/tensorflow/tensorflow/blob/ff70c47a396ef1e3cb73c90513da4f5cb71bebba/tensorflow/python/lib/core/ndarray_tensor.cc#L113-L169) is vulnerable to a type confusion. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/030af767d357d1b4088c4a25c72cb3906abac489",
+        "name": "https://github.com/tensorflow/tensorflow/commit/030af767d357d1b4088c4a25c72cb3906abac489",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-452g-f7fp-9jf7",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-452g-f7fp-9jf7",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-1971",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2020-12-08T16:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20201208.txt",
+        "name": "https://www.openssl.org/news/secadv/20201208.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4807",
+        "name": "DSA-4807",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:33.openssl.asc",
+        "name": "FreeBSD-SA-20:33",
+        "refsource": "FREEBSD",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00021.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2493-1] openssl1.0 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00020.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2492-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DGSI34Y5LQ5RYXN4M2I5ZQT65LFVDOUU/",
+        "name": "FEDORA-2020-ef1870065a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbb769f771711fb274e0a4acb1b5911c8aab544a6ac5e8c12d40c5143@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201216 [GitHub] [pulsar] phijohns-tibco opened a new issue #8978: OpenSSL needs to be updated to 1.1.1i current version is unsupported.",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PWPSSZNZOBJU2YR6Z4TGHXKYW3YP5QG7/",
+        "name": "FEDORA-2020-a31b01e945",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2020-11",
+        "name": "https://www.tenable.com/security/tns-2020-11",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202012-13",
+        "name": "GLSA-202012-13",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "name": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r63c6f2dd363d9b514d0a4bcf624580616a679898cc14c109a49b750c@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20210207 [Bug 65126] New: A security vulnerability cve-2020-1971 in Tomcat dependency Library in version 9.0.40.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29486",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-30T18:15Z",
+    "lastModifiedDate": "2021-05-11T17:51Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "cumulative-distribution-function is an open source npm library used which calculates statistical cumulative distribution function from data array of x values. In versions prior to 2.0.0 apps using this library on improper data may crash or go into an infinite-loop. In the case of a nodejs server-app using this library to act on invalid non-numeric data, the nodejs server may crash. This may affect other users of this server and/or require the server to be rebooted for proper operation. In the case of a browser app using this library to act on invalid non-numeric data, that browser may crash or lock up. A flaw enabling an infinite-loop was discovered in the code for evaluating the cumulative-distribution-function of input data. Although the documentation explains that numeric data is required, some users may confuse an array of strings like [\"1\",\"2\",\"3\",\"4\",\"5\"] for numeric data [1,2,3,4,5] when it is in fact string data. An infinite loop is possible when the cumulative-distribution-function is evaluated for a given point when the input data is string data rather than type `number`. This vulnerability enables an infinite-cpu-loop denial-of-service-attack on any app using npm:cumulative-distribution-function v1.0.3 or earlier if the attacker can supply malformed data to the library. The vulnerability could also manifest if a data source to be analyzed changes data type from Arrays of number (proper) to Arrays of string (invalid, but undetected by earlier version of the library). Users should upgrade to at least v2.0.0, or the latest version. Tests for several types of invalid data have been created, and version 2.0.0 has been tested to reject this invalid data by throwing a `TypeError()` instead of processing it. Developers using this library may wish to adjust their app's code slightly to better tolerate or handle this TypeError. Apps performing proper numeric data validation before sending data to this library should be mostly unaffected by this patch. The vulnerability can be mitigated in older versions by ensuring that only finite numeric data of type `Array[number]` or `number` is passed to `cumulative-distribution-function` and its `f(x)` function, respectively."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/DrPaulBrewer/cumulative-distribution-function/pull/8",
+        "name": "https://github.com/DrPaulBrewer/cumulative-distribution-function/pull/8",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/DrPaulBrewer/cumulative-distribution-function/issues/7",
+        "name": "https://github.com/DrPaulBrewer/cumulative-distribution-function/issues/7",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/DrPaulBrewer/cumulative-distribution-function/security/advisories/GHSA-58qp-5328-v7mh",
+        "name": "https://github.com/DrPaulBrewer/cumulative-distribution-function/security/advisories/GHSA-58qp-5328-v7mh",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/cumulative-distribution-function",
+        "name": "https://www.npmjs.com/package/cumulative-distribution-function",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21414",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-29T01:15Z",
+    "lastModifiedDate": "2021-05-08T03:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Prisma is an open source ORM for Node.js & TypeScript. As of today, we are not aware of any Prisma users or external consumers of the `@prisma/sdk` package who are affected by this security vulnerability. This issue may lead to remote code execution if a client of the library calls the vulnerable method with untrusted input. It only affects the `getPackedPackage` function and this function is not advertised and only used for tests & building our CLI, no malicious code was found after checking our codebase."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/prisma/prisma/pull/6245",
+        "name": "https://github.com/prisma/prisma/pull/6245",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/prisma/prisma/security/advisories/GHSA-pxcc-hj8w-fmm7",
+        "name": "https://github.com/prisma/prisma/security/advisories/GHSA-pxcc-hj8w-fmm7",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-25646",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-01-29T20:15Z",
+    "lastModifiedDate": "2021-05-05T13:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Druid includes the ability to execute user-provided JavaScript code embedded in various types of requests. This functionality is intended for use in high-trust environments, and is disabled by default. However, in Druid 0.20.0 and earlier, it is possible for an authenticated user to send a specially-crafted request that forces Druid to run user-provided JavaScript code for that request, regardless of server configuration. This can be leveraged to execute code on the target machine with the privileges of the Druid server process."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/rfda8a3aa6ac06a80c5cbfdeae0fc85f88a5984e32ea05e6dda46f866%40%3Cdev.druid.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/rfda8a3aa6ac06a80c5cbfdeae0fc85f88a5984e32ea05e6dda46f866%40%3Cdev.druid.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/01/29/6",
+        "name": "[oss-security] 20210129 CVE-2021-25646: Authenticated users can override system configurations in their requests which allows them to execute arbitrary code.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r64431c2b97209f566b5dff92415e7afba0ed3bfab4695ebaa8a62e5d@%3Cdev.druid.apache.org%3E",
+        "name": "[druid-dev] 20210129 Re: [druid-user] Re: CVE-2021-25646: Authenticated users can override system configurations in their requests which allows them to execute arbitrary code.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc167d5e57f3120578718a7a458ce3e73b3830ac4efbb1b085bd06b92@%3Cdev.druid.apache.org%3E",
+        "name": "[druid-dev] 20210129 Re: CVE-2021-25646: Authenticated users can override system configurations in their requests which allows them to execute arbitrary code.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r20e0c3b10ae2c05a3aad40f1476713c45bdefc32c920b9986b941d8f@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20210129 Subject: [CVE-2021-25646] Apache Druid remote code execution vulnerability",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r121abe8014d381943b63c60615149d40bde9dc1c868bcee90d0d0848@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210204 [GitHub] [druid] jihoonson opened a new pull request #10854: [Backport] Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rea9436a4063927a567d698431ddae55e760c3f876c22ac5b9813685f@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210204 [GitHub] [druid] jihoonson commented on pull request #10818: Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r04fa1ba93599487c95a8497044d37f8c02a439bfcf92b4567bfb7c8f@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210204 [GitHub] [druid] jihoonson merged pull request #10854: [Backport] Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfeb775822cd3baef1595b60f6860f5ca849eb1903236483f3297bd5c@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210204 [druid] branch 0.21.0 updated: Fix CVE-2021-25646 (#10818) (#10854)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4f84b542417ea46202867c0a8b3eaf3b4cfed30e09174a52122ba210@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210204 [GitHub] [druid] jihoonson merged pull request #10818: Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra4225912f501016bc5e0ac44e14b8d6779173a3a1dc7baacaabcc9ba@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210205 [GitHub] [druid] jihoonson commented on pull request #10818: Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7dff4790e7a5c697fc0360adf11f5aeb31cd6ad80644fffee690673c@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210205 [GitHub] [druid] jihoonson merged pull request #10818: Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5ef625076982aee7d23c23f07717e626b73f421fba5154d1e4de15e1@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210205 [GitHub] [druid] jihoonson merged pull request #10854: [Backport] Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r443e2916c612fbd119839c0fc0729327d6031913a75081adac5b43ad@%3Cdev.druid.apache.org%3E",
+        "name": "[druid-dev] 20210331 Regarding the 0.21.0 release",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r87aa94e28dd21ee2252d30c63f01ab9cb5474ee5bdd98dd8d7d734aa@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210205 [GitHub] [druid] jihoonson opened a new pull request #10854: [Backport] Fix CVE-2021-25646",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/162345/Apache-Druid-0.20.0-Remote-Command-Execution.html",
+        "name": "http://packetstormsecurity.com/files/162345/Apache-Druid-0.20.0-Remote-Command-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23975",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2021-02-26T02:15Z",
+    "lastModifiedDate": "2021-05-01T02:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The developer page about:memory has a Measure function for exploring what object types the browser has allocated and their sizes. When this function was invoked we incorrectly called the sizeof function, instead of using the API method that checks for invalid pointers. This vulnerability affects Firefox < 86."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1685145",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1685145",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Permissions Required",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2021-07/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2021-07/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-10",
+        "name": "GLSA-202104-10",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23969",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2021-02-26T02:15Z",
+    "lastModifiedDate": "2021-05-01T02:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "As specified in the W3C Content Security Policy draft, when creating a violation report, \"User agents need to ensure that the source file is the URL requested by the page, pre-redirects. If that\u2019s not possible, user agents need to strip the URL down to an origin to avoid unintentional leakage.\" Under certain types of redirects, Firefox incorrectly set the source file to be the destination of the redirects. This was fixed to be the redirect destination's origin. This vulnerability affects Firefox < 86, Thunderbird < 78.8, and Firefox ESR < 78.8."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1542194",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1542194",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Permissions Required",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2021-08/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2021-08/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2021-09/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2021-09/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2021-07/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2021-07/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00000.html",
+        "name": "[debian-lts-announce] 20210301 [SECURITY] [DLA 2578-1] thunderbird security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4866",
+        "name": "DSA-4866",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-09",
+        "name": "GLSA-202104-09",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-10",
+        "name": "GLSA-202104-10",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21341",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T21:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is vulnerability which may allow a remote attacker to allocate 100% CPU time on the target system depending on CPU type or parallel execution of such a payload resulting in a denial of service only by manipulating the processed input stream. No user is affected who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21341.html",
+        "name": "https://x-stream.github.io/CVE-2021-21341.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-2p3x-qw9c-25hh",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-2p3x-qw9c-25hh",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21342",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T20:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability where the processed stream at unmarshalling time contains type information to recreate the formerly written objects. XStream creates therefore new instances based on these type information. An attacker can manipulate the processed input stream and replace or inject objects, that result in a server-side forgery request. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21342.html",
+        "name": "https://x-stream.github.io/CVE-2021-21342.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-hvv8-336g-rx3m",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-hvv8-336g-rx3m",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21343",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T20:58Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability where the processed stream at unmarshalling time contains type information to recreate the formerly written objects. XStream creates therefore new instances based on these type information. An attacker can manipulate the processed input stream and replace or inject objects, that result in the deletion of a file on the local host. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-74cv-f58x-f9wf",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-74cv-f58x-f9wf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21343.html",
+        "name": "https://x-stream.github.io/CVE-2021-21343.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21344",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T20:58Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21344.html",
+        "name": "https://x-stream.github.io/CVE-2021-21344.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-59jw-jqf4-3wq3",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-59jw-jqf4-3wq3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21345",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T20:58Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker who has sufficient rights to execute commands of the host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-hwpc-8xqv-jvj4",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-hwpc-8xqv-jvj4",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21345.html",
+        "name": "https://x-stream.github.io/CVE-2021-21345.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21346",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T20:58Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21346.html",
+        "name": "https://x-stream.github.io/CVE-2021-21346.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-4hrm-m67v-5cxr",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-4hrm-m67v-5cxr",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21347",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T20:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21347.html",
+        "name": "https://x-stream.github.io/CVE-2021-21347.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-qpfq-ph7r-qv6f",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-qpfq-ph7r-qv6f",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21348",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T20:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to occupy a thread that consumes maximum CPU time and will never return. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-56p8-3fh9-4cvq",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-56p8-3fh9-4cvq",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21348.html",
+        "name": "https://x-stream.github.io/CVE-2021-21348.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21349",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T19:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to request data from internal resources that are not publicly available only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21349.html",
+        "name": "https://x-stream.github.io/CVE-2021-21349.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-f6hm-88x3-mfjv",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-f6hm-88x3-mfjv",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21350",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T19:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability which may allow a remote attacker to execute arbitrary code only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21350.html",
+        "name": "https://x-stream.github.io/CVE-2021-21350.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-43gc-mjxg-gvrq",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-43gc-mjxg-gvrq",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21351",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-23T00:15Z",
+    "lastModifiedDate": "2021-04-30T19:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XStream is a Java library to serialize objects to XML and back again. In XStream before version 1.4.16, there is a vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. If you rely on XStream's default blacklist of the Security Framework, you will have to use at least version 1.4.16."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://x-stream.github.io/changes.html#1.4.16",
+        "name": "http://x-stream.github.io/changes.html#1.4.16",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/security.html#workaround",
+        "name": "https://x-stream.github.io/security.html#workaround",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/x-stream/xstream/security/advisories/GHSA-hrcp-8f3q-4w2c",
+        "name": "https://github.com/x-stream/xstream/security/advisories/GHSA-hrcp-8f3q-4w2c",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://x-stream.github.io/CVE-2021-21351.html",
+        "name": "https://x-stream.github.io/CVE-2021-21351.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00002.html",
+        "name": "[debian-lts-announce] 20210403 [SECURITY] [DLA 2616-1] libxstream-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ac71b047767205aa22e3a08cb33f3e0586de6b2fac48b425c6e16b0@%3Cdev.jmeter.apache.org%3E",
+        "name": "[jmeter-dev] 20210406 [GitHub] [jmeter] sseide opened a new pull request #655: update x-stream to 1.4.16 (from 1.4.15)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

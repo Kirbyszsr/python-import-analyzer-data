@@ -1,0 +1,454 @@
+[
+  {
+    "cveID": "CVE-2019-12042",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-05-23T14:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Insecure permissions of the section object Global\\PandaDevicesAgentSharedMemory and the event Global\\PandaDevicesAgentSharedMemoryChange in Panda products before 18.07.03 allow attackers to queue an event (as an encrypted JSON string) to the system service AgentSvc.exe, which leads to privilege escalation when the CmdLineExecute event is queued. This affects Panda Antivirus, Panda Antivirus Pro, Panda Dome, Panda Global Protection, Panda Gold Protection, and Panda Internet Security."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.pandasecurity.com/usa/support/card?id=100063",
+        "name": "https://www.pandasecurity.com/usa/support/card?id=100063",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://rce4fun.blogspot.com/2019/05/panda-antivirus-local-privilege.html",
+        "name": "https://rce4fun.blogspot.com/2019/05/panda-antivirus-local-privilege.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SouhailHammou/Panda-Antivirus-LPE",
+        "name": "https://github.com/SouhailHammou/Panda-Antivirus-LPE",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-13091",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-15T19:15Z",
+    "lastModifiedDate": "2020-05-19T19:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "** DISPUTED ** pandas through 1.0.3 can unserialize and execute commands from an untrusted file that is passed to the read_pickle() function, if __reduce__ makes an os.system call. NOTE: third parties dispute this issue because the read_pickle() function is documented as unsafe and it is the user's responsibility to use the function in a secure manner."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/0FuzzingQ/vuln/blob/master/pandas%20unserialize.md",
+        "name": "https://github.com/0FuzzingQ/vuln/blob/master/pandas%20unserialize.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html",
+        "name": "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-3026",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-07-25T17:30Z",
+    "lastModifiedDate": "2018-10-16T16:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Integer overflow in Panda Software AdminSecure allows remote attackers to execute arbitrary code via crafted packets with modified length values to TCP ports 19226 or 19227, resulting in a heap-based buffer overflow."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.zerodayinitiative.com/advisories/ZDI-07-041.html",
+        "name": "http://www.zerodayinitiative.com/advisories/ZDI-07-041.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/25046",
+        "name": "25046",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/26157",
+        "name": "26157",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1018446",
+        "name": "1018446",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/2917",
+        "name": "2917",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://osvdb.org/38614",
+        "name": "38614",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/2641",
+        "name": "ADV-2007-2641",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/35600",
+        "name": "panda-adminsecure-bo(35600)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/474551/100/0/threaded",
+        "name": "20070724 ZDI-07-041: Panda Software AdminSecure Agent Heap Overflow Vulnerability",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-4191",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-08-08T01:17Z",
+    "lastModifiedDate": "2018-10-15T21:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Panda Antivirus 2008 stores service executables under the product's installation directory with weak permissions, which allows local users to obtain LocalSystem privileges by modifying PAVSRV51.EXE or other unspecified files, a related issue to CVE-2006-4657."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/25186",
+        "name": "25186",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "https://tiifp.org/tarkus/advisories/panda030707.txt",
+        "name": "https://tiifp.org/tarkus/advisories/panda030707.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.pandasecurity.com/homeusers/support/card?id=41111&idIdioma=2&ref=PAV08Dev",
+        "name": "http://www.pandasecurity.com/homeusers/support/card?id=41111&idIdioma=2&ref=PAV08Dev",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1018722",
+        "name": "1018722",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/26336",
+        "name": "26336",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/2968",
+        "name": "2968",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/2784",
+        "name": "ADV-2007-2784",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/480443/100/100/threaded",
+        "name": "20070924 RE: Re[2]: [Full-disclosure] Panda Antivirus 2008 Local Privileg Escalation (UPS they did it again)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/480022/100/100/threaded",
+        "name": "20070919 RE: Panda Antivirus 2008 Local Privileg Escalation (UPS they did it again)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/475373/100/0/threaded",
+        "name": "20070802 Panda Antivirus 2008 Local Privileg Escalation (UPS they did it again)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-1471",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-03-24T22:44Z",
+    "lastModifiedDate": "2018-10-11T20:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The cpoint.sys driver in Panda Internet Security 2008 and Antivirus+ Firewall 2008 allows local users to cause a denial of service (system crash or kernel panic), overwrite memory, or execute arbitrary code via a crafted IOCTL request that triggers an out-of-bounds write of kernel memory."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.trapkit.de/advisories/TKADV2008-001.txt",
+        "name": "http://www.trapkit.de/advisories/TKADV2008-001.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.pandasecurity.com/homeusers/support/card?id=41231&idIdioma=2&ref=ProdExp",
+        "name": "http://www.pandasecurity.com/homeusers/support/card?id=41231&idIdioma=2&ref=ProdExp",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.pandasecurity.com/homeusers/support/card?id=41337&idIdioma=2&ref=ProdExp",
+        "name": "http://www.pandasecurity.com/homeusers/support/card?id=41337&idIdioma=2&ref=ProdExp",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/28150",
+        "name": "28150",
+        "refsource": "BID",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1019568",
+        "name": "1019568",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/29311",
+        "name": "29311",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/0801/references",
+        "name": "ADV-2008-0801",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/41079",
+        "name": "panda-antivirus-cpointsys-priv-escalation(41079)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/489292/100/0/threaded",
+        "name": "20080308 [TKADV2008-001] Panda Internet Security/Antivirus+Firewall 2008 cpoint.sys Kernel Driver Memory Corruption Vulnerability",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-4215",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-12-07T17:30Z",
+    "lastModifiedDate": "2018-10-10T19:48Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Panda Global Protection 2010, Internet Security 2010, and Antivirus Pro 2010 use weak permissions (Everyone: Full Control) for the product files, which allows local users to gain privileges by replacing executables with Trojan horse programs."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.pandasecurity.com/homeusers/support/card?id=80164&idIdioma=2",
+        "name": "http://www.pandasecurity.com/homeusers/support/card?id=80164&idIdioma=2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1023121",
+        "name": "1023121",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/37373",
+        "name": "37373",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/3126",
+        "name": "ADV-2009-3126",
+        "refsource": "VUPEN",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/54268",
+        "name": "panda-directory-privilege-escalation(54268)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/507811/100/0/threaded",
+        "name": "20091111 Panda Security Software Local Privilege Escalation",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2000-0265",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2000-04-17T04:00Z",
+    "lastModifiedDate": "2008-09-10T19:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Panda Security 3.0 allows users to uninstall the Panda software via its Add/Remove Programs applet."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/1119",
+        "name": "1119",
+        "refsource": "BID",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/templates/archive.pike?list=1&msg=38FB45F2.550EA000@teleline.es",
+        "name": "20000417 bugs in Panda Security 3.0",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://updates.pandasoftware.com/docs/us/Avoidvulnerability.zip",
+        "name": "http://updates.pandasoftware.com/docs/us/Avoidvulnerability.zip",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2000-0264",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2000-04-17T04:00Z",
+    "lastModifiedDate": "2008-09-10T19:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Panda Security 3.0 with registry editing disabled allows users to edit the registry and gain privileges by directly executing a .reg file or using other methods."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://updates.pandasoftware.com/docs/us/Avoidvulnerability.zip",
+        "name": "http://updates.pandasoftware.com/docs/us/Avoidvulnerability.zip",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/templates/archive.pike?list=1&msg=38FB45F2.550EA000@teleline.es",
+        "name": "20000417 bugs in Panda Security 3.0",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/1119",
+        "name": "1119",
+        "refsource": "BID",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-1200",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-03-06T21:44Z",
+    "lastModifiedDate": "2008-09-05T21:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Unspecified vulnerability in Microsoft Access allows remote user-assisted attackers to execute arbitrary code via a crafted .MDB file, possibly related to Jet Engine (msjet40.dll).  NOTE: this is probably a different issue than CVE-2007-6026."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://pandalabs.pandasecurity.com/archive/New-MS-Access-exploit.aspx",
+        "name": "http://pandalabs.pandasecurity.com/archive/New-MS-Access-exploit.aspx",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/28087",
+        "name": "28087",
+        "refsource": "BID",
+        "tags": []
+      }
+    ]
+  }
+]

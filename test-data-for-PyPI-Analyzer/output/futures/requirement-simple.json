@@ -1,0 +1,31 @@
+{
+  "name": "futures",
+  "description": ".. image:: https://travis-ci.org/agronholm/pythonfutures.svg?branch=master\n  :target: https://travis-ci.org/agronholm/pythonfutures\n  :alt: Build Status\n\nThis is a backport of the `concurrent.futures`_ standard library module to Python 2.\n\nIt **does not** work on Python 3 due to Python 2 syntax being used in the codebase.\nPython 3 users should not attempt to install it, since the package is already included in the\nstandard library.\n\nTo conditionally require this library only on Python 2, you can do this in your ``setup.py``:\n\n.. code-block:: python\n\n    setup(\n        ...\n        extras_require={\n            ':python_version == \"2.7\"': ['futures']\n        }\n    )\n\nOr, using the newer syntax:\n\n.. code-block:: python\n\n    setup(\n        ...\n        install_requires={\n            'futures; python_version == \"2.7\"'\n        }\n    )\n\n.. warning:: The ``ProcessPoolExecutor`` class has known (unfixable) problems on Python 2 and\n   should not be relied on for mission critical work. Please see `Issue 29 <https://github.com/agronholm/pythonfutures/issues/29>`_ and `upstream bug report <https://bugs.python.org/issue9205>`_ for more details.\n\n.. _concurrent.futures: https://docs.python.org/library/concurrent.futures.html\n\n\n",
+  "requires_dist": null,
+  "requires_python": ">=2.6, <3",
+  "current_version": "3.3.0",
+  "released_versions": [
+    "0.1",
+    "0.2",
+    "1.0",
+    "2.0",
+    "2.1",
+    "2.1.1",
+    "2.1.2",
+    "2.1.3",
+    "2.1.4",
+    "2.1.5",
+    "2.1.6",
+    "2.2.0",
+    "3.0.0",
+    "3.0.1",
+    "3.0.2",
+    "3.0.3",
+    "3.0.4",
+    "3.0.5",
+    "3.1.0",
+    "3.1.1",
+    "3.2.0",
+    "3.3.0"
+  ]
+}

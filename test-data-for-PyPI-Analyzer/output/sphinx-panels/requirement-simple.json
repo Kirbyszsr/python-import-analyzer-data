@@ -1,0 +1,32 @@
+{
+  "name": "sphinx-panels",
+  "description": "# sphinx-panels\n\n[![Doc Status][rtd-badge]][rtd-link]\n[![Code style: black][black-badge]][black-link]\n[![PyPI][pypi-badge]][pypi-link]\n\nA sphinx extension for creating document components optimised for HTML+CSS.\n\n- The `panels` directive creates panels of content in a grid layout, utilising both the Bootstrap 4 [grid system](https://getbootstrap.com/docs/4.0/layout/grid/), and [cards layout](https://getbootstrap.com/docs/4.0/components/card/).\n\n- The `link-button` directive creates a click-able button, linking to a URL or reference, and can also be used to make an entire panel click-able.\n\n- The `dropdown` directive creates toggle-able content.\n\n- The `tabbed` directive creates tabbed content.\n\n- `opticon` and `fa` (fontawesome) roles allow for inline icons to be added.\n\n\n```rst\n.. panels::\n\n    Content of the top-left panel\n\n    ---\n\n    Content of the top-right panel\n\n    ---\n\n    Content of the bottom-left panel\n\n    ---\n\n    Content of the bottom-right panel\n```\n\nThe `link-button` directive can be used to create buttons, which link to a URL (default) or reference.\nThey can be styled by [Bootstrap button classes](https://getbootstrap.com/docs/4.0/components/buttons/):\n\n```rst\n.. panels::\n\n    .. link-button:: https://example.com\n        :type: url\n        :tooltip: hallo\n        :classes: btn-success\n\n    ---\n\n    This entire panel is clickable.\n\n    +++\n\n    .. link-button:: panels/usage\n        :type: ref\n        :text: Go To Reference\n        :classes: btn-outline-primary btn-block stretched-link\n```\n\nThe `dropdown` directive combines a [Bootstrap card](https://getbootstrap.com/docs/4.0/components/card/)\nwith the [HTML details tag](https://www.w3schools.com/tags/tag_details.asp) to create a collapsible\ndrop-down panel.\n\n```rst\n.. dropdown:: Click on me to see my content!\n\n    I'm the content which can be anything:\n\n    .. link-button:: https://example.com\n        :text: Like a Button\n        :classes: btn-primary\n```\n\n## Development\n\nTo run the tests:\n\n```console\npip install tox\ntox -e py37-sphinx3\n```\n\nTo test building the docs:\n\n```console\ntox -e docs-clean html\ntox -e docs-rebuild html\n```\n\nFor live builds of the docs:\n\n```console\ntox -e docs-live html\n```\n\nYou can also build the docs in different themes, by setting `HTML_THEME` to one of `alabaster`, `sphinx_rtd_theme`, `pydata_sphinx_theme`, `sphinx_book_theme`:\n\n```console\nexport HTML_THEME=sphinx_book_theme\ntox -e docs-live\n```\n\nFor code style and SCSS -> CSS updating:\n\n```console\npip install pre-commit\npre-commit run --all\n```\n\n[rtd-badge]: https://readthedocs.org/projects/sphinx-panels/badge/?version=latest\n[rtd-link]: https://sphinx-panels.readthedocs.io/en/latest/?badge=latest\n[black-badge]: https://img.shields.io/badge/code%20style-black-000000.svg\n[black-link]: https://github.com/ambv/black\n[pypi-badge]: https://img.shields.io/pypi/v/sphinx-panels.svg\n[pypi-link]: https://pypi.org/project/sphinx-panels\n\n\n",
+  "requires_dist": [
+    "docutils",
+    "sphinx (<4,>=2)",
+    "importlib-resources (~=3.0.0) ; python_version < \"3.7\"",
+    "pre-commit (~=2.7.0) ; extra == 'code_style'",
+    "sphinx-autobuild ; extra == 'live-dev'",
+    "web-compile (~=0.2.0) ; extra == 'live-dev'",
+    "pytest (~=6.0.1) ; extra == 'testing'",
+    "pytest-regressions (~=2.0.1) ; extra == 'testing'",
+    "sphinx-rtd-theme ; extra == 'themes'",
+    "pydata-sphinx-theme (~=0.4.0) ; extra == 'themes'",
+    "sphinx-book-theme (~=0.0.36) ; extra == 'themes'",
+    "myst-parser (~=0.12.9) ; extra == 'themes'"
+  ],
+  "requires_python": "",
+  "current_version": "0.5.2",
+  "released_versions": [
+    "0.1.0",
+    "0.2.0",
+    "0.3.0",
+    "0.3.1",
+    "0.3.2",
+    "0.4.0",
+    "0.4.1",
+    "0.5.0",
+    "0.5.1",
+    "0.5.2"
+  ]
+}

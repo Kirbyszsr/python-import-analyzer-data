@@ -1,0 +1,916 @@
+{
+  "info": {
+    "author": "",
+    "author_email": "",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 4 - Beta",
+      "Framework :: Sphinx",
+      "Framework :: Sphinx :: Theme",
+      "License :: OSI Approved :: BSD License",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python :: 3"
+    ],
+    "description": "# pydata-sphinx-theme\n\n![pypi](https://img.shields.io/pypi/v/pydata-sphinx-theme) [![conda-forge](https://img.shields.io/conda/vn/conda-forge/pydata-sphinx-theme.svg)](https://anaconda.org/conda-forge/pydata-sphinx-theme) [![continuous-integration](https://github.com/pydata/pydata-sphinx-theme/actions/workflows/tests.yml/badge.svg)](https://github.com/pydata/pydata-sphinx-theme/actions/workflows/tests.yml) [![docs](https://readthedocs.org/projects/pydata-sphinx-theme/badge/)](https://readthedocs.org/projects/pydata-sphinx-theme/builds/) [![codecov](https://codecov.io/gh/pydata/pydata-sphinx-theme/branch/master/graph/badge.svg?token=NwOObjYacn)](https://codecov.io/gh/pydata/pydata-sphinx-theme)\n\nA Bootstrap-based Sphinx theme from the PyData community.\n\nDemo site: https://pydata-sphinx-theme.readthedocs.io/en/latest/\n\n**Note**: This theme is originally being developed for the pandas docs (originally named \"pandas-sphinx-theme\"),\nbut since there is uptake in other projects, we are working on making this more\ngeneric and more easily extensible to suit the needs of the different projects.\n\nSites that are using this theme:\n\n- Pandas: https://pandas.pydata.org/docs/\n- NumPy: https://numpy.org/devdocs/\n- SciPy: https://scipy.github.io/devdocs/\n- Bokeh: https://docs.bokeh.org/en/dev/\n- JupyterHub and Binder: https://docs.mybinder.org/, http://z2jh.jupyter.org/en/latest/, https://repo2docker.readthedocs.io/en/latest/, https://jupyterhub-team-compass.readthedocs.io/en/latest/\n- Jupyter Book beta version uses an extension of this theme: https://beta.jupyterbook.org\n- CuPy: https://docs.cupy.dev/en/latest/\n- MegEngine: https://megengine.org.cn/doc/stable/zh/\n- Fairlearn: https://fairlearn.github.io/main/quickstart.html\n- NetworkX: https://networkx.org/documentation/latest/\n\n\n## Installation and usage\n\nThe theme is available on PyPI and conda-forge. You can install\nand use as follows:\n\n- Install the `pydata-sphinx-theme` in your doc build environment:\n\n  ```\n  pip install pydata-sphinx-theme\n  # or\n  conda install pydata-sphinx-theme --channel conda-forge\n  ```\n\n- Then, in the `conf.py` of your sphinx docs, you update the `html_theme`\n  configuration option:\n\n  ```\n  html_theme = \"pydata_sphinx_theme\"\n  ```\n\nAnd that's it!\n\nWell, in principle at least. In practice, there are might still be a few\npandas-specific things that are right now hard-coded in the theme. We also need\nto work on better configurability and extensibility. Feedback and contributions\nare very welcome!\n\n## Theme development\n\nContributions are very welcome! Installing the development version, building\nthe demo docs and developing the css/js of the theme, etc, is explained in\nmore detail in the contributing section of the documentation:\nhttps://pydata-sphinx-theme.readthedocs.io/en/latest/contributing.html\n\n\n## How is this theme working?\n\n### The html layout\n\nThe \"layout\" included in this theme is originally mainly targetted towards\ndocumentation sites with many pages, and where putting all navigation in a\nsingle sidebar can therefore get unwieldy.\n\nThe current layout features 3 navigation elements:\n\n- A top navbar with top-level navigation\n- A left sidebar with subsequent navigation up to single pages\n- A right sidebar with a local \"On this page\" table of contents\n\nWhat is put where is determined by the sphinx \"toctree\" (and such depending on\nthe structure of your sphinx docs). The first level of the toctree is put in the\ntop navbar, and the second (and potentially) third level is put in the left\nsidebar.\n\nIt should certainly be possible to make the exact used levels of the sphinx\ntoctree configurable.\n\n### Implementation details\n\nA second aspect of the design of this theme is that we are trying to make good\nuse of Bootstrap features and use as much as possible actual (templated) html\nand css to define the theme, instead of relying on sphinx to do custom\nformatting. This should make the theming and layouts more flexible to customize.\n\nTo this end, this package includes:\n\n- A [`BootstrapHTML5Translator`](./pydata_sphinx_theme/bootstrap_html_translator.py),\n  subclassing sphinx' translator, but overriding certain elements to generate\n  Bootstrap-compatible html. Currently, this includes: converting admonitions to\n  Bootstrap \"alert\" classes, and updating the classes used for html tables.\n- A [sphinx event](./pydata_sphinx_theme/__init__.py) to add navigation\n  objects into the html context which is available in the html (jinja2)\n  templates. This allows to put the structure of the navigation elements in the\n  actual layout, instead of having to rely on the hard-coded formatting of\n  sphinx (this is inspired on the navigation objects of mkdocs:\n  https://www.mkdocs.org/user-guide/custom-themes/#nav). We would love to see\n  this added to sphinx itself (instead of needing a sphinx event), but for now\n  did not yet get any reaction from the sphinx developers.\n\nThose items also avoid writing javascript functions to \"fix up\" the html\ngenerated by sphinx to make it suitable for theming.\n\n### What's the difference with bootstrap-sphinx-theme ?\n\nThere is already a sphinx Bootstrap theme used by some project in the community:\nhttps://github.com/ryan-roemer/sphinx-bootstrap-theme/\n\nCurrently, the main difference is that this theme is using Bootstrap 4 instead\nof 3 and provides a different default layout. At some point, it would be good to\ncontribute changes to that package (or at least the parts that deal with\nBootstrap and sphinx that could be shared).\n\nThe initial layout and css were inspired on the Bootstrap documentation site.\n\n\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": "",
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "home_page": "https://github.com/pydata/pydata-sphinx-theme",
+    "keywords": "",
+    "license": "BSD",
+    "maintainer": "Joris Van den Bossche",
+    "maintainer_email": "jorisvandenbossche@gmail.com",
+    "name": "pydata-sphinx-theme",
+    "package_url": "https://pypi.org/project/pydata-sphinx-theme/",
+    "platform": "",
+    "project_url": "https://pypi.org/project/pydata-sphinx-theme/",
+    "project_urls": {
+      "Homepage": "https://github.com/pydata/pydata-sphinx-theme"
+    },
+    "release_url": "https://pypi.org/project/pydata-sphinx-theme/0.6.3/",
+    "requires_dist": [
+      "sphinx",
+      "beautifulsoup4",
+      "docutils (<0.17)",
+      "pytest-cov ; extra == 'coverage'",
+      "codecov ; extra == 'coverage'",
+      "sphinx ; extra == 'coverage'",
+      "numpydoc ; extra == 'coverage'",
+      "recommonmark ; extra == 'coverage'",
+      "pandas ; extra == 'coverage'",
+      "pytest ; extra == 'coverage'",
+      "pytest-regressions ; extra == 'coverage'",
+      "beautifulsoup4 ; extra == 'coverage'",
+      "jupyter-sphinx ; extra == 'coverage'",
+      "plotly ; extra == 'coverage'",
+      "numpy ; extra == 'coverage'",
+      "xarray ; extra == 'coverage'",
+      "docutils (==0.16) ; extra == 'coverage'",
+      "sphinx ; extra == 'test'",
+      "numpydoc ; extra == 'test'",
+      "recommonmark ; extra == 'test'",
+      "pandas ; extra == 'test'",
+      "pytest ; extra == 'test'",
+      "pytest-regressions ; extra == 'test'",
+      "beautifulsoup4 ; extra == 'test'",
+      "jupyter-sphinx ; extra == 'test'",
+      "plotly ; extra == 'test'",
+      "numpy ; extra == 'test'",
+      "xarray ; extra == 'test'",
+      "docutils (==0.16) ; extra == 'test'"
+    ],
+    "requires_python": ">=3.5",
+    "summary": "Bootstrap-based Sphinx theme from the PyData community",
+    "version": "0.6.3",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 10176991,
+  "releases": {
+    "0.1.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f78cf83c596eb1ad64dd1085d7246691",
+          "sha256": "27d817ebfab69b539667c8cbdecca4970e0094da414a94b13c6accbd98a179af"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.1.0-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "f78cf83c596eb1ad64dd1085d7246691",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 14655,
+        "upload_time": "2020-03-19T21:24:54",
+        "upload_time_iso_8601": "2020-03-19T21:24:54.552778Z",
+        "url": "https://files.pythonhosted.org/packages/76/b2/4ef3acb56a2b9d211a964e704eb32d8db8457068edaf6f8e64ef0ef472e1/pydata_sphinx_theme-0.1.0-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3a9934664ff9ac0e67888d7e2b4e4c84",
+          "sha256": "a9800114b5162dfabb7552cfbae84dc107e0155f959a0b04993c3bb47cd17bd3"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.1.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "3a9934664ff9ac0e67888d7e2b4e4c84",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 12827,
+        "upload_time": "2020-03-19T21:24:57",
+        "upload_time_iso_8601": "2020-03-19T21:24:57.009538Z",
+        "url": "https://files.pythonhosted.org/packages/65/66/fd4ab7f2e20d67f9d8e4783fa6ceda7e9fc70ac4716febdee06ef476fcc6/pydata-sphinx-theme-0.1.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.1.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d704af947ae711cdc79776496772de5b",
+          "sha256": "e3bd90ee9e1befdd4173614720a4eec13253e193acbc3cdb42abf13fb037f765"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.1.1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "d704af947ae711cdc79776496772de5b",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=3.5",
+        "size": 17369,
+        "upload_time": "2020-03-20T08:34:36",
+        "upload_time_iso_8601": "2020-03-20T08:34:36.783095Z",
+        "url": "https://files.pythonhosted.org/packages/0f/1c/294e8e6700074a40e29b5169bde8b04dac989782e301b64eb675c2c57cfa/pydata_sphinx_theme-0.1.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "55c50b789a02613268b64174f47678c1",
+          "sha256": "e07d160542fbb61976323d9bd333f8f2e6a25e4363f93035bff55fe327a5000f"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.1.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "55c50b789a02613268b64174f47678c1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 17382,
+        "upload_time": "2020-03-20T08:34:12",
+        "upload_time_iso_8601": "2020-03-20T08:34:12.204584Z",
+        "url": "https://files.pythonhosted.org/packages/26/8d/d6a7db10c562bf5a65f2e9936eed02725b8c71072654bb83b1ba30744c06/pydata-sphinx-theme-0.1.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "31f45532d7780a977dd2c58b8b853a58",
+          "sha256": "592922e3d2e7d1e45112e0f70648a879c3dcf70b4b5ec924a45f3ea3a2bfbb23"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.2.0-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "31f45532d7780a977dd2c58b8b853a58",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=3.5",
+        "size": 38761,
+        "upload_time": "2020-04-21T21:32:01",
+        "upload_time_iso_8601": "2020-04-21T21:32:01.698435Z",
+        "url": "https://files.pythonhosted.org/packages/c5/48/60ac92cba7005363c698a63d86f426f17615fe5aab3e047b2ef5da9fbe61/pydata_sphinx_theme-0.2.0-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "794808fe6b6b1992d1877e803844018f",
+          "sha256": "c9b3c894bd9592e6516e0e87dfd649fdfb3d9b8864c053f2b326db66e9980870"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.2.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "794808fe6b6b1992d1877e803844018f",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 39350,
+        "upload_time": "2020-04-21T21:32:03",
+        "upload_time_iso_8601": "2020-04-21T21:32:03.052911Z",
+        "url": "https://files.pythonhosted.org/packages/d4/f5/2f91978de29fca4192ecd2fc9f5d93ee7939f35846887b68e4179de4d083/pydata-sphinx-theme-0.2.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a63b19a3d4b727c33021769c1bfbd075",
+          "sha256": "69bf02267b68c4e4605c358dff2231e27be9981bd68e270e1a81f171f803b643"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.2.1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "a63b19a3d4b727c33021769c1bfbd075",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=3.5",
+        "size": 38903,
+        "upload_time": "2020-04-22T17:17:56",
+        "upload_time_iso_8601": "2020-04-22T17:17:56.733065Z",
+        "url": "https://files.pythonhosted.org/packages/a0/de/71e91801dffe63beee30521f8da1a843dda42c5484bad8007d183e6c5800/pydata_sphinx_theme-0.2.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "21486c291a98f85edd418591ab88735a",
+          "sha256": "fe492687c2430cede47ca988f19a390835b6a38282218c667636bd444bd40f74"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.2.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "21486c291a98f85edd418591ab88735a",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 38812,
+        "upload_time": "2020-04-22T17:17:57",
+        "upload_time_iso_8601": "2020-04-22T17:17:57.783934Z",
+        "url": "https://files.pythonhosted.org/packages/fb/aa/eebe877bb7ae9bb4de2a5369716989c90e6a82da8e0691f66a84dc25754d/pydata-sphinx-theme-0.2.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7facc03719ebed2a1e335c6b934afa89",
+          "sha256": "175fda95b425d8aafe6e889ba284b3bde86e94b2ed8220d215d7c207eb87c34e"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.2.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "7facc03719ebed2a1e335c6b934afa89",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 99404,
+        "upload_time": "2020-05-04T22:09:17",
+        "upload_time_iso_8601": "2020-05-04T22:09:17.576024Z",
+        "url": "https://files.pythonhosted.org/packages/f4/de/e25969b9c7619b1f4b13c4238e7253865f2503d821a2ccb238f9b20d8c35/pydata_sphinx_theme-0.2.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4dca5d571befcdfacafb11b80a7f1237",
+          "sha256": "769a8ba553ae9b6f6da7cbd5107efa10f68a202046837ee525fb0c263b0e1c36"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.2.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "4dca5d571befcdfacafb11b80a7f1237",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 99442,
+        "upload_time": "2020-05-04T22:09:18",
+        "upload_time_iso_8601": "2020-05-04T22:09:18.786034Z",
+        "url": "https://files.pythonhosted.org/packages/e5/fc/3968d4c3cd8fbd344bb89976fd5eb9b69fab2a53d9aad84530b2f35c8fe6/pydata-sphinx-theme-0.2.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.3.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a12ddaa272726b803f224f70e1cab03e",
+          "sha256": "9cb13df6937ccbd6041312b4a21b54cd20f382cbd45e0835863ab3fe0f9c424d"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.3.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "a12ddaa272726b803f224f70e1cab03e",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 61447,
+        "upload_time": "2020-05-29T08:16:58",
+        "upload_time_iso_8601": "2020-05-29T08:16:58.892561Z",
+        "url": "https://files.pythonhosted.org/packages/7a/62/95ea569a8e956d1fbf0f6f7f90a4a1e33557517b2ac3c6d3b92832da85a8/pydata_sphinx_theme-0.3.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "41d18ac6d7d3ade0d658efd16df3dd59",
+          "sha256": "a2bf1140d8ee2ed84b71ec88ce677cd73ef2da65918fb4814313b2d43576073e"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.3.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "41d18ac6d7d3ade0d658efd16df3dd59",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 61523,
+        "upload_time": "2020-05-29T08:16:59",
+        "upload_time_iso_8601": "2020-05-29T08:16:59.883240Z",
+        "url": "https://files.pythonhosted.org/packages/b8/a5/51e62b52ec1ade0799d093984b8c0ada711d7c85299192e75b44009b5906/pydata-sphinx-theme-0.3.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.3.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "88f71e3394eacfef2b03b5c47ee134e7",
+          "sha256": "974d01fc8ebc3afb26bcd6d7e9594234220c99f7ccd71ee71a5c04f8ab3a420f"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.3.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "88f71e3394eacfef2b03b5c47ee134e7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 61575,
+        "upload_time": "2020-06-23T17:58:47",
+        "upload_time_iso_8601": "2020-06-23T17:58:47.506555Z",
+        "url": "https://files.pythonhosted.org/packages/42/45/c06194c21e9bbc5c957dece923fc3f4ef2d704bd8dde8905d4c5259ac6cd/pydata_sphinx_theme-0.3.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "10b5da54d5c2f82fbbfe1c750173221b",
+          "sha256": "41dc4ef4305ed837d414aeac4c1d5fb8f6d2b9f4d8c90fd8e902ede9e78b693b"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.3.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "10b5da54d5c2f82fbbfe1c750173221b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 61645,
+        "upload_time": "2020-06-23T17:58:48",
+        "upload_time_iso_8601": "2020-06-23T17:58:48.388830Z",
+        "url": "https://files.pythonhosted.org/packages/35/c9/bd94d630f4e9dd29eb7cd40825eb96cb542b6e36de4af9de0180816c17b4/pydata-sphinx-theme-0.3.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.3.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cc52b4717a8375e1ad4c46a22f3dcb05",
+          "sha256": "ec2b5851c3382ba2715040189e1e9e45f1e9a3a290c494fec83121feac1f7e80"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.3.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "cc52b4717a8375e1ad4c46a22f3dcb05",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 61692,
+        "upload_time": "2020-08-28T14:19:39",
+        "upload_time_iso_8601": "2020-08-28T14:19:39.471074Z",
+        "url": "https://files.pythonhosted.org/packages/57/23/50271d7ed3c4530953c242b5e03ac35a4d9447160ed8a71eb4cce7c644b1/pydata_sphinx_theme-0.3.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "20d321d72e20408ab0eddda8c7ecf9e1",
+          "sha256": "3920d7689324dd00b96747b61d2bd8968b096ee6e2bec6c7e88253ee302d51c7"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.3.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "20d321d72e20408ab0eddda8c7ecf9e1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 61751,
+        "upload_time": "2020-08-28T14:19:40",
+        "upload_time_iso_8601": "2020-08-28T14:19:40.521898Z",
+        "url": "https://files.pythonhosted.org/packages/5f/fe/d65448b402dd1bbf530fa483ab74111d2deb7bc89ff9d8190416da2df44b/pydata-sphinx-theme-0.3.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.4.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "25050916d457c1317d8937de5c9a025d",
+          "sha256": "2029bd25d3b8e4de9b06120bb02be6a0becb5f8fbf087309e792623ae8ea6b55"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.4.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "25050916d457c1317d8937de5c9a025d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 2143960,
+        "upload_time": "2020-08-31T08:35:24",
+        "upload_time_iso_8601": "2020-08-31T08:35:24.808661Z",
+        "url": "https://files.pythonhosted.org/packages/5b/e1/47ad7d329128c6f28fa2d165ff029d770142d486b3253e54bc230c3b8288/pydata_sphinx_theme-0.4.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e27edc46a39820719bfcc8e49caa08c7",
+          "sha256": "363ffdc3dffacc137fa06d7a15893acd12c28d74f7f32401d300c3922788cdeb"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.4.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "e27edc46a39820719bfcc8e49caa08c7",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 2141625,
+        "upload_time": "2020-08-31T08:35:25",
+        "upload_time_iso_8601": "2020-08-31T08:35:25.925800Z",
+        "url": "https://files.pythonhosted.org/packages/e6/83/be410124f81f2965f6fcbeecce469220d1b7c09cfb017d0ef0de641c36fe/pydata-sphinx-theme-0.4.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.4.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6d8b7e7db17fd9e7e5767adde8929217",
+          "sha256": "b40a1b45dea0f1fa6c444b6c977ff25e20abf615c53e7e69ca771370dcd75579"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.4.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "6d8b7e7db17fd9e7e5767adde8929217",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 2144705,
+        "upload_time": "2020-10-06T23:43:30",
+        "upload_time_iso_8601": "2020-10-06T23:43:30.333108Z",
+        "url": "https://files.pythonhosted.org/packages/2a/7d/62aeae0d0ab65bc1de89d5a2f27ba2b31df4b13708237f69a14e8621be16/pydata_sphinx_theme-0.4.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5bd649e9bd35b3d0b6736d8758c08c56",
+          "sha256": "4e95d0dca0a64ba9471a89cdb6197cf8bb81b31f75ad0b7b6f0e85196fb7fe39"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.4.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "5bd649e9bd35b3d0b6736d8758c08c56",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 2141765,
+        "upload_time": "2020-10-06T23:43:31",
+        "upload_time_iso_8601": "2020-10-06T23:43:31.654449Z",
+        "url": "https://files.pythonhosted.org/packages/87/fb/96bad50ec4135ff2508c8e15cc31513a0c4c20989e270b0254861657ea62/pydata-sphinx-theme-0.4.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.4.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d89fbff8533a069af85f57fb4a90b7b4",
+          "sha256": "04624fcbe7a5810b76cb42687a69a346b9d317fb8953497478192a71bf44a127"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.4.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "d89fbff8533a069af85f57fb4a90b7b4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 2144717,
+        "upload_time": "2021-01-22T09:31:15",
+        "upload_time_iso_8601": "2021-01-22T09:31:15.153640Z",
+        "url": "https://files.pythonhosted.org/packages/57/d3/e111710ff92715713f99c7918242b384e3d5e71100713f7a208989c19724/pydata_sphinx_theme-0.4.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8e630ff3185b8ff61f3764235fc64a9b",
+          "sha256": "b04e9f09cf1efdf814f0a565e4ba2c925282ba2e528d55f663bbd4176fc06c9e"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.4.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "8e630ff3185b8ff61f3764235fc64a9b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 2141790,
+        "upload_time": "2021-01-22T09:31:16",
+        "upload_time_iso_8601": "2021-01-22T09:31:16.430960Z",
+        "url": "https://files.pythonhosted.org/packages/1e/f5/e73d666fccd82e2f5d36c64fed2e8bcadc7b85214fe451664c26252c6af8/pydata-sphinx-theme-0.4.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.4.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "97695cd3291942d9beaa028204cd79ad",
+          "sha256": "aa0ae055de5de36a637387941d0e18d8dad35d97d56f0faf25f5219658d49df2"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.4.3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "97695cd3291942d9beaa028204cd79ad",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 2144730,
+        "upload_time": "2021-01-26T10:32:19",
+        "upload_time_iso_8601": "2021-01-26T10:32:19.424757Z",
+        "url": "https://files.pythonhosted.org/packages/f8/7f/b11e6bd6d1a8419b29b54b0f2594f879cf766b834acce8df2bcd9fed301b/pydata_sphinx_theme-0.4.3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1c410a14ef2fb540cc6432b701e085cc",
+          "sha256": "8cf8fbc74c6c47d6ed497a91f3bedf94d57383b52eebb4fa05ae7fc4f50767a2"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.4.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "1c410a14ef2fb540cc6432b701e085cc",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 2141791,
+        "upload_time": "2021-01-26T10:32:20",
+        "upload_time_iso_8601": "2021-01-26T10:32:20.768616Z",
+        "url": "https://files.pythonhosted.org/packages/e6/4a/01439756d28d0d1b4af1fa347efeff73f6f4e64c8b5132325cc3c0862d03/pydata-sphinx-theme-0.4.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.5.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f11ce3c3254401282bde68b9ee837932",
+          "sha256": "e6f325e0a4ad67405e7d863f0bb9f6da8b318b7a504e111a0c33b64361b681f9"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.5.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "f11ce3c3254401282bde68b9ee837932",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 1413844,
+        "upload_time": "2021-03-11T19:41:46",
+        "upload_time_iso_8601": "2021-03-11T19:41:46.601382Z",
+        "url": "https://files.pythonhosted.org/packages/9e/ef/4efcd6d9fecfd7990e7171202cbfb3d576d13e3b16dc0126fd844e3c8340/pydata_sphinx_theme-0.5.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "dfd5f63919e7c2e5495c348928e342d1",
+          "sha256": "3596b3e04909f45fc20fb909b9aafb70c20383e11963f396b41e89c34b94c6ea"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.5.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "dfd5f63919e7c2e5495c348928e342d1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 1414192,
+        "upload_time": "2021-03-11T19:41:47",
+        "upload_time_iso_8601": "2021-03-11T19:41:47.928132Z",
+        "url": "https://files.pythonhosted.org/packages/49/27/4b398c3223d36dbc41d567cb8f9488800e3897ce9f652b9338a9a421afde/pydata-sphinx-theme-0.5.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.5.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d4a1a4f076db841a9070bfc3c31997b7",
+          "sha256": "38d579ae14cd0ac8c8a61e82afc405ea9cbc69cefc55db66114145e815fa016b"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.5.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "d4a1a4f076db841a9070bfc3c31997b7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 1413871,
+        "upload_time": "2021-03-22T08:56:50",
+        "upload_time_iso_8601": "2021-03-22T08:56:50.145074Z",
+        "url": "https://files.pythonhosted.org/packages/f4/e6/0488ecb9aaac15355a9b1c4b9ca2521c61a566e9b23791c27ce5617aa9e7/pydata_sphinx_theme-0.5.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3a214c3715d20af951895c6dcac76edb",
+          "sha256": "367ecfb4478e7e6f45ae776a1bca8c2c436fd3d942933a6ef7f2b7e9286a9aaf"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.5.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "3a214c3715d20af951895c6dcac76edb",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 1414222,
+        "upload_time": "2021-03-22T08:56:51",
+        "upload_time_iso_8601": "2021-03-22T08:56:51.328957Z",
+        "url": "https://files.pythonhosted.org/packages/c9/08/08d094325a77560f1428ec08097c4ab6aa1945caaa9c9fc5aba7a17e689b/pydata-sphinx-theme-0.5.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.5.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "354e56e2ec5513680f92744186f5756f",
+          "sha256": "bbdae0f3fd17924cc1a90192de121dae6c5e1b40c959d65be09811139bd11bd0"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.5.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "354e56e2ec5513680f92744186f5756f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 1413879,
+        "upload_time": "2021-03-25T08:55:21",
+        "upload_time_iso_8601": "2021-03-25T08:55:21.915562Z",
+        "url": "https://files.pythonhosted.org/packages/68/0f/6f321c42e4d106382d646a92701cc8885996eb0a8571fa2119de2115a633/pydata_sphinx_theme-0.5.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4baa0609fcb58f9ad0f603a2b71b36bc",
+          "sha256": "3433ab90eb4c689deeedc6c4828c548e68d7555740e8edfa5807c01f49f63a1d"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.5.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "4baa0609fcb58f9ad0f603a2b71b36bc",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 1414235,
+        "upload_time": "2021-03-25T08:55:23",
+        "upload_time_iso_8601": "2021-03-25T08:55:23.543286Z",
+        "url": "https://files.pythonhosted.org/packages/2a/97/54571b89fd3ff0c239436ff8893b77cfa325b134ca007b7d719d96eab7ad/pydata-sphinx-theme-0.5.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.6.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4053991a142151f34c65dc87d2aa3ae3",
+          "sha256": "39a28ffda6567174c4142c96bcb9d1c63bf2ea4a3e75b73475cef89cef888f11"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.6.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "4053991a142151f34c65dc87d2aa3ae3",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 1419107,
+        "upload_time": "2021-04-09T21:26:25",
+        "upload_time_iso_8601": "2021-04-09T21:26:25.400074Z",
+        "url": "https://files.pythonhosted.org/packages/b4/4a/2b58d3bf49987df3c778e281c56a3e4631fcf752aaf4dd993135f0b2c1d1/pydata_sphinx_theme-0.6.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5d943b1f6fc9d4a500f9d652d4d49f99",
+          "sha256": "a698391d3a1c7f31ba4a4e576f868490f4ed405004a4802661c4f2921aa7ab84"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.6.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "5d943b1f6fc9d4a500f9d652d4d49f99",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 1417350,
+        "upload_time": "2021-04-09T21:26:26",
+        "upload_time_iso_8601": "2021-04-09T21:26:26.783273Z",
+        "url": "https://files.pythonhosted.org/packages/7e/30/302e21f6b29f6ba3052e3ee7f491ac6572ca6b9fafd33a49767cdcb780a6/pydata-sphinx-theme-0.6.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.6.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b13fa1f143d91b84dc79efc1b323f16d",
+          "sha256": "64e917742914eac4fb00e51089672c65a1e4dd2ff136e91eb77bfe752ac0b783"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.6.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "b13fa1f143d91b84dc79efc1b323f16d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 1419231,
+        "upload_time": "2021-04-16T22:47:16",
+        "upload_time_iso_8601": "2021-04-16T22:47:16.212327Z",
+        "url": "https://files.pythonhosted.org/packages/f7/88/179ccc7dc4ad4cfa7e1160e92435278c9118f1bfb8cb3b79e23e4d53e9b3/pydata_sphinx_theme-0.6.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "62a6c14d7d5f98efe7016a796a7bb378",
+          "sha256": "517d5f9441d28c64b2bbdb87f4349e5751ba1fe920cd76faa7493688d5f40e6b"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.6.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "62a6c14d7d5f98efe7016a796a7bb378",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 1417555,
+        "upload_time": "2021-04-16T22:47:17",
+        "upload_time_iso_8601": "2021-04-16T22:47:17.346944Z",
+        "url": "https://files.pythonhosted.org/packages/e0/e8/ce1de32f28ae8dd5e07fa695b9e2383b11876484700534e16673bfcc138b/pydata-sphinx-theme-0.6.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.6.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d18770609c3b1094796bb2970f8c4677",
+          "sha256": "f81e79b5a98b1d0df72d92db152cae2cec26a5e5c57383bccc6ed6ad07f54a6f"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.6.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "d18770609c3b1094796bb2970f8c4677",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 1419541,
+        "upload_time": "2021-04-26T06:59:17",
+        "upload_time_iso_8601": "2021-04-26T06:59:17.930822Z",
+        "url": "https://files.pythonhosted.org/packages/1a/ce/55269033e35bccbbe09660d6e7abbcb5f2762f66d7fa2d0670a305c4bdc6/pydata_sphinx_theme-0.6.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3f749cd3ec469af2f08ed7444d2d05dd",
+          "sha256": "0cf2cd9fb8004f374a9133ab0bd79a5e83839299d8a0fc05a1178c7c410ad606"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.6.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "3f749cd3ec469af2f08ed7444d2d05dd",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 1417931,
+        "upload_time": "2021-04-26T06:59:19",
+        "upload_time_iso_8601": "2021-04-26T06:59:19.068142Z",
+        "url": "https://files.pythonhosted.org/packages/ec/73/6d8ac65beb6114bced60e3e5a95eb9e900af1208a641139bc5c90403b963/pydata-sphinx-theme-0.6.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.6.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5a870f97cf5abc40254bedf41a1671a0",
+          "sha256": "f0fee20dc33fa5efa6b9be57368be760d236d8b9c1486b14ad1d17b7e7e0db04"
+        },
+        "downloads": -1,
+        "filename": "pydata_sphinx_theme-0.6.3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "5a870f97cf5abc40254bedf41a1671a0",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 1419550,
+        "upload_time": "2021-04-26T19:08:50",
+        "upload_time_iso_8601": "2021-04-26T19:08:50.525255Z",
+        "url": "https://files.pythonhosted.org/packages/3b/ea/9c007fdf60d05a201467724d88b2571edb356afb065edfb2a326670eab10/pydata_sphinx_theme-0.6.3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "809213d8e61c2661a89dc8adc88a081e",
+          "sha256": "32e0580ef985734d652eec2bf25e0995a330a9d4f76deaa353571ce8e180ab14"
+        },
+        "downloads": -1,
+        "filename": "pydata-sphinx-theme-0.6.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "809213d8e61c2661a89dc8adc88a081e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 1418022,
+        "upload_time": "2021-04-26T19:08:51",
+        "upload_time_iso_8601": "2021-04-26T19:08:51.741522Z",
+        "url": "https://files.pythonhosted.org/packages/21/6d/b72bd3ea7ad7fa43acda66c664d88e3578704e13fcf059d22dd3a2594315/pydata-sphinx-theme-0.6.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "5a870f97cf5abc40254bedf41a1671a0",
+        "sha256": "f0fee20dc33fa5efa6b9be57368be760d236d8b9c1486b14ad1d17b7e7e0db04"
+      },
+      "downloads": -1,
+      "filename": "pydata_sphinx_theme-0.6.3-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "5a870f97cf5abc40254bedf41a1671a0",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.5",
+      "size": 1419550,
+      "upload_time": "2021-04-26T19:08:50",
+      "upload_time_iso_8601": "2021-04-26T19:08:50.525255Z",
+      "url": "https://files.pythonhosted.org/packages/3b/ea/9c007fdf60d05a201467724d88b2571edb356afb065edfb2a326670eab10/pydata_sphinx_theme-0.6.3-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "809213d8e61c2661a89dc8adc88a081e",
+        "sha256": "32e0580ef985734d652eec2bf25e0995a330a9d4f76deaa353571ce8e180ab14"
+      },
+      "downloads": -1,
+      "filename": "pydata-sphinx-theme-0.6.3.tar.gz",
+      "has_sig": false,
+      "md5_digest": "809213d8e61c2661a89dc8adc88a081e",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">=3.5",
+      "size": 1418022,
+      "upload_time": "2021-04-26T19:08:51",
+      "upload_time_iso_8601": "2021-04-26T19:08:51.741522Z",
+      "url": "https://files.pythonhosted.org/packages/21/6d/b72bd3ea7ad7fa43acda66c664d88e3578704e13fcf059d22dd3a2594315/pydata-sphinx-theme-0.6.3.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

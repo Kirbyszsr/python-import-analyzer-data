@@ -1,0 +1,630 @@
+[
+  {
+    "cveID": "CVE-2021-24193",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-14T12:15Z",
+    "lastModifiedDate": "2021-05-14T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Low privileged users can use the AJAX action 'cp_plugins_do_button_job_later_callback' in the Visitor Traffic Real Time Statistics WordPress plugin before 2.12, to install any plugin (including a specific version) from the WordPress repository, as well as activate arbitrary plugin from then blog, which helps attackers install vulnerable plugins and could lead to more critical vulnerabilities like RCE."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wpscan.com/vulnerability/74889e29-5349-43d1-baf5-1622493be90c",
+        "name": "https://wpscan.com/vulnerability/74889e29-5349-43d1-baf5-1622493be90c",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31583",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-23T21:15Z",
+    "lastModifiedDate": "2021-05-12T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Sipwise C5 NGCP CSC through CE_mr9.3.1 has multiple authenticated stored and reflected XSS vulnerabilities when input passed via several parameters to several scripts is not properly sanitized before being returned to the user: Stored XSS in callforward/time/set/save (POST tsetname); Reflected XSS in addressbook (GET filter); Stored XSS in addressbook/save (POST firstname, lastname, company); and Reflected XSS in statistics/versions (GET lang)."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://packetstormsecurity.com/files/162316/Sipwise-C5-NGCP-CSC-Cross-Site-Scripting.html",
+        "name": "http://packetstormsecurity.com/files/162316/Sipwise-C5-NGCP-CSC-Cross-Site-Scripting.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.zeroscience.mk/en/vulnerabilities",
+        "name": "https://www.zeroscience.mk/en/vulnerabilities",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.sipwise.com",
+        "name": "https://www.sipwise.com",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5648.php",
+        "name": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5648.php",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0273",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-05-04T20:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An always-incorrect control flow implementation in the implicit filter terms of Juniper Networks Junos OS and Junos OS Evolved on ACX5800, EX9200 Series, MX10000 Series, MX240, MX480, MX960 devices with affected Trio line cards allows an attacker to exploit an interdependency in the PFE UCODE microcode of the Trio chipset with various line cards to cause packets destined to the devices interfaces to cause a Denial of Service (DoS) condition by looping the packet with an unreachable exit condition ('Infinite Loop'). To break this loop once it begins one side of the affected LT interfaces will need to be disabled. Once disabled, the condition will clear and the disabled LT interface can be reenabled. Continued receipt and processing of these packets will create a sustained Denial of Service (DoS) condition. This issue only affects LT-LT interfaces. Any other interfaces are not affected by this issue. This issue affects the following cards: MPCE Type 3 3D MPC4E 3D 32XGE MPC4E 3D 2CGE+8XGE EX9200 32x10G SFP EX9200-2C-8XS FPC Type 5-3D FPC Type 5-LSR EX9200 4x40G QSFP An Indicator of Compromise (IoC) can be seen by examining the traffic of the LT-LT interfaces for excessive traffic using the following command: monitor interface traffic Before loop impact: Interface: lt-2/0/0, Enabled, Link is Up Encapsulation: Logical-tunnel, Speed: 100000mbps Traffic statistics: Current delta Input bytes: 3759900268942 (1456 bps) [0] <---------- LT interface utilization is low Output bytes: 3759900344309 (1456 bps) [0] <---------- LT interface utilization is low After loop impact: Interface: lt-2/0/0, Enabled, Link is Up Encapsulation: Logical-tunnel, Speed: 100000mbps Traffic statistics: Current delta Input bytes: 3765160313129 (2158268368 bps) [5260044187] <---------- LT interface utilization is very high Output bytes: 3765160399522 (2158266440 bps) [5260055213] <---------- LT interface utilization is very high This issue affects: Juniper Networks Junos OS on ACX5800, EX9200 Series, MX10000 Series, MX240, MX480, MX960. Versions 15.1F6, 16.1R1, and later versions prior to 16.1R7-S8; 17.1 versions prior to 17.1R2-S12; 17.2 versions prior to 17.2R3-S4; 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R2-S10, 17.4R3-S2; 18.1 versions prior to 18.1R3-S10; 18.2 versions prior to 18.2R2-S7, 18.2R3-S3; 18.3 versions prior to 18.3R1-S7, 18.3R3-S2; 18.4 versions prior to 18.4R1-S7, 18.4R2-S4, 18.4R3-S2; 19.1 versions prior to 19.1R1-S5, 19.1R2-S1, 19.1R3; 19.2 versions prior to 19.2R1-S4, 19.2R2; 19.3 versions prior to 19.3R2-S3, 19.3R3; 19.4 versions prior to 19.4R1-S1, 19.4R2. This issue does not affect the MX10001. This issue does not affect Juniper Networks Junos OS versions prior to 15.1F6, 16.1R1. Juniper Networks Junos OS Evolved on ACX5800, EX9200 Series, MX10000 Series, MX240, MX480, MX960 19.4 versions prior to 19.4R2-EVO. This issue does not affect the MX10001."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11164",
+        "name": "https://kb.juniper.net/JSA11164",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-30154",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-06T07:15Z",
+    "lastModifiedDate": "2021-05-03T20:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in MediaWiki before 1.31.12 and 1.32.x through 1.35.x before 1.35.2. On Special:NewFiles, all the mediastatistics-header-* messages are output in HTML unescaped, leading to XSS."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://phabricator.wikimedia.org/T278014",
+        "name": "https://phabricator.wikimedia.org/T278014",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4889",
+        "name": "DSA-4889",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/26UJGHF7LJDOCQN6A3Z4PM7PYRKENJHE/",
+        "name": "FEDORA-2021-f4223b6684",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2OMSV7B2TCFBOCICN3B4SMQP5HVRJQIT/",
+        "name": "FEDORA-2021-d298103d3a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0228",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-27T18:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An improper check for unusual or exceptional conditions vulnerability in Juniper Networks MX Series platforms with Trio-based MPC (Modular Port Concentrator) deployed in (Ethernet VPN) EVPN-(Virtual Extensible LAN) VXLAN configuration, may allow an attacker sending specific Layer 2 traffic to cause Distributed Denial of Service (DDoS) protection to trigger unexpectedly, resulting in traffic impact. Continued receipt and processing of this specific Layer 2 frames will sustain the Denial of Service (DoS) condition. An indication of compromise is to check DDOS LACP violations: user@device> show ddos-protection protocols statistics brief | match lacp This issue only affects the MX Series platforms with Trio-based MPC. No other products or platforms are affected. This issue affects: Juniper Networks Junos OS on MX Series: 15.1 versions prior to 15.1R7-S9; 17.3 versions prior to 17.3R3-S11; 17.4 versions prior to 17.4R3-S4; 18.1 versions prior to 18.1R3-S12; 18.2 versions prior to 18.2R2-S8, 18.2R3-S8; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R1-S8, 18.4R2-S7, 18.4R3-S7; 19.1 versions prior to 19.1R3-S4; 19.2 versions prior to 19.2R1-S6; 19.3 versions prior to 19.3R3-S2; 19.4 versions prior to 19.4R2-S4, 19.4R3-S2; 20.1 versions prior to 20.1R2, 20.1R3; 20.2 versions prior to 20.2R2-S1, 20.2R3; 20.3 versions prior to 20.3R1-S1, 20.3R2;"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11123",
+        "name": "https://kb.juniper.net/JSA11123",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0230",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-27T16:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On Juniper Networks Junos OS platforms with link aggregation (lag) configured, executing any operation that fetches Aggregated Ethernet (AE) interface statistics, including but not limited to SNMP GET requests, causes a slow kernel memory leak. If all the available memory is consumed, the traffic will be impacted and a reboot might be required. The following log can be seen if this issue happens. /kernel: rt_pfe_veto: Memory over consumed. Op 1 err 12, rtsm_id 0:-1, msg type 72 /kernel: rt_pfe_veto: free kmem_map memory = (20770816) curproc = kmd An administrator can use the following CLI command to monitor the status of memory consumption (ifstat bucket): user@device > show system virtual-memory no-forwarding | match ifstat Type InUse MemUse HighUse Limit Requests Limit Limit Size(s) ifstat 2588977 162708K - 19633958 <<<< user@device > show system virtual-memory no-forwarding | match ifstat Type InUse MemUse HighUse Limit Requests Limit Limit Size(s) ifstat 3021629 189749K - 22914415 <<<< This issue does not affect the following platforms: Juniper Networks MX Series. Juniper Networks PTX1000-72Q, PTX3000, PTX5000, PTX10001, PTX10002-60C, PTX10003_160C, PTX10003_80C, PTX10003_81CD, PTX10004, PTX10008, PTX10016 Series. Juniper Networks EX9200 Series. Juniper Networks ACX710, ACX6360 Series. Juniper Networks NFX Series. This issue affects Juniper Networks Junos OS: 17.1 versions 17.1R3 and above prior to 17.3R3-S11; 17.4 versions prior to 17.4R3-S5; 18.2 versions prior to 18.2R3-S7, 18.2R3-S8; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R2-S7, 18.4R3-S6; 19.1 versions prior to 19.1R3-S4; 19.2 versions prior to 19.2R1-S6; 19.3 versions prior to 19.3R3-S1; 19.4 versions prior to 19.4R3-S1; 20.1 versions prior to 20.1R2, 20.1R3; 20.2 versions prior to 20.2R2-S2, 20.2R3; 20.3 versions prior to 20.3R1-S2, 20.3R2. This issue does not affect Juniper Networks Junos OS prior to 17.1R3."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11125",
+        "name": "https://kb.juniper.net/JSA11125",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21631",
+    "cveASSIGNER": "jenkinsci-cert@googlegroups.com",
+    "publishedDate": "2021-03-30T12:16Z",
+    "lastModifiedDate": "2021-04-02T16:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jenkins Cloud Statistics Plugin 0.26 and earlier does not perform a permission check in an HTTP endpoint, allowing attackers with Overall/Read permission and knowledge of random activity IDs to view related provisioning exception error messages."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jenkins.io/security/advisory/2021-03-30/#SECURITY-2246",
+        "name": "https://www.jenkins.io/security/advisory/2021-03-30/#SECURITY-2246",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/30/1",
+        "name": "[oss-security] 20210330 Multiple vulnerabilities in Jenkins plugins",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0207",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-01-15T18:15Z",
+    "lastModifiedDate": "2021-01-21T19:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An improper interpretation conflict of certain data between certain software components within the Juniper Networks Junos OS devices does not allow certain traffic to pass through the device upon receipt from an ingress interface filtering certain specific types of traffic which is then being redirected to an egress interface on a different VLAN. This causes a Denial of Service (DoS) to those clients sending these particular types of traffic. Such traffic being sent by a client may appear genuine, but is non-standard in nature and should be considered as potentially malicious, and can be targeted to the device, or destined through it for the issue to occur. This issues affects IPv4 and IPv6 traffic. An indicator of compromise may be found by checking log files. You may find that traffic on the input interface has 100% of traffic flowing into the device, yet the egress interface shows 0 pps leaving the device. For example: [show interfaces \"interface\" statistics detail] Output between two interfaces would reveal something similar to: Ingress, first interface: -------------------- Interface Link Input packets (pps) Output packets (pps) et-0/0/0 Up 9999999999 (9999) 1 (0) -------------------- Egress, second interface: -------------------- Interface Link Input packets (pps) Output packets (pps) et-0/0/1 Up 0 (0) 9999999999 (0) -------------------- Dropped packets will not show up in DDoS monitoring/protection counters as issue is not caused by anti-DDoS protection mechanisms. This issue affects: Juniper Networks Junos OS: 17.3 versions prior to 17.3R3-S7 on NFX250, QFX5K Series, EX4600; 17.4 versions prior to 17.4R2-S11, 17.4R3-S3 on NFX250, QFX5K Series, EX4600; 18.1 versions prior to 18.1R3-S9 on NFX250, QFX5K Series, EX2300 Series, EX3400 Series, EX4600; 18.2 versions prior to 18.2R3-S3 on NFX250, QFX5K Series, EX2300 Series, EX3400 Series, EX4300 Multigigabit, EX4600; 18.3 versions prior to 18.3R3-S1 on NFX250, QFX5K Series, EX2300 Series, EX3400 Series, EX4300 Multigigabit, EX4600 Series; 18.4 versions prior to 18.4R1-S5, 18.4R2-S3, 18.4R3 on NFX250, QFX5K Series, EX2300 Series, EX3400 Series, EX4300 Multigigabit, EX4600 Series; 19.1 versions prior to 19.1R1-S5, 19.1R2-S1, 19.1R3 on NFX250, QFX5K Series, EX2300 Series, EX3400 Series, EX4300 Multigigabit, EX4600 Series; 19.2 versions prior to 19.2R1-S5, 19.2R2 on NFX250, QFX5K Series, EX2300 Series, EX3400 Series, EX4300 Multigigabit, EX4600 Series; 19.3 versions prior to 19.3R2-S3, 19.3R3 on NFX250, QFX5K Series, EX2300 Series, EX3400 Series, EX4300 Multigigabit, EX4600 Series; 19.4 versions prior to 19.4R1-S2, 19.4R2 on NFX250, NFX350, QFX5K Series, EX2300 Series, EX3400 Series, EX4300 Multigigabit, EX4600 Series. This issue does not affect Junos OS releases prior to 17.2R2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11097",
+        "name": "https://kb.juniper.net/JSA11097",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-20934",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-28T07:15Z",
+    "lastModifiedDate": "2021-01-12T13:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Linux kernel before 5.2.6. On NUMA systems, the Linux fair scheduler has a use-after-free in show_numa_stats() because NUMA fault statistics are inappropriately freed, aka CID-16d51a590a8c."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=16d51a590a8ce3befb1308e0e7ab77f3b661af33",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=16d51a590a8ce3befb1308e0e7ab77f3b661af33",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.2.6",
+        "name": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.2.6",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.chromium.org/p/project-zero/issues/detail?id=1913",
+        "name": "https://bugs.chromium.org/p/project-zero/issues/detail?id=1913",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27057",
+    "cveASSIGNER": "security@android.com",
+    "publishedDate": "2020-12-15T17:15Z",
+    "lastModifiedDate": "2020-12-17T02:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In getGpuStatsGlobalInfo and getGpuStatsAppInfo of GpuService.cpp, there is a possible permission bypass due to a missing permission check. This could lead to local information disclosure of gpu statistics with User execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-11Android ID: A-161903239"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://source.android.com/security/bulletin/pixel/2020-12-01",
+        "name": "https://source.android.com/security/bulletin/pixel/2020-12-01",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-14669",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-08-05T20:15Z",
+    "lastModifiedDate": "2020-12-16T17:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Firefly III 4.7.17.3 is vulnerable to stored XSS due to the lack of filtration of user-supplied data in the asset account name. The JavaScript code is executed during a visit to the audit account statistics page."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/firefly-iii/firefly-iii/issues/2366",
+        "name": "https://github.com/firefly-iii/firefly-iii/issues/2366",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/firefly-iii/firefly-iii/commit/2ddf48f15cbdbb475221c299872420f625c3bc3f",
+        "name": "https://github.com/firefly-iii/firefly-iii/commit/2ddf48f15cbdbb475221c299872420f625c3bc3f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-6019",
+    "cveASSIGNER": "cve@checkpoint.com",
+    "publishedDate": "2020-11-13T16:15Z",
+    "lastModifiedDate": "2020-12-10T23:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Valve's Game Networking Sockets prior to version v1.2.0 improperly handles inlined statistics messages in function CConnectionTransportUDPBase::Received_Data(), leading to an exception thrown from libprotobuf and resulting in a crash."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/ValveSoftware/GameNetworkingSockets/commit/d944a10808891d202bb1d5e1998de6e0423af678",
+        "name": "https://github.com/ValveSoftware/GameNetworkingSockets/commit/d944a10808891d202bb1d5e1998de6e0423af678",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://research.checkpoint.com/2020/game-on-finding-vulnerabilities-in-valves-steam-sockets/",
+        "name": "https://research.checkpoint.com/2020/game-on-finding-vulnerabilities-in-valves-steam-sockets/",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-12266",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-04-27T15:15Z",
+    "lastModifiedDate": "2020-12-08T20:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered where there are multiple externally accessible pages that do not require any sort of authentication, and store system information for internal usage. The devices automatically query these pages to update dashboards and other statistics, but the pages can be accessed externally without any authentication. All the pages follow the naming convention live_(string).shtml. Among the information disclosed is: interface status logs, IP address of the device, MAC address of the device, model and current firmware version, location, all running processes, all interfaces and their statuses, all current DHCP leases and the associated hostnames, all other wireless networks in range of the router, memory statistics, and components of the configuration of the device such as enabled features. Affected devices: Affected devices are: Wavlink WN530HG4, Wavlink WN575A3, Wavlink WN579G3,Wavlink WN531G3, Wavlink WN533A8, Wavlink WN531A6, Wavlink WN551K1, Wavlink WN535G3, Wavlink WN530H4, Wavlink WN57X93, WN572HG3, Wavlink WN578A2, Wavlink WN579G3, Wavlink WN579X3, and Jetstream AC3000/ERAC3000"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/sudo-jtcsec/CVE/blob/master/CVE-2020-12266",
+        "name": "https://github.com/sudo-jtcsec/CVE/blob/master/CVE-2020-12266",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.wavlink.com",
+        "name": "https://www.wavlink.com",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/sudo-jtcsec/Nyra",
+        "name": "https://github.com/sudo-jtcsec/Nyra",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/sudo-jtcsec/CVE/blob/master/CVE-2020-12266-affected_devices",
+        "name": "https://github.com/sudo-jtcsec/CVE/blob/master/CVE-2020-12266-affected_devices",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/Roni-Carta/nyra",
+        "name": "https://github.com/Roni-Carta/nyra",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-28917",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-18T09:15Z",
+    "lastModifiedDate": "2020-12-02T20:20Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the view_statistics (aka View frontend statistics) extension before 2.0.1 for TYPO3. It saves all GET and POST data of TYPO3 frontend requests to the database. Depending on the extensions used on a TYPO3 website, sensitive data (e.g., cleartext passwords if ext:felogin is installed) may be saved."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://typo3.org/security/advisory/typo3-ext-sa-2020-019",
+        "name": "https://typo3.org/security/advisory/typo3-ext-sa-2020-019",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-2273",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-06-01T19:59Z",
+    "lastModifiedDate": "2020-12-01T14:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site scripting (XSS) vulnerability in mod/quiz/report/statistics/statistics_question_table.php in Moodle through 2.5.9, 2.6.x before 2.6.9, 2.7.x before 2.7.6, and 2.8.x before 2.8.4 allows remote authenticated users to inject arbitrary web script or HTML by leveraging the student role for a crafted quiz response."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-49364",
+        "name": "http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-49364",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2015/03/16/1",
+        "name": "[oss-security] 20150316 Moodle security issues are now public",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://moodle.org/mod/forum/discuss.php?d=307387",
+        "name": "https://moodle.org/mod/forum/discuss.php?d=307387",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-5335",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2016-02-22T05:59Z",
+    "lastModifiedDate": "2020-12-01T14:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site request forgery (CSRF) vulnerability in admin/registration/register.php in Moodle through 2.6.11, 2.7.x before 2.7.11, 2.8.x before 2.8.9, and 2.9.x before 2.9.3 allows remote attackers to hijack the authentication of administrators for requests that send statistics to an arbitrary hub URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-51091",
+        "name": "http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-51091",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://moodle.org/mod/forum/discuss.php?d=323230",
+        "name": "https://moodle.org/mod/forum/discuss.php?d=323230",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-1656",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2020-10-16T21:15Z",
+    "lastModifiedDate": "2020-10-27T19:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The DHCPv6 Relay-Agent service, part of the Juniper Enhanced jdhcpd daemon shipped with Juniper Networks Junos OS has an Improper Input Validation vulnerability which will result in a Denial of Service (DoS) condition when a DHCPv6 client sends a specific DHPCv6 message allowing an attacker to potentially perform a Remote Code Execution (RCE) attack on the target device. Continuous receipt of the specific DHCPv6 client message will result in an extended Denial of Service (DoS) condition. If adjacent devices are also configured to relay DHCP packets, and are not affected by this issue and simply transparently forward unprocessed client DHCPv6 messages, then the attack vector can be a Network-based attack, instead of an Adjacent-device attack. No other DHCP services are affected. Receipt of the packet without configuration of the DHCPv6 Relay-Agent service, will not result in exploitability of this issue. This issue affects Juniper Networks Junos OS: 12.3 versions prior to 12.3R12-S15; 12.3X48 versions prior to 12.3X48-D95; 14.1X53 versions prior to 14.1X53-D53; 15.1 versions prior to 15.1R7-S6; 15.1X49 versions prior to 15.1X49-D200; 15.1X53 versions prior to 15.1X53-D593; 16.1 versions prior to 16.1R7-S7; 16.2 versions prior to 16.2R2-S11; 17.1 versions prior to 17.1R2-S11, 17.1R3-S2; 17.2 versions prior to 17.2R3-S3; 17.2X75 versions prior to 17.2X75-D44; 17.3 versions prior to 17.3R3-S7; 17.4 versions prior to 17.4R2-S9, 17.4R3; 18.1 versions prior to 18.1R3-S9; 18.2 versions prior to 18.2R2-S6, 18.2R3-S2; 18.2X75 versions prior to 18.2X75-D12, 18.2X75-D33, 18.2X75-D435, 18.2X75-D60; 18.3 versions prior to 18.3R1-S7, 18.3R2-S3, 18.3R3-S1; 18.4 versions prior to 18.4R1-S5, 18.4R2-S3, 18.4R3; 19.1 versions prior to 19.1R1-S4, 19.1R2; 19.2 versions prior to 19.2R1-S3, 19.2R2; 19.3 versions prior to 19.3R2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11049",
+        "name": "https://kb.juniper.net/JSA11049",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.juniper.net/documentation/en_US/junos/topics/reference/command-summary/show-dhcpv6-relay-statistics.html",
+        "name": "https://www.juniper.net/documentation/en_US/junos/topics/reference/command-summary/show-dhcpv6-relay-statistics.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/dhcp-relay-agent-security-devices.html",
+        "name": "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/dhcp-relay-agent-security-devices.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/dhcpv6-relay-agent-overview.html",
+        "name": "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/dhcpv6-relay-agent-overview.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-2291",
+    "cveASSIGNER": "jenkinsci-cert@googlegroups.com",
+    "publishedDate": "2020-10-08T13:15Z",
+    "lastModifiedDate": "2020-10-09T19:31Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jenkins couchdb-statistics Plugin 0.3 and earlier stores its server password unencrypted in its global configuration file on the Jenkins controller where it can be viewed by users with access to the Jenkins controller file system."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jenkins.io/security/advisory/2020-10-08/#SECURITY-2065",
+        "name": "https://www.jenkins.io/security/advisory/2020-10-08/#SECURITY-2065",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2020/10/08/5",
+        "name": "[oss-security] 20201008 Multiple vulnerabilities in Jenkins plugins",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-1692",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2019-05-03T15:29Z",
+    "lastModifiedDate": "2020-10-07T18:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the web-based management interface of Cisco Application Policy Infrastructure Controller (APIC) Software could allow an unauthenticated, remote attacker to access sensitive system usage information. The vulnerability is due to a lack of proper data protection mechanisms for certain components in the underlying Application Centric Infrastructure (ACI). An attacker could exploit this vulnerability by attempting to observe certain network traffic when accessing the APIC. A successful exploit could allow the attacker to access and collect certain tracking data and usage statistics on an affected device."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190501-apic-info-disc",
+        "name": "20190501 Cisco Application Policy Infrastructure Controller Web-Based Management Interface Usage Information Disclosure Vulnerability",
+        "refsource": "CISCO",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/108155",
+        "name": "108155",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-1666",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2019-02-21T19:29Z",
+    "lastModifiedDate": "2020-10-05T20:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the Graphite service of Cisco HyperFlex software could allow an unauthenticated, remote attacker to retrieve data from the Graphite service. The vulnerability is due to insufficient authentication controls. An attacker could exploit this vulnerability by sending crafted requests to the Graphite service. A successful exploit could allow the attacker to retrieve any statistics from the Graphite service. Versions prior to 3.5(2a) are affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190220-hyper-retrieve",
+        "name": "20190220 Cisco HyperFlex Unauthenticated Statistics Retrieval Vulnerability",
+        "refsource": "CISCO",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/107108",
+        "name": "107108",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  }
+]

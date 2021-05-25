@@ -1,0 +1,1415 @@
+[
+  {
+    "cveID": "CVE-2021-3450",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2021-03-25T15:15Z",
+    "lastModifiedDate": "2021-05-11T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The X509_V_FLAG_X509_STRICT flag enables additional security checks of the certificates present in a certificate chain. It is not set by default. Starting from OpenSSL version 1.1.1h a check to disallow certificates in the chain that have explicitly encoded elliptic curve parameters was added as an additional strict check. An error in the implementation of this check meant that the result of a previous check to confirm that certificates in the chain are valid CA certificates was overwritten. This effectively bypasses the check that non-CA certificates must not be able to issue other certificates. If a \"purpose\" has been configured then there is a subsequent opportunity for checks that the certificate is a valid CA. All of the named \"purpose\" values implemented in libcrypto perform this check. Therefore, where a purpose is set the certificate chain will still be rejected even when the strict flag has been used. A purpose is set by default in libssl client and server certificate verification routines, but it can be overridden or removed by an application. In order to be affected, an application must explicitly set the X509_V_FLAG_X509_STRICT verification flag and either not set a purpose for the certificate verification or, in the case of TLS client or server applications, override the default purpose. OpenSSL versions 1.1.1h and newer are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1h-1.1.1j)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2a40b7bc7b94dd7de897a74571e7024f0cf0d63b",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2a40b7bc7b94dd7de897a74571e7024f0cf0d63b",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20210325.txt",
+        "name": "https://www.openssl.org/news/secadv/20210325.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-openssl-2021-GHY28dJd",
+        "name": "20210325 Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2021",
+        "refsource": "CISCO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210326-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20210326-0006/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:07.openssl.asc",
+        "name": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:07.openssl.asc",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/27/1",
+        "name": "[oss-security] 20210327 OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/27/2",
+        "name": "[oss-security] 20210327 Re: OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/28/3",
+        "name": "[oss-security] 20210328 Re: OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/28/4",
+        "name": "[oss-security] 20210328 Re: OpenSSL 1.1.1 CVE-2021-3450 CA certificate check bypass with X509_V_FLAG_X509_STRICT, CVE-2021-3449 NULL pointer deref in signature_algorithms processing",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "name": "GLSA-202103-03",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-05",
+        "name": "https://www.tenable.com/security/tns-2021-05",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CCBFLLVQVILIVGZMBJL3IXZGKWQISYNP/",
+        "name": "FEDORA-2021-cbf14ab8f9",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-08",
+        "name": "https://www.tenable.com/security/tns-2021-08",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10356",
+        "name": "https://kc.mcafee.com/corporate/index?page=content&id=SB10356",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://mta.openssl.org/pipermail/openssl-announce/2021-March/000198.html",
+        "name": "https://mta.openssl.org/pipermail/openssl-announce/2021-March/000198.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27343",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-06T13:15Z",
+    "lastModifiedDate": "2021-04-09T19:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "SerenityOS Unspecified is affected by: Buffer Overflow. The impact is: obtain sensitive information (context-dependent). The component is: /Userland/Libraries/LibCrypto/ASN1/DER.h Crypto::der_decode_sequence() function. The attack vector is: Parsing RSA Key ASN.1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/SerenityOS/serenity/issues/5317",
+        "name": "https://github.com/SerenityOS/serenity/issues/5317",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SerenityOS/serenity/commit/48fbf6a88d4822a1e5470cf08f29464511bd72c1",
+        "name": "https://github.com/SerenityOS/serenity/commit/48fbf6a88d4822a1e5470cf08f29464511bd72c1",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/SerenityOS/serenity/pull/5344",
+        "name": "https://github.com/SerenityOS/serenity/pull/5344",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-28052",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-18T01:15Z",
+    "lastModifiedDate": "2021-04-06T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Legion of the Bouncy Castle BC Java 1.65 and 1.66. The OpenBSDBCrypt.checkPassword utility method compared incorrect data when checking the password, allowing incorrect passwords to indicate they were matching with previously hashed ones that were different."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/bcgit/bc-java/wiki/CVE-2020-28052",
+        "name": "https://github.com/bcgit/bc-java/wiki/CVE-2020-28052",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.bouncycastle.org/releasenotes.html",
+        "name": "https://www.bouncycastle.org/releasenotes.html",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.synopsys.com/blogs/software-security/cve-2020-28052-bouncy-castle/",
+        "name": "https://www.synopsys.com/blogs/software-security/cve-2020-28052-bouncy-castle/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r954d80fd18e9dafef6e813963eb7e08c228151c2b6268ecd63b35d1f@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210107 [GitHub] [druid] jon-wei opened a new pull request #10733: Update deps for CVE-2020-28168 and CVE-2020-28052",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rddd2237b8636a48d573869006ee809262525efb2b6ffa6eff50d2a2d@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210107 [GitHub] [kafka] cyrusv opened a new pull request #9845: MINOR: Bump Bouncy Castle Dep to resolve CVE-2020-28052",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r25d53acd06f29244b8a103781b0339c5e7efee9099a4d52f0c230e4a@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210107 [GitHub] [druid] clintropolis merged pull request #10733: Update deps for CVE-2020-28168 and CVE-2020-28052",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r175f5a25d100dbe2b1bd3459b3ce882a84c3ff91b120ed4ff2d57b53@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210119 [GitHub] [pulsar] fmiguelez opened a new issue #9235: Upgrade Bounce Castle dependency on client to solve CVE-2020-28052",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdfd2901b8b697a3f6e2c9c6ecc688fd90d7f881937affb5144d61d6e@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210127 [druid] 01/02: Update deps for CVE-2020-28168 and CVE-2020-28052 (#10733)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r37d332c0bf772f4982d1fdeeb2f88dd71dab6451213e69e43734eadc@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210406 [GitHub] [pulsar] lhotari commented on issue #9235: Upgrade Bounce Castle dependency on client to solve CVE-2020-28052",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-1547",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2019-09-10T17:15Z",
+    "lastModifiedDate": "2020-10-20T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Normally in OpenSSL EC groups always have a co-factor present and this is used in side channel resistant code paths. However, in some cases, it is possible to construct a group using explicit parameters (instead of using a named curve). In those cases it is possible that such a group does not have the cofactor present. This can occur even where all the parameters match a known named curve. If such a curve is used then OpenSSL falls back to non-side channel resistant code paths which may result in full key recovery during an ECDSA signature operation. In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. For the avoidance of doubt libssl is not vulnerable because explicit parameters are never used. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=7c1709c2da5414f5b6133d00a03fc8c5bf996c7a",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=7c1709c2da5414f5b6133d00a03fc8c5bf996c7a",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=21c856b75d81eff61aa63b4f036bb64a85bf6d46",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=21c856b75d81eff61aa63b4f036bb64a85bf6d46",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=30c22fa8b1d840036b8e203585738df62a03cec8",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=30c22fa8b1d840036b8e203585738df62a03cec8",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20190910.txt",
+        "name": "https://www.openssl.org/news/secadv/20190910.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://arxiv.org/abs/1909.01785",
+        "name": "https://arxiv.org/abs/1909.01785",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Sep/25",
+        "name": "20190912 [slackware-security] openssl (SSA:2019-254-03)",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/154467/Slackware-Security-Advisory-openssl-Updates.html",
+        "name": "http://packetstormsecurity.com/files/154467/Slackware-Security-Advisory-openssl-Updates.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190919-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190919-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00054.html",
+        "name": "openSUSE-SU-2019:2158",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GY6SNRJP2S7Y42GIIDO3HXPNMDYN2U3A/",
+        "name": "FEDORA-2019-d15aac6c4e",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00072.html",
+        "name": "openSUSE-SU-2019:2189",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/09/msg00026.html",
+        "name": "[debian-lts-announce] 20190925 [SECURITY] [DLA 1932-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZN4VVQJ3JDCHGIHV4Y2YTXBYQZ6PWQ7E/",
+        "name": "FEDORA-2019-d51641f152",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Oct/1",
+        "name": "20191001 [SECURITY] [DSA 4539-1] openssl security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Oct/0",
+        "name": "20191001 [SECURITY] [DSA 4540-1] openssl1.0 security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4539",
+        "name": "DSA-4539",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4540",
+        "name": "DSA-4540",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00012.html",
+        "name": "openSUSE-SU-2019:2268",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00016.html",
+        "name": "openSUSE-SU-2019:2269",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K73422160?utm_source=f5support&amp;utm_medium=RSS",
+        "name": "https://support.f5.com/csp/article/K73422160?utm_source=f5support&amp;utm_medium=RSS",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201911-04",
+        "name": "GLSA-201911-04",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2019-08",
+        "name": "https://www.tenable.com/security/tns-2019-08",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2019-09",
+        "name": "https://www.tenable.com/security/tns-2019-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200122-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20200122-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4376-1/",
+        "name": "USN-4376-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200416-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20200416-0003/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4376-2/",
+        "name": "USN-4376-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4504-1/",
+        "name": "USN-4504-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-25987",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-10-06T13:15Z",
+    "lastModifiedDate": "2020-10-07T19:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "MonoCMS Blog 1.0 stores hard-coded admin hashes in the log.xml file in the source files for MonoCMS Blog. Hash type is bcrypt and hashcat mode 3200 can be used to crack the hash."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://monocms.com/download",
+        "name": "https://monocms.com/download",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/159430/MonoCMS-Blog-1.0-File-Deletion-CSRF-Hardcoded-Credentials.html",
+        "name": "http://packetstormsecurity.com/files/159430/MonoCMS-Blog-1.0-File-Deletion-CSRF-Hardcoded-Credentials.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-5122",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2018-06-11T21:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A potential integer overflow in the \"DoCrypt\" function of WebCrypto was identified. If a means was found of exploiting it, it could result in an out-of-bounds write. This vulnerability affects Firefox < 58."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2018-02/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2018-02/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1413841",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1413841",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Permissions Required"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3544-1/",
+        "name": "USN-3544-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1040270",
+        "name": "1040270",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/102786",
+        "name": "102786",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-0886",
+    "cveASSIGNER": "vultures@jpcert.or.jp",
+    "publishedDate": "2015-02-28T02:59Z",
+    "lastModifiedDate": "2020-08-11T15:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Integer overflow in the crypt_raw method in the key-stretching implementation in jBCrypt before 0.4 makes it easier for remote attackers to determine cleartext values of password hashes via a brute-force attack against hashes associated with the maximum exponent."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.mindrot.org/projects/jBCrypt/news/rel04.html",
+        "name": "http://www.mindrot.org/projects/jBCrypt/news/rel04.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://jvn.jp/en/jp/JVN77718330/index.html",
+        "name": "JVN#77718330",
+        "refsource": "JVN",
+        "tags": [
+          "Third Party Advisory",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2015-000033",
+        "name": "JVNDB-2015-000033",
+        "refsource": "JVNDB",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mindrot.org/show_bug.cgi?id=2097",
+        "name": "https://bugzilla.mindrot.org/show_bug.cgi?id=2097",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/151496.html",
+        "name": "FEDORA-2015-3120",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/151786.html",
+        "name": "FEDORA-2015-3032",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/151797.html",
+        "name": "FEDORA-2015-2994",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7689",
+    "cveASSIGNER": "report@snyk.io",
+    "publishedDate": "2020-07-01T14:15Z",
+    "lastModifiedDate": "2020-07-09T18:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Data is truncated wrong when its length is greater than 255 bytes."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://snyk.io/vuln/SNYK-JS-BCRYPT-572911",
+        "name": "https://snyk.io/vuln/SNYK-JS-BCRYPT-572911",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/kelektiv/node.bcrypt.js/pull/806",
+        "name": "https://github.com/kelektiv/node.bcrypt.js/pull/806",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/kelektiv/node.bcrypt.js/pull/807",
+        "name": "https://github.com/kelektiv/node.bcrypt.js/pull/807",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/kelektiv/node.bcrypt.js/issues/776",
+        "name": "https://github.com/kelektiv/node.bcrypt.js/issues/776",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-5229",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-01-30T20:15Z",
+    "lastModifiedDate": "2020-02-05T20:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Opencast before 8.1 stores passwords using the rather outdated and cryptographically insecure MD5 hash algorithm. Furthermore, the hashes are salted using the username instead of a random salt, causing hashes for users with the same username and password to collide which is problematic especially for popular users like the default `admin` user. This essentially means that for an attacker, it might be feasible to reconstruct a user's password given access to these hashes. Note that attackers needing access to the hashes means that they must gain access to the database in which these are stored first to be able to start cracking the passwords. The problem is addressed in Opencast 8.1 which now uses the modern and much stronger bcrypt password hashing algorithm for storing passwords. Note, that old hashes remain MD5 until the password is updated. For a list of users whose password hashes are stored using MD5, take a look at the `/user-utils/users/md5.json` REST endpoint."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/opencast/opencast/commit/32bfbe5f78e214e2d589f92050228b91d704758e",
+        "name": "https://github.com/opencast/opencast/commit/32bfbe5f78e214e2d589f92050228b91d704758e",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/opencast/opencast/security/advisories/GHSA-h362-m8f2-5x7c",
+        "name": "https://github.com/opencast/opencast/security/advisories/GHSA-h362-m8f2-5x7c",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-1895",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2020-01-28T15:15Z",
+    "lastModifiedDate": "2020-02-04T16:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The py-bcrypt module before 0.3 for Python does not properly handle concurrent memory access, which allows attackers to bypass authentication via multiple authentication requests, which trigger the password hash to be overwritten."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101382.html",
+        "name": "http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101382.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "Tool Signature"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/83039",
+        "name": "https://exchange.xforce.ibmcloud.com/vulnerabilities/83039",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101387.html",
+        "name": "http://lists.fedoraproject.org/pipermail/package-announce/2013-April/101387.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2013/03/26/2",
+        "name": "http://www.openwall.com/lists/oss-security/2013/03/26/2",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/58702",
+        "name": "http://www.securityfocus.com/bid/58702",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-13421",
+    "cveASSIGNER": "security@search-guard.com",
+    "publishedDate": "2019-08-23T14:15Z",
+    "lastModifiedDate": "2019-10-09T23:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Search Guard versions before 23.1 had an issue that an administrative user is able to retrieve bcrypt password hashes of other users configured in the internal user database."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://search-guard.com/cve-advisory/",
+        "name": "https://search-guard.com/cve-advisory/",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.search-guard.com/6.x-23/changelog-searchguard-6-x-23_1",
+        "name": "https://docs.search-guard.com/6.x-23/changelog-searchguard-6-x-23_1",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SySS-2018-025.txt",
+        "name": "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SySS-2018-025.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-7056",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2018-09-10T16:29Z",
+    "lastModifiedDate": "2019-10-09T23:19Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A timing attack flaw was found in OpenSSL 1.0.1u and before that could allow a malicious user with local access to recover ECDSA P-256 private keys."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://seclists.org/oss-sec/2017/q1/52",
+        "name": "[oss-security] 20170110 CVE-2016-7056 ECDSA P-256 timing attack key recovery (OpenSSL, LibreSSL, BoringSSL)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=8aed2a7548362e88e84a7feb795a3a97e8395008",
+        "name": "https://git.openssl.org/?p=openssl.git;a=commit;h=8aed2a7548362e88e84a7feb795a3a97e8395008",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://eprint.iacr.org/2016/1195",
+        "name": "https://eprint.iacr.org/2016/1195",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-7056",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-7056",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2017/dsa-3773",
+        "name": "DSA-3773",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1802",
+        "name": "RHSA-2017:1802",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1801",
+        "name": "RHSA-2017:1801",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1414",
+        "name": "RHSA-2017:1414",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1413",
+        "name": "RHSA-2017:1413",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1037575",
+        "name": "1037575",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/95375",
+        "name": "95375",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2017-1415.html",
+        "name": "RHSA-2017:1415",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security-tracker.debian.org/tracker/CVE-2016-7056",
+        "name": "https://security-tracker.debian.org/tracker/CVE-2016-7056",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-7056.html",
+        "name": "https://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-7056.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://ftp.openbsd.org/pub/OpenBSD/patches/6.0/common/016_libcrypto.patch.sig",
+        "name": "https://ftp.openbsd.org/pub/OpenBSD/patches/6.0/common/016_libcrypto.patch.sig",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://ftp.openbsd.org/pub/OpenBSD/patches/5.9/common/033_libcrypto.patch.sig",
+        "name": "https://ftp.openbsd.org/pub/OpenBSD/patches/5.9/common/033_libcrypto.patch.sig",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-15536",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-02-05T03:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Cloudera Data Science Workbench (CDSW) 1.x before 1.2.0. Several web application vulnerabilities allow malicious authenticated users of CDSW to escalate privileges in CDSW. CDSW users can exploit these vulnerabilities in combination to gain root access to CDSW nodes, gain access to the CDSW database which includes Kerberos keytabs of CDSW users and bcrypt hashed passwords, and gain access to other privileged information such as session tokens, invitation tokens, and environment variables."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.cloudera.com/documentation/other/security-bulletins/topics/Security-Bulletin.html#tsb_248",
+        "name": "https://www.cloudera.com/documentation/other/security-bulletins/topics/Security-Bulletin.html#tsb_248",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-7822",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2018-06-11T21:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The AES-GCM implementation in WebCrypto API accepts 0-length IV when it should require a length of 1 according to the NIST Special Publication 800-38D specification. This might allow for the authentication key to be determined in some instances. This vulnerability affects Firefox < 56."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2017-21/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2017-21/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1368859",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1368859",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1039465",
+        "name": "1039465",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/101057",
+        "name": "101057",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-10355",
+    "cveASSIGNER": "security@trendmicro.com",
+    "publishedDate": "2018-05-23T16:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An authentication weakness vulnerability in Trend Micro Email Encryption Gateway 5.5 could allow an attacker to recover user passwords on vulnerable installations due to a flaw in the DBCrypto class. An attacker must first obtain access to the user database on the target system in order to exploit this vulnerability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-18-411/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-18-411/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://success.trendmicro.com/solution/1119349",
+        "name": "https://success.trendmicro.com/solution/1119349",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-9939",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-01-30T21:59Z",
+    "lastModifiedDate": "2019-06-01T06:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Crypto++ (aka cryptopp and libcrypto++) 5.6.4 contained a bug in its ASN.1 BER decoding routine. The library will allocate a memory block based on the length field of the ASN.1 object. If there is not enough content octets in the ASN.1 object, then the function will fail and the memory block will be zeroed even if its unused. There is a noticeable delay during the wipe for a large allocation."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/94854",
+        "name": "94854",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2016/12/12/7",
+        "name": "[oss-security] 20161212 Re: CVE Request: Potential DoS in Crypto++ ASN.1 parser",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3748",
+        "name": "DSA-3748",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7IL5A6465IEPW5GAWGXB2ENJPFYVWTJM/",
+        "name": "FEDORA-2019-812b77ed2e",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-0833",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2015-02-25T11:59Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple untrusted search path vulnerabilities in updater.exe in Mozilla Firefox before 36.0, Firefox ESR 31.x before 31.5, and Thunderbird before 31.5 on Windows, when the Maintenance Service is not used, allow local users to gain privileges via a Trojan horse DLL in (1) the current working directory or (2) a temporary directory, as demonstrated by bcrypt.dll."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-12.html",
+        "name": "http://www.mozilla.org/security/announce/2015/mfsa2015-12.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=945192",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=945192",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1031791",
+        "name": "1031791",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1031792",
+        "name": "1031792",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/72747",
+        "name": "72747",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2015-03/msg00026.html",
+        "name": "openSUSE-SU-2015:0567",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2015-03/msg00067.html",
+        "name": "openSUSE-SU-2015:0570",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201504-01",
+        "name": "GLSA-201504-01",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2015-07/msg00031.html",
+        "name": "openSUSE-SU-2015:1266",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-2141",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-07-01T14:59Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The InvertibleRWFunction::CalculateInverse function in rw.cpp in libcrypt++ 5.6.2 does not properly blind private key operations for the Rabin-Williams digital signature algorithm, which allows remote attackers to obtain private keys via a timing attack."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3296",
+        "name": "DSA-3296",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://sourceforge.net/p/cryptopp/code/542/",
+        "name": "http://sourceforge.net/p/cryptopp/code/542/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/weidai11/cryptopp/commit/9425e16437439e68c7d96abef922167d68fafaff",
+        "name": "https://github.com/weidai11/cryptopp/commit/9425e16437439e68c7d96abef922167d68fafaff",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2015-07/msg00047.html",
+        "name": "openSUSE-SU-2015:1271",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/75467",
+        "name": "75467",
+        "refsource": "BID",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-6225",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-03-23T16:59Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "xbcrypt in Percona XtraBackup before 2.3.6 and 2.4.x before 2.4.5 does not properly set the initialization vector (IV) for encryption, which makes it easier for context-dependent attackers to obtain sensitive information from encrypted backup files via a Chosen-Plaintext attack. NOTE: this vulnerability exists because of an incomplete fix for CVE-2013-6394."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.percona.com/blog/2017/01/12/cve-2016-6225-percona-xtrabackup-encryption-iv-not-set-properly/",
+        "name": "https://www.percona.com/blog/2017/01/12/cve-2016-6225-percona-xtrabackup-encryption-iv-not-set-properly/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBVCP6KLFVGG6HSGLHLTMZRD6C4IJSZP/",
+        "name": "FEDORA-2017-5a823376be",
+        "refsource": "FEDORA",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BAHI6ETS22FJCMLW7A6SICFKQXF5G2VI/",
+        "name": "FEDORA-2017-6382ea8d57",
+        "refsource": "FEDORA",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/percona/percona-xtrabackup/pull/267",
+        "name": "https://github.com/percona/percona-xtrabackup/pull/267",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/percona/percona-xtrabackup/pull/266",
+        "name": "https://github.com/percona/percona-xtrabackup/pull/266",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/percona-xtrabackup/+bug/1643949",
+        "name": "https://bugs.launchpad.net/percona-xtrabackup/+bug/1643949",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2017-01/msg00126.html",
+        "name": "openSUSE-SU-2017:0251",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2017-01/msg00125.html",
+        "name": "openSUSE-SU-2017:0250",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-10994",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-05-14T23:29Z",
+    "lastModifiedDate": "2018-06-18T14:19Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "js/views/message_view.js in Open Whisper Signal (aka Signal-Desktop) before 1.10.1 allows XSS via a URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://twitter.com/ortegaalfredo/status/995940738839056384",
+        "name": "https://twitter.com/ortegaalfredo/status/995940738839056384",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://twitter.com/lorenzoFB/status/995048605399633926",
+        "name": "https://twitter.com/lorenzoFB/status/995048605399633926",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://twitter.com/bcrypt/status/995057030304952320",
+        "name": "https://twitter.com/bcrypt/status/995057030304952320",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/signalapp/Signal-Desktop/releases/tag/v1.10.1",
+        "name": "https://github.com/signalapp/Signal-Desktop/releases/tag/v1.10.1",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/signalapp/Signal-Desktop/commit/bfbd84f5d1308cdfcb08a1727821f7103be151ea",
+        "name": "https://github.com/signalapp/Signal-Desktop/commit/bfbd84f5d1308cdfcb08a1727821f7103be151ea",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

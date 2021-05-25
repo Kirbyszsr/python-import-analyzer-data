@@ -1,0 +1,34 @@
+{
+  "name": "commonmark",
+  "description": "commonmark.py\n=============\n\ncommonmark.py is a pure Python port of `jgm <https://github.com/jgm>`__'s\n`commonmark.js <https://github.com/jgm/commonmark.js>`__, a\nMarkdown parser and renderer for the\n`CommonMark <http://commonmark.org>`__ specification, using only native\nmodules. Once both this project and the CommonMark specification are\nstable we will release the first ``1.0`` version and attempt to keep up\nto date with changes in ``commonmark.js``.\n\ncommonmark.py is tested against the CommonMark spec with Python versions\n2.7, 3.4, 3.5, 3.6, and 3.7.\n\n**Current version:** 0.9.1\n\n|Pypi Link| |Build Status| |Doc Link|\n\nInstallation\n------------\n\n::\n\n    $ pip install commonmark\n\nUsage\n-----\n\n::\n\n    >>> import commonmark\n    >>> commonmark.commonmark('*hello!*')\n    '<p><em>hello!</em></p>\\n'\n\nOr, without the syntactic sugar:\n\n.. code:: python\n\n    import commonmark\n    parser = commonmark.Parser()\n    ast = parser.parse(\"Hello *World*\")\n\n    renderer = commonmark.HtmlRenderer()\n    html = renderer.render(ast)\n    print(html) # <p>Hello <em>World</em><p/>\n\n    # inspecting the abstract syntax tree\n    json = commonmark.dumpJSON(ast)\n    commonmark.dumpAST(ast) # pretty print generated AST structure\n\nThere is also a CLI:\n\n::\n\n    $ cmark README.md -o README.html\n    $ cmark README.md -o README.json -aj # output AST as JSON\n    $ cmark README.md -a # pretty print generated AST structure\n    $ cmark -h\n    usage: cmark [-h] [-o [O]] [-a] [-aj] [infile]\n\n    Process Markdown according to the CommonMark specification.\n\n    positional arguments:\n      infile      Input Markdown file to parse, defaults to stdin\n\n    optional arguments:\n      -h, --help  show this help message and exit\n      -o [O]      Output HTML/JSON file, defaults to stdout\n      -a          Print formatted AST\n      -aj         Output JSON AST\n\n\nContributing\n------------\n\nIf you would like to offer suggestions/optimizations/bugfixes through\npull requests please do! Also if you find an error in the\nparser/renderer that isn't caught by the current test suite please open\na new issue and I would also suggest you send the\n`commonmark.js <https://github.com/jgm/commonmark.js>`__ project\na pull request adding your test to the existing test suite.\n\nTests\n-----\n\nTo work on commonmark.py, you will need to be able to run the test suite to\nmake sure your changes don't break anything. To run the tests, you can do\nsomething like this:\n\n::\n\n   $ pyvenv venv\n   $ ./venv/bin/python setup.py develop test\n\nThe tests script, ``commonmark/tests/run_spec_tests.py``, is pretty much a devtool. As\nwell as running all the tests embedded in ``spec.txt`` it also allows you\nto run specific tests using the ``-t`` argument, provide information\nabout passed tests with ``-p``, percentage passed by category of test\nwith ``-s``, and enter markdown interactively with ``-i`` (In\ninteractive mode end a block by inputting a line with just ``end``, to\nquit do the same but with ``quit``). ``-d`` can be used to print call\ntracing.\n\n::\n\n    $ ./venv/bin/python commonmark/tests/run_spec_tests.py -h\n    usage: run_spec_tests.py [-h] [-t T] [-p] [-f] [-i] [-d] [-np] [-s]\n\n    script to run the CommonMark specification tests against the commonmark.py\n    parser.\n\n    optional arguments:\n      -h, --help  show this help message and exit\n      -t T        Single test to run or comma separated list of tests (-t 10 or -t 10,11,12,13)\n      -p          Print passed test information\n      -f          Print failed tests (during -np...)\n      -i          Interactive Markdown input mode\n      -d          Debug, trace calls\n      -np         Only print section header, tick, or cross\n      -s          Print percent of tests passed by category\n\nAuthors\n-------\n\n-  `Bibek Kafle <https://github.com/kafle>`__\n-  `Roland Shoemaker <https://github.com/rolandshoemaker>`__\n-  `Nikolas Nyby <https://github.com/nikolas>`__\n\n.. |Pypi Link| image:: https://img.shields.io/pypi/v/commonmark.svg\n   :target: https://pypi.org/project/commonmark/\n\n.. |Build Status| image:: https://travis-ci.org/rtfd/commonmark.py.svg?branch=master\n   :target: https://travis-ci.org/rtfd/commonmark.py\n\n.. |Doc Link| image:: https://readthedocs.org/projects/commonmarkpy/badge/?version=latest\n   :target: https://commonmarkpy.readthedocs.io/en/latest/?badge=latest\n   :alt: Documentation Status\n\n\n",
+  "requires_dist": [
+    "future (>=0.14.0) ; python_version < \"3\"",
+    "flake8 (==3.7.8) ; extra == 'test'",
+    "hypothesis (==3.55.3) ; extra == 'test'"
+  ],
+  "requires_python": "",
+  "current_version": "0.9.1",
+  "released_versions": [
+    "0.5.0",
+    "0.5.1",
+    "0.5.2",
+    "0.5.3",
+    "0.5.4",
+    "0.5.5",
+    "0.6.0",
+    "0.6.1",
+    "0.6.2",
+    "0.6.3",
+    "0.6.4",
+    "0.7.0",
+    "0.7.1",
+    "0.7.2",
+    "0.7.3",
+    "0.7.4",
+    "0.7.5",
+    "0.8.0",
+    "0.8.1",
+    "0.9.0",
+    "0.9.1"
+  ]
+}

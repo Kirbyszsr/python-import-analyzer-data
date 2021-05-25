@@ -1,0 +1,708 @@
+{
+  "resultsPerPage": 5,
+  "startIndex": 0,
+  "totalResults": 5,
+  "result": {
+    "CVE_data_type": "CVE",
+    "CVE_data_format": "MITRE",
+    "CVE_data_version": "4.0",
+    "CVE_data_timestamp": "2021-05-25T06:33Z",
+    "CVE_Items": [
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2021-27736",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-611"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://www.compass-security.com/fileadmin/Research/Advisories/2021-03_CSNC-2021-004_FusionAuth_SAML_Library_XML_External_Entity.txt",
+                "name": "https://www.compass-security.com/fileadmin/Research/Advisories/2021-03_CSNC-2021-004_FusionAuth_SAML_Library_XML_External_Entity.txt",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/FusionAuth/fusionauth-samlv2/compare/0.5.3...0.5.4",
+                "name": "https://github.com/FusionAuth/fusionauth-samlv2/compare/0.5.3...0.5.4",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://github.com/FusionAuth/fusionauth-samlv2/commit/c66fb689d50010662f705d5b585c6388ce555dbd",
+                "name": "https://github.com/FusionAuth/fusionauth-samlv2/commit/c66fb689d50010662f705d5b585c6388ce555dbd",
+                "refsource": "MISC",
+                "tags": [
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "FusionAuth fusionauth-samlv2 before 0.5.4 allows XXE attacks via a forged AuthnRequest or LogoutRequest because parseFromBytes uses javax.xml.parsers.DocumentBuilderFactory unsafely."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:fusionauth:saml_v2:*:*:*:*:*:*:*:*",
+                  "versionEndExcluding": "0.5.4",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "LOW",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 6.5,
+              "baseSeverity": "MEDIUM"
+            },
+            "exploitabilityScore": 2.8,
+            "impactScore": 3.6
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:S/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "SINGLE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.0,
+            "impactScore": 2.9,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2021-04-22T14:15Z",
+        "lastModifiedDate": "2021-04-27T17:23Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2019-17570",
+            "ASSIGNER": "security@apache.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-502"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "https://lists.apache.org/thread.html/846551673bbb7ec8d691008215384bcef03a3fb004d2da845cfe88ee%401390230951%40%3Cdev.ws.apache.org%3E",
+                "name": "https://lists.apache.org/thread.html/846551673bbb7ec8d691008215384bcef03a3fb004d2da845cfe88ee%401390230951%40%3Cdev.ws.apache.org%3E",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Mailing List",
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-17570;",
+                "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-17570;",
+                "refsource": "CONFIRM",
+                "tags": [
+                  "Issue Tracking",
+                  "Patch",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "http://www.openwall.com/lists/oss-security/2020/01/24/2",
+                "name": "[oss-security] 20200124 RE: [CVE-2019-17570] xmlrpc-common untrusted deserialization",
+                "refsource": "MLIST",
+                "tags": [
+                  "Mailing List",
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://lists.debian.org/debian-lts-announce/2020/01/msg00033.html",
+                "name": "[debian-lts-announce] 20200130 [SECURITY] [DLA 2078-1] libxmlrpc3-java security update",
+                "refsource": "MLIST",
+                "tags": [
+                  "Third Party Advisory"
+                ]
+              },
+              {
+                "url": "https://access.redhat.com/errata/RHSA-2020:0310",
+                "name": "RHSA-2020:0310",
+                "refsource": "REDHAT",
+                "tags": []
+              },
+              {
+                "url": "https://www.debian.org/security/2020/dsa-4619",
+                "name": "DSA-4619",
+                "refsource": "DEBIAN",
+                "tags": []
+              },
+              {
+                "url": "https://seclists.org/bugtraq/2020/Feb/8",
+                "name": "20200210 [SECURITY] [DSA 4619-1] libxmlrpc3-java security update",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I3QCRLJYQRGVTIYF4BXYRFSF3ONP3TBF/",
+                "name": "FEDORA-2020-1d0635bd71",
+                "refsource": "FEDORA",
+                "tags": []
+              },
+              {
+                "url": "https://usn.ubuntu.com/4496-1/",
+                "name": "USN-4496-1",
+                "refsource": "UBUNTU",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "An untrusted deserialization was found in the org.apache.xmlrpc.parser.XmlRpcResponseParser:addResult method of Apache XML-RPC (aka ws-xmlrpc) library. A malicious XML-RPC server could target a XML-RPC client causing it to execute arbitrary code. Apache XML-RPC is no longer maintained and this issue will not be fixed."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:xml-rpc:3.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:xml-rpc:3.1.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:xml-rpc:3.1.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:apache:xml-rpc:3.1.3:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            },
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV3": {
+            "cvssV3": {
+              "version": "3.1",
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "attackVector": "NETWORK",
+              "attackComplexity": "LOW",
+              "privilegesRequired": "NONE",
+              "userInteraction": "NONE",
+              "scope": "UNCHANGED",
+              "confidentialityImpact": "HIGH",
+              "integrityImpact": "HIGH",
+              "availabilityImpact": "HIGH",
+              "baseScore": 9.8,
+              "baseSeverity": "CRITICAL"
+            },
+            "exploitabilityScore": 3.9,
+            "impactScore": 5.9
+          },
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "acInsufInfo": false,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2020-01-23T22:15Z",
+        "lastModifiedDate": "2020-09-16T19:15Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2006-3019",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-94"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://secunia.com/advisories/20573",
+                "name": "20573",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.securityfocus.com/bid/21768",
+                "name": "21768",
+                "refsource": "BID",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26388",
+                "name": "26388",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26389",
+                "name": "26389",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26390",
+                "name": "26390",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26391",
+                "name": "26391",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26392",
+                "name": "26392",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26393",
+                "name": "26393",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26394",
+                "name": "26394",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26395",
+                "name": "26395",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26397",
+                "name": "26397",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://www.osvdb.org/26396",
+                "name": "26396",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "http://securityreason.com/securityalert/1106",
+                "name": "1106",
+                "refsource": "SREASON",
+                "tags": []
+              },
+              {
+                "url": "http://www.vupen.com/english/advisories/2006/2302",
+                "name": "ADV-2006-2302",
+                "refsource": "VUPEN",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/27067",
+                "name": "phpcms-includepath-file-include(27067)",
+                "refsource": "XF",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/455302/100/0/threaded",
+                "name": "20061224 phpcms <=- 1.1.7 Remote File Inclusion",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/436893/100/0/threaded",
+                "name": "20060612 [FSA013] phpCMS 1.2.1pl2, Remote command execution",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Multiple PHP remote file inclusion vulnerabilities in phpCMS 1.2.1pl2 allow remote attackers to execute arbitrary PHP code via a URL in the PHPCMS_INCLUDEPATH parameter to files in parser/include/ including (1) class.parser_phpcms.php, (2) class.session_phpcms.php, (3) class.edit_phpcms.php, (4) class.http_indexer_phpcms.php, (5) class.cache_phpcms.php, (6) class.search_phpcms.php, (7) class.lib_indexer_universal_phpcms.php, and (8) class.layout_phpcms.php, (9) parser/plugs/counter.php, and (10) parser/parser.php.  NOTE: the class.cache_phpcms.php vector was also reported to affect 1.1.7."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:phpcms:phpcms:1.2.1_p12:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "PARTIAL",
+              "baseScore": 7.5
+            },
+            "severity": "HIGH",
+            "exploitabilityScore": 10.0,
+            "impactScore": 6.4,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": true,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2006-06-15T10:02Z",
+        "lastModifiedDate": "2018-10-18T16:45Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2009-4408",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-79"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://secunia.com/advisories/37764",
+                "name": "37764",
+                "refsource": "SECUNIA",
+                "tags": [
+                  "Vendor Advisory"
+                ]
+              },
+              {
+                "url": "http://www.osvdb.org/61051",
+                "name": "61051",
+                "refsource": "OSVDB",
+                "tags": []
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/54855",
+                "name": "pyforum-bbcodetag-xss(54855)",
+                "refsource": "XF",
+                "tags": []
+              },
+              {
+                "url": "http://www.securityfocus.com/archive/1/508478/100/0/threaded",
+                "name": "20091215 [BMSA-2009-08] Multiple Vulnerabilities in PyForum",
+                "refsource": "BUGTRAQ",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Multiple cross-site scripting (XSS) vulnerabilities in models.parser in PyForum 1.0.3 and possibly earlier versions, and possibly zForum, allow remote attackers to inject arbitrary web script or HTML via crafted BBcode (1) img or (2) url tags, which are not properly handled when a post is viewed."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:pyforum:pyforum:*:*:*:*:*:*:*:*",
+                  "versionEndIncluding": "1.0.3",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:pyforum:pyforum:1.0.0:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:pyforum:pyforum:1.0.1:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                },
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:pyforum:pyforum:1.0.2:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "MEDIUM",
+              "authentication": "NONE",
+              "confidentialityImpact": "NONE",
+              "integrityImpact": "PARTIAL",
+              "availabilityImpact": "NONE",
+              "baseScore": 4.3
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 8.6,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": true
+          }
+        },
+        "publishedDate": "2009-12-23T21:30Z",
+        "lastModifiedDate": "2018-10-10T19:49Z"
+      },
+      {
+        "cve": {
+          "data_type": "CVE",
+          "data_format": "MITRE",
+          "data_version": "4.0",
+          "CVE_data_meta": {
+            "ID": "CVE-2012-5916",
+            "ASSIGNER": "cve@mitre.org"
+          },
+          "problemtype": {
+            "problemtype_data": [
+              {
+                "description": [
+                  {
+                    "lang": "en",
+                    "value": "CWE-200"
+                  }
+                ]
+              }
+            ]
+          },
+          "references": {
+            "reference_data": [
+              {
+                "url": "http://packetstormsecurity.org/files/111320/Seditio-Build-161-Cross-Site-Scripting-Information-Disclosure.html",
+                "name": "http://packetstormsecurity.org/files/111320/Seditio-Build-161-Cross-Site-Scripting-Information-Disclosure.html",
+                "refsource": "MISC",
+                "tags": [
+                  "Exploit"
+                ]
+              },
+              {
+                "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/74464",
+                "name": "seditio-multiple-information-disclosure(74464)",
+                "refsource": "XF",
+                "tags": []
+              }
+            ]
+          },
+          "description": {
+            "description_data": [
+              {
+                "lang": "en",
+                "value": "Neocrome Seditio build 161 allows remote attackers to obtain sensitive information via a direct request to (1) docs/new/seditio-createnew-160.sql, (2) docs/upgrade/sedito_convert_to_utf8.optional.sql, or (3) system/install/install.parser.sql."
+              }
+            ]
+          }
+        },
+        "configurations": {
+          "CVE_data_version": "4.0",
+          "nodes": [
+            {
+              "operator": "OR",
+              "children": [],
+              "cpe_match": [
+                {
+                  "vulnerable": true,
+                  "cpe23Uri": "cpe:2.3:a:neocrome:seditio:-:*:*:*:*:*:*:*",
+                  "cpe_name": []
+                }
+              ]
+            }
+          ]
+        },
+        "impact": {
+          "baseMetricV2": {
+            "cvssV2": {
+              "version": "2.0",
+              "vectorString": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+              "accessVector": "NETWORK",
+              "accessComplexity": "LOW",
+              "authentication": "NONE",
+              "confidentialityImpact": "PARTIAL",
+              "integrityImpact": "NONE",
+              "availabilityImpact": "NONE",
+              "baseScore": 5.0
+            },
+            "severity": "MEDIUM",
+            "exploitabilityScore": 10.0,
+            "impactScore": 2.9,
+            "obtainAllPrivilege": false,
+            "obtainUserPrivilege": false,
+            "obtainOtherPrivilege": false,
+            "userInteractionRequired": false
+          }
+        },
+        "publishedDate": "2012-11-17T21:55Z",
+        "lastModifiedDate": "2017-08-29T01:32Z"
+      }
+    ]
+  }
+}

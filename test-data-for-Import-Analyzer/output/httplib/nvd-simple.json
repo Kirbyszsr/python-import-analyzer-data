@@ -1,0 +1,526 @@
+[
+  {
+    "cveID": "CVE-2021-21240",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-02-08T20:15Z",
+    "lastModifiedDate": "2021-02-12T14:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "httplib2 is a comprehensive HTTP client library for Python. In httplib2 before version 0.19.0, a malicious server which responds with long series of \"\\xa0\" characters in the \"www-authenticate\" header may cause Denial of Service (CPU burn while parsing header) of the httplib2 client accessing said server. This is fixed in version 0.19.0 which contains a new implementation of auth headers parsing using the pyparsing library."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/httplib2/httplib2/commit/bd9ee252c8f099608019709e22c0d705e98d26bc",
+        "name": "https://github.com/httplib2/httplib2/commit/bd9ee252c8f099608019709e22c0d705e98d26bc",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/httplib2/httplib2/pull/182",
+        "name": "https://github.com/httplib2/httplib2/pull/182",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/httplib2/httplib2/security/advisories/GHSA-93xj-8mrv-444m",
+        "name": "https://github.com/httplib2/httplib2/security/advisories/GHSA-93xj-8mrv-444m",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/httplib2",
+        "name": "https://pypi.org/project/httplib2",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11078",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-05-20T16:15Z",
+    "lastModifiedDate": "2020-08-19T18:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In httplib2 before version 0.18.0, an attacker controlling unescaped part of uri for `httplib2.Http.request()` could change request headers and body, send additional hidden requests to same server. This vulnerability impacts software that uses httplib2 with uri constructed by string concatenation, as opposed to proper urllib building with escaping. This has been fixed in 0.18.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/httplib2/httplib2/commit/a1457cc31f3206cf691d11d2bf34e98865873e9e",
+        "name": "https://github.com/httplib2/httplib2/commit/a1457cc31f3206cf691d11d2bf34e98865873e9e",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/httplib2/httplib2/security/advisories/GHSA-gg84-qgv9-w4pq",
+        "name": "https://github.com/httplib2/httplib2/security/advisories/GHSA-gg84-qgv9-w4pq",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc9eff9572946142b657c900fe63ea4bbd3535911e8d4ce4d08fe4b89@%3Ccommits.allura.apache.org%3E",
+        "name": "[allura-commits] 20200521 [allura] branch master updated: Upgrade httplib2 for CVE-2020-11078",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/06/msg00000.html",
+        "name": "[debian-lts-announce] 20200601 [SECURITY] [DLA 2232-1] python-httplib2 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r23711190c2e98152cb6f216b95090d5eeb978543bb7e0bad22ce47fc@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20200602 [jira] [Created] (BEAM-10180) Upgrade httplib2 to > 0.18.0 to resolve CVE-2020-11078",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IXCX2AWROGWGY5GXR7VN3BKF34A2FO6J/",
+        "name": "FEDORA-2020-a7a15a9687",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PZJ3D6JSM7CFZESZZKGUW2VX55BOSOXI/",
+        "name": "FEDORA-2020-37779a5c93",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rad8872fc99f670958c2774e2bf84ee32a3a0562a0c787465cf3dfa23@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20200802 [jira] [Updated] (BEAM-10180) Upgrade httplib2 to > 0.18.0 to resolve CVE-2020-11078",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r69a462e690b5f2c3d418a288a2c98ae764d58587bd0b5d6ab141f25f@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20200802 [jira] [Commented] (BEAM-10180) Upgrade httplib2 to > 0.18.0 to resolve CVE-2020-11078",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4d35dac106fab979f0db75a07fc4e320ad848b722103e79667ff99e1@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20200816 [jira] [Updated] (BEAM-10180) Upgrade httplib2 to > 0.18.0 to resolve CVE-2020-11078",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7f364000066748299b331b615ba51c62f55ab5b201ddce9a22d98202@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20200816 [jira] [Commented] (BEAM-10180) Upgrade httplib2 to > 0.18.0 to resolve CVE-2020-11078",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11709",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-04-12T14:15Z",
+    "lastModifiedDate": "2020-04-13T16:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "cpp-httplib through 0.5.8 does not filter \\r\\n in parameters passed into the set_redirect and set_header functions, which creates possibilities for CRLF injection and HTTP response splitting in some specific contexts."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/yhirose/cpp-httplib/issues/425",
+        "name": "https://github.com/yhirose/cpp-httplib/issues/425",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://gist.github.com/shouc/a9330df817128bc4c4132abf3de09495",
+        "name": "https://gist.github.com/shouc/a9330df817128bc4c4132abf3de09495",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-8715",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-03-15T01:29Z",
+    "lastModifiedDate": "2020-02-17T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Embedthis HTTP library, and Appweb versions before 7.0.3, have a logic flaw related to the authCondition function in http/httpLib.c. With a forged HTTP request, it is possible to bypass authentication for the form and digest login types."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/embedthis/appweb/issues/610",
+        "name": "https://github.com/embedthis/appweb/issues/610",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://blogs.securiteam.com/index.php/archives/3676",
+        "name": "https://blogs.securiteam.com/index.php/archives/3676",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.paloaltonetworks.com/CVE-2018-8715",
+        "name": "https://security.paloaltonetworks.com/CVE-2018-8715",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-9365",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-12-12T11:59Z",
+    "lastModifiedDate": "2019-10-25T11:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The HTTP clients in the (1) httplib, (2) urllib, (3) urllib2, and (4) xmlrpclib libraries in CPython (aka Python) 2.x before 2.7.9 and 3.x before 3.4.3, when accessing an HTTPS URL, do not (a) check the certificate against a trust store or verify that the server hostname matches a domain name in the subject's (b) Common Name or (c) subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.python.org/downloads/release/python-279/",
+        "name": "https://www.python.org/downloads/release/python-279/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.python.org/issue22417",
+        "name": "http://bugs.python.org/issue22417",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "https://www.python.org/dev/peps/pep-0476/",
+        "name": "https://www.python.org/dev/peps/pep-0476/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/12/11/1",
+        "name": "[oss-security] 20141211 CVE request: Python, standard library HTTP clients",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html",
+        "name": "APPLE-SA-2015-08-13-2",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT205031",
+        "name": "https://support.apple.com/kb/HT205031",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2016:1166",
+        "name": "RHSA-2016:1166",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/71639",
+        "name": "71639",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201503-10",
+        "name": "GLSA-201503-10",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1868",
+        "name": "RHSA-2017:1868",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1162",
+        "name": "RHSA-2017:1162",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-2037",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2014-01-18T21:55Z",
+    "lastModifiedDate": "2018-12-06T20:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "httplib2 0.7.2, 0.8, and earlier, after an initial connection is made, does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1948-1",
+        "name": "USN-1948-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=706602",
+        "name": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=706602",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/oss-sec/2013/q2/257",
+        "name": "[oss-security] 20130501 Re: CVE Request: httplib2 ssl cert incorrect error handling",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://code.google.com/p/httplib2/issues/detail?id=282",
+        "name": "http://code.google.com/p/httplib2/issues/detail?id=282",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/httplib2/+bug/1175272",
+        "name": "https://bugs.launchpad.net/httplib2/+bug/1175272",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/52179",
+        "name": "52179",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-4337",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-08-14T18:17Z",
+    "lastModifiedDate": "2018-10-15T21:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple buffer overflows in the httplib_parse_sc_header function in lib/http.c in Streamripper before 1.62.2 allow remote attackers to execute arbitrary code via long (1) Location and (2) Server HTTP headers, a different vulnerability than CVE-2006-3124."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://sourceforge.net/project/shownotes.php?group_id=6172&release_id=531738",
+        "name": "http://sourceforge.net/project/shownotes.php?group_id=6172&release_id=531738",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://streamripper.cvs.sourceforge.net/streamripper/sripper_1x/lib/http.c?r1=1.38&r2=1.39",
+        "name": "http://streamripper.cvs.sourceforge.net/streamripper/sripper_1x/lib/http.c?r1=1.38&r2=1.39",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/25278",
+        "name": "25278",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/26406",
+        "name": "26406",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200709-03.xml",
+        "name": "GLSA-200709-03",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1018553",
+        "name": "1018553",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/26814",
+        "name": "26814",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://osvdb.org/39533",
+        "name": "39533",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1683",
+        "name": "DSA-1683",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/33052",
+        "name": "33052",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/33061",
+        "name": "33061",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/2858",
+        "name": "ADV-2007-2858",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/476302/100/0/threaded",
+        "name": "20070812 Streamripper 1.62.1 - Buffer Overflows",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2012-5825",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2012-11-04T22:55Z",
+    "lastModifiedDate": "2017-08-29T01:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Tweepy does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate, related to use of the Python httplib library."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf",
+        "name": "http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/79831",
+        "name": "tweepy-ssl-spoofing(79831)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  }
+]

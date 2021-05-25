@@ -1,0 +1,17 @@
+{
+  "name": "marshmallow-enum",
+  "description": "# marshmallow-enum\n\nEnum field for use with Marshmallow.\n\n## Installation\n\n```bash\npip install --user marshmallow_enum\n```\n\nIf you're on a version before 3.4, you'll also need to install `enum34`.\n\n## Using The Field\n\nTo make use of the field, you must have an existing Enum:\n\n```python\nfrom enum import Enum\n\n\nclass StopLight(Enum):\n    green = 1\n    yellow = 2\n    red = 3\n```\n\nThen, declare it as a field in a schema:\n\n```python\nfrom marshmallow import Schema\nfrom marshmallow_enum import EnumField\n\n\nclass TrafficStop(Schema):\n    light_color = EnumField(StopLight)\n```\n\nBy default, the field will load and dump based on the _name_ given to an enum value.\n\n```python\nschema = TrafficStop()\nschema.dump({'light_color': EnumField.red}).data\n# {'light_color': 'red'}\n\nschema.load({'light_color': 'red'}).data\n# {'light_color': StopLight.red}\n```\n\n### Customizing loading and dumping behavior\n\nTo customize how an enum is serialized or deserialized, there are three options:\n\n-   Setting `by_value=True`. This will cause both dumping and loading to use the value of the enum.\n-   Setting `load_by=EnumField.VALUE`. This will cause loading to use the value of the enum.\n-   Setting `dump_by=EnumField.VALUE`. This will cause dumping to use the value of the enum.\n\nIf either `load_by` or `dump_by` are unset, they will follow from `by_value`.\n\nAdditionally, there is `EnumField.NAME` to be explicit about the load and dump behavior, this\nis the same as leaving both `by_value` and either `load_by` and/or `dump_by` unset.\n\n### Custom Error Message\n\nA custom error message can be provided via the `error` keyword argument. It can accept three\nformat values:\n\n-   `{input}`: The value provided to the schema field\n-   `{names}`: The names of the individual enum members\n-   `{values}`: The values of the individual enum members\n\nPreviously, the following inputs were also available but are deprecated and will be removed in 1.6:\n\n-   `{name}`\n-   `{value}`\n-   `{choices}`\n\n\nVersion 1.5\n===========\n\nAllow unicode enum values (sergeyzsg)\nAdd support for Marshmallow 3 (svidela)\n\nVersion 1.4\n===========\n\n* Deprecate the `{choices}`, `{name}` and `{value}` format keys for custom error messages\n* Allow configure loading and dumping independently\n\n\n",
+  "requires_dist": [
+    "marshmallow (>=2.0.0)"
+  ],
+  "requires_python": "",
+  "current_version": "1.5.1",
+  "released_versions": [
+    "1.0",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.4.1",
+    "1.5.1"
+  ]
+}

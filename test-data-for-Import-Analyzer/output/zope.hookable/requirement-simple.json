@@ -1,0 +1,25 @@
+{
+  "name": "zope.hookable",
+  "description": "===============\n zope.hookable\n===============\n\n.. image:: https://img.shields.io/pypi/v/zope.hookable.svg\n        :target: https://pypi.python.org/pypi/zope.hookable/\n        :alt: Latest release\n\n.. image:: https://img.shields.io/pypi/pyversions/zope.hookable.svg\n        :target: https://pypi.org/project/zope.hookable/\n        :alt: Supported Python versions\n\n.. image:: https://travis-ci.org/zopefoundation/zope.hookable.svg?branch=master\n        :target: https://travis-ci.org/zopefoundation/zope.hookable\n\n.. image:: https://readthedocs.org/projects/zopehookable/badge/?version=latest\n        :target: https://zopehookable.readthedocs.io/en/latest/\n        :alt: Documentation Status\n\n.. image:: https://coveralls.io/repos/github/zopefoundation/zope.hookable/badge.svg?branch=master\n        :target: https://coveralls.io/github/zopefoundation/zope.hookable?branch=master\n\n\nThis package supports the efficient creation of \"hookable\" objects, which\nare callable objects that are meant to be optionally replaced.\n\nThe idea is that you create a function that does some default thing and make it\nhookable. Later, someone can modify what it does by calling its sethook method\nand changing its implementation.  All users of the function, including those\nthat imported it, will see the change.\n\nDocumentation is hosted at https://zopehookable.readthedocs.io\n\n\n=========\n Changes\n=========\n\n5.0.1 (2020-03-10)\n==================\n\n- Stop using the setuptools ``Feature`` class, allowing this\n  project to be built from source with newer versions of setuptools\n  that remove that functionality.\n\n\n5.0.0 (2019-11-12)\n==================\n\n- Add support for Python 3.7 and 3.8.\n\n- Drop support for Python 3.4.\n\n\n4.2.0 (2017-11-07)\n==================\n\n- Expose the ``__doc__`` (and, where applicable, ``__bases__`` and\n  ``__dict__``) of the hooked object. This lets Sphinx document them.\n  See `issue 6 <https://github.com/zopefoundation/zope.hookable/issues/6>`_.\n\n- Respect ``PURE_PYTHON`` at runtime. At build time, always try to\n  build the C extensions on supported platforms, but allow it to fail.\n  See `issue 7\n  <https://github.com/zopefoundation/zope.hookable/issues/7>`_.\n\n\n4.1.0 (2017-07-26)\n==================\n\n- Drop support for Python 2.6, 3.2 and 3.3.\n\n- Add support for Python 3.5 and 3.6.\n\n4.0.4 (2014-03-19)\n==================\n\n- Add support for Python 3.4.\n\n4.0.3 (2014-03-17)\n==================\n\n- Update ``boostrap.py`` to version 2.2.\n\n- Fix extension compilation on Py3k.\n\n4.0.2 (2012-12-31)\n==================\n\n- Flesh out PyPI Trove classifiers.\n\n4.0.1 (2012-11-21)\n==================\n\n- Add support for Python 3.3.\n\n- Avoid building the C extension explicitly (use the \"feature\" indirection\n  instead).  https://bugs.launchpad.net/zope.hookable/+bug/1025470\n\n4.0.0 (2012-06-04)\n==================\n\n- Add support for PyPy.\n\n- Add support for continuous integration using ``tox`` and ``jenkins``.\n\n- Add a pure-Python reference implementation.\n\n- Move doctests to Sphinx documentation.\n\n- Bring unit test coverage to 100%.\n\n- Add 'setup.py docs' alias (installs ``Sphinx`` and dependencies).\n\n- Add 'setup.py dev' alias (runs ``setup.py develop`` plus installs\n  ``nose`` and ``coverage``).\n\n- Drop support for Python 2.4 / 2.5.\n\n- Remove of 'zope.testing.doctestunit' in favor of stdlib's 'doctest.\n\n- Add Python 3 support.\n\n3.4.1 (2009-04-05)\n==================\n\n- Update for compatibility with Python 2.6 traceback formats.\n\n- Use Jython-compatible ``bootstrap.py``.\n\n3.4.0 (2007-07-20)\n==================\n\n- Initial release as a separate project.\n\n\n",
+  "requires_dist": [
+    "setuptools",
+    "Sphinx ; extra == 'docs'",
+    "zope.testing ; extra == 'test'",
+    "zope.testing ; extra == 'testing'",
+    "coverage ; extra == 'testing'"
+  ],
+  "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+  "current_version": "5.0.1",
+  "released_versions": [
+    "3.4.0",
+    "3.4.1",
+    "4.0.0",
+    "4.0.1",
+    "4.0.3",
+    "4.0.4",
+    "4.1.0",
+    "4.2.0",
+    "5.0.0",
+    "5.0.1"
+  ]
+}

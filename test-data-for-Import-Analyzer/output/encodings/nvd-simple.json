@@ -1,0 +1,1992 @@
+[
+  {
+    "cveID": "CVE-2020-1971",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2020-12-08T16:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20201208.txt",
+        "name": "https://www.openssl.org/news/secadv/20201208.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4807",
+        "name": "DSA-4807",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:33.openssl.asc",
+        "name": "FreeBSD-SA-20:33",
+        "refsource": "FREEBSD",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00021.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2493-1] openssl1.0 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00020.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2492-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DGSI34Y5LQ5RYXN4M2I5ZQT65LFVDOUU/",
+        "name": "FEDORA-2020-ef1870065a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbb769f771711fb274e0a4acb1b5911c8aab544a6ac5e8c12d40c5143@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201216 [GitHub] [pulsar] phijohns-tibco opened a new issue #8978: OpenSSL needs to be updated to 1.1.1i current version is unsupported.",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PWPSSZNZOBJU2YR6Z4TGHXKYW3YP5QG7/",
+        "name": "FEDORA-2020-a31b01e945",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2020-11",
+        "name": "https://www.tenable.com/security/tns-2020-11",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202012-13",
+        "name": "GLSA-202012-13",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "name": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r63c6f2dd363d9b514d0a4bcf624580616a679898cc14c109a49b750c@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20210207 [Bug 65126] New: A security vulnerability cve-2020-1971 in Tomcat dependency Library in version 9.0.40.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27618",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-02-26T23:15Z",
+    "lastModifiedDate": "2021-04-01T08:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The iconv function in the GNU C Library (aka glibc or libc6) 2.32 and earlier, when processing invalid multi-byte input sequences in IBM1364, IBM1371, IBM1388, IBM1390, and IBM1399 encodings, fails to advance the input state, which could lead to an infinite loop in applications, resulting in a denial of service, a different vulnerability from CVE-2016-10228."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=26224",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=26224",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210401-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20210401-0006/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7060",
+    "cveASSIGNER": "security@php.net",
+    "publishedDate": "2020-02-10T08:15Z",
+    "lastModifiedDate": "2021-01-17T04:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "When using certain mbstring functions to convert multibyte encodings, in PHP versions 7.2.x below 7.2.27, 7.3.x below 7.3.14 and 7.4.x below 7.4.2 it is possible to supply data that will cause function mbfl_filt_conv_big5_wchar to read past the allocated buffer. This may lead to information disclosure or crash."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.php.net/bug.php?id=79037",
+        "name": "https://bugs.php.net/bug.php?id=79037",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Feb/27",
+        "name": "20200218 [SECURITY] [DSA 4626-1] php7.3 security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4626",
+        "name": "DSA-4626",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4279-1/",
+        "name": "USN-4279-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2020/Feb/31",
+        "name": "20200219 [SECURITY] [DSA 4628-1] php7.0 security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4628",
+        "name": "DSA-4628",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200221-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20200221-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/02/msg00030.html",
+        "name": "[debian-lts-announce] 20200228 [SECURITY] [DLA 2124-1] php5 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00023.html",
+        "name": "openSUSE-SU-2020:0341",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-57",
+        "name": "GLSA-202003-57",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2021/Jan/3",
+        "name": "20210116 Re: [SECURITY] [DSA 4628-1] php7.0 security update",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26939",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-02T22:15Z",
+    "lastModifiedDate": "2020-12-23T15:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Legion of the Bouncy Castle BC before 1.61 and BC-FJA before 1.0.1.2, attackers can obtain sensitive information about a private exponent because of Observable Differences in Behavior to Error Inputs. This occurs in org.bouncycastle.crypto.encodings.OAEPEncoding. Sending invalid ciphertext that decrypts to a short payload in the OAEP Decoder could result in the throwing of an early exception, potentially leaking some information about the private exponent of the RSA private key performing the encryption."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/bcgit/bc-java/wiki/CVE-2020-26939",
+        "name": "https://github.com/bcgit/bc-java/wiki/CVE-2020-26939",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14404",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-06-17T16:15Z",
+    "lastModifiedDate": "2020-10-14T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in LibVNCServer before 0.9.13. libvncserver/rre.c allows out-of-bounds access via encodings."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/LibVNC/libvncserver/compare/LibVNCServer-0.9.12...LibVNCServer-0.9.13",
+        "name": "https://github.com/LibVNC/libvncserver/compare/LibVNCServer-0.9.12...LibVNCServer-0.9.13",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/LibVNC/libvncserver/commit/74e8a70f2c9a5248d6718ce443e07c7ed314dfff",
+        "name": "https://github.com/LibVNC/libvncserver/commit/74e8a70f2c9a5248d6718ce443e07c7ed314dfff",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/06/msg00035.html",
+        "name": "[debian-lts-announce] 20200630 [SECURITY] [DLA 2264-1] libvncserver security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4434-1/",
+        "name": "USN-4434-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00045.html",
+        "name": "[debian-lts-announce] 20200828 [SECURITY] [DLA 2347-1] libvncserver security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4573-1/",
+        "name": "USN-4573-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14403",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-06-17T16:15Z",
+    "lastModifiedDate": "2020-10-14T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in LibVNCServer before 0.9.13. libvncserver/hextile.c allows out-of-bounds access via encodings."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/LibVNC/libvncserver/compare/LibVNCServer-0.9.12...LibVNCServer-0.9.13",
+        "name": "https://github.com/LibVNC/libvncserver/compare/LibVNCServer-0.9.12...LibVNCServer-0.9.13",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/LibVNC/libvncserver/commit/74e8a70f2c9a5248d6718ce443e07c7ed314dfff",
+        "name": "https://github.com/LibVNC/libvncserver/commit/74e8a70f2c9a5248d6718ce443e07c7ed314dfff",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/06/msg00035.html",
+        "name": "[debian-lts-announce] 20200630 [SECURITY] [DLA 2264-1] libvncserver security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4434-1/",
+        "name": "USN-4434-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00045.html",
+        "name": "[debian-lts-announce] 20200828 [SECURITY] [DLA 2347-1] libvncserver security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4573-1/",
+        "name": "USN-4573-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14402",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-06-17T16:15Z",
+    "lastModifiedDate": "2020-10-14T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in LibVNCServer before 0.9.13. libvncserver/corre.c allows out-of-bounds access via encodings."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/LibVNC/libvncserver/compare/LibVNCServer-0.9.12...LibVNCServer-0.9.13",
+        "name": "https://github.com/LibVNC/libvncserver/compare/LibVNCServer-0.9.12...LibVNCServer-0.9.13",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/LibVNC/libvncserver/commit/74e8a70f2c9a5248d6718ce443e07c7ed314dfff",
+        "name": "https://github.com/LibVNC/libvncserver/commit/74e8a70f2c9a5248d6718ce443e07c7ed314dfff",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/06/msg00035.html",
+        "name": "[debian-lts-announce] 20200630 [SECURITY] [DLA 2264-1] libvncserver security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00033.html",
+        "name": "openSUSE-SU-2020:0988",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00055.html",
+        "name": "openSUSE-SU-2020:1025",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00066.html",
+        "name": "openSUSE-SU-2020:1056",
+        "refsource": "SUSE",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4434-1/",
+        "name": "USN-4434-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00045.html",
+        "name": "[debian-lts-announce] 20200828 [SECURITY] [DLA 2347-1] libvncserver security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4573-1/",
+        "name": "USN-4573-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-1199",
+    "cveASSIGNER": "secure@dell.com",
+    "publishedDate": "2018-03-16T20:29Z",
+    "lastModifiedDate": "2020-07-15T03:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Spring Security (Spring Security 4.1.x before 4.1.5, 4.2.x before 4.2.4, and 5.0.x before 5.0.1; and Spring Framework 4.3.x before 4.3.14 and 5.0.x before 5.0.3) does not consider URL path parameters when processing security constraints. By adding a URL path parameter with special encodings, an attacker may be able to bypass a security constraint. The root cause of this issue is a lack of clarity regarding the handling of path parameters in the Servlet Specification. Some Servlet containers include path parameters in the value returned for getPathInfo() and some do not. Spring Security uses the value returned by getPathInfo() as part of the process of mapping requests to security constraints. In this particular attack, different character encodings used in path parameters allows secured Spring MVC static resource URLs to be bypassed."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://pivotal.io/security/cve-2018-1199",
+        "name": "https://pivotal.io/security/cve-2018-1199",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2405",
+        "name": "RHSA-2018:2405",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/4ed49b103f64a0cecb38064f26cbf1389afc12124653da2d35166dbe@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190703 [jira] [Created] (AMQ-7236) SEV-1 Security vulnerability in spring-expression-4.3.11.RELEASE.jar (spring framework)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/dcf8599b80e43a6b60482607adb76c64672772dc2d9209ae2170f369@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190718 [jira] [Updated] (AMQ-7236) SEV-1 Security vulnerability in spring-expression-4.3.11.RELEASE.jar (spring framework) and xstream-1.4.10.jar",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ab825fcade0b49becfa30235b3d54f4a51bb74ea96b6c9adb5d1378c@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190703 [jira] [Updated] (AMQ-7236) SEV-1 Security vulnerability in spring-expression-4.3.11.RELEASE.jar (spring framework) and xstream-1.4.10.jar",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2001-1319",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2001-07-16T04:00Z",
+    "lastModifiedDate": "2020-04-09T13:42Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Microsoft Exchange 5.5 2000 allows remote attackers to cause a denial of service (hang) via exceptional BER encodings for the LDAP filter type field, as demonstrated by the PROTOS LDAPv3 test suite."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.cert.org/advisories/CA-2001-18.html",
+        "name": "CA-2001-18",
+        "refsource": "CERT",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://ciac.llnl.gov/ciac/bulletins/l-116.shtml",
+        "name": "L-116",
+        "refsource": "CIAC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "US Government Resource",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/763400",
+        "name": "VU#763400",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/CFCN-4YAQC7",
+        "name": "http://www.kb.cert.org/vuls/id/CFCN-4YAQC7",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.ee.oulu.fi/research/ouspg/protos/testing/c06/ldapv3/",
+        "name": "http://www.ee.oulu.fi/research/ouspg/protos/testing/c06/ldapv3/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/3045",
+        "name": "3045",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/6899",
+        "name": "exchange-ldap-protos-dos(6899)",
+        "refsource": "XF",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7212",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-03-06T20:15Z",
+    "lastModifiedDate": "2020-03-09T16:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The _encode_invalid_chars function in util/url.py in the urllib3 library 1.25.2 through 1.25.7 for Python allows a denial of service (CPU consumption) because of an inefficient algorithm. The percent_encodings array contains all matches of percent encodings. It is not deduplicated. For a URL of length N, the size of percent_encodings may be up to O(N). The next step (normalize existing percent-encoded bytes) also takes up to O(N) for each step, so the total time is O(N^2). If percent_encodings were deduplicated, the time to compute _encode_invalid_chars would be O(kN), where k is at most 484 ((10+6*2)^2)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/urllib3/urllib3/blob/master/CHANGES.rst",
+        "name": "https://github.com/urllib3/urllib3/blob/master/CHANGES.rst",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/urllib3/1.25.8/",
+        "name": "https://pypi.org/project/urllib3/1.25.8/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/urllib3/urllib3/commit/a74c9cfbaed9f811e7563cfc3dce894928e0221a",
+        "name": "https://github.com/urllib3/urllib3/commit/a74c9cfbaed9f811e7563cfc3dce894928e0221a",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-2753",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2006-06-01T17:02Z",
+    "lastModifiedDate": "2019-12-17T20:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "SQL injection vulnerability in MySQL 4.1.x before 4.1.20 and 5.0.x before 5.0.22 allows context-dependent attackers to execute arbitrary SQL commands via crafted multibyte encodings in character sets such as SJIS, BIG5, and GBK, which are not properly handled when the mysql_real_escape function is used to escape the input."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://lists.mysql.com/announce/364",
+        "name": "http://lists.mysql.com/announce/364",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=369735",
+        "name": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=369735",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20365",
+        "name": "20365",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/18219",
+        "name": "18219",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://securitytracker.com/id?1016216",
+        "name": "1016216",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1092",
+        "name": "DSA-1092",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20489",
+        "name": "20489",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.gentoo.org/security/en/glsa/glsa-200606-13.xml",
+        "name": "GLSA-200606-13",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2006-0544.html",
+        "name": "RHSA-2006:0544",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.trustix.org/errata/2006/0034/",
+        "name": "2006-0034",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20541",
+        "name": "20541",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20531",
+        "name": "20531",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20562",
+        "name": "20562",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20625",
+        "name": "20625",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20712",
+        "name": "20712",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-288-3",
+        "name": "USN-288-3",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://docs.info.apple.com/article.html?artnum=305214",
+        "name": "http://docs.info.apple.com/article.html?artnum=305214",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/24479",
+        "name": "24479",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2007/Mar/msg00002.html",
+        "name": "APPLE-SA-2007-03-13",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:097",
+        "name": "MDKSA-2006:097",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.us-cert.gov/cas/techalerts/TA07-072A.html",
+        "name": "TA07-072A",
+        "refsource": "CERT",
+        "tags": [
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/0930",
+        "name": "ADV-2007-0930",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/2105",
+        "name": "ADV-2006-2105",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26875",
+        "name": "mysql-ascii-sql-injection(26875)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10312",
+        "name": "oval:org.mitre.oval:def:10312",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/303-1/",
+        "name": "USN-303-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-1939",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2019-11-26T22:15Z",
+    "lastModifiedDate": "2019-12-10T16:48Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "SQL injection vulnerability in Zend Framework 1.10.x before 1.10.9 and 1.11.x before 1.11.6 when using non-ASCII-compatible encodings in conjunction PDO_MySql in PHP before 5.3.6."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201408-01.xml",
+        "name": "http://security.gentoo.org/glsa/glsa-201408-01.xml",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/security/cve/cve-2011-1939",
+        "name": "https://access.redhat.com/security/cve/cve-2011-1939",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-1939",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-1939",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.php.net/bug.php?id=47802",
+        "name": "https://bugs.php.net/bug.php?id=47802",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/47919",
+        "name": "47919",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://security-tracker.debian.org/tracker/CVE-2011-1939",
+        "name": "https://security-tracker.debian.org/tracker/CVE-2011-1939",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://framework.zend.com/security/advisory/ZF2011-02",
+        "name": "https://framework.zend.com/security/advisory/ZF2011-02",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-3636",
+    "cveASSIGNER": "psirt@adobe.com",
+    "publishedDate": "2010-11-07T22:00Z",
+    "lastModifiedDate": "2019-10-09T23:01Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Adobe Flash Player before 9.0.289.0 and 10.x before 10.1.102.64 on Windows, Mac OS X, Linux, and Solaris, and 10.1.95.1 on Android, does not properly handle unspecified encodings during the parsing of a cross-domain policy file, which allows remote web servers to bypass intended access restrictions via unknown vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.adobe.com/support/security/bulletins/apsb10-26.html",
+        "name": "http://www.adobe.com/support/security/bulletins/apsb10-26.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://support.apple.com/kb/HT4435",
+        "name": "http://support.apple.com/kb/HT4435",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html",
+        "name": "APPLE-SA-2010-11-10-1",
+        "refsource": "APPLE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/44691",
+        "name": "44691",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://jvndb.jvn.jp/ja/contents/2010/JVNDB-2010-000054.html",
+        "name": "JVNDB-2010-000054",
+        "refsource": "JVNDB",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/2918",
+        "name": "ADV-2010-2918",
+        "refsource": "VUPEN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2010-0834.html",
+        "name": "RHSA-2010:0834",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/42183",
+        "name": "42183",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2010-0829.html",
+        "name": "RHSA-2010:0829",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/2903",
+        "name": "ADV-2010-2903",
+        "refsource": "VUPEN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://jvn.jp/en/jp/JVN48425028/index.html",
+        "name": "JVN#48425028",
+        "refsource": "JVN",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/2906",
+        "name": "ADV-2010-2906",
+        "refsource": "VUPEN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2010-0867.html",
+        "name": "RHSA-2010:0867",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://blogs.sun.com/security/entry/multiple_vulnerabilities_in_adobe_flash1",
+        "name": "http://blogs.sun.com/security/entry/multiple_vulnerabilities_in_adobe_flash1",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/42926",
+        "name": "42926",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201101-09.xml",
+        "name": "GLSA-201101-09",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0173",
+        "name": "ADV-2011-0173",
+        "refsource": "VUPEN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2010-11/msg00002.html",
+        "name": "SUSE-SA:2010:055",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/43026",
+        "name": "43026",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0192",
+        "name": "ADV-2011-0192",
+        "refsource": "VUPEN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=130331642631603&w=2",
+        "name": "SSRT100428",
+        "refsource": "HP",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A15913",
+        "name": "oval:org.mitre.oval:def:15913",
+        "refsource": "OVAL",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A12142",
+        "name": "oval:org.mitre.oval:def:12142",
+        "refsource": "OVAL",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2003-0818",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2004-03-03T05:00Z",
+    "lastModifiedDate": "2019-04-30T14:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple integer overflows in Microsoft ASN.1 library (MSASN1.DLL), as used in LSASS.EXE, CRYPT32.DLL, and other Microsoft executables and libraries on Windows NT 4.0, 2000, and XP, allow remote attackers to execute arbitrary code via ASN.1 BER encodings with (1) very large length fields that cause arbitrary heap data to be overwritten, or (2) modified bit strings."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/216324",
+        "name": "VU#216324",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/583108",
+        "name": "VU#583108",
+        "refsource": "CERT-VN",
+        "tags": [
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.us-cert.gov/cas/techalerts/TA04-041A.html",
+        "name": "TA04-041A",
+        "refsource": "CERT",
+        "tags": [
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=ntbugtraq&m=107650972617367&w=2",
+        "name": "20040210 EEYE: Microsoft ASN.1 Library Length Overflow Heap Corruption",
+        "refsource": "NTBUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=107643892224825&w=2",
+        "name": "20040210 EEYE: Microsoft ASN.1 Library Bit String Heap Corruption",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=107643836125615&w=2",
+        "name": "20040210 EEYE: Microsoft ASN.1 Library Length Overflow Heap Corruption",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=ntbugtraq&m=107650972723080&w=2",
+        "name": "20040210 EEYE: Microsoft ASN.1 Library Bit String Heap Corruption",
+        "refsource": "NTBUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A799",
+        "name": "oval:org.mitre.oval:def:799",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A797",
+        "name": "oval:org.mitre.oval:def:797",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A796",
+        "name": "oval:org.mitre.oval:def:796",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A653",
+        "name": "oval:org.mitre.oval:def:653",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2004/ms04-007",
+        "name": "MS04-007",
+        "refsource": "MS",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-9670",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-02-08T11:59Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple integer signedness errors in the pcf_get_encodings function in pcf/pcfread.c in FreeType before 2.5.4 allow remote attackers to cause a denial of service (integer overflow, NULL pointer dereference, and application crash) via a crafted PCF file that specifies negative values for the first column and first row."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=ef1eba75187adfac750f326b563fe543dd5ff4e6",
+        "name": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=ef1eba75187adfac750f326b563fe543dd5ff4e6",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://code.google.com/p/google-security-research/issues/detail?id=158",
+        "name": "http://code.google.com/p/google-security-research/issues/detail?id=158",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2510-1",
+        "name": "USN-2510-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3188",
+        "name": "DSA-3188",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-February/150162.html",
+        "name": "FEDORA-2015-2216",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-0696.html",
+        "name": "RHSA-2015:0696",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2015:055",
+        "name": "MDVSA-2015:055",
+        "refsource": "MANDRIVA",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-February/150148.html",
+        "name": "FEDORA-2015-2237",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://advisories.mageia.org/MGASA-2015-0083.html",
+        "name": "http://advisories.mageia.org/MGASA-2015-0083.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2015-03/msg00091.html",
+        "name": "openSUSE-SU-2015:0627",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2739-1",
+        "name": "USN-2739-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/72986",
+        "name": "72986",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201503-05",
+        "name": "GLSA-201503-05",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-4699",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2011-01-18T20:00Z",
+    "lastModifiedDate": "2018-10-30T16:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The iconv_mime_decode_headers function in the Iconv extension in PHP before 5.3.4 does not properly handle encodings that are unrecognized by the iconv and mbstring (aka Multibyte String) implementations, which allows remote attackers to trigger an incomplete output array, and possibly bypass spam detection or have unspecified other impact, via a crafted Subject header in an e-mail message, as demonstrated by the ks_c_5601-1987 character set."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://bugs.php.net/52941",
+        "name": "http://bugs.php.net/52941",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.php.net/ChangeLog-5.php",
+        "name": "http://www.php.net/ChangeLog-5.php",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://coding.derkeiler.com/Archive/PHP/php.general/2007-04/msg00605.html",
+        "name": "[php-general] 20070410 Decoding from unknown charsets (inc. ks_c_5601-1987)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/64963",
+        "name": "php-iconvmimedecodeheaders-sec-bypass(64963)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A12393",
+        "name": "oval:org.mitre.oval:def:12393",
+        "refsource": "OVAL",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-2688",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-05-16T01:19Z",
+    "lastModifiedDate": "2018-10-30T16:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Cisco Intrusion Prevention System (IPS) and IOS with Firewall/IPS Feature Set do not properly handle certain full-width and half-width Unicode character encodings, which might allow remote attackers to evade detection of HTTP traffic."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.gamasec.net/english/gs07-01.html",
+        "name": "http://www.gamasec.net/english/gs07-01.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.cisco.com/en/US/products/products_security_response09186a008083f82e.html",
+        "name": "20070514 HTTP Full-Width and Half-Width Unicode Encoding Evasion",
+        "refsource": "CISCO",
+        "tags": []
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/739224",
+        "name": "VU#739224",
+        "refsource": "CERT-VN",
+        "tags": [
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/23980",
+        "name": "23980",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/25285",
+        "name": "25285",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1018053",
+        "name": "1018053",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1018054",
+        "name": "1018054",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/35336",
+        "name": "35336",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/1803",
+        "name": "ADV-2007-1803",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/34277",
+        "name": "cisco-scanengine-unicode-security-bypass(34277)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A5465",
+        "name": "oval:org.mitre.oval:def:5465",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/468633/100/0/threaded",
+        "name": "20070515 GS07-01 Full-Width and Half-Width Unicode Encoding IDS/IPS/WAF Bypass Vulnerability",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-3227",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-06-26T16:05Z",
+    "lastModifiedDate": "2018-10-18T16:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Interpretation conflict between Internet Explorer and other web browsers such as Mozilla, Opera, and Firefox might allow remote attackers to modify the visual presentation of web pages and possibly bypass protection mechanisms such as content filters via ASCII characters with the 8th bit set, which could be stripped by Internet Explorer to render legible text, but not when using other browsers. NOTE: there has been significant discussion about this issue, and as of 20060625, it is not clear where the responsibility for this issue lies, although it might be due to vagueness within the associated standards.  NOTE: this might only be exploitable with certain encodings."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/438051/100/0/threaded",
+        "name": "20060621 Re: Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://ha.ckers.org/blog/20060621/us-ascii-xss-part-2",
+        "name": "http://ha.ckers.org/blog/20060621/us-ascii-xss-part-2",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://ha.ckers.org/blog/20060621/malformed-ascii-bypasses-filters/",
+        "name": "http://ha.ckers.org/blog/20060621/malformed-ascii-bypasses-filters/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/28376",
+        "name": "28376",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/27288",
+        "name": "ie-ascii-encoded-web-filter-bypass(27288)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/438359/100/0/threaded",
+        "name": "20060626 RE: Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/438358/100/0/threaded",
+        "name": "20060626 Re: Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/438163/100/0/threaded",
+        "name": "20060623 Re: Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/438154/100/0/threaded",
+        "name": "20060623 RE: Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/438066/100/0/threaded",
+        "name": "20060622 Re: Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/438049/100/0/threaded",
+        "name": "20060621 Re: Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/437948/100/0/threaded",
+        "name": "20060621 Bypassing of web filters by using ASCII",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-2314",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-05-24T10:06Z",
+    "lastModifiedDate": "2018-10-18T16:39Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "PostgreSQL 8.1.x before 8.1.4, 8.0.x before 8.0.8, 7.4.x before 7.4.13, 7.3.x before 7.3.15, and earlier versions allows context-dependent attackers to bypass SQL injection protection methods in applications that use multibyte encodings that allow the \"\\\" (backslash) byte 0x5c to be the trailing byte of a multibyte character, such as SJIS, BIG5, GBK, GB18030, and UHC, which cannot be handled correctly by a client that does not understand multibyte encodings, aka a second variant of \"Encoding-Based SQL Injection.\" NOTE: it could be argued that this is a class of issue related to interaction errors between the client and PostgreSQL, but a CVE has been assigned since PostgreSQL is treating this as a preventative measure against this class of problem."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://archives.postgresql.org/pgsql-announce/2006-05/msg00010.php",
+        "name": "[pgsql-announce] 20060523 Security Releases for All Active Versions",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.postgresql.org/docs/techdocs.50",
+        "name": "http://www.postgresql.org/docs/techdocs.50",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2006-0526.html",
+        "name": "RHSA-2006:0526",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20231",
+        "name": "20231",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20232",
+        "name": "20232",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/18092",
+        "name": "18092",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://securitytracker.com/id?1016142",
+        "name": "1016142",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20314",
+        "name": "20314",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1087",
+        "name": "DSA-1087",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.trustix.org/errata/2006/0032/",
+        "name": "2006-0032",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/25731",
+        "name": "25731",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20435",
+        "name": "20435",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20451",
+        "name": "20451",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20503",
+        "name": "20503",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.suse.com/archive/suse-security-announce/2006-Jun/0002.html",
+        "name": "SUSE-SA:2006:030",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20555",
+        "name": "20555",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "ftp://patches.sgi.com/support/free/security/advisories/20060602-01-U.asc",
+        "name": "20060602-01-U",
+        "refsource": "SGI",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20782",
+        "name": "20782",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-288-2",
+        "name": "USN-288-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-288-3",
+        "name": "USN-288-3",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-04.xml",
+        "name": "GLSA-200607-04",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/21001",
+        "name": "21001",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.novell.com/linux/security/advisories/2006_21_sr.html",
+        "name": "SUSE-SR:2006:021",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/21749",
+        "name": "21749",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://support.avaya.com/elmodocs2/security/ASA-2006-113.htm",
+        "name": "http://support.avaya.com/elmodocs2/security/ASA-2006-113.htm",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20653",
+        "name": "20653",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:098",
+        "name": "MDKSA-2006:098",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/1941",
+        "name": "ADV-2006-1941",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26628",
+        "name": "postgresql-ascii-sql-injection(26628)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26627",
+        "name": "postgresql-multibyte-sql-injection(26627)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9947",
+        "name": "oval:org.mitre.oval:def:9947",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/288-1/",
+        "name": "USN-288-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/435161/100/0/threaded",
+        "name": "20060524 rPSA-2006-0080-1 postgresql postgresql-server",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/435038/100/0/threaded",
+        "name": "20060523 PostgreSQL security releases 8.1.4, 8.0.8, 7.4.13, 7.3.15",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-2313",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-05-24T10:06Z",
+    "lastModifiedDate": "2018-10-18T16:39Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "PostgreSQL 8.1.x before 8.1.4, 8.0.x before 8.0.8, 7.4.x before 7.4.13, 7.3.x before 7.3.15, and earlier versions allows context-dependent attackers to bypass SQL injection protection methods in applications via invalid encodings of multibyte characters, aka one variant of \"Encoding-Based SQL Injection.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://archives.postgresql.org/pgsql-announce/2006-05/msg00010.php",
+        "name": "[pgsql-announce] 20060523 Security Releases for All Active Versions",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.postgresql.org/docs/techdocs.50",
+        "name": "http://www.postgresql.org/docs/techdocs.50",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2006-0526.html",
+        "name": "RHSA-2006:0526",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20231",
+        "name": "20231",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20232",
+        "name": "20232",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/18092",
+        "name": "18092",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://securitytracker.com/id?1016142",
+        "name": "1016142",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20314",
+        "name": "20314",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1087",
+        "name": "DSA-1087",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.trustix.org/errata/2006/0032/",
+        "name": "2006-0032",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20435",
+        "name": "20435",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20451",
+        "name": "20451",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20503",
+        "name": "20503",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.suse.com/archive/suse-security-announce/2006-Jun/0002.html",
+        "name": "SUSE-SA:2006:030",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20555",
+        "name": "20555",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "ftp://patches.sgi.com/support/free/security/advisories/20060602-01-U.asc",
+        "name": "20060602-01-U",
+        "refsource": "SGI",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20782",
+        "name": "20782",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-288-2",
+        "name": "USN-288-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-04.xml",
+        "name": "GLSA-200607-04",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/21001",
+        "name": "21001",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://support.avaya.com/elmodocs2/security/ASA-2006-113.htm",
+        "name": "http://support.avaya.com/elmodocs2/security/ASA-2006-113.htm",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20653",
+        "name": "20653",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:098",
+        "name": "MDKSA-2006:098",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/1941",
+        "name": "ADV-2006-1941",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26627",
+        "name": "postgresql-multibyte-sql-injection(26627)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10618",
+        "name": "oval:org.mitre.oval:def:10618",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/288-1/",
+        "name": "USN-288-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/435161/100/0/threaded",
+        "name": "20060524 rPSA-2006-0080-1 postgresql postgresql-server",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/435038/100/0/threaded",
+        "name": "20060523 PostgreSQL security releases 8.1.4, 8.0.8, 7.4.13, 7.3.15",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  }
+]

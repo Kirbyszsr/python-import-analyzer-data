@@ -1,0 +1,36 @@
+{
+  "name": "zope.browserpage",
+  "description": "======================\n ``zope.browserpage``\n======================\n\n.. image:: https://img.shields.io/pypi/v/zope.browserpage.svg\n        :target: https://pypi.python.org/pypi/zope.browserpage/\n        :alt: Latest release\n\n.. image:: https://img.shields.io/pypi/pyversions/zope.browserpage.svg\n        :target: https://pypi.org/project/zope.browserpage/\n        :alt: Supported Python versions\n\n.. image:: https://travis-ci.org/zopefoundation/zope.browserpage.svg?branch=master\n        :target: https://travis-ci.org/zopefoundation/zope.browserpage\n\n.. image:: https://coveralls.io/repos/github/zopefoundation/zope.browserpage/badge.svg?branch=master\n        :target: https://coveralls.io/github/zopefoundation/zope.browserpage?branch=master\n\n.. note::\n\n   This package is at present not reusable without depending on a large\n   chunk of the Zope Toolkit and its assumptions. It is maintained by the\n   `Zope Toolkit project <http://docs.zope.org/zopetoolkit/>`_.\n\nThis package provides ZCML directives for configuring browser views.\nMore specifically it defines the following ZCML directives:\n\n- ``browser:page``\n- ``browser:pages``\n- ``browser:view``\n\nThese directives also support menu item registration for pages, when\n``zope.browsermenu`` package is installed. Otherwise, they simply ignore\nthe menu attribute.\n\n\n=========\n Changes\n=========\n\n4.4.0 (2019-06-18)\n==================\n\n- Fix regression in ``allowed_attributes`` and ``allowed_interface``.\n  (`#7 <https://github.com/zopefoundation/zope.browserpage/pull/7>`_)\n\n- Drop support for Python 3.4.\n\n\n4.3.0 (2018-10-05)\n==================\n\n- Add support for Python 3.7.\n\n\n4.2.0 (2017-08-02)\n==================\n\n- Add support for Python 3.5 and 3.6.\n\n- Drop support for Python 2.6 and 3.3.\n\n\n4.1.0 (2014-12-24)\n==================\n\n- Fix deprecated unittest methods.\n\n- Add explicit support for Python 3.4.\n\n- Add explicit support for PyPy.\n\n\n4.1.0a1 (2013-02-22)\n====================\n\n- Add support for Python 3.3.\n\n\n4.0.0 (2012-07-04)\n==================\n\n- When registering views, no longer pass the deprecated 'layer' agrument\n  to ``zope.component.registerAdapter``.  Instead, pass ``(for_, layer)``\n  as expected (forward-compatibility with ``zope.component`` 4.0.0).\n\n- Replace deprecated ``zope.interface.implements`` usage with equivalent\n  ``zope.interface.implementer`` decorator.\n\n- Drop support for Python 2.4 and 2.5.\n\n\n3.12.2 (2010-05-24)\n===================\n\n- Fix unit tests broken under Python 2.4 by the switch to the standard\n  library ``doctest`` module.\n\n\n3.12.1 (2010-04-30)\n===================\n\n- Prefer the standard library's ``doctest`` module to the one from\n  ``zope.testing``.\n\n\n3.12.0 (2010-04-26)\n===================\n\n- Move the implementation of ``tales:expressiontype`` here from\n  ``zope.app.pagetemplate``.\n\n\n3.11.0 (2009-12-22)\n===================\n\n- Move the named template implementation here from ``zope.app.pagetemplate``.\n\n\n3.10.1 (2009-12-22)\n===================\n\n- Depend on the ``untrustedpython`` extra of ``zope.security``, since we\n  import from ``zope.pagetemplate.engine``.\n\n\n3.10.0 (2009-12-22)\n===================\n\n- Remove the dependency on ``zope.app.pagetemplate`` by moving\n  ``viewpagetemplatefile``, ``simpleviewclass`` and\n  ``metaconfigure.registerType`` into this package.\n\n\n3.9.0 (2009-08-27)\n==================\n\n- Initial release. This package was split off from ``zope.app.publisher``.\n\n\n",
+  "requires_dist": [
+    "setuptools",
+    "zope.component (>=3.7)",
+    "zope.configuration",
+    "zope.interface",
+    "zope.pagetemplate",
+    "zope.publisher (>=3.8)",
+    "zope.schema",
+    "zope.security",
+    "zope.tal (>=4.2.0)",
+    "zope.traversing",
+    "zope.browsermenu; extra == 'menu'",
+    "zope.browsermenu; extra == 'test'",
+    "zope.testing; extra == 'test'",
+    "zope.testrunner; extra == 'test'"
+  ],
+  "requires_python": "",
+  "current_version": "4.4.0",
+  "released_versions": [
+    "3.10.1",
+    "3.11.0",
+    "3.12.0",
+    "3.12.1",
+    "3.12.2",
+    "3.9.0",
+    "4.0.0",
+    "4.1.0",
+    "4.1.0a1",
+    "4.2.0",
+    "4.3.0",
+    "4.4.0"
+  ]
+}

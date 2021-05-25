@@ -1,0 +1,310 @@
+{
+  "info": {
+    "author": "Hiroyuki Takagi",
+    "author_email": "miyako.dev@gmail.com",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 4 - Beta",
+      "Framework :: Sphinx :: Extension",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: MIT License",
+      "Natural Language :: English",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Topic :: Text Processing"
+    ],
+    "description": "M2R2\n====\n\n[![PyPI](https://img.shields.io/pypi/v/m2r2.svg)](https://pypi.python.org/pypi/m2r2)\n[![PyPI version](https://img.shields.io/pypi/pyversions/m2r2.svg)](https://pypi.python.org/pypi/m2r2)\n[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://crossnox.github.io/m2r2)\n![Python package](https://github.com/CrossNox/m2r2/workflows/Python%20package/badge.svg)\n\n--------------------------------------------------------------------------------\n\nM2R2 converts a markdown file including reStructuredText (rst) markups to a valid\nrst format.\n\n## M2R: the original\nM2R2 is a fork of [m2r](https://github.com/miyakogi/m2r) which hasn't been updated for a long time\nand there's been no response from the author about a PR fixing a serious issue that broke several\npipelines using `sphinx3`. Every `m2r` config should work out of the box. I've changed some of the tooling for what I'm mostly using now. Below goes\nthe original readme, changing only what's needed to work with `m2r2`.\n\n## Why another converter?\n\nI wanted to write sphinx document in markdown, since it's widely used now and\neasy to write code blocks and lists. However, converters using pandoc or\nrecommonmark do not support many rst markups and sphinx extensions. For\nexample, rst's reference link like ``see `ref`_`` (this is very convenient in\nlong document in which same link appears multiple times) will be converted to\na code block in HTML like `see <code>ref</code>_`, which is not expected.\n\n## Features\n\n* Basic markdown and some extensions (see below)\n    * inline/block-level raw html\n    * fenced-code block\n    * tables\n    * footnotes (``[^1]``)\n* Inline- and Block-level rst markups\n    * single- and multi-line directives (`.. directive::`)\n    * inline-roles (``:code:`print(1)` ...``)\n    * ref-link (``see `ref`_``)\n    * footnotes (``[#fn]_``)\n    * math extension inspired by [recommonmark](https://recommonmark.readthedocs.io/en/latest/index.html)\n* Sphinx extension\n    * add markdown support for sphinx\n    * ``mdinclude`` directive to include markdown from md or rst files\n    * option to parse relative links into ref and doc directives (``m2r_parse_relative_links``)\n* Pure python implementation\n    * pandoc is not required\n\n## Installation\n\nPython 2.7 or Python 3.4+ is required.\n\n```\npip install m2r2\n```\n\nOr\n\n```\npython3 -m pip install m2r2\n```\n\nor using `conda`\n\n```\nconda install -c conda-forge m2r2\n```\n\n## Usage\n\n### Command Line\n\n`m2r2` command converts markdown file to rst format.\n\n```\nm2r2 your_document.md [your_document2.md ...]\n```\n\nThen you will find `your_document.rst` in the same directory.\n\n### Programmatic Use\n\nImport `m2r2.convert` function and call it with markdown text.\nThen it will return converted text.\n\n```python\nfrom m2r2 import convert\nrst = convert('# Title\\n\\nSentence.')\nprint(rst)\n# Title\n# =====\n#\n# Sentence.\n```\n\nOr, use `parse_from_file` function to load markdown file and obtain converted\ntext.\n\n```python\nfrom m2r2 import parse_from_file\noutput = parse_from_file('markdown_file.md')\n```\n\nThis is an example of setup.py to write README in markdown, and publish it to\nPyPI as rst format.\n\n```python\nreadme_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'README.md')\ntry:\n    from m2r2 import parse_from_file\n    readme = parse_from_file(readme_file)\nexcept ImportError:\n    # m2r2 may not be installed in user environment\n    with open(readme_file) as f:\n        readme = f.read()\nsetup(\n    ...,\n    long_description=readme,\n    ...,\n)\n```\n\n### Sphinx Integration\n\nIn your conf.py, add the following lines.\n\n```python\nextensions = [\n    ...,\n    'm2r2',\n]\n\n# source_suffix = '.rst'\nsource_suffix = ['.rst', '.md']\n```\n\nWrite index.md and run `make html`.\n\nWhen `m2r2` extension is enabled on sphinx and `.md` file is loaded, m2r2\nconverts to rst and pass to sphinx, not making new `.rst` file.\n\n#### mdinclude directive\n\nLike `.. include:: file` directive, `.. mdinclude:: file` directive inserts\nmarkdown file at the line.\n\nNote: do not use `.. include:: file` directive to include markdown file even if\nin the markdown file, please use `.. mdinclude:: file` instead.\n\n## Restrictions\n\n* In the rst's directives, markdown is not available. Please write in rst.\n* Column alignment of tables is not supported. (rst does not support this feature)\n* Heading with overline-and-underline is not supported.\n  * Heading with underline is OK\n* Rst heading marks are currently hard-coded and unchangeable.\n  * H1: `=`, H2: `-`, H3: `^`, H4: `~`, H5: `\"`, H6: `#`\n\nIf you find any bug or unexpected behaviour, please report it to\n[Issues](https://github.com/crossnox/m2r2/issues).\n\n## Example\n\nSee [example document](https://crossnox.github.io/m2r2/example.html) and [its\nsource code](https://github.com/crossnox/m2r2/blob/master/docs/example.md).\n\n*Note from the original author:* I'm using m2r for writing user guide of [WDOM](https://github.com/miyakogi/wdom).\nSo you can see it as another example. Its [HTML is\nhere](http://wdom-py.readthedocs.io/en/latest/guide/index.html), and [its\nsource code is here](https://github.com/miyakogi/wdom/tree/dev/docs/guide).\n\n### Demo editor\n\n*Note:* This hasn't received any updates.\n\nDemo editor of m2r is available.\nIf you are interested in m2r, please try it.\n\n[https://github.com/miyakogi/m2rdemo](https://github.com/miyakogi/m2rdemo)\n\n## Dev install\nPlease install the `dev` dependencies and `pre-commit` hooks with:\n```bash\npip install -r requirements-dev.txt\npre-commit install\n```\n\n## Acknowledgement\n\nm2r is written as an extension of\n[mistune](http://mistune.readthedocs.io/en/latest/), which is highly extensible\npure-python markdown parser.\nWithout the mistune, I couldn't write this. Thank you!\n\n## Licence\n\n[MIT](https://github.com/crossnox/m2r2/blob/master/LICENSE)\n\n\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": "",
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "home_page": "https://github.com/crossnox/m2r2",
+    "keywords": "Markdown reStructuredText sphinx-extension",
+    "license": "MIT",
+    "maintainer": "CrossNox",
+    "maintainer_email": "ijmermet+m2r2@gmail.com",
+    "name": "m2r2",
+    "package_url": "https://pypi.org/project/m2r2/",
+    "platform": "",
+    "project_url": "https://pypi.org/project/m2r2/",
+    "project_urls": {
+      "Homepage": "https://github.com/crossnox/m2r2"
+    },
+    "release_url": "https://pypi.org/project/m2r2/0.2.7/",
+    "requires_dist": [
+      "mistune",
+      "docutils"
+    ],
+    "requires_python": "",
+    "summary": "Markdown and reStructuredText in a single file.",
+    "version": "0.2.7",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 8708894,
+  "releases": {
+    "0.2.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "483a08588e70f4d7a182d7dde1c58ce0",
+          "sha256": "0b75cea4f184714e7705bd5fbbad70988141c4ca6028bafd0e396547b07626cc"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "483a08588e70f4d7a182d7dde1c58ce0",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 10781,
+        "upload_time": "2020-07-12T00:05:54",
+        "upload_time_iso_8601": "2020-07-12T00:05:54.507725Z",
+        "url": "https://files.pythonhosted.org/packages/08/60/e4f3183ced18d8bbd63532aa5f1f5c384b4aef8d4553f89b233124f58535/m2r2-0.2.3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "605cd56f0ae0285161144ef5ebadecf6",
+          "sha256": "8c33e055ff2c8e90fb5d106cac146f7295fd655f7cce9dea1314fea9f876ccb1"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "605cd56f0ae0285161144ef5ebadecf6",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 32009,
+        "upload_time": "2020-07-11T23:32:49",
+        "upload_time_iso_8601": "2020-07-11T23:32:49.543649Z",
+        "url": "https://files.pythonhosted.org/packages/73/e7/7f26c279d47fdbc0ad59fdca002b605087cbc64dabdd6f8566cdbfb5282c/m2r2-0.2.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "21be9a294eac3417ae5ffe2c7a7d2e65",
+          "sha256": "dcf98e196f5213b60a241431625e9301777a584d1bfb5139c7080b2a15356019"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.4-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "21be9a294eac3417ae5ffe2c7a7d2e65",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 10894,
+        "upload_time": "2020-07-12T07:17:24",
+        "upload_time_iso_8601": "2020-07-12T07:17:24.018081Z",
+        "url": "https://files.pythonhosted.org/packages/a4/70/fa39097ee60dbef0318d5475cb0766bfecfd5fac4ff3aa791d50d588f695/m2r2-0.2.4-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f529152d7e53e0ed5b9464c27cf211d6",
+          "sha256": "2396f9e44ce51d603aa62b955b6c167ec96729107d382098dea92fc336287cd2"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f529152d7e53e0ed5b9464c27cf211d6",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 16376,
+        "upload_time": "2020-07-12T07:17:25",
+        "upload_time_iso_8601": "2020-07-12T07:17:25.179870Z",
+        "url": "https://files.pythonhosted.org/packages/7e/e8/d91431a540e3ae6ca4d51b798664369103b6163c1b75a8298148b742bc44/m2r2-0.2.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "15d4cad75322dafd9479b8a40d48e5de",
+          "sha256": "2fe7e03c41e1d2052b9cf3e76359bbfe64960b8fee9d69dfc1fc6e35ccff01e7"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.5-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "15d4cad75322dafd9479b8a40d48e5de",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 10888,
+        "upload_time": "2020-07-13T21:20:38",
+        "upload_time_iso_8601": "2020-07-13T21:20:38.660968Z",
+        "url": "https://files.pythonhosted.org/packages/b4/b1/b26f53614f1f6efd9ec4729990c49b483983284346e517216b13643b7bcf/m2r2-0.2.5-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f705e957cd13c82ac6c1a8cfd09f050a",
+          "sha256": "9da08226c7ff0a60c4fce62ad5b60c761d7fd6e8c20bd2b7f9c246bce4dc0685"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.5.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f705e957cd13c82ac6c1a8cfd09f050a",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 16384,
+        "upload_time": "2020-07-13T21:20:39",
+        "upload_time_iso_8601": "2020-07-13T21:20:39.699943Z",
+        "url": "https://files.pythonhosted.org/packages/62/8b/2d5df9e75acb9a6d57661ea7b592297be758f832e3f2cdc1d86135da495e/m2r2-0.2.5.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.6": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "60c4dcad1b1ffc9754f5017782fda1d4",
+          "sha256": "fcaa04878f889e53f0629792d517348d64d4e5af81a9b9317d8b42eec09b28ec"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.6-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "60c4dcad1b1ffc9754f5017782fda1d4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 10921,
+        "upload_time": "2020-11-19T20:24:22",
+        "upload_time_iso_8601": "2020-11-19T20:24:22.082266Z",
+        "url": "https://files.pythonhosted.org/packages/a6/7d/f10c6c640f62f6512dd001a25c99d0b394d0044b1b4ee7f277f4981a866b/m2r2-0.2.6-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "af155a07e1d667b375dc3588806f7b4b",
+          "sha256": "598be13b9bc20afbeaf47a09eb3c107e2de9c83982747ebb4143f29bbf653fa1"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.6.tar.gz",
+        "has_sig": false,
+        "md5_digest": "af155a07e1d667b375dc3588806f7b4b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 16432,
+        "upload_time": "2020-11-19T20:24:23",
+        "upload_time_iso_8601": "2020-11-19T20:24:23.114333Z",
+        "url": "https://files.pythonhosted.org/packages/75/b0/09d380e9bf565a0a22a7cfc22fde534ad209388dc261089e8101186240cc/m2r2-0.2.6.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.7": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5bbbbbe78915965d8abde4111c199c20",
+          "sha256": "a1b87b00f4d5163a3616253fca4c045f8351818cd803ba2e24af8897442a0eae"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.7-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "5bbbbbe78915965d8abde4111c199c20",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 10935,
+        "upload_time": "2020-11-20T14:10:36",
+        "upload_time_iso_8601": "2020-11-20T14:10:36.177305Z",
+        "url": "https://files.pythonhosted.org/packages/b2/22/5268f645e0a9d287c384526aebdc7626bce15b98d3942a2535341c4d3f74/m2r2-0.2.7-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ac18367dde4ff0fcdff1c5202912afb1",
+          "sha256": "fbf72ade9f648d41658f97c5267687431612451f36b65761a138fbc276294df5"
+        },
+        "downloads": -1,
+        "filename": "m2r2-0.2.7.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ac18367dde4ff0fcdff1c5202912afb1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 16497,
+        "upload_time": "2020-11-20T14:10:37",
+        "upload_time_iso_8601": "2020-11-20T14:10:37.420305Z",
+        "url": "https://files.pythonhosted.org/packages/ef/53/0d73e7b578d0b80d4f64ceb8027f361838c4d37d4876e46b8aff58f77114/m2r2-0.2.7.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "5bbbbbe78915965d8abde4111c199c20",
+        "sha256": "a1b87b00f4d5163a3616253fca4c045f8351818cd803ba2e24af8897442a0eae"
+      },
+      "downloads": -1,
+      "filename": "m2r2-0.2.7-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "5bbbbbe78915965d8abde4111c199c20",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": null,
+      "size": 10935,
+      "upload_time": "2020-11-20T14:10:36",
+      "upload_time_iso_8601": "2020-11-20T14:10:36.177305Z",
+      "url": "https://files.pythonhosted.org/packages/b2/22/5268f645e0a9d287c384526aebdc7626bce15b98d3942a2535341c4d3f74/m2r2-0.2.7-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "ac18367dde4ff0fcdff1c5202912afb1",
+        "sha256": "fbf72ade9f648d41658f97c5267687431612451f36b65761a138fbc276294df5"
+      },
+      "downloads": -1,
+      "filename": "m2r2-0.2.7.tar.gz",
+      "has_sig": false,
+      "md5_digest": "ac18367dde4ff0fcdff1c5202912afb1",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": null,
+      "size": 16497,
+      "upload_time": "2020-11-20T14:10:37",
+      "upload_time_iso_8601": "2020-11-20T14:10:37.420305Z",
+      "url": "https://files.pythonhosted.org/packages/ef/53/0d73e7b578d0b80d4f64ceb8027f361838c4d37d4876e46b8aff58f77114/m2r2-0.2.7.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "vprof",
+  "description": "[![PyPI](https://img.shields.io/pypi/v/vprof.svg)](https://pypi.python.org/pypi/vprof/)\n\n# vprof\n\nvprof is a Python package providing rich and interactive visualizations for\nvarious Python program characteristics such as running time and memory usage.\nIt supports Python 3.4+ and distributed under BSD license.\n\nThe project is in active development and some of its features might not work as\nexpected.\n\n## Screenshots\n![vprof-gif](http://i.imgur.com/ikBlfvQ.gif)\n\n## Contributing\nAll contributions are highly encouraged! You can add new features,\nreport and fix existing bugs and write docs and tutorials.\nFeel free to open an issue or send a pull request!\n\n## Prerequisites\nDependencies to build `vprof` from source code:\n * Python 3.4+\n * `pip`\n * `npm` >= 3.3.12\n\n`npm` is required to build `vprof` from sources only.\n\n## Dependencies\nAll Python and `npm` module dependencies are listed in `package.json` and\n`requirements.txt`.\n\n## Installation\n`vprof` can be installed from PyPI\n\n```sh\npip install vprof\n```\n\nTo build `vprof` from sources, clone this repository and execute\n\n```sh\npython3 setup.py deps_install && python3 setup.py build_ui && python3 setup.py install\n```\n\nTo install just `vprof` dependencies, run\n\n```sh\npython3 setup.py deps_install\n```\n\n## Usage\n\n```sh\nvprof -c <config> <src>\n```\n`<config>` is a combination of supported modes:\n\n* `c` - CPU flame graph  \u26a0\ufe0f **Not available for windows [#62](https://github.com/nvdv/vprof/issues/62)**\n\nShows CPU flame graph for `<src>`.\n\n* `p` - profiler\n\nRuns built-in Python profiler on `<src>` and displays results.\n\n* `m` - memory graph\n\nShows objects that are tracked by CPython GC and left in memory after code\nexecution. Also shows process memory usage after execution of each line of `<src>`.\n\n* `h` - code heatmap\n\nDisplays all executed code of `<src>` with line run times and execution counts.\n\n`<src>` can be Python source file (e.g. `testscript.py`) or path to package\n(e.g. `myproject/test_package`).\n\nTo run scripts with arguments use double quotes\n\n```sh\nvprof -c cmh \"testscript.py --foo --bar\"\n```\n\nModes can be combined\n\n```sh\nvprof -c cm testscript.py\n```\n\n`vprof` can also profile functions. In order to do this,\nlaunch `vprof` in remote mode:\n\n```sh\nvprof -r\n```\n\n`vprof` will open new tab in default web browser and then wait for stats.\n\nTo profile a function run\n\n```python\nfrom vprof import runner\n\ndef foo(arg1, arg2):\n    ...\n\nrunner.run(foo, 'cmhp', args=(arg1, arg2), host='localhost', port=8000)\n```\n\nwhere `cmhp` is profiling mode, `host` and `port` are hostname and port of\n`vprof` server launched in remote mode. Obtained stats will be rendered in new\ntab of default web browser, opened by `vprof -r` command.\n\n`vprof` can save profile stats to file and render visualizations from\npreviously saved file.\n\n```sh\nvprof -c cmh src.py --output-file profile.json\n```\n\nwrites profile to file and\n\n```sh\nvprof --input-file profile.json\n```\nrenders visualizations from previously saved file.\n\nCheck `vprof -h` for full list of supported parameters.\n\nTo show UI help, press `h` when visualizations are displayed.\n\nAlso you can check `examples` directory for more profiling examples.\n\n## Testing\n\n```sh\npython3 setup.py test_python && python3 setup.py test_javascript && python3 setup.py e2e_test\n```\n\n## License\n\nBSD\n\n\n",
+  "requires_dist": [
+    "psutil (>=3)"
+  ],
+  "requires_python": "",
+  "current_version": "0.38",
+  "released_versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "0.10a0",
+    "0.2",
+    "0.21",
+    "0.22",
+    "0.3",
+    "0.30",
+    "0.31",
+    "0.32",
+    "0.33",
+    "0.34",
+    "0.35",
+    "0.36",
+    "0.36.1",
+    "0.37",
+    "0.37.1",
+    "0.37.2",
+    "0.37.3",
+    "0.37.4",
+    "0.37.5",
+    "0.37.6",
+    "0.38"
+  ]
+}

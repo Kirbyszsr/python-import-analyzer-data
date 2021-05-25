@@ -1,0 +1,3957 @@
+{
+  "info": {
+    "author": "Yesudeep Mangalapilly",
+    "author_email": "yesudeep@gmail.com",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 3 - Alpha",
+      "Environment :: Console",
+      "Intended Audience :: Developers",
+      "Intended Audience :: System Administrators",
+      "License :: OSI Approved :: Apache Software License",
+      "Natural Language :: English",
+      "Operating System :: MacOS :: MacOS X",
+      "Operating System :: Microsoft :: Windows :: Windows 7",
+      "Operating System :: Microsoft :: Windows :: Windows 8",
+      "Operating System :: Microsoft :: Windows :: Windows 8.1",
+      "Operating System :: Microsoft :: Windows :: Windows 10",
+      "Operating System :: Microsoft :: Windows :: Windows Vista",
+      "Operating System :: OS Independent",
+      "Operating System :: POSIX :: BSD",
+      "Operating System :: POSIX :: Linux",
+      "Programming Language :: C",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: System :: Filesystems",
+      "Topic :: System :: Monitoring",
+      "Topic :: Utilities"
+    ],
+    "description": "Watchdog\n========\n\n|Build Status|\n\nPython API and shell utilities to monitor file system events.\n\nWorks on 3.6+.\n\nIf you want to use Python 2.6, you should stick with watchdog < 0.10.0.\n\nIf you want to use Python 2.7, 3.4 or 3.5, you should stick with watchdog < 1.0.0.\n\nExample API Usage\n-----------------\n\nA simple program that uses watchdog to monitor directories specified\nas command-line arguments and logs events generated:\n\n.. code-block:: python\n\n    import sys\n    import time\n    import logging\n    from watchdog.observers import Observer\n    from watchdog.events import LoggingEventHandler\n\n    if __name__ == \"__main__\":\n        logging.basicConfig(level=logging.INFO,\n                            format='%(asctime)s - %(message)s',\n                            datefmt='%Y-%m-%d %H:%M:%S')\n        path = sys.argv[1] if len(sys.argv) > 1 else '.'\n        event_handler = LoggingEventHandler()\n        observer = Observer()\n        observer.schedule(event_handler, path, recursive=True)\n        observer.start()\n        try:\n            while True:\n                time.sleep(1)\n        finally:\n            observer.stop()\n            observer.join()\n\n\nShell Utilities\n---------------\n\nWatchdog comes with an *optional* utility script called ``watchmedo``.\nPlease type ``watchmedo --help`` at the shell prompt to\nknow more about this tool.\n\nHere is how you can log the current directory recursively\nfor events related only to ``*.py`` and ``*.txt`` files while\nignoring all directory events:\n\n.. code-block:: bash\n\n    watchmedo log \\\n        --patterns=\"*.py;*.txt\" \\\n        --ignore-directories \\\n        --recursive \\\n        .\n\nYou can use the ``shell-command`` subcommand to execute shell commands in\nresponse to events:\n\n.. code-block:: bash\n\n    watchmedo shell-command \\\n        --patterns=\"*.py;*.txt\" \\\n        --recursive \\\n        --command='echo \"${watch_src_path}\"' \\\n        .\n\nPlease see the help information for these commands by typing:\n\n.. code-block:: bash\n\n    watchmedo [command] --help\n\n\nAbout ``watchmedo`` Tricks\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n``watchmedo`` can read ``tricks.yaml`` files and execute tricks within them in\nresponse to file system events. Tricks are actually event handlers that\nsubclass ``watchdog.tricks.Trick`` and are written by plugin authors. Trick\nclasses are augmented with a few additional features that regular event handlers\ndon't need.\n\nAn example ``tricks.yaml`` file:\n\n.. code-block:: yaml\n\n    tricks:\n    - watchdog.tricks.LoggerTrick:\n        patterns: [\"*.py\", \"*.js\"]\n    - watchmedo_webtricks.GoogleClosureTrick:\n        patterns: ['*.js']\n        hash_names: true\n        mappings_format: json                  # json|yaml|python\n        mappings_module: app/javascript_mappings\n        suffix: .min.js\n        compilation_level: advanced            # simple|advanced\n        source_directory: app/static/js/\n        destination_directory: app/public/js/\n        files:\n          index-page:\n          - app/static/js/vendor/jquery*.js\n          - app/static/js/base.js\n          - app/static/js/index-page.js\n          about-page:\n          - app/static/js/vendor/jquery*.js\n          - app/static/js/base.js\n          - app/static/js/about-page/**/*.js\n\nThe directory containing the ``tricks.yaml`` file will be monitored. Each trick\nclass is initialized with its corresponding keys in the ``tricks.yaml`` file as\narguments and events are fed to an instance of this class as they arrive.\n\nInstallation\n------------\nInstall from PyPI using ``pip``:\n\n.. code-block:: bash\n\n    $ python -m pip install -U watchdog\n\n    # or to install the watchmedo utility:\n    $ python -m pip install -U watchdog[watchmedo]\n\nInstall from source:\n\n.. code-block:: bash\n\n    $ python -m pip install -e .\n\n    # or to install the watchmedo utility:\n    $ python -m pip install -e \".[watchmedo]\"\n\n\nInstallation Caveats\n~~~~~~~~~~~~~~~~~~~~\n\nThe ``watchmedo`` script depends on PyYAML_ which links with LibYAML_,\nwhich brings a performance boost to the PyYAML parser. However, installing\nLibYAML_ is optional but recommended. On Mac OS X, you can use homebrew_\nto install LibYAML:\n\n.. code-block:: bash\n\n    $ brew install libyaml\n\nOn Linux, use your favorite package manager to install LibYAML. Here's how you\ndo it on Ubuntu:\n\n.. code-block:: bash\n\n    $ sudo apt install libyaml-dev\n\nOn Windows, please install PyYAML_ using the binaries they provide.\n\nDocumentation\n-------------\n\nYou can browse the latest release documentation_ online.\n\nContribute\n----------\n\nFork the `repository`_ on GitHub and send a pull request, or file an issue\nticket at the `issue tracker`_. For general help and questions use the official\n`mailing list`_ or ask on `stackoverflow`_ with tag `python-watchdog`.\n\nCreate and activate your virtual environment, then::\n\n    python -m pip install pytest pytest-cov\n    python -m pip install -e \".[watchmedo]\"\n    python -m pytest tests\n\nIf you are making a substantial change, add an entry to the \"Unreleased\" section\nof the `changelog`_.\n\nSupported Platforms\n-------------------\n\n* Linux 2.6 (inotify)\n* Mac OS X (FSEvents, kqueue)\n* FreeBSD/BSD (kqueue)\n* Windows (ReadDirectoryChangesW with I/O completion ports;\n  ReadDirectoryChangesW worker threads)\n* OS-independent (polling the disk for directory snapshots and comparing them\n  periodically; slow and not recommended)\n\nNote that when using watchdog with kqueue, you need the\nnumber of file descriptors allowed to be opened by programs\nrunning on your system to be increased to more than the\nnumber of files that you will be monitoring. The easiest way\nto do that is to edit your ``~/.profile`` file and add\na line similar to::\n\n    ulimit -n 1024\n\nThis is an inherent problem with kqueue because it uses\nfile descriptors to monitor files. That plus the enormous\namount of bookkeeping that watchdog needs to do in order\nto monitor file descriptors just makes this a painful way\nto monitor files and directories. In essence, kqueue is\nnot a very scalable way to monitor a deeply nested\ndirectory of files and directories with a large number of\nfiles.\n\nAbout using watchdog with editors like Vim\n------------------------------------------\n\nVim does not modify files unless directed to do so.\nIt creates backup files and then swaps them in to replace\nthe files you are editing on the disk. This means that\nif you use Vim to edit your files, the on-modified events\nfor those files will not be triggered by watchdog.\nYou may need to configure Vim appropriately to disable\nthis feature.\n\n\nAbout using watchdog with CIFS\n------------------------------\n\nWhen you want to watch changes in CIFS, you need to explicitly tell watchdog to\nuse ``PollingObserver``, that is, instead of letting watchdog decide an\nappropriate observer like in the example above, do::\n\n    from watchdog.observers.polling import PollingObserver as Observer\n\n\nDependencies\n------------\n\n1. Python 3.6 or above.\n2. XCode_ (only on macOS when installing from sources)\n3. PyYAML_ (only for ``watchmedo``)\n4. argh_ (only for ``watchmedo``)\n\n\nLicensing\n---------\n\nWatchdog is licensed under the terms of the `Apache License, version 2.0`_.\n\nCopyright 2011 `Yesudeep Mangalapilly`_.\n\nCopyright 2012 Google, Inc & contributors.\n\nProject `source code`_ is available at Github. Please report bugs and file\nenhancement requests at the `issue tracker`_.\n\nWhy Watchdog?\n-------------\n\nToo many people tried to do the same thing and none did what I needed Python\nto do:\n\n* pnotify_\n* `unison fsmonitor`_\n* fsmonitor_\n* guard_\n* pyinotify_\n* `inotify-tools`_\n* jnotify_\n* treewalker_\n* `file.monitor`_\n* pyfilesystem_\n\n.. links:\n.. _Yesudeep Mangalapilly: yesudeep@gmail.com\n.. _source code: https://github.com/gorakhargosh/watchdog\n.. _issue tracker: https://github.com/gorakhargosh/watchdog/issues\n.. _Apache License, version 2.0: https://www.apache.org/licenses/LICENSE-2.0\n.. _documentation: https://python-watchdog.readthedocs.io/\n.. _stackoverflow: https://stackoverflow.com/questions/tagged/python-watchdog\n.. _mailing list: https://groups.google.com/group/watchdog-python\n.. _repository: https://github.com/gorakhargosh/watchdog\n.. _issue tracker: https://github.com/gorakhargosh/watchdog/issues\n.. _changelog: https://github.com/gorakhargosh/watchdog/blob/master/changelog.rst\n\n.. _homebrew: https://brew.sh/\n.. _argh: https://pypi.python.org/pypi/argh\n.. _PyYAML: https://www.pyyaml.org/\n.. _XCode: https://developer.apple.com/technologies/tools/xcode.html\n.. _LibYAML: https://pyyaml.org/wiki/LibYAML\n\n.. _pnotify: http://mark.heily.com/pnotify\n.. _unison fsmonitor: https://webdav.seas.upenn.edu/viewvc/unison/trunk/src/fsmonitor.py?view=markup&pathrev=471\n.. _fsmonitor: https://github.com/shaurz/fsmonitor\n.. _guard: https://github.com/guard/guard\n.. _pyinotify: https://github.com/seb-m/pyinotify\n.. _inotify-tools: https://github.com/rvoicilas/inotify-tools\n.. _jnotify: http://jnotify.sourceforge.net/\n.. _treewalker: https://github.com/jbd/treewatcher\n.. _file.monitor: https://github.com/pke/file.monitor\n.. _pyfilesystem: https://github.com/PyFilesystem/pyfilesystem\n\n.. |Build Status| image:: https://github.com/gorakhargosh/watchdog/workflows/Tests/badge.svg\n   :target: https://github.com/gorakhargosh/watchdog/actions?query=workflow%3ATests\n\n\n.. :changelog:\n\nChangelog\n---------\n\n2.1.2\n~~~~~\n\n2021-xx-xx \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v2.1.2...v2.1.1>`__\n\n- [mac] Fix relative path handling for non-recursive watch. (`#797 <https://github.com/gorakhargosh/watchdog/pull/797>`_)\n- [windows] On PyPy, events happening right after ``start()`` were missed. Add a workaround for that. (`#796 <https://github.com/gorakhargosh/watchdog/pull/796>`_)\n- Thanks to our beloved contributors: @oprypin, @CCP-Aporia, @BoboTiG\n\n2.1.1\n~~~~~\n\n2021-05-10 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v2.1.0...v2.1.1>`__\n\n- [mac] Fix callback exceptions when the watcher is deleted but still receiving events (`#786 <https://github.com/gorakhargosh/watchdog/pull/786>`_)\n- Thanks to our beloved contributors: @rom1win, @BoboTiG, @CCP-Aporia\n\n\n2.1.0\n~~~~~\n\n2021-05-04 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v2.0.3...v2.1.0>`__\n\n- [inotify] Simplify ``libc`` loading (`#776 <https://github.com/gorakhargosh/watchdog/pull/776>`_)\n- [mac] Add support for non-recursive watches in ``FSEventsEmitter`` (`#779 <https://github.com/gorakhargosh/watchdog/pull/779>`_)\n- [watchmedo] Add support for ``--debug-force-*`` arguments to ``tricks`` (`#781 <https://github.com/gorakhargosh/watchdog/pull/781>`_)\n- Thanks to our beloved contributors: @CCP-Aporia, @aodj, @UnitedMarsupials, @BoboTiG\n\n\n2.0.3\n~~~~~\n\n2021-04-22 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v2.0.2...v2.0.3>`__\n\n- [mac] Use ``logger.debug()`` instead of ``logger.info()`` (`#774 <https://github.com/gorakhargosh/watchdog/pull/774>`_)\n- Updated documentation links (`#777 <https://github.com/gorakhargosh/watchdog/pull/777>`_)\n- Thanks to our beloved contributors: @globau, @imba-tjd, @BoboTiG\n\n\n2.0.2\n~~~~~\n\n2021-02-22 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v2.0.1...v2.0.2>`__\n\n- [mac] Add missing exception objects (`#766 <https://github.com/gorakhargosh/watchdog/pull/766>`_)\n- Thanks to our beloved contributors: @CCP-Aporia, @BoboTiG\n\n\n2.0.1\n~~~~~\n\n2021-02-17 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v2.0.0...v2.0.1>`__\n\n- [mac] Fix a segmentation fault when dealing with unicode paths (`#763 <https://github.com/gorakhargosh/watchdog/pull/763>`_)\n- Moved the CI from Travis-CI to GitHub Actions (`#764 <https://github.com/gorakhargosh/watchdog/pull/764>`_)\n- Thanks to our beloved contributors: @SamSchott, @BoboTiG\n\n\n2.0.0\n~~~~~\n\n2021-02-11 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v1.0.2...v2.0.0>`__\n\n- Avoid deprecated ``PyEval_InitThreads`` on Python 3.7+ (`#746 <https://github.com/gorakhargosh/watchdog/pull/746>`_)\n- [inotify] Add support for ``IN_CLOSE_WRITE`` events. A ``FileCloseEvent`` event will be fired. Note that ``IN_CLOSE_NOWRITE`` events are not handled to prevent much noise. (`#184 <https://github.com/gorakhargosh/watchdog/pull/184>`_, `#245 <https://github.com/gorakhargosh/watchdog/pull/245>`_, `#280 <https://github.com/gorakhargosh/watchdog/pull/280>`_, `#313 <https://github.com/gorakhargosh/watchdog/pull/313>`_, `#690 <https://github.com/gorakhargosh/watchdog/pull/690>`_)\n- [inotify] Allow to stop the emitter multiple times (`#760 <https://github.com/gorakhargosh/watchdog/pull/760>`_)\n- [mac] Support coalesced filesystem events (`#734 <https://github.com/gorakhargosh/watchdog/pull/734>`_)\n- [mac] Drop support for macOS 10.12 and earlier (`#750 <https://github.com/gorakhargosh/watchdog/pull/750>`_)\n- [mac] Fix an issue when renaming an item changes only the casing (`#750 <https://github.com/gorakhargosh/watchdog/pull/750>`_)\n- Thanks to our beloved contributors: @bstaletic, @lukassup, @ysard, @SamSchott, @CCP-Aporia, @BoboTiG\n\n\n1.0.2\n~~~~~\n\n2020-12-18 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v1.0.1...v1.0.2>`__\n\n- Wheels are published for GNU/Linux, macOS and Windows (`#739 <https://github.com/gorakhargosh/watchdog/pull/739>`_)\n- [mac] Fix missing ``event_id`` attribute in ``fsevents`` (`#721 <https://github.com/gorakhargosh/watchdog/pull/721>`_)\n- [mac] Return byte paths if a byte path was given in ``fsevents`` (`#726` <https://github.com/gorakhargosh/watchdog/pull/726>`_)\n- [mac] Add compatibility with old macOS versions (`#733` <https://github.com/gorakhargosh/watchdog/pull/733>`_)\n- Uniformize event for deletion of watched dir (`#727 <https://github.com/gorakhargosh/watchdog/pull/727>`_)\n- Thanks to our beloved contributors: @SamSchott, @CCP-Aporia, @di, @BoboTiG\n\n\n1.0.1\n~~~~~\n\n2020-12-10 \u2022 Fix version with good metadatas.\n\n\n1.0.0\n~~~~~\n\n2020-12-10 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.10.4...v1.0.0>`__\n\n- Versioning is now following the `semver <https://semver.org/>`_\n- Drop support for Python 2.7, 3.4 and 3.5\n- [mac] Regression fixes for native ``fsevents`` (`#717 <https://github.com/gorakhargosh/watchdog/pull/717>`_)\n- [windows] ``winapi.BUFFER_SIZE`` now defaults to ``64000`` (instead of ``2048``) (`#700 <https://github.com/gorakhargosh/watchdog/pull/700>`_)\n- [windows] Introduced ``winapi.PATH_BUFFER_SIZE`` (defaults to ``2048``) to keep the old behavior with path-realted functions (`#700 <https://github.com/gorakhargosh/watchdog/pull/700>`_)\n- Use ``pathlib`` from the standard library, instead of pathtools (`#556 <https://github.com/gorakhargosh/watchdog/pull/556>`_)\n- Allow file paths on Unix that don't follow the file system encoding (`#703 <https://github.com/gorakhargosh/watchdog/pull/703>`_)\n- Removed the long-time deprecated ``events.LoggingFileSystemEventHandler`` class, use ``LoggingEventHandler`` instead\n- Thanks to our beloved contributors: @SamSchott, @bstaletic, @BoboTiG, @CCP-Aporia\n\n\n0.10.4\n~~~~~~\n\n2020-11-21 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.10.3...v0.10.4>`__\n\n- Add ``logger`` parameter for the ``LoggingEventHandler`` (`#676 <https://github.com/gorakhargosh/watchdog/pull/676>`_)\n- Replace mutable default arguments with ``if None`` implementation (`#677 <https://github.com/gorakhargosh/watchdog/pull/677>`_)\n- Expand tests to Python 2.7 and 3.5-3.10 for GNU/Linux, macOS and Windows\n- [mac] Performance improvements for the ``fsevents`` module (`#680 <https://github.com/gorakhargosh/watchdog/pull/680>`_)\n- [mac] Prevent compilation of ``watchdog_fsevents.c`` on non-macOS machines (`#687 <https://github.com/gorakhargosh/watchdog/pull/687>`_)\n- [watchmedo] Handle shutdown events from ``SIGTERM`` and ``SIGINT`` more reliably (`#693 <https://github.com/gorakhargosh/watchdog/pull/693>`_)\n- Thanks to our beloved contributors: @Sraw, @CCP-Aporia, @BoboTiG, @maybe-sybr\n\n\n0.10.3\n~~~~~~\n\n2020-06-25 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.10.2...v0.10.3>`__\n\n- Ensure ``ObservedWatch.path`` is a string (`#651 <https://github.com/gorakhargosh/watchdog/pull/651>`_)\n- [inotify] Allow to monitor single file (`#655 <https://github.com/gorakhargosh/watchdog/pull/655>`__)\n- [inotify] Prevent raising an exception when a file in a monitored folder has no permissions (`#669 <https://github.com/gorakhargosh/watchdog/pull/669>`__, `#670 <https://github.com/gorakhargosh/watchdog/pull/670>`__)\n- Thanks to our beloved contributors: @brant-ruan, @rec, @andfoy, @BoboTiG\n\n\n0.10.2\n~~~~~~\n\n2020-02-08 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.10.1...v0.10.2>`__\n\n- Fixed the ``build_ext`` command on macOS Catalina (`#628 <https://github.com/gorakhargosh/watchdog/pull/628>`__)\n- Fixed the installation of macOS requirements on non-macOS OSes (`#635 <https://github.com/gorakhargosh/watchdog/pull/635>`__)\n- Refactored ``dispatch()`` method of ``FileSystemEventHandler``,\n  ``PatternMatchingEventHandler`` and ``RegexMatchingEventHandler``\n- [bsd] Improved tests support on non Windows/Linux platforms (`#633 <https://github.com/gorakhargosh/watchdog/pull/633>`__, `#639 <https://github.com/gorakhargosh/watchdog/pull/639>`__)\n- [bsd] Added FreeBSD CI support (`#532 <https://github.com/gorakhargosh/watchdog/pull/532>`__)\n- [bsd] Restored full support (`#638 <https://github.com/gorakhargosh/watchdog/pull/638>`__, `#641 <https://github.com/gorakhargosh/watchdog/pull/641>`__)\n- Thanks to our beloved contributors: @BoboTiG, @evilham, @danilobellini\n\n\n0.10.1\n~~~~~~\n\n2020-01-30 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.10.0...v0.10.1>`__\n\n- Fixed Python 2.7 to 3.6 installation when the OS locale is set to POSIX (`#615 <https://github.com/gorakhargosh/watchdog/pull/615>`__)\n- Fixed the ``build_ext`` command on macOS  (`#618 <https://github.com/gorakhargosh/watchdog/pull/618>`__, `#620 <https://github.com/gorakhargosh/watchdog/pull/620>`_)\n- Moved requirements to ``setup.cfg``  (`#617 <https://github.com/gorakhargosh/watchdog/pull/617>`__)\n- [mac] Removed old C code for Python 2.5 in the `fsevents` C implementation\n- [snapshot] Added ``EmptyDirectorySnapshot`` (`#613 <https://github.com/gorakhargosh/watchdog/pull/613>`__)\n- Thanks to our beloved contributors: @Ajordat, @tehkirill, @BoboTiG\n\n\n0.10.0\n~~~~~~\n\n2020-01-26 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.9.0...v0.10.0>`__\n\n**Breaking Changes**\n\n- Dropped support for Python 2.6, 3.2 and 3.3\n- Emitters that failed to start are now removed\n- [snapshot] Removed the deprecated ``walker_callback`` argument,\n  use ``stat`` instead\n- [watchmedo] The utility is no more installed by default but via the extra\n  ``watchdog[watchmedo]``\n\n**Other Changes**\n\n- Fixed several Python 3 warnings\n- Identify synthesized events with ``is_synthetic`` attribute (`#369 <https://github.com/gorakhargosh/watchdog/pull/369>`__)\n- Use ``os.scandir()`` to improve memory usage (`#503 <https://github.com/gorakhargosh/watchdog/pull/503>`__)\n- [bsd] Fixed flavors of FreeBSD detection (`#529 <https://github.com/gorakhargosh/watchdog/pull/529>`__)\n- [bsd] Skip unprocessable socket files (`#509 <https://github.com/gorakhargosh/watchdog/issue/509>`__)\n- [inotify] Fixed events containing non-ASCII characters (`#516 <https://github.com/gorakhargosh/watchdog/issues/516>`__)\n- [inotify] Fixed the way ``OSError`` are re-raised (`#377 <https://github.com/gorakhargosh/watchdog/issues/377>`__)\n- [inotify] Fixed wrong source path after renaming a top level folder (`#515 <https://github.com/gorakhargosh/watchdog/pull/515>`__)\n- [inotify] Removed  delay from non-move events (`#477 <https://github.com/gorakhargosh/watchdog/pull/477>`__)\n- [mac] Fixed a bug when calling ``FSEventsEmitter.stop()`` twice (`#466 <https://github.com/gorakhargosh/watchdog/pull/466>`__)\n- [mac] Support for unscheduling deleted watch (`#541 <https://github.com/gorakhargosh/watchdog/issue/541>`__)\n- [mac] Fixed missing field initializers and unused parameters in\n  ``watchdog_fsevents.c``\n- [snapshot] Don't walk directories without read permissions (`#408 <https://github.com/gorakhargosh/watchdog/pull/408>`__)\n- [snapshot] Fixed a race condition crash when a directory is swapped for a file (`#513 <https://github.com/gorakhargosh/watchdog/pull/513>`__)\n- [snasphot] Fixed an ``AttributeError`` about forgotten ``path_for_inode`` attr (`#436 <https://github.com/gorakhargosh/watchdog/issues/436>`__)\n- [snasphot] Added the ``ignore_device=False`` parameter to the ctor (`597 <https://github.com/gorakhargosh/watchdog/pull/597>`__)\n- [watchmedo] Fixed the path separator used (`#478 <https://github.com/gorakhargosh/watchdog/pull/478>`__)\n- [watchmedo] Fixed the use of ``yaml.load()`` for ``yaml.safe_load()`` (`#453 <https://github.com/gorakhargosh/watchdog/issues/453>`__)\n- [watchmedo] Handle all available signals (`#549 <https://github.com/gorakhargosh/watchdog/issue/549>`__)\n- [watchmedo] Added the ``--debug-force-polling`` argument (`#404 <https://github.com/gorakhargosh/watchdog/pull/404>`__)\n- [windows] Fixed issues when the observed directory is deleted (`#570 <https://github.com/gorakhargosh/watchdog/issues/570>`__ and `#601 <https://github.com/gorakhargosh/watchdog/pull/601>`__)\n- [windows] ``WindowsApiEmitter`` made easier to subclass (`#344 <https://github.com/gorakhargosh/watchdog/pull/344>`__)\n- [windows] Use separate ctypes DLL instances\n- [windows] Generate sub created events only if ``recursive=True`` (`#454 <https://github.com/gorakhargosh/watchdog/pull/454>`__)\n- Thanks to our beloved contributors: @BoboTiG, @LKleinNux, @rrzaripov,\n  @wildmichael, @TauPan, @segevfiner, @petrblahos, @QuantumEnergyE,\n  @jeffwidman, @kapsh, @nickoala, @petrblahos, @julianolf, @tonybaloney,\n  @mbakiev, @pR0Ps, javaguirre, @skurfer, @exarkun, @joshuaskelly,\n  @danilobellini, @Ajordat\n\n\n0.9.0\n~~~~~\n\n2018-08-28 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.8.3...v0.9.0>`__\n\n- Deleting the observed directory now emits a ``DirDeletedEvent`` event\n- [bsd] Improved the platform detection (`#378 <https://github.com/gorakhargosh/watchdog/pull/378>`__)\n- [inotify] Fixed a crash when the root directory being watched by was deleted (`#374 <https://github.com/gorakhargosh/watchdog/pull/374>`__)\n- [inotify] Handle systems providing uClibc\n- [linux] Fixed a possible ``DirDeletedEvent`` duplication when\n  deleting a directory\n- [mac] Fixed unicode path handling ``fsevents2.py`` (`#298 <https://github.com/gorakhargosh/watchdog/pull/298>`__)\n- [watchmedo] Added the ``--debug-force-polling`` argument (`#336 <https://github.com/gorakhargosh/watchdog/pull/336>`__)\n- [windows] Fixed the ``FILE_LIST_DIRECTORY`` constant (`#376 <https://github.com/gorakhargosh/watchdog/pull/376>`__)\n- Thanks to our beloved contributors: @vulpeszerda, @hpk42, @tamland, @senden9,\n  @gorakhargosh, @nolsto, @mafrosis, @DonyorM, @anthrotype, @danilobellini,\n  @pierregr, @ShinNoNoir, @adrpar, @gforcada, @pR0Ps, @yegorich, @dhke\n\n\n0.8.3\n~~~~~\n\n2015-02-11 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.8.2...v0.8.3>`__\n\n- Fixed the use of the root logger (`#274 <https://github.com/gorakhargosh/watchdog/issues/274>`__)\n- [inotify] Refactored libc loading and improved error handling in\n  ``inotify_c.py``\n- [inotify] Fixed a possible unbound local error in ``inotify_c.py``\n- Thanks to our beloved contributors: @mmorearty, @tamland, @tony,\n  @gorakhargosh\n\n\n0.8.2\n~~~~~\n\n2014-10-29 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.8.1...v0.8.2>`__\n\n- Event emitters are no longer started on schedule if ``Observer`` is not\n  already running\n- [mac] Fixed usued arguments to pass clang compilation (`#265 <https://github.com/gorakhargosh/watchdog/pull/265>`__)\n- [snapshot] Fixed a possible race condition crash on directory deletion (`#281 <https://github.com/gorakhargosh/watchdog/pull/281>`__)\n- [windows] Fixed an error when watching the same folder again (`#270 <https://github.com/gorakhargosh/watchdog/pull/270>`__)\n- Thanks to our beloved contributors: @tamland, @apetrone, @Falldog,\n  @theospears\n\n\n0.8.1\n~~~~~\n\n2014-07-28 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.8.0...v0.8.1>`__\n\n- Fixed ``anon_inode`` descriptors leakage  (`#249 <https://github.com/gorakhargosh/watchdog/pull/249>`__)\n- [inotify] Fixed thread stop dead lock (`#250 <https://github.com/gorakhargosh/watchdog/issues/250>`__)\n- Thanks to our beloved contributors: @Witos, @adiroiban, @tamland\n\n\n0.8.0\n~~~~~\n\n2014-07-02 \u2022 `full history <https://github.com/gorakhargosh/watchdog/compare/v0.7.1...v0.8.0>`__\n\n- Fixed ``argh`` deprecation warnings (`#242 <https://github.com/gorakhargosh/watchdog/pull/242>`__)\n- [snapshot] Methods returning internal stats info were replaced by\n  ``mtime()``, ``inode()`` and ``path()`` methods\n- [snapshot] Deprecated the ``walker_callback`` argument\n- [watchmedo] Fixed ``auto-restart`` to terminate all children processes (`#225 <https://github.com/gorakhargosh/watchdog/pull/225>`__)\n- [watchmedo] Added the ``--no-parallel`` argument (`#227 <https://github.com/gorakhargosh/watchdog/issues/227>`__)\n- [windows] Fixed the value of ``INVALID_HANDLE_VALUE`` (`#123 <https://github.com/gorakhargosh/watchdog/issues/123>`__)\n- [windows] Fixed octal usages to work with Python 3 as well (`#223 <https://github.com/gorakhargosh/watchdog/issues/223>`__)\n- Thanks to our beloved contributors: @tamland, @Ormod, @berdario, @cro,\n  @BernieSumption, @pypingou, @gotcha, @tommorris, @frewsxcv\n\n\n",
+    "description_content_type": "text/x-rst",
+    "docs_url": "https://pythonhosted.org/watchdog/",
+    "download_url": "",
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "home_page": "https://github.com/gorakhargosh/watchdog",
+    "keywords": "python filesystem monitoring monitor FSEvents kqueue inotify ReadDirectoryChangesW polling DirectorySnapshot",
+    "license": "Apache License 2.0",
+    "maintainer": "",
+    "maintainer_email": "",
+    "name": "watchdog",
+    "package_url": "https://pypi.org/project/watchdog/",
+    "platform": "",
+    "project_url": "https://pypi.org/project/watchdog/",
+    "project_urls": {
+      "Homepage": "https://github.com/gorakhargosh/watchdog"
+    },
+    "release_url": "https://pypi.org/project/watchdog/2.1.2/",
+    "requires_dist": [
+      "PyYAML (>=3.10) ; extra == 'watchmedo'",
+      "argh (>=0.24.1) ; extra == 'watchmedo'"
+    ],
+    "requires_python": ">=3.6",
+    "summary": "Filesystem events monitoring",
+    "version": "2.1.2",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 10402046,
+  "releases": {
+    "0.10.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7618160661fcd8730e8d2771ba5a0e81",
+          "sha256": "8e800496cdfb921cfdc62b58a11966d0d2203a35dc005b4b5b8e1ab3097b2eb5"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.10.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "7618160661fcd8730e8d2771ba5a0e81",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 94110,
+        "upload_time": "2020-01-26T18:24:07",
+        "upload_time_iso_8601": "2020-01-26T18:24:07.125385Z",
+        "url": "https://files.pythonhosted.org/packages/01/01/cc9b2fd111e19687dd42155f066718bccb414c8a728eb7df0b229742caf7/watchdog-0.10.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.10.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e6ae97f544d155afe3d6d6c152dc964c",
+          "sha256": "d64786787b14c8c6a71a8cc014056776ba6b52e85d1164ef2ab50aec02723a3d"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.10.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "e6ae97f544d155afe3d6d6c152dc964c",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 94879,
+        "upload_time": "2020-01-31T04:14:20",
+        "upload_time_iso_8601": "2020-01-31T04:14:20.224945Z",
+        "url": "https://files.pythonhosted.org/packages/34/65/dca6d9653656630169e9f71fe3fcf2a487b671a096cf11dc3011c822a408/watchdog-0.10.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.10.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2477fb59dcb110b8562eb4eb973cda23",
+          "sha256": "c560efb643faed5ef28784b2245cf8874f939569717a4a12826a173ac644456b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.10.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "2477fb59dcb110b8562eb4eb973cda23",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 95505,
+        "upload_time": "2020-02-08T23:16:52",
+        "upload_time_iso_8601": "2020-02-08T23:16:52.237913Z",
+        "url": "https://files.pythonhosted.org/packages/73/c3/ed6d992006837e011baca89476a4bbffb0a91602432f73bd4473816c76e2/watchdog-0.10.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.10.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "9a5c9134e943b534b9f8b51d78338cf8",
+          "sha256": "4214e1379d128b0588021880ccaf40317ee156d4603ac388b9adcf29165e0c04"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.10.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "9a5c9134e943b534b9f8b51d78338cf8",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 94086,
+        "upload_time": "2020-06-25T20:34:00",
+        "upload_time_iso_8601": "2020-06-25T20:34:00.768368Z",
+        "url": "https://files.pythonhosted.org/packages/0e/06/121302598a4fc01aca942d937f4a2c33430b7181137b35758913a8db10ad/watchdog-0.10.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.10.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d8fba5e25277520b65ca55952ae1341b",
+          "sha256": "e38bffc89b15bafe2a131f0e1c74924cf07dcec020c2e0a26cccd208831fcd43"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.10.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "d8fba5e25277520b65ca55952ae1341b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 98042,
+        "upload_time": "2020-11-21T17:03:20",
+        "upload_time_iso_8601": "2020-11-21T17:03:20.326044Z",
+        "url": "https://files.pythonhosted.org/packages/6f/10/500580a0987363a0d9e1f3dd5cb1bba94a47e19266c6ce9dfb6cdd455758/watchdog-0.10.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.10.5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0220d31a1acc21228a0ceb75bd2c4fb3",
+          "sha256": "87740a2994b046e9c438a9e4f52c3e8299e1907d04d9597fdfe9dc81432ea282"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.10.5.tar.gz",
+        "has_sig": false,
+        "md5_digest": "0220d31a1acc21228a0ceb75bd2c4fb3",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 99876,
+        "upload_time": "2020-12-10T09:37:35",
+        "upload_time_iso_8601": "2020-12-10T09:37:35.395182Z",
+        "url": "https://files.pythonhosted.org/packages/2d/fb/183f63f23349a77e0597c3fa0146cccc48189441849d6bb4c2be8496f693/watchdog-0.10.5.tar.gz",
+        "yanked": true,
+        "yanked_reason": "Missing Python metadatas."
+      }
+    ],
+    "0.10.6": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c44e0abfb35935e1544b6a02ed7e3b5b",
+          "sha256": "1e1ea6d3d74feca5c62393525107aa45c5d4cd15199e2a5f62b1a6ca83679131"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.10.6.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c44e0abfb35935e1544b6a02ed7e3b5b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7, <3.6",
+        "size": 99949,
+        "upload_time": "2020-12-10T13:47:19",
+        "upload_time_iso_8601": "2020-12-10T13:47:19.514152Z",
+        "url": "https://files.pythonhosted.org/packages/8e/68/261843fe0fed52c7f4364325bde666c858c582547c6a32e90ce9c184a5d7/watchdog-0.10.6.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.3.4": [],
+    "0.3.6": [],
+    "0.5.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c9c49ac9ddeba32fd4bbab3dcf99d8ee",
+          "sha256": "bc723a3a080b5f5d5a1057b44bb4adf30cffb37f03608bbb379fe9ae6945066a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.5.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c9c49ac9ddeba32fd4bbab3dcf99d8ee",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 70656,
+        "upload_time": "2011-01-20T05:53:53",
+        "upload_time_iso_8601": "2011-01-20T05:53:53.780073Z",
+        "url": "https://files.pythonhosted.org/packages/86/1f/676a4b9716502a2a7330b34955705b6401f16b4443945cad105a14ed1e1a/watchdog-0.5.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.5.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "9d2c3177646351d3201631ec5a8474d9",
+          "sha256": "3e29ac6b9fede5dc06e6fa8e079b3118c98991c7b240a24ee9b1c3048be12033"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.5.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "9d2c3177646351d3201631ec5a8474d9",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 69787,
+        "upload_time": "2011-02-02T07:55:11",
+        "upload_time_iso_8601": "2011-02-02T07:55:11.873436Z",
+        "url": "https://files.pythonhosted.org/packages/64/9d/c56c2e9df4bcd25c837a482c9db626ea0d1932fd91832d0ee75c1634fa5b/watchdog-0.5.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.5.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "313894d315f556ffd109d2d5fb31b733",
+          "sha256": "7b4b52943ac470018fe81751c0281627d11653c65475060a1314d1853d3b418c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.5.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "313894d315f556ffd109d2d5fb31b733",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 69802,
+        "upload_time": "2011-02-04T20:33:11",
+        "upload_time_iso_8601": "2011-02-04T20:33:11.820537Z",
+        "url": "https://files.pythonhosted.org/packages/d3/10/d2ef642232a5c20686559e4bd592d2dca9435eca52a85811ccfe6c0fa230/watchdog-0.5.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.5.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "092fdabd8810922468a7e9fdcfa42520",
+          "sha256": "d1baa0a5f43931b6601e4566e8256e17571b4a34d86510cd18985e73f098bade"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.5.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "092fdabd8810922468a7e9fdcfa42520",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 69880,
+        "upload_time": "2011-02-08T07:30:53",
+        "upload_time_iso_8601": "2011-02-08T07:30:53.207528Z",
+        "url": "https://files.pythonhosted.org/packages/d4/bd/70541069ce875ffd9cf5ff996edf2ba1fa27b8096bb26c7a1d97252a469f/watchdog-0.5.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.5.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "137cb7516b56a4e623934eccc26e1143",
+          "sha256": "d70bca489bb42fe2ad8374bc43047e642cc5964682f43a4db2f6ef6f962284ad"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.5.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "137cb7516b56a4e623934eccc26e1143",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 69900,
+        "upload_time": "2011-02-15T09:40:40",
+        "upload_time_iso_8601": "2011-02-15T09:40:40.470012Z",
+        "url": "https://files.pythonhosted.org/packages/d3/cf/44af3e7f6de677923888fc98df845e013548c7c2aa89fedacb9fc2eb6b45/watchdog-0.5.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.6.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6e8fb84aa6bdeb2054906bdf40048eba",
+          "sha256": "aaae8ec476b31d46c5dc400105ade2e1c3e2221d9c5f8252a64a2f05165e9dd9"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.6.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "6e8fb84aa6bdeb2054906bdf40048eba",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 76560,
+        "upload_time": "2012-03-18T07:48:59",
+        "upload_time_iso_8601": "2012-03-18T07:48:59.984093Z",
+        "url": "https://files.pythonhosted.org/packages/42/98/90f2486a5b8150fe68b51ee94a7d0b9caf22c94eaf699cd32a07537ca0b7/watchdog-0.6.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.6.1": [],
+    "0.7.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f3c523a4a16c04f1792e62b0a3d665e6",
+          "sha256": "8d89934fede6ec0dfe4d128606e36b989ba0b27b6cf74bd042b818b554625240"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.7.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f3c523a4a16c04f1792e62b0a3d665e6",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 77013,
+        "upload_time": "2014-01-08T21:02:12",
+        "upload_time_iso_8601": "2014-01-08T21:02:12.180730Z",
+        "url": "https://files.pythonhosted.org/packages/b3/e9/554703d7991cce80223065f3e0f94172d89f1881ea9d5963bcccdcdfff2c/watchdog-0.7.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.7.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ffec8b4afd1058e76f6c664ade8a0de7",
+          "sha256": "54ca64fdf0a2fb23cecba6349f9587e62fd31840ae22a71898a65adb8c6b52f9"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.7.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ffec8b4afd1058e76f6c664ade8a0de7",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 83438,
+        "upload_time": "2014-02-03T19:42:54",
+        "upload_time_iso_8601": "2014-02-03T19:42:54.811805Z",
+        "url": "https://files.pythonhosted.org/packages/a6/ad/57748d1625d616a9f2adeef38f27f19679712b318d39cd40466bfb15d904/watchdog-0.7.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.8.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8d3b7acc8a6988f70598002deb49ebf4",
+          "sha256": "a86bb2d8b94bb4bf76fcc2ff36f741c0e511ec24c4d3a1059b47d49e377d64f5"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.8.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "8d3b7acc8a6988f70598002deb49ebf4",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 152770,
+        "upload_time": "2014-07-02T11:53:30",
+        "upload_time_iso_8601": "2014-07-02T11:53:30.227449Z",
+        "url": "https://files.pythonhosted.org/packages/8a/bf/1a6fbeb5dc69d55718e3f03d19a1f285eb3629200ebbc9d4ef69367a4355/watchdog-0.8.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.8.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a58a082823dc6d3c60ffba1ff5f94608",
+          "sha256": "d6ec6be582b244834a888c8ccc2d451816184ab104b5454b5e5cd7649e8f671c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.8.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "a58a082823dc6d3c60ffba1ff5f94608",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 154747,
+        "upload_time": "2014-07-28T09:55:12",
+        "upload_time_iso_8601": "2014-07-28T09:55:12.412353Z",
+        "url": "https://files.pythonhosted.org/packages/96/c3/f48841b9399ba7c7331330e18d2c144ad20b29e5721e2073428d29979401/watchdog-0.8.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.8.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0e6b803860f7da568d7ba5b17ea620fd",
+          "sha256": "33a9ab3ce2e6b1aca4d2a50752231668d69bdba4ab096d9742195ccfbef1e023"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.8.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "0e6b803860f7da568d7ba5b17ea620fd",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 157936,
+        "upload_time": "2014-10-29T11:45:56",
+        "upload_time_iso_8601": "2014-10-29T11:45:56.087092Z",
+        "url": "https://files.pythonhosted.org/packages/9e/1f/bd5c41dc7e549fd7d2431518172dbf0332f203baed08feda86710f37b99a/watchdog-0.8.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.8.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "bb16926bccc98eae2a04535e4512ddf1",
+          "sha256": "7e65882adb7746039b6f3876ee174952f8eaaa34491ba34333ddf1fe35de4162"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.8.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "bb16926bccc98eae2a04535e4512ddf1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 83154,
+        "upload_time": "2015-02-11T10:25:50",
+        "upload_time_iso_8601": "2015-02-11T10:25:50.907994Z",
+        "url": "https://files.pythonhosted.org/packages/54/7d/c7c0ad1e32b9f132075967fc353a244eb2b375a3d2f5b0ce612fd96e107e/watchdog-0.8.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.9.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7cdc103f607e72fc32c206301a72d1b2",
+          "sha256": "965f658d0732de3188211932aeb0bb457587f04f63ab4c1e33eab878e9de961d"
+        },
+        "downloads": -1,
+        "filename": "watchdog-0.9.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "7cdc103f607e72fc32c206301a72d1b2",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 85549,
+        "upload_time": "2018-08-28T21:23:35",
+        "upload_time_iso_8601": "2018-08-28T21:23:35.416181Z",
+        "url": "https://files.pythonhosted.org/packages/bb/e3/5a55d48a29300160779f0a0d2776d17c1b762a2039b36de528b093b87d5b/watchdog-0.9.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c22d92e76df8ddb7e124b26644f6e7ec",
+          "sha256": "6deba694f7199464bfc0899ea408ec8c77a8be40f58a08b9845cf9ad6a39f6ca"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c22d92e76df8ddb7e124b26644f6e7ec",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 97835,
+        "upload_time": "2020-12-10T09:49:36",
+        "upload_time_iso_8601": "2020-12-10T09:49:36.609454Z",
+        "url": "https://files.pythonhosted.org/packages/f3/6e/14f228ece54c289af148f9f588d9e591fa8294e36193c1904682affb2751/watchdog-1.0.0.tar.gz",
+        "yanked": true,
+        "yanked_reason": "Missing Python metadatas."
+      }
+    ],
+    "1.0.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6903325c977b72fa8c2994e36cf59485",
+          "sha256": "e81063af77eca2c2a3d051e7455f8d4e5b64899e4839393986a6562a600be3b3"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "6903325c977b72fa8c2994e36cf59485",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 80069,
+        "upload_time": "2020-12-18T21:35:49",
+        "upload_time_iso_8601": "2020-12-18T21:35:49.878338Z",
+        "url": "https://files.pythonhosted.org/packages/cb/0b/0a68041e5374ec1923b52e4783d30c328b2f206328b811f34f9ade041a7a/watchdog-1.0.1-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ba090b65f2bffed1fd650ee46728444e",
+          "sha256": "7dde5fd09240927e162fb2c2225168769f4377e2015414a489fb41a569dee920"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "ba090b65f2bffed1fd650ee46728444e",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 80069,
+        "upload_time": "2020-12-18T21:35:51",
+        "upload_time_iso_8601": "2020-12-18T21:35:51.368423Z",
+        "url": "https://files.pythonhosted.org/packages/5f/e1/76056ef99b0da5c094cf702cf43284b678ff3af80c8897f41ff1b85e2245/watchdog-1.0.1-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7e969894dc30fa13c3f0a905ad4ccedf",
+          "sha256": "1122c5092534e557ea4242cfd6afaa568d9658631f752592dffb4d815eb9044a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "7e969894dc30fa13c3f0a905ad4ccedf",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 80121,
+        "upload_time": "2020-12-18T21:35:52",
+        "upload_time_iso_8601": "2020-12-18T21:35:52.846551Z",
+        "url": "https://files.pythonhosted.org/packages/db/36/2bbcde618cc1e29e8b710b8cae4356f499ff715ca525ac26302931eec0fe/watchdog-1.0.1-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "463842cae6d45e440373329769b90e03",
+          "sha256": "ef8c0cf76b7adc2d1ecf0733baa3a7d05a4442dcc3dda76fb9ea850cb7973323"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "463842cae6d45e440373329769b90e03",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 80115,
+        "upload_time": "2020-12-18T21:35:54",
+        "upload_time_iso_8601": "2020-12-18T21:35:54.199641Z",
+        "url": "https://files.pythonhosted.org/packages/af/4b/11a471b5603d51ebfbb48dc51def2c2b30687fcfb00d8a59eb991499a511/watchdog-1.0.1-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2cfbf6e032904ca3f94c92901083e5f4",
+          "sha256": "7a2708a0a48d3357dddba4b6e0563862b95b72c1652405682d189635796ebd22"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "2cfbf6e032904ca3f94c92901083e5f4",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 79440,
+        "upload_time": "2020-12-18T21:35:55",
+        "upload_time_iso_8601": "2020-12-18T21:35:55.423228Z",
+        "url": "https://files.pythonhosted.org/packages/c0/6c/7b646234a9127e411c71ccea244afd49334971235be02549190d344c832b/watchdog-1.0.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ff32eedb4e207700fa2720de8a78960d",
+          "sha256": "048449a598410459c8ec58caec40663b3d05d7123ee831620b1ba9c581e38d92"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "ff32eedb4e207700fa2720de8a78960d",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 79440,
+        "upload_time": "2020-12-18T21:35:57",
+        "upload_time_iso_8601": "2020-12-18T21:35:57.208321Z",
+        "url": "https://files.pythonhosted.org/packages/95/2b/7100f5254e844e93e6a6edf6e3503d15366dc1fb9a366bc4333af1be61a5/watchdog-1.0.1-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2ae82913486195c809b40f197b3d3384",
+          "sha256": "1875a47a2f2f29a26abd6781e8e7357a2c31b7b8b997baeb0d630ac1442239e3"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "2ae82913486195c809b40f197b3d3384",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72224,
+        "upload_time": "2020-12-18T21:35:59",
+        "upload_time_iso_8601": "2020-12-18T21:35:59.179335Z",
+        "url": "https://files.pythonhosted.org/packages/6a/0a/9c32938c7c0eaeb0574d28597c5ff45a88d09ccc9a289610963571782519/watchdog-1.0.1-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fdfbe7d9a2b3c21fe618d43df606eac6",
+          "sha256": "2e5edfbdcea9d37c581f92fa1463b35f3fb4399fb2c0106c22a228b8c8b24c05"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "fdfbe7d9a2b3c21fe618d43df606eac6",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72222,
+        "upload_time": "2020-12-18T21:36:00",
+        "upload_time_iso_8601": "2020-12-18T21:36:00.327097Z",
+        "url": "https://files.pythonhosted.org/packages/44/04/d27048de78dbc7fea206a31e0c12d2b92fedaf7bea5066dde993cc3f7653/watchdog-1.0.1-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3435eec35c67533c98dc840ab81c2ed5",
+          "sha256": "a98c31b13f357c641ef3ab7628817a8d599584e5bd56eca9b90906ecfdbf72cf"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "3435eec35c67533c98dc840ab81c2ed5",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72220,
+        "upload_time": "2020-12-18T21:36:01",
+        "upload_time_iso_8601": "2020-12-18T21:36:01.379165Z",
+        "url": "https://files.pythonhosted.org/packages/ee/c6/a0d8632a6b7ca72768294444b37940ea414d6c1ad56f5ec3cd2c833992fb/watchdog-1.0.1-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "689859ae6aaa1381c785921d64f6e87a",
+          "sha256": "68018bde139a34615eaa55f6142bb4aaca1f45dc110dc876dfe5ab7507929cf1"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "689859ae6aaa1381c785921d64f6e87a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72223,
+        "upload_time": "2020-12-18T21:36:03",
+        "upload_time_iso_8601": "2020-12-18T21:36:03.714439Z",
+        "url": "https://files.pythonhosted.org/packages/e1/20/d49ca34cc3371f29a4c30c3c69425fe81d7ee243ef235753d7f9e9d33a45/watchdog-1.0.1-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e63331aca8149c313c0244dd0c951499",
+          "sha256": "1bb0715633fcf4b3148a4c5a3dd4dacde2102e9eb6d0e3beb120e45c31f292a0"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "e63331aca8149c313c0244dd0c951499",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72222,
+        "upload_time": "2020-12-18T21:36:02",
+        "upload_time_iso_8601": "2020-12-18T21:36:02.548052Z",
+        "url": "https://files.pythonhosted.org/packages/de/87/9f520276d88ebee14f70a664f07c28f924429a221b36e4c0be6bf358557a/watchdog-1.0.1-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "65ebace6c4bafc1cfac8df07dcbb6489",
+          "sha256": "78e4fd442e5ab7dd8e76aa135f64b08c9032fa857caa73c4afc6804238603c9b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "65ebace6c4bafc1cfac8df07dcbb6489",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72222,
+        "upload_time": "2020-12-18T21:36:05",
+        "upload_time_iso_8601": "2020-12-18T21:36:05.196114Z",
+        "url": "https://files.pythonhosted.org/packages/f2/07/36de397650f1b21c1094dfd19c90425dba3554c89251a558f49e18534f1b/watchdog-1.0.1-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "47cad27073369c44390456af81d80ba0",
+          "sha256": "416fef58a6354dc671d309708b117857970c63fbf8c0507ae473bdc4ef91aa20"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "47cad27073369c44390456af81d80ba0",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72224,
+        "upload_time": "2020-12-18T21:36:07",
+        "upload_time_iso_8601": "2020-12-18T21:36:07.164872Z",
+        "url": "https://files.pythonhosted.org/packages/45/f5/71847f68ef960aa3d72317f34e0f89270a0d94927b7f5526d02112e288b4/watchdog-1.0.1-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fb0b33af06faad3250703277c2cea298",
+          "sha256": "29dab966cab2f5cd517d99524f53e9676c8ed579af9ea1f2378218ca997819c0"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "fb0b33af06faad3250703277c2cea298",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72207,
+        "upload_time": "2020-12-18T21:36:08",
+        "upload_time_iso_8601": "2020-12-18T21:36:08.629323Z",
+        "url": "https://files.pythonhosted.org/packages/98/e9/0fb396024b00cdaa7ffe9dde5844119297272d03bbc65d7c0942a21e477e/watchdog-1.0.1-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b7284c64ab50e99f8fb52db151c25458",
+          "sha256": "e12c12df51b368cfaa02f0b93462078b517b8fc498d875a0d063503d6a4b047c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "b7284c64ab50e99f8fb52db151c25458",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72212,
+        "upload_time": "2020-12-18T21:36:09",
+        "upload_time_iso_8601": "2020-12-18T21:36:09.754594Z",
+        "url": "https://files.pythonhosted.org/packages/50/53/1289e901e74122ce8d391abab7223cdce791a1dcdde7481a329b36f803c8/watchdog-1.0.1-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "613eabad00b93887873c83902d168ca2",
+          "sha256": "73735161ca5c5853af25240bf9aa1edd18c51721bfc6b2c0d30d8fac7ea16a6b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "613eabad00b93887873c83902d168ca2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72209,
+        "upload_time": "2020-12-18T21:36:10",
+        "upload_time_iso_8601": "2020-12-18T21:36:10.945569Z",
+        "url": "https://files.pythonhosted.org/packages/b6/1a/5d4a2f5774737d3021835036d0319e740517b5528ec2518ab1d2deaf7263/watchdog-1.0.1-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ffa3115b0615e8224ae8661c927d5006",
+          "sha256": "78ea5d78f2cf8e4d6343ab2cbed93bb47b7a85b1c2f90a1dea365226bbab68ac"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ffa3115b0615e8224ae8661c927d5006",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 97900,
+        "upload_time": "2020-12-10T13:54:33",
+        "upload_time_iso_8601": "2020-12-10T13:54:33.668564Z",
+        "url": "https://files.pythonhosted.org/packages/e6/76/39d123d37908a772b6a281d85fbb4384d9db7e13d19d10ad409006bd2962/watchdog-1.0.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "db78b222569094b926b2df31f2d9fc3e",
+          "sha256": "e2a531e71be7b5cc3499ae2d1494d51b6a26684bcc7c3146f63c810c00e8a3cc"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "db78b222569094b926b2df31f2d9fc3e",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 80429,
+        "upload_time": "2020-12-18T11:15:26",
+        "upload_time_iso_8601": "2020-12-18T11:15:26.786939Z",
+        "url": "https://files.pythonhosted.org/packages/46/de/84ce3857a035fc09de17e3e72cab7f4eb654c9441cff1c7583a93ddfa40c/watchdog-1.0.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5e1f3f324525775ef22d119093b1d726",
+          "sha256": "e7c73edef48f4ceeebb987317a67e0080e5c9228601ff67b3c4062fa020403c7"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "5e1f3f324525775ef22d119093b1d726",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 80429,
+        "upload_time": "2020-12-18T11:15:28",
+        "upload_time_iso_8601": "2020-12-18T11:15:28.419357Z",
+        "url": "https://files.pythonhosted.org/packages/e9/d2/4bc41adb27a94fc53c769a8c9682cbb1c6e672e5578dab7596895ab8c79f/watchdog-1.0.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cc7687324654729c2dad943aa33f1c8a",
+          "sha256": "85e6574395aa6c1e14e0f030d9d7f35c2340a6cf95d5671354ce876ac3ffdd4d"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "cc7687324654729c2dad943aa33f1c8a",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 80487,
+        "upload_time": "2020-12-18T11:15:29",
+        "upload_time_iso_8601": "2020-12-18T11:15:29.878386Z",
+        "url": "https://files.pythonhosted.org/packages/ee/f3/4bd514f027cc6da32791ae121fe175d2210e545ea8d36586e5cad92b73ae/watchdog-1.0.2-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c054036a7b42cb69268c5130a71afffb",
+          "sha256": "27d9b4666938d5d40afdcdf2c751781e9ce36320788b70208d0f87f7401caf93"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "c054036a7b42cb69268c5130a71afffb",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 80486,
+        "upload_time": "2020-12-18T11:15:31",
+        "upload_time_iso_8601": "2020-12-18T11:15:31.520321Z",
+        "url": "https://files.pythonhosted.org/packages/ed/2a/ff2716d49e3953fd8afdb2ac2a0a1984fff6c6630c1236ccd35184843e10/watchdog-1.0.2-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "47153f8eb9e502e944a7341456a41bce",
+          "sha256": "2f1ade0d0802503fda4340374d333408831cff23da66d7e711e279ba50fe6c4a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "47153f8eb9e502e944a7341456a41bce",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 79808,
+        "upload_time": "2020-12-18T11:15:33",
+        "upload_time_iso_8601": "2020-12-18T11:15:33.059232Z",
+        "url": "https://files.pythonhosted.org/packages/31/62/10e977ed625f256d10ed36215c8db8a7b27069e1679d46b680bdc13566f6/watchdog-1.0.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "54f1c534c16f7df207a53cf8ba2ce06d",
+          "sha256": "f1d0e878fd69129d0d68b87cee5d9543f20d8018e82998efb79f7e412d42154a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "54f1c534c16f7df207a53cf8ba2ce06d",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 79809,
+        "upload_time": "2020-12-18T11:15:34",
+        "upload_time_iso_8601": "2020-12-18T11:15:34.519370Z",
+        "url": "https://files.pythonhosted.org/packages/f3/81/109d795cb00484f467f097ecf4048555f0fb6b8a808dda407d5f99cdaab1/watchdog-1.0.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e1e66305f0b396b5eac830fbca8dc5f9",
+          "sha256": "d948ad9ab9aba705f9836625b32e965b9ae607284811cd98334423f659ea537a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "e1e66305f0b396b5eac830fbca8dc5f9",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72571,
+        "upload_time": "2020-12-18T11:15:35",
+        "upload_time_iso_8601": "2020-12-18T11:15:35.788719Z",
+        "url": "https://files.pythonhosted.org/packages/73/9a/1597c678e18c8eec1a0a3b76514436bd51e100d9d6d76196b4d12d6422d7/watchdog-1.0.2-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d374804d49075fbadc2942edae972be3",
+          "sha256": "101532b8db506559e52a9b5d75a308729b3f68264d930670e6155c976d0e52a0"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "d374804d49075fbadc2942edae972be3",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72570,
+        "upload_time": "2020-12-18T11:15:37",
+        "upload_time_iso_8601": "2020-12-18T11:15:37.354614Z",
+        "url": "https://files.pythonhosted.org/packages/23/0c/5f86bc499e5b95e242f8841b7e4d5531816e5b7cef737bde1adea540ccd3/watchdog-1.0.2-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3bd96332f8557f67459c3026283dd050",
+          "sha256": "b1d723852ce90a14abf0ec0ca9e80689d9509ee4c9ee27163118d87b564a12ac"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "3bd96332f8557f67459c3026283dd050",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72568,
+        "upload_time": "2020-12-18T11:15:38",
+        "upload_time_iso_8601": "2020-12-18T11:15:38.563077Z",
+        "url": "https://files.pythonhosted.org/packages/66/f0/e94c49630cff54bc8fc15abe58bd8dd038de825681eea12d41c29dafc000/watchdog-1.0.2-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0a3e286202fb80de46be5a1e1f03544a",
+          "sha256": "602dbd9498592eacc42e0632c19781c3df1728ef9cbab555fab6778effc29eeb"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "0a3e286202fb80de46be5a1e1f03544a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72572,
+        "upload_time": "2020-12-18T11:15:41",
+        "upload_time_iso_8601": "2020-12-18T11:15:41.453079Z",
+        "url": "https://files.pythonhosted.org/packages/6a/a4/9ba99e93f58d34f8d215f648085e90c491cef802c44363c03f558c9026dc/watchdog-1.0.2-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "02b27f8c495578a9199bd300d5f97323",
+          "sha256": "68744de2003a5ea2dfbb104f9a74192cf381334a9e2c0ed2bbe1581828d50b61"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "02b27f8c495578a9199bd300d5f97323",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72568,
+        "upload_time": "2020-12-18T11:15:40",
+        "upload_time_iso_8601": "2020-12-18T11:15:40.065902Z",
+        "url": "https://files.pythonhosted.org/packages/43/ab/aeb7fb23e06306c5650cb9bacb8db49f9f5deebee3074729757734cb4585/watchdog-1.0.2-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1bf81b7f67022aade5599c99fc753894",
+          "sha256": "016b01495b9c55b5d4126ed8ae75d93ea0d99377084107c33162df52887cee18"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "1bf81b7f67022aade5599c99fc753894",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72569,
+        "upload_time": "2020-12-18T11:15:42",
+        "upload_time_iso_8601": "2020-12-18T11:15:42.848080Z",
+        "url": "https://files.pythonhosted.org/packages/7e/bf/4120ce3c66eabbd439deeae1fde3288486805800ed9575d5f53bfb8f5865/watchdog-1.0.2-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8a633d0d482aa410f2da674b4dd455be",
+          "sha256": "5f1f3b65142175366ba94c64d8d4c8f4015825e0beaacee1c301823266b47b9b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "8a633d0d482aa410f2da674b4dd455be",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72572,
+        "upload_time": "2020-12-18T11:15:44",
+        "upload_time_iso_8601": "2020-12-18T11:15:44.124349Z",
+        "url": "https://files.pythonhosted.org/packages/83/d9/3d1f46b428fd7b646725896b58d2eddb84f79fd76912773e6193cf74263d/watchdog-1.0.2-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2a9e135048132487c5904c82a19e59e2",
+          "sha256": "57f05e55aa603c3b053eed7e679f0a83873c540255b88d58c6223c7493833bac"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "2a9e135048132487c5904c82a19e59e2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72556,
+        "upload_time": "2020-12-18T11:15:45",
+        "upload_time_iso_8601": "2020-12-18T11:15:45.476376Z",
+        "url": "https://files.pythonhosted.org/packages/c7/2e/26058560e6836ae654af7a67069effd0f4942216c52b2960b593bf8f0ba1/watchdog-1.0.2-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5ffb495125b9a4946a7c37205af5c8b6",
+          "sha256": "f84146f7864339c8addf2c2b9903271df21d18d2c721e9a77f779493234a82b5"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "5ffb495125b9a4946a7c37205af5c8b6",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72559,
+        "upload_time": "2020-12-18T11:15:46",
+        "upload_time_iso_8601": "2020-12-18T11:15:46.961252Z",
+        "url": "https://files.pythonhosted.org/packages/b5/db/8b7c15e98bf54931a980e5430838fb35f3a5b112a0f4fb9609a07e80f949/watchdog-1.0.2-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8b066772b07ab24874cc731b2ead40c0",
+          "sha256": "ee21aeebe6b3e51e4ba64564c94cee8dbe7438b9cb60f0bb350c4fa70d1b52c2"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "8b066772b07ab24874cc731b2ead40c0",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 72557,
+        "upload_time": "2020-12-18T11:15:48",
+        "upload_time_iso_8601": "2020-12-18T11:15:48.235616Z",
+        "url": "https://files.pythonhosted.org/packages/b7/cb/8a592d3670c61a99d71544821458c2f9038bba427be8c1996d5490a5d9ec/watchdog-1.0.2-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "076a319ef10f6db3a709bfbf46ca6819",
+          "sha256": "376cbc2a35c0392b0fe7ff16fbc1b303fd99d4dd9911ab5581ee9d69adc88982"
+        },
+        "downloads": -1,
+        "filename": "watchdog-1.0.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "076a319ef10f6db3a709bfbf46ca6819",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 98483,
+        "upload_time": "2020-12-18T11:15:49",
+        "upload_time_iso_8601": "2020-12-18T11:15:49.816128Z",
+        "url": "https://files.pythonhosted.org/packages/5f/39/e9e2aa6f22983b682dda2daccd3151c706d3da66d989c78c038d6b94b962/watchdog-1.0.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.0.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "033698b981584e7fda21583dee1c88d5",
+          "sha256": "275305b701aa2157c21d48bbe0c29cc844f14ae3095e7352faa90d2664f5eb3c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "033698b981584e7fda21583dee1c88d5",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 82966,
+        "upload_time": "2021-02-11T09:52:20",
+        "upload_time_iso_8601": "2021-02-11T09:52:20.914795Z",
+        "url": "https://files.pythonhosted.org/packages/a4/1c/194c5bd473907d60512712a3691d47ae056bc25f16bb6967123d7c4be240/watchdog-2.0.0-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "bfc4d39b2ee451f12fbe71b6c6a65ba9",
+          "sha256": "7bda6200f409f5c5166cad6cdf122dc5988ee98d8b61f1d60e15386501bc52ce"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "bfc4d39b2ee451f12fbe71b6c6a65ba9",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 82958,
+        "upload_time": "2021-02-11T09:52:22",
+        "upload_time_iso_8601": "2021-02-11T09:52:22.483286Z",
+        "url": "https://files.pythonhosted.org/packages/dc/13/9d20c190396935e4ed6792180de3fe5eb7d485b00fd7b15592dfb6f3ab2e/watchdog-2.0.0-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a4058c1520be29d1ecdecfad3c43697f",
+          "sha256": "9a62a10ec580ca48751caa9f9346bdea0d652801b006a3856344f033bd1fe138"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "a4058c1520be29d1ecdecfad3c43697f",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 83024,
+        "upload_time": "2021-02-11T09:52:23",
+        "upload_time_iso_8601": "2021-02-11T09:52:23.559241Z",
+        "url": "https://files.pythonhosted.org/packages/2d/a4/58fea5906b0a865be73fe0034541a43282bb5a37c20e8897c9ebb5031ca6/watchdog-2.0.0-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f722baadf0fa9a11de91088126aebe54",
+          "sha256": "900995c9a4842f081e1ca06fde1df0e36304b34d2e1b59712c2618a4e7d25e98"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "f722baadf0fa9a11de91088126aebe54",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 83021,
+        "upload_time": "2021-02-11T09:52:24",
+        "upload_time_iso_8601": "2021-02-11T09:52:24.870737Z",
+        "url": "https://files.pythonhosted.org/packages/a2/b9/a78c7e46d11bb837cf6fc2c2776560eefe484c20f37022fef4daee519314/watchdog-2.0.0-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5429b9f47ad99861deed9e0f8540b8a1",
+          "sha256": "9371f7090cc7e648654b3cabe955f97105069c1b2a051158e4edd290ebfd4753"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "5429b9f47ad99861deed9e0f8540b8a1",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 82278,
+        "upload_time": "2021-02-11T09:52:26",
+        "upload_time_iso_8601": "2021-02-11T09:52:26.399749Z",
+        "url": "https://files.pythonhosted.org/packages/98/b1/c09b58b47d04ee2d2c85012163d0523ecf90cbc8c7eae4aeaf493d7c15c8/watchdog-2.0.0-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a626e335519566ffaf66e1923c3e64e1",
+          "sha256": "d28a933682d0a47d8d48e46ff9fb8b323e27cb33830d5aae9c4b9c59767b302c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "a626e335519566ffaf66e1923c3e64e1",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 82263,
+        "upload_time": "2021-02-11T09:52:27",
+        "upload_time_iso_8601": "2021-02-11T09:52:27.834096Z",
+        "url": "https://files.pythonhosted.org/packages/5b/7c/50e424487ccae902b5bb47a0f2b5600620901b388bf0e99689a94c523704/watchdog-2.0.0-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "12b9eceee0965b8f1ac7920e43276562",
+          "sha256": "fda5fc3586fc198c39d4a84ff04a785b95145ad8fc6538a8d8fe1fd37d67fdd7"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "12b9eceee0965b8f1ac7920e43276562",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74194,
+        "upload_time": "2021-02-11T09:52:29",
+        "upload_time_iso_8601": "2021-02-11T09:52:29.090278Z",
+        "url": "https://files.pythonhosted.org/packages/b9/60/ea0ca591f2fa8fe597584e82806a2278d48cbda2400fbb7aa5898e0278ef/watchdog-2.0.0-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "435e2b72bb8b0ae1df3d38bd9907b557",
+          "sha256": "bfa78c9f9a6371b0a61f3f0f3499a39118e0bf67e6d635837fc521f3fcb985a0"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "435e2b72bb8b0ae1df3d38bd9907b557",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74194,
+        "upload_time": "2021-02-11T09:52:30",
+        "upload_time_iso_8601": "2021-02-11T09:52:30.599149Z",
+        "url": "https://files.pythonhosted.org/packages/51/97/20b9645f57edba2cf850b10dc60ab1d447a711ad4f67624a87837626ce77/watchdog-2.0.0-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d03a9b45665f186e4af6fa2ad25876bd",
+          "sha256": "0e3a14d5927dfc8381a45618d8373734a182e9747086a2ed7b4ee8c55e393d61"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "d03a9b45665f186e4af6fa2ad25876bd",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74192,
+        "upload_time": "2021-02-11T09:52:31",
+        "upload_time_iso_8601": "2021-02-11T09:52:31.806284Z",
+        "url": "https://files.pythonhosted.org/packages/bf/2f/b2e49d3ef2ede2f74499d931a091452721aec7a623f7239ca124123a715b/watchdog-2.0.0-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "861ea2f911d0e73ce4fb76fdc660de83",
+          "sha256": "7cec8807a4f0c48fc7edbaf57c8feaf033841bde700e7e3f75f80a68ea607b3c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "861ea2f911d0e73ce4fb76fdc660de83",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74195,
+        "upload_time": "2021-02-11T09:52:34",
+        "upload_time_iso_8601": "2021-02-11T09:52:34.488213Z",
+        "url": "https://files.pythonhosted.org/packages/33/e0/909eb26336e327f38d907b8ed10274a0b0b224fd499a980398f17d49439b/watchdog-2.0.0-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c905cafd7f6336d210dceafc2a7796c3",
+          "sha256": "865891481224e83baa8bfa3cbf188ef346498caa161b8998ef80f4204db4a8f4"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "c905cafd7f6336d210dceafc2a7796c3",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74193,
+        "upload_time": "2021-02-11T09:52:33",
+        "upload_time_iso_8601": "2021-02-11T09:52:33.244508Z",
+        "url": "https://files.pythonhosted.org/packages/22/21/5f56b66a9bceaecda9dc831bf6edec4c8220d96072c1af1f251d7878a2da/watchdog-2.0.0-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "bebc739bf40e2435439b8ef23b6fe805",
+          "sha256": "1e4af875a9cb0323945a6f3640721cbd75e5fb55d4fe9a122306ed6e3e81cb87"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "bebc739bf40e2435439b8ef23b6fe805",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74191,
+        "upload_time": "2021-02-11T09:52:35",
+        "upload_time_iso_8601": "2021-02-11T09:52:35.551612Z",
+        "url": "https://files.pythonhosted.org/packages/77/6a/b1757e918b6f74b666ad9aaaf49d3c951e1dc477bced931c3524cc78b884/watchdog-2.0.0-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a1180ffc055a30f771c7e54f3c3ffc88",
+          "sha256": "f003a04c462720a03cb2332054a48a2453116b34145c1cd7287dccee0bb9eef4"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "a1180ffc055a30f771c7e54f3c3ffc88",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74195,
+        "upload_time": "2021-02-11T09:52:37",
+        "upload_time_iso_8601": "2021-02-11T09:52:37.401082Z",
+        "url": "https://files.pythonhosted.org/packages/aa/70/514ea72eb2a828eea1cfb2452f6fa9031c163928f60c2c9ad49ab7d816c1/watchdog-2.0.0-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8b24804d53609710b658df1b3398f388",
+          "sha256": "bce7e4caf491e753f3d554155e67fb2ae1aafeb8a5a11e8d2b3fcbe213dd3b55"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "8b24804d53609710b658df1b3398f388",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74179,
+        "upload_time": "2021-02-11T09:52:39",
+        "upload_time_iso_8601": "2021-02-11T09:52:39.050140Z",
+        "url": "https://files.pythonhosted.org/packages/25/99/f7c52925016d461c5af7557a398d7e6e330dcf41ad8fdcb6114a8d0fd221/watchdog-2.0.0-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "75f76d2fde15e58f87c80552947f823c",
+          "sha256": "218b1fc22c4b60a28b45a3c1894f82e03cd15ab82e983f50d7edab323ba4dbdd"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "75f76d2fde15e58f87c80552947f823c",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74183,
+        "upload_time": "2021-02-11T09:52:40",
+        "upload_time_iso_8601": "2021-02-11T09:52:40.544336Z",
+        "url": "https://files.pythonhosted.org/packages/e6/95/406fcb71d3cd5c46adf782f23fd620b503a79affda665105f20ad5d86610/watchdog-2.0.0-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0d51478eeb17ea60ccacd2c74b0fdb79",
+          "sha256": "a7b8811e6dd23864e21b5acbfce3b9d3d37f9e0d5815253902c17a6739b84ce7"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "0d51478eeb17ea60ccacd2c74b0fdb79",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74182,
+        "upload_time": "2021-02-11T09:52:41",
+        "upload_time_iso_8601": "2021-02-11T09:52:41.898507Z",
+        "url": "https://files.pythonhosted.org/packages/c7/87/2d33b7f81b7d69784d23b292d3e0a34d861e45a3dfbe34f63a6dad952671/watchdog-2.0.0-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f52ac7ffb5adc041ea5bdce4dc1d33f0",
+          "sha256": "fd4b56cfbe0d0d9c4fc431aceca75700a7f12d3737dc2e9cb2ec2ba649680425"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f52ac7ffb5adc041ea5bdce4dc1d33f0",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 102677,
+        "upload_time": "2021-02-11T09:52:43",
+        "upload_time_iso_8601": "2021-02-11T09:52:43.258826Z",
+        "url": "https://files.pythonhosted.org/packages/86/7a/08bc1b90df132d05aca2a1b60e6a8ab769e7afcda30ccd922e5d35fbbf99/watchdog-2.0.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.0.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "648481e79be9a19c16356dfea1f20eb2",
+          "sha256": "9fa5a0d741c308657c6d60de246943b5a02647fe2a697fff6e0f46ec926f1069"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "648481e79be9a19c16356dfea1f20eb2",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 83211,
+        "upload_time": "2021-02-17T15:56:32",
+        "upload_time_iso_8601": "2021-02-17T15:56:32.398789Z",
+        "url": "https://files.pythonhosted.org/packages/a9/f6/e098c9d1c68b8b1df0119c4de121d3122ad0e6a6737cd31115f3309a52a6/watchdog-2.0.1-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6dd79ef9e66e35c76f35f05838c58856",
+          "sha256": "eda07ba4c309dc7a04db6eb069626b94a047fedf5b4919c5739ac2f9535c851e"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "6dd79ef9e66e35c76f35f05838c58856",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 83194,
+        "upload_time": "2021-02-17T15:56:34",
+        "upload_time_iso_8601": "2021-02-17T15:56:34.270653Z",
+        "url": "https://files.pythonhosted.org/packages/06/57/605edbc5243fb9055cdb1738f955da2213afb13b692c65010a1b74f331a0/watchdog-2.0.1-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b45ecee0fde09a1f2ec6f67eeae50049",
+          "sha256": "3164d69f27daa43ecd2817346e7c4c97a8491138d53a1873cf37abb469ff7583"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "b45ecee0fde09a1f2ec6f67eeae50049",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 83260,
+        "upload_time": "2021-02-17T15:56:35",
+        "upload_time_iso_8601": "2021-02-17T15:56:35.487296Z",
+        "url": "https://files.pythonhosted.org/packages/8a/63/72e59a2378a2083e379db7740c3d259be564b35f037513f3373b5180370c/watchdog-2.0.1-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "60df62a02cbf21234dd121cbf19efedb",
+          "sha256": "916d8ccd2b9f0536efb0af18b1661cda02588a1cc5c6af9b972212aa1c883e68"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "60df62a02cbf21234dd121cbf19efedb",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 83258,
+        "upload_time": "2021-02-17T15:56:36",
+        "upload_time_iso_8601": "2021-02-17T15:56:36.823622Z",
+        "url": "https://files.pythonhosted.org/packages/c3/24/02252aca0b1bb77b11ccddba7f617dfc3dd74e2a1807272f67fc3b375485/watchdog-2.0.1-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "dcd90677d0c9dc271ffae52b66806fc8",
+          "sha256": "f1b8a0224cf2b599302ed06d1633d343a199345cab773e3a4cd7a1b0296589dd"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "dcd90677d0c9dc271ffae52b66806fc8",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 82545,
+        "upload_time": "2021-02-17T15:56:38",
+        "upload_time_iso_8601": "2021-02-17T15:56:38.025311Z",
+        "url": "https://files.pythonhosted.org/packages/ca/ac/eb7846ee8384a8d262052f4b9ea50dc6c974cea79fb5ab6cda0b48b1a030/watchdog-2.0.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "621fa2c38257eeb81eb04f8b4692468d",
+          "sha256": "bcab67402ac95f6e922f11078fc71d7bdcd631f0add8849033a50683b92c0e89"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "621fa2c38257eeb81eb04f8b4692468d",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 82509,
+        "upload_time": "2021-02-17T15:56:39",
+        "upload_time_iso_8601": "2021-02-17T15:56:39.358752Z",
+        "url": "https://files.pythonhosted.org/packages/1b/66/a06bc069c117f1d8ca8a69902b1a5b073fa3a7e799ac06ab6400764d20e6/watchdog-2.0.1-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "59e5315a684ffee3a034485d131d74b5",
+          "sha256": "218c0d9be3b5b17080133332645f3323483d648ea518d1e241a3bf66247cb357"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "59e5315a684ffee3a034485d131d74b5",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74306,
+        "upload_time": "2021-02-17T15:56:41",
+        "upload_time_iso_8601": "2021-02-17T15:56:41.002461Z",
+        "url": "https://files.pythonhosted.org/packages/e1/70/a07c6b2820d672106f400d421db5cebbd094376b56c28f8ef363878a184f/watchdog-2.0.1-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1c461554e83375dfa31ce4a278252ec1",
+          "sha256": "38b257718c8b31ee5e4693f87691de550b4340b2890c46fda0ddf7ac21b74f50"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "1c461554e83375dfa31ce4a278252ec1",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74304,
+        "upload_time": "2021-02-17T15:56:42",
+        "upload_time_iso_8601": "2021-02-17T15:56:42.217335Z",
+        "url": "https://files.pythonhosted.org/packages/b2/8f/a547ceb265ba0a26ecfe88d14b92d03b5f96f561e7565a3f148c48d2e84a/watchdog-2.0.1-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fc5cedbe5bae41a0e13d68bbdb38121c",
+          "sha256": "c89f388c06ef189e8656fd5a5b333da3c5a2984a959e29ef2e80f8b4422b9574"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "fc5cedbe5bae41a0e13d68bbdb38121c",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74300,
+        "upload_time": "2021-02-17T15:56:43",
+        "upload_time_iso_8601": "2021-02-17T15:56:43.393989Z",
+        "url": "https://files.pythonhosted.org/packages/95/22/c2c4cae463929466615fba9e9e0932e08e16029ec33ac428675318873279/watchdog-2.0.1-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fe9a950e4b2523abc9dcc687bbb39d97",
+          "sha256": "075352d18f4dd071a2a6c4ca8791437f231746264b6f57eee02d6bd2c22714a3"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "fe9a950e4b2523abc9dcc687bbb39d97",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74307,
+        "upload_time": "2021-02-17T15:56:46",
+        "upload_time_iso_8601": "2021-02-17T15:56:46.343797Z",
+        "url": "https://files.pythonhosted.org/packages/39/3c/63a8cb0660c23de28e4725dc910fddb3faff7668dd0e12c1c6f2e52704b0/watchdog-2.0.1-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cd6f110e0cb12ce5937f905604e79486",
+          "sha256": "9e167710ed335762eb39954dd22aa313fd625d1ec7372deb3782332d1d5522f3"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "cd6f110e0cb12ce5937f905604e79486",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74303,
+        "upload_time": "2021-02-17T15:56:45",
+        "upload_time_iso_8601": "2021-02-17T15:56:45.086799Z",
+        "url": "https://files.pythonhosted.org/packages/49/fc/a765f4820462666839c81965527685780a37d8869ae6f6a931c26caa989b/watchdog-2.0.1-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "640fbc2dd100ba00b88ea6f02916ae61",
+          "sha256": "e7a0cba4546683496fa2e4759b39a1a4b6e2c250e7be15b73035500c9f2bfa28"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "640fbc2dd100ba00b88ea6f02916ae61",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74304,
+        "upload_time": "2021-02-17T15:56:47",
+        "upload_time_iso_8601": "2021-02-17T15:56:47.394862Z",
+        "url": "https://files.pythonhosted.org/packages/a0/02/51002f10fe8d4344204aa0539bec0decabb02a748f53472b7a3f4b5e82ea/watchdog-2.0.1-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fac7a4e06f62fad31e5234391148860f",
+          "sha256": "69099f4940e63d34b341979d077777b9b8c63c916a3c239f21916ef21f459400"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "fac7a4e06f62fad31e5234391148860f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74306,
+        "upload_time": "2021-02-17T15:56:48",
+        "upload_time_iso_8601": "2021-02-17T15:56:48.802279Z",
+        "url": "https://files.pythonhosted.org/packages/f8/29/21ce5a06261a729e9336fa86dc52625dfcecf9b07151be2c92436863943a/watchdog-2.0.1-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e769218712e6d70bfca29c9ef66c3347",
+          "sha256": "2a786da9cba25029cc6c0190eb8c3c9bd8e67cfe23e339b2add4f1bb4a4a6bcd"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "e769218712e6d70bfca29c9ef66c3347",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74288,
+        "upload_time": "2021-02-17T15:56:50",
+        "upload_time_iso_8601": "2021-02-17T15:56:50.227034Z",
+        "url": "https://files.pythonhosted.org/packages/a5/6e/b797536bfc171bb9908977cbb26f51fdb46e153eecf0a35ef3f7cb8c0ed3/watchdog-2.0.1-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ca47f9caa94c2e0bcfc4a893d515331a",
+          "sha256": "83249804d3f49f45de80a39494f21dd83c22e5cdccc6024edf557ae8461e25b7"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "ca47f9caa94c2e0bcfc4a893d515331a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74293,
+        "upload_time": "2021-02-17T15:56:51",
+        "upload_time_iso_8601": "2021-02-17T15:56:51.685593Z",
+        "url": "https://files.pythonhosted.org/packages/60/d4/85f30d2d7740927fcc9eea9111c3cb0cc92997c264dd05f8ecd4ff1842e7/watchdog-2.0.1-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c1742c458e23bf0c1f5cbe24068ccd79",
+          "sha256": "54c44620c1b377af4faa0fc594723905b21b0fc3b2bcee417084889c2187f2a1"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "c1742c458e23bf0c1f5cbe24068ccd79",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74294,
+        "upload_time": "2021-02-17T15:56:52",
+        "upload_time_iso_8601": "2021-02-17T15:56:52.945481Z",
+        "url": "https://files.pythonhosted.org/packages/63/a8/52f8a9bafa74eb08dd0511cda855d9fc9248d6dee19c7faae7f7efdcd727/watchdog-2.0.1-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3ac0c15aef06d617e47939302e60589b",
+          "sha256": "0d1c763652c255e2af00d76cf7d05c7b4867e960092b2696db031f69661c0785"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "3ac0c15aef06d617e47939302e60589b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 103097,
+        "upload_time": "2021-02-17T15:56:54",
+        "upload_time_iso_8601": "2021-02-17T15:56:54.201084Z",
+        "url": "https://files.pythonhosted.org/packages/3e/25/73bc1b9a45686d304848cdc59741e357df7af8858a116c478c0a3eb8c4a7/watchdog-2.0.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.0.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d23937f9897e651d92734461865edd33",
+          "sha256": "1f518a6940cde8720b8826a705c164e6b9bd6cf8c00f14269ffac51e017e06ec"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "d23937f9897e651d92734461865edd33",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 83445,
+        "upload_time": "2021-02-22T13:51:48",
+        "upload_time_iso_8601": "2021-02-22T13:51:48.289348Z",
+        "url": "https://files.pythonhosted.org/packages/9f/e2/8418ffb9715af34ee604debf94e9e539c5200938c1ae0092716a8712bfb4/watchdog-2.0.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2f0fc4e20557a01063113430719d1900",
+          "sha256": "74528772516228f6a015a647027057939ff0b695a0b864cb3037e8e1aabc7ca0"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "2f0fc4e20557a01063113430719d1900",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 83413,
+        "upload_time": "2021-02-22T13:51:49",
+        "upload_time_iso_8601": "2021-02-22T13:51:49.876005Z",
+        "url": "https://files.pythonhosted.org/packages/09/c5/5293b633d8313f8bc9bc7cec95c31f1041eeb91a8d4a6b7fefc7e85eb6ad/watchdog-2.0.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fec623485213af807163f0fac59bceee",
+          "sha256": "1cd715c4fb803581ded8943f39a51f21c17375d009ca9e3398d6b20638863a70"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "fec623485213af807163f0fac59bceee",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 83452,
+        "upload_time": "2021-02-22T13:51:50",
+        "upload_time_iso_8601": "2021-02-22T13:51:50.924428Z",
+        "url": "https://files.pythonhosted.org/packages/45/89/398773a77560d9a89e8d4f4425dfd44e0728e49098628911ed14d5b6b3f1/watchdog-2.0.2-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "41ed32ee7a1981b8ea8338d8a993e35e",
+          "sha256": "41b1a773f364f232b5bc184688e8d60451745d9e0971ac60c648bd47be8f4733"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "41ed32ee7a1981b8ea8338d8a993e35e",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 83448,
+        "upload_time": "2021-02-22T13:51:52",
+        "upload_time_iso_8601": "2021-02-22T13:51:52.002645Z",
+        "url": "https://files.pythonhosted.org/packages/7a/a5/87f76bed647e5f3f07d67f058123466ccb641483a9661f3bac78c0995a96/watchdog-2.0.2-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "28a5e5668d8b9198060b613fe030b9da",
+          "sha256": "035f4816daf3c62e03503c267620f3aa8fc7472df85ff3ef1e0c100ea1ed2744"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "28a5e5668d8b9198060b613fe030b9da",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 82752,
+        "upload_time": "2021-02-22T13:51:53",
+        "upload_time_iso_8601": "2021-02-22T13:51:53.442870Z",
+        "url": "https://files.pythonhosted.org/packages/47/3b/d6a5df140b3083ecdf2161733c69bcdb4e3b371a62456a6da44dd7a5b599/watchdog-2.0.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "45ffdc717eeee531d05293e601060416",
+          "sha256": "e0114e48ee981b38e328eaa0d5a625c7b4fc144b8dc7f7637749d6b5f7fefb0e"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "45ffdc717eeee531d05293e601060416",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 82723,
+        "upload_time": "2021-02-22T13:51:54",
+        "upload_time_iso_8601": "2021-02-22T13:51:54.865084Z",
+        "url": "https://files.pythonhosted.org/packages/a8/93/d9d383839c9a62d041f84e71e5045eaeb071de2b3a47d12f79c617f1e9c7/watchdog-2.0.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fa6351b6bd0e1277c22b2a8d757655e2",
+          "sha256": "d2fcbc15772a82cd139c803a513c45b0fbc72a10a8a34dc2a8b429110b6f1236"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "fa6351b6bd0e1277c22b2a8d757655e2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74352,
+        "upload_time": "2021-02-22T13:51:56",
+        "upload_time_iso_8601": "2021-02-22T13:51:56.213729Z",
+        "url": "https://files.pythonhosted.org/packages/c1/5e/30ede247e8aaf6faabefbbdd9051ff4352d2bf945acccc91e8d1d588135b/watchdog-2.0.2-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c8ae7b18ce07511b20231cbeb6c3042e",
+          "sha256": "adda34bfe6db05485c1dfcd98232bdec385f991fe16358750c2163473eefb985"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "c8ae7b18ce07511b20231cbeb6c3042e",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74350,
+        "upload_time": "2021-02-22T13:51:57",
+        "upload_time_iso_8601": "2021-02-22T13:51:57.586774Z",
+        "url": "https://files.pythonhosted.org/packages/77/68/77c9699c82a7513784d8045323320f8ace1aa6210ad3e92db104d0c2af69/watchdog-2.0.2-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "90db92a45be08b8a8acff9020dff9657",
+          "sha256": "a412b1914e27f67b0a10e1ee19b5d035a9f7c115a062bbbd640653d9820ba4c8"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "90db92a45be08b8a8acff9020dff9657",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74349,
+        "upload_time": "2021-02-22T13:51:59",
+        "upload_time_iso_8601": "2021-02-22T13:51:59.384501Z",
+        "url": "https://files.pythonhosted.org/packages/e2/8e/646d9cb4e1ab8ba17b98bf06f23b3f2ec5cc325acc8f629f56de895d2754/watchdog-2.0.2-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "52c8ce98111a7b025bfdfa205a20468a",
+          "sha256": "3e933f3567c4521dd1a5d59fd54a522cae90bebcbeb8b74b84a2f33c90f08388"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "52c8ce98111a7b025bfdfa205a20468a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74353,
+        "upload_time": "2021-02-22T13:52:01",
+        "upload_time_iso_8601": "2021-02-22T13:52:01.725584Z",
+        "url": "https://files.pythonhosted.org/packages/0b/46/b7e77e354622e80bef986208dbc48db68d22f99b8af1608e0d823ed0416d/watchdog-2.0.2-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0c124b676302bbcc7d8f690056c0bfb8",
+          "sha256": "89102465764e453609463cf620e744da1b0aa1f9f321b05961e2e7e15b3c9d8b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "0c124b676302bbcc7d8f690056c0bfb8",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74351,
+        "upload_time": "2021-02-22T13:52:00",
+        "upload_time_iso_8601": "2021-02-22T13:52:00.445379Z",
+        "url": "https://files.pythonhosted.org/packages/fa/c7/73c941fd626b6620ef92139fa37dc7a9547283869b3ac5770fd3316bd648/watchdog-2.0.2-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "96e5563774d5f0cc54e78626ddccac63",
+          "sha256": "19675b8d1f00dabe74a0e66d87980623250d9360a21612e8c27b70a4b214ceeb"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "96e5563774d5f0cc54e78626ddccac63",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74351,
+        "upload_time": "2021-02-22T13:52:02",
+        "upload_time_iso_8601": "2021-02-22T13:52:02.805196Z",
+        "url": "https://files.pythonhosted.org/packages/37/0d/67efd5dc6f3edc77e4cc973ab82c7fc1867fc67b1b388f03a28c2b525b55/watchdog-2.0.2-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4a943129421d40425bc67b24542dec57",
+          "sha256": "d54e187b76053982180532cb7fd31152201c438b348c456f699929f8a89e786d"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "4a943129421d40425bc67b24542dec57",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74351,
+        "upload_time": "2021-02-22T13:52:03",
+        "upload_time_iso_8601": "2021-02-22T13:52:03.946444Z",
+        "url": "https://files.pythonhosted.org/packages/c6/ba/a36ca5b4e75649a002f06531862467b3eb5c768caa23d6d88b921fe238d8/watchdog-2.0.2-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cd521203bfb44a8a4bcffa02979f45ca",
+          "sha256": "13c9ff58508dce55ba416eb0ef7af5aa5858558f2ec51112f099fd03503b670b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "cd521203bfb44a8a4bcffa02979f45ca",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74339,
+        "upload_time": "2021-02-22T13:52:05",
+        "upload_time_iso_8601": "2021-02-22T13:52:05.490807Z",
+        "url": "https://files.pythonhosted.org/packages/51/3c/7b61bc207c223a01e24cc0d9c6e921e984d2ecf3d57350c8ba195533dc25/watchdog-2.0.2-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "729b94a564feed6754602983dea825e9",
+          "sha256": "0f7e9de9ba84af15e9e9fc29c3b13c972daa4d2b11de29aa86b26a26bc877c06"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "729b94a564feed6754602983dea825e9",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74342,
+        "upload_time": "2021-02-22T13:52:06",
+        "upload_time_iso_8601": "2021-02-22T13:52:06.784548Z",
+        "url": "https://files.pythonhosted.org/packages/6c/6c/f833b19a2ad0a6abd79b970516f2033d46d7f82a54de0ecd4e1399494ba2/watchdog-2.0.2-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "21ff518da284e8d15d60232f60bd58f1",
+          "sha256": "ac6adbdf32e1d180574f9d0819e80259ae48e68727e80c3d950ed5a023714c3e"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "21ff518da284e8d15d60232f60bd58f1",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74340,
+        "upload_time": "2021-02-22T13:52:07",
+        "upload_time_iso_8601": "2021-02-22T13:52:07.850165Z",
+        "url": "https://files.pythonhosted.org/packages/8b/3b/b48580990b670b386caf3837eaab83b445e74d2df58c0505193d42dd03f0/watchdog-2.0.2-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a0ec29731f1c35fb4e9acbc96c8f697d",
+          "sha256": "532fedd993e75554671faa36cd04c580ced3fae084254a779afbbd8aaf00566b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "a0ec29731f1c35fb4e9acbc96c8f697d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 103488,
+        "upload_time": "2021-02-22T13:52:09",
+        "upload_time_iso_8601": "2021-02-22T13:52:09.056394Z",
+        "url": "https://files.pythonhosted.org/packages/17/8c/fe6b8554e6a107437375ea6f76c62fbb0deb22288c2eb846c2f92b0d843e/watchdog-2.0.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.0.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ac1af6c45bebfeaae852e267811c13a1",
+          "sha256": "9fe3ea15f9020aa7f129f700341850ee768730c67e89d8256c224c4f26c86670"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "ac1af6c45bebfeaae852e267811c13a1",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 83504,
+        "upload_time": "2021-04-22T17:57:30",
+        "upload_time_iso_8601": "2021-04-22T17:57:30.499742Z",
+        "url": "https://files.pythonhosted.org/packages/45/a4/475f856d9721c0d6cfbf61347f502b10add3c4740d42af8944c0ead748ea/watchdog-2.0.3-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8561eb5be03fe099721be97d13e22a07",
+          "sha256": "0ba2c2526dc81a241e3b0f018a447a5ca634fa1f01fc5fa2a07c87ee04d730a7"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "8561eb5be03fe099721be97d13e22a07",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 83473,
+        "upload_time": "2021-04-22T17:57:32",
+        "upload_time_iso_8601": "2021-04-22T17:57:32.130026Z",
+        "url": "https://files.pythonhosted.org/packages/bf/75/0fc29879b5c7e292dd60dcc71a87a0f6515c7cce6c21e9276875977651fc/watchdog-2.0.3-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "858c15d0d2925a045f4499092755950c",
+          "sha256": "a679d03f52a9e3ea3efb77b459e9eba05c7c687f48e4d17ce20bc0e36f867d9a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "858c15d0d2925a045f4499092755950c",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 83511,
+        "upload_time": "2021-04-22T17:57:33",
+        "upload_time_iso_8601": "2021-04-22T17:57:33.709861Z",
+        "url": "https://files.pythonhosted.org/packages/f7/a3/0450ad38e78a72a88da4342d5bcba348a1ed76dc7e8ab252aa552b2c7cb1/watchdog-2.0.3-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3409466c08b135bda271c00bd157c042",
+          "sha256": "1583ee70d78226d897cbc85cfd5b88108340450e0214a704a4919443434d3c32"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "3409466c08b135bda271c00bd157c042",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 83509,
+        "upload_time": "2021-04-22T17:57:35",
+        "upload_time_iso_8601": "2021-04-22T17:57:35.294580Z",
+        "url": "https://files.pythonhosted.org/packages/60/aa/6d11f53a12ba1b30f6f9194ac33b86a271c983263f85e557a090b692ff7e/watchdog-2.0.3-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "bd9df326846afc31a125aa1d8317afea",
+          "sha256": "b8727f84a3c7dd21138d92186181d015af45168e0af895ffdc553a28019494ef"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "bd9df326846afc31a125aa1d8317afea",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 82813,
+        "upload_time": "2021-04-22T17:57:36",
+        "upload_time_iso_8601": "2021-04-22T17:57:36.717230Z",
+        "url": "https://files.pythonhosted.org/packages/7c/03/ebfd2525388792b6b1fd03a5c64def4b3ccb9a252836808cccbe28d6bcc6/watchdog-2.0.3-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "61e5649f9bb7cceef3e4a96fe7c42476",
+          "sha256": "51ad0342ecb4733796e94980f2430b2333e12ead973d3e18f5514cd77a24fa85"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "61e5649f9bb7cceef3e4a96fe7c42476",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 82785,
+        "upload_time": "2021-04-22T17:57:38",
+        "upload_time_iso_8601": "2021-04-22T17:57:38.241837Z",
+        "url": "https://files.pythonhosted.org/packages/fe/2d/34c0417e27652f8869dc4004dc0dde4c5b43d6245734c0f4bd39f35dd00b/watchdog-2.0.3-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "813a8f55d72eabef716492d25d5b95d3",
+          "sha256": "7fea9428ab2cd577d7dc571036b2450361802c43d7a546e72eead95c21239c9a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "813a8f55d72eabef716492d25d5b95d3",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74407,
+        "upload_time": "2021-04-22T17:57:39",
+        "upload_time_iso_8601": "2021-04-22T17:57:39.489878Z",
+        "url": "https://files.pythonhosted.org/packages/2b/7d/0da9d7745fc9e68efd2b563a6f6b39749cf886163e32c60ab0025a1d3ebe/watchdog-2.0.3-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "041547b905ce2036d5596428807f92cc",
+          "sha256": "819d7e77594aa3108f9ad9e896b003914ec778fdf9827d9f940ca5e6db5416ce"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "041547b905ce2036d5596428807f92cc",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74406,
+        "upload_time": "2021-04-22T17:57:41",
+        "upload_time_iso_8601": "2021-04-22T17:57:41.114950Z",
+        "url": "https://files.pythonhosted.org/packages/f0/7a/c9aabf79ed11d22115337469fcbe72c3fd039c771d9b5d491996c6fdd698/watchdog-2.0.3-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "977e25dc0c006947d24a90678dcaf217",
+          "sha256": "be4c578fa148a9cbc64451a3af26c4ee55d59c33f5438bcffc1956092df0888b"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "977e25dc0c006947d24a90678dcaf217",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74405,
+        "upload_time": "2021-04-22T17:57:42",
+        "upload_time_iso_8601": "2021-04-22T17:57:42.627991Z",
+        "url": "https://files.pythonhosted.org/packages/4e/c0/5b0a8dbdc0e925ea3b6e36d1152e3c25b847aa794fbb8f00d2ca41c7352f/watchdog-2.0.3-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "07d4fa7282ed51f2594c82445ded65d7",
+          "sha256": "3bf9132a6c609ca9fa96df3e8309acaee930b1faf46212d7c296f2bce03f5264"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "07d4fa7282ed51f2594c82445ded65d7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74408,
+        "upload_time": "2021-04-22T17:57:45",
+        "upload_time_iso_8601": "2021-04-22T17:57:45.327063Z",
+        "url": "https://files.pythonhosted.org/packages/13/89/2272613b66a8919d371cc14939169e006e40ea61f70bfddb47f9a607e917/watchdog-2.0.3-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "88a37de4db18b9cef42042d1f3217a19",
+          "sha256": "4607156004c36c1cbd8b693b9516a3463646159299404e007cc292f51934c930"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "88a37de4db18b9cef42042d1f3217a19",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74406,
+        "upload_time": "2021-04-22T17:57:43",
+        "upload_time_iso_8601": "2021-04-22T17:57:43.885643Z",
+        "url": "https://files.pythonhosted.org/packages/70/bc/39fc4a3fec3fc1faeda104ea810e123d703838a37187a61db73dee20ada2/watchdog-2.0.3-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ea9dbd4d2e17b63f1877edeacfc1d106",
+          "sha256": "a06e595e05cc31a882031367e0f6c2b19160b1d7e881857c16121e3cda32494d"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "ea9dbd4d2e17b63f1877edeacfc1d106",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74407,
+        "upload_time": "2021-04-22T17:57:46",
+        "upload_time_iso_8601": "2021-04-22T17:57:46.650882Z",
+        "url": "https://files.pythonhosted.org/packages/f1/2a/200cb905c3ce1cac5d840c1a32ac2e7799c6f32b13ae5da597a692b5b4b9/watchdog-2.0.3-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ef20bba06c0a25ea8cc112e5b5752101",
+          "sha256": "8e82707878e3defc46e8a4d861cde0c89561fba8a91b3609742213fa9d07fc16"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "ef20bba06c0a25ea8cc112e5b5752101",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74407,
+        "upload_time": "2021-04-22T17:57:48",
+        "upload_time_iso_8601": "2021-04-22T17:57:48.151057Z",
+        "url": "https://files.pythonhosted.org/packages/d2/b2/b4ebe23174fd00ec94ac3f58ebf85f1090c49858feab1ca62ed7ea4d2f2f/watchdog-2.0.3-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fe2a7c6fee68f05359123be6be96ec1f",
+          "sha256": "b565838318e134e41d78f056194dff6bbd7b85fef67f9ee6f01168146bf04048"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "fe2a7c6fee68f05359123be6be96ec1f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74392,
+        "upload_time": "2021-04-22T17:57:49",
+        "upload_time_iso_8601": "2021-04-22T17:57:49.678777Z",
+        "url": "https://files.pythonhosted.org/packages/4a/92/cf54c54ddffc119c21123e999536617ec851497df86f6a4dcd495c572ba2/watchdog-2.0.3-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0a1e49dd6f16beb483db6cd064f7123f",
+          "sha256": "6b760cf207bf4d533155853904047e75eb3a2d629bfd320c3f4f8d07abbc38d5"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "0a1e49dd6f16beb483db6cd064f7123f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74395,
+        "upload_time": "2021-04-22T17:57:51",
+        "upload_time_iso_8601": "2021-04-22T17:57:51.176223Z",
+        "url": "https://files.pythonhosted.org/packages/67/27/291164d81a139bc2011b1a9e1c5eaaad430bbeafc4d803e81f99cff3a9a4/watchdog-2.0.3-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0628d149b55f3bb6dd333317f2ea1fd4",
+          "sha256": "c678b51fb89c76816004c8234ac827977c23912c3826e263adbfb5dbe161e8dc"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "0628d149b55f3bb6dd333317f2ea1fd4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74394,
+        "upload_time": "2021-04-22T17:57:52",
+        "upload_time_iso_8601": "2021-04-22T17:57:52.532178Z",
+        "url": "https://files.pythonhosted.org/packages/b9/d5/9e55e1043695a27dfe471bf079f20e0ec9106c91e45a6ca4bb1c4d0a2156/watchdog-2.0.3-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0f649d0f25b4d9c12f1284e02589dae1",
+          "sha256": "4288d3a984324db492e57aa169666238a2578f0af5a081685526608fb9f6bd61"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.0.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "0f649d0f25b4d9c12f1284e02589dae1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 103697,
+        "upload_time": "2021-04-22T17:57:53",
+        "upload_time_iso_8601": "2021-04-22T17:57:53.889824Z",
+        "url": "https://files.pythonhosted.org/packages/b6/d7/376ab811330f118e5dfc105c7e883d2d238ba22d61ddc91186f4721456ef/watchdog-2.0.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.1.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7ddd9e61384f5fd4267ac418a7bed36d",
+          "sha256": "af1d42ac65bf3f851d787e723a950d9c878c4ef0ff3381a2196d36b0c4b6d39c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "7ddd9e61384f5fd4267ac418a7bed36d",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 83704,
+        "upload_time": "2021-05-04T12:57:19",
+        "upload_time_iso_8601": "2021-05-04T12:57:19.599815Z",
+        "url": "https://files.pythonhosted.org/packages/0d/6a/31d3128cd9ab3529b7db2702bd3177bfcf07f75331e9dd51b7fa74f757d3/watchdog-2.1.0-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "041178de871cad30e8798f3f337dad90",
+          "sha256": "8a75022cacbd0ad66ab8a9059322a76a43164ea020b373cbc28ddbacf9410b14"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "041178de871cad30e8798f3f337dad90",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 83673,
+        "upload_time": "2021-05-04T12:57:21",
+        "upload_time_iso_8601": "2021-05-04T12:57:21.571087Z",
+        "url": "https://files.pythonhosted.org/packages/07/85/f48d52eb07dfb9ee120e716030ab0664787c502d07519cbb3771e24e6f0e/watchdog-2.1.0-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6c65256190b6ae618b90bedf6eda5d85",
+          "sha256": "37bf90ef22b666fb0b5c1ea4375c9cbf43f1ff72489a91bf6f0370ba13e09b2a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "6c65256190b6ae618b90bedf6eda5d85",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 83707,
+        "upload_time": "2021-05-04T12:57:22",
+        "upload_time_iso_8601": "2021-05-04T12:57:22.967287Z",
+        "url": "https://files.pythonhosted.org/packages/dd/96/20fd3827297f129858c5c26cd6cd5c272383fdecc77c79c3e6b9202bd856/watchdog-2.1.0-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "727a7fbb13b085d37c1ad271f4581421",
+          "sha256": "66193c811498ff539d0312091bdcbd98cce03b5425b8fa918c80f21a278e8358"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "727a7fbb13b085d37c1ad271f4581421",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 83704,
+        "upload_time": "2021-05-04T12:57:24",
+        "upload_time_iso_8601": "2021-05-04T12:57:24.677939Z",
+        "url": "https://files.pythonhosted.org/packages/49/00/40b5d5fe4bc288162ae8dbbcc76dbb5c63d587d1f1f0fcb8cb499b7be136/watchdog-2.1.0-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "702891b435207c13d483f845b3d50a75",
+          "sha256": "5472ee2d23eaedf16c4b5088897cd9f50cd502074f508011180466d678cdf62a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "702891b435207c13d483f845b3d50a75",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 83013,
+        "upload_time": "2021-05-04T12:57:26",
+        "upload_time_iso_8601": "2021-05-04T12:57:26.376611Z",
+        "url": "https://files.pythonhosted.org/packages/c5/c9/e1cc9bb4234f3e2335ce85d7c356a4b03dbc679ab3509913057b7f671d2d/watchdog-2.1.0-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2a94a5cac8e7135eb53ab059708f2277",
+          "sha256": "a079aceede99b83a4cf4089f6e2243c864f368b60f4cce7bf46286f3cfcc8947"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "2a94a5cac8e7135eb53ab059708f2277",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 82980,
+        "upload_time": "2021-05-04T12:57:27",
+        "upload_time_iso_8601": "2021-05-04T12:57:27.690784Z",
+        "url": "https://files.pythonhosted.org/packages/15/8d/88ae8bfbded21628688ff741b0c2a0b5498243bd75ea1ec5bace3edd12b7/watchdog-2.1.0-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7b233903c6445d551dd399b98696e148",
+          "sha256": "da1ca0845bbc92606b08a08988d8dbcba514a16c209be29d211b13cf0d5be2fd"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "7b233903c6445d551dd399b98696e148",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74607,
+        "upload_time": "2021-05-04T12:57:28",
+        "upload_time_iso_8601": "2021-05-04T12:57:28.852866Z",
+        "url": "https://files.pythonhosted.org/packages/35/af/8ff091d25814da7bed332c3a78c327369ce427549b6ad38f165f94e131bd/watchdog-2.1.0-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4e89cd92f9e90a14dd479da037caf168",
+          "sha256": "5a62491c035646130c290a4cb773d7de103ac0202ac8305404bdb7db17ab5c3f"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "4e89cd92f9e90a14dd479da037caf168",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74603,
+        "upload_time": "2021-05-04T12:57:30",
+        "upload_time_iso_8601": "2021-05-04T12:57:30.296295Z",
+        "url": "https://files.pythonhosted.org/packages/d2/73/8bb2d7a2ca169bd22219947a71d1bb701a3708d19f3bc92a9abdf409ad51/watchdog-2.1.0-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f7ca65a1580f684b23ce31fd499a583b",
+          "sha256": "8c8ff287308a2ba5148aa450d742198d838636b65de52edd3eccfa4c86bf8004"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "f7ca65a1580f684b23ce31fd499a583b",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74604,
+        "upload_time": "2021-05-04T12:57:32",
+        "upload_time_iso_8601": "2021-05-04T12:57:32.111346Z",
+        "url": "https://files.pythonhosted.org/packages/57/a6/a29f2b3f79dc09dabc62c964b7c371735f4a264e28f409fa99b00601c8c7/watchdog-2.1.0-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5a68fbdef30744e44ed45acd63947f2d",
+          "sha256": "8ab111b71fba4f8f77baa39d42bf923d085f64869396497518c43297fe1ec4e7"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "5a68fbdef30744e44ed45acd63947f2d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74608,
+        "upload_time": "2021-05-04T12:57:34",
+        "upload_time_iso_8601": "2021-05-04T12:57:34.761980Z",
+        "url": "https://files.pythonhosted.org/packages/78/03/6d0f9de4648d0bcd1c21fee854404ae8ad9582844067a337ef9204873d8a/watchdog-2.1.0-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d36fbe1d386b3bd87d634b81cbbfce62",
+          "sha256": "05544fdd1cdc00b5231fb564f17428c5d502756419008cb8045be5b297eac21c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "d36fbe1d386b3bd87d634b81cbbfce62",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74606,
+        "upload_time": "2021-05-04T12:57:33",
+        "upload_time_iso_8601": "2021-05-04T12:57:33.295058Z",
+        "url": "https://files.pythonhosted.org/packages/01/9c/30d488cb76291a643fb9b6b4294634c17e4fea7de638fd66b0ea8b1aeadc/watchdog-2.1.0-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f7305ef61524f2d5309d15e1c1050c2c",
+          "sha256": "06ee7b77a8169f9828f8d24fc3d3d99b2216e1d2f7085b5913022a55161da758"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "f7305ef61524f2d5309d15e1c1050c2c",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74606,
+        "upload_time": "2021-05-04T12:57:35",
+        "upload_time_iso_8601": "2021-05-04T12:57:35.939988Z",
+        "url": "https://files.pythonhosted.org/packages/e6/e5/57c802ebeadfb0bd483d76aaf59595ebf8916f63147b5423f4c4a5ba9b1c/watchdog-2.1.0-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f08595622bd1bb107d7a95e1bdb256b9",
+          "sha256": "c2d37a9df96d8f9ea560c0824f179168d8501f3e614b5e9f2168b38fe6ef3c12"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "f08595622bd1bb107d7a95e1bdb256b9",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74604,
+        "upload_time": "2021-05-04T12:57:37",
+        "upload_time_iso_8601": "2021-05-04T12:57:37.433886Z",
+        "url": "https://files.pythonhosted.org/packages/c3/d3/3c301365e4ad33a6387fd6524edb563c1a5692715db4f8ce9449613f885e/watchdog-2.1.0-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d2c52ed24c4fc02db18839c25db9ca8a",
+          "sha256": "6c6fa079abddea664f7ecda0a02636ca276f095bd26f474c23b3f968f1e938ec"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "d2c52ed24c4fc02db18839c25db9ca8a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74591,
+        "upload_time": "2021-05-04T12:57:38",
+        "upload_time_iso_8601": "2021-05-04T12:57:38.714002Z",
+        "url": "https://files.pythonhosted.org/packages/ff/7b/f7ce9c20d804201159609af8ebf878f7acc19b8b40e7eb588dc9c5af86e1/watchdog-2.1.0-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "278118b7d5a669989001e2aa7b1a9ccb",
+          "sha256": "80afa2b32aac3abc7fb6ced508fc612997a0c8fb0f497217d54c524ff52e9e3a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "278118b7d5a669989001e2aa7b1a9ccb",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74595,
+        "upload_time": "2021-05-04T12:57:40",
+        "upload_time_iso_8601": "2021-05-04T12:57:40.456942Z",
+        "url": "https://files.pythonhosted.org/packages/94/ee/b70fd70c47a0c6fd772bfc1b8e0c624628cc0fe0752ac1b06c3d51ef8c04/watchdog-2.1.0-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "44f90887aa328e9e11cef8852f9e5eaf",
+          "sha256": "b8fb08629f52d3e0a060b93d711824f2b06fb8e0d09ad453f2a93d0c97d6b1ec"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "44f90887aa328e9e11cef8852f9e5eaf",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74593,
+        "upload_time": "2021-05-04T12:57:41",
+        "upload_time_iso_8601": "2021-05-04T12:57:41.941938Z",
+        "url": "https://files.pythonhosted.org/packages/c5/cd/2dd84d636291db97518ce91b99199ab2e1e37b3e8b1e3fbfa6af65b0181a/watchdog-2.1.0-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "008a62c2b379b1b144ec07ed6cd34266",
+          "sha256": "55316efab52f659b8b7b59730680bfb27ac003522f24c44f6bcd60c4e3736ccd"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "008a62c2b379b1b144ec07ed6cd34266",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 104946,
+        "upload_time": "2021-05-04T12:57:43",
+        "upload_time_iso_8601": "2021-05-04T12:57:43.212830Z",
+        "url": "https://files.pythonhosted.org/packages/dd/f5/77ac358979e6c8ee1101860951fc15cd299ae5f0cb5af06ef498726829b1/watchdog-2.1.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.1.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "48eafac4207dec20c6369c9856203a13",
+          "sha256": "f3edbe1e15e229d2ba8ff5156908adba80d1ba21a9282d9f72247403280fc799"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "48eafac4207dec20c6369c9856203a13",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 83815,
+        "upload_time": "2021-05-10T13:50:37",
+        "upload_time_iso_8601": "2021-05-10T13:50:37.420448Z",
+        "url": "https://files.pythonhosted.org/packages/6c/f3/0cb783a792f40d2180b518b2510c8053e34b9348017d8e9871149caf94e0/watchdog-2.1.1-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a7bda3e2fd72e280f88455f1cedc8e51",
+          "sha256": "c1325b47463fce231d88eb74f330ab0cb4a1bab5defe12c0c80a3a4f197345b4"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "a7bda3e2fd72e280f88455f1cedc8e51",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 83787,
+        "upload_time": "2021-05-10T13:50:39",
+        "upload_time_iso_8601": "2021-05-10T13:50:39.057231Z",
+        "url": "https://files.pythonhosted.org/packages/7f/c5/77e6b3d635b4a17c396c12677d5106bb29cb3a386ec60bf9258f99f382e1/watchdog-2.1.1-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5e0c7e87284b78a7281d05d370a85642",
+          "sha256": "5b391bac7edbdf96fb82a381d04829bbc0d1bb259c206b2b283ef8989340240f"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "5e0c7e87284b78a7281d05d370a85642",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 83831,
+        "upload_time": "2021-05-10T13:50:40",
+        "upload_time_iso_8601": "2021-05-10T13:50:40.367013Z",
+        "url": "https://files.pythonhosted.org/packages/24/74/6a1188287a696731e6ea43a1e83073b29d8740c9996458f02144f3986319/watchdog-2.1.1-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "42de2c97efbe39456492da51e3cc341b",
+          "sha256": "22c13c19599b0dec7192f8f7d26404d5223cb36c9a450e96430483e685dccd7e"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "42de2c97efbe39456492da51e3cc341b",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 83829,
+        "upload_time": "2021-05-10T13:50:42",
+        "upload_time_iso_8601": "2021-05-10T13:50:42.160506Z",
+        "url": "https://files.pythonhosted.org/packages/ae/85/655e322ef55e4c98672e7f003fa95dff5b58149c50465b93ef947b31be90/watchdog-2.1.1-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0dbf1f019af96dba578b46383a8c11b4",
+          "sha256": "604ca364a79c27a694ab10947cd41de81bf229cff507a3156bf2c56c064971a1"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "0dbf1f019af96dba578b46383a8c11b4",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 83123,
+        "upload_time": "2021-05-10T13:50:43",
+        "upload_time_iso_8601": "2021-05-10T13:50:43.700018Z",
+        "url": "https://files.pythonhosted.org/packages/ce/41/33eea2d9189c7dffbc6e7088ad14a846ff5c9f3cf2a04a3af2f23b5fdf1c/watchdog-2.1.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "56871689c94984f9f1e5dd6c802b7b16",
+          "sha256": "dca75d12712997c713f76e6d68ff41580598c7df94cedf83f1089342e7709081"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "56871689c94984f9f1e5dd6c802b7b16",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 83088,
+        "upload_time": "2021-05-10T13:50:45",
+        "upload_time_iso_8601": "2021-05-10T13:50:45.194699Z",
+        "url": "https://files.pythonhosted.org/packages/59/cd/7691da1031ca7c1320307b3ef902f4398a5f3565d76a57a886f53f1c9299/watchdog-2.1.1-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fc502fa43eecdb851908c4a55d219fc7",
+          "sha256": "aa59afc87a892ed92d7d88d09f4b736f1336fc35540b403da7ee00c3be74bd07"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "fc502fa43eecdb851908c4a55d219fc7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74713,
+        "upload_time": "2021-05-10T13:50:46",
+        "upload_time_iso_8601": "2021-05-10T13:50:46.671374Z",
+        "url": "https://files.pythonhosted.org/packages/bc/27/6f250c6a534b8811dcd0efcd5f9574dd2b8c077571aa66544947b0b76d0c/watchdog-2.1.1-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a6ea6f4992074949a8afede9839517cf",
+          "sha256": "a1b3f76e2a0713b406348dd5b9df2aa02bdd741a6ddf54f4c6410b395e077502"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "a6ea6f4992074949a8afede9839517cf",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74715,
+        "upload_time": "2021-05-10T13:50:48",
+        "upload_time_iso_8601": "2021-05-10T13:50:48.086616Z",
+        "url": "https://files.pythonhosted.org/packages/ad/5f/3813b46bd10efa4870798850af2685cc3cce6e989d5a3397df0ee1cfe0e6/watchdog-2.1.1-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c9f0410962f1253dd0e50cfd64f0e7e3",
+          "sha256": "9f1b124fe2d4a1f37b7068f6289c2b1eba44859eb790bf6bd709adff224a5469"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "c9f0410962f1253dd0e50cfd64f0e7e3",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74710,
+        "upload_time": "2021-05-10T13:50:49",
+        "upload_time_iso_8601": "2021-05-10T13:50:49.983231Z",
+        "url": "https://files.pythonhosted.org/packages/81/29/6abfafa77d6c6ead43ba92fd5537fd2fc33f7dc916460457d06cba45a398/watchdog-2.1.1-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fc8f575acbeb645e51e7293baeb914db",
+          "sha256": "027c532e2fd3367d55fe235510fc304381a6cc88d0dcd619403e57ffbd83c1d2"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "fc8f575acbeb645e51e7293baeb914db",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74714,
+        "upload_time": "2021-05-10T13:50:52",
+        "upload_time_iso_8601": "2021-05-10T13:50:52.802794Z",
+        "url": "https://files.pythonhosted.org/packages/0d/5a/629a27cdb7c76744402598c76c0170d9298ecb61bb9238143811d1089897/watchdog-2.1.1-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "53559d1cb7468d40774c02cb52d240d7",
+          "sha256": "a9005f968220b715101d5fcdde5f5deda54f0d1873f618724f547797171f5e97"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "53559d1cb7468d40774c02cb52d240d7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74711,
+        "upload_time": "2021-05-10T13:50:51",
+        "upload_time_iso_8601": "2021-05-10T13:50:51.297539Z",
+        "url": "https://files.pythonhosted.org/packages/34/87/5298db4bf7bef093254bedd48fee54a3fc63f30185b0f2359d0bb8f213a4/watchdog-2.1.1-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "de3079a6e9705dbf0b29375f85f34757",
+          "sha256": "4d83c89ba24bd67b7a7d5752a4ef953ec40db69d4d30582bd1f27d3ecb6b61b0"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "de3079a6e9705dbf0b29375f85f34757",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74714,
+        "upload_time": "2021-05-10T13:50:54",
+        "upload_time_iso_8601": "2021-05-10T13:50:54.870877Z",
+        "url": "https://files.pythonhosted.org/packages/fb/ef/5d2a010e6dea46260103a0615e7f433833a37dcee851e743cbf039a85b82/watchdog-2.1.1-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "620c4a72b7dcdeba5b20f6219e5cbca0",
+          "sha256": "67c645b1e500cc74d550e9aad4829309c5084dc55e8dc4e1c25d5da23e5be239"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "620c4a72b7dcdeba5b20f6219e5cbca0",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74714,
+        "upload_time": "2021-05-10T13:50:56",
+        "upload_time_iso_8601": "2021-05-10T13:50:56.916590Z",
+        "url": "https://files.pythonhosted.org/packages/58/f6/6b538562aaa62294ca0a1d18b59d9fcb1a43fe166fa5b3a258f445d64119/watchdog-2.1.1-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "95e349940babe5313d90ac4ddaf1e870",
+          "sha256": "12645d41d7307601b318c48861e776ce7a9fdcad9f74961013ec39037050582c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "95e349940babe5313d90ac4ddaf1e870",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74698,
+        "upload_time": "2021-05-10T13:50:58",
+        "upload_time_iso_8601": "2021-05-10T13:50:58.739372Z",
+        "url": "https://files.pythonhosted.org/packages/73/8f/cb225682a508d2c43f6a1f4cfe274a75a2e156ec2d73af055d5d47542f26/watchdog-2.1.1-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "9e76ed1b1a80dcb00621b1e97fb9f44f",
+          "sha256": "16078cd241a95124acd4d8d3efba2140faec9300674b12413cc08be11b825d56"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "9e76ed1b1a80dcb00621b1e97fb9f44f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74701,
+        "upload_time": "2021-05-10T13:50:59",
+        "upload_time_iso_8601": "2021-05-10T13:50:59.987028Z",
+        "url": "https://files.pythonhosted.org/packages/85/64/592c43792c0f6b18b031d5944ba1c36d4a2775d72cb06c4088050ab4834a/watchdog-2.1.1-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a52dc0ca899e11dc9d572e206603bf0e",
+          "sha256": "20d4cabfa2ad7239995d81a0163bc0264a3e104a64f33c6f0a21ad75a0d915d9"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "a52dc0ca899e11dc9d572e206603bf0e",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74701,
+        "upload_time": "2021-05-10T13:51:01",
+        "upload_time_iso_8601": "2021-05-10T13:51:01.299920Z",
+        "url": "https://files.pythonhosted.org/packages/49/5c/69074682ce2e5dbe701755d778cdf5480448462e901ea088cc7e6e2c8261/watchdog-2.1.1-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b19eb6581afe0000ed5a92cedc6e2956",
+          "sha256": "2894440b4ea95a6ef4c5d152deedbe270cae46092682710b7028a04d6a6980f6"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "b19eb6581afe0000ed5a92cedc6e2956",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 105882,
+        "upload_time": "2021-05-10T13:51:02",
+        "upload_time_iso_8601": "2021-05-10T13:51:02.629895Z",
+        "url": "https://files.pythonhosted.org/packages/23/7c/82cafb290b818c331192e52609af8d41c34b55f468957ba5bd0a8d2cb776/watchdog-2.1.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.1.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "dde5e3d48d2cf7ac0685ed5dc1e022b8",
+          "sha256": "581e3548159fe7d2a9f377a1fbcb41bdcee46849cca8ab803c7ac2e5e04ec77c"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "dde5e3d48d2cf7ac0685ed5dc1e022b8",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp36",
+        "requires_python": ">=3.6",
+        "size": 84038,
+        "upload_time": "2021-05-19T08:21:52",
+        "upload_time_iso_8601": "2021-05-19T08:21:52.456624Z",
+        "url": "https://files.pythonhosted.org/packages/b9/91/2377447decf9b1b86cc678a7351e2af60776792b530159bd2bfa56380e4d/watchdog-2.1.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e978388746b89bd2c666f7f54ffefcf6",
+          "sha256": "edcd9ef3fd460bb8a98eb1fcf99941e9fd9f275f45f1a82cb1359ec92975d647"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "e978388746b89bd2c666f7f54ffefcf6",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp37",
+        "requires_python": ">=3.6",
+        "size": 84014,
+        "upload_time": "2021-05-19T08:21:54",
+        "upload_time_iso_8601": "2021-05-19T08:21:54.291707Z",
+        "url": "https://files.pythonhosted.org/packages/49/7b/e650428a34012b888e663ae25649348a046a3e152fb84406d63138fa1489/watchdog-2.1.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "97207b50ad27f0f14ba00be3b288a080",
+          "sha256": "d34ce2261f118ecd57eedeef95fc2a495fc4a40b3ed7b3bf0bd7a8ccc1ab4f8f"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-cp38-cp38-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "97207b50ad27f0f14ba00be3b288a080",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp38",
+        "requires_python": ">=3.6",
+        "size": 84055,
+        "upload_time": "2021-05-19T08:21:56",
+        "upload_time_iso_8601": "2021-05-19T08:21:56.010653Z",
+        "url": "https://files.pythonhosted.org/packages/be/dd/2179c7797220017359d5f218b061bb236856731c623f97fac7bec1f7312a/watchdog-2.1.2-cp38-cp38-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ddaac30c5e0b34ab7229d0c6b7695ab5",
+          "sha256": "668391e6c32742d76e5be5db6bf95c455fa4b3d11e76a77c13b39bccb3a47a72"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-cp39-cp39-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "ddaac30c5e0b34ab7229d0c6b7695ab5",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp39",
+        "requires_python": ">=3.6",
+        "size": 84052,
+        "upload_time": "2021-05-19T08:21:57",
+        "upload_time_iso_8601": "2021-05-19T08:21:57.553416Z",
+        "url": "https://files.pythonhosted.org/packages/b6/e6/e737f5e1702bf923e5faf2b01605e5e41ffd637df02fecb9750f11e60cfa/watchdog-2.1.2-cp39-cp39-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2631b209dcc6044f2b66f10a8002f48a",
+          "sha256": "6ef9fe57162c4c361692620e1d9167574ba1975ee468b24051ca11c9bba6438e"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "2631b209dcc6044f2b66f10a8002f48a",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp36",
+        "requires_python": ">=3.6",
+        "size": 83348,
+        "upload_time": "2021-05-19T08:21:59",
+        "upload_time_iso_8601": "2021-05-19T08:21:59.241634Z",
+        "url": "https://files.pythonhosted.org/packages/91/6a/110cc11e1745e1d05482843a08f3c0b08ad69ea0bb899ff04906ed16d4d4/watchdog-2.1.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b1a1859b1ad94ae1c7f2581da5c4f326",
+          "sha256": "58ebb1095ee493008a7789d47dd62e4999505d82be89fc884d473086fccc6ebd"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "b1a1859b1ad94ae1c7f2581da5c4f326",
+        "packagetype": "bdist_wheel",
+        "python_version": "pp37",
+        "requires_python": ">=3.6",
+        "size": 83313,
+        "upload_time": "2021-05-19T08:22:01",
+        "upload_time_iso_8601": "2021-05-19T08:22:01.162399Z",
+        "url": "https://files.pythonhosted.org/packages/95/97/c6a0c006ed54dd8ac8e5f43d3595faff278b8545e35c07a60c4de9fdd461/watchdog-2.1.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "41a9809f04057e857171c9b90faa2506",
+          "sha256": "91387ee2421f30b75f7ff632c9d48f76648e56bf346a7c805c0a34187a93aab4"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-manylinux2014_aarch64.whl",
+        "has_sig": false,
+        "md5_digest": "41a9809f04057e857171c9b90faa2506",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74940,
+        "upload_time": "2021-05-19T08:22:02",
+        "upload_time_iso_8601": "2021-05-19T08:22:02.472733Z",
+        "url": "https://files.pythonhosted.org/packages/be/40/dd581cc45879a38ecda03aad1b1e344fb072db36c2c217d8083920724a77/watchdog-2.1.2-py3-none-manylinux2014_aarch64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0675ecccf8c4864617dff41ac852460d",
+          "sha256": "a6471517315a8541a943c00b45f1d252e36898a3ae963d2d52509b89a50cb2b9"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-manylinux2014_armv7l.whl",
+        "has_sig": false,
+        "md5_digest": "0675ecccf8c4864617dff41ac852460d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74938,
+        "upload_time": "2021-05-19T08:22:03",
+        "upload_time_iso_8601": "2021-05-19T08:22:03.994777Z",
+        "url": "https://files.pythonhosted.org/packages/6e/fb/cb3cc71e40383120fb795ae3502f2a6babd077f1c780a3a04b7384b9e1a3/watchdog-2.1.2-py3-none-manylinux2014_armv7l.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "23a98776d4d7dd705b86bf04e304a255",
+          "sha256": "a42e6d652f820b2b94cd03156c62559a2ea68d476476dfcd77d931e7f1012d4a"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-manylinux2014_i686.whl",
+        "has_sig": false,
+        "md5_digest": "23a98776d4d7dd705b86bf04e304a255",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74937,
+        "upload_time": "2021-05-19T08:22:05",
+        "upload_time_iso_8601": "2021-05-19T08:22:05.517057Z",
+        "url": "https://files.pythonhosted.org/packages/94/96/081686f5400ee17c480138415184b7f19fd2b3810a7d250ea03a2de77662/watchdog-2.1.2-py3-none-manylinux2014_i686.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f0528e4307ba0867198bc7fb1d75f72d",
+          "sha256": "598d772beeaf9c98d0df946fbabf0c8365dd95ea46a250c224c725fe0c4730bc"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-manylinux2014_ppc64le.whl",
+        "has_sig": false,
+        "md5_digest": "f0528e4307ba0867198bc7fb1d75f72d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74941,
+        "upload_time": "2021-05-19T08:22:08",
+        "upload_time_iso_8601": "2021-05-19T08:22:08.173021Z",
+        "url": "https://files.pythonhosted.org/packages/21/81/afd95c8b69770a4875d063e0f6132c25d09dfa26b6ac4cce736156515ad1/watchdog-2.1.2-py3-none-manylinux2014_ppc64le.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0b769114fe49643b829f93ef116a189f",
+          "sha256": "3d6405681471ebe0beb3aa083998c4870e48b57f8afdb45ea1b5957cc5cf1014"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-manylinux2014_ppc64.whl",
+        "has_sig": false,
+        "md5_digest": "0b769114fe49643b829f93ef116a189f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74938,
+        "upload_time": "2021-05-19T08:22:06",
+        "upload_time_iso_8601": "2021-05-19T08:22:06.742460Z",
+        "url": "https://files.pythonhosted.org/packages/e0/21/ecba273c52a670f19cac903e415893588c99f4923f0c51ba64bbe75fcf6e/watchdog-2.1.2-py3-none-manylinux2014_ppc64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "848f7de4dc988d0d02308870b6cb38e4",
+          "sha256": "4b219d46d89cfa49af1d73175487c14a318a74cb8c5442603fd13c6a5b418c86"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-manylinux2014_s390x.whl",
+        "has_sig": false,
+        "md5_digest": "848f7de4dc988d0d02308870b6cb38e4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74939,
+        "upload_time": "2021-05-19T08:22:09",
+        "upload_time_iso_8601": "2021-05-19T08:22:09.843268Z",
+        "url": "https://files.pythonhosted.org/packages/f9/e5/05ce404ead442af10b7a9113b08398bd58be0a7e9d281ab9ff946f3e7f5c/watchdog-2.1.2-py3-none-manylinux2014_s390x.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "14c343be27b6e4d7663b50f2d0bda94e",
+          "sha256": "188145185c08c73c56f1478ccf1f0f0f85101191439679b35b6b100886ce0b39"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-manylinux2014_x86_64.whl",
+        "has_sig": false,
+        "md5_digest": "14c343be27b6e4d7663b50f2d0bda94e",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74940,
+        "upload_time": "2021-05-19T08:22:11",
+        "upload_time_iso_8601": "2021-05-19T08:22:11.180127Z",
+        "url": "https://files.pythonhosted.org/packages/f2/5b/36b3b11e557830de6fc1dc06e9aa3ee274119b8cea9cc98175dbbf72cf87/watchdog-2.1.2-py3-none-manylinux2014_x86_64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a527d699839c5f5b0c1c6fd0e7f9148c",
+          "sha256": "255a32d44bbbe62e52874ff755e2eefe271b150e0ec240ad7718a62a7a7a73c4"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-win32.whl",
+        "has_sig": false,
+        "md5_digest": "a527d699839c5f5b0c1c6fd0e7f9148c",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74924,
+        "upload_time": "2021-05-19T08:22:12",
+        "upload_time_iso_8601": "2021-05-19T08:22:12.771209Z",
+        "url": "https://files.pythonhosted.org/packages/3e/fb/161a9792c16b861bb3c0535681a61f44e5147244710f60e1852b6ea8421e/watchdog-2.1.2-py3-none-win32.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e8fd8b1d86fe4ed5d33c3aef94860917",
+          "sha256": "1a62a4671796dc93d1a7262286217d9e75823c63d4c42782912d39a506d30046"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "e8fd8b1d86fe4ed5d33c3aef94860917",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74928,
+        "upload_time": "2021-05-19T08:22:14",
+        "upload_time_iso_8601": "2021-05-19T08:22:14.053065Z",
+        "url": "https://files.pythonhosted.org/packages/62/24/22c5b17146dd7db099043686f2b86752d8793060e8981cea478ac3e92c8f/watchdog-2.1.2-py3-none-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "bbf3b3054d8a2a1e74d2062fed62d8e8",
+          "sha256": "104266a778906ae0e971368d368a65c4cd032a490a9fca5ba0b78c6c7ae11720"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2-py3-none-win_ia64.whl",
+        "has_sig": false,
+        "md5_digest": "bbf3b3054d8a2a1e74d2062fed62d8e8",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 74926,
+        "upload_time": "2021-05-19T08:22:15",
+        "upload_time_iso_8601": "2021-05-19T08:22:15.262048Z",
+        "url": "https://files.pythonhosted.org/packages/6e/b6/a7f965e0e80a5e47a33d6187a311b03d016a96410ad5c105538d182a92d6/watchdog-2.1.2-py3-none-win_ia64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "869817261b0eb9be2ec22cdb452db9ba",
+          "sha256": "0237db4d9024859bea27d0efb59fe75eef290833fd988b8ead7a879b0308c2db"
+        },
+        "downloads": -1,
+        "filename": "watchdog-2.1.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "869817261b0eb9be2ec22cdb452db9ba",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 107725,
+        "upload_time": "2021-05-19T08:22:16",
+        "upload_time_iso_8601": "2021-05-19T08:22:16.670476Z",
+        "url": "https://files.pythonhosted.org/packages/ad/9e/df37da9de16e02d8a4230dcd09d4bf7ced6cd97e1f421cbade133a011e3f/watchdog-2.1.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "dde5e3d48d2cf7ac0685ed5dc1e022b8",
+        "sha256": "581e3548159fe7d2a9f377a1fbcb41bdcee46849cca8ab803c7ac2e5e04ec77c"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "dde5e3d48d2cf7ac0685ed5dc1e022b8",
+      "packagetype": "bdist_wheel",
+      "python_version": "cp36",
+      "requires_python": ">=3.6",
+      "size": 84038,
+      "upload_time": "2021-05-19T08:21:52",
+      "upload_time_iso_8601": "2021-05-19T08:21:52.456624Z",
+      "url": "https://files.pythonhosted.org/packages/b9/91/2377447decf9b1b86cc678a7351e2af60776792b530159bd2bfa56380e4d/watchdog-2.1.2-cp36-cp36m-macosx_10_9_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "e978388746b89bd2c666f7f54ffefcf6",
+        "sha256": "edcd9ef3fd460bb8a98eb1fcf99941e9fd9f275f45f1a82cb1359ec92975d647"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "e978388746b89bd2c666f7f54ffefcf6",
+      "packagetype": "bdist_wheel",
+      "python_version": "cp37",
+      "requires_python": ">=3.6",
+      "size": 84014,
+      "upload_time": "2021-05-19T08:21:54",
+      "upload_time_iso_8601": "2021-05-19T08:21:54.291707Z",
+      "url": "https://files.pythonhosted.org/packages/49/7b/e650428a34012b888e663ae25649348a046a3e152fb84406d63138fa1489/watchdog-2.1.2-cp37-cp37m-macosx_10_9_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "97207b50ad27f0f14ba00be3b288a080",
+        "sha256": "d34ce2261f118ecd57eedeef95fc2a495fc4a40b3ed7b3bf0bd7a8ccc1ab4f8f"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-cp38-cp38-macosx_10_9_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "97207b50ad27f0f14ba00be3b288a080",
+      "packagetype": "bdist_wheel",
+      "python_version": "cp38",
+      "requires_python": ">=3.6",
+      "size": 84055,
+      "upload_time": "2021-05-19T08:21:56",
+      "upload_time_iso_8601": "2021-05-19T08:21:56.010653Z",
+      "url": "https://files.pythonhosted.org/packages/be/dd/2179c7797220017359d5f218b061bb236856731c623f97fac7bec1f7312a/watchdog-2.1.2-cp38-cp38-macosx_10_9_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "ddaac30c5e0b34ab7229d0c6b7695ab5",
+        "sha256": "668391e6c32742d76e5be5db6bf95c455fa4b3d11e76a77c13b39bccb3a47a72"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-cp39-cp39-macosx_10_9_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "ddaac30c5e0b34ab7229d0c6b7695ab5",
+      "packagetype": "bdist_wheel",
+      "python_version": "cp39",
+      "requires_python": ">=3.6",
+      "size": 84052,
+      "upload_time": "2021-05-19T08:21:57",
+      "upload_time_iso_8601": "2021-05-19T08:21:57.553416Z",
+      "url": "https://files.pythonhosted.org/packages/b6/e6/e737f5e1702bf923e5faf2b01605e5e41ffd637df02fecb9750f11e60cfa/watchdog-2.1.2-cp39-cp39-macosx_10_9_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "2631b209dcc6044f2b66f10a8002f48a",
+        "sha256": "6ef9fe57162c4c361692620e1d9167574ba1975ee468b24051ca11c9bba6438e"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "2631b209dcc6044f2b66f10a8002f48a",
+      "packagetype": "bdist_wheel",
+      "python_version": "pp36",
+      "requires_python": ">=3.6",
+      "size": 83348,
+      "upload_time": "2021-05-19T08:21:59",
+      "upload_time_iso_8601": "2021-05-19T08:21:59.241634Z",
+      "url": "https://files.pythonhosted.org/packages/91/6a/110cc11e1745e1d05482843a08f3c0b08ad69ea0bb899ff04906ed16d4d4/watchdog-2.1.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "b1a1859b1ad94ae1c7f2581da5c4f326",
+        "sha256": "58ebb1095ee493008a7789d47dd62e4999505d82be89fc884d473086fccc6ebd"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "b1a1859b1ad94ae1c7f2581da5c4f326",
+      "packagetype": "bdist_wheel",
+      "python_version": "pp37",
+      "requires_python": ">=3.6",
+      "size": 83313,
+      "upload_time": "2021-05-19T08:22:01",
+      "upload_time_iso_8601": "2021-05-19T08:22:01.162399Z",
+      "url": "https://files.pythonhosted.org/packages/95/97/c6a0c006ed54dd8ac8e5f43d3595faff278b8545e35c07a60c4de9fdd461/watchdog-2.1.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "41a9809f04057e857171c9b90faa2506",
+        "sha256": "91387ee2421f30b75f7ff632c9d48f76648e56bf346a7c805c0a34187a93aab4"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-manylinux2014_aarch64.whl",
+      "has_sig": false,
+      "md5_digest": "41a9809f04057e857171c9b90faa2506",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74940,
+      "upload_time": "2021-05-19T08:22:02",
+      "upload_time_iso_8601": "2021-05-19T08:22:02.472733Z",
+      "url": "https://files.pythonhosted.org/packages/be/40/dd581cc45879a38ecda03aad1b1e344fb072db36c2c217d8083920724a77/watchdog-2.1.2-py3-none-manylinux2014_aarch64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "0675ecccf8c4864617dff41ac852460d",
+        "sha256": "a6471517315a8541a943c00b45f1d252e36898a3ae963d2d52509b89a50cb2b9"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-manylinux2014_armv7l.whl",
+      "has_sig": false,
+      "md5_digest": "0675ecccf8c4864617dff41ac852460d",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74938,
+      "upload_time": "2021-05-19T08:22:03",
+      "upload_time_iso_8601": "2021-05-19T08:22:03.994777Z",
+      "url": "https://files.pythonhosted.org/packages/6e/fb/cb3cc71e40383120fb795ae3502f2a6babd077f1c780a3a04b7384b9e1a3/watchdog-2.1.2-py3-none-manylinux2014_armv7l.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "23a98776d4d7dd705b86bf04e304a255",
+        "sha256": "a42e6d652f820b2b94cd03156c62559a2ea68d476476dfcd77d931e7f1012d4a"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-manylinux2014_i686.whl",
+      "has_sig": false,
+      "md5_digest": "23a98776d4d7dd705b86bf04e304a255",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74937,
+      "upload_time": "2021-05-19T08:22:05",
+      "upload_time_iso_8601": "2021-05-19T08:22:05.517057Z",
+      "url": "https://files.pythonhosted.org/packages/94/96/081686f5400ee17c480138415184b7f19fd2b3810a7d250ea03a2de77662/watchdog-2.1.2-py3-none-manylinux2014_i686.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "f0528e4307ba0867198bc7fb1d75f72d",
+        "sha256": "598d772beeaf9c98d0df946fbabf0c8365dd95ea46a250c224c725fe0c4730bc"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-manylinux2014_ppc64le.whl",
+      "has_sig": false,
+      "md5_digest": "f0528e4307ba0867198bc7fb1d75f72d",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74941,
+      "upload_time": "2021-05-19T08:22:08",
+      "upload_time_iso_8601": "2021-05-19T08:22:08.173021Z",
+      "url": "https://files.pythonhosted.org/packages/21/81/afd95c8b69770a4875d063e0f6132c25d09dfa26b6ac4cce736156515ad1/watchdog-2.1.2-py3-none-manylinux2014_ppc64le.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "0b769114fe49643b829f93ef116a189f",
+        "sha256": "3d6405681471ebe0beb3aa083998c4870e48b57f8afdb45ea1b5957cc5cf1014"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-manylinux2014_ppc64.whl",
+      "has_sig": false,
+      "md5_digest": "0b769114fe49643b829f93ef116a189f",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74938,
+      "upload_time": "2021-05-19T08:22:06",
+      "upload_time_iso_8601": "2021-05-19T08:22:06.742460Z",
+      "url": "https://files.pythonhosted.org/packages/e0/21/ecba273c52a670f19cac903e415893588c99f4923f0c51ba64bbe75fcf6e/watchdog-2.1.2-py3-none-manylinux2014_ppc64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "848f7de4dc988d0d02308870b6cb38e4",
+        "sha256": "4b219d46d89cfa49af1d73175487c14a318a74cb8c5442603fd13c6a5b418c86"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-manylinux2014_s390x.whl",
+      "has_sig": false,
+      "md5_digest": "848f7de4dc988d0d02308870b6cb38e4",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74939,
+      "upload_time": "2021-05-19T08:22:09",
+      "upload_time_iso_8601": "2021-05-19T08:22:09.843268Z",
+      "url": "https://files.pythonhosted.org/packages/f9/e5/05ce404ead442af10b7a9113b08398bd58be0a7e9d281ab9ff946f3e7f5c/watchdog-2.1.2-py3-none-manylinux2014_s390x.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "14c343be27b6e4d7663b50f2d0bda94e",
+        "sha256": "188145185c08c73c56f1478ccf1f0f0f85101191439679b35b6b100886ce0b39"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-manylinux2014_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "14c343be27b6e4d7663b50f2d0bda94e",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74940,
+      "upload_time": "2021-05-19T08:22:11",
+      "upload_time_iso_8601": "2021-05-19T08:22:11.180127Z",
+      "url": "https://files.pythonhosted.org/packages/f2/5b/36b3b11e557830de6fc1dc06e9aa3ee274119b8cea9cc98175dbbf72cf87/watchdog-2.1.2-py3-none-manylinux2014_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "a527d699839c5f5b0c1c6fd0e7f9148c",
+        "sha256": "255a32d44bbbe62e52874ff755e2eefe271b150e0ec240ad7718a62a7a7a73c4"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-win32.whl",
+      "has_sig": false,
+      "md5_digest": "a527d699839c5f5b0c1c6fd0e7f9148c",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74924,
+      "upload_time": "2021-05-19T08:22:12",
+      "upload_time_iso_8601": "2021-05-19T08:22:12.771209Z",
+      "url": "https://files.pythonhosted.org/packages/3e/fb/161a9792c16b861bb3c0535681a61f44e5147244710f60e1852b6ea8421e/watchdog-2.1.2-py3-none-win32.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "e8fd8b1d86fe4ed5d33c3aef94860917",
+        "sha256": "1a62a4671796dc93d1a7262286217d9e75823c63d4c42782912d39a506d30046"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-win_amd64.whl",
+      "has_sig": false,
+      "md5_digest": "e8fd8b1d86fe4ed5d33c3aef94860917",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74928,
+      "upload_time": "2021-05-19T08:22:14",
+      "upload_time_iso_8601": "2021-05-19T08:22:14.053065Z",
+      "url": "https://files.pythonhosted.org/packages/62/24/22c5b17146dd7db099043686f2b86752d8793060e8981cea478ac3e92c8f/watchdog-2.1.2-py3-none-win_amd64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "bbf3b3054d8a2a1e74d2062fed62d8e8",
+        "sha256": "104266a778906ae0e971368d368a65c4cd032a490a9fca5ba0b78c6c7ae11720"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2-py3-none-win_ia64.whl",
+      "has_sig": false,
+      "md5_digest": "bbf3b3054d8a2a1e74d2062fed62d8e8",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 74926,
+      "upload_time": "2021-05-19T08:22:15",
+      "upload_time_iso_8601": "2021-05-19T08:22:15.262048Z",
+      "url": "https://files.pythonhosted.org/packages/6e/b6/a7f965e0e80a5e47a33d6187a311b03d016a96410ad5c105538d182a92d6/watchdog-2.1.2-py3-none-win_ia64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "869817261b0eb9be2ec22cdb452db9ba",
+        "sha256": "0237db4d9024859bea27d0efb59fe75eef290833fd988b8ead7a879b0308c2db"
+      },
+      "downloads": -1,
+      "filename": "watchdog-2.1.2.tar.gz",
+      "has_sig": false,
+      "md5_digest": "869817261b0eb9be2ec22cdb452db9ba",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">=3.6",
+      "size": 107725,
+      "upload_time": "2021-05-19T08:22:16",
+      "upload_time_iso_8601": "2021-05-19T08:22:16.670476Z",
+      "url": "https://files.pythonhosted.org/packages/ad/9e/df37da9de16e02d8a4230dcd09d4bf7ced6cd97e1f421cbade133a011e3f/watchdog-2.1.2.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

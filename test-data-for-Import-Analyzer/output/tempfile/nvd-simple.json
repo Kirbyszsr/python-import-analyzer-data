@@ -1,0 +1,1211 @@
+[
+  {
+    "cveID": "CVE-2020-36364",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-19T19:15Z",
+    "lastModifiedDate": "2021-05-19T20:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Smartstore (aka SmartStoreNET) before 4.1.0. Administration/Controllers/ImportController.cs allows path traversal (for copy and delete actions) in the ImportController.Create method via a TempFileName field."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/smartstore/SmartStoreNET/issues/2112",
+        "name": "https://github.com/smartstore/SmartStoreNET/issues/2112",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/smartstore/SmartStoreNET/commit/5ab1e37dc8d6415d04354e1a116f3d82e9555f5c",
+        "name": "https://github.com/smartstore/SmartStoreNET/commit/5ab1e37dc8d6415d04354e1a116f3d82e9555f5c",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21430",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-10T20:15Z",
+    "lastModifiedDate": "2021-05-19T17:14Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OpenAPI Generator allows generation of API client libraries (SDK generation), server stubs, documentation and configuration automatically given an OpenAPI Spec. Using `File.createTempFile` in JDK will result in creating and using insecure temporary files that can leave application and system data vulnerable to attacks. Auto-generated code (Java, Scala) that deals with uploading or downloading binary data through API endpoints will create insecure temporary files during the process. Affected generators: `java` (jersey2, okhttp-gson (default library)), `scala-finch`. The issue has been patched with `Files.createTempFile` and released in the v5.1.0 stable version."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-cqxr-xf2w-943w",
+        "name": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-cqxr-xf2w-943w",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8787",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8787",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8791",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8791",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21428",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-10T19:15Z",
+    "lastModifiedDate": "2021-05-17T17:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Openapi generator is a java tool which allows generation of API client libraries (SDK generation), server stubs, documentation and configuration automatically given an OpenAPI Spec. openapi-generator-online creates insecure temporary folders with File.createTempFile during the code generation process. The insecure temporary folders store the auto-generated files which can be read and appended to by any users on the system. The issue has been patched with `Files.createTempFile` and released in the v5.1.0 stable version."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-23x4-m842-fmwf",
+        "name": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-23x4-m842-fmwf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8788",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8788",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21429",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-27T20:15Z",
+    "lastModifiedDate": "2021-05-07T20:17Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OpenAPI Generator allows generation of API client libraries, server stubs, documentation and configuration automatically given an OpenAPI Spec. Using `File.createTempFile` in JDK will result in creating and using insecure temporary files that can leave application and system data vulnerable to attacks. OpenAPI Generator maven plug-in creates insecure temporary files during the process. The issue has been patched with `Files.createTempFile` and released in the v5.1.0 stable version."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8795",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8795",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-867q-77cc-98mv",
+        "name": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-867q-77cc-98mv",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28168",
+    "cveASSIGNER": "security@eclipse.org",
+    "publishedDate": "2021-04-22T18:15Z",
+    "lastModifiedDate": "2021-05-07T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Eclipse Jersey 2.28 to 2.33 and Eclipse Jersey 3.0.0 to 3.0.1 contains a local information disclosure vulnerability. This is due to the use of the File.createTempFile which creates a file inside of the system temporary directory with the permissions: -rw-r--r--. Thus the contents of this file are viewable by all other users locally on the system. As such, if the contents written is security sensitive, it can be disclosed to other local users."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/eclipse-ee4j/jersey/security/advisories/GHSA-c43q-5hpj-4crv",
+        "name": "https://github.com/eclipse-ee4j/jersey/security/advisories/GHSA-c43q-5hpj-4crv",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/eclipse-ee4j/jersey/pull/4712",
+        "name": "https://github.com/eclipse-ee4j/jersey/pull/4712",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd54b42edccc1b993853a9c4943a9b16db763f5e2febf6e64b7d0fe3c@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210429 [GitHub] [kafka] xjin-Confluent opened a new pull request #10614: MINOR: Upgrade jersey to 2.34",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc6221670de35b819fe191e7d8f2d17bc000549bd554020cec644b71e@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210505 [jira] [Created] (KAFKA-12752) CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra3d7cd37fc794981a885332af2f8df0d873753380ea19935d6d847fc@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210505 [jira] [Created] (KAFKA-12752) CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc288874c330b3af9e29a1a114c5e0d24fff7a79eaa341f551535c8c0@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210505 [GitHub] [kafka] shayelkin opened a new pull request #10636: MINOR: Bump Jersey deps to 2.34 due to CVE-2021-28168",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r42fef440487a04cf5e487a9707ef5119d2dd5b809919f25ef4296fc4@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210506 [jira] [Commented] (KAFKA-12752) CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4066176a7352e021d7a81af460044bde8d57f40e98f8e4a31923af3a@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210506 [jira] [Assigned] (KAFKA-12752) CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rafc3c4cee534f478cbf8acf91e48373e291a21151f030e8132662a7b@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210506 [GitHub] [kafka] dongjinleekr opened a new pull request #10641: KAFKA-12752: CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6dadc8fe82071aba841d673ffadf34728bff4357796b1990a66e3af1@%3Ccommits.kafka.apache.org%3E",
+        "name": "[kafka-commits] 20210506 [kafka] branch 2.7 updated: KAFKA-12752: Bump Jersey deps to 2.34 due to CVE-2021-28168 (#10636)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r454f38e85db149869c5a92c993c402260a4f8599bf283f6cfaada972@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210506 [GitHub] [kafka] omkreddy commented on pull request #10641: KAFKA-12752: CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r305fb82e5c005143c1e2ec986a19c0a44f42189ab2580344dc955359@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210506 [jira] [Resolved] (KAFKA-12752) CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r280438f7cb4b3b1c9dfda9d7b05fa2a5cfab68618c6afee8169ecdaa@%3Ccommits.kafka.apache.org%3E",
+        "name": "[kafka-commits] 20210506 [kafka] branch 2.8 updated: KAFKA-12752: Bump Jersey deps to 2.34 due to CVE-2021-28168 (#10636)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdff6939e6c8dd620e20b013d9a35f57d42b3cd19e1d0483d85dfa2fd@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210506 [jira] [Resolved] (KAFKA-12752) CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r96658b899fcdbf04947257d201dc5a0abdbb5fb0a8f4ec0a6c15e70f@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210506 [GitHub] [kafka] omkreddy merged pull request #10636: MINOR: Bump Jersey deps to 2.34 due to CVE-2021-28168",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra2722171d569370a9e15147d9f3f6138ad9a188ee879c0156aa2d73a@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210507 [GitHub] [kafka] dongjinleekr closed pull request #10641: KAFKA-12752: CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra3290fe51b4546fac195724c4187c4cb7fc5809bc596c2f7e97606f4@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210507 [GitHub] [kafka] dongjinleekr commented on pull request #10641: KAFKA-12752: CVE-2021-28168 upgrade jersey to 2.34 or 3.02",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21290",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-02-08T20:15Z",
+    "lastModifiedDate": "2021-04-06T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Netty is an open-source, asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In Netty before version 4.1.59.Final there is a vulnerability on Unix-like systems involving an insecure temp file. When netty's multipart decoders are used local information disclosure can occur via the local system temporary directory if temporary storing uploads on the disk is enabled. On unix-like systems, the temporary directory is shared between all user. As such, writing to this directory using APIs that do not explicitly set the file/directory permissions can lead to information disclosure. Of note, this does not impact modern MacOS Operating Systems. The method \"File.createTempFile\" on unix-like systems creates a random file, but, by default will create this file with the permissions \"-rw-r--r--\". Thus, if sensitive information is written to this file, other local users can read this information. This is the case in netty's \"AbstractDiskHttpData\" is vulnerable. This has been fixed in version 4.1.59.Final. As a workaround, one may specify your own \"java.io.tmpdir\" when you start the JVM or use \"DefaultHttpDataFactory.setBaseDir(...)\" to set the directory to something that is only readable by the current user."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/netty/netty/security/advisories/GHSA-5mcr-gq6c-3hq2",
+        "name": "https://github.com/netty/netty/security/advisories/GHSA-5mcr-gq6c-3hq2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/netty/netty/commit/c735357bf29d07856ad171c6611a2e1a0e0000ec",
+        "name": "https://github.com/netty/netty/commit/c735357bf29d07856ad171c6611a2e1a0e0000ec",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00016.html",
+        "name": "[debian-lts-announce] 20210211 [SECURITY] [DLA 2555-1] netty security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc488f80094872ad925f0c73d283d4c00d32def81977438e27a3dc2bb@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210301 [jira] [Created] (KAFKA-12389) Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2748097ea4b774292539cf3de6e3b267fc7a88d6c8ec40f4e2e87bd4@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210301 [jira] [Created] (KAFKA-12389) Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r10308b625e49d4e9491d7e079606ca0df2f0a4d828f1ad1da64ba47b@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210301 [GitHub] [kafka] dongjinleekr opened a new pull request #10235: KAFKA-12389: Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra503756ced78fdc2136bd33e87cb7553028645b261b1f5c6186a121e@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210301 [jira] [Assigned] (KAFKA-12389) Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2fda4dab73097051977f2ab818f75e04fbcb15bb1003c8530eac1059@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210301 [GitHub] [kafka] dongjinleekr commented on pull request #10235: KAFKA-12389: Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0857b613604c696bf9743f0af047360baaded48b1c75cf6945a083c5@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210302 [GitHub] [kafka] omkreddy closed pull request #10235: KAFKA-12389: Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r71dbb66747ff537640bb91eb0b2b24edef21ac07728097016f58b01f@%3Ccommits.kafka.apache.org%3E",
+        "name": "[kafka-commits] 20210302 [kafka] branch 2.7 updated: KAFKA-12389: Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdba4f78ac55f803893a1a2265181595e79e3aa027e2e651dfba98c18@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210302 [jira] [Resolved] (KAFKA-12389) Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra0fc2b4553dd7aaf75febb61052b7f1243ac3a180a71c01f29093013@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210302 [GitHub] [kafka] dongjinleekr commented on pull request #10235: KAFKA-12389: Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r326ec431f06eab7cb7113a7a338e59731b8d556d05258457f12bac1b@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210302 [jira] [Resolved] (KAFKA-12389) Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5e4a540089760c8ecc2c411309d74264f1dad634ad93ad583ca16214@%3Ccommits.kafka.apache.org%3E",
+        "name": "[kafka-commits] 20210302 [kafka] branch 2.6 updated: KAFKA-12389: Upgrade of netty-codec due to CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0053443ce19ff125981559f8c51cf66e3ab4350f47812b8cf0733a05@%3Cdev.kafka.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r0053443ce19ff125981559f8c51cf66e3ab4350f47812b8cf0733a05@%3Cdev.kafka.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r743149dcc8db1de473e6bff0b3ddf10140a7357bc2add75f7d1fbb12@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20210311 [jira] [Created] (ZOOKEEPER-4242) Upgrade Netty library to > 4.1.59 due to security vulnerability",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5bf303d7c04da78f276765da08559fdc62420f1df539b277ca31f63b@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210311 [jira] [Created] (ZOOKEEPER-4242) Upgrade Netty library to > 4.1.59 due to security vulnerability",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4efed2c501681cb2e8d629da16e48d9eac429624fd4c9a8c6b8e7020@%3Cdev.tinkerpop.apache.org%3E",
+        "name": "[tinkerpop-dev] 20210316 [jira] [Created] (TINKERPOP-2535) Netty 4.1.52 flagged as medium security violation",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r02e467123d45006a1dda20a38349e9c74c3a4b53e2e07be0939ecb3f@%3Cdev.ranger.apache.org%3E",
+        "name": "[ranger-dev] 20210317 [jira] [Created] (RANGER-3209) Upgrade netty to 4.1.60+ due to CVE-2021-21290 and CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7bb3cdc192e9a6f863d3ea05422f09fa1ae2b88d4663e63696ee7ef5@%3Cdev.ranger.apache.org%3E",
+        "name": "[ranger-dev] 20210317 [jira] [Assigned] (RANGER-3209) Upgrade netty to 4.1.60+ due to CVE-2021-21290 and CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcd163e421273e8dca1c71ea298dce3dd11b41d51c3a812e0394e6a5d@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210329 [GitHub] [pulsar] yaswanthnadella opened a new issue #10071: CVE-2021-21295 & CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9924ef9357537722b28d04c98a189750b80694a19754e5057c34ca48@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210329 [GitHub] [pulsar] aahmed-se opened a new pull request #10073: Upgrade Netty version to 4.1.60.final",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb51d6202ff1a773f96eaa694b7da4ad3f44922c40b3d4e1a19c2f325@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210329 [GitHub] [pulsar] merlimat closed issue #10071: CVE-2021-21295 & CVE-2021-21290",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r790c2926efcd062067eb18fde2486527596d7275381cfaff2f7b3890@%3Cissues.bookkeeper.apache.org%3E",
+        "name": "[bookkeeper-issues] 20210330 [GitHub] [bookkeeper] eolivelli opened a new issue #2669: Update Netty to 4.1.60.final",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5e66e286afb5506cdfe9bbf68a323e8d09614f6d1ddc806ed0224700@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210330 [jira] [Updated] (KAFKA-12583) Upgrade of netty-codec due to CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc0087125cb15b4b78e44000f841cd37fefedfda942fd7ddf3ad1b528@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210330 [jira] [Updated] (ZOOKEEPER-4272) Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb592033a2462548d061a83ac9449c5ff66098751748fcd1e2d008233@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210330 [jira] [Created] (ZOOKEEPER-4272) Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r59bac5c09f7a4179b9e2460e8f41c278aaf3b9a21cc23678eb893e41@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210330 [jira] [Created] (KAFKA-12583) Upgrade of netty-codec due to CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1908a34b9cc7120e5c19968a116ddbcffea5e9deb76c2be4fa461904@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20210330 [jira] [Created] (ZOOKEEPER-4272) Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb06c1e766aa45ee422e8261a8249b561784186483e8f742ea627bda4@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210330 [jira] [Created] (KAFKA-12583) Upgrade of netty-codec due to CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2936730ef0a06e724b96539bc7eacfcd3628987c16b1b99c790e7b87@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210402 [jira] [Commented] (ZOOKEEPER-4272) Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21295",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4885",
+        "name": "DSA-4885",
+        "refsource": "DEBIAN",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28100",
+    "cveASSIGNER": "security-report@netflix.com",
+    "publishedDate": "2021-03-23T21:15Z",
+    "lastModifiedDate": "2021-03-26T20:18Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Priam uses File.createTempFile, which gives the permissions on that file -rw-r--r--. An attacker with read access to the local filesystem can read anything written there by the Priam process."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/Netflix/security-bulletins/blob/master/advisories/nflx-2021-002.md",
+        "name": "https://github.com/Netflix/security-bulletins/blob/master/advisories/nflx-2021-002.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-7273",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-11-18T22:15Z",
+    "lastModifiedDate": "2019-11-20T15:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A symlink issue exists in Iceweasel-firegpg before 0.6 due to insecure tempfile handling."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2011/01/14/2",
+        "name": "https://www.openwall.com/lists/oss-security/2011/01/14/2",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://vulners.com/securityvulns/SECURITYVULNS:DOC:20757?utm_source=securityvulns&utm_medium=redirect",
+        "name": "https://vulners.com/securityvulns/SECURITYVULNS:DOC:20757?utm_source=securityvulns&utm_medium=redirect",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security-tracker.debian.org/tracker/CVE-2008-7273",
+        "name": "https://security-tracker.debian.org/tracker/CVE-2008-7273",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-3618",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2019-11-12T15:15Z",
+    "lastModifiedDate": "2019-11-14T18:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "atop: symlink attack possible due to insecure tempfile handling"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://access.redhat.com/security/cve/cve-2011-3618",
+        "name": "Red Hat",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security-tracker.debian.org/tracker/CVE-2011-3618",
+        "name": "Debian",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-3618",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-3618",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-15908",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-08-27T17:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Artifex Ghostscript 9.23 before 2018-08-23, attackers are able to supply malicious PostScript files to bypass .tempfile restrictions and write files."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/332928",
+        "name": "https://www.kb.cert.org/vuls/id/332928",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://git.ghostscript.com/?p=ghostpdl.git;a=commit;h=0d3901189f245232f0161addf215d7268c4d05a3",
+        "name": "http://git.ghostscript.com/?p=ghostpdl.git;a=commit;h=0d3901189f245232f0161addf215d7268c4d05a3",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4288",
+        "name": "DSA-4288",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/09/msg00015.html",
+        "name": "[debian-lts-announce] 20180913 [SECURITY] [DLA 1504-1] ghostscript security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3768-1/",
+        "name": "USN-3768-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-12",
+        "name": "GLSA-201811-12",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:3650",
+        "name": "RHSA-2018:3650",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1839",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-03-11T19:37Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Execute class in shellutils in logilab-commons before 0.61.0 uses tempfile.mktemp, which allows local users to have an unspecified impact by pre-creating the temporary file."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-02/msg00085.html",
+        "name": "openSUSE-SU-2014:0306",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.logilab.org/ticket/207562",
+        "name": "http://www.logilab.org/ticket/207562",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/57209",
+        "name": "57209",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737051",
+        "name": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737051",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://comments.gmane.org/gmane.comp.security.oss.general/11986",
+        "name": "[oss-security] 20140131 CVE request: temp file issues in python's logilab-common module",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-5658",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-11-03T00:07Z",
+    "lastModifiedDate": "2018-10-17T21:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "BlooMooWeb ActiveX control (AidemATL.dll) allows remote attackers to (1) download arbitrary files via a URL in the bstrUrl parameter to the BW_DownloadFile method, (2) execute arbitrary local files via a file path in the bstrParams parameter to the BW_LaunchGame method, and (3) delete arbitrary files via a file path in the filePath parameter to the BW_DeleteTempFile method."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/20827",
+        "name": "20827",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/22666",
+        "name": "22666",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/1808",
+        "name": "1808",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/4294",
+        "name": "ADV-2006-4294",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/29997",
+        "name": "bloomooweb-bwdeletetempfile-dos(29997)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/29968",
+        "name": "bloomooweb-activex-command-execution(29968)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/450144/100/0/threaded",
+        "name": "20061031 ActiveX security leaks in the TV owned web game platform",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-0801",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-02-07T11:28Z",
+    "lastModifiedDate": "2018-10-16T16:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The nsExternalAppHandler::SetUpTempFile function in Mozilla Firefox 1.5.0.9 creates temporary files with predictable filenames based on creation time, which allows remote attackers to execute arbitrary web script or HTML via a crafted XMLHttpRequest."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/459163/100/0/threaded",
+        "name": "20070205 Re: [Full-disclosure] Firefox + popup blocker + XMLHttpRequest + srand() = oops",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/22396",
+        "name": "22396",
+        "refsource": "BID",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200703-04.xml",
+        "name": "GLSA-200703-04",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.gentoo.org/security/en/glsa/glsa-200703-08.xml",
+        "name": "GLSA-200703-08",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/24393",
+        "name": "24393",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/24437",
+        "name": "24437",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/32108",
+        "name": "32108",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/459162/100/0/threaded",
+        "name": "20070205 Firefox + popup blocker + XMLHttpRequest + srand() = oops",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-5258",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-11-06T18:55Z",
+    "lastModifiedDate": "2018-10-09T19:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Directory traversal vulnerability in showTempFile.php in webEdition CMS before 6.3.9.0 Beta allows remote authenticated users to read arbitrary files via a .. (dot dot) in the file parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://packetstormsecurity.com/files/128301/webEdition-6.3.8.0-Path-Traversal.html",
+        "name": "http://packetstormsecurity.com/files/128301/webEdition-6.3.8.0-Path-Traversal.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.webedition.org/de/webedition-cms/versionshistorie/webedition-6/version-6.3.9.0",
+        "name": "http://www.webedition.org/de/webedition-cms/versionshistorie/webedition-6/version-6.3.9.0",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.webedition.org/de/aktuelles/webedition-cms/webEdition-6.3.9-Beta-erschienen",
+        "name": "http://www.webedition.org/de/aktuelles/webedition-cms/webEdition-6.3.9-Beta-erschienen",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.htbridge.com/advisory/HTB23227",
+        "name": "https://www.htbridge.com/advisory/HTB23227",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/533465/100/0/threaded",
+        "name": "20140917 Path Traversal in webEdition",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-9250",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-01-12T22:29Z",
+    "lastModifiedDate": "2018-01-24T17:51Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Skybox Platform before 7.5.201. Directory Traversal exists in /skyboxview/webskybox/attachmentdownload and /skyboxview/webskybox/filedownload via the tempFileName parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20151210-0_Skybox_Platform_Multiple_Vulnerabilities_v10.txt",
+        "name": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20151210-0_Skybox_Platform_Multiple_Vulnerabilities_v10.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-4343",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-09-30T17:22Z",
+    "lastModifiedDate": "2017-09-29T01:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Chilkat XML ChilkatUtil.CkData.1 ActiveX control (ChilkatUtil.dll) 3.0.3.0 and earlier allows remote attackers to create, overwrite, and modify arbitrary files for execution via a call to the (1) SaveToFile, (2) SaveToTempFile, or (3) AppendBinary method.  NOTE: this issue might only be exploitable in limited environments or non-default browser settings.  NOTE: this can be leveraged for remote code execution by accessing files using hcp:// URLs."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/31951",
+        "name": "31951",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.shinnai.net/xplits/TXT_rNowA1916DKFNUF48NyS",
+        "name": "http://www.shinnai.net/xplits/TXT_rNowA1916DKFNUF48NyS",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/31332",
+        "name": "31332",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/45333",
+        "name": "chilkatxml-chilkatutil-file-overwrite(45333)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/6537",
+        "name": "6537",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1640",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-01-28T00:55Z",
+    "lastModifiedDate": "2017-08-29T01:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "axiom-test.sh in axiom 20100701-1.1 uses tempfile to create a safe temporary file but appends a suffix to the original filename and writes to this new filename, which allows local users to overwrite arbitrary files via a symlink attack on the new filename."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.osvdb.org/102383",
+        "name": "102383",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/01/22/4",
+        "name": "[oss-security] 20140122 Re: Getting tempfile/mktemp wrong",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=736358",
+        "name": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=736358",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/01/22/3",
+        "name": "[oss-security] 20140122 Getting tempfile/mktemp wrong",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/90663",
+        "name": "axiom-cve20141640-symlink(90663)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1638",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-01-28T00:55Z",
+    "lastModifiedDate": "2017-08-29T01:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "(1) debian/postrm and (2) debian/localepurge.config in localepurge before 0.7.3.2 use tempfile to create a safe temporary file but appends a suffix to the original filename and writes to this new filename, which allows local users to overwrite arbitrary files via a symlink attack on the new filename."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.osvdb.org/102379",
+        "name": "102379",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/65098",
+        "name": "65098",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/01/22/3",
+        "name": "[oss-security] 20140122 Getting tempfile/mktemp wrong",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/01/22/4",
+        "name": "[oss-security] 20140122 Re: Getting tempfile/mktemp wrong",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/102381",
+        "name": "102381",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=736359",
+        "name": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=736359",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/90669",
+        "name": "localepurge-cve20141638-symlink(90669)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2004-2502",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2004-12-31T05:00Z",
+    "lastModifiedDate": "2017-07-11T01:31Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "im-switch before 11.4-46.1 in Fedora Core 2 allows local users to overwrite arbitrary files via a symlink attack on the imswitcher[PID] temporary file."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://packetstormsecurity.org/0407-advisories/fedora_im-switch_tempfile_race.txt",
+        "name": "http://packetstormsecurity.org/0407-advisories/fedora_im-switch_tempfile_race.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=126940",
+        "name": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=126940",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/10717",
+        "name": "10717",
+        "refsource": "BID",
+        "tags": [
+          "Exploit",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/7772",
+        "name": "7772",
+        "refsource": "OSVDB",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/12037",
+        "name": "12037",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/16682",
+        "name": "fedora-imswitch-symlink(16682)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2004-0851",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2004-09-08T04:00Z",
+    "lastModifiedDate": "2017-07-11T01:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The (1) write_list and (2) dump_curr_list functions in Net-Acct before 0.71 allows local users to overwrite arbitrary files via a symlink attack on temporary files."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://exorsus.net/projects/net-acct/net-acct-notempfiles.patch",
+        "name": "http://exorsus.net/projects/net-acct/net-acct-notempfiles.patch",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2004/dsa-559",
+        "name": "DSA-559",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/11125",
+        "name": "11125",
+        "refsource": "BID",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/12476",
+        "name": "12476",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=109466910232385&w=2",
+        "name": "20040908 Insecure Temporary File Creation Vulnerability in Net-Acct",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17283",
+        "name": "net-acct-tmp-symlink(17283)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  }
+]

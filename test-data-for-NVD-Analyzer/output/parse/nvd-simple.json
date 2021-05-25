@@ -1,0 +1,540 @@
+[
+  {
+    "cveID": "CVE-2021-29514",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. If the `splits` argument of `RaggedBincount` does not specify a valid `SparseTensor`(https://www.tensorflow.org/api_docs/python/tf/sparse/SparseTensor), then an attacker can trigger a heap buffer overflow. This will cause a read from outside the bounds of the `splits` tensor buffer in the implementation of the `RaggedBincount` op(https://github.com/tensorflow/tensorflow/blob/8b677d79167799f71c42fd3fa074476e0295413a/tensorflow/core/kernels/bincount_op.cc#L430-L446). Before the `for` loop, `batch_idx` is set to 0. The attacker sets `splits(0)` to be 7, hence the `while` loop does not execute and `batch_idx` remains 0. This then results in writing to `out(-1, bin)`, which is before the heap allocated buffer for the output tensor. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3, as these are also affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+        "name": "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8h46-5m9h-7553",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8h46-5m9h-7553",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29519",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. The API of `tf.raw_ops.SparseCross` allows combinations which would result in a `CHECK`-failure and denial of service. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/3d782b7d47b1bf2ed32bd4a246d6d6cadc4c903d/tensorflow/core/kernels/sparse_cross_op.cc#L114-L116) is tricked to consider a tensor of type `tstring` which in fact contains integral elements. Fixing the type confusion by preventing mixing `DT_STRING` and `DT_INT64` types solves this issue. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+        "name": "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29521",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Specifying a negative dense shape in `tf.raw_ops.SparseCountSparseOutput` results in a segmentation fault being thrown out from the standard library as `std::vector` invariants are broken. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/8f7b60ee8c0206a2c99802e3a4d1bb55d2bc0624/tensorflow/core/kernels/count_ops.cc#L199-L213) assumes the first element of the dense shape is always positive and uses it to initialize a `BatchedMap<T>` (i.e., `std::vector<absl::flat_hash_map<int64,T>>`(https://github.com/tensorflow/tensorflow/blob/8f7b60ee8c0206a2c99802e3a4d1bb55d2bc0624/tensorflow/core/kernels/count_ops.cc#L27)) data structure. If the `shape` tensor has more than one element, `num_batches` is the first value in `shape`. Ensuring that the `dense_shape` argument is a valid tensor shape (that is, all elements are non-negative) solves this issue. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/c57c0b9f3a4f8684f3489dd9a9ec627ad8b599f5",
+        "name": "https://github.com/tensorflow/tensorflow/commit/c57c0b9f3a4f8684f3489dd9a9ec627ad8b599f5",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hr84-fqvp-48mm",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hr84-fqvp-48mm",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29523",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in `tf.raw_ops.AddManySparseToTensorsMap`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/kernels/sparse_tensors_map_ops.cc#L257) takes the values specified in `sparse_shape` as dimensions for the output shape. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "name": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29530",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a null pointer dereference by providing an invalid `permutation` to `tf.raw_ops.SparseMatrixSparseCholesky`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/080f1d9e257589f78b3ffb75debf584168aa6062/tensorflow/core/kernels/sparse/sparse_cholesky_op.cc#L85-L86) fails to properly validate the input arguments. Although `ValidateInputs` is called and there are checks in the body of this function, the code proceeds to the next line in `ValidateInputs` since `OP_REQUIRES`(https://github.com/tensorflow/tensorflow/blob/080f1d9e257589f78b3ffb75debf584168aa6062/tensorflow/core/framework/op_requires.h#L41-L48) is a macro that only exits the current function. Thus, the first validation condition that fails in `ValidateInputs` will cause an early return from that function. However, the caller will continue execution from the next line. The fix is to either explicitly check `context->status()` or to convert `ValidateInputs` to return a `Status`. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xcwj-wfcm-m23c",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xcwj-wfcm-m23c",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/e6a7c7cc18c3aaad1ae0872cb0a959f5c923d2bd",
+        "name": "https://github.com/tensorflow/tensorflow/commit/e6a7c7cc18c3aaad1ae0872cb0a959f5c923d2bd",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29534",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in `tf.raw_ops.SparseConcat`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/b432a38fe0e1b4b904a6c222cbce794c39703e87/tensorflow/core/kernels/sparse_concat_op.cc#L76) takes the values specified in `shapes[0]` as dimensions for the output shape. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "name": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6j9c-grc6-5m6g",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6j9c-grc6-5m6g",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29545",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in converting sparse tensors to CSR Sparse matrices. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/800346f2c03a27e182dd4fba48295f65e7790739/tensorflow/core/kernels/sparse/kernels.cc#L66) does a double redirection to access an element of an array allocated on the heap. If the value at `indices(i, 0)` is such that `indices(i, 0) + 1` is outside the bounds of `csr_row_ptr`, this results in writing outside of bounds of heap allocated data. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hmg3-c7xj-6qwm",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hmg3-c7xj-6qwm",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/1e922ccdf6bf46a3a52641f99fd47d54c1decd13",
+        "name": "https://github.com/tensorflow/tensorflow/commit/1e922ccdf6bf46a3a52641f99fd47d54c1decd13",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29557",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a denial of service via a FPE runtime error in `tf.raw_ops.SparseMatMul`. The division by 0 occurs deep in Eigen code because the `b` tensor is empty. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/7f283ff806b2031f407db64c4d3edcda8fb9f9f5",
+        "name": "https://github.com/tensorflow/tensorflow/commit/7f283ff806b2031f407db64c4d3edcda8fb9f9f5",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xw93-v57j-fcgh",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xw93-v57j-fcgh",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29558",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a heap buffer overflow in `tf.raw_ops.SparseSplit`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/699bff5d961f0abfde8fa3f876e6d241681fbef8/tensorflow/core/util/sparse/sparse_tensor.h#L528-L530) accesses an array element based on a user controlled offset. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-mqh2-9wrp-vx84",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-mqh2-9wrp-vx84",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/8ba6fa29cd8bf9cef9b718dc31c78c73081f5b31",
+        "name": "https://github.com/tensorflow/tensorflow/commit/8ba6fa29cd8bf9cef9b718dc31c78c73081f5b31",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29559",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can access data outside of bounds of heap allocated array in `tf.raw_ops.UnicodeEncode`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/472c1f12ad9063405737679d4f6bd43094e1d36d/tensorflow/core/kernels/unicode_ops.cc) assumes that the `input_value`/`input_splits` pair specify a valid sparse tensor. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/51300ba1cc2f487aefec6e6631fef03b0e08b298",
+        "name": "https://github.com/tensorflow/tensorflow/commit/51300ba1cc2f487aefec6e6631fef03b0e08b298",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-59q2-x2qc-4c97",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-59q2-x2qc-4c97",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29565",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a null pointer dereference in the implementation of `tf.raw_ops.SparseFillEmptyRows`. This is because of missing validation(https://github.com/tensorflow/tensorflow/blob/fdc82089d206e281c628a93771336bf87863d5e8/tensorflow/core/kernels/sparse_fill_empty_rows_op.cc#L230-L231) that was covered under a `TODO`. If the `dense_shape` tensor is empty, then `dense_shape_t.vec<>()` would cause a null pointer dereference in the implementation of the op. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-r6pg-pjwc-j585",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-r6pg-pjwc-j585",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/faa76f39014ed3b5e2c158593b1335522e573c7f",
+        "name": "https://github.com/tensorflow/tensorflow/commit/faa76f39014ed3b5e2c158593b1335522e573c7f",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29567",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Due to lack of validation in `tf.raw_ops.SparseDenseCwiseMul`, an attacker can trigger denial of service via `CHECK`-fails or accesses to outside the bounds of heap allocated data. Since the implementation(https://github.com/tensorflow/tensorflow/blob/38178a2f7a681a7835bb0912702a134bfe3b4d84/tensorflow/core/kernels/sparse_dense_binary_op_shared.cc#L68-L80) only validates the rank of the input arguments but no constraints between dimensions(https://www.tensorflow.org/api_docs/python/tf/raw_ops/SparseDenseCwiseMul), an attacker can abuse them to trigger internal `CHECK` assertions (and cause program termination, denial of service) or to write to memory outside of bounds of heap allocated tensor buffers. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wp3c-xw9g-gpcg",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wp3c-xw9g-gpcg",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/7ae2af34087fb4b5c8915279efd03da3b81028bc",
+        "name": "https://github.com/tensorflow/tensorflow/commit/7ae2af34087fb4b5c8915279efd03da3b81028bc",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29584",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in caused by an integer overflow in constructing a new tensor shape. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/0908c2f2397c099338b901b067f6495a5b96760b/tensorflow/core/kernels/sparse_split_op.cc#L66-L70) builds a dense shape without checking that the dimensions would not result in overflow. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xvjm-fvxx-q3hv",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xvjm-fvxx-q3hv",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/4c0ee937c0f61c4fc5f5d32d9bb4c67428012a60",
+        "name": "https://github.com/tensorflow/tensorflow/commit/4c0ee937c0f61c4fc5f5d32d9bb4c67428012a60",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29607",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Incomplete validation in `SparseAdd` results in allowing attackers to exploit undefined behavior (dereferencing null pointers) as well as write outside of bounds of heap allocated data. The implementation(https://github.com/tensorflow/tensorflow/blob/656e7673b14acd7835dc778867f84916c6d1cac2/tensorflow/core/kernels/sparse_sparse_binary_op_shared.cc) has a large set of validation for the two sparse tensor inputs (6 tensors in total), but does not validate that the tensors are not empty or that the second dimension of `*_indices` matches the size of corresponding `*_shape`. This allows attackers to send tensor triples that represent invalid sparse tensors to abuse code assumptions that are not protected by validation. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/ba6822bd7b7324ba201a28b2f278c29a98edbef2",
+        "name": "https://github.com/tensorflow/tensorflow/commit/ba6822bd7b7324ba201a28b2f278c29a98edbef2",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/f6fde895ef9c77d848061c0517f19d0ec2682f3a",
+        "name": "https://github.com/tensorflow/tensorflow/commit/f6fde895ef9c77d848061c0517f19d0ec2682f3a",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gv26-jpj9-c8gq",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-gv26-jpj9-c8gq",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29609",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Incomplete validation in `SparseAdd` results in allowing attackers to exploit undefined behavior (dereferencing null pointers) as well as write outside of bounds of heap allocated data. The implementation(https://github.com/tensorflow/tensorflow/blob/656e7673b14acd7835dc778867f84916c6d1cac2/tensorflow/core/kernels/sparse_add_op.cc) has a large set of validation for the two sparse tensor inputs (6 tensors in total), but does not validate that the tensors are not empty or that the second dimension of `*_indices` matches the size of corresponding `*_shape`. This allows attackers to send tensor triples that represent invalid sparse tensors to abuse code assumptions that are not protected by validation. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/41727ff06111117bdf86b37db198217fd7a143cc",
+        "name": "https://github.com/tensorflow/tensorflow/commit/41727ff06111117bdf86b37db198217fd7a143cc",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-cjc7-49v2-jp64",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-cjc7-49v2-jp64",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/6fd02f44810754ae7481838b6a67c5df7f909ca3",
+        "name": "https://github.com/tensorflow/tensorflow/commit/6fd02f44810754ae7481838b6a67c5df7f909ca3",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29611",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Incomplete validation in `SparseReshape` results in a denial of service based on a `CHECK`-failure. The implementation(https://github.com/tensorflow/tensorflow/blob/e87b51ce05c3eb172065a6ea5f48415854223285/tensorflow/core/kernels/sparse_reshape_op.cc#L40) has no validation that the input arguments specify a valid sparse tensor. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3, as these are the only affected versions."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-9rpc-5v9q-5r7f",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-9rpc-5v9q-5r7f",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/1d04d7d93f4ed3854abf75d6b712d72c3f70d6b6",
+        "name": "https://github.com/tensorflow/tensorflow/commit/1d04d7d93f4ed3854abf75d6b712d72c3f70d6b6",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29615",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. The implementation of `ParseAttrValue`(https://github.com/tensorflow/tensorflow/blob/c22d88d6ff33031aa113e48aa3fc9aa74ed79595/tensorflow/core/framework/attr_value_util.cc#L397-L453) can be tricked into stack overflow due to recursion by giving in a specially crafted input. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/e07e1c3d26492c06f078c7e5bf2d138043e199c1",
+        "name": "https://github.com/tensorflow/tensorflow/commit/e07e1c3d26492c06f078c7e5bf2d138043e199c1",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-qw5h-7f53-xrp6",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-qw5h-7f53-xrp6",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29619",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Passing invalid arguments (e.g., discovered via fuzzing) to `tf.raw_ops.SparseCountSparseOutput` results in segfault. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/82e6203221865de4008445b13c69b6826d2b28d9",
+        "name": "https://github.com/tensorflow/tensorflow/commit/82e6203221865de4008445b13c69b6826d2b28d9",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wvjw-p9f5-vq28",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wvjw-p9f5-vq28",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3537",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-14T20:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability found in libxml2 in versions before 2.9.11 shows that it did not propagate errors while parsing XML mixed content, causing a NULL dereference. If an untrusted XML document was parsed in recovery mode and post-validated, the flaw could be used to crash the application. The highest threat from this vulnerability is to system availability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1956522",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1956522",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QVM4UJ3376I6ZVOYMHBNX4GY3NIV52WV/",
+        "name": "FEDORA-2021-e3ed1ba38b",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00008.html",
+        "name": "[debian-lts-announce] 20210510 [SECURITY] [DLA 2653-1] libxml2 security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29512",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T19:15Z",
+    "lastModifiedDate": "2021-05-14T20:08Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. If the `splits` argument of `RaggedBincount` does not specify a valid `SparseTensor`(https://www.tensorflow.org/api_docs/python/tf/sparse/SparseTensor), then an attacker can trigger a heap buffer overflow. This will cause a read from outside the bounds of the `splits` tensor buffer in the implementation of the `RaggedBincount` op(https://github.com/tensorflow/tensorflow/blob/8b677d79167799f71c42fd3fa074476e0295413a/tensorflow/core/kernels/bincount_op.cc#L430-L433). Before the `for` loop, `batch_idx` is set to 0. The user controls the `splits` array, making it contain only one element, 0. Thus, the code in the `while` loop would increment `batch_idx` and then try to read `splits(1)`, which is outside of bounds. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3, as these are also affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4278-2v5v-65r4",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4278-2v5v-65r4",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+        "name": "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,865 @@
+[
+  {
+    "cveID": "CVE-2021-22668",
+    "cveASSIGNER": "ics-cert@hq.dhs.gov",
+    "publishedDate": "2021-05-16T15:15Z",
+    "lastModifiedDate": "2021-05-16T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Delta Industrial Automation CNCSoft ScreenEditor Versions 1.01.28 (with ScreenEditor Version 1.01.2) and prior are vulnerable to an out-of-bounds read while processing project files, which may allow an attacker to execute arbitrary code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-110-04",
+        "name": "https://us-cert.cisa.gov/ics/advisories/icsa-21-110-04",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-8370",
+    "cveASSIGNER": "ics-cert@hq.dhs.gov",
+    "publishedDate": "2017-02-13T21:59Z",
+    "lastModifiedDate": "2021-05-14T15:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Mitsubishi Electric Automation MELSEC-Q series Ethernet interface modules QJ71E71-100, all versions, QJ71E71-B5, all versions, and QJ71E71-B2, all versions. Weakly encrypted passwords are transmitted to a MELSEC-Q PLC."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://ics-cert.us-cert.gov/advisories/ICSA-16-336-03",
+        "name": "https://ics-cert.us-cert.gov/advisories/ICSA-16-336-03",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/94632",
+        "name": "94632",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-8368",
+    "cveASSIGNER": "ics-cert@hq.dhs.gov",
+    "publishedDate": "2017-02-13T21:59Z",
+    "lastModifiedDate": "2021-05-14T15:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Mitsubishi Electric Automation MELSEC-Q series Ethernet interface modules QJ71E71-100, all versions, QJ71E71-B5, all versions, and QJ71E71-B2, all versions. The affected Ethernet interface module is connected to a MELSEC-Q PLC, which may allow a remote attacker to connect to the PLC via Port 5002/TCP and cause a denial of service, requiring the PLC to be reset to resume operation. This is caused by an Unrestricted Externally Accessible Lock."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://ics-cert.us-cert.gov/advisories/ICSA-16-336-03",
+        "name": "https://ics-cert.us-cert.gov/advisories/ICSA-16-336-03",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/94632",
+        "name": "94632",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7385",
+    "cveASSIGNER": "cve@rapid7.com",
+    "publishedDate": "2021-04-23T16:15Z",
+    "lastModifiedDate": "2021-05-14T14:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "By launching the drb_remote_codeexec exploit, a Metasploit Framework user will inadvertently expose Metasploit to the same deserialization issue that is exploited by that module, due to the reliance on the vulnerable Distributed Ruby class functions. Since Metasploit Framework typically runs with elevated privileges, this can lead to a system compromise on the Metasploit workstation. Note that an attacker would have to lie in wait and entice the Metasploit user to run the affected module against a malicious endpoint in a \"hack-back\" type of attack. Metasploit is only vulnerable when the drb_remote_codeexec module is running. In most cases, this cannot happen automatically."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/rapid7/metasploit-framework/pull/14335",
+        "name": "https://github.com/rapid7/metasploit-framework/pull/14335",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/rapid7/metasploit-framework/pull/14300",
+        "name": "https://github.com/rapid7/metasploit-framework/pull/14300",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://help.rapid7.com/metasploit/release-notes/archive/2020/10/",
+        "name": "https://help.rapid7.com/metasploit/release-notes/archive/2020/10/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-1971",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2020-12-08T16:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssl.org/news/secadv/20201208.txt",
+        "name": "https://www.openssl.org/news/secadv/20201208.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4807",
+        "name": "DSA-4807",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:33.openssl.asc",
+        "name": "FreeBSD-SA-20:33",
+        "refsource": "FREEBSD",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00021.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2493-1] openssl1.0 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00020.html",
+        "name": "[debian-lts-announce] 20201214 [SECURITY] [DLA 2492-1] openssl security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DGSI34Y5LQ5RYXN4M2I5ZQT65LFVDOUU/",
+        "name": "FEDORA-2020-ef1870065a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbb769f771711fb274e0a4acb1b5911c8aab544a6ac5e8c12d40c5143@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201216 [GitHub] [pulsar] phijohns-tibco opened a new issue #8978: OpenSSL needs to be updated to 1.1.1i current version is unsupported.",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20201218-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PWPSSZNZOBJU2YR6Z4TGHXKYW3YP5QG7/",
+        "name": "FEDORA-2020-a31b01e945",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2020-11",
+        "name": "https://www.tenable.com/security/tns-2020-11",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202012-13",
+        "name": "GLSA-202012-13",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "name": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44676",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r63c6f2dd363d9b514d0a4bcf624580616a679898cc14c109a49b750c@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20210207 [Bug 65126] New: A security vulnerability cve-2020-1971 in Tomcat dependency Library in version 9.0.40.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-12526",
+    "cveASSIGNER": "info@cert.vde.com",
+    "publishedDate": "2021-05-13T14:15Z",
+    "lastModifiedDate": "2021-05-13T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TwinCAT OPC UA Server in versions up to 2.3.0.12 and IPC Diagnostics UA Server in versions up to 3.1.0.1 from Beckhoff Automation GmbH & Co. KG are vulnerable to denial of service attacks. The attacker needs to send several specifically crafted requests to the running OPC UA server. After some of these requests the OPC UA server is no longer responsive to any client. This is without effect to the real-time functionality of IPCs."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://download.beckhoff.com/download/Document/product-security/Advisories/advisory-2021-001.pdf",
+        "name": "https://download.beckhoff.com/download/Document/product-security/Advisories/advisory-2021-001.pdf",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://cert.vde.com/en-us/advisories/vde-2020-051",
+        "name": "https://cert.vde.com/en-us/advisories/vde-2020-051",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11853",
+    "cveASSIGNER": "security@microfocus.com",
+    "publishedDate": "2020-10-22T21:15Z",
+    "lastModifiedDate": "2021-05-12T20:45Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Arbitrary code execution vulnerability affecting multiple Micro Focus products. 1.) Operation Bridge Manager affecting version: 2020.05, 2019.11, 2019.05, 2018.11, 2018.05, versions 10.6x and 10.1x and older versions. 2.) Application Performance Management affecting versions : 9.51, 9.50 and 9.40 with uCMDB 10.33 CUP 3 3.) Data Center Automation affected version 2019.11 4.) Operations Bridge (containerized) affecting versions: 2019.11, 2019.08, 2019.05, 2018.11, 2018.08, 2018.05, 2018.02, 2017.11 5.) Universal CMDB affecting version: 2020.05, 2019.11, 2019.05, 2019.02, 2018.11, 2018.08, 2018.05, 11, 10.33, 10.32, 10.31, 10.30 6.) Hybrid Cloud Management affecting version 2020.05 7.) Service Management Automation affecting version 2020.5 and 2020.02. The vulnerability could allow to execute arbitrary code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03747658",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03747658",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03747949",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03747949",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03747948",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03747948",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03747950",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03747950",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03749879",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03749879",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03747657",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03747657",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03747854",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03747854",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/161182/Micro-Focus-UCMDB-Remote-Code-Execution.html",
+        "name": "http://packetstormsecurity.com/files/161182/Micro-Focus-UCMDB-Remote-Code-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/161366/Micro-Focus-Operations-Bridge-Manager-Remote-Code-Execution.html",
+        "name": "http://packetstormsecurity.com/files/161366/Micro-Focus-Operations-Bridge-Manager-Remote-Code-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11844",
+    "cveASSIGNER": "security@microfocus.com",
+    "publishedDate": "2020-05-29T22:15Z",
+    "lastModifiedDate": "2021-05-12T20:45Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Incorrect Authorization vulnerability in Micro Focus Container Deployment Foundation component affects products: - Hybrid Cloud Management. Versions 2018.05 to 2019.11. - ArcSight Investigate. versions 2.4.0, 3.0.0 and 3.1.0. - ArcSight Transformation Hub. versions 3.0.0, 3.1.0, 3.2.0. - ArcSight Interset. version 6.0.0. - ArcSight ESM (when ArcSight Fusion 1.0 is installed). version 7.2.1. - Service Management Automation (SMA). versions 2018.05 to 2020.02 - Operation Bridge Suite (Containerized). Versions 2018.05 to 2020.02. - Network Operation Management. versions 2017.11 to 2019.11. - Data Center Automation Containerized. versions 2018.05 to 2019.11 - Identity Intelligence. versions 1.1.0 and 1.1.1. The vulnerability could be exploited to provide unauthorized access to the Container Deployment Foundation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03645631",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03645631",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://support.microfocus.com/kb/doc.php?id=7024637",
+        "name": "https://support.microfocus.com/kb/doc.php?id=7024637",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03645628",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03645628",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03645629",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03645629",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03645636",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03645636",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03645642",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03645642",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://softwaresupport.softwaregrp.com/doc/KM03645630",
+        "name": "https://softwaresupport.softwaregrp.com/doc/KM03645630",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-19615",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-12-26T21:29Z",
+    "lastModifiedDate": "2021-05-12T20:42Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Rockwell Automation Allen-Bradley PowerMonitor 1000 all versions. A remote attacker could inject arbitrary code into a targeted user\u00e2??s web browser to gain access to the affected device."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exploit-db.com/exploits/45928/",
+        "name": "45928",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/150600/Rockwell-Automation-Allen-Bradley-PowerMonitor-1000-XSS.html",
+        "name": "http://packetstormsecurity.com/files/150600/Rockwell-Automation-Allen-Bradley-PowerMonitor-1000-XSS.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/106333",
+        "name": "106333",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://ics-cert.us-cert.gov/advisories/ICSA-19-050-04",
+        "name": "https://ics-cert.us-cert.gov/advisories/ICSA-19-050-04",
+        "refsource": "MISC",
+        "tags": [
+          "US Government Resource",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/108538",
+        "name": "108538",
+        "refsource": "BID",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31194",
+    "cveASSIGNER": "secure@microsoft.com",
+    "publishedDate": "2021-05-11T19:15Z",
+    "lastModifiedDate": "2021-05-11T19:24Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OLE Automation Remote Code Execution Vulnerability"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2021-31194",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-4901",
+    "cveASSIGNER": "psirt@us.ibm.com",
+    "publishedDate": "2021-05-07T16:15Z",
+    "lastModifiedDate": "2021-05-11T17:10Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "IBM Robotic Process Automation with Automation Anywhere 11.0 could allow an attacker on the network to obtain sensitive information or cause a denial of service through username enumeration. IBM X-Force ID: 190992."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.ibm.com/support/pages/node/6450435",
+        "name": "https://www.ibm.com/support/pages/node/6450435",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/190992",
+        "name": "ibm-rpa-cve20204901-info-disc (190992)",
+        "refsource": "XF",
+        "tags": [
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29238",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-03T14:15Z",
+    "lastModifiedDate": "2021-05-11T13:10Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "CODESYS Automation Server before 1.16.0 allows cross-site request forgery (CSRF)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://customers.codesys.com/index.php",
+        "name": "https://customers.codesys.com/index.php",
+        "refsource": "MISC",
+        "tags": [
+          "Permissions Required",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.codesys.com/security/security-reports.html",
+        "name": "https://www.codesys.com/security/security-reports.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://customers.codesys.com/index.php?eID=dumpFile&t=f&f=14638&token=30b75ee95d0d94527894dfd8cdc5432575a8eff8&download=",
+        "name": "https://customers.codesys.com/index.php?eID=dumpFile&t=f&f=14638&token=30b75ee95d0d94527894dfd8cdc5432575a8eff8&download=",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21428",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-10T19:15Z",
+    "lastModifiedDate": "2021-05-10T20:18Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Openapi generator is a java tool which allows generation of API client libraries (SDK generation), server stubs, documentation and configuration automatically given an OpenAPI Spec. openapi-generator-online creates insecure temporary folders with File.createTempFile during the code generation process. The insecure temporary folders store the auto-generated files which can be read and appended to by any users on the system. The issue has been patched with `Files.createTempFile` and released in the v5.1.0 stable version."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-23x4-m842-fmwf",
+        "name": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-23x4-m842-fmwf",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8788",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8788",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21430",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-10T20:15Z",
+    "lastModifiedDate": "2021-05-10T20:18Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OpenAPI Generator allows generation of API client libraries (SDK generation), server stubs, documentation and configuration automatically given an OpenAPI Spec. Using `File.createTempFile` in JDK will result in creating and using insecure temporary files that can leave application and system data vulnerable to attacks. Auto-generated code (Java, Scala) that deals with uploading or downloading binary data through API endpoints will create insecure temporary files during the process. Affected generators: `java` (jersey2, okhttp-gson (default library)), `scala-finch`. The issue has been patched with `Files.createTempFile` and released in the v5.1.0 stable version."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-cqxr-xf2w-943w",
+        "name": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-cqxr-xf2w-943w",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8787",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8787",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8791",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8791",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-15225",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-29T21:15Z",
+    "lastModifiedDate": "2021-05-10T17:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "django-filter is a generic system for filtering Django QuerySets based on user selections. In django-filter before version 2.4.0, automatically generated `NumberFilter` instances, whose value was later converted to an integer, were subject to potential DoS from maliciously input using exponential format with sufficiently large exponents. Version 2.4.0+ applies a `MaxValueValidator` with a a default `limit_value` of 1e50 to the form field used by `NumberFilter` instances. In addition, `NumberFilter` implements the new `get_max_validator()` which should return a configured validator instance to customise the limit, or else `None` to disable the additional validation. Users may manually apply an equivalent validator if they are not able to upgrade."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/carltongibson/django-filter/security/advisories/GHSA-x7gm-rfgv-w973",
+        "name": "https://github.com/carltongibson/django-filter/security/advisories/GHSA-x7gm-rfgv-w973",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/carltongibson/django-filter/commit/340cf7a23a2b3dcd7183f6a0d6c383e85b130d2b",
+        "name": "https://github.com/carltongibson/django-filter/commit/340cf7a23a2b3dcd7183f6a0d6c383e85b130d2b",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pypi.org/project/django-filter/",
+        "name": "https://pypi.org/project/django-filter/",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/carltongibson/django-filter/releases/tag/2.4.0",
+        "name": "https://github.com/carltongibson/django-filter/releases/tag/2.4.0",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-21987",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-27T18:15Z",
+    "lastModifiedDate": "2021-05-10T17:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HomeAutomation 3.3.2 is affected by persistent Cross Site Scripting (XSS). XSS vulnerabilities occur when input passed via several parameters to several scripts is not properly sanitized before being returned to the user. This can be exploited to execute arbitrary HTML and script code in a user's browser session."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exploit-db.com/exploits/47806",
+        "name": "Exploit Database",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5556.php",
+        "name": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5556.php",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-25645",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-10T13:15Z",
+    "lastModifiedDate": "2021-05-10T14:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Couchbase Server before 6.0.5, 6.1.x through 6.5.x before 6.5.2, and 6.6.x before 6.6.1. An internal user with administrator privileges, @ns_server, leaks credentials in cleartext in the cbcollect_info.log, debug.log, ns_couchdb.log, indexer.log, and stats.log files. NOTE: updating the product does not automatically address leaks that occurred in the past."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.couchbase.com/resources/security#SecurityAlerts",
+        "name": "https://www.couchbase.com/resources/security#SecurityAlerts",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.couchbase.com/downloads",
+        "name": "https://www.couchbase.com/downloads",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21429",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-04-27T20:15Z",
+    "lastModifiedDate": "2021-05-07T20:17Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "OpenAPI Generator allows generation of API client libraries, server stubs, documentation and configuration automatically given an OpenAPI Spec. Using `File.createTempFile` in JDK will result in creating and using insecure temporary files that can leave application and system data vulnerable to attacks. OpenAPI Generator maven plug-in creates insecure temporary files during the process. The issue has been patched with `Files.createTempFile` and released in the v5.1.0 stable version."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/pull/8795",
+        "name": "https://github.com/OpenAPITools/openapi-generator/pull/8795",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-867q-77cc-98mv",
+        "name": "https://github.com/OpenAPITools/openapi-generator/security/advisories/GHSA-867q-77cc-98mv",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27480",
+    "cveASSIGNER": "ics-cert@hq.dhs.gov",
+    "publishedDate": "2021-04-27T12:15Z",
+    "lastModifiedDate": "2021-05-07T16:11Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Delta Industrial Automation COMMGR Versions 1.12 and prior are vulnerable to a stack-based buffer overflow, which may allow an attacker to execute remote code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-110-03",
+        "name": "https://us-cert.cisa.gov/ics/advisories/icsa-21-110-03",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-22001",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-27T18:15Z",
+    "lastModifiedDate": "2021-05-06T14:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "HomeAutomation 3.3.2 suffers from an authentication bypass vulnerability when spoofing client IP address using the X-Forwarded-For header with the local (loopback) IP address value allowing remote control of the smart home solution."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exploit-db.com/exploits/47807",
+        "name": "Exploit Database",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5557.php",
+        "name": "https://www.zeroscience.mk/en/vulnerabilities/ZSL-2019-5557.php",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

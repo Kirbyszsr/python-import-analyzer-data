@@ -1,0 +1,31 @@
+{
+  "name": "SecretStorage",
+  "description": ".. image:: https://github.com/mitya57/secretstorage/workflows/tests/badge.svg\n   :target: https://github.com/mitya57/secretstorage/actions\n   :alt: GitHub Actions status\n.. image:: https://codecov.io/gh/mitya57/secretstorage/branch/master/graph/badge.svg\n   :target: https://codecov.io/gh/mitya57/secretstorage\n   :alt: Coverage status\n.. image:: https://readthedocs.org/projects/secretstorage/badge/?version=latest\n   :target: https://secretstorage.readthedocs.io/en/latest/\n   :alt: ReadTheDocs status\n\nModule description\n==================\n\nThis module provides a way for securely storing passwords and other secrets.\n\nIt uses D-Bus `Secret Service`_ API that is supported by GNOME Keyring,\nKSecretsService and KeePassXC.\n\nThe main classes provided are ``secretstorage.Item``, representing a secret\nitem (that has a *label*, a *secret* and some *attributes*) and\n``secretstorage.Collection``, a place items are stored in.\n\nSecretStorage supports most of the functions provided by Secret Service,\nincluding creating and deleting items and collections, editing items,\nlocking and unlocking collections (asynchronous unlocking is also supported).\n\nThe documentation can be found on `secretstorage.readthedocs.io`_.\n\n.. _`Secret Service`: https://specifications.freedesktop.org/secret-service/\n.. _`secretstorage.readthedocs.io`: https://secretstorage.readthedocs.io/en/latest/\n\nBuilding the module\n===================\n\n.. note::\n   SecretStorage 3.x supports Python 3.5 and newer versions.\n   If you have an older version of Python, install SecretStorage 2.x::\n\n      pip install \"SecretStorage < 3\"\n\nSecretStorage requires these packages to work:\n\n* Jeepney_\n* `python-cryptography`_\n\nTo build SecretStorage, use this command::\n\n   python3 setup.py build\n\nIf you have Sphinx_ installed, you can also build the documentation::\n\n   python3 setup.py build_sphinx\n\n.. _Jeepney: https://pypi.org/project/jeepney/\n.. _`python-cryptography`: https://pypi.org/project/cryptography/\n.. _Sphinx: http://sphinx-doc.org/\n\nTesting the module\n==================\n\nFirst, make sure that you have the Secret Service daemon installed.\nThe `GNOME Keyring`_ is the reference server-side implementation for the\nSecret Service specification.\n\n.. _`GNOME Keyring`: https://download.gnome.org/sources/gnome-keyring/\n\nThen, start the daemon and unlock the ``default`` collection, if needed.\nThe testsuite will fail to run if the ``default`` collection exists and is\nlocked. If it does not exist, the testsuite can also use the temporary\n``session`` collection, as provided by the GNOME Keyring.\n\nThen, run the Python unittest module::\n\n   python3 -m unittest discover -s tests\n\nIf you want to run the tests in an isolated or headless environment, run\nthis command in a D-Bus session::\n\n   dbus-run-session -- python3 -m unittest discover -s tests\n\nGet the code\n============\n\nSecretStorage is available under BSD license. The source code can be found\non GitHub_.\n\n.. _GitHub: https://github.com/mitya57/secretstorage\n\n\n",
+  "requires_dist": [
+    "cryptography (>=2.0)",
+    "jeepney (>=0.6)"
+  ],
+  "requires_python": ">=3.6",
+  "current_version": "3.3.1",
+  "released_versions": [
+    "1.0.0",
+    "1.1.0",
+    "2.0.0",
+    "2.1.0",
+    "2.1.1",
+    "2.1.2",
+    "2.1.3",
+    "2.1.4",
+    "2.2.0",
+    "2.2.1",
+    "2.3.0",
+    "2.3.1",
+    "3.0.1",
+    "3.1.0",
+    "3.1.1",
+    "3.1.2",
+    "3.2.0",
+    "3.3.0",
+    "3.3.1"
+  ]
+}

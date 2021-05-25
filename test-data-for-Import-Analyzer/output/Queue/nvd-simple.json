@@ -1,0 +1,1052 @@
+[
+  {
+    "cveID": "CVE-2021-29509",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-11T17:15Z",
+    "lastModifiedDate": "2021-05-24T19:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Puma is a concurrent HTTP 1.1 server for Ruby/Rack applications. The fix for CVE-2019-16770 was incomplete. The original fix only protected existing connections that had already been accepted from having their requests starved by greedy persistent-connections saturating all threads in the same process. However, new connections may still be starved by greedy persistent-connections saturating all threads in all processes in the cluster. A `puma` server which received more concurrent `keep-alive` connections than the server had threads in its threadpool would service only a subset of connections, denying service to the unserved connections. This problem has been fixed in `puma` 4.3.8 and 5.3.1. Setting `queue_requests false` also fixes the issue. This is not advised when using `puma` without a reverse proxy, such as `nginx` or `apache`, because you will open yourself to slow client attacks (e.g. slowloris). The fix is very small and a git patch is available for those using unsupported versions of Puma."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://rubygems.org/gems/puma",
+        "name": "https://rubygems.org/gems/puma",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/puma/puma/security/policy",
+        "name": "https://github.com/puma/puma/security/policy",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/puma/puma/security/advisories/GHSA-q28m-8xjw-8vr5",
+        "name": "https://github.com/puma/puma/security/advisories/GHSA-q28m-8xjw-8vr5",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837",
+        "name": "https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3200",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-18T17:15Z",
+    "lastModifiedDate": "2021-05-24T18:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Buffer overflow vulnerability in libsolv 2020-12-13 via the Solver * testcase_read(Pool *pool, FILE *fp, const char *testcase, Queue *job, char **resultp, int *resultflagsp function at src/testcase.c: line 2334, which could cause a denial of service"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/yangjiageng/PoC/blob/master/libsolv-PoCs/PoC-testcase_read-2334",
+        "name": "https://github.com/yangjiageng/PoC/blob/master/libsolv-PoCs/PoC-testcase_read-2334",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openSUSE/libsolv/issues/416",
+        "name": "https://github.com/openSUSE/libsolv/issues/416",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32634",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-21T18:15Z",
+    "lastModifiedDate": "2021-05-21T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Emissary is a distributed, peer-to-peer, data-driven workflow framework. Emissary 6.4.0 is vulnerable to Unsafe Deserialization of post-authenticated requests to the [`WorkSpaceClientEnqueue.action`](https://github.com/NationalSecurityAgency/emissary/blob/30c54ef16c6eb6ed09604a929939fb9f66868382/src/main/java/emissary/server/mvc/internal/WorkSpaceClientEnqueueAction.java) REST endpoint. This issue may lead to post-auth Remote Code Execution. This issue has been patched in version 6.5.0. As a workaround, one can disable network access to Emissary from untrusted sources."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/NationalSecurityAgency/emissary/security/advisories/GHSA-m5qf-gfmp-7638",
+        "name": "https://github.com/NationalSecurityAgency/emissary/security/advisories/GHSA-m5qf-gfmp-7638",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/NationalSecurityAgency/emissary/commit/40260b1ec1f76cc92361702cc14fa1e4388e19d7",
+        "name": "https://github.com/NationalSecurityAgency/emissary/commit/40260b1ec1f76cc92361702cc14fa1e4388e19d7",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-25044",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-14T23:15Z",
+    "lastModifiedDate": "2021-05-21T15:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The block subsystem in the Linux kernel before 5.2 has a use-after-free that can lead to arbitrary code execution in the kernel context and privilege escalation, aka CID-c3e2219216c9. This is related to blk_mq_free_rqs and blk_cleanup_queue."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c3e2219216c92919a6bd1711f340f5faa98695e6",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c3e2219216c92919a6bd1711f340f5faa98695e6",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://syzkaller.appspot.com/bug?id=36fe241584203cf394d44560a42e3430434f1213",
+        "name": "https://syzkaller.appspot.com/bug?id=36fe241584203cf394d44560a42e3430434f1213",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.2",
+        "name": "https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.2",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://sites.google.com/view/syzscope/kasan-use-after-free-read-in-blk_mq_free_rqs",
+        "name": "https://sites.google.com/view/syzscope/kasan-use-after-free-read-in-blk_mq_free_rqs",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-28011",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-10T19:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Exim 4 before 4.94.2 allows Heap-based Buffer Overflow in queue_run via two sender options: -R and -S. This may cause privilege escalation from exim to root."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exim.org/static/doc/security/CVE-2020-qualys/CVE-2020-28011-SPRSS.txt",
+        "name": "https://www.exim.org/static/doc/security/CVE-2020-qualys/CVE-2020-28011-SPRSS.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3392",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-03-23T20:15Z",
+    "lastModifiedDate": "2021-05-07T05:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A use-after-free flaw was found in the MegaRAID emulator of QEMU. This issue occurs while processing SCSI I/O requests in the case of an error mptsas_free_request() that does not dequeue the request object 'req' from a pending requests queue. This flaw allows a privileged guest user to crash the QEMU process on the host, resulting in a denial of service. Versions between 2.10.0 and 5.2.0 are potentially affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924042",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1924042",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/qemu/+bug/1914236",
+        "name": "https://bugs.launchpad.net/qemu/+bug/1914236",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00009.html",
+        "name": "[debian-lts-announce] 20210410 [SECURITY] [DLA 2623-1] qemu security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210507-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20210507-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0263",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-05-04T20:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A Data Processing vulnerability in the Multi-Service process (multi-svcs) on the FPC of Juniper Networks Junos OS on the PTX Series routers may lead to the process becoming unresponsive, ultimately affecting traffic forwarding, allowing an attacker to cause a Denial of Service (DoS) condition . The Multi-Service Process running on the FPC is responsible for handling sampling-related operations when a J-Flow configuration is activated. This can occur during periods of heavy route churn, causing the Multi-Service Process to stop processing updates, without consuming any further updates from kernel. This back pressure towards the kernel affects further dynamic updates from other processes in the system, including RPD, causing a KRT-STUCK condition and traffic forwarding issues. An administrator can monitor the following command to check if there is the KRT queue is stuck: user@device > show krt state ... Number of async queue entries: 65007 <--- this value keep on increasing. The following logs/alarms will be observed when this condition exists: user@junos> show chassis alarms 2 alarms currently active Alarm time Class Description 2020-10-11 04:33:45 PDT Minor Potential slow peers are: MSP(FPC1-PIC0) MSP(FPC3-PIC0) MSP(FPC4-PIC0) Logs: Oct 11 04:33:44.672 2020 test /kernel: rts_peer_cp_recv_timeout : Bit set for msp8 as it is stuck Oct 11 04:35:56.000 2020 test-lab fpc4 user.err gldfpc-multi-svcs.elf: Error in parsing composite nexthop Oct 11 04:35:56.000 2020 test-lab fpc4 user.err gldfpc-multi-svcs.elf: composite nexthop parsing error Oct 11 04:43:05 2020 test /kernel: rt_pfe_veto: Possible slowest client is msp38. States processed - 65865741. States to be processed - 0 Oct 11 04:55:55 2020 test /kernel: rt_pfe_veto: Memory usage of M_RTNEXTHOP type = (0) Max size possible for M_RTNEXTHOP type = (8311787520) Current delayed unref = (60000), Current unique delayed unref = (10896), Max delayed unref on this platform = (40000) Current delayed weight unref = (71426) Max delayed weight unref on this platform= (400000) curproc = rpd Oct 11 04:56:00 2020 test /kernel: rt_pfe_veto: Too many delayed route/nexthop unrefs. Op 2 err 55, rtsm_id 5:-1, msg type 2 This issue only affects PTX Series devices. No other products or platforms are affected by this vulnerability. This issue affects Juniper Networks Junos OS on PTX Series: 18.2 versions prior to 18.2R3-S7; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R2-S8, 18.4R3-S7; 19.1 versions prior to 19.1R3-S4; 19.2 versions prior to 19.2R3-S1; 19.3 versions prior to 19.3R3-S1; 19.4 versions prior to 19.4R2-S4, 19.4R3-S1; 20.1 versions prior to 20.1R2; 20.2 versions prior to 20.2R2; 20.3 versions prior to 20.3R1-S2, 20.3R2. This issue does not affect Juniper Networks Junos OS versions prior to 18.2R1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11154",
+        "name": "https://kb.juniper.net/JSA11154",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.juniper.net/documentation/en_US/junos/topics/example/flowmonitoring-active-sampling-instance-example.html",
+        "name": "https://www.juniper.net/documentation/en_US/junos/topics/example/flowmonitoring-active-sampling-instance-example.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31571",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-22T18:15Z",
+    "lastModifiedDate": "2021-05-03T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The kernel in Amazon Web Services FreeRTOS before 10.4.3 has an integer overflow in queue.c for queue creation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/FreeRTOS/FreeRTOS-Kernel/commit/47338393f1f79558f6144213409f09f81d7c4837",
+        "name": "https://github.com/FreeRTOS/FreeRTOS-Kernel/commit/47338393f1f79558f6144213409f09f81d7c4837",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-2246",
+    "cveASSIGNER": "secalert_us@oracle.com",
+    "publishedDate": "2021-04-22T22:15Z",
+    "lastModifiedDate": "2021-04-29T12:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Vulnerability in the Oracle Universal Work Queue product of Oracle E-Business Suite (component: Work Provider Site Level Administration). Supported versions that are affected are 12.1.1-12.1.3. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Universal Work Queue. Successful attacks of this vulnerability can result in unauthorized creation, deletion or modification access to critical data or all Oracle Universal Work Queue accessible data as well as unauthorized access to critical data or complete access to all Oracle Universal Work Queue accessible data. CVSS 3.1 Base Score 8.1 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpuapr2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0229",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-27T18:01Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An uncontrolled resource consumption vulnerability in Message Queue Telemetry Transport (MQTT) server of Juniper Networks Junos OS allows an attacker to cause MQTT server to crash and restart leading to a Denial of Service (DoS) by sending a stream of specific packets. A Juniper Extension Toolkit (JET) application designed with a listening port uses the Message Queue Telemetry Transport (MQTT) protocol to connect to a mosquitto broker that is running on Junos OS to subscribe for events. Continued receipt and processing of this packet will create a sustained Denial of Service (DoS) condition. This issue affects Juniper Networks Junos OS: 16.1R1 and later versions prior to 17.3R3-S11; 17.4 versions prior to 17.4R2-S13, 17.4R3-S4; 18.1 versions prior to 18.1R3-S12; 18.2 versions prior to 18.2R2-S8, 18.2R3-S7; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R1-S8, 18.4R2-S7, 18.4R3-S7; 19.1 versions prior to 19.1R3-S5; 19.2 versions prior to 19.2R1-S6, 19.2R3-S2; 19.3 versions prior to 19.3R3-S2; 19.4 versions prior to 19.4R2-S4, 19.4R3-S2; 20.1 versions prior to 20.1R2-S1, 20.1R3; 20.2 versions prior to 20.2R2-S2, 20.2R3; 20.3 versions prior to 20.3R1-S1, 20.3R2. This issue does not affect Juniper Networks Junos OS versions prior to 16.1R1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11124",
+        "name": "https://kb.juniper.net/JSA11124",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-25578",
+    "cveASSIGNER": "secteam@freebsd.org",
+    "publishedDate": "2021-03-26T21:15Z",
+    "lastModifiedDate": "2021-04-23T06:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In FreeBSD 12.2-STABLE before r368969, 11.4-STABLE before r369047, 12.2-RELEASE before p3, 12.1-RELEASE before p13 and 11.4-RELEASE before p7 several file systems were not properly initializing the d_off field of the dirent structures returned by VOP_READDIR. In particular, tmpfs(5), smbfs(5), autofs(5) and mqueuefs(5) were failing to do so. As a result, eight uninitialized kernel stack bytes may be leaked to userspace by these file systems."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:01.fsdisclosure.asc",
+        "name": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:01.fsdisclosure.asc",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210423-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210423-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20203",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-02-25T20:15Z",
+    "lastModifiedDate": "2021-04-11T01:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An integer overflow issue was found in the vmxnet3 NIC emulator of the QEMU for versions up to v5.2.0. It may occur if a guest was to supply invalid values for rx/tx queue size or other NIC parameters. A privileged guest user may use this flaw to crash the QEMU process on the host resulting in DoS scenario."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1922441",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1922441",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.launchpad.net/qemu/+bug/1913873",
+        "name": "https://bugs.launchpad.net/qemu/+bug/1913873",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00009.html",
+        "name": "[debian-lts-announce] 20210410 [SECURITY] [DLA 2623-1] qemu security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-5331",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-10-13T00:17Z",
+    "lastModifiedDate": "2021-04-09T18:54Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Queue.dll for the message queuing service (LQserver.exe) in CA BrightStor ARCServe BackUp v9.01 through R11.5, and Enterprise Backup r10.5, allows remote attackers to execute arbitrary code via a malformed ONRPC protocol request for operation 0x76, which causes ARCserve Backup to dereference arbitrary pointers."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://supportconnectw.ca.com/public/storage/infodocs/basb-secnotice.asp",
+        "name": "http://supportconnectw.ca.com/public/storage/infodocs/basb-secnotice.asp",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://research.eeye.com/html/advisories/published/AD20071011.html",
+        "name": "AD20071011",
+        "refsource": "EEYE",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/24680",
+        "name": "24680",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1018805",
+        "name": "1018805",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/27192",
+        "name": "27192",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://osvdb.org/41371",
+        "name": "41371",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/3470",
+        "name": "ADV-2007-3470",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/37071",
+        "name": "ca-brightstor-lqserver-code-execution(37071)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/482121/100/0/threaded",
+        "name": "20071011 [CAID 35724, 35725, 35726]: CA BrightStor ARCserve Backup Multiple Vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/482114/100/0/threaded",
+        "name": "20071011 EEYE: CA BrightStor ArcServe Backup Server Arbitrary Pointer Dereference",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-30151",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-04-06T06:15Z",
+    "lastModifiedDate": "2021-04-09T18:42Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Sidekiq through 5.1.3 and 6.x through 6.2.0 allows XSS via the queue name of the live-poll feature when Internet Explorer is used."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/mperham/sidekiq/issues/4852",
+        "name": "https://github.com/mperham/sidekiq/issues/4852",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3348",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-02-01T04:15Z",
+    "lastModifiedDate": "2021-03-31T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "nbd_add_socket in drivers/block/nbd.c in the Linux kernel through 5.10.12 has an ndb_queue_rq use-after-free that could be triggered by local attackers (with access to the nbd device) via an I/O request at a certain point during device setup, aka CID-b98e762e3d71."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b98e762e3d71e893b221f871825dc64694cfb258",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b98e762e3d71e893b221f871825dc64694cfb258",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2021/01/28/3",
+        "name": "https://www.openwall.com/lists/oss-security/2021/01/28/3",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/02/01/1",
+        "name": "[oss-security] 20210201 Re: Re: Linux kernel: linux-block: nbd: use-after-free Read in nbd_queue_rq",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00035.html",
+        "name": "[debian-lts-announce] 20210330 [SECURITY] [DLA 2610-1] linux-4.19 security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29264",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-26T22:15Z",
+    "lastModifiedDate": "2021-03-30T19:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Linux kernel through 5.11.10. drivers/net/ethernet/freescale/gianfar.c in the Freescale Gianfar Ethernet driver allows attackers to cause a system crash because a negative fragment size is calculated in situations involving an rx queue overrun when jumbo packets are used and NAPI is enabled, aka CID-d8861bab48b6."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=d8861bab48b6c1fc3cdbcab8ff9d1eaea43afe7f",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=d8861bab48b6c1fc3cdbcab8ff9d1eaea43afe7f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9517",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2019-08-13T21:15Z",
+    "lastModifiedDate": "2021-03-30T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Some HTTP/2 implementations are vulnerable to unconstrained interal data buffering, potentially leading to a denial of service. The attacker opens the HTTP/2 window so the peer can send without constraint; however, they leave the TCP window closed so the peer cannot actually write (many of) the bytes on the wire. The attacker then sends a stream of requests for a large response object. Depending on how the servers queue the responses, this can consume excess memory, CPU, or both."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.cert.org/vuls/id/605641/",
+        "name": "VU#605641",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md",
+        "name": "https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/4610762456644181b267c846423b3a990bd4aaea1886ecc7d51febdb@%3Cannounce.httpd.apache.org%3E",
+        "name": "[httpd-announce] 20190814 CVE-2019-9517: mod_http2, DoS attack by exhausting h2 workers",
+        "refsource": "MLIST",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/56c2e7cc9deb1c12a843d0dc251ea7fd3e7e80293cde02fcd65286ba@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/08/15/7",
+        "name": "[oss-security] 20190814 CVE-2019-9517: mod_http2, DoS attack by exhausting h2 workers",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/d89f999e26dfb1d50f247ead1fe8538014eb412b2dbe5be4b1a9ef50@%3Cdev.httpd.apache.org%3E",
+        "name": "[httpd-dev] 20190817 Re: CVE-2019-10097 vs. CHANGEs entry",
+        "refsource": "MLIST",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ec97fdfc1a859266e56fef084353a34e0a0b08901b3c1aa317a43c8c@%3Cdev.httpd.apache.org%3E",
+        "name": "[httpd-dev] 20190817 CVE-2019-10097 vs. CHANGEs entry",
+        "refsource": "MLIST",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.synology.com/security/advisory/Synology_SA_19_33",
+        "name": "https://www.synology.com/security/advisory/Synology_SA_19_33",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K02591030",
+        "name": "https://support.f5.com/csp/article/K02591030",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190823-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20190823-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190823-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20190823-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CMNFX5MNYRWWIMO4BTKYQCGUDMHO3AXP/",
+        "name": "FEDORA-2019-5a6a7bc12c",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4ZQGHE3WTYLYAYJEIDJVF2FIGQTAYPMC/",
+        "name": "FEDORA-2019-6a2980de56",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4509",
+        "name": "DSA-4509",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Aug/47",
+        "name": "20190826 [SECURITY] [DSA 4509-1] apache2 security update",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BP556LEG3WENHZI5TAQ6ZEBFTJB4E2IS/",
+        "name": "FEDORA-2019-4427fd65be",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4113-1/",
+        "name": "USN-4113-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XHTKU7YQ5EEP2XNSAV4M4VJ7QCBOJMOD/",
+        "name": "FEDORA-2019-63ba15cc83",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00004.html",
+        "name": "openSUSE-SU-2019:2051",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190905-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20190905-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201909-04",
+        "name": "GLSA-201909-04",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00032.html",
+        "name": "openSUSE-SU-2019:2114",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00031.html",
+        "name": "openSUSE-SU-2019:2115",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10296",
+        "name": "https://kc.mcafee.com/corporate/index?page=content&id=SB10296",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2893",
+        "name": "RHSA-2019:2893",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2925",
+        "name": "RHSA-2019:2925",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2939",
+        "name": "RHSA-2019:2939",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2946",
+        "name": "RHSA-2019:2946",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2950",
+        "name": "RHSA-2019:2950",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2949",
+        "name": "RHSA-2019:2949",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2955",
+        "name": "RHSA-2019:2955",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.f5.com/csp/article/K02591030?utm_source=f5support&amp;utm_medium=RSS",
+        "name": "https://support.f5.com/csp/article/K02591030?utm_source=f5support&amp;utm_medium=RSS",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3935",
+        "name": "RHSA-2019:3935",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3933",
+        "name": "RHSA-2019:3933",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3932",
+        "name": "RHSA-2019:3932",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd18c3c43602e66f9cdcf09f1de233804975b9572b0456cc582390b6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re3d27b6250aa8548b8845d314bb8a350b3df326cacbbfdfe4d455234@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd2fb621142e7fa187cfe12d7137bf66e7234abcbbcd800074c84a538@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888194 [12/13] - /httpd/site/trunk/content/security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r06f0d87ebb6d59ed8379633f36f72f5b1f79cadfda72ede0830b42cf@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073143 [3/3] - in /websites/staging/httpd/trunk/content: ./ security/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r03ee478b3dda3e381fd6189366fa7af97c980d2f602846eef935277d@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [12/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc998b18880df98bafaade071346690c2bc1444adaa1a1ea464b93f0a@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9f93cf6dde308d42a9c807784e8102600d0397f5f834890708bf6920@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27938",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-16T16:15Z",
+    "lastModifiedDate": "2021-03-22T17:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability has been identified in the Silverstripe CMS 3 and 4 version of the symbiote/silverstripe-queuedjobs module. A Cross Site Scripting vulnerability allows an attacker to inject an arbitrary payload in the CreateQueuedJobTask dev task via a specially crafted URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.silverstripe.org/download/security-releases/cve-2021-27938",
+        "name": "https://www.silverstripe.org/download/security-releases/cve-2021-27938",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/symbiote/silverstripe-queuedjobs/releases",
+        "name": "https://github.com/symbiote/silverstripe-queuedjobs/releases",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-29568",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-15T17:15Z",
+    "lastModifiedDate": "2021-03-15T22:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.14.x. Some OSes (such as Linux, FreeBSD, and NetBSD) are processing watch events using a single thread. If the events are received faster than the thread is able to handle, they will get queued. As the queue is unbounded, a guest may be able to trigger an OOM in the backend. All systems with a FreeBSD, Linux, or NetBSD (any version) dom0 are vulnerable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://xenbits.xenproject.org/xsa/advisory-349.html",
+        "name": "https://xenbits.xenproject.org/xsa/advisory-349.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4843",
+        "name": "DSA-4843",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00018.html",
+        "name": "[debian-lts-announce] 20210212 [SECURITY] [DLA 2557-1] linux-4.19 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00010.html",
+        "name": "[debian-lts-announce] 20210309 [SECURITY] [DLA 2586-1] linux security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11272",
+    "cveASSIGNER": "product-security@qualcomm.com",
+    "publishedDate": "2021-02-22T07:15Z",
+    "lastModifiedDate": "2021-03-08T21:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Before enqueuing a frame to the PE queue for further processing, an entry in a hash table can be deleted and using a stale version later can lead to use after free condition in Snapdragon Auto, Snapdragon Compute, Snapdragon Connectivity, Snapdragon Consumer Electronics Connectivity, Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon Mobile, Snapdragon Voice & Music, Snapdragon Wearables"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.qualcomm.com/company/product-security/bulletins/february-2021-bulletin",
+        "name": "https://www.qualcomm.com/company/product-security/bulletins/february-2021-bulletin",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  }
+]

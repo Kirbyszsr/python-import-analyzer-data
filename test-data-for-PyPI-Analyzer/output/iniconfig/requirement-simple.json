@@ -1,0 +1,16 @@
+{
+  "name": "iniconfig",
+  "description": "iniconfig: brain-dead simple parsing of ini files\n=======================================================\n\niniconfig is a small and simple INI-file parser module\nhaving a unique set of features:\n\n* tested against Python2.4 across to Python3.2, Jython, PyPy\n* maintains order of sections and entries\n* supports multi-line values with or without line-continuations\n* supports \"#\" comments everywhere\n* raises errors with proper line-numbers\n* no bells and whistles like automatic substitutions\n* iniconfig raises an Error if two sections have the same name.\n\nIf you encounter issues or have feature wishes please report them to:\n\n    http://github.com/RonnyPfannschmidt/iniconfig/issues\n\nBasic Example\n===================================\n\nIf you have an ini file like this::\n\n    # content of example.ini\n    [section1] # comment\n    name1=value1  # comment\n    name1b=value1,value2  # comment\n\n    [section2]\n    name2=\n        line1\n        line2\n\nthen you can do::\n\n    >>> import iniconfig\n    >>> ini = iniconfig.IniConfig(\"example.ini\")\n    >>> ini['section1']['name1'] # raises KeyError if not exists\n    'value1'\n    >>> ini.get('section1', 'name1b', [], lambda x: x.split(\",\"))\n    ['value1', 'value2']\n    >>> ini.get('section1', 'notexist', [], lambda x: x.split(\",\"))\n    []\n    >>> [x.name for x in list(ini)]\n    ['section1', 'section2']\n    >>> list(list(ini)[0].items())\n    [('name1', 'value1'), ('name1b', 'value1,value2')]\n    >>> 'section1' in ini\n    True\n    >>> 'inexistendsection' in ini\n    False",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "1.1.1",
+  "released_versions": [
+    "0.0",
+    "0.1",
+    "0.2.dev0",
+    "1.0.0",
+    "1.0.1",
+    "1.1.0",
+    "1.1.1"
+  ]
+}

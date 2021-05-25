@@ -1,0 +1,1417 @@
+[
+  {
+    "cveID": "CVE-2017-1304",
+    "cveASSIGNER": "psirt@us.ibm.com",
+    "publishedDate": "2017-06-21T18:29Z",
+    "lastModifiedDate": "2021-05-21T12:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "IBM has identified a vulnerability with IBM Spectrum Scale/GPFS utilized on the Elastic Storage Server (ESS)/GPFS Storage Server (GSS) during testing of an unsupported configuration, where users applications are running on an active ESS I/O server node and utilize direct I/O to perform a read or a write to a Spectrum Scale file. This vulnerability may result in the use of an incorrect memory address, leading to a Spectrum Scale/GPFS daemon failure with a Signal 11, and possibly leading to denial of service or undetected data corruption. IBM X-Force ID: 125458."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/125458",
+        "name": "https://exchange.xforce.ibmcloud.com/vulnerabilities/125458",
+        "refsource": "MISC",
+        "tags": [
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.ibm.com/support/docview.wss?uid=ssg1S1010230",
+        "name": "http://www.ibm.com/support/docview.wss?uid=ssg1S1010230",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/99274",
+        "name": "99274",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31876",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-13T22:15Z",
+    "lastModifiedDate": "2021-05-14T12:10Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Bitcoin Core 0.12.0 through 0.21.1 does not properly implement the replacement policy specified in BIP125, which makes it easier for attackers to trigger a loss of funds, or a denial of service attack against downstream projects such as Lightning network nodes. An unconfirmed child transaction with nSequence = 0xff_ff_ff_ff, spending an unconfirmed parent with nSequence <= 0xff_ff_ff_fd, should be replaceable because there is inherited signaling by the child transaction. However, the actual PreChecks implementation does not enforce this. Instead, mempool rejects the replacement attempt of the unconfirmed child transaction."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2021-31876",
+        "name": "https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2021-31876",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://bitcoinops.org/en/newsletters/2021/05/12/",
+        "name": "https://bitcoinops.org/en/newsletters/2021/05/12/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://bitcoinops.org/en/topics/replace-by-fee/",
+        "name": "https://bitcoinops.org/en/topics/replace-by-fee/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018893.html",
+        "name": "https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-May/018893.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/bitcoin/bitcoin",
+        "name": "https://github.com/bitcoin/bitcoin",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-35508",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-03-26T17:15Z",
+    "lastModifiedDate": "2021-05-13T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw possibility of race condition and incorrect initialization of the process id was found in the Linux kernel child/parent process identification handling while filtering signal handlers. A local attacker is able to abuse this flaw to bypass checks to send any signal to a privileged process."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/b4e00444cab4c3f3fec876dc0cccc8cbb0d1a948",
+        "name": "https://github.com/torvalds/linux/commit/b4e00444cab4c3f3fec876dc0cccc8cbb0d1a948",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1902724",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1902724",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0006/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28951",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-20T20:15Z",
+    "lastModifiedDate": "2021-04-30T08:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in fs/io_uring.c in the Linux kernel through 5.11.8. It allows attackers to cause a denial of service (deadlock) because exit may be waiting to park a SQPOLL thread, but concurrently that SQPOLL thread is waiting for a signal to start, aka CID-3ebba796fa25."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=3ebba796fa251d042be42b929a2d916ee5c34a49",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=3ebba796fa251d042be42b929a2d916ee5c34a49",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PTRNPQTZ4GVS46SZ4OBXY5YDOGVPSTGQ/",
+        "name": "FEDORA-2021-e636ce53df",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4VCKIOXCOZGXBEZMO5LGGV5MWCHO6FT3/",
+        "name": "FEDORA-2021-68b0dd2373",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T2S3I4SLRNRUQDOFYUS6IUAZMQNMPNLG/",
+        "name": "FEDORA-2021-9503fffad9",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0003/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0244",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-28T01:02Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A signal handler race condition exists in the Layer 2 Address Learning Daemon (L2ALD) of Juniper Networks Junos OS due to the absence of a specific protection mechanism to avoid a race condition which may allow an attacker to bypass the storm-control feature on devices. This issue is a corner case and only occurs during specific actions taken by an administrator of a device under certain specifics actions which triggers the event. The event occurs less frequently on devices which are not configured with Virtual Chassis configurations, and more frequently on devices configured in Virtual Chassis configurations. This issue is not specific to any particular Junos OS platform. An Indicator of Compromise (IoC) may be seen by reviewing log files for the following error message seen by executing the following show statement: show log messages | grep storm Result to look for: /kernel: GENCFG: op 58 (Storm Control Blob) failed; err 1 (Unknown) This issue affects: Juniper Networks Junos OS: 14.1X53 versions prior to 14.1X53-D49 on EX Series; 15.1 versions prior to 15.1R7-S6; 15.1X49 versions prior to 15.1X49-D191, 15.1X49-D200 on SRX Series; 16.1 versions prior to 16.1R7-S7; 16.2 versions prior to 16.2R2-S11, 16.2R3; 17.1 versions prior to 17.1R2-S11, 17.1R3; 17.2 versions prior to 17.2R2-S8, 17.2R3-S3; 17.3 versions prior to 17.3R2-S5, 17.3R3-S7; 17.4 versions prior to 17.4R2-S9, 17.4R3; 18.1 versions prior to 18.1R3-S5; 18.2 versions prior to 18.2R2-S6, 18.2R3; 18.3 versions prior to 18.3R1-S7, 18.3R2-S3, 18.3R3; 18.4 versions prior to 18.4R1-S5, 18.4R2; 19.1 versions prior to 19.1R1-S4, 19.1R2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11137",
+        "name": "https://kb.juniper.net/JSA11137",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0242",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-28T01:02Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability due to the improper handling of direct memory access (DMA) buffers on EX4300 switches on Juniper Networks Junos OS allows an attacker sending specific unicast frames to trigger a Denial of Service (DoS) condition by exhausting DMA buffers, causing the FPC to crash and the device to restart. The DMA buffer leak is seen when receiving these specific, valid unicast frames on an interface without Layer 2 Protocol Tunneling (L2PT) or dot1x configured. Interfaces with either L2PT or dot1x configured are not vulnerable to this issue. When this issue occurs, DMA buffer usage keeps increasing and the following error log messages may be observed: Apr 14 14:29:34.360 /kernel: pid 64476 (pfex_junos), uid 0: exited on signal 11 (core dumped) Apr 14 14:29:33.790 init: pfe-manager (PID 64476) terminated by signal number 11. Core dumped! The DMA buffers on the FPC can be monitored by the executing vty command 'show heap': ID Base Total(b) Free(b) Used(b) % Name -- ---------- ----------- ----------- ----------- --- ----------- 0 4a46000 268435456 238230496 30204960 11 Kernel 1 18a46000 67108864 17618536 49490328 73 Bcm_sdk 2 23737000 117440512 18414552 99025960 84 DMA buf <<<<< keeps increasing 3 2a737000 16777216 16777216 0 0 DMA desc This issue affects Juniper Networks Junos OS on the EX4300: 17.3 versions prior to 17.3R3-S11; 17.4 versions prior to 17.4R2-S13, 17.4R3-S4; 18.1 versions prior to 18.1R3-S12; 18.2 versions prior to 18.2R2-S8, 18.2R3-S7; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R1-S8, 18.4R2-S7, 18.4R3-S7; 19.1 versions prior to 19.1R1-S6, 19.1R2-S2, 19.1R3-S4; 19.2 versions prior to 19.2R1-S6, 19.2R3-S2; 19.3 versions prior to 19.3R3-S2; 19.4 versions prior to 19.4R2-S3, 19.4R3-S1; 20.1 versions prior to 20.1R2; 20.2 versions prior to 20.2R2-S1, 20.2R3; 20.3 versions prior to 20.3R1-S1, 20.3R2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11135",
+        "name": "https://kb.juniper.net/JSA11135",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2002-0839",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2002-10-11T04:00Z",
+    "lastModifiedDate": "2021-04-22T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The shared memory scoreboard in the HTTP daemon for Apache 1.3.x before 1.3.27 allows any user running as the Apache UID to send a SIGUSR1 signal to any process as root, resulting in a denial of service (process kill) or possibly other behaviors that would not normally be allowed, by modifying the parent[].pid and parent[].last_rtime segments in the scoreboard."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://archives.neohapsis.com/archives/vulnwatch/2002-q4/0012.html",
+        "name": "20021003 iDEFENSE Security Advisory 10.03.2002: Apache 1.3.x shared memory scoreboard vulnerabilities",
+        "refsource": "VULNWATCH",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.apacheweek.com/issues/02-10-04",
+        "name": "http://www.apacheweek.com/issues/02-10-04",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.iss.net/security_center/static/10280.php",
+        "name": "apache-scorecard-memory-overwrite(10280)",
+        "refsource": "XF",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.linuxsecurity.com/advisories/other_advisory-2414.html",
+        "name": "ESA-20021007-024",
+        "refsource": "ENGARDE",
+        "tags": []
+      },
+      {
+        "url": "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-068.php",
+        "name": "MDKSA-2002:068",
+        "refsource": "MANDRAKE",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2002/dsa-187",
+        "name": "DSA-187",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2002/dsa-188",
+        "name": "DSA-188",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2002/dsa-195",
+        "name": "DSA-195",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "ftp://patches.sgi.com/support/free/security/advisories/20021105-01-I",
+        "name": "20021105-01-I",
+        "refsource": "SGI",
+        "tags": []
+      },
+      {
+        "url": "http://online.securityfocus.com/advisories/4617",
+        "name": "HPSBUX0210-224",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://archives.neohapsis.com/archives/bugtraq/2002-10/0195.html",
+        "name": "20021015 GLSA: apache",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://archives.neohapsis.com/archives/bugtraq/2002-10/0254.html",
+        "name": "20021017 TSLSA-2002-0069-apache",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5884",
+        "name": "5884",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000530",
+        "name": "CLA-2002:530",
+        "refsource": "CONECTIVA",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=130497311408250&w=2",
+        "name": "SSRT090208",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=103376585508776&w=2",
+        "name": "20021003 [OpenPKG-SA-2002.009] OpenPKG Security Advisory (apache)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=apache-httpd-announce&m=103367938230488&w=2",
+        "name": "http://marc.info/?l=apache-httpd-announce&m=103367938230488&w=2",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd00b45b93fda4a5bd013b28587207d0e00f99f6e3308dbb6025f3b01@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [2/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9f93cf6dde308d42a9c807784e8102600d0397f5f834890708bf6920@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5419c9ba0951ef73a655362403d12bb8d10fab38274deb3f005816f5@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [1/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8c9983f1172a3415f915ddb7e14de632d2d0c326eb1285755a024165@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210422 svn commit: r1074079 [2/3] - in /websites/staging/httpd/trunk/content: ./ apreq/ contribute/ contributors/ dev/ docs-project/ docs/ info/ mod_fcgid/ mod_ftp/ mod_mbox/ mod_smtpd/ modules/ security/ test/ test/flood/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2007-3304",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2007-06-20T22:30Z",
+    "lastModifiedDate": "2021-03-30T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache httpd 1.3.37, 2.0.59, and 2.2.4 with the Prefork MPM module, allows local users to cause a denial of service by modifying the worker_score and process_score arrays to reference an arbitrary process ID, which is sent a SIGUSR1 signal from the master process, aka \"SIGUSR1 killer.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://security.psnc.pl/files/apache_report.pdf",
+        "name": "http://security.psnc.pl/files/apache_report.pdf",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=apache-httpd-dev&m=118252946632447&w=2",
+        "name": "[apache-httpd-dev] 20070622 Re: PID table changes (was Re: svn commit: r547987 - in /httpd/httpd/trunk)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://mail-archives.apache.org/mod_mbox/httpd-dev/200706.mbox/%3c20070629141032.GA15192@redhat.com%3e",
+        "name": "[apache-httpd-dev] 20070629 Re: [PATCH] pid safety checks for 2.2.x",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=245111",
+        "name": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=245111",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://svn.apache.org/viewvc?view=rev&revision=547987",
+        "name": "http://svn.apache.org/viewvc?view=rev&revision=547987",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://httpd.apache.org/security/vulnerabilities_13.html",
+        "name": "http://httpd.apache.org/security/vulnerabilities_13.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://httpd.apache.org/security/vulnerabilities_20.html",
+        "name": "http://httpd.apache.org/security/vulnerabilities_20.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://httpd.apache.org/security/vulnerabilities_22.html",
+        "name": "http://httpd.apache.org/security/vulnerabilities_22.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://support.avaya.com/elmodocs2/security/ASA-2007-353.htm",
+        "name": "http://support.avaya.com/elmodocs2/security/ASA-2007-353.htm",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://support.avaya.com/elmodocs2/security/ASA-2007-363.htm",
+        "name": "http://support.avaya.com/elmodocs2/security/ASA-2007-363.htm",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://issues.rpath.com/browse/RPL-1710",
+        "name": "https://issues.rpath.com/browse/RPL-1710",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.gentoo.org/show_bug.cgi?id=186219",
+        "name": "http://bugs.gentoo.org/show_bug.cgi?id=186219",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www-1.ibm.com/support/search.wss?rs=0&q=PK50467&apar=only",
+        "name": "PK50467",
+        "refsource": "AIXAPAR",
+        "tags": []
+      },
+      {
+        "url": "http://www-1.ibm.com/support/docview.wss?uid=swg1PK52702",
+        "name": "PK52702",
+        "refsource": "AIXAPAR",
+        "tags": []
+      },
+      {
+        "url": "http://www-1.ibm.com/support/docview.wss?uid=swg1PK53984",
+        "name": "PK53984",
+        "refsource": "AIXAPAR",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/archives/fedora-package-announce/2007-September/msg00320.html",
+        "name": "FEDORA-2007-2214",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200711-06.xml",
+        "name": "GLSA-200711-06",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2007:140",
+        "name": "MDKSA-2007:140",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2007:142",
+        "name": "MDKSA-2007:142",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/errata/RHSA-2007-0532.html",
+        "name": "RHSA-2007:0532",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2007-0556.html",
+        "name": "RHSA-2007:0556",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2007-0557.html",
+        "name": "RHSA-2007:0557",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2007-0662.html",
+        "name": "RHSA-2007:0662",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "ftp://patches.sgi.com/support/free/security/advisories/20070701-01-P.asc",
+        "name": "20070701-01-P",
+        "refsource": "SGI",
+        "tags": []
+      },
+      {
+        "url": "http://www.novell.com/linux/security/advisories/2007_61_apache2.html",
+        "name": "SUSE-SA:2007:061",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.trustix.org/errata/2007/0026/",
+        "name": "2007-0026",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-499-1",
+        "name": "USN-499-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/24215",
+        "name": "24215",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1018304",
+        "name": "1018304",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/25827",
+        "name": "25827",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/25830",
+        "name": "25830",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/25920",
+        "name": "25920",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26211",
+        "name": "26211",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26273",
+        "name": "26273",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26443",
+        "name": "26443",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26508",
+        "name": "26508",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26611",
+        "name": "26611",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26759",
+        "name": "26759",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26790",
+        "name": "26790",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26822",
+        "name": "26822",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26842",
+        "name": "26842",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/26993",
+        "name": "26993",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/27121",
+        "name": "27121",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/27209",
+        "name": "27209",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/27563",
+        "name": "27563",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/27732",
+        "name": "27732",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/2814",
+        "name": "2814",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103179-1",
+        "name": "103179",
+        "refsource": "SUNALERT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/28212",
+        "name": "28212",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/28224",
+        "name": "28224",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.fujitsu.com/global/support/software/security/products-f/interstage-200802e.html",
+        "name": "http://www.fujitsu.com/global/support/software/security/products-f/interstage-200802e.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/28606",
+        "name": "28606",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-66-200032-1",
+        "name": "200032",
+        "refsource": "SUNALERT",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2008-0261.html",
+        "name": "RHSA-2008:0261",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.vmware.com/pipermail/security-announce/2009/000062.html",
+        "name": "[security-announce] 20090820 VMSA-2009-0010 VMware Hosted products update libpng and Apache HTTP Server",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/0233",
+        "name": "ADV-2008-0233",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01182588",
+        "name": "HPSBUX02273",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/3494",
+        "name": "ADV-2007-3494",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/3100",
+        "name": "ADV-2007-3100",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/3420",
+        "name": "ADV-2007-3420",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/4305",
+        "name": "ADV-2007-4305",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/3283",
+        "name": "ADV-2007-3283",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2007/2727",
+        "name": "ADV-2007-2727",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://osvdb.org/38939",
+        "name": "38939",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/35095",
+        "name": "apache-child-process-dos(35095)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11589",
+        "name": "oval:org.mitre.oval:def:11589",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/505990/100/0/threaded",
+        "name": "20090821 VMSA-2009-0010 VMware Hosted products update libpng and Apache HTTP Server",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/471832/100/0/threaded",
+        "name": "20070619 Apache Prefork MPM vulnerabilities - Report",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/469899/100/0/threaded",
+        "name": "20070529 Apache httpd vulenrabilities",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/5df9bfb86a3b054bb985a45ff9250b0332c9ecc181eec232489e7f79@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/54a42d4b01968df1117cea77fc53d6beb931c0e05936ad02af93e9ac@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r57608dc51b79102f3952ae06f54d5277b649c86d6533dcd6a7d201f7@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8d63cb8e9100f28a99429b4328e4e7cebce861d5772ac9863ba2ae6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f7f95ac1cd9895db2714fa3ebaa0b94d0c6df360f742a40951384a53@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0276683d8e1e07153fc8642618830ac0ade85b9ae0dc7b07f63bb8fc@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8828e649175df56f1f9e3919938ac7826128525426e2748f0ab62feb@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfbaf647d52c1cb843e726a0933f156366a806cead84fbd430951591b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2cb985de917e7da0848c440535f65a247754db8b2154a10089e4247b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5419c9ba0951ef73a655362403d12bb8d10fab38274deb3f005816f5@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [1/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r652fc951306cdeca5a276e2021a34878a76695a9f3cfb6490b4a6840@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888194 [4/13] - /httpd/site/trunk/content/security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ea3538f229874c80a10af473856a81fbf5f694cd7f471cc679ba70b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rafd145ba6cd0a4ced113a5823cdaff45aeb36eb09855b216401c66d6@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [5/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9e8622254184645bc963a1d47c5d47f6d5a36d6f080d8d2c43b2b142@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073143 [2/3] - in /websites/staging/httpd/trunk/content: ./ security/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/reb542d2038e9c331506e0cbff881b47e40fbe2bd93ff00979e60cdf7@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [4/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-12762",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-06-06T20:29Z",
+    "lastModifiedDate": "2021-03-27T02:07Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Xiaomi Mi 5s Plus devices allow attackers to trigger touchscreen anomalies via a radio signal between 198 kHz and 203 kHz, as demonstrated by a transmitter and antenna hidden just beneath the surface of a coffee-shop table, aka Ghost Touch."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://medium.com/@juliodellaflora/ghost-touch-on-xiaomi-mi5s-plus-707998308607",
+        "name": "https://medium.com/@juliodellaflora/ghost-touch-on-xiaomi-mi5s-plus-707998308607",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://hackercombat.com/nfc-vulnerability-may-promote-ghost-screen-taps/",
+        "name": "https://hackercombat.com/nfc-vulnerability-may-promote-ghost-screen-taps/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20265",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-03-10T16:15Z",
+    "lastModifiedDate": "2021-03-16T13:56Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was found in the way memory resources were freed in the unix_stream_recvmsg function in the Linux kernel when a signal was pending. This flaw allows an unprivileged local user to crash the system by exhausting available memory. The highest threat from this vulnerability is to system availability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fa0dc04df259ba2df3ce1920e9690c7842f8fa4b",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fa0dc04df259ba2df3ce1920e9690c7842f8fa4b",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1908827",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1908827",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-29566",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-15T17:15Z",
+    "lastModifiedDate": "2021-03-16T12:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Xen through 4.14.x. When they require assistance from the device model, x86 HVM guests must be temporarily de-scheduled. The device model will signal Xen when it has completed its operation, via an event channel, so that the relevant vCPU is rescheduled. If the device model were to signal Xen without having actually completed the operation, the de-schedule / re-schedule cycle would repeat. If, in addition, Xen is resignalled very quickly, the re-schedule may occur before the de-schedule was fully complete, triggering a shortcut. This potentially repeating process uses ordinary recursive function calls, and thus could result in a stack overflow. A malicious or buggy stubdomain serving a HVM guest can cause Xen to crash, resulting in a Denial of Service (DoS) to the entire host. Only x86 systems are affected. Arm systems are not affected. Only x86 stubdomains serving HVM guests can exploit the vulnerability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://xenbits.xenproject.org/xsa/advisory-348.html",
+        "name": "https://xenbits.xenproject.org/xsa/advisory-348.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4812",
+        "name": "DSA-4812",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OBLV6L6Q24PPQ2CRFXDX4Q76KU776GKI/",
+        "name": "FEDORA-2020-64859a826b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2C6M6S3CIMEBACH6O7V4H2VDANMO6TVA/",
+        "name": "FEDORA-2020-df772b417b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21724",
+    "cveASSIGNER": "psirt@zte.com.cn",
+    "publishedDate": "2021-02-26T03:15Z",
+    "lastModifiedDate": "2021-03-04T13:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A ZTE product has a memory leak vulnerability. Due to the product's improper handling of memory release in certain scenarios, a local attacker with device permissions repeatedly attenuated the optical signal to cause memory leak and abnormal service. This affects: ZXR10 8900E, all versions up to V3.03.20R2B30P1."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://support.zte.com.cn/support/news/LoopholeInfoDetail.aspx?newsId=1014584",
+        "name": "http://support.zte.com.cn/support/news/LoopholeInfoDetail.aspx?newsId=1014584",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-35391",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-01T07:15Z",
+    "lastModifiedDate": "2021-01-07T18:14Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Tenda N300 F3 12.01.01.48 devices allow remote attackers to obtain sensitive information (possibly including an http_passwd line) via a direct request for cgi-bin/DownloadCfg/RouterCfm.cfg, a related issue to CVE-2017-14942. NOTE: the vulnerability report may suggest that either a ? character must be placed after the RouterCfm.cfg filename, or that the HTTP request headers must be unusual, but it is not known why these are relevant to the device's HTTP response behavior."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://medium.com/@signalhilltech/tenda-n300-authentication-bypass-via-malformed-http-request-header-5b8744ca685e",
+        "name": "https://medium.com/@signalhilltech/tenda-n300-authentication-bypass-via-malformed-http-request-header-5b8744ca685e",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27853",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-10-27T18:15Z",
+    "lastModifiedDate": "2020-12-07T16:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Wire before 2020-10-16 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a format string. This affects Wire AVS (Audio, Video, and Signaling) 5.3 through 6.x before 6.4, the Wire Secure Messenger application before 3.49.918 for Android, and the Wire Secure Messenger application before 3.61 for iOS. This occurs via the value parameter to sdp_media_set_lattr in peerflow/sdp.c."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/wireapp/wire-audio-video-signaling/issues/23#issuecomment-710075689",
+        "name": "https://github.com/wireapp/wire-audio-video-signaling/issues/23#issuecomment-710075689",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://github.security.telekom.com/2020/11/wire-secure-messenger-format-string-vulnerability.html",
+        "name": "http://github.security.telekom.com/2020/11/wire-secure-messenger-format-string-vulnerability.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-16126",
+    "cveASSIGNER": "security@ubuntu.com",
+    "publishedDate": "2020-11-11T04:15Z",
+    "lastModifiedDate": "2020-11-24T19:17Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An Ubuntu-specific modification to AccountsService in versions before 0.6.55-0ubuntu13.2, among other earlier versions, improperly dropped the ruid, allowing untrusted users to send signals to AccountService, thus stopping it from handling D-Bus messages in a timely fashion."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://securitylab.github.com/advisories/GHSL-2020-187-accountsservice-drop-privs-DOS",
+        "name": "N/A",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-3528",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2020-10-21T19:15Z",
+    "lastModifiedDate": "2020-10-30T13:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the OSPF Version 2 (OSPFv2) implementation of Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to cause an affected device to reload, resulting in a denial of service (DoS) condition. The vulnerability is due to incomplete input validation when the affected software processes certain OSPFv2 packets with Link-Local Signaling (LLS) data. An attacker could exploit this vulnerability by sending a malformed OSPFv2 packet to an affected device. A successful exploit could allow the attacker to cause an affected device to reload, resulting in a DoS condition."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-ospflls-37Xy2q6r",
+        "name": "20201021 Cisco Adaptive Security Appliance Software and Firepower Threat Defense Software OSPFv2 Link-Local Signaling Denial of Service Vulnerability",
+        "refsource": "CISCO",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14787",
+    "cveASSIGNER": "secalert_us@oracle.com",
+    "publishedDate": "2020-10-21T15:15Z",
+    "lastModifiedDate": "2020-10-27T14:58Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Vulnerability in the Oracle Communications Diameter Signaling Router (DSR) product of Oracle Communications (component: User Interface). Supported versions that are affected are 8.0.0.0-8.4.0.5. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Communications Diameter Signaling Router (DSR). Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Communications Diameter Signaling Router (DSR), attacks may significantly impact additional products. Successful attacks of this vulnerability can result in unauthorized update, insert or delete access to some of Oracle Communications Diameter Signaling Router (DSR) accessible data as well as unauthorized read access to a subset of Oracle Communications Diameter Signaling Router (DSR) accessible data. CVSS 3.1 Base Score 5.4 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14788",
+    "cveASSIGNER": "secalert_us@oracle.com",
+    "publishedDate": "2020-10-21T15:15Z",
+    "lastModifiedDate": "2020-10-26T16:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Vulnerability in the Oracle Communications Diameter Signaling Router (DSR) product of Oracle Communications (component: User Interface). Supported versions that are affected are 8.0.0.0-8.4.0.5. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Communications Diameter Signaling Router (DSR). Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Communications Diameter Signaling Router (DSR), attacks may significantly impact additional products. Successful attacks of this vulnerability can result in unauthorized update, insert or delete access to some of Oracle Communications Diameter Signaling Router (DSR) accessible data as well as unauthorized read access to a subset of Oracle Communications Diameter Signaling Router (DSR) accessible data. CVSS 3.1 Base Score 6.1 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-3857",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2019-03-25T19:29Z",
+    "lastModifiedDate": "2020-10-15T13:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An integer overflow flaw which could lead to an out of bounds write was discovered in libssh2 before 1.8.1 in the way SSH_MSG_CHANNEL_REQUEST packets with an exit signal are parsed. A remote attacker who compromises a SSH server may be able to execute code on the client system when a user connects to the server."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.libssh2.org/CVE-2019-3857.html",
+        "name": "https://www.libssh2.org/CVE-2019-3857.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3857",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3857",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/03/msg00032.html",
+        "name": "[debian-lts-announce] 20190326 [SECURITY] [DLA 1730-1] libssh2 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190327-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20190327-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0679",
+        "name": "RHSA-2019:0679",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-03/msg00040.html",
+        "name": "openSUSE-SU-2019:1075",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00003.html",
+        "name": "openSUSE-SU-2019:1109",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5DK6VO2CEUTAJFYIKWNZKEKYMYR3NO2O/",
+        "name": "FEDORA-2019-3348cb4934",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4431",
+        "name": "DSA-4431",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Apr/25",
+        "name": "20190415 [SECURITY] [DSA 4431-1] libssh2 security update",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1175",
+        "name": "RHSA-2019:1175",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1652",
+        "name": "RHSA-2019:1652",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1791",
+        "name": "RHSA-2019:1791",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1943",
+        "name": "RHSA-2019:1943",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2399",
+        "name": "RHSA-2019:2399",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-15598",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-10-06T14:15Z",
+    "lastModifiedDate": "2020-10-14T03:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "** DISPUTED ** Trustwave ModSecurity 3.x through 3.0.4 allows denial of service via a special request. NOTE: The discoverer reports \"Trustwave has signaled they are disputing our claims.\" The CVE suggests that there is a security issue with how ModSecurity handles regular expressions that can result in a Denial of Service condition. The vendor does not consider this as a security issue because1) there is no default configuration issue here. An attacker would need to know that a rule using a potentially problematic regular expression was in place, 2) the attacker would need to know the basic nature of the regular expression itself to exploit any resource issues. It's well known that regular expression usage can be taxing on system resources regardless of the use case. It is up to the administrator to decide on when it is appropriate to trade resources for potential security benefit."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://seclists.org/fulldisclosure/2020/Sep/32",
+        "name": "http://seclists.org/fulldisclosure/2020/Sep/32",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.modsecurity.org",
+        "name": "https://www.modsecurity.org",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4765",
+        "name": "https://www.debian.org/security/2020/dsa-4765",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://coreruleset.org/20200914/cve-2020-15598/",
+        "name": "https://coreruleset.org/20200914/cve-2020-15598/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/159185/ModSecurity-3.0.x-Denial-Of-Service.html",
+        "name": "http://packetstormsecurity.com/files/159185/ModSecurity-3.0.x-Denial-Of-Service.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  }
+]

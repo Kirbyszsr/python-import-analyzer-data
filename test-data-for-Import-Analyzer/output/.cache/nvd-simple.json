@@ -1,0 +1,2630 @@
+[
+  {
+    "cveID": "CVE-2013-1896",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2013-07-10T20:55Z",
+    "lastModifiedDate": "2021-03-30T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "mod_dav.c in the Apache HTTP Server before 2.2.25 does not properly determine whether DAV is enabled for a URI, which allows remote attackers to cause a denial of service (segmentation fault) via a MERGE request in which the URI is configured for handling by the mod_dav_svn module, but a certain href attribute in XML data refers to a non-DAV URI."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.apache.org/dist/httpd/Announcement2.2.html",
+        "name": "http://www.apache.org/dist/httpd/Announcement2.2.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?view=log",
+        "name": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?view=log",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?r1=1482522&r2=1485668&diff_format=h",
+        "name": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?r1=1482522&r2=1485668&diff_format=h",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00026.html",
+        "name": "openSUSE-SU-2013:1337",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1156.html",
+        "name": "RHSA-2013:1156",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1903-1",
+        "name": "USN-1903-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00029.html",
+        "name": "openSUSE-SU-2013:1340",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00030.html",
+        "name": "openSUSE-SU-2013:1341",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21644047",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21644047",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-1896",
+        "name": "20130822 Apache HTTP Server MERGE Request Denial of Service Vulnerability",
+        "refsource": "CISCO",
+        "tags": []
+      },
+      {
+        "url": "https://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?spf_p.tpst=kbDocDisplay&spf_p.prp_kbDocDisplay=wsrp-navigationalState%3DdocId%253Demr_na-c03922406-1%257CdocLocale%253D%257CcalledBy%253D&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
+        "name": "SSRT101288",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1209.html",
+        "name": "RHSA-2013:1209",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1207.html",
+        "name": "RHSA-2013:1207",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1208.html",
+        "name": "RHSA-2013:1208",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/55032",
+        "name": "55032",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://support.apple.com/kb/HT6150",
+        "name": "http://support.apple.com/kb/HT6150",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://httpd.apache.org/security/vulnerabilities_24.html",
+        "name": "https://httpd.apache.org/security/vulnerabilities_24.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/61129",
+        "name": "61129",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19747",
+        "name": "oval:org.mitre.oval:def:19747",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18835",
+        "name": "oval:org.mitre.oval:def:18835",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/56c2e7cc9deb1c12a843d0dc251ea7fd3e7e80293cde02fcd65286ba@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8d63cb8e9100f28a99429b4328e4e7cebce861d5772ac9863ba2ae6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f7f95ac1cd9895db2714fa3ebaa0b94d0c6df360f742a40951384a53@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/84a3714f0878781f6ed84473d1a503d2cc382277e100450209231830@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd18c3c43602e66f9cdcf09f1de233804975b9572b0456cc582390b6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r57608dc51b79102f3952ae06f54d5277b649c86d6533dcd6a7d201f7@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfbaf647d52c1cb843e726a0933f156366a806cead84fbd430951591b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re3d27b6250aa8548b8845d314bb8a350b3df326cacbbfdfe4d455234@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r05b5357d1f6bd106f41541ee7d87aafe3f5ea4dc3e9bde5ce09baff8@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888194 [8/13] - /httpd/site/trunk/content/security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9b4b963760a3cb5a4a70c902f325c6c0337fe51d5b8570416f8f8729@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [8/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdca61ae990660bacb682295f2a09d34612b7bb5f457577fe17f4d064@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073146 [2/3] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities-httpd.xml security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ea3538f229874c80a10af473856a81fbf5f694cd7f471cc679ba70b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9821b0a32a1d0a1b4947abb6f3630053fcbb2ec905d9a32c2bd4d4ee@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [9/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-1862",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2013-06-10T17:55Z",
+    "lastModifiedDate": "2021-03-30T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "mod_rewrite.c in the mod_rewrite module in the Apache HTTP Server 2.2.x before 2.2.25 writes data to a log file without sanitizing non-printable characters, which might allow remote attackers to execute arbitrary commands via an HTTP request containing an escape sequence for a terminal emulator."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://people.apache.org/~jorton/mod_rewrite-CVE-2013-1862.patch",
+        "name": "http://people.apache.org/~jorton/mod_rewrite-CVE-2013-1862.patch",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://svn.apache.org/viewvc?view=revision&revision=r1469311",
+        "name": "http://svn.apache.org/viewvc?view=revision&revision=r1469311",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=953729",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=953729",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-0815.html",
+        "name": "RHSA-2013:0815",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00026.html",
+        "name": "openSUSE-SU-2013:1337",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1903-1",
+        "name": "USN-1903-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00029.html",
+        "name": "openSUSE-SU-2013:1340",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00030.html",
+        "name": "openSUSE-SU-2013:1341",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21644047",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21644047",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-1862",
+        "name": "20130822 Apache HTTP Server mod_rewrite Log File Manipulation Vulnerability",
+        "refsource": "CISCO",
+        "tags": []
+      },
+      {
+        "url": "https://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?spf_p.tpst=kbDocDisplay&spf_p.prp_kbDocDisplay=wsrp-navigationalState%3DdocId%253Demr_na-c03922406-1%257CdocLocale%253D%257CcalledBy%253D&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
+        "name": "SSRT101288",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1209.html",
+        "name": "RHSA-2013:1209",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1207.html",
+        "name": "RHSA-2013:1207",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2013-1208.html",
+        "name": "RHSA-2013:1208",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/55032",
+        "name": "55032",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/64758",
+        "name": "64758",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2013:174",
+        "name": "MDVSA-2013:174",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://support.apple.com/kb/HT6150",
+        "name": "http://support.apple.com/kb/HT6150",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.fujitsu.com/global/support/software/security/products-f/interstage-201303e.html",
+        "name": "http://www.fujitsu.com/global/support/software/security/products-f/interstage-201303e.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/59826",
+        "name": "59826",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19534",
+        "name": "oval:org.mitre.oval:def:19534",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18790",
+        "name": "oval:org.mitre.oval:def:18790",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/54a42d4b01968df1117cea77fc53d6beb931c0e05936ad02af93e9ac@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/5df9bfb86a3b054bb985a45ff9250b0332c9ecc181eec232489e7f79@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8d63cb8e9100f28a99429b4328e4e7cebce861d5772ac9863ba2ae6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f7f95ac1cd9895db2714fa3ebaa0b94d0c6df360f742a40951384a53@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0276683d8e1e07153fc8642618830ac0ade85b9ae0dc7b07f63bb8fc@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r57608dc51b79102f3952ae06f54d5277b649c86d6533dcd6a7d201f7@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8828e649175df56f1f9e3919938ac7826128525426e2748f0ab62feb@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfbaf647d52c1cb843e726a0933f156366a806cead84fbd430951591b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9b4b963760a3cb5a4a70c902f325c6c0337fe51d5b8570416f8f8729@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [8/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ea3538f229874c80a10af473856a81fbf5f694cd7f471cc679ba70b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [3/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2cb985de917e7da0848c440535f65a247754db8b2154a10089e4247b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r05b5357d1f6bd106f41541ee7d87aafe3f5ea4dc3e9bde5ce09baff8@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888194 [8/13] - /httpd/site/trunk/content/security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9821b0a32a1d0a1b4947abb6f3630053fcbb2ec905d9a32c2bd4d4ee@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [9/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9e8622254184645bc963a1d47c5d47f6d5a36d6f080d8d2c43b2b142@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073143 [2/3] - in /websites/staging/httpd/trunk/content: ./ security/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-5459",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-09-27T10:55Z",
+    "lastModifiedDate": "2021-03-29T14:38Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The PEAR_REST class in REST.php in PEAR in PHP through 5.6.0 allows local users to write to arbitrary files via a symlink attack on a (1) rest.cachefile or (2) rest.cacheid file in /tmp/pear/cache/, related to the retrieveCacheFirst and useLocalCache functions."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/08/27/3",
+        "name": "[oss-security] 20140827 Re: CVE request: php-pear, pear's insecure /tmp/ use for cache data",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=759282",
+        "name": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=759282",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-09/msg00024.html",
+        "name": "openSUSE-SU-2014:1133",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-09/msg00055.html",
+        "name": "openSUSE-SU-2014:1245",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-16889",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-09-25T20:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Ubiquiti EdgeMAX devices before 2.0.3 allow remote attackers to cause a denial of service (disk consumption) because *.cache files in /var/run/beaker/container_file/ are created when providing a valid length payload of 249 characters or fewer to the beaker.session.id cookie in a GET header. The attacker can use a long series of unique session IDs."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://mjlanders.com/2019/07/28/resource-consumption-dos-on-edgemax-v1-10-6/",
+        "name": "https://mjlanders.com/2019/07/28/resource-consumption-dos-on-edgemax-v1-10-6/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://community.ui.com/releases/New-EdgeRouter-firmware-2-0-3-has-been-released-2-0-3/e8badd28-a112-4269-9fb6-ffe3fc0e1643",
+        "name": "https://community.ui.com/releases/New-EdgeRouter-firmware-2-0-3-has-been-released-2-0-3/e8badd28-a112-4269-9fb6-ffe3fc0e1643",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://hackerone.com/reports/406614",
+        "name": "https://hackerone.com/reports/406614",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-0160",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2014-04-07T22:55Z",
+    "lastModifiedDate": "2020-07-28T17:11Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The (1) TLS and (2) DTLS implementations in OpenSSL 1.0.1 before 1.0.1g do not properly handle Heartbeat Extension packets, which allows remote attackers to obtain sensitive information from process memory via crafted packets that trigger a buffer over-read, as demonstrated by reading private keys, related to d1_both.c and t1_lib.c, aka the Heartbleed bug."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=96db9023b881d7cd9f379b0c154650d6c108e9a3",
+        "name": "http://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=96db9023b881d7cd9f379b0c154650d6c108e9a3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1084875",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1084875",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openssl.org/news/secadv_20140407.txt",
+        "name": "http://www.openssl.org/news/secadv_20140407.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://heartbleed.com/",
+        "name": "http://heartbleed.com/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030078",
+        "name": "1030078",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2014/Apr/109",
+        "name": "20140409 Re: heartbleed OpenSSL bug CVE-2014-0160",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2014/Apr/190",
+        "name": "20140412 Re: heartbleed OpenSSL bug CVE-2014-0160",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.balabit.hu/pipermail/syslog-ng-announce/2014-April/000184.html",
+        "name": "[syslog-ng-announce] 20140411 syslog-ng Premium Edition 5 LTS (5.0.4a) has been released",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/opensslheartbleedcve-2014-0160-2188454.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/opensslheartbleedcve-2014-0160-2188454.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0376.html",
+        "name": "RHSA-2014:0376",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0396.html",
+        "name": "RHSA-2014:0396",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030082",
+        "name": "1030082",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/57347",
+        "name": "57347",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139722163017074&w=2",
+        "name": "HPSBMU02995",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030077",
+        "name": "1030077",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21670161",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=swg21670161",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2896",
+        "name": "DSA-2896",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0377.html",
+        "name": "RHSA-2014:0377",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030080",
+        "name": "1030080",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2014-April/131221.html",
+        "name": "FEDORA-2014-4879",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030074",
+        "name": "1030074",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2014/Apr/90",
+        "name": "20140408 heartbleed OpenSSL bug CVE-2014-0160",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030081",
+        "name": "1030081",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140409-heartbleed",
+        "name": "20140409 OpenSSL Heartbeat Extension Vulnerability in Multiple Cisco Products",
+        "refsource": "CISCO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0378.html",
+        "name": "RHSA-2014:0378",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2014/Apr/91",
+        "name": "20140408 Re: heartbleed OpenSSL bug CVE-2014-0160",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/57483",
+        "name": "57483",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.splunk.com/view/SP-CAAAMB3",
+        "name": "http://www.splunk.com/view/SP-CAAAMB3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2014-April/131291.html",
+        "name": "FEDORA-2014-4910",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030079",
+        "name": "1030079",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-04/msg00004.html",
+        "name": "openSUSE-SU-2014:0492",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/57721",
+        "name": "57721",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.blackberry.com/btsc/KB35882",
+        "name": "http://www.blackberry.com/btsc/KB35882",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030026",
+        "name": "1030026",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2014-04/msg00005.html",
+        "name": "SUSE-SA:2014:002",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/66690",
+        "name": "66690",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.getchef.com/blog/2014/04/09/chef-server-11-0-12-release/",
+        "name": "http://www.getchef.com/blog/2014/04/09/chef-server-11-0-12-release/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.us-cert.gov/ncas/alerts/TA14-098A",
+        "name": "TA14-098A",
+        "refsource": "CERT",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.getchef.com/blog/2014/04/09/enterprise-chef-1-4-9-release/",
+        "name": "http://www.getchef.com/blog/2014/04/09/enterprise-chef-1-4-9-release/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://blog.fox-it.com/2014/04/08/openssl-heartbleed-bug-live-blog/",
+        "name": "http://blog.fox-it.com/2014/04/08/openssl-heartbleed-bug-live-blog/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://blog.torproject.org/blog/openssl-bug-cve-2014-0160",
+        "name": "https://blog.torproject.org/blog/openssl-bug-cve-2014-0160",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/57966",
+        "name": "57966",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.f-secure.com/en/web/labs_global/fsc-2014-1",
+        "name": "http://www.f-secure.com/en/web/labs_global/fsc-2014-1",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2014/Apr/173",
+        "name": "20140411 MRI Rubies may contain statically linked, vulnerable OpenSSL",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.getchef.com/blog/2014/04/09/enterprise-chef-11-1-3-release/",
+        "name": "http://www.getchef.com/blog/2014/04/09/enterprise-chef-11-1-3-release/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/57968",
+        "name": "57968",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://code.google.com/p/mod-spdy/issues/detail?id=85",
+        "name": "https://code.google.com/p/mod-spdy/issues/detail?id=85",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/32745",
+        "name": "32745",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/720951",
+        "name": "VU#720951",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://www.cert.fi/en/reports/2014/vulnerability788210.html",
+        "name": "https://www.cert.fi/en/reports/2014/vulnerability788210.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/32764",
+        "name": "32764",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/57836",
+        "name": "57836",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://gist.github.com/chapmajs/10473815",
+        "name": "https://gist.github.com/chapmajs/10473815",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.getchef.com/blog/2014/04/09/chef-server-heartbleed-cve-2014-0160-releases/",
+        "name": "http://www.getchef.com/blog/2014/04/09/chef-server-heartbleed-cve-2014-0160-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://cogentdatahub.com/ReleaseNotes.html",
+        "name": "http://cogentdatahub.com/ReleaseNotes.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905458328378&w=2",
+        "name": "HPSBMU03009",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139869891830365&w=2",
+        "name": "HPSBMU03022",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139889113431619&w=2",
+        "name": "HPSBMU03024",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://public.support.unisys.com/common/public/vulnerability/NVD_Detail_Rpt.aspx?ID=1",
+        "name": "http://public.support.unisys.com/common/public/vulnerability/NVD_Detail_Rpt.aspx?ID=1",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.kerio.com/support/kerio-control/release-history",
+        "name": "http://www.kerio.com/support/kerio-control/release-history",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://public.support.unisys.com/common/public/vulnerability/NVD_Detail_Rpt.aspx?ID=3",
+        "name": "http://public.support.unisys.com/common/public/vulnerability/NVD_Detail_Rpt.aspx?ID=3",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://advisories.mageia.org/MGASA-2014-0165.html",
+        "name": "http://advisories.mageia.org/MGASA-2014-0165.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?spf_p.tpst=kbDocDisplay&spf_p.prp_kbDocDisplay=wsrp-navigationalState%3DdocId%253Demr_na-c04260637-4%257CdocLocale%253Den_US%257CcalledBy%253DSearch_Result&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken",
+        "name": "HPSBST03000",
+        "refsource": "HP",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=isg400001843",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=isg400001843",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://filezilla-project.org/versions.php?type=server",
+        "name": "https://filezilla-project.org/versions.php?type=server",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=isg400001841",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=isg400001841",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.f5.com/kb/en-us/solutions/public/15000/100/sol15159.html?sr=36517217",
+        "name": "https://support.f5.com/kb/en-us/solutions/public/15000/100/sol15159.html?sr=36517217",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=141287864628122&w=2",
+        "name": "HPSBHF03136",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2014/Dec/23",
+        "name": "20141205 NEW: VMSA-2014-0012 - VMware vSphere product updates address security vulnerabilities",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vmware.com/security/advisories/VMSA-2014-0012.html",
+        "name": "http://www.vmware.com/security/advisories/VMSA-2014-0012.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=142660345230545&w=2",
+        "name": "SSRT101846",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.websense.com/support/article/kbarticle/Vulnerabilities-resolved-in-TRITON-APX-Version-8-0",
+        "name": "http://www.websense.com/support/article/kbarticle/Vulnerabilities-resolved-in-TRITON-APX-Version-8-0",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2015:062",
+        "name": "MDVSA-2015:062",
+        "refsource": "MANDRIVA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139817727317190&w=2",
+        "name": "HPSBMU03017",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139757726426985&w=2",
+        "name": "HPSBMU02994",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139758572430452&w=2",
+        "name": "HPSBST03001",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905653828999&w=2",
+        "name": "HPSBST03004",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139842151128341&w=2",
+        "name": "HPSBST03016",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905405728262&w=2",
+        "name": "HPSBMU03032",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139833395230364&w=2",
+        "name": "HPSBGN03011",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139824993005633&w=2",
+        "name": "HPSBMU03013",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139843768401936&w=2",
+        "name": "HPSBMU03023",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905202427693&w=2",
+        "name": "HPSBMU03029",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139774054614965&w=2",
+        "name": "HPSBGN03008",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139889295732144&w=2",
+        "name": "HPSBPI03031",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139835815211508&w=2",
+        "name": "HPSBHF03021",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=140724451518351&w=2",
+        "name": "HPSBMU03037",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139808058921905&w=2",
+        "name": "HPSBMU03012",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139836085512508&w=2",
+        "name": "HPSBMU03020",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139869720529462&w=2",
+        "name": "HPSBMU03025",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905868529690&w=2",
+        "name": "HPSBST03027",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139765756720506&w=2",
+        "name": "HPSBMU02999",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=140015787404650&w=2",
+        "name": "HPSBMU03040",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139824923705461&w=2",
+        "name": "HPSBST03015",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139757919027752&w=2",
+        "name": "HPSBMU02997",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139774703817488&w=2",
+        "name": "HPSBGN03010",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905243827825&w=2",
+        "name": "HPSBMU03028",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=140075368411126&w=2",
+        "name": "HPSBMU03044",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905295427946&w=2",
+        "name": "HPSBMU03033",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139835844111589&w=2",
+        "name": "HPSBPI03014",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139757819327350&w=2",
+        "name": "HPSBMU02998",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139817685517037&w=2",
+        "name": "HPSBMU03019",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139905351928096&w=2",
+        "name": "HPSBMU03030",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=139817782017443&w=2",
+        "name": "HPSBMU03018",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=140752315422991&w=2",
+        "name": "HPSBMU03062",
+        "refsource": "HP",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.symantec.com/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20160512_00",
+        "name": "http://www.symantec.com/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20160512_00",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www-01.ibm.com/support/docview.wss?uid=ssg1S1004661",
+        "name": "http://www-01.ibm.com/support/docview.wss?uid=ssg1S1004661",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.innominate.com/data/downloads/manuals/mdm_1.5.2.1_Release_Notes.pdf",
+        "name": "http://www.innominate.com/data/downloads/manuals/mdm_1.5.2.1_Release_Notes.pdf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://www.apcmedia.com/salestools/SJHN-7RKGNM/SJHN-7RKGNM_R4_EN.pdf",
+        "name": "http://www.apcmedia.com/salestools/SJHN-7RKGNM/SJHN-7RKGNM_R4_EN.pdf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/59347",
+        "name": "59347",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/59243",
+        "name": "59243",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/59139",
+        "name": "59139",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2014-August/136473.html",
+        "name": "FEDORA-2014-9308",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://download.schneider-electric.com/files?p_Doc_Ref=SEVD%202014-119-01",
+        "name": "http://download.schneider-electric.com/files?p_Doc_Ref=SEVD%202014-119-01",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "https://support.f5.com/kb/en-us/solutions/public/15000/100/sol15159.html",
+        "name": "https://support.f5.com/kb/en-us/solutions/public/15000/100/sol15159.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://support.citrix.com/article/CTX140605",
+        "name": "http://support.citrix.com/article/CTX140605",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2165-1",
+        "name": "USN-2165-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-04/msg00061.html",
+        "name": "openSUSE-SU-2014:0560",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/534161/100/0/threaded",
+        "name": "20141205 NEW: VMSA-2014-0012 - VMware vSphere product updates address security vulnerabilities",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "https://www.mitel.com/en-ca/support/security-advisories/mitel-product-security-advisory-17-0008",
+        "name": "https://www.mitel.com/en-ca/support/security-advisories/mitel-product-security-advisory-17-0008",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ba661b0edd913b39ff129a32d855620dd861883ade05fd88a8ce517d@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190319 svn commit: r1855831 [26/30] - in /tomcat/site/trunk: ./ docs/ xdocs/",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f8e0814e11c7f21f42224b6de111cb3f5e5ab5c15b78924c516d4ec2@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20190325 svn commit: r1856174 [26/29] - in /tomcat/site/trunk: docs/ xdocs/ xdocs/stylesheets/",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sku11army.blogspot.com/2020/01/heartbleed-hearts-continue-to-bleed.html",
+        "name": "https://sku11army.blogspot.com/2020/01/heartbleed-hearts-continue-to-bleed.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf8e8c091182b45daa50d3557cad9b10bb4198e3f08cf8f1c66a1b08d@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20200203 svn commit: r1873527 [26/30] - /tomcat/site/trunk/docs/",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-635659.pdf",
+        "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-635659.pdf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re3b72cbb13e1dfe85c4a06959a3b6ca6d939b407ecca80db12b54220@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20200213 svn commit: r1873980 [31/34] - /tomcat/site/trunk/docs/",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-12608",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-07T17:15Z",
+    "lastModifiedDate": "2020-05-15T19:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in SolarWinds MSP PME (Patch Management Engine) Cache Service before 1.1.15 in the Advanced Monitoring Agent. There are insecure file permissions for %PROGRAMDATA%\\SolarWinds MSP\\SolarWinds.MSP.CacheService\\config\\. This can lead to code execution by changing the CacheService.xml SISServerURL parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jensregel/Advisories/tree/master/CVE-2020-12608",
+        "name": "https://github.com/jensregel/Advisories/tree/master/CVE-2020-12608",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/157591/SolarWinds-MSP-PME-Cache-Service-Insecure-File-Permissions-Code-Execution.html",
+        "name": "http://packetstormsecurity.com/files/157591/SolarWinds-MSP-PME-Cache-Service-Insecure-File-Permissions-Code-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2020/May/23",
+        "name": "20200508 SolarWinds MSP PME Cache Service - Insecure File Permissions / Code Execution",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-6216",
+    "cveASSIGNER": "hp-security-alert@hp.com",
+    "publishedDate": "2014-04-12T04:37Z",
+    "lastModifiedDate": "2019-10-09T23:08Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Unspecified vulnerability in HP Array Configuration Utility, Array Diagnostics Utility, ProLiant Array Diagnostics, and SmartSSD Wear Gauge Utility 9.40 and earlier allows local users to gain privileges via unknown vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04187357",
+        "name": "SSRT101452",
+        "refsource": "HP",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2012-3280",
+    "cveASSIGNER": "hp-security-alert@hp.com",
+    "publishedDate": "2013-02-13T21:55Z",
+    "lastModifiedDate": "2019-10-09T23:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple unspecified vulnerabilities on HP NonStop Servers H06.x and J06.x allow remote authenticated users to obtain sensitive information, modify data, or cause a denial of service via an OSS Remote Operation over an Expand connection."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03654586",
+        "name": "HPSBNS02843",
+        "refsource": "HP",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-3019",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-06-15T10:02Z",
+    "lastModifiedDate": "2018-10-18T16:45Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple PHP remote file inclusion vulnerabilities in phpCMS 1.2.1pl2 allow remote attackers to execute arbitrary PHP code via a URL in the PHPCMS_INCLUDEPATH parameter to files in parser/include/ including (1) class.parser_phpcms.php, (2) class.session_phpcms.php, (3) class.edit_phpcms.php, (4) class.http_indexer_phpcms.php, (5) class.cache_phpcms.php, (6) class.search_phpcms.php, (7) class.lib_indexer_universal_phpcms.php, and (8) class.layout_phpcms.php, (9) parser/plugs/counter.php, and (10) parser/parser.php.  NOTE: the class.cache_phpcms.php vector was also reported to affect 1.1.7."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/20573",
+        "name": "20573",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/21768",
+        "name": "21768",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26388",
+        "name": "26388",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26389",
+        "name": "26389",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26390",
+        "name": "26390",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26391",
+        "name": "26391",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26392",
+        "name": "26392",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26393",
+        "name": "26393",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26394",
+        "name": "26394",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26395",
+        "name": "26395",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26397",
+        "name": "26397",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/26396",
+        "name": "26396",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/1106",
+        "name": "1106",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/2302",
+        "name": "ADV-2006-2302",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/27067",
+        "name": "phpcms-includepath-file-include(27067)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/455302/100/0/threaded",
+        "name": "20061224 phpcms <=- 1.1.7 Remote File Inclusion",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/436893/100/0/threaded",
+        "name": "20060612 [FSA013] phpCMS 1.2.1pl2, Remote command execution",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-0513",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-01-31T20:00Z",
+    "lastModifiedDate": "2018-10-15T22:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Directory traversal vulnerability in parser/include/class.cache_phpcms.php in phpCMS 1.2.2 allows remote attackers to read arbitrary files via a .. (dot dot) in the file parameter to parser/parser.php, as demonstrated by a filename ending with %00.gif, a different vector than CVE-2005-1840."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/27495",
+        "name": "27495",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/28709",
+        "name": "28709",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/0353",
+        "name": "ADV-2008-0353",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/40017",
+        "name": "phpcms-parser-directory-traversal(40017)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/5006",
+        "name": "5006",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/487254/100/0/threaded",
+        "name": "20080129 Re: Remote File Disclosure in phpCMS 1.2.2",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/487251/100/0/threaded",
+        "name": "20080129 Remote File Disclosure in phpCMS 1.2.2",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-2511",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-06-02T21:30Z",
+    "lastModifiedDate": "2018-10-11T20:41Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Directory traversal vulnerability in the UmxEventCli.CachedAuditDataList.1 (aka UmxEventCliLib) ActiveX control in UmxEventCli.dll in CA Internet Security Suite 2008 allows remote attackers to create and overwrite arbitrary files via a .. (dot dot) in the argument to the SaveToFile method.  NOTE: this can be leveraged for code execution by writing to a Startup folder.  NOTE: some of these details are obtained from third party information."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://retrogod.altervista.org/9sg_CA_poc.html",
+        "name": "http://retrogod.altervista.org/9sg_CA_poc.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1020129",
+        "name": "1020129",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30420",
+        "name": "30420",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/1696/references",
+        "name": "ADV-2008-1696",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/42712",
+        "name": "internet-security-umxeventcli-file-overwrite(42712)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/5682",
+        "name": "5682",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/492679/100/0/threaded",
+        "name": "20080528 [NSG_28-5-08] CA Internet Security Suite 2008 (UmxEventCli.dll/SaveToFile()) remote file corruption poc",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-2045",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-05-01T19:05Z",
+    "lastModifiedDate": "2018-10-11T20:38Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Absolute path traversal vulnerability in SugarCRM Sugar Community Edition 4.5.1 and 5.0.0 allows remote attackers to read arbitrary files via a full path in the URL parameter to modules/Feeds/Feed.php, which places the contents into a related cache file in the .cache/feeds directory."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.security-assessment.com/files/advisories/2008-04-29_SugarCRM_local_file_disclosure.pdf",
+        "name": "http://www.security-assessment.com/files/advisories/2008-04-29_SugarCRM_local_file_disclosure.pdf",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.sugarcrm.com/docs/Release_Notes/CommunityEdition_ReleaseNotes_5.0d/Sugar_Release_Notes_5.0d.2.6.html",
+        "name": "http://www.sugarcrm.com/docs/Release_Notes/CommunityEdition_ReleaseNotes_5.0d/Sugar_Release_Notes_5.0d.2.6.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.sugarcrm.com/forums/showthread.php?t=31688",
+        "name": "http://www.sugarcrm.com/forums/showthread.php?t=31688",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.sugarcrm.com/forums/showthread.php?t=32252",
+        "name": "http://www.sugarcrm.com/forums/showthread.php?t=32252",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/28981",
+        "name": "28981",
+        "refsource": "BID",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/30002",
+        "name": "30002",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/3844",
+        "name": "3844",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/1388/references",
+        "name": "ADV-2008-1388",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/42087",
+        "name": "sugar-feed-information-disclosure(42087)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/5521",
+        "name": "5521",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/491417/100/0/threaded",
+        "name": "20080429 SugarCRM Community Edition Local File Disclosure Vulnerability",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-1402",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-05-19T14:55Z",
+    "lastModifiedDate": "2017-12-22T02:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The default configuration for bccache.FileSystemBytecodeCache in Jinja2 before 2.7.2 does not properly create temporary files, which allows local users to gain privileges via a crafted .cache file with a name starting with __jinja2_ in /tmp."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=734747",
+        "name": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=734747",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://advisories.mageia.org/MGASA-2014-0028.html",
+        "name": "http://advisories.mageia.org/MGASA-2014-0028.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://jinja.pocoo.org/docs/changelog/",
+        "name": "http://jinja.pocoo.org/docs/changelog/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2014/01/10/3",
+        "name": "[oss-security] 20140110 Re: CVE Request: python-jinja2: arbitrary code execution vulnerability",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1051421",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1051421",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2014:096",
+        "name": "MDVSA-2014:096",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2014/01/10/2",
+        "name": "[oss-security] 20140110 CVE Request: python-jinja2: arbitrary code execution vulnerability",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59017",
+        "name": "59017",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/58918",
+        "name": "58918",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/60770",
+        "name": "60770",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/60738",
+        "name": "60738",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/56287",
+        "name": "56287",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.gentoo.org/security/en/glsa/glsa-201408-13.xml",
+        "name": "GLSA-201408-13",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://oss.oracle.com/pipermail/el-errata/2014-June/004192.html",
+        "name": "[El-errata] 20140611 Oracle Linux Security Advisory ELSA-2014-0747",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/58783",
+        "name": "58783",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0748.html",
+        "name": "RHSA-2014:0748",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2014-0747.html",
+        "name": "RHSA-2014:0747",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2001-0169",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2001-03-26T05:00Z",
+    "lastModifiedDate": "2017-10-10T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "When using the LD_PRELOAD environmental variable in SUID or SGID applications, glibc does not verify that preloaded libraries in /etc/ld.so.cache are also SUID/SGID, which could allow a local user to overwrite arbitrary files by loading a library from /lib or /usr/lib."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/2223",
+        "name": "2223",
+        "refsource": "BID",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/157650",
+        "name": "20010121 Trustix Security Advisory - glibc",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.linux-mandrake.com/en/security/2001/MDKSA-2001-012.php3?dis=7.2",
+        "name": "MDKSA-2001:012",
+        "refsource": "MANDRAKE",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2001-002.html",
+        "name": "RHSA-2001:002",
+        "refsource": "REDHAT",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.novell.com/linux/security/advisories/2001_001_glibc_txt.html",
+        "name": "SuSE-SA:2001:01",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.calderasystems.com/support/security/advisories/CSSA-2001-007.0.txt",
+        "name": "CSSA-2001-007",
+        "refsource": "CALDERA",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2001/dsa-039",
+        "name": "DSA-039",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://archives.neohapsis.com/archives/linux/turbolinux/2001-q1/0004.html",
+        "name": "TLSA2000021-2",
+        "refsource": "TURBO",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/5971",
+        "name": "linux-glibc-preload-overwrite(5971)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-0007",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2011-01-11T03:00Z",
+    "lastModifiedDate": "2017-08-17T01:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "pimd 2.1.5 and possibly earlier versions allows user-assisted local users to overwrite arbitrary files via a symlink attack on (1) pimd.dump when a USR1 signal is sent, or (2) pimd.cache when USR2 is sent."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.osvdb.org/70305",
+        "name": "70305",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/01/07/4",
+        "name": "[oss-security] 20110107 Re: CVE Request - pimd - Insecure file creation in /var/tmp",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/42759",
+        "name": "42759",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2011/01/07/3",
+        "name": "[oss-security] 20110107 CVE Request - pimd - Insecure file creation in /var/tmp",
+        "refsource": "MLIST",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/45715",
+        "name": "45715",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2147",
+        "name": "DSA-2147",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/42793",
+        "name": "42793",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0113",
+        "name": "ADV-2011-0113",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/64528",
+        "name": "pimd-pimd-symlink(64528)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-0832",
+    "cveASSIGNER": "security@ubuntu.com",
+    "publishedDate": "2010-07-12T16:30Z",
+    "lastModifiedDate": "2017-08-17T01:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "pam_motd (aka the MOTD module) in libpam-modules before 1.1.0-2ubuntu1.1 in PAM on Ubuntu 9.10 and libpam-modules before 1.1.1-2ubuntu5 in PAM on Ubuntu 10.04 LTS allows local users to change the ownership of arbitrary files via a symlink attack on .cache in a user's home directory, related to \"user file stamps\" and the motd.legal-notice file."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/1747",
+        "name": "ADV-2010-1747",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/41465",
+        "name": "41465",
+        "refsource": "BID",
+        "tags": [
+          "Exploit",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-959-1",
+        "name": "USN-959-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/66116",
+        "name": "66116",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/14273",
+        "name": "14273",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/40512",
+        "name": "40512",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.h-online.com/security/news/item/Ubuntu-closes-root-hole-1034618.html",
+        "name": "http://www.h-online.com/security/news/item/Ubuntu-closes-root-hole-1034618.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://twitter.com/jonoberheide/statuses/18009527979",
+        "name": "http://twitter.com/jonoberheide/statuses/18009527979",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/60194",
+        "name": "pammotd-motdlegalnotice-priv-escalation(60194)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-2623",
+    "cveASSIGNER": "hp-security-alert@hp.com",
+    "publishedDate": "2014-07-18T00:55Z",
+    "lastModifiedDate": "2017-01-07T02:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Unspecified vulnerability in HP Storage Data Protector 8.x allows remote attackers to execute arbitrary code via unknown vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04373818",
+        "name": "SSRT101644",
+        "refsource": "HP",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/34066/",
+        "name": "34066",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/109069",
+        "name": "109069",
+        "refsource": "OSVDB",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/35961",
+        "name": "35961",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/130658/HP-Data-Protector-8.10-Remote-Command-Execution.html",
+        "name": "http://packetstormsecurity.com/files/130658/HP-Data-Protector-8.10-Remote-Command-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/36304",
+        "name": "36304",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1030583",
+        "name": "1030583",
+        "refsource": "SECTRACK",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-2431",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2010-06-22T20:30Z",
+    "lastModifiedDate": "2013-05-15T03:10Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The cupsFileOpen function in CUPS before 1.4.4 allows local users, with lp group membership, to overwrite arbitrary files via a symlink attack on the (1) /var/cache/cups/remote.cache or (2) /var/cache/cups/job.cache file."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://cups.org/articles.php?L596",
+        "name": "http://cups.org/articles.php?L596",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://cups.org/str.php?L3510",
+        "name": "http://cups.org/str.php?L3510",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2010-0811.html",
+        "name": "RHSA-2010:0811",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=605397",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=605397",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2010/2856",
+        "name": "ADV-2010-2856",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:234",
+        "name": "MDVSA-2010:234",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:232",
+        "name": "MDVSA-2010:232",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2011/0535",
+        "name": "ADV-2011-0535",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/43521",
+        "name": "43521",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2176",
+        "name": "DSA-2176",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201207-10.xml",
+        "name": "GLSA-201207-10",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2011-4606",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2011-12-15T03:57Z",
+    "lastModifiedDate": "2011-12-15T16:32Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Artsoft Entertainment Rocks'n'Diamonds (aka rocksndiamonds) 3.3.0.1 allows local users to overwrite arbitrary files via a symlink attack on .rocksndiamonds/cache/artworkinfo.cache under a user's home directory."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=766805",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=766805",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2011/12/12/3",
+        "name": "[oss-security] 20111212 Re: CVE request: rocksndiamonds world-writable working/config directory",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2011/12/12/2",
+        "name": "[oss-security] 20111212 CVE request: rocksndiamonds world-writable working/config directory",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651620",
+        "name": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651620",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2003-0887",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2003-12-31T05:00Z",
+    "lastModifiedDate": "2008-09-05T20:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "ez-ipupdate 3.0.11b7 and earlier creates insecure temporary cache files, which allows local users to conduct unauthorized operations via a symlink attack on the ez-ipupdate.cache file."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://cvs.mandriva.com/cgi-bin/viewcvs.cgi/SPECS/ez-ipupdate/ez-ipupdate.spec?rev=1.6",
+        "name": "http://cvs.mandriva.com/cgi-bin/viewcvs.cgi/SPECS/ez-ipupdate/ez-ipupdate.spec?rev=1.6",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://cvs.mandriva.com/cgi-bin/viewcvs.cgi/SPECS/ez-ipupdate/ez-ipupdate.spec?r1=1.4&r2=1.5",
+        "name": "http://cvs.mandriva.com/cgi-bin/viewcvs.cgi/SPECS/ez-ipupdate/ez-ipupdate.spec?r1=1.4&r2=1.5",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  }
+]

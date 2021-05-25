@@ -1,0 +1,27 @@
+{
+  "name": "snuggs",
+  "description": "======\nsnuggs\n======\n\n.. image:: https://travis-ci.org/mapbox/snuggs.svg?branch=master\n   :target: https://travis-ci.org/mapbox/snuggs\n\n.. image:: https://coveralls.io/repos/mapbox/snuggs/badge.svg\n   :target: https://coveralls.io/r/mapbox/snuggs\n\nSnuggs are s-expressions for Numpy\n\n.. code-block:: python\n\n    >>> snuggs.eval(\"(+ (asarray 1 1) (asarray 2 2))\")\n    array([3, 3])\n\nSyntax\n======\n\nSnuggs wraps Numpy in expressions with the following syntax:\n\n.. code-block::\n\n    expression = \"(\" (operator | function) *arg \")\"\n    arg = expression | name | number | string\n\nExamples\n========\n\nAddition of two numbers\n-----------------------\n\n.. code-block:: python\n\n    import snuggs\n    snuggs.eval('(+ 1 2)')\n    # 3\n\nMultiplication of a number and an array\n---------------------------------------\n\nArrays can be created using ``asarray``.\n\n.. code-block:: python\n\n    snuggs.eval(\"(* 3.5 (asarray 1 1))\")\n    # array([ 3.5,  3.5])\n\nEvaluation context\n------------------\n\nExpressions can also refer by name to arrays in a local context.\n\n.. code-block:: python\n\n    snuggs.eval(\"(+ (asarray 1 1) b)\", b=np.array([2, 2]))\n    # array([3, 3])\n\nThis local context may be provided using keyword arguments (e.g.,\n``b=np.array([2, 2])``), or by passing a dictionary that stores\nthe keys and associated array values. Passing a dictionary, specifically\nan ``OrderedDict``, is important when using a function or operator that\nreferences the order in which values have been provided. For example,\nthe ``read`` function will lookup the `i-th` value passed:\n\n.. code-block:: python\n\n    ctx = OrderedDict((\n        ('a', np.array([5, 5])),\n        ('b', np.array([2, 2]))\n    ))\n    snuggs.eval(\"(- (read 1) (read 2))\", ctx)\n    # array([3, 3])\n\nFunctions and operators\n=======================\n\nArithmetic (``* + / -``) and logical (``< <= == != >= > & |``) operators are\navailable. Members of the ``numpy`` module such as ``asarray()``, ``mean()``,\nand ``where()`` are also available.\n\n.. code-block:: python\n\n    snuggs.eval(\"(mean (asarray 1 2 4))\")\n    # 2.3333333333333335\n\n.. code-block:: python\n\n    snuggs.eval(\"(where (& tt tf) 1 0)\",\n        tt=numpy.array([True, True]),\n        tf=numpy.array([True, False]))\n    # array([1, 0])\n\nHigher-order functions\n======================\n\nNew in snuggs 1.1 are higher-order functions ``map`` and ``partial``.\n\n.. code-block:: python\n\n    snuggs.eval(\"((partial * 2) 2)\")\n    # 4\n\n    snuggs.eval('(asarray (map (partial * 2) (asarray 1 2 3)))')\n    # array([2, 4, 6])\n\nPerformance notes\n=================\n\nSnuggs makes simple calculator programs possible. None of the optimizations\nof, e.g., `numexpr <https://github.com/pydata/numexpr>`__ (multithreading,\nelimination of temporary data, etc) are currently available.\n\nIf you're looking to combine Numpy with a more complete Lisp, see\n`Hy <https://github.com/hylang/hy>`__:\n\n.. code-block:: clojure\n\n    => (import numpy)\n    => (* 2 (.asarray numpy [1 2 3]))\n    array([2, 4, 6])\n\n\n",
+  "requires_dist": [
+    "numpy",
+    "pyparsing (>=2.1.6)",
+    "pytest ; extra == 'test'",
+    "hypothesis ; extra == 'test'"
+  ],
+  "requires_python": "",
+  "current_version": "1.4.7",
+  "released_versions": [
+    "1.0",
+    "1.1.0",
+    "1.2.0",
+    "1.3.0",
+    "1.3.1",
+    "1.4.0",
+    "1.4.1",
+    "1.4.2",
+    "1.4.3",
+    "1.4.4",
+    "1.4.5",
+    "1.4.6",
+    "1.4.7"
+  ]
+}

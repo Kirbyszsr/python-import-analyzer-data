@@ -1,0 +1,32 @@
+{
+  "name": "pep8-naming",
+  "description": ".. image:: https://travis-ci.org/PyCQA/pep8-naming.svg?branch=master\n    :target: https://travis-ci.org/PyCQA/pep8-naming\n\nPEP 8 Naming Conventions\n========================\n\nCheck your code against `PEP 8 <https://www.python.org/dev/peps/pep-0008/>`_\nnaming conventions.\n\nThis module provides a plugin for ``flake8``, the Python code checker.\n\n(It replaces the plugin ``flint-naming`` for the ``flint`` checker.)\n\n\nInstallation\n------------\n\nYou can install, upgrade, uninstall ``pep8-naming`` with these commands::\n\n  $ pip install pep8-naming\n  $ pip install --upgrade pep8-naming\n  $ pip uninstall pep8-naming\n\n\nPlugin for Flake8\n-----------------\n\nWhen both ``flake8`` and ``pep8-naming`` are installed, the plugin is\navailable in ``flake8``::\n\n  $ flake8 --version\n  2.0 (pep8: 1.4.3, pyflakes: 0.6.1, naming: 0.2)\n\nBy default the plugin is enabled.\n\nError Codes\n-----------\n\nThese error codes are emitted:\n\n+------+-------------------------------------------------------+\n| code | sample message                                        |\n+======+=======================================================+\n| N801 | class names should use CapWords convention            |\n+------+-------------------------------------------------------+\n| N802 | function name should be lowercase                     |\n+------+-------------------------------------------------------+\n| N803 | argument name should be lowercase                     |\n+------+-------------------------------------------------------+\n| N804 | first argument of a classmethod should be named 'cls' |\n+------+-------------------------------------------------------+\n| N805 | first argument of a method should be named 'self'     |\n+------+-------------------------------------------------------+\n| N806 | variable in function should be lowercase              |\n+------+-------------------------------------------------------+\n| N807 | function name should not start and end with '__'      |\n+------+-------------------------------------------------------+\n+------+-------------------------------------------------------+\n| N811 | constant imported as non constant                     |\n+------+-------------------------------------------------------+\n| N812 | lowercase imported as non lowercase                   |\n+------+-------------------------------------------------------+\n| N813 | camelcase imported as lowercase                       |\n+------+-------------------------------------------------------+\n| N814 | camelcase imported as constant                        |\n+------+-------------------------------------------------------+\n| N815 | mixedCase variable in class scope                     |\n+------+-------------------------------------------------------+\n| N816 | mixedCase variable in global scope                    |\n+------+-------------------------------------------------------+\n| N817 | camelcase imported as acronym                         |\n+------+-------------------------------------------------------+\n\nOptions\n-------\n\nThe following flake8 options are added:\n\n--ignore-names              Ignore errors for specific names or glob patterns.\n\n                            Currently, this option can only be used for N802, N803, N804, N805, N806, N815, and N816 errors.\n\n                            Default: ``setUp,tearDown,setUpClass,tearDownClass,setUpTestData,failureException,longMessage,maxDiff``.\n\n--classmethod-decorators    List of method decorators pep8-naming plugin should consider class method.\n\n                            Used to prevent false N804 errors.\n\n                            Default: ``classmethod``.\n\n--staticmethod-decorators   List of method decorators pep8-naming plugin should consider static method.\n\n                            Used to prevent false N805 errors.\n\n                            Default: ``staticmethod``.\n\n\n",
+  "requires_dist": [
+    "flake8-polyfill (<2,>=1.0.2)"
+  ],
+  "requires_python": "",
+  "current_version": "0.11.1",
+  "released_versions": [
+    "0.10.0",
+    "0.11.0",
+    "0.11.1",
+    "0.2",
+    "0.2.1",
+    "0.2.2",
+    "0.3.0",
+    "0.3.1",
+    "0.3.2",
+    "0.3.3",
+    "0.4.0",
+    "0.4.1",
+    "0.5.0",
+    "0.6.0",
+    "0.6.1",
+    "0.7.0",
+    "0.8.0",
+    "0.8.1",
+    "0.8.2",
+    "0.9.0",
+    "0.9.1"
+  ]
+}

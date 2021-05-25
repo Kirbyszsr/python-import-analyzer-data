@@ -1,0 +1,13 @@
+{
+  "name": "jinja2-pluralize",
+  "description": "===============================\nJinja2 Pluralize\n===============================\n\n.. image:: https://img.shields.io/pypi/v/jinja2_pluralize.svg?style=flat\n        :target: https://pypi.python.org/pypi/jinja2_pluralize\n    \n.. image:: https://travis-ci.org/audreyr/jinja2_pluralize.svg?branch=master\n        :target: https://travis-ci.org/audreyr/jinja2_pluralize\n\n.. image:: https://api.codacy.com/project/badge/eb497c487012455688a62383afccccb7\n    :target: https://www.codacy.com/app/aroy/jinja2_pluralize\n\n.. image:: https://img.shields.io/pypi/pyversions/jinja2_pluralize.svg?style=flat\n\n.. image:: https://img.shields.io/pypi/status/jinja2_pluralize.svg?style=flat\n\nJinja2 pluralize filters.\n\n* Free software: BSD license\n* Documentation: http://jinja2-pluralize.readthedocs.org\n\nFeatures\n--------\n\n1. Simple pluralize filter based on inflect.py. For example, this renders as `geese`:\n\n.. code-block:: jinja\n\n    {{ 'goose'|pluralize }}\n\n2. Django-style pluralize filter. Works as described in the `Django docs`_. For example, this renders as `votes`:\n\n.. code-block:: jinja\n\n    vote{{ 0|pluralize }}\n\n.. _`Django docs`: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#pluralize\n\nUsage\n-----\n\nTo use it with Jinja2, update the `filters` dict on the environment like this:\n\n.. code-block:: python\n\n    from jinja2 import Environment\n    from jinja2_pluralize import pluralize_dj\n\n    env = Environment()\n    env.filters['pluralize'] = pluralize_dj\n    tmpl = env.from_string('vote{{ 0|pluralize }}')\n    assert tmpl.render() == 'votes'\n\n\n\n\n\nHistory\n-------\n\n0.3.0 (2015-10-09)\n------------------\n\n* Fix RST formatting on PyPI.\n* Stable status.\n* Test on Python 3.4 and 3.5.\n* Add more badges to README.\n\n0.2.1 (2014-07-09)\n--------------------\n\n* Remove the shebang from `__init__.py` (`#2`_), thanks to `@dashea`_.\n\n.. _`#2`: https://github.com/audreyr/jinja2_pluralize/pull/2\n.. _`@dashea`: https://github.com/dashea\n\n0.2.0 (2014-07-02)\n--------------------\n\n* Package works as per the README.\n\n0.1.0 (2014-04-25)\n--------------------\n\n* First release on PyPI.",
+  "requires_dist": null,
+  "requires_python": null,
+  "current_version": "0.3.0",
+  "released_versions": [
+    "0.1.0",
+    "0.2.0",
+    "0.2.1",
+    "0.3.0"
+  ]
+}

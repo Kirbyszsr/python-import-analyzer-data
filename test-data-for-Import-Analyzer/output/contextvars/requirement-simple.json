@@ -1,0 +1,15 @@
+{
+  "name": "contextvars",
+  "description": ".. image:: https://travis-ci.org/MagicStack/contextvars.svg?branch=master\n    :target: https://travis-ci.org/MagicStack/contextvars\n\n\nPEP 567 Backport\n================\n\nThis package implements a backport of Python 3.7 ``contextvars``\nmodule (see PEP 567) for Python 3.6.\n\n**Important:** at this moment this package does not provide an\nasyncio event loop with PEP 567 support yet.  Stay tuned for updates.\n\n\nOriginal \"contextvars\" Package\n==============================\n\nThis package replaces the old \"contextvars\" PyPI package which\nrepository is available `here <https://github.com/gawen/contextvars>`_.\n\n\nDocumentation\n=============\n\nRead the official ``contextvars`` module documentation here:\nhttps://docs.python.org/3.7/library/contextvars.html\n\n\n`PEP 567 <https://www.python.org/dev/peps/pep-0567/>`_ also provides\na comprehensive overview of the API and explains all design choices.\n\n\nInstallation\n============\n\n.. code-block:: bash\n\n    $ pip install contextvars\n\n\nUsage\n=====\n\n.. code-block:: python\n\n    import contextvars\n\n    my_var = contextvars.ContextVar('my_var')\n\n    # ...\n\n\nListing as a Dependency\n=======================\n\nThe good news is that the standard library always takes the\nprecedence over site packages, so even if a local ``contextvars``\nmodule is installed, the one from the standard library will be used.\nTherefore you can simply list \"contextvars\" in your\n``requirements.txt`` or ``setup.py`` files.\n\nAnother option is to use `\"platform specific dependencies\"\n<http://setuptools.readthedocs.io/en/latest/setuptools.html\\\n#declaring-platform-specific-dependencies>`_ setuptools feature:\n\n.. code-block:: python\n\n    import setuptools\n\n    setuptools.setup(\n        name=\"Project\",\n        ...\n        install_requires=[\n            'contextvars;python_version<\"3.7\"'\n        ]\n    )\n\n\nLicense\n=======\n\nApache 2.0.",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "2.4",
+  "released_versions": [
+    "1.0",
+    "2.0",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4"
+  ]
+}

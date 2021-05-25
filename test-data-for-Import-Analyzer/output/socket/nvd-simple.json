@@ -1,0 +1,2524 @@
+[
+  {
+    "cveID": "CVE-2021-21419",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-07T15:15Z",
+    "lastModifiedDate": "2021-05-25T03:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Eventlet is a concurrent networking library for Python. A websocket peer may exhaust memory on Eventlet side by sending very large websocket frames. Malicious peer may exhaust memory on Eventlet side by sending highly compressed data frame. A patch in version 0.31.0 restricts websocket frame to reasonable limits. As a workaround, restricting memory usage via OS limits would help against overall machine exhaustion, but there is no workaround to protect Eventlet process."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/eventlet/eventlet/security/advisories/GHSA-9p9m-jm8w-94p2",
+        "name": "https://github.com/eventlet/eventlet/security/advisories/GHSA-9p9m-jm8w-94p2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/R5JZP4LZOSP7CUAM3GIRW6PIAWKH5VGB/",
+        "name": "FEDORA-2021-9fde3d7ab1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2WJFSBPLCNSZNHYQC4QDRDFRTEZRMD2L/",
+        "name": "FEDORA-2021-d5915c247b",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23134",
+    "cveASSIGNER": "psirt@paloaltonetworks.com",
+    "publishedDate": "2021-05-12T23:15Z",
+    "lastModifiedDate": "2021-05-20T17:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Use After Free vulnerability in nfc sockets in the Linux Kernel before 5.12.4 allows local attackers to elevate their privileges. In typical configurations, the issue can only be triggered by a privileged local user with the CAP_NET_RAW capability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=c61760e6940d",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=c61760e6940d",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2021/05/11/4",
+        "name": "https://www.openwall.com/lists/oss-security/2021/05/11/4",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QALNQT4LJFVSSA3MWCIECVY4AFPP4X77/",
+        "name": "FEDORA-2021-05152dbcf5",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LZYORWNQIHNWRFYRDXBWYWBYM46PDZEN/",
+        "name": "FEDORA-2021-286375de1e",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23010",
+    "cveASSIGNER": "f5sirt@f5.com",
+    "publishedDate": "2021-05-10T15:15Z",
+    "lastModifiedDate": "2021-05-19T18:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On versions 16.0.x before 16.0.1.1, 15.1.x before 15.1.2, 14.1.x before 14.1.3.1, 13.1.x before 13.1.3.5, and 12.1.x before 12.1.5.3, when the BIG-IP ASM/Advanced WAF system processes WebSocket requests with JSON payloads using the default JSON Content Profile in the ASM Security Policy, the BIG-IP ASM bd process may produce a core file. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.f5.com/csp/article/K18570111",
+        "name": "https://support.f5.com/csp/article/K18570111",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3502",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-05-07T12:15Z",
+    "lastModifiedDate": "2021-05-17T17:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was found in avahi 0.8-5. A reachable assertion is present in avahi_s_host_name_resolver_start function allowing a local attacker to crash the avahi service by requesting hostname resolutions through the avahi socket or dbus methods for invalid hostnames. The highest threat from this vulnerability is to the service availability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/lathiat/avahi/issues/338",
+        "name": "https://github.com/lathiat/avahi/issues/338",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1946914",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1946914",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-12541",
+    "cveASSIGNER": "security@eclipse.org",
+    "publishedDate": "2018-10-10T20:29Z",
+    "lastModifiedDate": "2021-05-13T10:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In version from 3.0.0 to 3.5.3 of Eclipse Vert.x, the WebSocket HTTP upgrade implementation buffers the full http request before doing the handshake, holding the entire request body in memory. There should be a reasonnable limit (8192 bytes) above which the WebSocket gets an HTTP response with the 413 status code and the connection gets closed."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/eclipse-vertx/vert.x/issues/2648",
+        "name": "https://github.com/eclipse-vertx/vert.x/issues/2648",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=539170",
+        "name": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=539170",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2946",
+        "name": "RHSA-2018:2946",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201215 [GitHub] [pulsar] yanshuchong opened a new issue #8967: CVSS issue list",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re5ddabee26fbcadc7254d03a5a073d64080a9389adc9e452529664ed@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210419 [GitHub] [pulsar] lhotari opened a new pull request #10261: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r344235b1aea2f7fa2381495df1d77d02b595e3d7e4626e701f7c1062@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210419 [GitHub] [pulsar] lhotari commented on pull request #10261: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r362835e6c7f34324ed24e318b363fcdd20cea91d0cea0b2e1164f73e@%3Cissues.bookkeeper.apache.org%3E",
+        "name": "[bookkeeper-issues] 20210419 [GitHub] [bookkeeper] lhotari opened a new pull request #2693: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r11789cd6d67ecca2d6f6bbb11e34495e68ee99287b6c59edf5b1a09c@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210419 [GitHub] [pulsar] eolivelli merged pull request #10261: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3da899890536af744dec897fbc561fd9810ac45e79a16164b53c31b2@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210419 [GitHub] [pulsar] lhotari edited a comment on pull request #10261: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8db0431ecf93f2dd2128db5ddca897b33ba883b7f126648d6a9e4c47@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210419 [pulsar] branch master updated: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541 (#10261)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbdc279ecdb7ac496a03befb05a53605c4ce2b67e14f8f4df4cfa1203@%3Cissues.bookkeeper.apache.org%3E",
+        "name": "[bookkeeper-issues] 20210421 [GitHub] [bookkeeper] lhotari commented on pull request #2693: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1af71105539fe01fcecb92d2ecd8eea56c515fb1c80ecab4df424553@%3Cissues.bookkeeper.apache.org%3E",
+        "name": "[bookkeeper-issues] 20210507 [GitHub] [bookkeeper] dlg99 commented on pull request #2693: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r79789a0afb184abd13a2c07016e6e7ab8e64331f332b630bf82a2eed@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210513 [pulsar] 30/46: [Security] Upgrade vertx to 3.9.7, addresses CVE-2018-12541 (#10261)",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23133",
+    "cveASSIGNER": "psirt@paloaltonetworks.com",
+    "publishedDate": "2021-04-22T18:15Z",
+    "lastModifiedDate": "2021-05-10T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A race condition in Linux kernel SCTP sockets (net/sctp/socket.c) before 5.12-rc8 can lead to kernel privilege escalation from the context of a network service or an unprivileged process. If sctp_destroy_sock is called without sock_net(sk)->sctp.addr_wq_lock then an element is removed from the auto_asconf_splist list without any proper locking. This can be exploited by an attacker with network service privileges to escalate to root or from the context of an unprivileged user directly if a BPF_CGROUP_INET_SOCK_CREATE is attached which denies creation of some SCTP socket."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b166a20b07382b8bc1dcee2a448715c9c2c81b5b",
+        "name": "N/A",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2021/04/18/2",
+        "name": "N/A",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PAEQ3H6HKNO6KUCGRZVYSFSAGEUX23JL/",
+        "name": "FEDORA-2021-8cd093f639",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CUX2CA63453G34C6KYVBLJXJXEARZI2X/",
+        "name": "FEDORA-2021-e6b4847979",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XZASHZVCOFJ4VU2I3BN5W5EPHWJQ7QWX/",
+        "name": "FEDORA-2021-a963f04012",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/10/1",
+        "name": "[oss-security] 20210510 Re: CVE-2021-23133: Linux kernel: race condition in sctp sockets",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/10/2",
+        "name": "[oss-security] 20210510 Re: CVE-2021-23133: Linux kernel: race condition in sctp sockets",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/10/3",
+        "name": "[oss-security] 20210510 Re: CVE-2021-23133: Linux kernel: race condition in sctp sockets",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/10/4",
+        "name": "[oss-security] 20210510 Re: CVE-2021-23133: Linux kernel: race condition in sctp sockets",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23985",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2021-03-31T14:15Z",
+    "lastModifiedDate": "2021-05-01T02:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "If an attacker is able to alter specific about:config values (for example malware running on the user's computer), the Devtools remote debugging feature could have been enabled in a way that was unnoticable to the user. This would have allowed a remote attacker (able to make a direct network connection to the victim) to monitor the user's browsing activity and (plaintext) network traffic. This was addressed by providing a visual cue when Devtools has an open network socket. This vulnerability affects Firefox < 87."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2021-10/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2021-10/",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1659129",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1659129",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-10",
+        "name": "GLSA-202104-10",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21157",
+    "cveASSIGNER": "chrome-cve-admin@google.com",
+    "publishedDate": "2021-02-22T22:15Z",
+    "lastModifiedDate": "2021-05-01T02:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Use after free in Web Sockets in Google Chrome on Linux prior to 88.0.4324.182 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://chromereleases.googleblog.com/2021/02/stable-channel-update-for-desktop_16.html",
+        "name": "https://chromereleases.googleblog.com/2021/02/stable-channel-update-for-desktop_16.html",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://crbug.com/1170657",
+        "name": "https://crbug.com/1170657",
+        "refsource": "MISC",
+        "tags": [
+          "Permissions Required",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BI6ZIJQYP5DFMYVX4J5OGOU2NQLEZ3SB/",
+        "name": "FEDORA-2021-aa764a8531",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FE5SIKEVYTMDCC5OSXGOM2KRPYLHYMQX/",
+        "name": "FEDORA-2021-c88a96bd4b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "name": "GLSA-202104-08",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-17571",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2019-12-20T17:15Z",
+    "lastModifiedDate": "2021-04-30T17:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Included in Log4j 1.2 is a SocketServer class that is vulnerable to deserialization of untrusted data which can be exploited to remotely execute arbitrary code when combined with a deserialization gadget when listening to untrusted network traffic for log data. This affects Log4j versions up to 1.2 up to 1.2.17."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/eea03d504b36e8f870e8321d908e1def1addda16adda04327fe7c125%40%3Cdev.logging.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/eea03d504b36e8f870e8321d908e1def1addda16adda04327fe7c125%40%3Cdev.logging.apache.org%3E",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8ab32b4c9f1826f20add7c40be08909de9f58a89dc1de9c09953f5ac@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20191226 [jira] [Created] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/44491fb9cc19acc901f7cff34acb7376619f15638439416e3e14761c@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20191226 [jira] [Created] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/277b4b5c2b0e06a825ccec565fa65bd671f35a4d58e3e2ec5d0618e1@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20191226 [jira] [Commented] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/6114ce566200d76e3cc45c521a62c2c5a4eac15738248f58a99f622c@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20191230 [jira] [Created] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/479471e6debd608c837b9815b76eab24676657d4444fcfd5ef96d6e6@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20191230 [jira] [Created] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/752ec92cd1e334a639e79bfbd689a4ec2c6579ec5bb41b53ffdf358d@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20200105 [jira] [Created] (KAFKA-9366) please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/564f03b4e9511fcba29c68fc0299372dadbdb002718fa8edcc4325e4@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200105 [jira] [Created] (KAFKA-9366) please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2756fd570b6709d55a61831ca028405bcb3e312175a60bc5d911c81f@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200105 [jira] [Updated] (KAFKA-9366) please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r189aaeaad897f7d6b96f7c43a8ef2dfb9f6e9f8c1cc9ad182ce9b9ae@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200106 [jira] [Commented] (KAFKA-9366) please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3c575cabc7386e646fb12cb82b0b38ae5a6ade8a800f827107824495@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200106 [jira] [Assigned] (KAFKA-9366) please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf2567488cfc9212b42e34c6393cfa1c14e30e4838b98dda84d71041f@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200106 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8a1cfd4705258c106e488091fcec85f194c82f2bbde6bd151e201870@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200107 [jira] [Updated] (KAFKA-9366) please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbdf18e39428b5c80fc35113470198b1fe53b287a76a46b0f8780b5fd@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20200107 [jira] [Created] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r944183c871594fe9a555b8519a7c945bbcf6714d72461aa6c929028f@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200107 [jira] [Created] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r05755112a8c164abc1004bb44f198b1e3d8ca3d546a8f13ebd3aa05f@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200107 [jira] [Commented] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3a85514a518f3080ab1fc2652cfe122c2ccf67cfb32356acb1b08fe8@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200107 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf1b434e11834a4449cd7addb69ed0aef0923112b5938182b363a968c@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20200108 [GitHub] [zookeeper] eolivelli opened a new pull request #1209: ZOOKEEPER-3677 owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r356d57d6225f91fdc30f8b0a2bed229d1ece55e16e552878c5fa809a@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200108 [jira] [Commented] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc628307962ae1b8cc2d21b8e4b7dd6d7755b2dd52fa56a151a27e4fd@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200108 [jira] [Updated] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6aec6b8f70167fa325fb98b3b5c9ce0ffaed026e697b69b85ac24628@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200108 [jira] [Assigned] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc1eaed7f7d774d5d02f66e49baced31e04827a1293d61a70bd003ca7@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200108 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200110-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20200110-0001/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r681b4432d0605f327b68b9f8a42662993e699d04614de4851c35ffd1@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200110 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra38785cfc0e7f17f8e24bebf775dd032c033fadcaea29e5bc9fffc60@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200111 Re: [jira] [Commented] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdec0d8ac1f03e6905b0de2df1d5fcdb98b94556e4f6cccf7519fdb26@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200111 [jira] [Resolved] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r746fbc3fc13aee292ae6851f7a5080f592fa3a67b983c6887cdb1fc5@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200111 [jira] [Closed] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/01/msg00008.html",
+        "name": "[debian-lts-announce] 20200112 [SECURITY] [DLA 2065-1] apache-log4j1.2 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00022.html",
+        "name": "openSUSE-SU-2020:0051",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rca24a281000fb681d7e26e5c031a21eb4b0593a7735f781b53dae4e2@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200114 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4b25538be50126194cc646836c718b1a4d8f71bd9c912af5b59134ad@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200115 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8e3f7da12bf5750b0a02e69a78a61073a2ac950eed7451ce70a65177@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200118 [zookeeper] branch master updated: ZOOKEEPER-3677: owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r48d5019bd42e0770f7e5351e420a63a41ff1f16924942442c6aff6a8@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200118 [zookeeper] branch branch-3.6 updated: ZOOKEEPER-3677: owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdf2a0d94c3b5b523aeff7741ae71347415276062811b687f30ea6573@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200118 [zookeeper] branch branch-3.5 updated: ZOOKEEPER-3677: owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc17d8491beee51607693019857e41e769795366b85be00aa2f4b3159@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20200118 [GitHub] [zookeeper] asfgit closed pull request #1209: ZOOKEEPER-3677 owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd6254837403e8cbfc7018baa9be29705f3f06bd007c83708f9a97679@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200118 [jira] [Resolved] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r107c8737db39ec9ec4f4e7147b249e29be79170b9ef4b80528105a2d@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20200118 Build failed in Jenkins: zookeeper-master-maven-owasp #329",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7bcdc710857725c311b856c0b82cee6207178af5dcde1bd43d289826@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Assigned] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd5dbeee4808c0f2b9b51479b50de3cc6adb1072c332a200d9107f13e@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Updated] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raedd12dc24412b3780432bf202a2618a21a727788543e5337a458ead@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Updated] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2ff63f210842a3c5e42f03a35d8f3a345134d073c80a04077341c211@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Assigned] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3d666e4e8905157f3c046d31398b04f2bfd4519e31f266de108c6919@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Resolved] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r61590890edcc64140e0c606954b29a063c3d08a2b41d447256d51a78@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200127 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r909b8e3a36913944d3b7bafe9635d4ca84f8f0e2cd146a1784f667c2@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20200129 [jira] [Updated] (ZOOKEEPER-3677) owasp checker failing for - CVE-2019-17571 Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4ac89cbecd9e298ae9fafb5afda6fa77ac75c78d1ac957837e066c4e@%3Cuser.zookeeper.apache.org%3E",
+        "name": "[zookeeper-user] 20200201 Re: Zookeeper 3.5.6 supports log4j 2.x?",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2ce8d26154bea939536e6cf27ed02d3192bf5c5d04df885a80fe89b3@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200208 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6236b5f8646d48af8b66d5050f288304016840788e508c883356fe0e@%3Clog4j-user.logging.apache.org%3E",
+        "name": "[logging-log4j-user] 20200224 Apache Log4j - Migration activity to 2.12.1 version - Request to support for the queries posted",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re8c21ed9dd218c217d242ffa90778428e446b082b5e1c29f567e8374@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200228 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r18f1c010b554a3a2d761e8ffffd8674fd4747bcbcf16c643d708318c@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200228 [jira] [Updated] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb1b29aee737e1c37fe1d48528cb0febac4f5deed51f5412e6fdfe2bf@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200228 [jira] [Resolved] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8d78a0fbb56d505461e29868d1026e98c402e6a568c13a6da67896a2@%3Cdev.jena.apache.org%3E",
+        "name": "[jena-dev] 20200318 Re: Logging (JENA-1005)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8890b8f18f1de821595792b58b968a89692a255bc20d86d395270740@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20200406 [GitHub] [druid] ccaominh commented on issue #9579: Add Apache Ranger Authorization",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbc45eb0f53fd6242af3e666c2189464f848a851d408289840cecc6e3@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200504 [zookeeper] branch master updated: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r48efc7cb5aeb4e1f67aaa06fb4b5479a5635d12f07d0b93fc2d08809@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200504 [zookeeper] branch branch-3.6 updated: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rec34b1cccf907898e7cb36051ffac3ccf1ea89d0b261a2a3b3fb267f@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20200504 [zookeeper] branch branch-3.5 updated: ZOOKEEPER-3817: suppress log4j SmtpAppender related CVE-2020-9488",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r696507338dd5f44efc23d98cafe30f217cf3ba78e77ed1324c7a5179@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200514 [GitHub] [kafka] jeffhuang26 commented on pull request #7898: KAFKA-9366: please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4686",
+        "name": "DSA-4686",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf9c19bcc2f7a98a880fa3e3456c003d331812b55836b34ef648063c9@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200529 [GitHub] [kafka] ijuma commented on pull request #7898: KAFKA-9366: please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r71e26f9c2d5826c6f95ad60f7d052d75e1e70b0d2dd853db6fc26d5f@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200602 [GitHub] [kafka] dongjinleekr commented on pull request #7898: KAFKA-9366: please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7f462c69d5ded4c0223e014d95a3496690423c5f6f05c09e2f2a407a@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200624 [GitHub] [kafka] dongjinleekr commented on pull request #7898: KAFKA-9366: please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7a1acc95373105169bd44df710c2f462cad31fb805364d2958a5ee03@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20200625 [GitHub] [kafka] dongjinleekr commented on pull request #7898: KAFKA-9366: please consider upgrade log4j to log4j2 due to critical security problem CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E",
+        "name": "[bookkeeper-issues] 20200729 [GitHub] [bookkeeper] padma81 opened a new issue #2387: Security vulnerabilities in the apache/bookkeeper-4.9.2 image",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3784834e80df2f284577a5596340fb84346c91a2dea6a073e65e3397@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200730 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r13d4b5c60ff63f3c4fab51d6ff266655be503b8a1884e2f2fab67c3a@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Created] (HADOOP-17221) Upgrade log4j-1.2.17 to atlassian ( To Adress: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6b45a2fcc8e98ac93a179183dbb7f340027bdb8e3ab393418076b153@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Commented] (HADOOP-17221) Upgrade log4j-1.2.17 to atlassian ( To Adress: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8c6300245c0bcef095e9f07b48157e2c6471df0816db3408fcf1d748@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Comment Edited] (HADOOP-17221) update log4j-1.2.17 to atlassian version( To Adress: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1b7734dfdfd938640f2f5fb6f4231a267145c71ed60cc7faa1cbac07@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Updated] (HADOOP-17221) update log4j-1.2.17 to atlassian version( To Adress: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbd19de368abf0764e4383ec44d527bc9870176f488a494f09a40500d@%3Ccommon-dev.hadoop.apache.org%3E",
+        "name": "[hadoop-common-dev] 20200824 [jira] [Created] (HADOOP-17221) Upgrade log4j-1.2.17 to atlassian ( To Adress: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd7805c1bf9388968508c6c8f84588773216e560055ddcc813d19f347@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Updated] (HADOOP-17221) update log4j-1.2.17 to atlassian version( To Address: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r26244f9f7d9a8a27a092eb0b2a0ca9395e88fcde8b5edaeca7ce569c@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Assigned] (HADOOP-17221) Upgrade log4j-1.2.17 to atlassian ( To Adress: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8c392ca48bb7e50754e4bc05865e9731b23d568d18a520fe3d8c1f75@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Commented] (HADOOP-17221) update log4j-1.2.17 to atlassian version( To Address: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9fb3238cfc3222f2392ca6517353aadae18f76866157318ac562e706@%3Ccommon-issues.hadoop.apache.org%3E",
+        "name": "[hadoop-common-issues] 20200824 [jira] [Comment Edited] (HADOOP-17221) update log4j-1.2.17 to atlassian version( To Address: CVE-2019-17571)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4495-1/",
+        "name": "USN-4495-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra54fa49be3e773d99ccc9c2a422311cf77e3ecd3b8594ee93043a6b1@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20201103 [jira] [Created] (ZOOKEEPER-3990) Log4j 1.2.17 used by zookeeper 3.6.1 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9d0d03f2e7d9e13c68b530f81d02b0fec33133edcf27330d8089fcfb@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201103 [jira] [Created] (ZOOKEEPER-3990) Log4j 1.2.17 used by zookeeper 3.6.1 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3cf50d05ce8cec8c09392624b7bae750e7643dae60ef2438641ee015@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201103 [jira] [Resolved] (ZOOKEEPER-3990) Log4j 1.2.17 used by zookeeper 3.6.1 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201215 [GitHub] [pulsar] yanshuchong opened a new issue #8967: CVSS issue list",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rda4849c6823dd3e83c7a356eb883180811d5c28359fe46865fd151c3@%3Cusers.kafka.apache.org%3E",
+        "name": "[kafka-users] 20210210 Security: CVE-2019-17571 (log4j)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5c084578b3e3b40bd903c9d9e525097421bcd88178e672f612102eb2@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210211 [GitHub] [kafka] ch4rl353y commented on pull request #7898: KAFKA-9366: Change log4j dependency into log4j2",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+        "name": "[mina-dev] 20210225 [jira] [Created] (FTPSERVER-500) Security vulnerability in common/lib/log4j-1.2.17.jar",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd3a9511eebab60e23f224841390a3f8cd5358cff605c5f7042171e47@%3Cdev.tinkerpop.apache.org%3E",
+        "name": "[tinkerpop-dev] 20210316 [jira] [Created] (TINKERPOP-2534) Log4j flagged as critical security violation",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8244fd0831db894d5e89911ded9c72196d395a90ae655414d23ed0dd@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3543ead2317dcd3306f69ee37b07dd383dbba6e2f47ff11eb55879ad@%3Cusers.activemq.apache.org%3E",
+        "name": "[activemq-users] 20210427 Re: Release date for ActiveMQ v5.16.2 to fix CVEs",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7463",
+    "cveASSIGNER": "secteam@freebsd.org",
+    "publishedDate": "2021-03-26T21:15Z",
+    "lastModifiedDate": "2021-04-30T17:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In FreeBSD 12.1-STABLE before r364644, 11.4-STABLE before r364651, 12.1-RELEASE before p9, 11.4-RELEASE before p3, and 11.3-RELEASE before p13, improper handling in the kernel causes a use-after-free bug by sending large user messages from multiple threads on the same SCTP socket. The use-after-free situation may result in unintended kernel behaviour including a kernel panic."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:25.sctp.asc",
+        "name": "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:25.sctp.asc",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212325",
+        "name": "https://support.apple.com/kb/HT212325",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212321",
+        "name": "https://support.apple.com/kb/HT212321",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212317",
+        "name": "https://support.apple.com/kb/HT212317",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212318",
+        "name": "https://support.apple.com/kb/HT212318",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212319",
+        "name": "https://support.apple.com/kb/HT212319",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Apr/50",
+        "name": "20210427 APPLE-SA-2021-04-26-2 macOS Big Sur 11.3",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Apr/49",
+        "name": "20210427 APPLE-SA-2021-04-26-1 iOS 14.5 and iPadOS 14.5",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Apr/57",
+        "name": "20210427 APPLE-SA-2021-04-26-7 Safari 14.1",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Apr/58",
+        "name": "20210427 APPLE-SA-2021-04-26-8 iCloud for Windows 12.3",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2021/Apr/59",
+        "name": "20210427 APPLE-SA-2021-04-26-9 iTunes 12.11.3 for Windows",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-1270",
+    "cveASSIGNER": "secure@dell.com",
+    "publishedDate": "2018-04-06T13:29Z",
+    "lastModifiedDate": "2021-04-23T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Spring Framework, versions 5.0 prior to 5.0.5 and versions 4.3 prior to 4.3.15 and older unsupported versions, allow applications to expose STOMP over WebSocket endpoints with a simple, in-memory STOMP broker through the spring-messaging module. A malicious user (or attacker) can craft a message to the broker that can lead to a remote code execution attack."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://pivotal.io/security/cve-2018-1270",
+        "name": "https://pivotal.io/security/cve-2018-1270",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/103696",
+        "name": "103696",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/44796/",
+        "name": "44796",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2939",
+        "name": "RHSA-2018:2939",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/4ed49b103f64a0cecb38064f26cbf1389afc12124653da2d35166dbe@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190703 [jira] [Created] (AMQ-7236) SEV-1 Security vulnerability in spring-expression-4.3.11.RELEASE.jar (spring framework)",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/dcf8599b80e43a6b60482607adb76c64672772dc2d9209ae2170f369@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190718 [jira] [Updated] (AMQ-7236) SEV-1 Security vulnerability in spring-expression-4.3.11.RELEASE.jar (spring framework) and xstream-1.4.10.jar",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ab825fcade0b49becfa30235b3d54f4a51bb74ea96b6c9adb5d1378c@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190703 [jira] [Updated] (AMQ-7236) SEV-1 Security vulnerability in spring-expression-4.3.11.RELEASE.jar (spring framework) and xstream-1.4.10.jar",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/6d3d34adcf3dfc48e36342aa1f18ce3c20bb8e4c458a97508d5bfed1@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20190826 [jira] [Created] (AMQ-7288) Security Vulnerabilities in ActiveMQ dependent libraries.",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf1bbc0ea4a9f014cf94df9a12a6477d24a27f52741dbc87f2fd52ff2@%3Cissues.geode.apache.org%3E",
+        "name": "[geode-issues] 20200831 [jira] [Created] (GEODE-8471) Dependency security issues in geode-core-1.12",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00022.html",
+        "name": "[debian-lts-announce] 20210423 [SECURITY] [DLA 2635-1] libspring-java security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29627",
+    "cveASSIGNER": "secteam@freebsd.org",
+    "publishedDate": "2021-04-07T15:15Z",
+    "lastModifiedDate": "2021-04-23T06:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In FreeBSD 13.0-STABLE before n245050, 12.2-STABLE before r369525, 13.0-RC4 before p0, and 12.2-RELEASE before p6, listening socket accept filters implementing the accf_create callback incorrectly freed a process supplied argument string. Additional operations on the socket can lead to a double free or use after free."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:09.accept_filter.asc",
+        "name": "https://security.FreeBSD.org/advisories/FreeBSD-SA-21:09.accept_filter.asc",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210423-0007/",
+        "name": "https://security.netapp.com/advisory/ntap-20210423-0007/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28041",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-05T21:15Z",
+    "lastModifiedDate": "2021-04-21T19:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "ssh-agent in OpenSSH before 8.5 has a double free that may be relevant in a few less-common scenarios, such as unconstrained agent-socket access on a legacy operating system, or the forwarding of an agent to an attacker-controlled host."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/openssh/openssh-portable/commit/e04fd6dde16de1cdc5a4d9946397ff60d96568db",
+        "name": "https://github.com/openssh/openssh-portable/commit/e04fd6dde16de1cdc5a4d9946397ff60d96568db",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssh.com/txt/release-8.5",
+        "name": "https://www.openssh.com/txt/release-8.5",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2021/03/03/1",
+        "name": "https://www.openwall.com/lists/oss-security/2021/03/03/1",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openssh.com/security.html",
+        "name": "https://www.openssh.com/security.html",
+        "refsource": "MISC",
+        "tags": [
+          "Not Applicable",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TXST2CML2MWY3PNVUXX7FFJE3ATJMNVZ/",
+        "name": "FEDORA-2021-f68a5a75ba",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210416-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210416-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-6309",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-04-12T15:29Z",
+    "lastModifiedDate": "2021-04-21T19:07Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The HTTP and WebSocket engine components in the server in Kaazing Gateway 4.0.2, 4.0.3, and 4.0.4 and Gateway - JMS Edition 4.0.2, 4.0.3, and 4.0.4 allow remote attackers to obtain sensitive information via vectors related to HTTP request handling."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.kaazing.com/hc/en-us/articles/115004550547-Advisory-for-KGS-879",
+        "name": "https://support.kaazing.com/hc/en-us/articles/115004550547-Advisory-for-KGS-879",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://support.tenefit.com/hc/en-us/articles/115004550547-Advisory-for-KGS-879",
+        "name": "https://support.tenefit.com/hc/en-us/articles/115004550547-Advisory-for-KGS-879",
+        "refsource": "Tenefit Corp",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-6910",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-04-12T15:29Z",
+    "lastModifiedDate": "2021-04-19T17:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The HTTP and WebSocket engine components in the server in Kaazing Gateway before 4.5.3 hotfix-1, Gateway - JMS Edition before 4.0.5 hotfix-15, 4.0.6 before hotfix-4, 4.0.7, 4.0.9 before hotfix-19, 4.4.x before 4.4.2 hotfix-1, 4.5.x before 4.5.3 hotfix-1, and Gateway Community and Enterprise Editions before 5.6.0 allow remote attackers to bypass intended access restrictions and obtain sensitive information via vectors related to HTTP request handling."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.kaazing.com/hc/en-us/articles/115004752368",
+        "name": "https://support.kaazing.com/hc/en-us/articles/115004752368",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11234",
+    "cveASSIGNER": "product-security@qualcomm.com",
+    "publishedDate": "2021-04-07T08:15Z",
+    "lastModifiedDate": "2021-04-12T18:19Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "When sending a socket event message to a user application, invalid information will be passed if socket is freed by other thread resulting in a Use After Free condition in Snapdragon Auto, Snapdragon Compute, Snapdragon Connectivity, Snapdragon Consumer Electronics Connectivity, Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon Mobile, Snapdragon Voice & Music, Snapdragon Wearables"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.qualcomm.com/company/product-security/bulletins/april-2021-bulletin",
+        "name": "https://www.qualcomm.com/company/product-security/bulletins/april-2021-bulletin",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-5645",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2017-04-17T21:59Z",
+    "lastModifiedDate": "2021-04-02T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Apache Log4j 2.x before 2.8.2, when using the TCP socket server or UDP socket server to receive serialized log events from another application, a specially crafted binary payload can be sent that, when deserialized, can execute arbitrary code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://issues.apache.org/jira/browse/LOG4J2-1863",
+        "name": "https://issues.apache.org/jira/browse/LOG4J2-1863",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/97702",
+        "name": "97702",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3244",
+        "name": "RHSA-2017:3244",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2889",
+        "name": "RHSA-2017:2889",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2888",
+        "name": "RHSA-2017:2888",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2811",
+        "name": "RHSA-2017:2811",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2810",
+        "name": "RHSA-2017:2810",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2809",
+        "name": "RHSA-2017:2809",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2808",
+        "name": "RHSA-2017:2808",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3400",
+        "name": "RHSA-2017:3400",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3399",
+        "name": "RHSA-2017:3399",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2638",
+        "name": "RHSA-2017:2638",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2637",
+        "name": "RHSA-2017:2637",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2636",
+        "name": "RHSA-2017:2636",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2635",
+        "name": "RHSA-2017:2635",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2633",
+        "name": "RHSA-2017:2633",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:2423",
+        "name": "RHSA-2017:2423",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1802",
+        "name": "RHSA-2017:1802",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1801",
+        "name": "RHSA-2017:1801",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:1417",
+        "name": "RHSA-2017:1417",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1040200",
+        "name": "1040200",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20180726-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20180726-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1041294",
+        "name": "1041294",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20181107-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20181107-0002/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1545",
+        "name": "RHSA-2019:1545",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/9317fd092b257a0815434b116a8af8daea6e920b6673f4fd5583d5fe@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20191115 [GitHub] [incubator-druid] ccaominh opened a new pull request #8878: Address security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/e8fb7d76a244ee997ba4b217d6171227f7c2521af8c7c5b16cba27bc@%3Cdev.logging.apache.org%3E",
+        "name": "[logging-dev] 20191215 Re: Is there any chance that there will be a security fix for log4j-v1.2.17?",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/eea03d504b36e8f870e8321d908e1def1addda16adda04327fe7c125@%3Cdev.logging.apache.org%3E",
+        "name": "[logging-dev] 20191218 [CVE-2019-17571] Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/84cc4266238e057b95eb95dfd8b29d46a2592e7672c12c92f68b2917@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20191218 [CVE-2019-17571] Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2019/12/19/2",
+        "name": "[oss-security] 20191218 [CVE-2019-17571] Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/0dcca05274d20ef2d72584edcf8c917bbb13dbbd7eb35cae909d02e9@%3Cdev.logging.apache.org%3E",
+        "name": "[logging-dev] 20191219 Re: [CVE-2019-17571] Apache Log4j 1.2 deserialization of untrusted data in SocketServer",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/8ab32b4c9f1826f20add7c40be08909de9f58a89dc1de9c09953f5ac@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20191226 [jira] [Created] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/44491fb9cc19acc901f7cff34acb7376619f15638439416e3e14761c@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20191226 [jira] [Created] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/277b4b5c2b0e06a825ccec565fa65bd671f35a4d58e3e2ec5d0618e1@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20191226 [jira] [Commented] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/479471e6debd608c837b9815b76eab24676657d4444fcfd5ef96d6e6@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20191230 [jira] [Created] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/6114ce566200d76e3cc45c521a62c2c5a4eac15738248f58a99f622c@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20191230 [jira] [Created] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf2567488cfc9212b42e34c6393cfa1c14e30e4838b98dda84d71041f@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200106 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3a85514a518f3080ab1fc2652cfe122c2ccf67cfb32356acb1b08fe8@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200107 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc1eaed7f7d774d5d02f66e49baced31e04827a1293d61a70bd003ca7@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200108 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r681b4432d0605f327b68b9f8a42662993e699d04614de4851c35ffd1@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200110 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra38785cfc0e7f17f8e24bebf775dd032c033fadcaea29e5bc9fffc60@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200111 Re: [jira] [Commented] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdec0d8ac1f03e6905b0de2df1d5fcdb98b94556e4f6cccf7519fdb26@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200111 [jira] [Resolved] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r746fbc3fc13aee292ae6851f7a5080f592fa3a67b983c6887cdb1fc5@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200111 [jira] [Closed] (TIKA-3018) log4j 1.2 version used by Apache Tika 1.23 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rca24a281000fb681d7e26e5c031a21eb4b0593a7735f781b53dae4e2@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200114 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4b25538be50126194cc646836c718b1a4d8f71bd9c912af5b59134ad@%3Cdev.tika.apache.org%3E",
+        "name": "[tika-dev] 20200115 [jira] [Commented] (TIKA-3019) [9.8] [CVE-2019-17571] [tika-app] [1.23]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7bcdc710857725c311b856c0b82cee6207178af5dcde1bd43d289826@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Assigned] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd5dbeee4808c0f2b9b51479b50de3cc6adb1072c332a200d9107f13e@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Updated] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2ff63f210842a3c5e42f03a35d8f3a345134d073c80a04077341c211@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Assigned] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raedd12dc24412b3780432bf202a2618a21a727788543e5337a458ead@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Updated] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3d666e4e8905157f3c046d31398b04f2bfd4519e31f266de108c6919@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200122 [jira] [Resolved] (AMQ-7372) [9.8] [CVE-2019-17571] [activemq-all] [5.15.10]",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r61590890edcc64140e0c606954b29a063c3d08a2b41d447256d51a78@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200127 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2ce8d26154bea939536e6cf27ed02d3192bf5c5d04df885a80fe89b3@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200208 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re8c21ed9dd218c217d242ffa90778428e446b082b5e1c29f567e8374@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200228 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r18f1c010b554a3a2d761e8ffffd8674fd4747bcbcf16c643d708318c@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200228 [jira] [Updated] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb1b29aee737e1c37fe1d48528cb0febac4f5deed51f5412e6fdfe2bf@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200228 [jira] [Resolved] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra9a682bc0a8dff1c5cefdef31c7c25f096d9121207cf2d74e2fc563d@%3Ccommits.logging.apache.org%3E",
+        "name": "[logging-commits] 20200425 svn commit: r1059809 - /websites/production/logging/content/log4j/2.13.2/security.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E",
+        "name": "[bookkeeper-issues] 20200729 [GitHub] [bookkeeper] padma81 opened a new issue #2387: Security vulnerabilities in the apache/bookkeeper-4.9.2 image",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3784834e80df2f284577a5596340fb84346c91a2dea6a073e65e3397@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20200730 [jira] [Commented] (AMQ-7370) log4j 1.2 version used by AMQ 5.15.10 / 5.15.11 is vulnerable to CVE-2019-17571",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf1bbc0ea4a9f014cf94df9a12a6477d24a27f52741dbc87f2fd52ff2@%3Cissues.geode.apache.org%3E",
+        "name": "[geode-issues] 20200831 [jira] [Created] (GEODE-8471) Dependency security issues in geode-core-1.12",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcbb79023a7c8494cb389cd3d95420fa9e0d531ece0b780b8c1f99422@%3Ccommits.doris.apache.org%3E",
+        "name": "[doris-commits] 20210402 [GitHub] [incubator-doris] zh0122 opened a new pull request #5594: [FE][Bug]Update log4j-web to fix a security issue",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3348",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-02-01T04:15Z",
+    "lastModifiedDate": "2021-03-31T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "nbd_add_socket in drivers/block/nbd.c in the Linux kernel through 5.10.12 has an ndb_queue_rq use-after-free that could be triggered by local attackers (with access to the nbd device) via an I/O request at a certain point during device setup, aka CID-b98e762e3d71."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b98e762e3d71e893b221f871825dc64694cfb258",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b98e762e3d71e893b221f871825dc64694cfb258",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2021/01/28/3",
+        "name": "https://www.openwall.com/lists/oss-security/2021/01/28/3",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/02/01/1",
+        "name": "[oss-security] 20210201 Re: Re: Linux kernel: linux-block: nbd: use-after-free Read in nbd_queue_rq",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00035.html",
+        "name": "[debian-lts-announce] 20210330 [SECURITY] [DLA 2610-1] linux-4.19 security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2004-0174",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2004-05-04T04:00Z",
+    "lastModifiedDate": "2021-03-30T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache 1.4.x before 1.3.30, and 2.0.x before 2.0.49, when using multiple listening sockets on certain platforms, allows remote attackers to cause a denial of service (blocked new connections) via a \"short-lived connection on a rarely-accessed listening socket.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2004-405.html",
+        "name": "RHSA-2004:405",
+        "refsource": "REDHAT",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.trustix.org/errata/2004/0027",
+        "name": "2004-0027",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200405-22.xml",
+        "name": "GLSA-200405-22",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/132110",
+        "name": "VU#132110",
+        "refsource": "CERT-VN",
+        "tags": [
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/11170",
+        "name": "11170",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-57628-1",
+        "name": "57628",
+        "refsource": "SUNALERT",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/9921",
+        "name": "9921",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/alerts/2004/Mar/1009495.html",
+        "name": "1009495",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.apache.org/dist/httpd/CHANGES_1.3",
+        "name": "http://www.apache.org/dist/httpd/CHANGES_1.3",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.slackware.com/security/viewer.php?l=slackware-security&y=2004&m=slackware-security.529643",
+        "name": "SSA:2004-133",
+        "refsource": "SLACKWARE",
+        "tags": []
+      },
+      {
+        "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101555-1",
+        "name": "101555",
+        "refsource": "SUNALERT",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2004:046",
+        "name": "MDKSA-2004:046",
+        "refsource": "MANDRAKE",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=108066914830552&w=2",
+        "name": "2004-0017",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=108369640424244&w=2",
+        "name": "APPLE-SA-2004-05-03",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=108731648532365&w=2",
+        "name": "SSRT4717",
+        "refsource": "HP",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=107973894328806&w=2",
+        "name": "20040319 [ANNOUNCE] Apache HTTP Server 2.0.49 Released (fwd)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=108437852004207&w=2",
+        "name": "20040512 [OpenPKG-SA-2004.021] OpenPKG Security Advisory (apache)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/15540",
+        "name": "apache-socket-starvation-dos(15540)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1982",
+        "name": "oval:org.mitre.oval:def:1982",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A100110",
+        "name": "oval:org.mitre.oval:def:100110",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/54a42d4b01968df1117cea77fc53d6beb931c0e05936ad02af93e9ac@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/5df9bfb86a3b054bb985a45ff9250b0332c9ecc181eec232489e7f79@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0276683d8e1e07153fc8642618830ac0ade85b9ae0dc7b07f63bb8fc@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8828e649175df56f1f9e3919938ac7826128525426e2748f0ab62feb@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd65d8ba68ba17e7deedafbf5bb4899f2ae4dad781d21b931c2941ac3@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1888194 [3/13] - /httpd/site/trunk/content/security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2cb985de917e7da0848c440535f65a247754db8b2154a10089e4247b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5419c9ba0951ef73a655362403d12bb8d10fab38274deb3f005816f5@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [1/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raa117ef183f0da9b3f46efbeaa66f7622bd68868a450cae4fd8ed594@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073149 [3/13] - in /websites/staging/httpd/trunk/content: ./ security/ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9e8622254184645bc963a1d47c5d47f6d5a36d6f080d8d2c43b2b142@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073143 [2/3] - in /websites/staging/httpd/trunk/content: ./ security/",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re895fc1736d25c8cf57e102c871613b8aeec9ea26fd8a44e7942b5ab@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [3/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-0228",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2015-03-08T02:59Z",
+    "lastModifiedDate": "2021-03-30T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The lua_websocket_read function in lua_request.c in the mod_lua module in the Apache HTTP Server through 2.4.12 allows remote attackers to cause a denial of service (child-process crash) by sending a crafted WebSocket Ping frame after a Lua script has called the wsupgrade function."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/apache/httpd/commit/643f0fcf3b8ab09a68f0ecd2aa37aafeda3e63ef",
+        "name": "https://github.com/apache/httpd/commit/643f0fcf3b8ab09a68f0ecd2aa37aafeda3e63ef",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/CHANGES",
+        "name": "http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/CHANGES",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2523-1",
+        "name": "USN-2523-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2015-03/msg00006.html",
+        "name": "openSUSE-SU-2015:0418",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://advisories.mageia.org/MGASA-2015-0099.html",
+        "name": "http://advisories.mageia.org/MGASA-2015-0099.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html",
+        "name": "APPLE-SA-2015-08-13-2",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT205031",
+        "name": "https://support.apple.com/kb/HT205031",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html",
+        "name": "APPLE-SA-2015-09-16-4",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/HT205219",
+        "name": "https://support.apple.com/HT205219",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html",
+        "name": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/91787",
+        "name": "91787",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html",
+        "name": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/73041",
+        "name": "73041",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1032967",
+        "name": "1032967",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-1666.html",
+        "name": "RHSA-2015:1666",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/56c2e7cc9deb1c12a843d0dc251ea7fd3e7e80293cde02fcd65286ba@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/84a3714f0878781f6ed84473d1a503d2cc382277e100450209231830@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd18c3c43602e66f9cdcf09f1de233804975b9572b0456cc582390b6f@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re3d27b6250aa8548b8845d314bb8a350b3df326cacbbfdfe4d455234@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [4/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/apache/httpd/commit/78eb3b9235515652ed141353d98c239237030410",
+        "name": "https://github.com/apache/httpd/commit/78eb3b9235515652ed141353d98c239237030410",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  }
+]

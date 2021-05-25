@@ -1,0 +1,693 @@
+[
+  {
+    "cveID": "CVE-2020-23856",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-18T15:15Z",
+    "lastModifiedDate": "2021-05-24T19:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Use-after-Free vulnerability in cflow 1.6 in the void call(char *name, int line) function at src/parser.c, which could cause a denial of service via the pointer variable caller->callee."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.gnu.org/archive/html/bug-cflow/2020-07/msg00000.html",
+        "name": "https://lists.gnu.org/archive/html/bug-cflow/2020-07/msg00000.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/yangjiageng/PoC/blob/master/PoC_cflow_uaf_parser_line1284",
+        "name": "https://github.com/yangjiageng/PoC/blob/master/PoC_cflow_uaf_parser_line1284",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-25645",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-10T13:15Z",
+    "lastModifiedDate": "2021-05-24T18:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Couchbase Server before 6.0.5, 6.1.x through 6.5.x before 6.5.2, and 6.6.x before 6.6.1. An internal user with administrator privileges, @ns_server, leaks credentials in cleartext in the cbcollect_info.log, debug.log, ns_couchdb.log, indexer.log, and stats.log files. NOTE: updating the product does not automatically address leaks that occurred in the past."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.couchbase.com/resources/security#SecurityAlerts",
+        "name": "https://www.couchbase.com/resources/security#SecurityAlerts",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.couchbase.com/downloads",
+        "name": "https://www.couchbase.com/downloads",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-3200",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-18T17:15Z",
+    "lastModifiedDate": "2021-05-24T18:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Buffer overflow vulnerability in libsolv 2020-12-13 via the Solver * testcase_read(Pool *pool, FILE *fp, const char *testcase, Queue *job, char **resultp, int *resultflagsp function at src/testcase.c: line 2334, which could cause a denial of service"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/yangjiageng/PoC/blob/master/libsolv-PoCs/PoC-testcase_read-2334",
+        "name": "https://github.com/yangjiageng/PoC/blob/master/libsolv-PoCs/PoC-testcase_read-2334",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/openSUSE/libsolv/issues/416",
+        "name": "https://github.com/openSUSE/libsolv/issues/416",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32624",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-24T17:15Z",
+    "lastModifiedDate": "2021-05-24T17:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Keystone 5 is an open source CMS platform to build Node.js applications. This security advisory relates to a newly discovered capability in our query infrastructure to directly or indirectly expose the values of private fields, bypassing the configured access control. This is an access control related oracle attack in that the attack method guides an attacker during their attempt to reveal information they do not have access to. The complexity of completing the attack is limited by some length-dependent behaviors and the fidelity of the exposed information. Under some circumstances, field values or field value meta data can be determined, despite the field or list having `read` access control configured. If you use private fields or lists, you may be impacted. No patches exist at this time. There are no workarounds at this time"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/keystonejs/keystone-5/security/advisories/GHSA-27g8-r9vw-765x",
+        "name": "https://github.com/keystonejs/keystone-5/security/advisories/GHSA-27g8-r9vw-765x",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32629",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-24T16:15Z",
+    "lastModifiedDate": "2021-05-24T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cranelift is an open-source code generator maintained by Bytecode Alliance. It translates a target-independent intermediate representation into executable machine code. There is a bug in 0.73 of the Cranelift x64 backend that can create a scenario that could result in a potential sandbox escape in a Wasm program. This bug was introduced in the new backend on 2020-09-08 and first included in a release on 2020-09-30, but the new backend was not the default prior to 0.73. The recently-released version 0.73 with default settings, and prior versions with an explicit build flag to select the new backend, are vulnerable. The bug in question performs a sign-extend instead of a zero-extend on a value loaded from the stack, under a specific set of circumstances. If those circumstances occur, the bug could allow access to memory addresses upto 2GiB before the start of the Wasm program heap. If the heap bound is larger than 2GiB, then it would be possible to read memory from a computable range dependent on the size of the heaps bound. The impact of this bug is highly dependent on heap implementation, specifically: * if the heap has bounds checks, and * does not rely exclusively on guard pages, and * the heap bound is 2GiB or smaller * then this bug cannot be used to reach memory from another Wasm program heap. The impact of the vulnerability is mitigated if there is no memory mapped in the range accessible using this bug, for example, if there is a 2 GiB guard region before the Wasm program heap. The bug in question performs a sign-extend instead of a zero-extend on a value loaded from the stack, when the register allocator reloads a spilled integer value narrower than 64 bits. This interacts poorly with another optimization: the instruction selector elides a 32-to-64-bit zero-extend operator when we know that an instruction producing a 32-bit value actually zeros the upper 32 bits of its destination register. Hence, we rely on these zeroed bits, but the type of the value is still i32, and the spill/reload reconstitutes those bits as the sign extension of the i32\u2019s MSB. The issue would thus occur when: * An i32 value in a Wasm program is greater than or equal to 0x8000_0000; * The value is spilled and reloaded by the register allocator due to high register pressure in the program between the value\u2019s definition and its use; * The value is produced by an instruction that we know to be \u201cspecial\u201d in that it zeroes the upper 32 bits of its destination: add, sub, mul, and, or; * The value is then zero-extended to 64 bits in the Wasm program; * The resulting 64-bit value is used. Under these circumstances there is a potential sandbox escape when the i32 value is a pointer. The usual code emitted for heap accesses zero-extends the Wasm heap address, adds it to a 64-bit heap base, and accesses the resulting address. If the zero-extend becomes a sign-extend, the program could reach backward and access memory up to 2GiB before the start of its heap. In addition to assessing the nature of the code generation bug in Cranelift, we have also determined that under specific circumstances, both Lucet and Wasmtime using this version of Cranelift may be exploitable. See referenced GitHub Advisory for more details."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/bytecodealliance/wasmtime/commit/95559c01aaa7c061088a433040f31e8291fb09d0",
+        "name": "https://github.com/bytecodealliance/wasmtime/commit/95559c01aaa7c061088a433040f31e8291fb09d0",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hpqh-2wqx-7qp5",
+        "name": "https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hpqh-2wqx-7qp5",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.fastly.com/security-advisories/memory-access-due-to-code-generation-flaw-in-cranelift-module",
+        "name": "https://www.fastly.com/security-advisories/memory-access-due-to-code-generation-flaw-in-cranelift-module",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://crates.io/crates/cranelift-codegen",
+        "name": "https://crates.io/crates/cranelift-codegen",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-19208",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-03-16T15:15Z",
+    "lastModifiedDate": "2021-05-24T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Codiad Web IDE through 2.8.4 allows PHP Code injection."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/Codiad/Codiad/commits/master",
+        "name": "https://github.com/Codiad/Codiad/commits/master",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://herolab.usd.de/security-advisories/usd-2019-0049/",
+        "name": "https://herolab.usd.de/security-advisories/usd-2019-0049/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://herolab.usd.de/en/security-advisories/",
+        "name": "https://herolab.usd.de/en/security-advisories/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/162753/Codiad-2.8.4-Remote-Code-Execution.html",
+        "name": "http://packetstormsecurity.com/files/162753/Codiad-2.8.4-Remote-Code-Execution.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14145",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-06-29T18:15Z",
+    "lastModifiedDate": "2021-05-24T14:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The client side in OpenSSH 5.7 through 8.4 has an Observable Discrepancy leading to an information leak in the algorithm negotiation. This allows man-in-the-middle attackers to target initial connection attempts (where no host key for the server has been cached by the client). NOTE: some reports state that 8.5 and 8.6 are also affected."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/openssh/openssh-portable/compare/V_8_3_P1...V_8_4_P1",
+        "name": "https://github.com/openssh/openssh-portable/compare/V_8_3_P1...V_8_4_P1",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.fzi.de/en/news/news/detail-en/artikel/fsa-2020-2-ausnutzung-eines-informationslecks-fuer-gezielte-mitm-angriffe-auf-ssh-clients/",
+        "name": "https://www.fzi.de/en/news/news/detail-en/artikel/fsa-2020-2-ausnutzung-eines-informationslecks-fuer-gezielte-mitm-angriffe-auf-ssh-clients/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200709-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20200709-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2020/12/02/1",
+        "name": "[oss-security] 20201202 Some mitigation for openssh CVE-2020-14145",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://anongit.mindrot.org/openssh.git/commit/?id=b3855ff053f5078ec3d3c653cdaedefaa5fc362d",
+        "name": "https://anongit.mindrot.org/openssh.git/commit/?id=b3855ff053f5078ec3d3c653cdaedefaa5fc362d",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/ssh-mitm/ssh-mitm/blob/master/ssh_proxy_server/plugins/session/cve202014145.py",
+        "name": "https://github.com/ssh-mitm/ssh-mitm/blob/master/ssh_proxy_server/plugins/session/cve202014145.py",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.ssh-mitm.at/CVE-2020-14145.html",
+        "name": "https://docs.ssh-mitm.at/CVE-2020-14145.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-25409",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-24T13:15Z",
+    "lastModifiedDate": "2021-05-24T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Projectsworlds College Management System Php 1.0 is vulnerable to SQL injection issues over multiple parameters."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/olotieno/College-Management-System-Php/tree/master/College-Management-System%20in%20Php_5.5/College-Management-System%20in%20Php_5.5",
+        "name": "https://github.com/olotieno/College-Management-System-Php/tree/master/College-Management-System%20in%20Php_5.5/College-Management-System%20in%20Php_5.5",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://nikhilkumar01.medium.com/cve-2020-25409-5ecbe735c004",
+        "name": "https://nikhilkumar01.medium.com/cve-2020-25409-5ecbe735c004",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26006",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-24T13:15Z",
+    "lastModifiedDate": "2021-05-24T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Project Worlds Online Examination System 1.0 is affected by Cross Site Scripting (XSS) via account.php."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://nikhilkumar01.medium.com/cve-2020-26006-31f847e16019",
+        "name": "https://nikhilkumar01.medium.com/cve-2020-26006-31f847e16019",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/projectworldsofficial/online-examination-systen-in-php/archive/master.zip",
+        "name": "https://github.com/projectworldsofficial/online-examination-systen-in-php/archive/master.zip",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20723",
+    "cveASSIGNER": "vultures@jpcert.or.jp",
+    "publishedDate": "2021-05-24T04:15Z",
+    "lastModifiedDate": "2021-05-24T04:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Reflected cross-site scripting vulnerability in [MailForm01] free edition (versions which the last updated date listed at the top of descriptions in the program file is from 2014 December 12 to 2018 July 27) allows a remote attacker to inject an arbitrary script via unspecified vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.php-factory.net/mail/01.php",
+        "name": "https://www.php-factory.net/mail/01.php",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://jvn.jp/en/jp/JVN53910556/index.html",
+        "name": "https://jvn.jp/en/jp/JVN53910556/index.html",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29921",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-24T05:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Python before 3,9,5, the ipaddress library mishandles leading zero characters in the octets of an IP address string. This (in some situations) allows attackers to bypass access control that is based on IP addresses."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/python/cpython/pull/25099",
+        "name": "https://github.com/python/cpython/pull/25099",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sick.codes/sick-2021-014",
+        "name": "https://sick.codes/sick-2021-014",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+        "name": "https://python-security.readthedocs.io/vuln/ipaddress-ipv4-leading-zeros.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/sickcodes",
+        "name": "https://github.com/sickcodes",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+        "name": "https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-014.md",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/python/cpython/pull/12577",
+        "name": "https://github.com/python/cpython/pull/12577",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://docs.python.org/3/library/ipaddress.html",
+        "name": "https://docs.python.org/3/library/ipaddress.html",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+        "name": "https://github.com/python/cpython/blob/63298930fb531ba2bb4f23bc3b915dbf1e17e9e1/Misc/NEWS.d/3.8.0a4.rst",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.python.org/issue36384",
+        "name": "https://bugs.python.org/issue36384",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-1306",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2021-05-22T07:15Z",
+    "lastModifiedDate": "2021-05-22T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the restricted shell of Cisco Evolved Programmable Network (EPN) Manager, Cisco Identity Services Engine (ISE), and Cisco Prime Infrastructure could allow an authenticated, local attacker to identify directories and write arbitrary files to the file system. This vulnerability is due to improper validation of parameters that are sent to a CLI command within the restricted shell. An attacker could exploit this vulnerability by logging in to the device and issuing certain CLI commands. A successful exploit could allow the attacker to identify file directories on the affected device and write arbitrary files to the file system on the affected device. To exploit this vulnerability, the attacker must be an authenticated shell user."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ade-xcvAQEOZ",
+        "name": "20210519 Cisco ADE-OS Local File Inclusion Vulnerability",
+        "refsource": "CISCO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-1487",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2021-05-22T07:15Z",
+    "lastModifiedDate": "2021-05-22T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the web-based management interface of Cisco Prime Infrastructure and Evolved Programmable Network (EPN) Manager could allow an authenticated, remote attacker to execute arbitrary commands on an affected system. The vulnerability is due to insufficient validation of user-supplied input to the web-based management interface. An attacker could exploit this vulnerability by sending crafted HTTP requests to the interface. A successful exploit could allow the attacker to execute arbitrary commands on the underlying operating system (OS) with the permissions of a special non-root user. In this way, an attacker could take control of the affected system, which would allow them to obtain and alter sensitive data. The attacker could also affect the devices that are managed by the affected system by pushing arbitrary configuration files, retrieving device credentials and confidential information, and ultimately undermining the stability of the devices, causing a denial of service (DoS) condition."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-pi-epnm-cmd-inj-YU5e6tB3",
+        "name": "20210519 Cisco Prime Infrastructure and Cisco Evolved Programmable Network Manager Command Injection Vulnerability",
+        "refsource": "CISCO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26145",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-11T20:15Z",
+    "lastModifiedDate": "2021-05-21T19:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered on Samsung Galaxy S3 i9305 4.4.4 devices. The WEP, WPA, WPA2, and WPA3 implementations accept second (or subsequent) broadcast fragments even when sent in plaintext and process them as full unfragmented frames. An adversary can abuse this to inject arbitrary network packets independent of the network configuration."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.fragattacks.com",
+        "name": "https://www.fragattacks.com",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "name": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+        "name": "[oss-security] 20210511 various 802.11 security issues - fragattacks.com",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26144",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-11T20:15Z",
+    "lastModifiedDate": "2021-05-21T19:02Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered on Samsung Galaxy S3 i9305 4.4.4 devices. The WEP, WPA, WPA2, and WPA3 implementations accept plaintext A-MSDU frames as long as the first 8 bytes correspond to a valid RFC1042 (i.e., LLC/SNAP) header for EAPOL. An adversary can abuse this to inject arbitrary network packets independent of the network configuration."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.fragattacks.com",
+        "name": "https://www.fragattacks.com",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "name": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+        "name": "[oss-security] 20210511 various 802.11 security issues - fragattacks.com",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-26146",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-11T20:15Z",
+    "lastModifiedDate": "2021-05-21T19:01Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered on Samsung Galaxy S3 i9305 4.4.4 devices. The WPA, WPA2, and WPA3 implementations reassemble fragments with non-consecutive packet numbers. An adversary can abuse this to exfiltrate selected fragments. This vulnerability is exploitable when another device sends fragmented frames and the WEP, CCMP, or GCMP data-confidentiality protocol is used. Note that WEP is vulnerable to this attack by design."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.fragattacks.com",
+        "name": "https://www.fragattacks.com",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "name": "https://github.com/vanhoefm/fragattacks/blob/master/SUMMARY.md",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/11/12",
+        "name": "[oss-security] 20210511 various 802.11 security issues - fragattacks.com",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-1891",
+    "cveASSIGNER": "product-security@qualcomm.com",
+    "publishedDate": "2021-05-07T09:15Z",
+    "lastModifiedDate": "2021-05-21T18:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A possible use-after-free occurrence in audio driver can happen when pointers are not properly handled in Snapdragon Auto, Snapdragon Compute, Snapdragon Connectivity, Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon Mobile, Snapdragon Voice & Music, Snapdragon Wearables, Snapdragon Wired Infrastructure and Networking"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.qualcomm.com/company/product-security/bulletins/may-2021-bulletin",
+        "name": "https://www.qualcomm.com/company/product-security/bulletins/may-2021-bulletin",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22137",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-05-13T18:15Z",
+    "lastModifiedDate": "2021-05-21T18:14Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Elasticsearch versions before 7.11.2 and 6.8.15 a document disclosure flaw was found when Document or Field Level Security is used. Search queries do not properly preserve security permissions when executing certain cross-cluster search queries. This could result in the search disclosing the existence of documents the attacker should not be able to view. This could result in an attacker gaining additional insight into potentially sensitive indices."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22135",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-05-13T18:15Z",
+    "lastModifiedDate": "2021-05-21T18:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Elasticsearch versions before 7.11.2 and 6.8.15 contain a document disclosure flaw was found in the Elasticsearch suggester and profile API when Document and Field Level Security are enabled. The suggester and profile API are normally disabled for an index when document level security is enabled on the index. Certain queries are able to enable the profiler and suggester which could lead to disclosing the existence of documents and fields the attacker should not be able to view."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22138",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-05-13T18:15Z",
+    "lastModifiedDate": "2021-05-21T18:11Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Logstash versions after 6.4.0 and before 6.8.15 and 7.12.0 a TLS certificate validation flaw was found in the monitoring feature. When specifying a trusted server CA certificate Logstash would not properly verify the certificate returned by the monitoring server. This could result in a man in the middle style attack against the Logstash monitoring data."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1618 @@
+[
+  {
+    "cveID": "CVE-2021-23336",
+    "cveASSIGNER": "report@snyk.io",
+    "publishedDate": "2021-02-15T13:15Z",
+    "lastModifiedDate": "2021-05-04T00:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The package python/cpython from 0 and before 3.6.13, from 3.7.0 and before 3.7.10, from 3.8.0 and before 3.8.8, from 3.9.0 and before 3.9.2 are vulnerable to Web Cache Poisoning via urllib.parse.parse_qsl and urllib.parse.parse_qs by using a vector called parameter cloaking. When the attacker can separate query parameters using a semicolon (;), they can cause a difference in the interpretation of the request between the proxy (running with default configuration) and the server. This can result in malicious requests being cached as completely safe ones, as the proxy would usually not see the semicolon as a separator, and therefore would not include it in a cache key of an unkeyed parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://snyk.io/vuln/SNYK-UPSTREAM-PYTHONCPYTHON-1074933",
+        "name": "https://snyk.io/vuln/SNYK-UPSTREAM-PYTHONCPYTHON-1074933",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/python/cpython/pull/24297",
+        "name": "https://github.com/python/cpython/pull/24297",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/blog/cache-poisoning-in-popular-open-source-packages/",
+        "name": "https://snyk.io/blog/cache-poisoning-in-popular-open-source-packages/",
+        "refsource": "MISC",
+        "tags": [
+          "Technical Description",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/02/19/4",
+        "name": "[oss-security] 20210219 Django security releases: CVE-2021-23336: Web cache poisoning via ``django.utils.http.limited_parse_qsl()``",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/02/msg00030.html",
+        "name": "[debian-lts-announce] 20210219 [SECURITY] [DLA 2569-1] python-django security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HCQTCSP6SCVIYNIRUJC5X7YBVUHPLSC4/",
+        "name": "FEDORA-2021-7547ad987f",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NODWHDIFBQE5RU5PUWUVE47JOT5VCMJ2/",
+        "name": "FEDORA-2021-f4fd9372c7",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MNUN5SOMFL2BBKP6ZAICIIUPQKZDMGYO/",
+        "name": "FEDORA-2021-7d3a9004e2",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MP572OLHMS7MZO4KUPSCIMSZIA5IZZ62/",
+        "name": "FEDORA-2021-3352c1c802",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+        "name": "[mina-dev] 20210225 [jira] [Created] (FTPSERVER-500) Security vulnerability in common/lib/log4j-1.2.17.jar",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FONHJIOZOFD7CD35KZL6SVBUTMBPGZGA/",
+        "name": "FEDORA-2021-907f3bacae",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KJXCMHLY7H3FIYLE4OKDYUILU2CCRUCZ/",
+        "name": "FEDORA-2021-7c1bb32d13",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3YKKDLXL3UEZ3J426C2XTBS63AHE46SM/",
+        "name": "FEDORA-2021-b1843407ca",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TFTELUMWZE3KV3JB2H5EE6VFRZFRD5MV/",
+        "name": "FEDORA-2021-2897f5366c",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OAGSWNGZJ6HQ5ISA67SNMK3CJRKICET7/",
+        "name": "FEDORA-2021-b326fcb83f",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NJSCSN722JO2E2AGPWD4NTGVELVRPB4R/",
+        "name": "FEDORA-2021-1bb399a5af",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HZTM7KLHFCE3LWSEVO2NAFLUHMGYMCRY/",
+        "name": "FEDORA-2021-ef83e8525a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3EPYWWFDV22CJ5AOH5VCE72DOASZZ255/",
+        "name": "FEDORA-2021-b76ede8f4d",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IHQDU7NXA7EWAE4W7VO6MURVJIULEPPR/",
+        "name": "FEDORA-2021-309bc2e727",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LVNH6Z24IG3E67ZCQGGJ46FZB4XFLQNZ/",
+        "name": "FEDORA-2021-e525e48886",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/W2LSKBEFI5SYEY5FM6ICZVZM5WRQUCS4/",
+        "name": "FEDORA-2021-5a09621ebb",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/46N6A52EGSXHJYCZWVMBJJIH4NWIV2B5/",
+        "name": "FEDORA-2021-e22bb0e548",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210326-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20210326-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00005.html",
+        "name": "[debian-lts-announce] 20210405 [SECURITY] [DLA 2619-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/04/msg00015.html",
+        "name": "[debian-lts-announce] 20210417 [SECURITY] [DLA 2628-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/N6VXJZSZ6N64AILJX4CTMACYGQGHHD5C/",
+        "name": "FEDORA-2021-b6b6093b3a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-04",
+        "name": "GLSA-202104-04",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra8ce70088ba291f358e077cafdb14d174b7a1ce9a9d86d1b332d6367@%3Cusers.airflow.apache.org%3E",
+        "name": "[airflow-users] 20210501 CVE-2021-28359: Apache Airflow Reflected XSS via Origin Query Argument in URL",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/01/2",
+        "name": "[oss-security] 20210501 CVE-2021-28359: Apache Airflow Reflected XSS via Origin Query Argument in URL",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc005f4de9d9b0ba943ceb8ff5a21a5c6ff8a9df52632476698d99432@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20210501 Apache Airflow CVE: CVE-2021-28359: Apache Airflow Reflected XSS via Origin Query Argument in URL",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11884",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-04-29T13:15Z",
+    "lastModifiedDate": "2021-01-04T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In the Linux kernel 4.19 through 5.6.7 on the s390 platform, code execution may occur because of a race condition, as demonstrated by code in enable_sacf_uaccess in arch/s390/lib/uaccess.c that fails to protect against a concurrent page table upgrade, aka CID-3f777e19d171. A crash could also occur."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3f777e19d171670ab558a6d5e6b1ac7f9b6c574f",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3f777e19d171670ab558a6d5e6b1ac7f9b6c574f",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4667",
+        "name": "DSA-4667",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4343-1/",
+        "name": "USN-4343-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZKVJMS4GQRH5SO35WM5GINCFAGXQ3ZW6/",
+        "name": "FEDORA-2020-64d46a6e29",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AQUVKC3IPUC5B374VVAZV4J5P3GAUGSW/",
+        "name": "FEDORA-2020-16f9239805",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3TZBP2HINNAX7HKHCOUMIFVQPV6GWMCZ/",
+        "name": "FEDORA-2020-b453269c4e",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4345-1/",
+        "name": "USN-4345-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4342-1/",
+        "name": "USN-4342-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200608-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20200608-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/commit/?id=215d1f3928713d6eaec67244bcda72105b898000",
+        "name": "https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/commit/?id=215d1f3928713d6eaec67244bcda72105b898000",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-35716",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-12-26T01:15Z",
+    "lastModifiedDate": "2020-12-28T19:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Belkin LINKSYS RE6500 devices before 1.0.012.001 allow remote attackers to cause a persistent denial of service (segmentation fault) via a long /goform/langSwitch langSelectionOnly parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://resolverblog.blogspot.com/2020/07/linksys-re6500-unauthenticated-rce-full.html",
+        "name": "https://resolverblog.blogspot.com/2020/07/linksys-re6500-unauthenticated-rce-full.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://downloads.linksys.com/support/assets/releasenotes/ExternalReleaseNotes_RE6500_1.0.012.001.txt",
+        "name": "https://downloads.linksys.com/support/assets/releasenotes/ExternalReleaseNotes_RE6500_1.0.012.001.txt",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugcrowd.com/disclosures/72d7246b-f77f-4f7f-9bd1-fdc35663cc92/linksys-re6500-unauthenticated-rce-working-across-multiple-fw-versions",
+        "name": "https://bugcrowd.com/disclosures/72d7246b-f77f-4f7f-9bd1-fdc35663cc92/linksys-re6500-unauthenticated-rce-working-across-multiple-fw-versions",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-10811",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-06-19T21:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "strongSwan 5.6.0 and older allows Remote Denial of Service because of Missing Initialization of a Variable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4229",
+        "name": "DSA-4229",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UBO6ZQKLB5RY3TV7MXADFTQKXA2LUEIL/",
+        "name": "FEDORA-2018-0de3edbdea",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://download.strongswan.org/security/CVE-2018-10811/",
+        "name": "https://download.strongswan.org/security/CVE-2018-10811/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.strongswan.org/blog/2018/05/28/strongswan-vulnerability-(cve-2018-10811).html",
+        "name": "https://www.strongswan.org/blog/2018/05/28/strongswan-vulnerability-(cve-2018-10811).html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3771-1/",
+        "name": "USN-3771-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-16",
+        "name": "GLSA-201811-16",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00077.html",
+        "name": "openSUSE-SU-2019:2594",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00001.html",
+        "name": "openSUSE-SU-2019:2598",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00047.html",
+        "name": "openSUSE-SU-2020:0403",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-6459",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-02-20T15:29Z",
+    "lastModifiedDate": "2020-03-30T01:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The rsa_pss_params_parse function in libstrongswan/credentials/keys/signature_params.c in strongSwan 5.6.1 allows remote attackers to cause a denial of service via a crafted RSASSA-PSS signature that lacks a mask generation function parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.strongswan.org/blog/2018/02/19/strongswan-vulnerability-(cve-2018-6459).html",
+        "name": "https://www.strongswan.org/blog/2018/02/19/strongswan-vulnerability-(cve-2018-6459).html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-16",
+        "name": "GLSA-201811-16",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00047.html",
+        "name": "openSUSE-SU-2020:0403",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-17540",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-10-03T20:29Z",
+    "lastModifiedDate": "2019-12-01T01:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The gmp plugin in strongSwan before 5.7.1 has a Buffer Overflow via a crafted certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.strongswan.org/blog/2018/10/01/strongswan-vulnerability-(cve-2018-17540).html",
+        "name": "https://www.strongswan.org/blog/2018/10/01/strongswan-vulnerability-(cve-2018-17540).html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4309",
+        "name": "DSA-4309",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3774-1/",
+        "name": "USN-3774-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/10/msg00001.html",
+        "name": "[debian-lts-announce] 20181002 [SECURITY] [DLA 1528-1] strongswan security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://download.strongswan.org/security/CVE-2018-17540/",
+        "name": "https://download.strongswan.org/security/CVE-2018-17540/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-16",
+        "name": "GLSA-201811-16",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00077.html",
+        "name": "openSUSE-SU-2019:2594",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00001.html",
+        "name": "openSUSE-SU-2019:2598",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00047.html",
+        "name": "openSUSE-SU-2020:0403",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-16152",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-09-26T21:29Z",
+    "lastModifiedDate": "2019-12-01T01:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In verify_emsa_pkcs1_signature() in gmp_rsa_public_key.c in the gmp plugin in strongSwan 4.x and 5.x before 5.7.0, the RSA implementation based on GMP does not reject excess data in the digestAlgorithm.parameters field during PKCS#1 v1.5 signature verification. Consequently, a remote attacker can forge signatures when small public exponents are being used, which could lead to impersonation when only an RSA signature is used for IKEv2 authentication. This is a variant of CVE-2006-4790 and CVE-2014-1568."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.strongswan.org/blog/2018/09/24/strongswan-vulnerability-(cve-2018-16151,-cve-2018-16152).html",
+        "name": "https://www.strongswan.org/blog/2018/09/24/strongswan-vulnerability-(cve-2018-16151,-cve-2018-16152).html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mitigation",
+          "Patch",
+          "Technical Description",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4305",
+        "name": "DSA-4305",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3771-1/",
+        "name": "USN-3771-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/09/msg00032.html",
+        "name": "[debian-lts-announce] 20180926 [SECURITY] [DLA 1522-1] strongswan security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-16",
+        "name": "GLSA-201811-16",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00077.html",
+        "name": "openSUSE-SU-2019:2594",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00001.html",
+        "name": "openSUSE-SU-2019:2598",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00047.html",
+        "name": "openSUSE-SU-2020:0403",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-16151",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-09-26T21:29Z",
+    "lastModifiedDate": "2019-12-01T01:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In verify_emsa_pkcs1_signature() in gmp_rsa_public_key.c in the gmp plugin in strongSwan 4.x and 5.x before 5.7.0, the RSA implementation based on GMP does not reject excess data after the encoded algorithm OID during PKCS#1 v1.5 signature verification. Similar to the flaw in the same version of strongSwan regarding digestAlgorithm.parameters, a remote attacker can forge signatures when small public exponents are being used, which could lead to impersonation when only an RSA signature is used for IKEv2 authentication."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.strongswan.org/blog/2018/09/24/strongswan-vulnerability-(cve-2018-16151,-cve-2018-16152).html",
+        "name": "https://www.strongswan.org/blog/2018/09/24/strongswan-vulnerability-(cve-2018-16151,-cve-2018-16152).html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mitigation",
+          "Patch",
+          "Technical Description",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4305",
+        "name": "DSA-4305",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3771-1/",
+        "name": "USN-3771-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/09/msg00032.html",
+        "name": "[debian-lts-announce] 20180926 [SECURITY] [DLA 1522-1] strongswan security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-16",
+        "name": "GLSA-201811-16",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00077.html",
+        "name": "openSUSE-SU-2019:2594",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00001.html",
+        "name": "openSUSE-SU-2019:2598",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00047.html",
+        "name": "openSUSE-SU-2020:0403",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-5388",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2018-05-31T13:29Z",
+    "lastModifiedDate": "2019-10-09T23:41Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In stroke_socket.c in strongSwan before 5.6.3, a missing packet length check could allow a buffer underflow, which may lead to resource exhaustion and denial of service while reading from the socket."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://git.strongswan.org/?p=strongswan.git;a=commitdiff;h=0acd1ab4",
+        "name": "https://git.strongswan.org/?p=strongswan.git;a=commitdiff;h=0acd1ab4",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/338343",
+        "name": "VU#338343",
+        "refsource": "CERT-VN",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/104263",
+        "name": "104263",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4229",
+        "name": "DSA-4229",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3771-1/",
+        "name": "USN-3771-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201811-16",
+        "name": "GLSA-201811-16",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00077.html",
+        "name": "openSUSE-SU-2019:2594",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-12/msg00001.html",
+        "name": "openSUSE-SU-2019:2598",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00047.html",
+        "name": "openSUSE-SU-2020:0403",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-9023",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-06-08T16:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The ASN.1 parser in strongSwan before 5.5.3 improperly handles CHOICE types when the x509 plugin is enabled, which allows remote attackers to cause a denial of service (infinite loop) via a crafted certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3301-1",
+        "name": "USN-3301-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/98756",
+        "name": "98756",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2017/dsa-3866",
+        "name": "DSA-3866",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.strongswan.org/blog/2017/05/30/strongswan-vulnerability-(cve-2017-9023).html",
+        "name": "https://www.strongswan.org/blog/2017/05/30/strongswan-vulnerability-(cve-2017-9023).html",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-0790",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2009-04-01T10:30Z",
+    "lastModifiedDate": "2019-07-29T14:24Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The pluto IKE daemon in Openswan and Strongswan IPsec 2.6 before 2.6.21 and 2.4 before 2.4.14, and Strongswan 4.2 before 4.2.14 and 2.8 before 2.8.9, allows remote attackers to cause a denial of service (daemon crash and restart) via a crafted (1) R_U_THERE or (2) R_U_THERE_ACK Dead Peer Detection (DPD) IPsec IKE Notification message that triggers a NULL pointer dereference related to inconsistent ISAKMP state and the lack of a phase2 state association in DPD."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securitytracker.com/id?1021949",
+        "name": "1021949",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/34483",
+        "name": "34483",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/34296",
+        "name": "34296",
+        "refsource": "BID",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/34472",
+        "name": "34472",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2009-0402.html",
+        "name": "RHSA-2009:0402",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://download.strongswan.org/CHANGES4.txt",
+        "name": "http://download.strongswan.org/CHANGES4.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/34546",
+        "name": "34546",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/34494",
+        "name": "34494",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openswan.org/CVE-2009-0790/CVE-2009-0790.txt",
+        "name": "http://www.openswan.org/CVE-2009-0790/CVE-2009-0790.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1759",
+        "name": "DSA-1759",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1760",
+        "name": "DSA-1760",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1021950",
+        "name": "1021950",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/0886",
+        "name": "ADV-2009-0886",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2009-04/msg00010.html",
+        "name": "SUSE-SR:2009:009",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/49523",
+        "name": "openswan-strongswan-dpd-dos(49523)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11171",
+        "name": "oval:org.mitre.oval:def:11171",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/502270/100/0/threaded",
+        "name": "20090330 CVE-2009-0790: ISAKMP DPD Remote Vulnerability with Openswan & Strongswan IPsec",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-2185",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-06-25T02:00Z",
+    "lastModifiedDate": "2019-07-29T14:24Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The ASN.1 parser (pluto/asn1.c, libstrongswan/asn1/asn1.c, libstrongswan/asn1/asn1_parser.c) in (a) strongSwan 2.8 before 2.8.10, 4.2 before 4.2.16, and 4.3 before 4.3.2; and (b) openSwan 2.6 before 2.6.22 and 2.4 before 2.4.15 allows remote attackers to cause a denial of service (pluto IKE daemon crash) via an X.509 certificate with (1) crafted Relative Distinguished Names (RDNs), (2) a crafted UTCTIME string, or (3) a crafted GENERALIZEDTIME string."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/35452",
+        "name": "35452",
+        "refsource": "BID",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/35522",
+        "name": "35522",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://download.strongswan.org/CHANGES2.txt",
+        "name": "http://download.strongswan.org/CHANGES2.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://download.strongswan.org/CHANGES42.txt",
+        "name": "http://download.strongswan.org/CHANGES42.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://download.strongswan.org/CHANGES4.txt",
+        "name": "http://download.strongswan.org/CHANGES4.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/1639",
+        "name": "ADV-2009-1639",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1022428",
+        "name": "1022428",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://up2date.astaro.com/2009/07/up2date_7404_released.html",
+        "name": "http://up2date.astaro.com/2009/07/up2date_7404_released.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2009-1138.html",
+        "name": "RHSA-2009:1138",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2009-July/msg00337.html",
+        "name": "FEDORA-2009-7478",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/35698",
+        "name": "35698",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2009-July/msg00264.html",
+        "name": "FEDORA-2009-7423",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/1829",
+        "name": "ADV-2009-1829",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/35804",
+        "name": "35804",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/35740",
+        "name": "35740",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1898",
+        "name": "DSA-1898",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/36922",
+        "name": "36922",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1899",
+        "name": "DSA-1899",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/36950",
+        "name": "36950",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ingate.com/Relnote.php?ver=481",
+        "name": "http://www.ingate.com/Relnote.php?ver=481",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/37504",
+        "name": "37504",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/3354",
+        "name": "ADV-2009-3354",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/1706",
+        "name": "ADV-2009-1706",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11079",
+        "name": "oval:org.mitre.oval:def:11079",
+        "refsource": "OVAL",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-9022",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-06-08T16:29Z",
+    "lastModifiedDate": "2019-04-16T14:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The gmp plugin in strongSwan before 5.5.3 does not properly validate RSA public keys before calling mpz_powm_sec, which allows remote peers to cause a denial of service (floating point exception and process crash) via a crafted certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3301-1",
+        "name": "USN-3301-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/98760",
+        "name": "98760",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2017/dsa-3866",
+        "name": "DSA-3866",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.strongswan.org/blog/2017/05/30/strongswan-vulnerability-(cve-2017-9022).html",
+        "name": "https://www.strongswan.org/blog/2017/05/30/strongswan-vulnerability-(cve-2017-9022).html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-9221",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-01-07T19:59Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "strongSwan 4.5.x through 5.2.x before 5.2.1 allows remote attackers to cause a denial of service (invalid pointer dereference) via a crafted IKEv2 Key Exchange (KE) message with Diffie-Hellman (DH) group 1025."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2450-1",
+        "name": "USN-2450-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3118",
+        "name": "DSA-3118",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/62095",
+        "name": "62095",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://strongswan.org/blog/2015/01/05/strongswan-5.2.2-released.html",
+        "name": "http://strongswan.org/blog/2015/01/05/strongswan-5.2.2-released.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/62071",
+        "name": "62071",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/62663",
+        "name": "62663",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2015-01/msg00054.html",
+        "name": "openSUSE-SU-2015:0114",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.fedoraproject.org/pipermail/package-announce/2015-March/153825.html",
+        "name": "FEDORA-2015-3043",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/71894",
+        "name": "71894",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/62083",
+        "name": "62083",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://strongswan.org/blog/2015/01/05/strongswan-denial-of-service-vulnerability-(cve-2014-9221).html",
+        "name": "http://strongswan.org/blog/2015/01/05/strongswan-denial-of-service-vulnerability-(cve-2014-9221).html",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2013-5018",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2013-08-28T23:55Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The is_asn1 function in strongSwan 4.1.11 through 5.0.4 does not properly validate the return value of the asn1_length function, which allows remote attackers to cause a denial of service (segmentation fault) via a (1) XAuth username, (2) EAP identity, or (3) PEM encoded file that starts with a 0x04, 0x30, or 0x31 character followed by an ASN.1 length value that triggers an integer overflow."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00021.html",
+        "name": "openSUSE-SU-2013:1332",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html",
+        "name": "http://strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/54524",
+        "name": "54524",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://strongswan.org/blog/2013/08/01/strongswan-5.1.0-released.html",
+        "name": "http://strongswan.org/blog/2013/08/01/strongswan-5.1.0-released.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00022.html",
+        "name": "openSUSE-SU-2013:1333",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/54315",
+        "name": "54315",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00050.html",
+        "name": "openSUSE-SU-2013:1372",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.strongswan.org/pipermail/users/2013-July/009540.html",
+        "name": "[Users] 20130729 [strongSwan] charon crash right after xauth+rsa client connects (strongswan-5.0.4, ubuntu 12.04)",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/61564",
+        "name": "61564",
+        "refsource": "BID",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-0097",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-01-08T02:46Z",
+    "lastModifiedDate": "2018-10-15T21:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Format string vulnerability in the log function in Georgia SoftWorks SSH2 Server (GSW_SSHD) 7.01.0003 and earlier allows remote attackers to execute arbitrary code via format string specifiers in the username field, as demonstrated by a certain LoginPassword message."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://aluigi.altervista.org/adv/gswsshit-adv.txt",
+        "name": "http://aluigi.altervista.org/adv/gswsshit-adv.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/28307",
+        "name": "28307",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/3517",
+        "name": "3517",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/485725/100/0/threaded",
+        "name": "20080102 Multiple vulnerabilities in Georgia SoftWorks SSH2 Server 7.01.0003",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-0096",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-01-08T02:46Z",
+    "lastModifiedDate": "2018-10-15T21:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Multiple buffer overflows in Georgia SoftWorks SSH2 Server (GSW_SSHD) 7.01.0003 and earlier allow remote attackers to execute arbitrary code via a (1) a long username, which triggers an overflow in the log function; or (2) a long password."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://aluigi.altervista.org/adv/gswsshit-adv.txt",
+        "name": "http://aluigi.altervista.org/adv/gswsshit-adv.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/28307",
+        "name": "28307",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/3517",
+        "name": "3517",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/27103",
+        "name": "27103",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/485725/100/0/threaded",
+        "name": "20080102 Multiple vulnerabilities in Georgia SoftWorks SSH2 Server 7.01.0003",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-1519",
+    "cveASSIGNER": "cert@cert.org",
+    "publishedDate": "2017-04-21T20:59Z",
+    "lastModifiedDate": "2018-10-09T19:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The com.softphone.common package in the Grandstream Wave app 1.0.1.26 and earlier for Android does not properly validate SSL certificates, which allows man-in-the-middle attackers to spoof the Grandstream provisioning server via a crafted certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://rt-solutions.de/wp-content/uploads/2016/04/CVE-2016-1519-gswave-tls-mitm.pdf",
+        "name": "https://rt-solutions.de/wp-content/uploads/2016/04/CVE-2016-1519-gswave-tls-mitm.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/136290/Grandstream-Wave-1.0.1.26-TLS-Man-In-The-Middle.html",
+        "name": "http://packetstormsecurity.com/files/136290/Grandstream-Wave-1.0.1.26-TLS-Man-In-The-Middle.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/537819/100/0/threaded",
+        "name": "20160317 CVE-2016-1519: GrandStream Android VoIP App TLS MitM Vulnerability",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-11185",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-08-18T17:29Z",
+    "lastModifiedDate": "2018-08-13T21:47Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The gmp plugin in strongSwan before 5.6.0 allows remote attackers to cause a denial of service (NULL pointer dereference and daemon crash) via a crafted RSA signature."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/100492",
+        "name": "100492",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2017/dsa-3962",
+        "name": "DSA-3962",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.strongswan.org/blog/2017/08/14/strongswan-vulnerability-(cve-2017-11185).html",
+        "name": "https://www.strongswan.org/blog/2017/08/14/strongswan-vulnerability-(cve-2017-11185).html",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-8023",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-11-18T16:59Z",
+    "lastModifiedDate": "2018-08-13T21:47Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The server implementation of the EAP-MSCHAPv2 protocol in the eap-mschapv2 plugin in strongSwan 4.2.12 through 5.x before 5.3.4 does not properly validate local state, which allows remote attackers to bypass authentication via an empty Success message in response to an initial Challenge message."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3398",
+        "name": "DSA-3398",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2811-1",
+        "name": "USN-2811-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/84947",
+        "name": "84947",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2015-11/msg00139.html",
+        "name": "openSUSE-SU-2015:2103",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2015-12/msg00025.html",
+        "name": "SUSE-SU-2015:2183",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://www.strongswan.org/blog/2015/11/16/strongswan-vulnerability-(cve-2015-8023).html",
+        "name": "https://www.strongswan.org/blog/2015/11/16/strongswan-vulnerability-(cve-2015-8023).html",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  }
+]

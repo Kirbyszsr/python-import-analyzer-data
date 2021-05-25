@@ -1,0 +1,739 @@
+[
+  {
+    "cveID": "CVE-2021-22135",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-05-13T18:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Elasticsearch versions before 7.11.2 and 6.8.15 contain a document disclosure flaw was found in the Elasticsearch suggester and profile API when Document and Field Level Security are enabled. The suggester and profile API are normally disabled for an index when document level security is enabled on the index. Certain queries are able to enable the profiler and suggester which could lead to disclosing the existence of documents and fields the attacker should not be able to view."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22137",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-05-13T18:15Z",
+    "lastModifiedDate": "2021-05-13T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Elasticsearch versions before 7.11.2 and 6.8.15 a document disclosure flaw was found when Document or Field Level Security is used. Search queries do not properly preserve security permissions when executing certain cross-cluster search queries. This could result in the search disclosing the existence of documents the attacker should not be able to view. This could result in an attacker gaining additional insight into potentially sensitive indices."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-12-0-and-6-8-15-security-update/268125",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31828",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T19:15Z",
+    "lastModifiedDate": "2021-05-12T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An SSRF issue in Open Distro for Elasticsearch (ODFE) before 1.13.1.0 allows an existing privileged user to enumerate listening services or interact with configured resources via HTTP requests exceeding the Alerting plugin's intended scope."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/opendistro-for-elasticsearch/alerting/pull/353",
+        "name": "https://github.com/opendistro-for-elasticsearch/alerting/pull/353",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://opendistro.github.io/for-elasticsearch-docs/version-history/",
+        "name": "https://opendistro.github.io/for-elasticsearch-docs/version-history/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://rotem-bar.com/ssrf-in-open-distro-for-elasticsearch-cve-2021-31828",
+        "name": "https://rotem-bar.com/ssrf-in-open-distro-for-elasticsearch-cve-2021-31828",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22134",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-03-08T21:15Z",
+    "lastModifiedDate": "2021-05-05T13:28Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A document disclosure flaw was found in Elasticsearch versions after 7.6.0 and before 7.11.0 when Document or Field Level Security is used. Get requests do not properly apply security permissions when executing a query against a recently updated document. This affects documents that have been updated and not yet refreshed in the index. This could result in the search disclosing the existence of documents and fields the attacker should not be able to view."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-11-0-security-update/265835",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-11-0-security-update/265835",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210430-0006/",
+        "name": "https://security.netapp.com/advisory/ntap-20210430-0006/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22997",
+    "cveASSIGNER": "f5sirt@f5.com",
+    "publishedDate": "2021-03-31T18:15Z",
+    "lastModifiedDate": "2021-04-06T18:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On all 7.x and 6.x versions (fixed in 8.0.0), BIG-IQ HA ElasticSearch service does not implement any form of authentication for the clustering transport services, and all data used by ElasticSearch for transport is unencrypted. Note: Software versions which have reached End of Software Development (EoSD) are not evaluated."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.f5.com/csp/article/K34074377",
+        "name": "https://support.f5.com/csp/article/K34074377",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7021",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-02-10T19:15Z",
+    "lastModifiedDate": "2021-03-26T12:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Elasticsearch versions before 7.10.0 and 6.8.14 have an information disclosure issue when audit logging and the emit_request_body option is enabled. The Elasticsearch audit log could contain sensitive information such as password hashes or authentication tokens. This could allow an Elasticsearch administrator to view these details."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-11-0-and-6-8-14-security-update/263915",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-11-0-and-6-8-14-security-update/263915",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210319-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20210319-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-22132",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2021-01-14T20:15Z",
+    "lastModifiedDate": "2021-02-22T18:40Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Elasticsearch versions 7.7.0 to 7.10.1 contain an information disclosure flaw in the async search API. Users who execute an async search will improperly store the HTTP headers. An Elasticsearch user with the ability to read the .tasks index could obtain sensitive request headers of other users in the cluster. This issue is fixed in Elasticsearch 7.10.2"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elasticsearch-7-10-2-security-update/261164",
+        "name": "https://discuss.elastic.co/t/elasticsearch-7-10-2-security-update/261164",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210219-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20210219-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-15097",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-02-02T18:15Z",
+    "lastModifiedDate": "2021-02-08T14:19Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "loklak is an open-source server application which is able to collect messages from various sources, including twitter. The server contains a search index and a peer-to-peer index sharing interface. All messages are stored in an elasticsearch index. In loklak less than or equal to commit 5f48476, a path traversal vulnerability exists. Insufficient input validation in the APIs exposed by the loklak server allowed a directory traversal vulnerability. Any admin configuration and files readable by the app available on the hosted file system can be retrieved by the attacker. Furthermore, user-controlled content could be written to any admin config and files readable by the application. This has been patched in commit 50dd692. Users will need to upgrade their hosted instances of loklak to not be vulnerable to this exploit."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/loklak/loklak_server/security/advisories/GHSA-7557-4v29-rqw6",
+        "name": "https://github.com/loklak/loklak_server/security/advisories/GHSA-7557-4v29-rqw6",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/loklak/loklak_server/commit/50dd69230d3cd71dab0bfa7156682ffeca8ed8b9",
+        "name": "https://github.com/loklak/loklak_server/commit/50dd69230d3cd71dab0bfa7156682ffeca8ed8b9",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-12629",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2017-10-14T23:29Z",
+    "lastModifiedDate": "2021-01-27T17:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Remote code execution occurs in Apache Solr before 7.1 with Apache Lucene before 7.1 by exploiting XXE in conjunction with use of a Config API add-listener command to reach the RunExecutableListener class. Elasticsearch, although it uses Lucene, is NOT vulnerable to this. Note that the XML external entity expansion vulnerability occurs in the XML Query Parser which is available, by default, for any query request with parameters deftype=xmlparser and can be exploited to upload malicious data to the /upload request handler or as Blind XXE using ftp wrapper in order to read arbitrary local files from the Solr server. Note also that the second vulnerability relates to remote code execution using the RunExecutableListener available on all affected versions of Solr."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://twitter.com/searchtools_avi/status/918904813613543424",
+        "name": "https://twitter.com/searchtools_avi/status/918904813613543424",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://twitter.com/joshbressers/status/919258716297420802",
+        "name": "https://twitter.com/joshbressers/status/919258716297420802",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://twitter.com/ApacheSolr/status/918731485611401216",
+        "name": "https://twitter.com/ApacheSolr/status/918731485611401216",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2017/10/13/1",
+        "name": "http://openwall.com/lists/oss-security/2017/10/13/1",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/101261",
+        "name": "101261",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/43009/",
+        "name": "43009",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://s.apache.org/FJDl",
+        "name": "[lucene-dev] 20171012 Re: Several critical vulnerabilities discovered in Apache Solr (XXE & RCE)",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://mail-archives.us.apache.org/mod_mbox/www-announce/201710.mbox/%3CCAOOKt51UO_6Vy%3Dj8W%3Dx1pMbLW9VJfZyFWz7pAnXJC_OAdSZubA%40mail.gmail.com%3E",
+        "name": "[www-announce] 20171019 [SECURITY] CVE-2017-12629: Several critical vulnerabilities discovered in Apache Solr (XXE & RCE)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3244",
+        "name": "RHSA-2017:3244",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3124",
+        "name": "RHSA-2017:3124",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3123",
+        "name": "RHSA-2017:3123",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3452",
+        "name": "RHSA-2017:3452",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2017:3451",
+        "name": "RHSA-2017:3451",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:0005",
+        "name": "RHSA-2018:0005",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:0004",
+        "name": "RHSA-2018:0004",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:0003",
+        "name": "RHSA-2018:0003",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:0002",
+        "name": "RHSA-2018:0002",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/01/msg00028.html",
+        "name": "[debian-lts-announce] 20180121 [SECURITY] [DLA 1254-1] lucene-solr security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4124",
+        "name": "DSA-4124",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4259-1/",
+        "name": "USN-4259-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27816",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2020-12-02T01:15Z",
+    "lastModifiedDate": "2020-12-04T22:36Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The elasticsearch-operator does not validate the namespace where kibana logging resource is created and due to that it is possible to replace the original openshift-logging console link (kibana console) to different one, created based on the new CR for the new kibana resource. This could lead to an arbitrary URL redirection or the openshift-logging console link damage. This flaw affects elasticsearch-operator-container versions before 4.7."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1902698",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1902698",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7020",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2020-10-22T17:15Z",
+    "lastModifiedDate": "2020-11-23T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Elasticsearch versions before 6.8.13 and 7.9.2 contain a document disclosure flaw when Document or Field Level Security is used. Search queries do not properly preserve security permissions when executing certain complex queries. This could result in the search disclosing the existence of documents the attacker should not be able to view. This could result in an attacker gaining additional insight into potentially sensitive indices."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://staging-website.elastic.co/community/security/",
+        "name": "https://staging-website.elastic.co/community/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Permissions Required",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-9-3-and-6-8-13-security-update/253033",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-9-3-and-6-8-13-security-update/253033",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20201123-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20201123-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-24303",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-10-28T14:15Z",
+    "lastModifiedDate": "2020-11-23T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Grafana before 7.1.0-beta 1 allows XSS via a query alias for the ElasticSearch datasource."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/grafana/grafana/blob/master/CHANGELOG.md#710-beta-1-2020-07-01",
+        "name": "https://github.com/grafana/grafana/blob/master/CHANGELOG.md#710-beta-1-2020-07-01",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/grafana/grafana/pull/25401",
+        "name": "https://github.com/grafana/grafana/pull/25401",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20201123-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20201123-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-5487",
+    "cveASSIGNER": "cve-assignments@hackerone.com",
+    "publishedDate": "2019-12-18T21:15Z",
+    "lastModifiedDate": "2020-10-22T17:33Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An improper access control vulnerability exists in Gitlab EE <v12.3.3, <v12.2.7, & <v12.1.13 that allowed the group search feature with Elasticsearch to return private code, merge requests and commits."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://hackerone.com/reports/692252",
+        "name": "https://hackerone.com/reports/692252",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-7611",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2019-03-25T19:29Z",
+    "lastModifiedDate": "2020-10-19T18:10Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A permission issue was found in Elasticsearch versions before 5.6.15 and 6.6.1 when Field Level Security and Document Level Security are disabled and the _aliases, _shrink, or _split endpoints are used . If the elasticsearch.yml file has xpack.security.dls_fls.enabled set to false, certain permission checks are skipped when users perform one of the actions mentioned above, to make existing data available under a new index/alias name. This could result in an attacker gaining additional permissions against a restricted index."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.elastic.co/community/security",
+        "name": "https://www.elastic.co/community/security",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-6-6-1-and-5-6-15-security-update/169077",
+        "name": "https://discuss.elastic.co/t/elastic-stack-6-6-1-and-5-6-15-security-update/169077",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-8131",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-12-07T20:59Z",
+    "lastModifiedDate": "2020-10-19T11:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site request forgery (CSRF) vulnerability in Elasticsearch Kibana before 4.1.3 and 4.2.x before 4.2.1 allows remote attackers to hijack the authentication of unspecified victims via unknown vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.elastic.co/community/security/",
+        "name": "https://www.elastic.co/community/security/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/536935/100/0/threaded",
+        "name": "20151118 CVE-2015-8131: Kibana CSRF vulnerability",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-3827",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2018-09-19T19:29Z",
+    "lastModifiedDate": "2020-09-18T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A sensitive data disclosure flaw was found in the Elasticsearch repository-azure (formerly elasticsearch-cloud-azure) plugin. When the repository-azure plugin is set to log at TRACE level Azure credentials can be inadvertently logged."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.elastic.co/community/security",
+        "name": "https://www.elastic.co/community/security",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-6-3-0-and-5-6-10-security-update/135777",
+        "name": "https://discuss.elastic.co/t/elastic-stack-6-3-0-and-5-6-10-security-update/135777",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7019",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2020-08-18T17:15Z",
+    "lastModifiedDate": "2020-08-27T11:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Elasticsearch before 7.9.0 and 6.8.12 a field disclosure flaw was found when running a scrolling search with Field Level Security. If a user runs the same query another more privileged user recently ran, the scrolling search can leak fields that should be hidden. This could result in an attacker gaining additional permissions against a restricted index."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://discuss.elastic.co/t/elastic-stack-7-9-0-and-6-8-12-security-update/245456",
+        "name": "https://discuss.elastic.co/t/elastic-stack-7-9-0-and-6-8-12-security-update/245456",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200827-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20200827-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18456",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-11-26T17:15Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in GitLab Community and Enterprise Edition 8.17 through 12.4 in the Search feature provided by Elasticsearch integration.. It has Insecure Permissions (issue 1 of 4)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://about.gitlab.com/blog/2019/10/30/security-release-gitlab-12-dot-4-dot-1-released/",
+        "name": "https://about.gitlab.com/blog/2019/10/30/security-release-gitlab-12-dot-4-dot-1-released/",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://about.gitlab.com/blog/categories/releases/",
+        "name": "https://about.gitlab.com/blog/categories/releases/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-4093",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-06-15T15:59Z",
+    "lastModifiedDate": "2020-08-14T17:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site scripting (XSS) vulnerability in Elasticsearch Kibana 4.x before 4.0.3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://packetstormsecurity.com/files/132232/Kibana-4.0.2-Cross-Site-Scripting.html",
+        "name": "http://packetstormsecurity.com/files/132232/Kibana-4.0.2-Cross-Site-Scripting.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.elastic.co/community/security/",
+        "name": "https://www.elastic.co/community/security/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/75107",
+        "name": "75107",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/535726/100/0/threaded",
+        "name": "20150609 Kibana vulnerability CVE-2015-4093",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-7014",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2020-06-03T18:15Z",
+    "lastModifiedDate": "2020-06-19T11:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The fix for CVE-2020-7009 was found to be incomplete. Elasticsearch versions from 6.7.0 to 6.8.7 and 7.0.0 to 7.6.1 contain a privilege escalation flaw if an attacker is able to create API keys and also authentication tokens. An attacker who is able to generate an API key and an authentication token can perform a series of steps that result in an authentication token being generated with elevated privileges."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.elastic.co/community/security/",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200619-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20200619-0003/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  }
+]

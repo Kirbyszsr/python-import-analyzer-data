@@ -1,0 +1,21 @@
+{
+  "name": "pytest-forked",
+  "description": "pytest-forked: run each test in a forked subprocess\n====================================================\n\n\n.. warning::\n\n\tthis is a extraction of the xdist --forked module,\n\tfuture maintenance beyond the bare minimum is not planned until a new maintainer is found.\n\n\nThis plugin **does not work on Windows** because there's no ``fork`` support.\n\n\n* ``--forked``: run each test in a forked\n  subprocess to survive ``SEGFAULTS`` or otherwise dying processes.\n\n\nInstallation\n-----------------------\n\nInstall the plugin with::\n\n    pip install pytest-forked\n\nor use the package in develope/in-place mode with\na checkout of the `pytest-forked repository`_ ::\n\n   pip install -e .\n\n\nUsage examples\n---------------------\n\nIf you have tests involving C or C++ libraries you might have to deal\nwith tests crashing the process.  For this case you may use the boxing\noptions::\n\n    pytest --forked\n\nwhich will run each test in a subprocess and will report if a test\ncrashed the process.  You can also combine this option with\nrunning multiple processes via pytest-xdist to speed up the test run\nand use your CPU cores::\n\n    pytest -n3 --forked\n\nthis would run 3 testing subprocesses in parallel which each\ncreate new forked subprocesses for each test.\n\n\nYou can also fork for individual tests::\n\n    @pytest.mark.forked\n    def test_with_leaky_state():\n        run_some_monkey_patches()\n\n\nThis test will be unconditionally boxed, regardless of CLI flag.\n\n\n.. _`pytest-forked repository`: https://github.com/pytest-dev/pytest-forked\n\n\n",
+  "requires_dist": [
+    "py",
+    "pytest (>=3.10)"
+  ],
+  "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+  "current_version": "1.3.0",
+  "released_versions": [
+    "0.2",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1",
+    "1.1.2",
+    "1.1.3",
+    "1.2.0",
+    "1.3.0"
+  ]
+}

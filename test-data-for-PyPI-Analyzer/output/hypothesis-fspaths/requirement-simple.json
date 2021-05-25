@@ -1,0 +1,10 @@
+{
+  "name": "hypothesis-fspaths",
+  "description": "******************\nhypothesis-fspaths\n******************\n\n`Hypothesis <https://hypothesis.readthedocs.io/en/latest/>`_ extension for\ngenerating filesystem paths. Anything the built-in Python function ``open()``\naccepts can be generated.\n\nExample\n=======\n\n.. code:: python\n\n    from hypothesis import given\n    from hypothesis_fspaths import fspaths\n\n    @given(fspaths())\n    def test_open_file(path):\n        try:\n            open(path).close()\n        except IOError:\n            pass\n\n\n.. image:: https://travis-ci.org/lazka/hypothesis-fspaths.svg?branch=master\n    :target: https://travis-ci.org/lazka/hypothesis-fspaths\n",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "0.1",
+  "released_versions": [
+    "0.1"
+  ]
+}

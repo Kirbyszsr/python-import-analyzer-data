@@ -1,0 +1,30 @@
+{
+  "name": "pytest-flake8",
+  "description": "pytest plugin for efficiently checking PEP8 compliance \n======================================================\n\n.. image:: https://img.shields.io/pypi/v/pytest-flake8.svg\n    :target: https://pypi.python.org/pypi/pytest-flake8\n\n.. image:: https://img.shields.io/pypi/pyversions/pytest-flake8.svg\n    :target: https://pypi.python.org/pypi/pytest-flake8\n\n.. image:: https://img.shields.io/pypi/implementation/pytest-flake8.svg\n    :target: https://pypi.python.org/pypi/pytest-flake8\n\n.. image:: https://img.shields.io/pypi/status/pytest-flake8.svg\n    :target: https://pypi.python.org/pypi/pytest-flake8\n\n.. image:: https://travis-ci.org/tholo/pytest-flake8.svg?branch=master\n    :target: https://travis-ci.org/tholo/pytest-flake8\n\n.. image:: https://img.shields.io/github/issues/tholo/pytest-flake8.svg\n    :target: https://github.com/tholo/pytest-flake8/issues\n\n.. image:: https://img.shields.io/github/issues-pr/tholo/pytest-flake8.svg\n    :target: https://github.com/tholo/pytest-flake8/pulls\n\nUsage\n-----\n\nInstall by running the command::\n\n    pip install pytest-flake8\n\nAfter installing it, when you run tests with the option::\n\n    pytest --flake8\n\nevery file ending in ``.py`` will be discovered and checked with\nflake8.\n\n.. note::\n\n    If optional flake8 plugins are installed, those will\n    be used automatically. No provisions have been made for\n    configuring these via `pytest`_.\n\n.. warning::\n\n    Running flake8 tests on your project is likely to cause a number \n    of issues. The plugin allows one to configure on a per-project and\n    per-file basis which errors or warnings to ignore, see\n    flake8-ignore_.\n\n.. _flake8-ignore:\n\nConfiguring FLAKE8 options per project and file\n-----------------------------------------------\n\nMaximum line length can be configured for the whole project\nby adding a ``flake8-max-line-length`` option to your ``setup.cfg``\nor ``tox.ini`` file like this::\n\n    # content of setup.cfg\n    [tool:pytest]\n    flake8-max-line-length = 99\n\nNote that the default will be what naturally comes with `flake8`_\n(which it turn gets its default from `pycodestyle`_).\n\nYou may configure flake8-checking options for your project\nby adding an ``flake8-ignore`` entry to your ``setup.cfg``\nor ``tox.ini`` file like this::\n\n    # content of setup.cfg\n    [tool:pytest]\n    flake8-ignore = E201 E231\n\nThis would globally prevent complaints about two whitespace issues.\nRerunning with the above example will now look better::\n\n    $ pytest -q  --flake8\n    collecting ... collected 1 items\n    .\n    1 passed in 0.01 seconds\n\nIf you have some files where you want to specifically ignore \nsome errors or warnings you can start a flake8-ignore line with \na glob-pattern and a space-separated list of codes::\n\n    # content of setup.cfg\n    [tool:pytest]\n    flake8-ignore = \n        *.py E201\n        doc/conf.py ALL\n\nSo if you have a conf.py like this::\n\n    # content of doc/conf.py\n\n    func (  [1,2,3]) #this line lots PEP8 errors :)\n\nthen running again with the previous example will show a single\nfailure and it will ignore doc/conf.py alltogether::\n\n    $ pytest --flake8 -v # verbose shows what is ignored\n    ======================================= test session starts ========================================\n    platform darwin -- Python 2.7.6 -- py-1.4.26 -- pytest-2.7.0 -- /Users/tholo/Source/pytest/bin/python\n    cachedir: /Users/tholo/Source/pytest/src/verify/.cache\n    rootdir: /Users/tholo/Source/angular/src/verify, inifile: setup.cfg\n    plugins: flake8, cache\n    collected 1 items\n\n    myfile.py PASSED\n\n    ========================================= 1 passed in 0.00 seconds =========================================\n\nNote that doc/conf.py was not considered or imported.\n\nFAQs\n-----\n\nAll the flake8 tests are skipping!\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nThis is by design.  Clean flake8 results are cached and, unless the file is modified, not tested again.\n\nYou can run with ``pytest --cache-clear --flake8`` to override this.\n\nNotes\n-----\n\nThe repository of this plugin is at https://github.com/tholo/pytest-flake8\n\nFor more info on `pytest`_ see http://pytest.org\n\nThe code is partially based on Ronny Pfannschmidt's `pytest-codecheckers`_ plugin.\n\n.. _`pytest`: http://pytest.org\n.. _`flake8`: https://pypi.python.org/pypi/flake8\n.. _`pycodestyle`: https://pypi.python.org/pypi/pycodestyle\n.. _`pytest-codecheckers`: https://pypi.python.org/pypi/pytest-codecheckers\n\n\n",
+  "requires_dist": [
+    "flake8 (>=3.5)",
+    "pytest (>=3.5)"
+  ],
+  "requires_python": "",
+  "current_version": "1.0.7",
+  "released_versions": [
+    "0.1",
+    "0.2",
+    "0.3",
+    "0.4",
+    "0.5",
+    "0.6",
+    "0.7",
+    "0.8.1",
+    "0.9",
+    "0.9.1",
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.0.3",
+    "1.0.4",
+    "1.0.5",
+    "1.0.6",
+    "1.0.7"
+  ]
+}

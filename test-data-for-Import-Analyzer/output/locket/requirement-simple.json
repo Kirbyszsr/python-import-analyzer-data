@@ -1,0 +1,13 @@
+{
+  "name": "locket",
+  "description": "locket.py\n=========\n\nLocket implements a lock that can be used by multiple processes provided they use the same path.\n\n.. code-block:: python\n\n    import locket\n\n    # Wait for lock\n    with locket.lock_file(\"path/to/lock/file\"):\n        perform_action()\n\n    # Raise error if lock cannot be acquired immediately\n    with locket.lock_file(\"path/to/lock/file\", timeout=0):\n        perform_action()\n\n    # Raise error if lock cannot be acquired after thirty seconds\n    with locket.lock_file(\"path/to/lock/file\", timeout=30):\n        perform_action()\n\n    # Without context managers:\n    lock = locket.lock_file(\"path/to/lock/file\")\n    try:\n        lock.acquire()\n        perform_action()\n    finally:\n        lock.release()\n\nLocks largely behave as (non-reentrant) ``Lock`` instances from the ``threading``\nmodule in the standard library. Specifically, their behaviour is:\n\n* Locks are uniquely identified by the file being locked,\n  both in the same process and across different processes.\n\n* Locks are either in a locked or unlocked state.\n\n* When the lock is unlocked, calling ``acquire()`` returns immediately and changes\n  the lock state to locked.\n\n* When the lock is locked, calling `acquire()` will block until the lock state\n  changes to unlocked, or until the timeout expires.\n\n* If a process holds a lock, any thread in that process can call ``release()`` to\n  change the state to unlocked.\n\n* Behaviour of locks after ``fork`` is undefined.\n\nInstallation\n------------\n\n.. code-block:: sh\n\n    pip install locket\n",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "0.2.1",
+  "released_versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.2.0",
+    "0.2.1"
+  ]
+}

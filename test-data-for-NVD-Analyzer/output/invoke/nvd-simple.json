@@ -1,0 +1,864 @@
+[
+  {
+    "cveID": "CVE-2021-31532",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-06T13:15Z",
+    "lastModifiedDate": "2021-05-06T13:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "NXP LPC55S6x microcontrollers (0A and 1B), i.MX RT500 (silicon rev B1 and B2), i.MX RT600 (silicon rev A0, B0), LPC55S6x, LPC55S2x, LPC552x (silicon rev 0A, 1B), and LPC55S1x, LPC551x (silicon rev 0A) include an undocumented ROM patch peripheral that allows unsigned, non-persistent modification of the internal ROM. The peripheral is accessible from any execution mode (secure/privileged, secure/unprivileged, non-secure/privileged, non-secure/unprivileged). The ROM includes a set of APIs intended for use by a secure application to perform flash and in-application programming (IAP) operations. An attacker may use the ROM patch peripheral to modify the implementation of these ROM APIs from a non-secure, unprivileged context. If a non-secure application can also cause the secure application to invoke these ROM APIs, this provides privilege escalation and arbitrary code execution."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://oxide.computer/blog/lpc55/",
+        "name": "https://oxide.computer/blog/lpc55/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.nxp.com",
+        "name": "https://www.nxp.com",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-23975",
+    "cveASSIGNER": "security@mozilla.org",
+    "publishedDate": "2021-02-26T02:15Z",
+    "lastModifiedDate": "2021-05-01T02:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The developer page about:memory has a Measure function for exploring what object types the browser has allocated and their sizes. When this function was invoked we incorrectly called the sizeof function, instead of using the API method that checks for invalid pointers. This vulnerability affects Firefox < 86."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1685145",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=1685145",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Permissions Required",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.mozilla.org/security/advisories/mfsa2021-07/",
+        "name": "https://www.mozilla.org/security/advisories/mfsa2021-07/",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202104-10",
+        "name": "GLSA-202104-10",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-17068",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-12-06T19:29Z",
+    "lastModifiedDate": "2021-04-28T17:08Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A cross-origin vulnerability has been discovered in the Auth0 auth0.js library affecting versions < 8.12. This vulnerability allows an attacker to acquire authenticated users' tokens and invoke services on a user's behalf if the target site or application uses a popup callback page with auth0.popup.callback()."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://auth0.com/docs/security/bulletins/cve-2017-17068",
+        "name": "https://auth0.com/docs/security/bulletins/cve-2017-17068",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://appcheck-ng.com/appcheck-discovers-vulnerability-auth0-library-cve-2017-17068/",
+        "name": "https://appcheck-ng.com/appcheck-discovers-vulnerability-auth0-library-cve-2017-17068/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21485",
+    "cveASSIGNER": "cna@sap.com",
+    "publishedDate": "2021-04-13T19:15Z",
+    "lastModifiedDate": "2021-04-21T01:50Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An unauthorized attacker may be able to entice an administrator to invoke telnet commands of an SAP NetWeaver Application Server for Java that allow the attacker to gain NTLM hashes of a privileged user."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=573801649",
+        "name": "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=573801649",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://launchpad.support.sap.com/#/notes/3001824",
+        "name": "https://launchpad.support.sap.com/#/notes/3001824",
+        "refsource": "MISC",
+        "tags": [
+          "Permissions Required"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-5326",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2016-05-13T10:59Z",
+    "lastModifiedDate": "2021-04-20T18:41Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Invoker Servlet on SAP NetWeaver Application Server Java platforms, possibly before 7.3, does not require authentication, which allows remote attackers to execute arbitrary code via an HTTP or HTTPS request, as exploited in the wild in 2013 through 2016, aka a \"Detour\" attack."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.onapsis.com/threat-report-tip-iceberg-wild-exploitation-cyber-attacks-sap-business-applications",
+        "name": "https://www.onapsis.com/threat-report-tip-iceberg-wild-exploitation-cyber-attacks-sap-business-applications",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.onapsis.com/research/publications/sap-security-in-depth-vol4-the-invoker-servlet-a-dangerous-detour-into-sap-java-solutions",
+        "name": "http://www.onapsis.com/research/publications/sap-security-in-depth-vol4-the-invoker-servlet-a-dangerous-detour-into-sap-java-solutions",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.us-cert.gov/ncas/alerts/TA16-132A",
+        "name": "TA16-132A",
+        "refsource": "CERT",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/48925",
+        "name": "48925",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://service.sap.com/sap/support/notes/1445998",
+        "name": "http://service.sap.com/sap/support/notes/1445998",
+        "refsource": "MISC",
+        "tags": [
+          "Permissions Required"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/90533",
+        "name": "90533",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-15949",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-09-05T17:15Z",
+    "lastModifiedDate": "2021-04-15T21:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Nagios XI before 5.6.6 allows remote command execution as root. The exploit requires access to the server as the nagios user, or access as the admin user via the web interface. The getprofile.sh script, invoked by downloading a system profile (profile.php?cmd=download), is executed as root via a passwordless sudo entry; the script executes check_plugin, which is owned by the nagios user. A user logged into Nagios XI with permissions to modify plugins, or the nagios user on the server, can modify the check_plugin executable and insert malicious commands to execute as root."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/jakgibb/nagiosxi-root-rce-exploit",
+        "name": "https://github.com/jakgibb/nagiosxi-root-rce-exploit",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/156676/Nagios-XI-Authenticated-Remote-Command-Execution.html",
+        "name": "http://packetstormsecurity.com/files/156676/Nagios-XI-Authenticated-Remote-Command-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/162158/Nagios-XI-getprofile.sh-Remote-Command-Execution.html",
+        "name": "http://packetstormsecurity.com/files/162158/Nagios-XI-getprofile.sh-Remote-Command-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-7682",
+    "cveASSIGNER": "security@suse.com",
+    "publishedDate": "2018-06-22T22:29Z",
+    "lastModifiedDate": "2021-04-09T16:04Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Micro Focus Solutions Business Manager versions prior to 11.4 allows a user to invoke SBM RESTful services across domains."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://help.serena.com/doc_center/sbm/ver11_4/sbm_release_notes.htm",
+        "name": "http://help.serena.com/doc_center/sbm/ver11_4/sbm_release_notes.htm",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-17916",
+    "cveASSIGNER": "ics-cert@hq.dhs.gov",
+    "publishedDate": "2018-11-02T13:29Z",
+    "lastModifiedDate": "2021-04-08T18:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "InduSoft Web Studio versions prior to 8.1 SP2, and InTouch Edge HMI (formerly InTouch Machine Edition) versions prior to 2017 SP2. A remote attacker could send a carefully crafted packet to exploit a stack-based buffer overflow vulnerability during tag, alarm, or event related actions such as read and write, with potential for code to be executed. If InduSoft Web Studio remote communication security was not enabled, or a password was left blank, a remote user could send a carefully crafted packet to invoke an arbitrary process, with potential for code to be executed. The code would be executed under the privileges of the InduSoft Web Studio or InTouch Edge HMI runtime and could lead to a compromise of the InduSoft Web Studio or InTouch Edge HMI server machine."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://ics-cert.us-cert.gov/advisories/ICSA-18-305-01",
+        "name": "https://ics-cert.us-cert.gov/advisories/ICSA-18-305-01",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/research/tra-2018-34",
+        "name": "https://www.tenable.com/security/research/tra-2018-34",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-20206",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-03-26T22:15Z",
+    "lastModifiedDate": "2021-04-02T13:49Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An improper limitation of path name flaw was found in containernetworking/cni in versions before 0.8.1. When specifying the plugin to load in the 'type' field in the network configuration, it is possible to use special elements such as \"../\" separators to reference binaries elsewhere on the system. This flaw allows an attacker to execute other existing binaries other than the cni plugins/types, such as 'reboot'. The highest threat from this vulnerability is to confidentiality, integrity, as well as system availability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1919391",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1919391",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://snyk.io/vuln/SNYK-GOLANG-GITHUBCOMCONTAINERNETWORKINGCNIPKGINVOKE-1070549",
+        "name": "https://snyk.io/vuln/SNYK-GOLANG-GITHUBCOMCONTAINERNETWORKINGCNIPKGINVOKE-1070549",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28375",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-15T05:15Z",
+    "lastModifiedDate": "2021-04-01T08:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in the Linux kernel through 5.11.6. fastrpc_internal_invoke in drivers/misc/fastrpc.c does not prevent user applications from sending kernel RPC messages, aka CID-20c40794eb85. This is a related issue to CVE-2019-2308."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lore.kernel.org/stable/YD03ew7+6v0XPh6l@kroah.com/",
+        "name": "https://lore.kernel.org/stable/YD03ew7+6v0XPh6l@kroah.com/",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/linus/20c40794eb85ea29852d7bc37c55713802a543d6",
+        "name": "https://git.kernel.org/linus/20c40794eb85ea29852d7bc37c55713802a543d6",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OMRQVOTASD3VZP6GE4JJHE27QU6FHTZ6/",
+        "name": "FEDORA-2021-90083c9c0f",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TJPVQZPY3DHPV5I3IVNMSMO6D3PKZISX/",
+        "name": "FEDORA-2021-bb755ed5e3",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XAUNYDTGE6MB4NWL2SIHPCODCLET3JZB/",
+        "name": "FEDORA-2021-14f6642aa6",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210401-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20210401-0003/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-25592",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-11-06T08:15Z",
+    "lastModifiedDate": "2021-03-30T13:48Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In SaltStack Salt through 3002, salt-netapi improperly validates eauth credentials and tokens. A user can bypass authentication and invoke Salt SSH."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://docs.saltstack.com/en/latest/topics/releases/index.html",
+        "name": "https://docs.saltstack.com/en/latest/topics/releases/index.html",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.saltstack.com/blog/on-november-3-2020-saltstack-publicly-disclosed-three-new-cves/",
+        "name": "https://www.saltstack.com/blog/on-november-3-2020-saltstack-publicly-disclosed-three-new-cves/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TPOGB2F6XUAIGFDTOCQDNB2VIXFXHWMA/",
+        "name": "FEDORA-2020-9e040bd6dd",
+        "refsource": "FEDORA",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-11/msg00029.html",
+        "name": "openSUSE-SU-2020:1868",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202011-13",
+        "name": "GLSA-202011-13",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/160039/SaltStack-Salt-REST-API-Arbitrary-Command-Execution.html",
+        "name": "http://packetstormsecurity.com/files/160039/SaltStack-Salt-REST-API-Arbitrary-Command-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/12/msg00007.html",
+        "name": "[debian-lts-announce] 20201204 [SECURITY] [DLA 2480-1] salt security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4837",
+        "name": "DSA-4837",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2002-0654",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2002-09-05T04:00Z",
+    "lastModifiedDate": "2021-03-30T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache 2.0 through 2.0.39 on Windows, OS2, and Netware allows remote attackers to determine the full pathname of the server via (1) a request for a .var file, which leaks the pathname in the resulting error message, or (2) via an error message that occurs when a script (child process) cannot be invoked."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.apache.org/dist/httpd/CHANGES_2.0",
+        "name": "http://www.apache.org/dist/httpd/CHANGES_2.0",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5486",
+        "name": "5486",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5485",
+        "name": "5485",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.iss.net/security_center/static/9875.php",
+        "name": "apache-var-path-disclosure(9875)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.iss.net/security_center/static/9876.php",
+        "name": "apache-cgi-path-disclosure(9876)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=bugtraq&m=102951160411052&w=2",
+        "name": "20020816 Apache 2.0.39 directory traversal and path disclosure bug",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/5df9bfb86a3b054bb985a45ff9250b0332c9ecc181eec232489e7f79@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048743 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/54a42d4b01968df1117cea77fc53d6beb931c0e05936ad02af93e9ac@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20190815 svn commit: r1048742 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0276683d8e1e07153fc8642618830ac0ade85b9ae0dc7b07f63bb8fc@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058586 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8828e649175df56f1f9e3919938ac7826128525426e2748f0ab62feb@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20200401 svn commit: r1058587 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/vulnerabilities-httpd.xml security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2cb985de917e7da0848c440535f65a247754db8b2154a10089e4247b@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073140 [2/4] - in /websites/staging/httpd/trunk/content: ./ security/cvejsontohtml.py security/vulnerabilities_13.html security/vulnerabilities_20.html security/vulnerabilities_22.html security/vulnerabilities_24.html",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E",
+        "name": "[httpd-cvs] 20210330 svn commit: r1073139 [1/13] - in /websites/staging/httpd/trunk/content: ./ security/json/",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11986",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-09-09T16:15Z",
+    "lastModifiedDate": "2021-03-25T23:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "To be able to analyze gradle projects, the build scripts need to be executed. Apache NetBeans follows this pattern. This causes the code of the build script to be invoked at load time of the project. Apache NetBeans up to and including 12.0 did not request consent from the user for the analysis of the project at load time. This in turn will run potentially malicious code, from an external source, without the consent of the user."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/rbb8ea1b684e73107a0a6a30245ad6112bec2e6e171368c808e69217e%40%3Cannounce.netbeans.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/rbb8ea1b684e73107a0a6a30245ad6112bec2e6e171368c808e69217e%40%3Cannounce.netbeans.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra81cdcf325bf4ea085c178f95ed6b50d4f1c095be50577b2f9b88984@%3Cnotifications.netbeans.apache.org%3E",
+        "name": "[netbeans-notifications] 20210322 [GitHub] [netbeans] jtulach edited a comment on pull request #2822: Offer to trust and prime the project when it is being opened.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0fb2ba21a0469f64c2dff945dbe68f7b1122e1bff2b2b46271682406@%3Cnotifications.netbeans.apache.org%3E",
+        "name": "[netbeans-notifications] 20210322 [GitHub] [netbeans] jtulach commented on pull request #2822: Offer to trust and prime the project when it is being opened.",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28119",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-09T23:15Z",
+    "lastModifiedDate": "2021-03-18T15:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Twinkle Tray (aka twinkle-tray) through 1.13.3 allows remote command execution. A remote attacker may send a crafted IPC message to the exposed vulnerable ipcRenderer IPC interface, which invokes the dangerous openExternal API."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/xanderfrangos/twinkle-tray/issues/142",
+        "name": "https://github.com/xanderfrangos/twinkle-tray/issues/142",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-28134",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-11T00:15Z",
+    "lastModifiedDate": "2021-03-17T20:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Clipper before 1.0.5 allows remote command execution. A remote attacker may send a crafted IPC message to the exposed vulnerable ipcRenderer IPC interface, which invokes the dangerous openExternal API."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/AkashRajpurohit/clipper/releases/tag/v1.0.5",
+        "name": "https://github.com/AkashRajpurohit/clipper/releases/tag/v1.0.5",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/AkashRajpurohit/clipper/pull/14/commits/28f1492a12234cf1e6af85c78bf22ee2f5090d19",
+        "name": "https://github.com/AkashRajpurohit/clipper/pull/14/commits/28f1492a12234cf1e6af85c78bf22ee2f5090d19",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/AkashRajpurohit/clipper/issues/13",
+        "name": "https://github.com/AkashRajpurohit/clipper/issues/13",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/AkashRajpurohit/clipper/pull/14",
+        "name": "https://github.com/AkashRajpurohit/clipper/pull/14",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24033",
+    "cveASSIGNER": "cve-assign@fb.com",
+    "publishedDate": "2021-03-09T01:15Z",
+    "lastModifiedDate": "2021-03-16T18:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "react-dev-utils prior to v11.0.4 exposes a function, getProcessForPort, where an input argument is concatenated into a command string to be executed. This function is typically used from react-scripts (in Create React App projects), where the usage is safe. Only when this function is manually invoked with user-provided values (ie: by custom code) is there the potential for command injection. If you're consuming it from react-scripts then this issue does not affect you."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.facebook.com/security/advisories/cve-2021-24033",
+        "name": "https://www.facebook.com/security/advisories/cve-2021-24033",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/facebook/create-react-app/pull/10644",
+        "name": "https://github.com/facebook/create-react-app/pull/10644",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-10926",
+    "cveASSIGNER": "productcert@siemens.com",
+    "publishedDate": "2019-06-12T14:29Z",
+    "lastModifiedDate": "2021-03-15T18:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability has been identified in SIMATIC MV400 family (All Versions < V7.0.6). Communication with the device is not encrypted. Data transmitted between the device and the user can be obtained by an attacker in a privileged network position. The security vulnerability can be exploited by an attacker in a privileged network position which allows eavesdropping the communication between the affected device and the user. The user must invoke a session. Successful exploitation of the vulnerability compromises confidentiality of the data transmitted."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-816980.pdf",
+        "name": "https://cert-portal.siemens.com/productcert/pdf/ssa-816980.pdf",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://ics-cert.us-cert.gov/advisories/ICSA-19-162-02",
+        "name": "https://ics-cert.us-cert.gov/advisories/ICSA-19-162-02",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/108725",
+        "name": "108725",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-26705",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-03-05T19:15Z",
+    "lastModifiedDate": "2021-03-13T00:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in SquareBox CatDV Server through 9.2. An attacker can invoke sensitive RMI methods such as getConnections without authentication, the results of which can be used to generate valid authentication tokens. These tokens can then be used to invoke administrative tasks within the application, such as disclosing password hashes."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.exploit-db.com/exploits/49621",
+        "name": "https://www.exploit-db.com/exploits/49621",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-25630",
+    "cveASSIGNER": "security@documentfoundation.org",
+    "publishedDate": "2021-02-23T16:15Z",
+    "lastModifiedDate": "2021-02-27T03:04Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "\"loolforkit\" is a privileged program that is supposed to be run by a special, non-privileged \"lool\" user. Before doing anything else \"loolforkit\" checks, if it was invoked by the \"lool\" user, and refuses to run with privileges, if it's not the case. In the vulnerable version of \"loolforkit\" this check was wrong, so a normal user could start \"loolforkit\" and eventually get local root privileges."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openwall.com/lists/oss-security/2021/01/18/3",
+        "name": "https://www.openwall.com/lists/oss-security/2021/01/18/3",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/CollaboraOnline/online/security/advisories/GHSA-49w3-gr3w-m68v",
+        "name": "https://github.com/CollaboraOnline/online/security/advisories/GHSA-49w3-gr3w-m68v",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-10228",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-03-02T01:59Z",
+    "lastModifiedDate": "2021-02-25T17:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The iconv program in the GNU C Library (aka glibc or libc6) 2.31 and earlier, when invoked with multiple suffixes in the destination encoding (TRANSLATE or IGNORE) along with the -c option, enters an infinite loop when processing invalid multi-byte input sequences, leading to a denial of service."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2017/03/01/10",
+        "name": "http://openwall.com/lists/oss-security/2017/03/01/10",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/96525",
+        "name": "96525",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=26224",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=26224",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202101-20",
+        "name": "GLSA-202101-20",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+        "name": "[mina-dev] 20210225 [jira] [Created] (FTPSERVER-500) Security vulnerability in common/lib/log4j-1.2.17.jar",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  }
+]

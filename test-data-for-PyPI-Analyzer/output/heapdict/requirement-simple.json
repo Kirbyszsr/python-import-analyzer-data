@@ -1,0 +1,16 @@
+{
+  "name": "heapdict",
+  "description": "heapdict: a heap with decreased-key and increase-key operations\n===============================================================\n\nheapdict implements the MutableMapping ABC, meaning it works pretty\nmuch like a regular Python dict.  It's designed to be used as a\npriority queue, where items are added and consumed as follows:\n\n::\n\n    hd = heapdict()\n    hd[obj1] = priority1\n    hd[obj2] = priority2\n    # ...\n    (obj, priority) = hd.popitem()\n\nCompared to an ordinary dict, a heapdict has the following differences:\n\npopitem():\n    Remove and return the (key, priority) pair with the lowest\n    priority, instead of a random object.\n\npeekitem():\n    Return the (key, priority) pair with the lowest priority, without\n    removing it.\n\nUnlike the Python standard library's heapq module, the heapdict\nsupports efficiently changing the priority of an existing object\n(often called \"decrease-key\" in textbooks).  Altering the priority is\nimportant for many algorithms such as Dijkstra's Algorithm and A*.\n\n\n\n",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "1.0.1",
+  "released_versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "0.1.4",
+    "0.1.5",
+    "1.0.0",
+    "1.0.1"
+  ]
+}

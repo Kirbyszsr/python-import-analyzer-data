@@ -1,0 +1,32 @@
+{
+  "name": "lunr",
+  "description": "[![Build Status](https://github.com/yeraydiazdiaz/lunr.py/workflows/CI/badge.svg?branch=master)](https://github.com/yeraydiazdiaz/lunr.py/actions?workflow=CI)\n[![codecov](https://codecov.io/gh/yeraydiazdiaz/lunr.py/branch/master/graph/badge.svg)](https://codecov.io/gh/yeraydiazdiaz/lunr.py)\n[![Supported Python Versions](https://img.shields.io/pypi/pyversions/lunr.svg)](https://pypi.org/project/lunr/)\n[![PyPI](https://img.shields.io/pypi/v/lunr.svg)](https://pypi.org/project/lunr/)\n[![Read the Docs](https://img.shields.io/readthedocs/lunr.svg)](http://lunr.readthedocs.io/en/latest/)\n[![Downloads](http://pepy.tech/badge/lunr)](http://pepy.tech/project/lunr)\n\n# Lunr.py\n\nA Python implementation of [Lunr.js](https://lunrjs.com) by [Oliver Nightingale](https://github.com/olivernn).\n\n> A bit like Solr, but much smaller and not as bright.\n\nThis Python version of Lunr.js aims to bring the simple and powerful full text search\ncapabilities into Python guaranteeing results as close as the original\nimplementation as possible.\n\n- [Documentation](http://lunr.readthedocs.io/en/latest/)\n\n## What does this even do?\n\nLunr is a simple full text search solution for situations where deploying a full\nscale solution like Elasticsearch isn't possible, viable or you're simply prototyping.\nLunr parses a set of documents and creates an inverted index for quick full text\nsearches in the same way other more complicated solution.\n\nThe trade-off is that Lunr keeps the inverted index in memory and requires you\nto recreate or read the index at the start of your application.\n\n## Interoperability with Lunr.js\n\nA core objective of Lunr.py is to provide\n[interoperability with the JavaScript version](https://lunr.readthedocs.io/en/latest/lunrjs-interop).\n\nAn example can be found in the [MkDocs documentation library](http://www.mkdocs.org/).\nMkDocs produces a set of documents from the pages of the documentation and uses\n[Lunr.js](https://lunrjs.com) in the frontend to power its built-in searching\nengine. This set of documents is in the form of a JSON file which needs to be\nfetched and parsed by Lunr.js to create the inverted index at startup of your application.\n\nWhile this is not a problem for most sites, depending on the size of your document\nset, this can take some time.\n\nLunr.py provides a backend solution, allowing you to parse the documents in Python\nof time and create a serialized Lunr.js index you can pass have the browser\nversion read, minimizing start up time of your application.\n\nEach version of lunr.py\n[targets a specific version of lunr.js](https://github.com/yeraydiazdiaz/lunr.py/blob/master/lunr/__init__.py#L12)\nand produces the same results for a\n[non-trivial corpus of documents](https://github.com/yeraydiazdiaz/lunr.py/blob/master/tests/acceptance_tests/fixtures/mkdocs_index.json).\n\n## Installation\n\n`pip install lunr`\n\nAn optional and experimental support for other languages thanks to the\n[Natural Language Toolkit](http://www.nltk.org/) stemmers is also available via\n`pip install lunr[languages]`. The usage of the language feature is subject to\n[NTLK corpus licensing clauses](https://github.com/nltk/nltk#redistributing).\n\nPlease refer to the\n[documentation page on languages](https://lunr.readthedocs.io/en/latest/languages/)\nfor more information.\n\n## Usage\n\nFirst, you'll need a list of dicts representing the documents you want to search on.\nThese documents must have a unique field which will serve as a reference and a\nseries of fields you'd like to search on.\n\nLunr provides a convenience `lunr` function to quickly index this set of documents:\n\n```python\n>>> from lunr import lunr\n>>>\n>>> documents = [{\n...     'id': 'a',\n...     'title': 'Mr. Green kills Colonel Mustard',\n...     'body': 'Mr. Green killed Colonel Mustard in the study with the candlestick.',\n... }, {\n...     'id': 'b',\n...     'title': 'Plumb waters plant',\n...     'body': 'Professor Plumb has a green plant in his study',\n... }]\n>>> idx = lunr(\n...     ref='id', fields=('title', 'body'), documents=documents\n... )\n>>> idx.search('kill')\n[{'ref': 'a', 'score': 0.6931722372559913, 'match_data': <MatchData \"kill\">}]\n>>> idx.search('study')\n[{'ref': 'b', 'score': 0.23576799568081389, 'match_data': <MatchData \"studi\">}, {'ref': 'a', 'score': 0.2236629211724517, 'match_data': <MatchData \"studi\">}]\n```\n\nPlease refer to the [documentation](http://lunr.readthedocs.io/en/latest/)\nfor more usage examples.\n\n\n",
+  "requires_dist": [
+    "nltk (<3.5,>=3.2.5) ; extra == 'languages'"
+  ],
+  "requires_python": ">=3.6",
+  "current_version": "0.6.0",
+  "released_versions": [
+    "0.1.1a1",
+    "0.1.2",
+    "0.2.0",
+    "0.2.1",
+    "0.2.2",
+    "0.2.3",
+    "0.3.0",
+    "0.4.0",
+    "0.4.1",
+    "0.4.2",
+    "0.4.3",
+    "0.5.1",
+    "0.5.2",
+    "0.5.3",
+    "0.5.4",
+    "0.5.5",
+    "0.5.6",
+    "0.5.7",
+    "0.5.8",
+    "0.5.9",
+    "0.6.0"
+  ]
+}

@@ -1,0 +1,642 @@
+[
+  {
+    "cveID": "CVE-2021-23841",
+    "cveASSIGNER": "openssl-security@openssl.org",
+    "publishedDate": "2021-02-16T17:15Z",
+    "lastModifiedDate": "2021-05-25T01:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The OpenSSL public API function X509_issuer_and_serial_hash() attempts to create a unique hash value based on the issuer and serial number data contained within an X509 certificate. However it fails to correctly handle any errors that may occur while parsing the issuer field (which might occur if the issuer field is maliciously constructed). This may subsequently result in a NULL pointer deref and a crash leading to a potential denial of service attack. The function X509_issuer_and_serial_hash() is never directly called by OpenSSL itself so applications are only vulnerable if they use this function directly and they use it on certificates that may have been obtained from untrusted sources. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x)."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.openssl.org/news/secadv/20210216.txt",
+        "name": "https://www.openssl.org/news/secadv/20210216.txt",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8252ee4d90f3f2004d3d0aeeed003ad49c9a7807",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8252ee4d90f3f2004d3d0aeeed003ad49c9a7807",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=122a19ab48091c657f7cb1fb3af9fc07bd557bbf",
+        "name": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=122a19ab48091c657f7cb1fb3af9fc07bd557bbf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4855",
+        "name": "DSA-4855",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210219-0009/",
+        "name": "https://security.netapp.com/advisory/ntap-20210219-0009/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-03",
+        "name": "https://www.tenable.com/security/tns-2021-03",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "name": "GLSA-202103-03",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://www.tenable.com/security/tns-2021-09",
+        "name": "https://www.tenable.com/security/tns-2021-09",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210513-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212529",
+        "name": "https://support.apple.com/kb/HT212529",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212528",
+        "name": "https://support.apple.com/kb/HT212528",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://support.apple.com/kb/HT212534",
+        "name": "https://support.apple.com/kb/HT212534",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-24191",
+    "cveASSIGNER": "contact@wpscan.com",
+    "publishedDate": "2021-05-14T12:15Z",
+    "lastModifiedDate": "2021-05-24T20:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Low privileged users can use the AJAX action 'cp_plugins_do_button_job_later_callback' in the WP Maintenance Mode & Site Under Construction WordPress plugin before 1.8.2, to install any plugin (including a specific version) from the WordPress repository, as well as activate arbitrary plugin from then blog, which helps attackers install vulnerable plugins and could lead to more critical vulnerabilities like RCE."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://wpscan.com/vulnerability/74889e29-5349-43d1-baf5-1622493be90c",
+        "name": "https://wpscan.com/vulnerability/74889e29-5349-43d1-baf5-1622493be90c",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-33509",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-21T22:15Z",
+    "lastModifiedDate": "2021-05-24T18:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Plone through 5.2.4 allows remote authenticated managers to perform disk I/O via crafted keyword arguments to the ReStructuredText transform in a Python script."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://plone.org/security/hotfix/20210518/writing-arbitrary-files-via-docutils-and-python-script",
+        "name": "https://plone.org/security/hotfix/20210518/writing-arbitrary-files-via-docutils-and-python-script",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/05/22/1",
+        "name": "[oss-security] 20210522 Re: Plone security hotfix 20210518",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32624",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-24T17:15Z",
+    "lastModifiedDate": "2021-05-24T17:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Keystone 5 is an open source CMS platform to build Node.js applications. This security advisory relates to a newly discovered capability in our query infrastructure to directly or indirectly expose the values of private fields, bypassing the configured access control. This is an access control related oracle attack in that the attack method guides an attacker during their attempt to reveal information they do not have access to. The complexity of completing the attack is limited by some length-dependent behaviors and the fidelity of the exposed information. Under some circumstances, field values or field value meta data can be determined, despite the field or list having `read` access control configured. If you use private fields or lists, you may be impacted. No patches exist at this time. There are no workarounds at this time"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/keystonejs/keystone-5/security/advisories/GHSA-27g8-r9vw-765x",
+        "name": "https://github.com/keystonejs/keystone-5/security/advisories/GHSA-27g8-r9vw-765x",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32629",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-24T16:15Z",
+    "lastModifiedDate": "2021-05-24T16:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cranelift is an open-source code generator maintained by Bytecode Alliance. It translates a target-independent intermediate representation into executable machine code. There is a bug in 0.73 of the Cranelift x64 backend that can create a scenario that could result in a potential sandbox escape in a Wasm program. This bug was introduced in the new backend on 2020-09-08 and first included in a release on 2020-09-30, but the new backend was not the default prior to 0.73. The recently-released version 0.73 with default settings, and prior versions with an explicit build flag to select the new backend, are vulnerable. The bug in question performs a sign-extend instead of a zero-extend on a value loaded from the stack, under a specific set of circumstances. If those circumstances occur, the bug could allow access to memory addresses upto 2GiB before the start of the Wasm program heap. If the heap bound is larger than 2GiB, then it would be possible to read memory from a computable range dependent on the size of the heaps bound. The impact of this bug is highly dependent on heap implementation, specifically: * if the heap has bounds checks, and * does not rely exclusively on guard pages, and * the heap bound is 2GiB or smaller * then this bug cannot be used to reach memory from another Wasm program heap. The impact of the vulnerability is mitigated if there is no memory mapped in the range accessible using this bug, for example, if there is a 2 GiB guard region before the Wasm program heap. The bug in question performs a sign-extend instead of a zero-extend on a value loaded from the stack, when the register allocator reloads a spilled integer value narrower than 64 bits. This interacts poorly with another optimization: the instruction selector elides a 32-to-64-bit zero-extend operator when we know that an instruction producing a 32-bit value actually zeros the upper 32 bits of its destination register. Hence, we rely on these zeroed bits, but the type of the value is still i32, and the spill/reload reconstitutes those bits as the sign extension of the i32\u2019s MSB. The issue would thus occur when: * An i32 value in a Wasm program is greater than or equal to 0x8000_0000; * The value is spilled and reloaded by the register allocator due to high register pressure in the program between the value\u2019s definition and its use; * The value is produced by an instruction that we know to be \u201cspecial\u201d in that it zeroes the upper 32 bits of its destination: add, sub, mul, and, or; * The value is then zero-extended to 64 bits in the Wasm program; * The resulting 64-bit value is used. Under these circumstances there is a potential sandbox escape when the i32 value is a pointer. The usual code emitted for heap accesses zero-extends the Wasm heap address, adds it to a 64-bit heap base, and accesses the resulting address. If the zero-extend becomes a sign-extend, the program could reach backward and access memory up to 2GiB before the start of its heap. In addition to assessing the nature of the code generation bug in Cranelift, we have also determined that under specific circumstances, both Lucet and Wasmtime using this version of Cranelift may be exploitable. See referenced GitHub Advisory for more details."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/bytecodealliance/wasmtime/commit/95559c01aaa7c061088a433040f31e8291fb09d0",
+        "name": "https://github.com/bytecodealliance/wasmtime/commit/95559c01aaa7c061088a433040f31e8291fb09d0",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hpqh-2wqx-7qp5",
+        "name": "https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hpqh-2wqx-7qp5",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://www.fastly.com/security-advisories/memory-access-due-to-code-generation-flaw-in-cranelift-module",
+        "name": "https://www.fastly.com/security-advisories/memory-access-due-to-code-generation-flaw-in-cranelift-module",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://crates.io/crates/cranelift-codegen",
+        "name": "https://crates.io/crates/cranelift-codegen",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-4670",
+    "cveASSIGNER": "psirt@us.ibm.com",
+    "publishedDate": "2021-05-17T17:15Z",
+    "lastModifiedDate": "2021-05-24T15:10Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "IBM Planning Analytics Local 2.0 connects to a Redis server. The Redis server, an in-memory data structure store, running on the remote host is not protected by password authentication. A remote attacker can exploit this to gain unauthorized access to the server. IBM X-Force ID: 186401."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.ibm.com/support/pages/node/6436821",
+        "name": "https://www.ibm.com/support/pages/node/6436821",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/186401",
+        "name": "ibm-planning-cve20204670-data-manipulation (186401)",
+        "refsource": "XF",
+        "tags": [
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-33026",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-13T23:15Z",
+    "lastModifiedDate": "2021-05-24T14:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Flask-Caching extension through 1.10.1 for Flask relies on Pickle for serialization, which may lead to remote code execution or local privilege escalation. If an attacker gains access to cache storage (e.g., filesystem, Memcached, Redis, etc.), they can construct a crafted payload, poison the cache, and execute Python code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/sh4nks/flask-caching/pull/209",
+        "name": "https://github.com/sh4nks/flask-caching/pull/209",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-1306",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2021-05-22T07:15Z",
+    "lastModifiedDate": "2021-05-22T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the restricted shell of Cisco Evolved Programmable Network (EPN) Manager, Cisco Identity Services Engine (ISE), and Cisco Prime Infrastructure could allow an authenticated, local attacker to identify directories and write arbitrary files to the file system. This vulnerability is due to improper validation of parameters that are sent to a CLI command within the restricted shell. An attacker could exploit this vulnerability by logging in to the device and issuing certain CLI commands. A successful exploit could allow the attacker to identify file directories on the affected device and write arbitrary files to the file system on the affected device. To exploit this vulnerability, the attacker must be an authenticated shell user."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ade-xcvAQEOZ",
+        "name": "20210519 Cisco ADE-OS Local File Inclusion Vulnerability",
+        "refsource": "CISCO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-1487",
+    "cveASSIGNER": "psirt@cisco.com",
+    "publishedDate": "2021-05-22T07:15Z",
+    "lastModifiedDate": "2021-05-22T07:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the web-based management interface of Cisco Prime Infrastructure and Evolved Programmable Network (EPN) Manager could allow an authenticated, remote attacker to execute arbitrary commands on an affected system. The vulnerability is due to insufficient validation of user-supplied input to the web-based management interface. An attacker could exploit this vulnerability by sending crafted HTTP requests to the interface. A successful exploit could allow the attacker to execute arbitrary commands on the underlying operating system (OS) with the permissions of a special non-root user. In this way, an attacker could take control of the affected system, which would allow them to obtain and alter sensitive data. The attacker could also affect the devices that are managed by the affected system by pushing arbitrary configuration files, retrieving device credentials and confidential information, and ultimately undermining the stability of the devices, causing a denial of service (DoS) condition."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-pi-epnm-cmd-inj-YU5e6tB3",
+        "name": "20210519 Cisco Prime Infrastructure and Cisco Evolved Programmable Network Manager Command Injection Vulnerability",
+        "refsource": "CISCO",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-1891",
+    "cveASSIGNER": "product-security@qualcomm.com",
+    "publishedDate": "2021-05-07T09:15Z",
+    "lastModifiedDate": "2021-05-21T18:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A possible use-after-free occurrence in audio driver can happen when pointers are not properly handled in Snapdragon Auto, Snapdragon Compute, Snapdragon Connectivity, Snapdragon Consumer IOT, Snapdragon Industrial IOT, Snapdragon Mobile, Snapdragon Voice & Music, Snapdragon Wearables, Snapdragon Wired Infrastructure and Networking"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.qualcomm.com/company/product-security/bulletins/may-2021-bulletin",
+        "name": "https://www.qualcomm.com/company/product-security/bulletins/may-2021-bulletin",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31439",
+    "cveASSIGNER": "zdi-disclosures@trendmicro.com",
+    "publishedDate": "2021-05-21T15:15Z",
+    "lastModifiedDate": "2021-05-21T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Synology DiskStation Manager. Authentication is not required to exploit this vulnerablity. The specific flaw exists within the processing of DSI structures in Netatalk. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the current process. Was ZDI-CAN-12326."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-492/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-21-492/",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.synology.com/zh-hk/security/advisory/Synology_SA_20_26",
+        "name": "https://www.synology.com/zh-hk/security/advisory/Synology_SA_20_26",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31473",
+    "cveASSIGNER": "zdi-disclosures@trendmicro.com",
+    "publishedDate": "2021-05-21T15:15Z",
+    "lastModifiedDate": "2021-05-21T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit Reader 10.1.3.37598. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the browseForDoc function. The issue results from the lack of proper validation of user-supplied data, which can result in a write past the end of an allocated data structure. An attacker can leverage this vulnerability to execute code in the context of the current process. Was ZDI-CAN-13523."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.foxitsoftware.com/support/security-bulletins.php",
+        "name": "https://www.foxitsoftware.com/support/security-bulletins.php",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-561/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-21-561/",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-32051",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-14T01:15Z",
+    "lastModifiedDate": "2021-05-21T16:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Hexagon G!nius Auskunftsportal before 5.0.0.0 allows SQL injection via the GiPWorkflow/Service/DownloadPublicFile id parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://packetstormsecurity.com/files/162534/Hexagon-G-nius-Auskunftsportal-SQL-Injection.html",
+        "name": "http://packetstormsecurity.com/files/162534/Hexagon-G-nius-Auskunftsportal-SQL-Injection.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.hexagonsafetyinfrastructure.com/products/utilities-and-communications-products/advanced-utility-gis/hexagon-ginius",
+        "name": "https://www.hexagonsafetyinfrastructure.com/products/utilities-and-communications-products/advanced-utility-gis/hexagon-ginius",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://gist.githubusercontent.com/mke1985/a21a71098f48829916dfec74eff1e24a/raw/f635b060ad03e23fd887de48a79b70040daadadb/CVE-2021-32051",
+        "name": "https://gist.githubusercontent.com/mke1985/a21a71098f48829916dfec74eff1e24a/raw/f635b060ad03e23fd887de48a79b70040daadadb/CVE-2021-32051",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-31466",
+    "cveASSIGNER": "zdi-disclosures@trendmicro.com",
+    "publishedDate": "2021-05-07T21:15Z",
+    "lastModifiedDate": "2021-05-20T18:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "This vulnerability allows remote attackers to execute arbitrary code on affected installations of Foxit Reader 10.1.3.37598. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the handling of U3D objects in PDF files. The issue results from the lack of proper validation of user-supplied data, which can result in a read past the end of an allocated data structure. An attacker can leverage this vulnerability to execute code in the context of the current process. Was ZDI-CAN-13583."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-555/",
+        "name": "https://www.zerodayinitiative.com/advisories/ZDI-21-555/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.foxitsoftware.com/support/security-bulletins.php",
+        "name": "https://www.foxitsoftware.com/support/security-bulletins.php",
+        "refsource": "MISC",
+        "tags": [
+          "Not Applicable",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29521",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-20T17:19Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. Specifying a negative dense shape in `tf.raw_ops.SparseCountSparseOutput` results in a segmentation fault being thrown out from the standard library as `std::vector` invariants are broken. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/8f7b60ee8c0206a2c99802e3a4d1bb55d2bc0624/tensorflow/core/kernels/count_ops.cc#L199-L213) assumes the first element of the dense shape is always positive and uses it to initialize a `BatchedMap<T>` (i.e., `std::vector<absl::flat_hash_map<int64,T>>`(https://github.com/tensorflow/tensorflow/blob/8f7b60ee8c0206a2c99802e3a4d1bb55d2bc0624/tensorflow/core/kernels/count_ops.cc#L27)) data structure. If the `shape` tensor has more than one element, `num_batches` is the first value in `shape`. Ensuring that the `dense_shape` argument is a valid tensor shape (that is, all elements are non-negative) solves this issue. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/c57c0b9f3a4f8684f3489dd9a9ec627ad8b599f5",
+        "name": "https://github.com/tensorflow/tensorflow/commit/c57c0b9f3a4f8684f3489dd9a9ec627ad8b599f5",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hr84-fqvp-48mm",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hr84-fqvp-48mm",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29523",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-20T17:06Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in `tf.raw_ops.AddManySparseToTensorsMap`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/kernels/sparse_tensors_map_ops.cc#L257) takes the values specified in `sparse_shape` as dimensions for the output shape. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "name": "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29584",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-20T15:38Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in caused by an integer overflow in constructing a new tensor shape. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/0908c2f2397c099338b901b067f6495a5b96760b/tensorflow/core/kernels/sparse_split_op.cc#L66-L70) builds a dense shape without checking that the dimensions would not result in overflow. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xvjm-fvxx-q3hv",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xvjm-fvxx-q3hv",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/4c0ee937c0f61c4fc5f5d32d9bb4c67428012a60",
+        "name": "https://github.com/tensorflow/tensorflow/commit/4c0ee937c0f61c4fc5f5d32d9bb4c67428012a60",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29576",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-14T20:15Z",
+    "lastModifiedDate": "2021-05-20T15:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "TensorFlow is an end-to-end open source platform for machine learning. The implementation of `tf.raw_ops.MaxPool3DGradGrad` is vulnerable to a heap buffer overflow. The implementation(https://github.com/tensorflow/tensorflow/blob/596c05a159b6fbb9e39ca10b3f7753b7244fa1e9/tensorflow/core/kernels/pooling_ops_3d.cc#L694-L696) does not check that the initialization of `Pool3dParameters` completes successfully. Since the constructor(https://github.com/tensorflow/tensorflow/blob/596c05a159b6fbb9e39ca10b3f7753b7244fa1e9/tensorflow/core/kernels/pooling_ops_3d.cc#L48-L88) uses `OP_REQUIRES` to validate conditions, the first assertion that fails interrupts the initialization of `params`, making it contain invalid data. In turn, this might cause a heap buffer overflow, depending on default initialized values. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-7cqx-92hp-x6wh",
+        "name": "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-7cqx-92hp-x6wh",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/tensorflow/tensorflow/commit/63c6a29d0f2d692b247f7bf81f8732d6442fad09",
+        "name": "https://github.com/tensorflow/tensorflow/commit/63c6a29d0f2d692b247f7bf81f8732d6442fad09",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-14009",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-05-07T12:15Z",
+    "lastModifiedDate": "2021-05-19T19:51Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Proofpoint Enterprise Protection (PPS/PoD) before 8.16.4 contains a vulnerability that could allow an attacker to deliver an email message with a malicious attachment that bypasses scanning and file-blocking rules. The vulnerability exists because messages with certain crafted and malformed multipart structures are not properly handled."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.proofpoint.com/us/security/security-advisories/pfpt-sa-2021-0006",
+        "name": "https://www.proofpoint.com/us/security/security-advisories/pfpt-sa-2021-0006",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.proofpoint.com/us/security/security-advisories",
+        "name": "https://www.proofpoint.com/us/security/security-advisories",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29499",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-07T21:15Z",
+    "lastModifiedDate": "2021-05-19T18:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "SIF is an open source implementation of the Singularity Container Image Format. The `siftool new` command and func siftool.New() produce predictable UUID identifiers due to insecure randomness in the version of the `github.com/satori/go.uuid` module used as a dependency. A patch is available in version >= v1.2.3 of the module. Users are encouraged to upgrade. As a workaround, users passing CreateInfo struct should ensure the `ID` field is generated using a version of `github.com/satori/go.uuid` that is not vulnerable to this issue."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/sylabs/sif/security/advisories/GHSA-4gh8-x3vv-phhg",
+        "name": "https://github.com/sylabs/sif/security/advisories/GHSA-4gh8-x3vv-phhg",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "name": "dj-database-url",
+  "description": "\ndj-database-url\n~~~~~~~~~~~~~~~\n\n.. image:: https://secure.travis-ci.org/kennethreitz/dj-database-url.png?branch=master\n   :target: http://travis-ci.org/kennethreitz/dj-database-url\n\nThis simple Django utility allows you to utilize the\n`12factor <http://www.12factor.net/backing-services>`_ inspired\n``DATABASE_URL`` environment variable to configure your Django application.\n\nThe ``dj_database_url.config`` method returns a Django database connection\ndictionary, populated with all the data specified in your URL. There is\nalso a `conn_max_age` argument to easily enable Django's connection pool.\n\nIf you'd rather not use an environment variable, you can pass a URL in directly\ninstead to ``dj_database_url.parse``.\n\nSupported Databases\n-------------------\n\nSupport currently exists for PostgreSQL, PostGIS, MySQL, MySQL (GIS),\nOracle, Oracle (GIS), and SQLite.\n\nInstallation\n------------\n\nInstallation is simple::\n\n    $ pip install dj-database-url\n\nUsage\n-----\n\nConfigure your database in ``settings.py`` from ``DATABASE_URL``::\n\n    import dj_database_url\n\n    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)\n\nProvide a default::\n\n    DATABASES['default'] = dj_database_url.config(default='postgres://...'}\n\nParse an arbitrary Database URL::\n\n    DATABASES['default'] = dj_database_url.parse('postgres://...', conn_max_age=600)\n\nThe ``conn_max_age`` attribute is the lifetime of a database connection in seconds\nand is available in Django 1.6+. If you do not set a value, it will default to ``0``\nwhich is Django's historical behavior of using a new database connection on each\nrequest. Use ``None`` for unlimited persistent connections.\n\n\n\n\n",
+  "requires_dist": null,
+  "requires_python": "",
+  "current_version": "0.5.0",
+  "released_versions": [
+    "0",
+    "0.1.2",
+    "0.1.3",
+    "0.1.4",
+    "0.2.0",
+    "0.2.1",
+    "0.2.2",
+    "0.3.0",
+    "0.4.0",
+    "0.4.1",
+    "0.4.2",
+    "0.5.0"
+  ]
+}

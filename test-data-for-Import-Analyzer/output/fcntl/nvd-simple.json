@@ -1,0 +1,1209 @@
+[
+  {
+    "cveID": "CVE-2014-8086",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-10-13T10:55Z",
+    "lastModifiedDate": "2020-08-14T18:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Race condition in the ext4_file_write_iter function in fs/ext4/file.c in the Linux kernel through 3.17 allows local users to cause a denial of service (file unavailability) via a combination of a write action and an F_SETFL fcntl operation for the O_DIRECT flag."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lkml.org/lkml/2014/10/9/129",
+        "name": "[linux-kernel] 20141009 Re: ext4: kernel BUG at fs/ext4/inode.c:2959!",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1151353",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1151353",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.spinics.net/lists/linux-ext4/msg45685.html",
+        "name": "[linux-ext4] 20141009 [PATCH] add aio/dio regression test race between write and fcntl",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lkml.org/lkml/2014/10/8/545",
+        "name": "[linux-kernel] 20141008 ext4: kernel BUG at fs/ext4/inode.c:2959!",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.spinics.net/lists/linux-ext4/msg45683.html",
+        "name": "[linux-ext4] 20141009 [PATCH] ext4: fix race between write and fcntl(F_SETFL)",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2014/10/09/25",
+        "name": "[oss-security] 20141009 CVE-2014-8086 - Linux kernel ext4 race condition",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/70376",
+        "name": "70376",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-0290.html",
+        "name": "RHSA-2015:0290",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2015-0694.html",
+        "name": "RHSA-2015:0694",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2015-09/msg00004.html",
+        "name": "SUSE-SU-2015:1478",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/96922",
+        "name": "linux-kernel-cve20148086-dos(96922)",
+        "refsource": "XF",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2010-4256",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2011-01-25T19:00Z",
+    "lastModifiedDate": "2020-08-10T13:20Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The pipe_fcntl function in fs/pipe.c in the Linux kernel before 2.6.37 does not properly determine whether a file is a named pipe, which allows local users to cause a denial of service via an F_SETPIPE_SZ fcntl call."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=c66fb347946ebdd5b10908866ecc9fa05ee2cf3d",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=c66fb347946ebdd5b10908866ecc9fa05ee2cf3d",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2010/11/30/9",
+        "name": "[oss-security] 20101130 Re: CVE request: kernel: pipe_fcntl local DoS",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2010/11/30/6",
+        "name": "[oss-security] 20101130 CVE request: kernel: pipe_fcntl local DoS",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.37",
+        "name": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.37",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Broken Link"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-1669",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2008-05-08T00:20Z",
+    "lastModifiedDate": "2018-10-30T16:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Linux kernel before 2.6.25.2 does not apply a certain protection mechanism for fcntl functionality, which allows local users to (1) execute code in parallel or (2) exploit a race condition to obtain \"re-ordered access to the descriptor table.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.25.2",
+        "name": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.25.2",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2008-0211.html",
+        "name": "RHSA-2008:0211",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2008-0233.html",
+        "name": "RHSA-2008:0233",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2008-0237.html",
+        "name": "RHSA-2008:0237",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/29076",
+        "name": "29076",
+        "refsource": "BID",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://wiki.rpath.com/wiki/Advisories:rPSA-2008-0162",
+        "name": "http://wiki.rpath.com/wiki/Advisories:rPSA-2008-0162",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://issues.rpath.com/browse/RPL-2518",
+        "name": "https://issues.rpath.com/browse/RPL-2518",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v2.4/ChangeLog-2.4.36.4",
+        "name": "http://www.kernel.org/pub/linux/kernel/v2.4/ChangeLog-2.4.36.4",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1575",
+        "name": "DSA-1575",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00232.html",
+        "name": "FEDORA-2008-3873",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00294.html",
+        "name": "FEDORA-2008-3949",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00357.html",
+        "name": "FEDORA-2008-4043",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2008:105",
+        "name": "MDVSA-2008:105",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1019974",
+        "name": "1019974",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30077",
+        "name": "30077",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30108",
+        "name": "30108",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30260",
+        "name": "30260",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30276",
+        "name": "30276",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30252",
+        "name": "30252",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30164",
+        "name": "30164",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30515",
+        "name": "30515",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30962",
+        "name": "30962",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2008-07/msg00012.html",
+        "name": "SUSE-SA:2008:038",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30769",
+        "name": "30769",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30818",
+        "name": "30818",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2008:167",
+        "name": "MDVSA-2008:167",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2008-06/msg00006.html",
+        "name": "SUSE-SA:2008:030",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2008-07/msg00007.html",
+        "name": "SUSE-SA:2008:035",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2008-07/msg00002.html",
+        "name": "SUSE-SA:2008:032",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-618-1",
+        "name": "USN-618-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/31246",
+        "name": "31246",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.vmware.com/pipermail/security-announce/2008/000023.html",
+        "name": "[Security-announce] 20080728 VMSA-2008-00011 Updated ESX service console packages for Samba and vmnix",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30112",
+        "name": "30112",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30110",
+        "name": "30110",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2008:104",
+        "name": "MDVSA-2008:104",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30116",
+        "name": "30116",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30101",
+        "name": "30101",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/1452/references",
+        "name": "ADV-2008-1452",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/2222/references",
+        "name": "ADV-2008-2222",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/1451/references",
+        "name": "ADV-2008-1451",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/30982",
+        "name": "30982",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/42242",
+        "name": "linux-kernel-fcntlsetlk-dos(42242)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10065",
+        "name": "oval:org.mitre.oval:def:10065",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/614-1/",
+        "name": "USN-614-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/491740/100/0/threaded",
+        "name": "20080507 rPSA-2008-0162-1 kernel",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2005-3807",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2005-11-25T21:03Z",
+    "lastModifiedDate": "2018-10-19T15:39Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Memory leak in the VFS file lease handling in locks.c in Linux kernels 2.6.10 to 2.6.15 allows local users to cause a denial of service (memory exhaustion) via certain Samba activities that cause an fasync entry to be re-allocated by the fcntl_setlease function after the fasync queue has already been cleaned by the locks_delete_lock function."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://kernel.org/git/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=dc15ae14e97ee9d5ed740cbb0b94996076d8b37e",
+        "name": "http://kernel.org/git/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=dc15ae14e97ee9d5ed740cbb0b94996076d8b37e",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/9806",
+        "name": "SUSE-SA:2005:067",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.trustix.org/errata/2005/0070",
+        "name": "TSLSA-2005-0070",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/15745",
+        "name": "15745",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/17917",
+        "name": "17917",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/17918",
+        "name": "17918",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntulinux.org/usn/usn-231-1",
+        "name": "USN-231-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/18203",
+        "name": "18203",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://marc.info/?l=linux-kernel&m=113190437101622&w=2",
+        "name": "[linux-kernel] 20051113 [GIT] Fix memory leak in lease code",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/427981/100/0/threaded",
+        "name": "FLSA:157459-4",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/419522/100/0/threaded",
+        "name": "SUSE-SA:2005:068",
+        "refsource": "SUSE",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-4307",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2009-01-13T17:00Z",
+    "lastModifiedDate": "2018-10-11T20:51Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Race condition in the do_setlk function in fs/nfs/file.c in the Linux kernel before 2.6.26 allows local users to cause a denial of service (crash) via vectors resulting in an interrupted RPC call that leads to a stray FL_POSIX lock, related to improper handling of a race between fcntl and close in the EINTR case."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=456282",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=456282",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.26",
+        "name": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.26",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.6.27.y.git;a=commit;h=c4d7c402b788b73dc24f1e54a57f89d3dc5eb7bc",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.6.27.y.git;a=commit;h=c4d7c402b788b73dc24f1e54a57f89d3dc5eb7bc",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2009/01/13/1",
+        "name": "[oss-security] 20090113 CVE-2008-4307 kernel: local denial of service in locks_remove_flock",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "name": "USN-751-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2009-0451.html",
+        "name": "RHSA-2009:0451",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/34917",
+        "name": "34917",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2009-0459.html",
+        "name": "RHSA-2009:0459",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/34981",
+        "name": "34981",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1787",
+        "name": "DSA-1787",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/34962",
+        "name": "34962",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1794",
+        "name": "DSA-1794",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/35011",
+        "name": "35011",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/35015",
+        "name": "35015",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://rhn.redhat.com/errata/RHSA-2009-0473.html",
+        "name": "RHSA-2009:0473",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/3316",
+        "name": "ADV-2009-3316",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://www.vmware.com/security/advisories/VMSA-2009-0016.html",
+        "name": "http://www.vmware.com/security/advisories/VMSA-2009-0016.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/37471",
+        "name": "37471",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9233",
+        "name": "oval:org.mitre.oval:def:9233",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7728",
+        "name": "oval:org.mitre.oval:def:7728",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/507985/100/0/threaded",
+        "name": "20091120 VMSA-2009-0016 VMware vCenter and ESX update release and vMA patch release address multiple security issue in third party components",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-1999-1214",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "1997-09-15T04:00Z",
+    "lastModifiedDate": "2017-10-10T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The asynchronous I/O facility in 4.4 BSD kernel does not check user credentials when setting the recipient of I/O notification, which allows local users to cause a denial of service by using certain ioctl and fcntl calls to cause the signal to be sent to an arbitrary process ID."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.osvdb.org/11062",
+        "name": "11062",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.openbsd.com/advisories/signals.txt",
+        "name": "http://www.openbsd.com/advisories/signals.txt",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/556",
+        "name": "openbsd-iosig(556)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-1235",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-04-02T17:30Z",
+    "lastModifiedDate": "2017-09-29T01:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "XNU 1228.9.59 and earlier on Apple Mac OS X 10.5.6 and earlier does not properly restrict interaction between user space and the HFS IOCTL handler, which allows local users to overwrite kernel memory and gain privileges by attaching an HFS+ disk image and performing certain steps involving HFS_GET_BOOT_INFO fcntl calls."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.digit-labs.org/files/exploits/xnu-hfs-fcntl-v2.c",
+        "name": "http://www.digit-labs.org/files/exploits/xnu-hfs-fcntl-v2.c",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/0822",
+        "name": "ADV-2009-0822",
+        "refsource": "VUPEN",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.informationweek.com/news/hardware/mac/showArticle.jhtml?articleID=216401181",
+        "name": "http://www.informationweek.com/news/hardware/mac/showArticle.jhtml?articleID=216401181",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/34203",
+        "name": "34203",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.digit-labs.org/files/exploits/xnu-hfs-fcntl-v2.sh",
+        "name": "http://www.digit-labs.org/files/exploits/xnu-hfs-fcntl-v2.sh",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/34424",
+        "name": "34424",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/2172",
+        "name": "ADV-2009-2172",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "http://lists.apple.com/archives/security-announce/2009/Aug/msg00001.html",
+        "name": "APPLE-SA-2009-08-05-1",
+        "refsource": "APPLE",
+        "tags": []
+      },
+      {
+        "url": "http://support.apple.com/kb/HT3757",
+        "name": "http://support.apple.com/kb/HT3757",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/36096",
+        "name": "36096",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1022671",
+        "name": "1022671",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "http://www.us-cert.gov/cas/techalerts/TA09-218A.html",
+        "name": "TA09-218A",
+        "refsource": "CERT",
+        "tags": [
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/8266",
+        "name": "8266",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-4141",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2010-01-19T16:30Z",
+    "lastModifiedDate": "2017-09-19T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Use-after-free vulnerability in the fasync_helper function in fs/fcntl.c in the Linux kernel before 2.6.33-rc4-git1 allows local users to gain privileges via vectors that include enabling O_ASYNC (aka FASYNC or FIOASYNC) on a locked file, and then closing this file."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://lock.cmpxchg8b.com/5ebe2294ecd0e0f08eab7690d2a6ee69/create_elf_tables.c",
+        "name": "http://lock.cmpxchg8b.com/5ebe2294ecd0e0f08eab7690d2a6ee69/create_elf_tables.c",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=53281b6d34d44308372d16acb7fb5327609f68b6",
+        "name": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=53281b6d34d44308372d16acb7fb5327609f68b6",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/37806",
+        "name": "37806",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://twitter.com/taviso/statuses/7744108017",
+        "name": "http://twitter.com/taviso/statuses/7744108017",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/38199",
+        "name": "38199",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v2.6/snapshots/patch-2.6.33-rc4-git1.bz2",
+        "name": "http://www.kernel.org/pub/linux/kernel/v2.6/snapshots/patch-2.6.33-rc4-git1.bz2",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://archives.neohapsis.com/archives/fulldisclosure/2010-01/0252.html",
+        "name": "20100114 Locked fasync file descriptors can be referenced after free in >= 2.6.28",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=547906",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=547906",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://rhn.redhat.com/errata/RHSA-2010-0046.html",
+        "name": "RHSA-2010:0046",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://rhn.redhat.com/errata/RHSA-2010-0095.html",
+        "name": "RHSA-2010:0095",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://support.avaya.com/css/P8/documents/100073666",
+        "name": "http://support.avaya.com/css/P8/documents/100073666",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2010-02/msg00002.html",
+        "name": "SUSE-SA:2010:010",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.redhat.com/support/errata/RHSA-2010-0161.html",
+        "name": "RHSA-2010:0161",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/39033",
+        "name": "39033",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9201",
+        "name": "oval:org.mitre.oval:def:9201",
+        "refsource": "OVAL",
+        "tags": []
+      },
+      {
+        "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7054",
+        "name": "oval:org.mitre.oval:def:7054",
+        "refsource": "OVAL",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-1860",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2006-05-12T01:02Z",
+    "lastModifiedDate": "2017-07-20T01:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "lease_init in fs/locks.c in Linux kernel before 2.6.16.16 allows attackers to cause a denial of service (fcntl_setlease lockup) via actions that cause lease_init to free a lock that might not have been allocated on the stack."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.16.16",
+        "name": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.16.16",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.kernel.org/git/?p=linux/kernel/git/stable/linux-2.6.16.y.git;a=commit;h=1f0e637c94a9b041833947c79110d6c02fff8618",
+        "name": "http://www.kernel.org/git/?p=linux/kernel/git/stable/linux-2.6.16.y.git;a=commit;h=1f0e637c94a9b041833947c79110d6c02fff8618",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.kernel.org/git/?p=linux/kernel/git/stable/linux-2.6.16.y.git;a=blobdiff;h=aa7f66091823dde953e15895dc427615701c39c7;hp=e75ac392a313f3fad823bf2e46a03f29701e3e34;hb=1f0e637c94a9b041833947c79110d6c02fff8618;f=fs/locks.c",
+        "name": "http://www.kernel.org/git/?p=linux/kernel/git/stable/linux-2.6.16.y.git;a=blobdiff;h=aa7f66091823dde953e15895dc427615701c39c7;hp=e75ac392a313f3fad823bf2e46a03f29701e3e34;hb=1f0e637c94a9b041833947c79110d6c02fff8618;f=fs/locks.c",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/17943",
+        "name": "17943",
+        "refsource": "BID",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/20083",
+        "name": "20083",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://www.osvdb.org/25425",
+        "name": "25425",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://www.trustix.org/errata/2006/0028",
+        "name": "2006-0028",
+        "refsource": "TRUSTIX",
+        "tags": []
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "name": "USN-302-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/20716",
+        "name": "20716",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/21045",
+        "name": "21045",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.novell.com/linux/security/advisories/2006_42_kernel.html",
+        "name": "SUSE-SA:2006:042",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/21179",
+        "name": "21179",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.mandriva.com/security/advisories?name=MDKSA-2006:123",
+        "name": "MDKSA-2006:123",
+        "refsource": "MANDRIVA",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/1767",
+        "name": "ADV-2006-1767",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26437",
+        "name": "linux-locks-lease-init-dos(26437)",
+        "refsource": "XF",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-8966",
+    "cveASSIGNER": "security@android.com",
+    "publishedDate": "2016-12-08T21:59Z",
+    "lastModifiedDate": "2016-12-10T02:59Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "arch/arm/kernel/sys_oabi-compat.c in the Linux kernel before 4.4 allows local users to gain privileges via a crafted (1) F_OFD_GETLK, (2) F_OFD_SETLK, or (3) F_OFD_SETLKW command in an fcntl64 system call."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://source.android.com/security/bulletin/2016-12-01.html",
+        "name": "http://source.android.com/security/bulletin/2016-12-01.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=76cc404bfdc0d419c720de4daaf2584542734f42",
+        "name": "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=76cc404bfdc0d419c720de4daaf2584542734f42",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/torvalds/linux/commit/76cc404bfdc0d419c720de4daaf2584542734f42",
+        "name": "https://github.com/torvalds/linux/commit/76cc404bfdc0d419c720de4daaf2584542734f42",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/94673",
+        "name": "94673",
+        "refsource": "BID",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-7118",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2016-08-31T14:59Z",
+    "lastModifiedDate": "2016-11-28T20:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "fs/fcntl.c in the \"aufs 3.2.x+setfl-debian\" patch in the linux-image package 3.2.0-4 (kernel 3.2.81-1) in Debian wheezy mishandles F_SETFL fcntl calls on directories, which allows local users to cause a denial of service (NULL pointer dereference and system crash) via standard filesystem operations, as demonstrated by scp from an AUFS filesystem."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2016/08/31/3",
+        "name": "[oss-security] 20160831 Re: CVE request: Kernel Oops when issuing fcntl on an AUFS directory",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/92697",
+        "name": "92697",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://seclists.org/oss-sec/2016/q3/395",
+        "name": "[oss-security] 20160831 CVE request: Kernel Oops when issuing fcntl on an AUFS directory",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-0131",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-01-15T17:30Z",
+    "lastModifiedDate": "2009-02-05T06:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The UFS implementation in the kernel in Sun OpenSolaris snv_29 through snv_90 allows local users to cause a denial of service (panic) via the single posix_fallocate test in the SUSv3 POSIX test suite, related to an F_ALLOCSP fcntl call."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://bugs.opensolaris.org/view_bug.do?bug_id=6711995",
+        "name": "http://bugs.opensolaris.org/view_bug.do?bug_id=6711995",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/33267",
+        "name": "33267",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-239188-1",
+        "name": "239188",
+        "refsource": "SUNALERT",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1021600",
+        "name": "1021600",
+        "refsource": "SECTRACK",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2005-4733",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2005-12-31T05:00Z",
+    "lastModifiedDate": "2008-09-05T20:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "NetBSD 2.0 before 20050316 and NetBSD-current before 20050112 allow local users to cause a denial of service (infinite loop and system hang) by calling the F_CLOSEM fcntl with a parameter value of 0."
+      }
+    ],
+    "references": [
+      {
+        "url": "ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2005-003.txt.asc",
+        "name": "NetBSD-SA2005-003",
+        "refsource": "NETBSD",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://mail-index.netbsd.org/source-changes/2005/01/12/0059.html",
+        "name": "http://mail-index.netbsd.org/source-changes/2005/01/12/0059.html",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "http://www.osvdb.org/20755",
+        "name": "20755",
+        "refsource": "OSVDB",
+        "tags": [
+          "Patch"
+        ]
+      }
+    ]
+  }
+]

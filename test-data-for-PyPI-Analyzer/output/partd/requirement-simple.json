@@ -1,0 +1,34 @@
+{
+  "name": "partd",
+  "description": "PartD\n=====\n\n|Build Status| |Version Status|\n\nKey-value byte store with appendable values\n\n    Partd stores key-value pairs.\n    Values are raw bytes.\n    We append on old values.\n\nPartd excels at shuffling operations.\n\nOperations\n----------\n\nPartD has two main operations, ``append`` and ``get``.\n\n\nExample\n-------\n\n1.  Create a Partd backed by a directory::\n\n        >>> import partd\n        >>> p = partd.File('/path/to/new/dataset/')\n\n2.  Append key-byte pairs to dataset::\n\n        >>> p.append({'x': b'Hello ', 'y': b'123'})\n        >>> p.append({'x': b'world!', 'y': b'456'})\n\n3.  Get bytes associated to keys::\n\n        >>> p.get('x')         # One key\n        b'Hello world!'\n\n        >>> p.get(['y', 'x'])  # List of keys\n        [b'123456', b'Hello world!']\n\n4.  Destroy partd dataset::\n\n        >>> p.drop()\n\nThat's it.\n\n\nImplementations\n---------------\n\nWe can back a partd by an in-memory dictionary::\n\n    >>> p = Dict()\n\nFor larger amounts of data or to share data between processes we back a partd\nby a directory of files.  This uses file-based locks for consistency.::\n\n    >>> p = File('/path/to/dataset/')\n\nHowever this can fail for many small writes.  In these cases you may wish to buffer one partd with another, keeping a fixed maximum of data in the buffering partd.  This writes the larger elements of the first partd to the second partd when space runs low::\n\n    >>> p = Buffer(Dict(), File(), available_memory=2e9)  # 2GB memory buffer\n\nYou might also want to have many distributed process write to a single partd\nconsistently.  This can be done with a server\n\n*   Server Process::\n\n        >>> p = Buffer(Dict(), File(), available_memory=2e9)  # 2GB memory buffer\n        >>> s = Server(p, address='ipc://server')\n\n*   Worker processes::\n\n        >>> p = Client('ipc://server')  # Client machine talks to remote server\n\n\nEncodings and Compression\n-------------------------\n\nOnce we can robustly and efficiently append bytes to a partd we consider\ncompression and encodings.  This is generally available with the ``Encode``\npartd, which accepts three functions, one to apply on bytes as they are\nwritten, one to apply to bytes as they are read, and one to join bytestreams.\nCommon configurations already exist for common data and compression formats.\n\nWe may wish to compress and decompress data transparently as we interact with a\npartd.  Objects like ``BZ2``, ``Blosc``, ``ZLib`` and ``Snappy`` exist and take\nanother partd as an argument.::\n\n    >>> p = File(...)\n    >>> p = ZLib(p)\n\nThese work exactly as before, the (de)compression happens automatically.\n\nCommon data formats like Python lists, numpy arrays, and pandas\ndataframes are also supported out of the box.::\n\n    >>> p = File(...)\n    >>> p = NumPy(p)\n    >>> p.append({'x': np.array([...])})\n\nThis lets us forget about bytes and think instead in our normal data types.\n\nComposition\n-----------\n\nIn principle we want to compose all of these choices together\n\n1.  Write policy:  ``Dict``, ``File``, ``Buffer``, ``Client``\n2.  Encoding:  ``Pickle``, ``Numpy``, ``Pandas``, ...\n3.  Compression:  ``Blosc``, ``Snappy``, ...\n\nPartd objects compose by nesting.  Here we make a partd that writes pickle\nencoded BZ2 compressed bytes directly to disk::\n\n    >>> p = Pickle(BZ2(File('foo')))\n\nWe could construct more complex systems that include compression,\nserialization, buffering, and remote access.::\n\n    >>> server = Server(Buffer(Dict(), File(), available_memory=2e0))\n\n    >>> client = Pickle(Snappy(Client(server.address)))\n    >>> client.append({'x': [1, 2, 3]})\n\n.. |Build Status| image:: https://github.com/dask/partd/workflows/CI/badge.svg\n   :target: https://github.com/dask/partd/actions?query=workflow%3ACI\n.. |Version Status| image:: https://img.shields.io/pypi/v/partd.svg\n   :target: https://pypi.python.org/pypi/partd/\n\n\n",
+  "requires_dist": [
+    "locket",
+    "toolz",
+    "numpy (>=1.9.0) ; extra == 'complete'",
+    "pandas (>=0.19.0) ; extra == 'complete'",
+    "pyzmq ; extra == 'complete'",
+    "blosc ; extra == 'complete'"
+  ],
+  "requires_python": ">=3.5",
+  "current_version": "1.2.0",
+  "released_versions": [
+    "0.1.0",
+    "0.2.0",
+    "0.2.1",
+    "0.2.2",
+    "0.3.0",
+    "0.3.1",
+    "0.3.10",
+    "0.3.2",
+    "0.3.3",
+    "0.3.4",
+    "0.3.5",
+    "0.3.6",
+    "0.3.7",
+    "0.3.8",
+    "0.3.9",
+    "1.0.0",
+    "1.1.0",
+    "1.2.0"
+  ]
+}

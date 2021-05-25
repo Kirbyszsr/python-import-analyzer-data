@@ -1,0 +1,391 @@
+{
+  "info": {
+    "author": "Wenzel Jakob",
+    "author_email": "wenzel.jakob@epfl.ch",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: BSD License",
+      "Programming Language :: C++",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Topic :: Software Development :: Libraries :: Python Modules",
+      "Topic :: Utilities"
+    ],
+    "description": ".. figure:: https://github.com/pybind/pybind11/raw/master/docs/pybind11-logo.png\n   :alt: pybind11 logo\n\n**pybind11 \u2014 Seamless operability between C++11 and Python**\n\n|Latest Documentation Status| |Stable Documentation Status| |Gitter chat| |CI| |Build status|\n\n|Repology| |PyPI package| |Conda-forge| |Python Versions|\n\n`Setuptools example <https://github.com/pybind/python_example>`_\n\u2022 `Scikit-build example <https://github.com/pybind/scikit_build_example>`_\n\u2022 `CMake example <https://github.com/pybind/cmake_example>`_\n\n.. start\n\n.. warning::\n\n   Combining older versions of pybind11 (< 2.6.0) with Python 3.9.0 will\n   trigger undefined behavior that typically manifests as crashes during\n   interpreter shutdown (but could also destroy your data. **You have been\n   warned.**)\n\n   We recommend that you update to the latest patch release of Python (3.9.1),\n   which includes a `fix <https://github.com/python/cpython/pull/22670>`_\n   that resolves this problem. If you do use Python 3.9.0, please update to\n   the latest version of pybind11 (2.6.0 or newer), which includes a temporary\n   workaround specifically when Python 3.9.0 is detected at runtime.\n\n\n**pybind11** is a lightweight header-only library that exposes C++ types\nin Python and vice versa, mainly to create Python bindings of existing\nC++ code. Its goals and syntax are similar to the excellent\n`Boost.Python <http://www.boost.org/doc/libs/1_58_0/libs/python/doc/>`_\nlibrary by David Abrahams: to minimize boilerplate code in traditional\nextension modules by inferring type information using compile-time\nintrospection.\n\nThe main issue with Boost.Python\u2014and the reason for creating such a\nsimilar project\u2014is Boost. Boost is an enormously large and complex suite\nof utility libraries that works with almost every C++ compiler in\nexistence. This compatibility has its cost: arcane template tricks and\nworkarounds are necessary to support the oldest and buggiest of compiler\nspecimens. Now that C++11-compatible compilers are widely available,\nthis heavy machinery has become an excessively large and unnecessary\ndependency.\n\nThink of this library as a tiny self-contained version of Boost.Python\nwith everything stripped away that isn\u2019t relevant for binding\ngeneration. Without comments, the core header files only require ~4K\nlines of code and depend on Python (2.7 or 3.5+, or PyPy) and the C++\nstandard library. This compact implementation was possible thanks to\nsome of the new C++11 language features (specifically: tuples, lambda\nfunctions and variadic templates). Since its creation, this library has\ngrown beyond Boost.Python in many ways, leading to dramatically simpler\nbinding code in many common situations.\n\nTutorial and reference documentation is provided at\n`pybind11.readthedocs.io <https://pybind11.readthedocs.io/en/latest>`_.\nA PDF version of the manual is available\n`here <https://pybind11.readthedocs.io/_/downloads/en/latest/pdf/>`_.\nAnd the source code is always available at\n`github.com/pybind/pybind11 <https://github.com/pybind/pybind11>`_.\n\n\nCore features\n-------------\n\n\npybind11 can map the following core C++ features to Python:\n\n- Functions accepting and returning custom data structures per value,\n  reference, or pointer\n- Instance methods and static methods\n- Overloaded functions\n- Instance attributes and static attributes\n- Arbitrary exception types\n- Enumerations\n- Callbacks\n- Iterators and ranges\n- Custom operators\n- Single and multiple inheritance\n- STL data structures\n- Smart pointers with reference counting like ``std::shared_ptr``\n- Internal references with correct reference counting\n- C++ classes with virtual (and pure virtual) methods can be extended\n  in Python\n\nGoodies\n-------\n\nIn addition to the core functionality, pybind11 provides some extra\ngoodies:\n\n- Python 2.7, 3.5+, and PyPy/PyPy3 7.3 are supported with an\n  implementation-agnostic interface.\n\n- It is possible to bind C++11 lambda functions with captured\n  variables. The lambda capture data is stored inside the resulting\n  Python function object.\n\n- pybind11 uses C++11 move constructors and move assignment operators\n  whenever possible to efficiently transfer custom data types.\n\n- It\u2019s easy to expose the internal storage of custom data types through\n  Pythons\u2019 buffer protocols. This is handy e.g.\u00a0for fast conversion\n  between C++ matrix classes like Eigen and NumPy without expensive\n  copy operations.\n\n- pybind11 can automatically vectorize functions so that they are\n  transparently applied to all entries of one or more NumPy array\n  arguments.\n\n- Python\u2019s slice-based access and assignment operations can be\n  supported with just a few lines of code.\n\n- Everything is contained in just a few header files; there is no need\n  to link against any additional libraries.\n\n- Binaries are generally smaller by a factor of at least 2 compared to\n  equivalent bindings generated by Boost.Python. A recent pybind11\n  conversion of PyRosetta, an enormous Boost.Python binding project,\n  `reported <http://graylab.jhu.edu/RosettaCon2016/PyRosetta-4.pdf>`_\n  a binary size reduction of **5.4x** and compile time reduction by\n  **5.8x**.\n\n- Function signatures are precomputed at compile time (using\n  ``constexpr``), leading to smaller binaries.\n\n- With little extra effort, C++ types can be pickled and unpickled\n  similar to regular Python objects.\n\nSupported compilers\n-------------------\n\n1. Clang/LLVM 3.3 or newer (for Apple Xcode\u2019s clang, this is 5.0.0 or\n   newer)\n2. GCC 4.8 or newer\n3. Microsoft Visual Studio 2015 Update 3 or newer\n4. Intel classic C++ compiler 18 or newer (ICC 20.2 tested in CI)\n5. Cygwin/GCC (previously tested on 2.5.1)\n6. NVCC (CUDA 11.0 tested in CI)\n7. NVIDIA PGI (20.9 tested in CI)\n\nAbout\n-----\n\nThis project was created by `Wenzel\nJakob <http://rgl.epfl.ch/people/wjakob>`_. Significant features and/or\nimprovements to the code were contributed by Jonas Adler, Lori A. Burns,\nSylvain Corlay, Eric Cousineau, Ralf Grosse-Kunstleve, Trent Houliston, Axel\nHuebl, @hulucc, Yannick Jadoul, Sergey Lyskov Johan Mabille, Tomasz Mi\u0105sko,\nDean Moldovan, Ben Pritchard, Jason Rhinelander, Boris Sch\u00e4ling,  Pim\nSchellart, Henry Schreiner, Ivan Smirnov, Boris Staletic, and Patrick Stewart.\n\nWe thank Google for a generous financial contribution to the continuous\nintegration infrastructure used by this project.\n\n\nContributing\n~~~~~~~~~~~~\n\nSee the `contributing\nguide <https://github.com/pybind/pybind11/blob/master/.github/CONTRIBUTING.md>`_\nfor information on building and contributing to pybind11.\n\nLicense\n~~~~~~~\n\npybind11 is provided under a BSD-style license that can be found in the\n`LICENSE <https://github.com/pybind/pybind11/blob/master/LICENSE>`_\nfile. By using, distributing, or contributing to this project, you agree\nto the terms and conditions of this license.\n\n.. |Latest Documentation Status| image:: https://readthedocs.org/projects/pybind11/badge?version=latest\n   :target: http://pybind11.readthedocs.org/en/latest\n.. |Stable Documentation Status| image:: https://img.shields.io/badge/docs-stable-blue.svg\n   :target: http://pybind11.readthedocs.org/en/stable\n.. |Gitter chat| image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg\n   :target: https://gitter.im/pybind/Lobby\n.. |CI| image:: https://github.com/pybind/pybind11/workflows/CI/badge.svg\n   :target: https://github.com/pybind/pybind11/actions\n.. |Build status| image:: https://ci.appveyor.com/api/projects/status/riaj54pn4h08xy40?svg=true\n   :target: https://ci.appveyor.com/project/wjakob/pybind11\n.. |PyPI package| image:: https://img.shields.io/pypi/v/pybind11.svg\n   :target: https://pypi.org/project/pybind11/\n.. |Conda-forge| image:: https://img.shields.io/conda/vn/conda-forge/pybind11.svg\n   :target: https://github.com/conda-forge/pybind11-feedstock\n.. |Repology| image:: https://repology.org/badge/latest-versions/python:pybind11.svg\n   :target: https://repology.org/project/python:pybind11/versions\n.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/pybind11.svg\n   :target: https://pypi.org/project/pybind11/\n\n\n",
+    "description_content_type": "text/x-rst",
+    "docs_url": null,
+    "download_url": "",
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "home_page": "https://github.com/pybind/pybind11",
+    "keywords": "C++11,Python bindings",
+    "license": "BSD",
+    "maintainer": "",
+    "maintainer_email": "",
+    "name": "pybind11-global",
+    "package_url": "https://pypi.org/project/pybind11-global/",
+    "platform": "",
+    "project_url": "https://pypi.org/project/pybind11-global/",
+    "project_urls": {
+      "Homepage": "https://github.com/pybind/pybind11"
+    },
+    "release_url": "https://pypi.org/project/pybind11-global/2.6.2/",
+    "requires_dist": null,
+    "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+    "summary": "Seamless operability between C++11 and Python",
+    "version": "2.6.2",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 9240280,
+  "releases": {
+    "2.6.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "52a42a5f5950e20a1cb58bc27e92baba",
+          "sha256": "c61685ac9e3d56c03efa39ce74e1e27b23e7864e5bc3955edd589a8fff6e045f"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "52a42a5f5950e20a1cb58bc27e92baba",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 334263,
+        "upload_time": "2020-10-21T16:22:28",
+        "upload_time_iso_8601": "2020-10-21T16:22:28.486788Z",
+        "url": "https://files.pythonhosted.org/packages/1c/e3/d101c857d068267ad6afdcb4f580d1a72d9ca7d0e3f731766e26c8967492/pybind11_global-2.6.0-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "488a53649d82210cdd2792d7a62870c9",
+          "sha256": "596c4b591eb1516907009569d067280eecbe28b066248f1bcc032c09292cf7df"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "488a53649d82210cdd2792d7a62870c9",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 171024,
+        "upload_time": "2020-10-21T16:22:29",
+        "upload_time_iso_8601": "2020-10-21T16:22:29.509749Z",
+        "url": "https://files.pythonhosted.org/packages/f7/39/b3ce0a5fbf5a11de0c216e963cde0f06f3810032f8b86620f45b0483e8cf/pybind11_global-2.6.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.6.0b1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2a33ceea60e5b282564fc332a995c7d9",
+          "sha256": "04749f4e528cd4ee5baed21cf03e336f9a295c98593ccf8ef1261d39380d191d"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0b1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "2a33ceea60e5b282564fc332a995c7d9",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 328046,
+        "upload_time": "2020-09-30T21:20:35",
+        "upload_time_iso_8601": "2020-09-30T21:20:35.499689Z",
+        "url": "https://files.pythonhosted.org/packages/b1/74/cc05cc00b69cd99fd97114f11624c011e43a562b50e62ed3f49459dc1148/pybind11_global-2.6.0b1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7a7ce62fb781dc98226f90c0bb839175",
+          "sha256": "1c3f3b14d3de47f951c4a0abe6e033b2829e0b674fcfe1495307c8faec914a7a"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0b1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "7a7ce62fb781dc98226f90c0bb839175",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 164746,
+        "upload_time": "2020-09-30T21:20:39",
+        "upload_time_iso_8601": "2020-09-30T21:20:39.635536Z",
+        "url": "https://files.pythonhosted.org/packages/be/2c/50f4a147b22c3c2a76def9caed5409e4dca05691561c60cdf809a124751c/pybind11_global-2.6.0b1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.6.0rc1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "51140c233673366362a9148cf31cdaac",
+          "sha256": "eb79d19cd17774078f114ad055eb85bea665ea9ceef1db0124886cd36d7fed5e"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0rc1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "51140c233673366362a9148cf31cdaac",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 332469,
+        "upload_time": "2020-10-09T22:31:26",
+        "upload_time_iso_8601": "2020-10-09T22:31:26.580853Z",
+        "url": "https://files.pythonhosted.org/packages/cc/8f/2dbbe323505107dcca79a55b4ebd27ea952fc255c5d8fb2ca07efa8a86b1/pybind11_global-2.6.0rc1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "da4ae808acefda7cb3aa45eb5b83f6d7",
+          "sha256": "75a0c96cac0c34f278b22a0dec93e4eb8ea151674645b7645163ea6fdd4a8703"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0rc1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "da4ae808acefda7cb3aa45eb5b83f6d7",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 168555,
+        "upload_time": "2020-10-09T22:31:27",
+        "upload_time_iso_8601": "2020-10-09T22:31:27.848916Z",
+        "url": "https://files.pythonhosted.org/packages/9b/3b/b8bb5f2ad6371c974f10afe38a6d4c53064ab26445d754ab707e8a735314/pybind11_global-2.6.0rc1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.6.0rc2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "9617428c85552930f680e6ee3356cc83",
+          "sha256": "dd10d70dc14cdcfc246e8cf47897b11831a34a74dcbeba4df5aa15fb9503f7a1"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0rc2-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "9617428c85552930f680e6ee3356cc83",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 333100,
+        "upload_time": "2020-10-14T20:43:04",
+        "upload_time_iso_8601": "2020-10-14T20:43:04.180996Z",
+        "url": "https://files.pythonhosted.org/packages/ce/2d/25a192cf4062bcc208af814da71d814c40c670ff8938be2bfd65c4577c7d/pybind11_global-2.6.0rc2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f5b49b98a76db8e13716e63f6f22b96d",
+          "sha256": "12c50eab00b09e72c15a7165714ff6312f354bc36a8c3cde887d9cd7ce51336a"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0rc2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f5b49b98a76db8e13716e63f6f22b96d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 170101,
+        "upload_time": "2020-10-14T20:43:05",
+        "upload_time_iso_8601": "2020-10-14T20:43:05.325490Z",
+        "url": "https://files.pythonhosted.org/packages/bb/b4/da5716b2f56cd3c5bb60aa152e157463db6f5f2695d00fe4765796f56850/pybind11_global-2.6.0rc2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.6.0rc3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "94123ebc0ad3e45282cc1be5bf1d7bec",
+          "sha256": "4d6ef5ae1bd435a2faf414cbefc05b1e8934a32e6b28af79a02adb3ffe610b25"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0rc3-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "94123ebc0ad3e45282cc1be5bf1d7bec",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 334545,
+        "upload_time": "2020-10-16T21:45:26",
+        "upload_time_iso_8601": "2020-10-16T21:45:26.919379Z",
+        "url": "https://files.pythonhosted.org/packages/46/26/5ec8d2e1119234b942920a19a3c5a07ae2e1c2d3049ade47212f8d131fdd/pybind11_global-2.6.0rc3-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "23945d2164571dd6a0db46bcfdb9b76f",
+          "sha256": "a88432e756ca2e94efe0f23905f89b8116bc7191e777a23d78dfc7e724a313a9"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.0rc3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "23945d2164571dd6a0db46bcfdb9b76f",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 170830,
+        "upload_time": "2020-10-16T21:45:28",
+        "upload_time_iso_8601": "2020-10-16T21:45:28.268890Z",
+        "url": "https://files.pythonhosted.org/packages/45/a7/7bf8d440dcfa72c5b71a04af4194ea960d920585d17f77319644c56a813a/pybind11_global-2.6.0rc3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.6.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cf84b2cc260b528d7ff14ebf007f2105",
+          "sha256": "f0e566f8845a48cf6eb3e80e178af5045edc32bc33459d935ada9a6d66f0355c"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "cf84b2cc260b528d7ff14ebf007f2105",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 335014,
+        "upload_time": "2020-11-12T00:25:59",
+        "upload_time_iso_8601": "2020-11-12T00:25:59.098207Z",
+        "url": "https://files.pythonhosted.org/packages/a7/4e/1deacc8ff9a2bd1596da600491950bfb23566a464d21e92362aa32559f83/pybind11_global-2.6.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5df52a6160847a012517577957e1c5e0",
+          "sha256": "665e677fa9cb352b8c5b919d9b8025afa85acfe0c1fb1ecdb64b581af9ebd035"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "5df52a6160847a012517577957e1c5e0",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 171952,
+        "upload_time": "2020-11-12T00:26:00",
+        "upload_time_iso_8601": "2020-11-12T00:26:00.226438Z",
+        "url": "https://files.pythonhosted.org/packages/38/b9/cda4cc9e1f0f5a081f1eac6800e8c49ad3e33d05422b55c035121dfdb628/pybind11_global-2.6.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "2.6.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "45d6289f96d9356e975ffeb7de451cd2",
+          "sha256": "89261b7ebc72dd7164b1e878632634d1c29c9a75a1b935b3d792a9eaeca2757a"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.2-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "45d6289f96d9356e975ffeb7de451cd2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 339937,
+        "upload_time": "2021-01-27T03:12:33",
+        "upload_time_iso_8601": "2021-01-27T03:12:33.427038Z",
+        "url": "https://files.pythonhosted.org/packages/eb/d4/2a8aafb3bf6712fe320d88ca50583569b643eda50e888d5900b252351904/pybind11_global-2.6.2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fbb3f9fddad3b6eb93558a3b4f8792b0",
+          "sha256": "b4f3192d50b30bb11d2576e80ba2220033ca5797fe5f54cde5f6f1df691dc467"
+        },
+        "downloads": -1,
+        "filename": "pybind11_global-2.6.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "fbb3f9fddad3b6eb93558a3b4f8792b0",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+        "size": 174901,
+        "upload_time": "2021-01-27T03:12:34",
+        "upload_time_iso_8601": "2021-01-27T03:12:34.644641Z",
+        "url": "https://files.pythonhosted.org/packages/8c/a0/fbb2b87c460ae9cf09333b2b43284c491ded4a452c9b16cdce3eeb9c0d45/pybind11_global-2.6.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "45d6289f96d9356e975ffeb7de451cd2",
+        "sha256": "89261b7ebc72dd7164b1e878632634d1c29c9a75a1b935b3d792a9eaeca2757a"
+      },
+      "downloads": -1,
+      "filename": "pybind11_global-2.6.2-py2.py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "45d6289f96d9356e975ffeb7de451cd2",
+      "packagetype": "bdist_wheel",
+      "python_version": "py2.py3",
+      "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+      "size": 339937,
+      "upload_time": "2021-01-27T03:12:33",
+      "upload_time_iso_8601": "2021-01-27T03:12:33.427038Z",
+      "url": "https://files.pythonhosted.org/packages/eb/d4/2a8aafb3bf6712fe320d88ca50583569b643eda50e888d5900b252351904/pybind11_global-2.6.2-py2.py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "fbb3f9fddad3b6eb93558a3b4f8792b0",
+        "sha256": "b4f3192d50b30bb11d2576e80ba2220033ca5797fe5f54cde5f6f1df691dc467"
+      },
+      "downloads": -1,
+      "filename": "pybind11_global-2.6.2.tar.gz",
+      "has_sig": false,
+      "md5_digest": "fbb3f9fddad3b6eb93558a3b4f8792b0",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7",
+      "size": 174901,
+      "upload_time": "2021-01-27T03:12:34",
+      "upload_time_iso_8601": "2021-01-27T03:12:34.644641Z",
+      "url": "https://files.pythonhosted.org/packages/8c/a0/fbb2b87c460ae9cf09333b2b43284c491ded4a452c9b16cdce3eeb9c0d45/pybind11_global-2.6.2.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

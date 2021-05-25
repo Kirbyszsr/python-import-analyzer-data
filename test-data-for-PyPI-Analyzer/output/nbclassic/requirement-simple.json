@@ -1,0 +1,36 @@
+{
+  "name": "nbclassic",
+  "description": "# Jupyter Notebook as a Jupyter Server Extension\n\n![Testing nbclassic](https://github.com/jupyterlab/nbclassic/workflows/Testing%20nbclassic/badge.svg)\n\n\nNBClassic runs the [Jupyter Notebook]((github.com/jupyter/notebook)) frontend on the Jupyter Server backend.\n\nThis project prepares for a future where JupyterLab and other frontends switch to [Jupyter Server](https://github.com/jupyter/jupyter_server/) for their Python Web application backend. Using this package, users can launch Jupyter Notebook, JupyterLab and other frontends side-by-side on top of the new Python server backend.\n\n## Basic Usage\n\nInstall from PyPI:\n```\n> pip install nbclassic\n```\nThis will automatically enable the extension in Jupyter Server.\n\nLaunch directly:\n```\n> jupyter nbclassic\n```\n\nAlternatively, you can run Jupyter Server and visiting the `/tree` endpoint:\n```\n> jupyter server\n```\n\n## Further Details\n\nThis project also includes an API for shimming traits that moved from `NotebookApp` in to `ServerApp` in Jupyter Server. This can be used by applications that subclassed `NotebookApp` to leverage the Python server backend of Jupyter Notebooks. Such extensions should *now* switch to `ExtensionApp` API in Jupyter Server and add `NBClassicConfigShimMixin` in their inheritance list to properly handle moved traits.\n\nFor example, an application class that previously looked like:\n```python\nfrom notebook.notebookapp import NotebookApp\n\nclass MyApplication(NotebookApp):\n```\nshould switch to look something like:\n```python\nfrom jupyter_server.extension.application import ExtensionApp\nfrom nbclassic.shim import NBClassicConfigShimMixin\n\nclass MyApplication(NBClassicConfigShimMixin, ExtensionApp):\n```\n\n\n\n",
+  "requires_dist": [
+    "jupyter-server (~=1.5)",
+    "notebook (<7)",
+    "pytest ; extra == 'test'",
+    "pytest-tornasync ; extra == 'test'",
+    "pytest-console-scripts ; extra == 'test'"
+  ],
+  "requires_python": ">=3.6",
+  "current_version": "0.2.7",
+  "released_versions": [
+    "0.0.1",
+    "0.0.2",
+    "0.0.3",
+    "0.0.4",
+    "0.1",
+    "0.2.0",
+    "0.2.0rc0",
+    "0.2.0rc1",
+    "0.2.0rc2",
+    "0.2.0rc3",
+    "0.2.0rc4",
+    "0.2.0rc5",
+    "0.2.0rc6",
+    "0.2.0rc7",
+    "0.2.1",
+    "0.2.2",
+    "0.2.3",
+    "0.2.4",
+    "0.2.5",
+    "0.2.6",
+    "0.2.7"
+  ]
+}

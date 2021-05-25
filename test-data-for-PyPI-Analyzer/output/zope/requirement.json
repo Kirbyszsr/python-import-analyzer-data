@@ -1,0 +1,1609 @@
+{
+  "info": {
+    "author": "Zope Foundation and Contributors",
+    "author_email": "zope-dev@zope.org",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 6 - Mature",
+      "Environment :: Web Environment",
+      "Framework :: Zope :: 5",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: Zope Public License",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+      "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+      "Topic :: Software Development :: Libraries :: Application Frameworks"
+    ],
+    "description": ".. image:: https://github.com/zopefoundation/Zope/actions/workflows/tests.yml/badge.svg\n        :target: https://github.com/zopefoundation/Zope/actions/workflows/tests.yml\n\n.. image:: https://coveralls.io/repos/github/zopefoundation/Zope/badge.svg?branch=master\n        :target: https://coveralls.io/github/zopefoundation/Zope?branch=master\n\n.. image:: https://readthedocs.org/projects/zope/badge/?version=latest\n        :target: https://zope.readthedocs.org/en/latest/\n        :alt: Documentation Status\n\n.. image:: https://img.shields.io/pypi/v/Zope.svg\n        :target: https://pypi.org/project/Zope/\n        :alt: Current version on PyPI\n\n.. image:: https://img.shields.io/pypi/pyversions/Zope.svg\n        :target: https://pypi.org/project/Zope/\n        :alt: Supported Python versions\n\n.. image:: https://requires.io/github/zopefoundation/Zope/requirements.svg?branch=master\n        :target: https://requires.io/github/zopefoundation/Zope/requirements/?branch=master\n        :alt: Requirements Status\n\n\nZope is an open-source web application server.\n\nThis document provides some general information about Zope and provides\nlinks to other documents. The full documentation can be found at\nhttps://zope.readthedocs.io.\n\n\n.. contents::\n    :local:\n    :depth: 1\n\n\nInstallation\n============\n\nPlease visit the installation documentation at\nhttps://zope.readthedocs.io/en/latest/INSTALL.html for detailed installation\nguidance.\n\n\nLicense\n=======\n\nZope is licensed under the OSI-approved `Zope Public License` (ZPL), version\n2.1. The full license text is included in ``LICENSE.txt``.\n\n\nBug tracker\n===========\n\nBugs reports should be made through the Zope bugtracker at\nhttps://github.com/zopefoundation/Zope/issues.  A bug report should\ncontain detailed information about how to reproduce the bug.\n\n\nChange log\n==========\n\nThese are all the changes for Zope 5, starting with the alpha releases,\nsince the branch point at Zope 4.1.2.\n\nThe change log for the previous version, Zope 4, is at\nhttps://github.com/zopefoundation/Zope/blob/4.x/CHANGES.rst\n\n\n5.1.2 (2021-03-02)\n------------------\n\n- Enforce Zope permissions during recursive XML-RPC data dumps\n  (`#954 <https://github.com/zopefoundation/Zope/issues/954>`_)\n\n- The ``compute_size`` method properly returns None if the content does not\n  have a ``get_size`` method but the parent has.\n  (`#948 <https://github.com/zopefoundation/Zope/issues/948>`_)\n\n- Fix control panel tab links on all control panel pages\n\n- Update to newest versions of dependencies.\n\n\n5.1.1 (2021-02-10)\n------------------\n\n- Replace (in ``OFS``) the deprecated direct ``id`` access by\n  ``getId`` calls.\n  (`#903 <https://github.com/zopefoundation/Zope/issues/903>`_)\n\n- Update ZMI dependencies for Font Awesome, jQuery and bootstrap.\n\n- Revise debug info GUI\n  (`#937 <https://github.com/zopefoundation/Zope/pull/937>`_)\n\n- Convert ``bytes`` ``HTTPResponse`` header value to ``str``\n  via ``ISO-8859-1`` (the default encoding of ``HTTP/1.1``).\n\n- Fix rendering of not found resources.\n  (`#933 <https://github.com/zopefoundation/Zope/pull/933>`_)\n\n- Update to newest versions of dependencies.\n\n\n5.1 (2020-11-12)\n----------------\n\nBackwards incompatible changes\n++++++++++++++++++++++++++++++\n\n- Exclude characters special for ``chameleon``'s interpolation syntax\n  (i.e. ``${}``) from use in TALES path expressions to reduce the failure risk\n  for the ``chameleon`` interpolation heuristics\n  (`#925 <https://github.com/zopefoundation/Zope/issues/925>`_)\n\nFeatures\n++++++++\n\n- Restore the ZMI `Debug Information` control panel page\n  (`#898 <https://github.com/zopefoundation/Zope/issues/898>`_)\n\nFixes\n+++++\n\n- Fix ZMI visibility of pre elements in error log\n  (`Products.SiteErrorLog#26\n  <https://github.com/zopefoundation/Products.SiteErrorLog/issues/26>`_)\n\n- Fix ``length`` for page template repeat variables\n  (`#913 <https://github.com/zopefoundation/Zope/issues/913>`_)\n\n- Update `isort` to version 5.\n  (`#892 <https://github.com/zopefoundation/Zope/pull/892>`_)\n\n- Update to newest versions of dependencies.\n\n\n5.0 (2020-10-08)\n----------------\n\nBackwards incompatible changes\n++++++++++++++++++++++++++++++\n\n- Drop support for Python 3.5 as it will run out of support soon.\n  (`#841 <https://github.com/zopefoundation/Zope/issues/841>`_)\n\n\nFeatures\n++++++++\n\n- HTTP header encoding support\n  (`#905 <https://github.com/zopefoundation/Zope/pull/905>`_)\n\n- Add support for Python 3.9.\n\n- New interface ``Products.PageTemplates.interfaces.IZopeAwareEngine``.\n  It can be used as the \"provides\" of an adapter registration\n  to adapt a non ``Zope`` tales engine to an engine to be used\n  by ``Zope`` page templates\n  (`#864 <https://github.com/zopefoundation/Zope/issues/864>`_).\n  Currently, the adaptation is used only when the\n  template is rendered with ``chameleon``;\n  with ``zope.pagetemplate``, the engine is used\n  as is - this may change in the future.\n\n- Allow (some) builtins as first element of a (TALES) path expression:\n  in an untrusted context, the builtins from\n  ``AccessControl.safe_builtins`` are allowed;\n  in a trusted context, all Python builtins are allowed in addition\n  (and take precedence)\n  (`zope.tales#23 <https://github.com/zopefoundation/zope.tales/issues/23>`_).\n\n- Support the ``attrs`` predefined template variable again (as\n  far as ``chameleon`` allows it)\n  (`#860 <https://github.com/zopefoundation/Zope/issues/860>`_).\n\n- Use ``Chameleon`` (>= 3.7.2) configuration to get better\n  information for errors detected during template execution\n  (`#837 <https://github.com/zopefoundation/Zope/issues/837>`_).\n\nFixes\n+++++\n\n- Provide a more senseful ``OFS.SimpleItem.Item_w__name__.id``\n  to avoid bugs by use of deprecated direct ``id`` access\n  (as e.g. (`#903 <https://github.com/zopefoundation/Zope/issues/903>`_).\n\n- Update to ``zope.interface > 5.1.0`` to fix a memory leak.\n\n- Fix export of files with non-latin-1 compatible names\n  (`#890 <https://github.com/zopefoundation/Zope/issues/890>`_)\n\n- Avoid unsolicited translations\n  (`#876 <https://github.com/zopefoundation/Zope/issues/876>`_)\n\n- Make \"chameleon-zope context wrapping\" more faithful.\n  (`#873 <https://github.com/zopefoundation/Zope/pull/873/files>`_)\n\n- Let \"unicode conflict resolution\" work for all templates (not just\n  ``ZopePageTemplate``).\n  (`#872 <https://github.com/zopefoundation/Zope/pull/872/files>`_)\n\n- Make \"Unicode Conflict Resolution\" available for templates\n  rendered with ``chameleon``\n  (`Products.CMFPlone#3145\n  <https://github.com/plone/Products.CMFPlone/issues/3145>`_).\n\n- Improve documentation of ``CONTEXTS`` in the \"Zope Book\".\n\n- Decrease cookie size for copy/paste clipboard cookie\n  (`#854 <https://github.com/zopefoundation/Zope/issues/854>`_)\n\n- Fix ``default`` keyword handling in page templates\n  (`#846 <https://github.com/zopefoundation/Zope/issues/846>`_)\n\n- Fix parsing of package version and show correct major version in the ZMI\n\n- Improve solidity of the ``debugError`` method.\n  (`#829 <https://github.com/zopefoundation/Zope/issues/829>`_)\n\n- Fix that ``ZTUtils.LazyFilter`` could not be imported inside a restricted\n  Python script.\n  (`#901 <https://github.com/zopefoundation/Zope/pull/901>`_)\n\nOther changes\n+++++++++++++\n\n- Add ``pyupgrade`` via ``pre-commit``\n  (`#859 <https://github.com/zopefoundation/Zope/issues/859>`_)\n\n- Add ``tal:switch`` test\n\n\n5.0a2 (2020-04-24)\n------------------\n\nBug fixes\n+++++++++\n\n- Pin ``AccessControl`` 4.2 for the `Manage WebDAV Locks` permission\n\n- Fix ``HEAD`` requests on registered views\n  (`#816 <https://github.com/zopefoundation/Zope/issues/816>`_)\n\n- Improve ``chameleon`` --> ``zope.tales`` context wrapper\n  (support for template variable injection)\n  (`#812 <https://github.com/zopefoundation/Zope/pull/812>`_).\n\n- Require ``zope.tales>=5.0.2``\n\n- Fix issue 717 by fully honoring the engine returned by\n  ``PageTemplate.pt_getEngine``\n  (`#717 <https://github.com/zopefoundation/Zope/issues/717>`_).\n  The engine also decides about the use of ``zope.tales``\n  (engine is an instance of ``zope.pagetemplate.engine.ZopeBaseEngine``)\n  or ``chameleon.tales`` (otherwise) TALES expressions.\n\n- Fixed encoding issue of `displayname` WebDAV property\n  (`#797 <https://github.com/zopefoundation/Zope/issues/797>`_)\n\n- Fixed fallback implementation of ``manage_DAVget``\n  (`#799 <https://github.com/zopefoundation/Zope/issues/799>`_)\n\nOther changes\n+++++++++++++\n\n- Update to newest versions of dependencies.\n\n\n5.0a1 (2020-02-28)\n------------------\n\nBackwards incompatible changes\n++++++++++++++++++++++++++++++\n\n- Drop support for Python 2.7 aka Zope 5 cannot be run on Python 2 any more.\n  If you are still running on Python 2.7 upgrade to the latest Zope 4 version\n  first, migrate to Python 3 and than switch to Zope 5.\n  (`#692 <https://github.com/zopefoundation/Zope/issues/692>`_)\n\n- Remove all backwards-compatibility code marked to go away in Zope 5\n  (`#478 <https://github.com/zopefoundation/Zope/issues/478>`_)\n\n- Drop support for running Zope with ZServer as it is Python 2 only.\n  (`#592 <https://github.com/zopefoundation/Zope/issues/592>`_)\n\n- Remove deprecated ``postProcessInputs`` request method.\n  (`#782 <https://github.com/zopefoundation/Zope/issues/782>`_)\n\n- Remove deprecated module ``ZPublisher.maybe_lock``.\n  (`#758 <https://github.com/zopefoundation/Zope/issues/758>`_)\n\n- Remove Help System methods from the product context.\n  (`#756 <https://github.com/zopefoundation/Zope/issues/756>`_)\n\n- Remove more deprecated code.\n  (`#757 <https://github.com/zopefoundation/Zope/issues/757>`_)\n\n- Updated Zope documentation sources for Zope 5.\n  (`#659 <https://github.com/zopefoundation/Zope/issues/659>`_)\n\nNew features\n++++++++++++\n\n- Restore WebDAV support in Zope.\n  (`#744 <https://github.com/zopefoundation/Zope/issues/744>`_)\n\n- Enable WebDAV support independent of ``ZServer``.\n  (`#787 <https://github.com/zopefoundation/Zope/pull/787>`_)\n\n- Clean up and sanitize permissions used for WebDAV-related methods.\n\n- Add ``wsgi.file_wrapper`` implementation\n  https://www.python.org/dev/peps/pep-0333/#optional-platform-specific-file-handling\n  (`#719 <https://github.com/zopefoundation/Zope/pull/719>`_)\n\nBug fixes\n+++++++++\n\n- Only use ``wsgi.file_wrapper`` for response bodies with a ``read`` method.\n  (`#763 <https://github.com/zopefoundation/Zope/issues/763>`_)\n\n- Improve detection of HTTPS requests.\n  (`#680 <https://github.com/zopefoundation/Zope/issues/680>`_)\n\n- Fix several ZMI links so they respect virtual hosting.\n  (`#788 <https://github.com/zopefoundation/Zope/issues/788>`_)\n\n- Fix sort link URLs on ``manage_main``\n  (`#748 <https://github.com/zopefoundation/Zope/issues/748>`_)\n\n- More tests to make sure all ``__str__`` implementations return native\n  strings.\n  (`#692 <https://github.com/zopefoundation/Zope/issues/692>`_)\n\n- Fix longstanding test bug by forcing the page template engine.\n  Many tests in ``Products.PageTemplates`` used the old Zope page template\n  engine because the correct one was not registered during setup.\n\n- Close opened db during shutdown (as ZServer is already doing).\n  (`#740 <https://github.com/zopefoundation/Zope/issues/740>`_)\n\n- The method ``unrestrictedTraverse`` raises an error when\n  the argument ``path`` is not something it can work with.\n  (`#674 <https://github.com/zopefoundation/Zope/issues/674>`_)\n\n- Improve ZMI Security Tab usability for high numbers of roles.\n  (`#730 <https://github.com/zopefoundation/Zope/issues/730>`_)\n\n- Some small ZMI rendering fixes.\n  (`#729 <https://github.com/zopefoundation/Zope/issues/729>`_)\n\n- Fix error when using database minimize in the ZMI.\n  (`#726 <https://github.com/zopefoundation/Zope/issues/726>`_)\n\n- Fix ``__getattr__`` signature in ``UnauthorizedBinding``.\n  (`#703 <https://github.com/zopefoundation/Zope/issues/703>`_)\n\n- Fix VirtualHostMonster not being able to set mappings under Python 3.\n  (`#708 <https://github.com/zopefoundation/Zope/issues/708>`_)\n\n- Reduce the danger of acquiring built-in names on the ZMI Find tab.\n  (`#712 <https://github.com/zopefoundation/Zope/issues/712>`_)\n\n- Restore the mistakenly removed Properties ZMI tab on Image objects\n  (`#706 <https://github.com/zopefoundation/Zope/issues/706>`_)\n\n- Fix ``OFS.Image.File.__str__`` for ``Pdata`` contents\n  (`#711 <https://github.com/zopefoundation/Zope/issues/711>`_)\n\n- Set ``REMOTE_USER`` in wsgi environ using Zope user authentication\n  (`#713 <https://github.com/zopefoundation/Zope/pull/713>`_)\n\n- Add ``Paste`` as ``extras_require`` dependency to pull in ``Paste`` when\n  installing with `pip` and `constraints.txt` to prevent startup errors.\n  This requires adding the ``[wsgi]`` extra in the egg specification.\n  (`#734 <https://github.com/zopefoundation/Zope/issues/734>`_)\n\nOther changes\n+++++++++++++\n\n- Move retried request delay handling out of ``supports_retry``\n  (`#474 <https://github.com/zopefoundation/Zope/issues/474>`_)\n\n- Improve documentation for Zope's error logging services.\n\n\n",
+    "description_content_type": "",
+    "docs_url": null,
+    "download_url": "",
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "home_page": "https://zope.readthedocs.io/en/latest/",
+    "keywords": "",
+    "license": "ZPL 2.1",
+    "maintainer": "",
+    "maintainer_email": "",
+    "name": "Zope",
+    "package_url": "https://pypi.org/project/Zope/",
+    "platform": "",
+    "project_url": "https://pypi.org/project/Zope/",
+    "project_urls": {
+      "Documentation": "https://zope.readthedocs.io",
+      "Homepage": "https://zope.readthedocs.io/en/latest/",
+      "Issue Tracker": "https://github.com/zopefoundation/Zope/issues",
+      "Sources": "https://github.com/zopefoundation/Zope"
+    },
+    "release_url": "https://pypi.org/project/Zope/5.1.2/",
+    "requires_dist": [
+      "AccessControl (>=4.2)",
+      "Acquisition",
+      "BTrees",
+      "Chameleon (>=3.7.0)",
+      "DateTime",
+      "DocumentTemplate (>=4.0)",
+      "ExtensionClass",
+      "MultiMapping",
+      "PasteDeploy",
+      "Persistence",
+      "RestrictedPython",
+      "ZConfig (>=2.9.2)",
+      "ZODB",
+      "setuptools (>=36.2)",
+      "transaction (>=2.4)",
+      "waitress",
+      "zExceptions (>=3.4)",
+      "z3c.pt",
+      "zope.browser",
+      "zope.browsermenu",
+      "zope.browserpage (>=4.4.0.dev0)",
+      "zope.browserresource (>=3.11)",
+      "zope.component",
+      "zope.configuration",
+      "zope.container",
+      "zope.contentprovider",
+      "zope.contenttype",
+      "zope.deferredimport",
+      "zope.event",
+      "zope.exceptions",
+      "zope.globalrequest",
+      "zope.i18n[zcml]",
+      "zope.i18nmessageid",
+      "zope.interface (>=3.8)",
+      "zope.lifecycleevent",
+      "zope.location",
+      "zope.pagetemplate (>=4.0.2)",
+      "zope.processlifetime",
+      "zope.proxy",
+      "zope.ptresource",
+      "zope.publisher",
+      "zope.schema",
+      "zope.security",
+      "zope.sequencesort",
+      "zope.site",
+      "zope.size",
+      "zope.tal",
+      "zope.tales (>=5.0.2)",
+      "zope.testbrowser",
+      "zope.testing",
+      "zope.traversing",
+      "zope.viewlet",
+      "Sphinx ; extra == 'docs'",
+      "sphinx-rtd-theme ; extra == 'docs'",
+      "repoze.sphinx.autointerface ; extra == 'docs'",
+      "tempstorage ; extra == 'docs'",
+      "Paste ; extra == 'wsgi'"
+    ],
+    "requires_python": ">= 3.6",
+    "summary": "Zope application server / web framework",
+    "version": "5.1.2",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 9591933,
+  "releases": {
+    "4.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "056ba29c737561dc69a6aecc0a19d8fd",
+          "sha256": "2bdd56ebad31a7b0ee5f6269851e45e10ff8b3b78acfed86542bacc3179d0414"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "056ba29c737561dc69a6aecc0a19d8fd",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2807181,
+        "upload_time": "2019-05-10T12:21:59",
+        "upload_time_iso_8601": "2019-05-10T12:21:59.232313Z",
+        "url": "https://files.pythonhosted.org/packages/6e/95/27627be96c3caf98f05d3c6978b11f385fe7b23c00b9813fd367c3b1291f/Zope-4.0-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8e864f485f0f915d0ba6b1193694533c",
+          "sha256": "e0ac6f48fec0a6065e883d3ccf1e1ad9b3fa19071e01004d2c5732e8a5bbcc58"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "8e864f485f0f915d0ba6b1193694533c",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7756443,
+        "upload_time": "2019-05-10T12:22:02",
+        "upload_time_iso_8601": "2019-05-10T12:22:02.292008Z",
+        "url": "https://files.pythonhosted.org/packages/4f/92/2be7c1e75bb294448fd07ad847157f1b8df87db15682b9d4a51c7f8fe4d2/Zope-4.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8a24e08d9c8da9678b0d2ab49b4c3de5",
+          "sha256": "1bebdcdbc5766f720f51e868e74bfa98d2ac01e850530c0859ce5f840696131c"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b1.zip",
+        "has_sig": false,
+        "md5_digest": "8a24e08d9c8da9678b0d2ab49b4c3de5",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5026488,
+        "upload_time": "2017-09-18T15:12:45",
+        "upload_time_iso_8601": "2017-09-18T15:12:45.511434Z",
+        "url": "https://files.pythonhosted.org/packages/71/2c/c0fe9727c6da67b12b4ca304d42aff28294b7315ec4a65cfacf5fb5a467a/Zope-4.0b1.zip",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b10": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8adca93f5f2068fb7a828bfae30f1818",
+          "sha256": "ca9e70a92c09d2d6aa22364fffa08c34a41060ea792e0b256ee557977e6b07e7"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b10-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "8adca93f5f2068fb7a828bfae30f1818",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2568413,
+        "upload_time": "2019-03-08T13:49:41",
+        "upload_time_iso_8601": "2019-03-08T13:49:41.272547Z",
+        "url": "https://files.pythonhosted.org/packages/d8/ad/1820b44b4cf7cdc37077c643ade9fba44456e5d2ea587ba36e1029c2cbeb/Zope-4.0b10-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b4f4186fcd3290b08ffe31e659de1fb1",
+          "sha256": "700b316b00bb182004009584c5cf660666f1587498e8d009960fd8119b9a3faa"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b10.tar.gz",
+        "has_sig": false,
+        "md5_digest": "b4f4186fcd3290b08ffe31e659de1fb1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 6571654,
+        "upload_time": "2019-03-08T13:49:51",
+        "upload_time_iso_8601": "2019-03-08T13:49:51.023845Z",
+        "url": "https://files.pythonhosted.org/packages/da/f8/e81acbba4fb2d64d10bdf0b5960eec180069e1d468ff174f8a9ec86580fa/Zope-4.0b10.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6b1aa26585f0f86ddb23d83afc595cf2",
+          "sha256": "5ec4666105dd5375ab76794f2a6446bb7764038713f1351cef99962423f783a9"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b2-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "6b1aa26585f0f86ddb23d83afc595cf2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 690101,
+        "upload_time": "2017-10-13T15:01:16",
+        "upload_time_iso_8601": "2017-10-13T15:01:16.972850Z",
+        "url": "https://files.pythonhosted.org/packages/63/d4/6703dfb3b3daeb23dfb6b50080938ddcab471d682b44594d38408e9bf68c/Zope-4.0b2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a75207a34041bb87b3dd9df675ab0520",
+          "sha256": "0ef55e45f51c5bcf2ef97e4f6d25fe013313bee69328c35070450d76fc62f9ee"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "a75207a34041bb87b3dd9df675ab0520",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 4695973,
+        "upload_time": "2017-10-13T15:02:10",
+        "upload_time_iso_8601": "2017-10-13T15:02:10.691563Z",
+        "url": "https://files.pythonhosted.org/packages/5d/54/80983905d5a978d8015b69c84b9e2bde258155c3a170b1a8427066d7691b/Zope-4.0b2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1069e98d87ef21208e49d997b6152052",
+          "sha256": "3346e351a6cbe5f5063c99ec032a945e4c82db57834c2c9eebe7cb94691d2781"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b3-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "1069e98d87ef21208e49d997b6152052",
+        "packagetype": "bdist_wheel",
+        "python_version": "2.7",
+        "requires_python": null,
+        "size": 701453,
+        "upload_time": "2018-01-27T13:43:52",
+        "upload_time_iso_8601": "2018-01-27T13:43:52.077915Z",
+        "url": "https://files.pythonhosted.org/packages/80/f4/7383481632f1d925389e96ac5df4a0c1d0c9382e7ac197ea01d1b231a9d4/Zope-4.0b3-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "9a63e8c8b614dc6d6944fcbd9c105f45",
+          "sha256": "f715175fa4cace58ad4f3f9eaa220a17b6a5df77240374fecc1eb709da3910b3"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "9a63e8c8b614dc6d6944fcbd9c105f45",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 4725894,
+        "upload_time": "2018-01-27T13:35:12",
+        "upload_time_iso_8601": "2018-01-27T13:35:12.549105Z",
+        "url": "https://files.pythonhosted.org/packages/26/e4/677d5aaf027e67345dc2f9592941c9d66e4932c4e18eb87c8081b59468b9/Zope-4.0b3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "736f764be2eaa903fdca91fdb62d0de1",
+          "sha256": "79062b415d8302698b17cfa562ee05d85f574b2d92a0cc5810f073c71ea84e3d"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b4-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "736f764be2eaa903fdca91fdb62d0de1",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 695812,
+        "upload_time": "2018-04-23T12:27:10",
+        "upload_time_iso_8601": "2018-04-23T12:27:10.288205Z",
+        "url": "https://files.pythonhosted.org/packages/39/be/3cb86cbeb87cf3c1103a4144c2cfb6ca11fbbe81672805bf5a3a8ef69fff/Zope-4.0b4-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7159a87dd270337b112bef578159f5a7",
+          "sha256": "5e42bbef9a2eee99c4bbd41189bc9b215416eacc495c1c6e3896a88d6da83d89"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "7159a87dd270337b112bef578159f5a7",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 4728530,
+        "upload_time": "2018-04-23T12:27:19",
+        "upload_time_iso_8601": "2018-04-23T12:27:19.765666Z",
+        "url": "https://files.pythonhosted.org/packages/32/70/c248ee6808d9f1f17c8746ad360a1cee2bdc23b1251e6a6d498be47583bb/Zope-4.0b4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0f6bb910e9e37816f52034901429727c",
+          "sha256": "39161c9fe88de5a6d4465918c0db2ba664ab0fd1e36dbe1bbad1b8c3b63cfd0d"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b5-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "0f6bb910e9e37816f52034901429727c",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 699055,
+        "upload_time": "2018-05-18T12:50:18",
+        "upload_time_iso_8601": "2018-05-18T12:50:18.217992Z",
+        "url": "https://files.pythonhosted.org/packages/8d/48/9fd59bd16fe3eea626d3d5333c4b153466e311005c0c9890cbb55bac32f4/Zope-4.0b5-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "858f59de9de402e5df2e9c59b2e5da20",
+          "sha256": "ce6748e4981fad6d027fd9f088cb04ad5bb629987f072f1b9141c098f81fc9a6"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b5.tar.gz",
+        "has_sig": false,
+        "md5_digest": "858f59de9de402e5df2e9c59b2e5da20",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 4731005,
+        "upload_time": "2018-05-18T12:50:21",
+        "upload_time_iso_8601": "2018-05-18T12:50:21.813159Z",
+        "url": "https://files.pythonhosted.org/packages/50/ae/68fe1ce18071319ab621777e921599e52b8198200cb47e86b1b110848b32/Zope-4.0b5.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b6": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d4e61aedf70ddee861ae786189d818d5",
+          "sha256": "32680ca4cc053e1e5b5ce01edf7b05f29c1f3b90744d93a982d05bcb5b34e4ab"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b6-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "d4e61aedf70ddee861ae786189d818d5",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 2521272,
+        "upload_time": "2018-10-11T08:46:53",
+        "upload_time_iso_8601": "2018-10-11T08:46:53.959759Z",
+        "url": "https://files.pythonhosted.org/packages/b4/cb/dec7877de7831cc04befda3fa845f09415e92013e421bda7a61a42e1a53a/Zope-4.0b6-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d169a4f54fd76b99499ef99eae20dbdf",
+          "sha256": "0a78d18853a17b2e2d95af4d7571f058a37eeee52e7badc1dccb7b39831b2ad8"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b6.tar.gz",
+        "has_sig": false,
+        "md5_digest": "d169a4f54fd76b99499ef99eae20dbdf",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 6528331,
+        "upload_time": "2018-10-11T08:47:05",
+        "upload_time_iso_8601": "2018-10-11T08:47:05.042372Z",
+        "url": "https://files.pythonhosted.org/packages/e8/59/e4ca3479a36b179046e92a640e1a2b64f8a733653492be809b8a9e04c27f/Zope-4.0b6.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b7": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c84982c0059e2b54f01a01b862b630da",
+          "sha256": "195c40b743754d7734126efeccc551c84e665e9088936fc109f87abb32ea912e"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b7-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "c84982c0059e2b54f01a01b862b630da",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 2523559,
+        "upload_time": "2018-10-30T10:10:16",
+        "upload_time_iso_8601": "2018-10-30T10:10:16.150595Z",
+        "url": "https://files.pythonhosted.org/packages/48/35/eb1983283025723e45070d80396b352a0e8e561e5687dbcbaf8375dda2bb/Zope-4.0b7-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a855a2f5e83032d54fe157e006119a0d",
+          "sha256": "57717cdcf44984c87b45619edfa6c85e559d18da86033a22819ce3cf6a3ab646"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b7.tar.gz",
+        "has_sig": false,
+        "md5_digest": "a855a2f5e83032d54fe157e006119a0d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 6502935,
+        "upload_time": "2018-10-30T10:10:26",
+        "upload_time_iso_8601": "2018-10-30T10:10:26.877781Z",
+        "url": "https://files.pythonhosted.org/packages/ee/aa/e5d7c8378594ca0384752a11558133c8c5a6e48c169f9afca976557287a1/Zope-4.0b7.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b8": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "bd22ee2a51e0ed60031e4e21e6f066a7",
+          "sha256": "68f746f3dec27151256695b7d76a79ed97e488e5054a642d5c1037a517cc7a16"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b8-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "bd22ee2a51e0ed60031e4e21e6f066a7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 2524693,
+        "upload_time": "2018-12-14T13:11:21",
+        "upload_time_iso_8601": "2018-12-14T13:11:21.470442Z",
+        "url": "https://files.pythonhosted.org/packages/c7/d5/68b3c7080a5c99cd6a016a1359f77102391601f65d2ff25feef832101069/Zope-4.0b8-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f53260a85e68d6af6bec97a624a23c93",
+          "sha256": "7acaebc8d5b6c58e6e97d3f5995b65fa03296d038aa1c7b8d7a6a4fb4423f85a"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b8.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f53260a85e68d6af6bec97a624a23c93",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 6507401,
+        "upload_time": "2018-12-14T13:11:33",
+        "upload_time_iso_8601": "2018-12-14T13:11:33.573801Z",
+        "url": "https://files.pythonhosted.org/packages/e7/01/fde3c86d3bd0d2ae8dda3167695b82b79851efbce414a8386f00d1d8b1bf/Zope-4.0b8.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.0b9": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6af45245753b6389ea00cb79d9fc93e7",
+          "sha256": "a2d44edc934290fe03457e341c9938a23d0628e4cc6e5618484c7a60576642e4"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b9-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "6af45245753b6389ea00cb79d9fc93e7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 2528035,
+        "upload_time": "2019-02-09T17:17:00",
+        "upload_time_iso_8601": "2019-02-09T17:17:00.739633Z",
+        "url": "https://files.pythonhosted.org/packages/67/9e/96cac923f9213d6e01189fbc31aeb037402e2c8cdc7084fd5052693a6513/Zope-4.0b9-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "25b3b3376e3f11721ff328d5b499b60e",
+          "sha256": "7ced33773e5146777271eb46a6014b85b28695f79470b6170a62fc60a6d4c49d"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.0b9.tar.gz",
+        "has_sig": false,
+        "md5_digest": "25b3b3376e3f11721ff328d5b499b60e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 6557376,
+        "upload_time": "2019-02-09T17:17:31",
+        "upload_time_iso_8601": "2019-02-09T17:17:31.836267Z",
+        "url": "https://files.pythonhosted.org/packages/0b/c8/80781f81ffc5f124935a050911103873a6637925621dd6ca64db89ff52c1/Zope-4.0b9.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c5c2fd35afb47a18e54e38894a6f9911",
+          "sha256": "1097e7ef228f201c8da047e2b1eb4d6a2c40993394a8da0c9759f7b05bc22b73"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "c5c2fd35afb47a18e54e38894a6f9911",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2801679,
+        "upload_time": "2019-06-19T09:10:45",
+        "upload_time_iso_8601": "2019-06-19T09:10:45.002834Z",
+        "url": "https://files.pythonhosted.org/packages/cf/64/c6de128f604e3e37a3e1b196a7f0c1f1397f8ba4526aceef0ec7e341ad15/Zope-4.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f05e9df8d5520a1b6ec617c59c5f09c3",
+          "sha256": "4a92a894ae47d08f4db316ebe453921b8ae91e5e6c4ded164a86622a356aa8f7"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f05e9df8d5520a1b6ec617c59c5f09c3",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7765476,
+        "upload_time": "2019-06-19T09:11:16",
+        "upload_time_iso_8601": "2019-06-19T09:11:16.242229Z",
+        "url": "https://files.pythonhosted.org/packages/68/ac/b8018fec843b424dd3ada1f32403bbc9b6ec330e74ffae22864d05262dd7/Zope-4.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.1.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "48100342d5537e4ff15063801792b1a2",
+          "sha256": "2521dc95ac74699015d42f79150a33c22ee66b80cd95f042befc62b07b39c93b"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1.1-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "48100342d5537e4ff15063801792b1a2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2801877,
+        "upload_time": "2019-07-02T22:59:47",
+        "upload_time_iso_8601": "2019-07-02T22:59:47.891460Z",
+        "url": "https://files.pythonhosted.org/packages/a7/75/38f49e398e0796df7dbb881db6a3f7da8dd97d4f9c406ee3d62931f3bba5/Zope-4.1.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0a637a7edeedda98c5807021b4ab886e",
+          "sha256": "f33ef10b2783cd1db3b88a4a9eade2b6d38102b2b4d866579a65df0f9ca1946c"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1.1.tar.gz",
+        "has_sig": true,
+        "md5_digest": "0a637a7edeedda98c5807021b4ab886e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7766009,
+        "upload_time": "2019-07-02T23:00:00",
+        "upload_time_iso_8601": "2019-07-02T23:00:00.380395Z",
+        "url": "https://files.pythonhosted.org/packages/b6/d3/82b18a86fd10726d975f2b39e6d81f2b5a22df28801197dd61d750e1be12/Zope-4.1.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.1.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4a3fc6672a84e74accd08e1edffbc81a",
+          "sha256": "18501dfa5134b485e691f0739be205cf113a6c3548e5bcc9b75a54394a367c64"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1.2-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "4a3fc6672a84e74accd08e1edffbc81a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2807343,
+        "upload_time": "2019-09-04T06:14:27",
+        "upload_time_iso_8601": "2019-09-04T06:14:27.891618Z",
+        "url": "https://files.pythonhosted.org/packages/66/77/471673eebdcc904eaafaa4b97a01b97b8aa73aed84054248c5f258a00d92/Zope-4.1.2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c74a31c5c9d19ad562981d11e6d7415e",
+          "sha256": "4d4e98ee5f47dde20a87c91d47e6019dfd3a9b4abe87ad299675d831536ca872"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c74a31c5c9d19ad562981d11e6d7415e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7770585,
+        "upload_time": "2019-09-04T06:14:39",
+        "upload_time_iso_8601": "2019-09-04T06:14:39.332886Z",
+        "url": "https://files.pythonhosted.org/packages/0a/8b/d0ebf8b6e0402f75e4d09eaa37b02db7321f044729678da0a1068fbe661b/Zope-4.1.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.1.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fdaf1d1ca40bb79ac482521d786bd625",
+          "sha256": "f242abfd94bd5c1d3ed604c550f1bb228ba9dfa8895015e0027020b154db8a97"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1.3-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "fdaf1d1ca40bb79ac482521d786bd625",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2811393,
+        "upload_time": "2019-12-01T18:39:21",
+        "upload_time_iso_8601": "2019-12-01T18:39:21.576345Z",
+        "url": "https://files.pythonhosted.org/packages/15/76/da15182338a25a6faf696a5e45ece2806754e8b113848386f3ecebebabd9/Zope-4.1.3-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e031adc402fa60106a21f8171ef0df2d",
+          "sha256": "8e30f2e0239135a99c6db78e041459a4d45e78532eaa5f43e161974c8405d564"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.1.3.tar.gz",
+        "has_sig": true,
+        "md5_digest": "e031adc402fa60106a21f8171ef0df2d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 12385563,
+        "upload_time": "2019-12-01T18:41:16",
+        "upload_time_iso_8601": "2019-12-01T18:41:16.900557Z",
+        "url": "https://files.pythonhosted.org/packages/22/69/7984702f304604d29ae20750519212c2037ed0ed9c1a89eb98a381a567b5/Zope-4.1.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "03a3733be6d32cc5cfe0b4de99ed687f",
+          "sha256": "d89a8bfa7a68ae2dc431b43b69ad97097146c37ca4bcac44d317fe007e1798fb"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.2-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "03a3733be6d32cc5cfe0b4de99ed687f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2858306,
+        "upload_time": "2020-02-09T22:18:17",
+        "upload_time_iso_8601": "2020-02-09T22:18:17.746263Z",
+        "url": "https://files.pythonhosted.org/packages/4d/85/9d67692b5db9657d0f020a3b526b4e4a9b439868df424e7b383b74cd9df8/Zope-4.2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1b7fce03075221de5501430f4a9bc0dc",
+          "sha256": "6e38e7d1bca84b2d97ce7d089232df68e8e9a28f5cfc159c1cb07ee6132fa5dd"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.2.tar.gz",
+        "has_sig": true,
+        "md5_digest": "1b7fce03075221de5501430f4a9bc0dc",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7812507,
+        "upload_time": "2020-02-09T22:19:32",
+        "upload_time_iso_8601": "2020-02-09T22:19:32.555324Z",
+        "url": "https://files.pythonhosted.org/packages/51/7f/8dec57cead46611b6518783b17f2cd79b81aaa1d099fb11ac9749578640f/Zope-4.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.2.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d244eb74895fd0df49c69a8b40af0064",
+          "sha256": "735312262beef5a557ff47db70740270e7dcabe5f2cc77ac072e385ef6cb9583"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.2.1-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "d244eb74895fd0df49c69a8b40af0064",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2859702,
+        "upload_time": "2020-02-10T00:44:08",
+        "upload_time_iso_8601": "2020-02-10T00:44:08.495369Z",
+        "url": "https://files.pythonhosted.org/packages/05/85/47fa7ee2e2b4ab2d65dae699c91b0a76f9e0512366e4f17480d97f7703dd/Zope-4.2.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "dbcd6ee5224254fe0894aa797991a101",
+          "sha256": "2a969526c658fa07bf0b2f08e7bc6c1144b624e4af816536b228543d7b5fac72"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.2.1.tar.gz",
+        "has_sig": true,
+        "md5_digest": "dbcd6ee5224254fe0894aa797991a101",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7812848,
+        "upload_time": "2020-02-10T00:45:24",
+        "upload_time_iso_8601": "2020-02-10T00:45:24.407423Z",
+        "url": "https://files.pythonhosted.org/packages/bc/06/17bc4431b89ffbeda621aefd4b5ea35d812c9eef1e481edf4459e1010347/Zope-4.2.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cefb0c4f65e2edb991c6df1fd6679c52",
+          "sha256": "a41e53ee1263761e0b35c6c825264b929a5e7074ce7e6290f7b788bc4c5bc12c"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.3-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "cefb0c4f65e2edb991c6df1fd6679c52",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2862066,
+        "upload_time": "2020-02-26T02:14:11",
+        "upload_time_iso_8601": "2020-02-26T02:14:11.423044Z",
+        "url": "https://files.pythonhosted.org/packages/d4/34/b1ffb6debf1bc3e00aef1803e9e03adb9e8f26f925c7157a64720bdcd1c6/Zope-4.3-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "388af088164316c918f258af6ebf785c",
+          "sha256": "ef592e722987880d88f619e7059a8f8cfef7187a6fd61c08c49a54d718943ab1"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.3.tar.gz",
+        "has_sig": true,
+        "md5_digest": "388af088164316c918f258af6ebf785c",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7815785,
+        "upload_time": "2020-02-26T02:15:29",
+        "upload_time_iso_8601": "2020-02-26T02:15:29.218534Z",
+        "url": "https://files.pythonhosted.org/packages/34/eb/9d5f5e25b4931bed29ff0c57e0d34aad28b8d677271ca9c0d2d22c7c7121/Zope-4.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f15c7a61c123ac59d6fd3e108b1c7340",
+          "sha256": "3eeac53a259bef65b433c9f91c0a007cf8bfd9182fc4180ba7382845cf49f48e"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "f15c7a61c123ac59d6fd3e108b1c7340",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2877030,
+        "upload_time": "2020-03-31T15:16:09",
+        "upload_time_iso_8601": "2020-03-31T15:16:09.315679Z",
+        "url": "https://files.pythonhosted.org/packages/d3/ec/5806d17d14b0236544d5eacdb64e63163d5b3a1fe5cbd0a499691170971c/Zope-4.4-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "26638b345a1a77a178354b289bf363dc",
+          "sha256": "32600821dc343026755ced959d5bdc4c3989c38414cbac8afc2a534a2ea02302"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.tar.gz",
+        "has_sig": true,
+        "md5_digest": "26638b345a1a77a178354b289bf363dc",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 12434268,
+        "upload_time": "2020-03-31T15:16:41",
+        "upload_time_iso_8601": "2020-03-31T15:16:41.302592Z",
+        "url": "https://files.pythonhosted.org/packages/30/2b/e091bf26f78cf126921cc2299c582c64900e4fba5bb1f348468bd8530e8a/Zope-4.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.4.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "56bc6ec7092ed1974796a207028d3928",
+          "sha256": "f5b6dd511473da6f325d5fd92a8b9be5b0b6cc3aabe99767112d12018fc1a4cc"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "56bc6ec7092ed1974796a207028d3928",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2870907,
+        "upload_time": "2020-04-30T13:10:05",
+        "upload_time_iso_8601": "2020-04-30T13:10:05.988047Z",
+        "url": "https://files.pythonhosted.org/packages/2d/53/9c731e09c19b382665bcf2ba598847f7ad7e4083ffeb8029bb155126797b/Zope-4.4.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "add209dbad82e2574f9e94854f9c994d",
+          "sha256": "b8e203ba56f49f764e619741556583df6e7772b5088235104d882218d8bbeede"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "add209dbad82e2574f9e94854f9c994d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7823799,
+        "upload_time": "2020-04-30T13:10:19",
+        "upload_time_iso_8601": "2020-04-30T13:10:19.555902Z",
+        "url": "https://files.pythonhosted.org/packages/a7/3a/fdeb2878fc8f8f0710167e1a03820ae106006bb614bcd0d6eaa13968cdb7/Zope-4.4.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.4.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3e7b31ee78bcfc3d2afc6828c7b60c9d",
+          "sha256": "df2b614cb571ab63630b6e940a4cda6e4e1ebda74afaa616f2990123f16b9285"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.2-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "3e7b31ee78bcfc3d2afc6828c7b60c9d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2870923,
+        "upload_time": "2020-04-30T13:15:56",
+        "upload_time_iso_8601": "2020-04-30T13:15:56.683860Z",
+        "url": "https://files.pythonhosted.org/packages/a7/09/08ff6576f48f9cd27862a0a54ea8afef2b5b91e497543567c7e0468f098a/Zope-4.4.2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f9d36ef1af0baf1ccba4868ac85f74ec",
+          "sha256": "c5c2a1778eb840c7b899217f26dd375563523ab3a50568c45229c2c40d91813a"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f9d36ef1af0baf1ccba4868ac85f74ec",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7823532,
+        "upload_time": "2020-04-30T13:16:08",
+        "upload_time_iso_8601": "2020-04-30T13:16:08.769677Z",
+        "url": "https://files.pythonhosted.org/packages/04/e6/288b653d2e42dd5608093a14b954164d1d85f742577330e973c756ec4864/Zope-4.4.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.4.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "bd9fda3aa5188596bb9e6b38b659e87e",
+          "sha256": "2705d050d6911ea115f09e38f7ef823ee6c0ddd69aacaead0ac2346eaac10fb9"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.3-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "bd9fda3aa5188596bb9e6b38b659e87e",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2873282,
+        "upload_time": "2020-06-16T06:14:36",
+        "upload_time_iso_8601": "2020-06-16T06:14:36.304216Z",
+        "url": "https://files.pythonhosted.org/packages/f3/d1/1c3a4810884c816a50fdb5024274c1a95ccb4f0bf2daee6a79e5b690b66a/Zope-4.4.3-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "97040014a3bf3f376f9064476c414063",
+          "sha256": "ae0777631a1194def7e0a307946963120fcfb61ac2fc40a09f6865fa368d7b4e"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "97040014a3bf3f376f9064476c414063",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 7826277,
+        "upload_time": "2020-06-16T06:14:48",
+        "upload_time_iso_8601": "2020-06-16T06:14:48.506211Z",
+        "url": "https://files.pythonhosted.org/packages/df/76/23e7e82f20cee3c11d43cd7ad72e3703b0c1479e35b41e8188d3c30bedeb/Zope-4.4.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.4.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7c6bef664b803d51dd9453aeebc89254",
+          "sha256": "2651efb4941ea8735cceef8360f8a2dc006c42cb039888d10a2753127f9f436b"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.4-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "7c6bef664b803d51dd9453aeebc89254",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2879765,
+        "upload_time": "2020-06-26T12:43:19",
+        "upload_time_iso_8601": "2020-06-26T12:43:19.238773Z",
+        "url": "https://files.pythonhosted.org/packages/10/25/a82feec9ddfc4ed3bcb131f9ee827b0278b0482b99747ebcef8fb7dead02/Zope-4.4.4-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1a4c2060cc948c7551085e294952a25b",
+          "sha256": "96bbd2e6d6dfe22e5bf80deca8bbd2472b14b90e58663f6ba5e9d233d091b0da"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.4.4.tar.gz",
+        "has_sig": true,
+        "md5_digest": "1a4c2060cc948c7551085e294952a25b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 8067437,
+        "upload_time": "2020-06-26T12:43:41",
+        "upload_time_iso_8601": "2020-06-26T12:43:41.418608Z",
+        "url": "https://files.pythonhosted.org/packages/91/96/91b6a84d5ce3b369cb41d0194c27f8f678d9ab0d5b6f6e4c5f4d7de58296/Zope-4.4.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ecf13063cee39b51f19744b7b625b6db",
+          "sha256": "5f54e4d4b57b3b458ee52c732ced39ac56528850a2c20cdd6156038b2373959a"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "ecf13063cee39b51f19744b7b625b6db",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2884706,
+        "upload_time": "2020-07-09T12:11:59",
+        "upload_time_iso_8601": "2020-07-09T12:11:59.944602Z",
+        "url": "https://files.pythonhosted.org/packages/d4/4b/e470b7b2e6eb5ea3c7f2593496b457db77f1ec5d43206176c227472501a7/Zope-4.5-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c8b41e31c0a4831ebe623ae274fb43be",
+          "sha256": "77637737029c2f1c25495dfeb42963a8e810cfcef617d02ee4e6108b0c0e743d"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.tar.gz",
+        "has_sig": true,
+        "md5_digest": "c8b41e31c0a4831ebe623ae274fb43be",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 8073117,
+        "upload_time": "2020-07-09T12:12:20",
+        "upload_time_iso_8601": "2020-07-09T12:12:20.964275Z",
+        "url": "https://files.pythonhosted.org/packages/8f/30/21f86beea6532b0d511c73b58f064ad5416db77eee3da1465a681cee4a16/Zope-4.5.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.5.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "04aaa0d240166585fb2092a4b06dfc01",
+          "sha256": "681cdec8846f4fc1cf177c28492b77e6f8cf2f470c630a486ebfaa7857c1fbee"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.1-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "04aaa0d240166585fb2092a4b06dfc01",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2887926,
+        "upload_time": "2020-08-13T09:53:04",
+        "upload_time_iso_8601": "2020-08-13T09:53:04.359733Z",
+        "url": "https://files.pythonhosted.org/packages/94/72/f321911ff25a6b52d57aa06cf25ee41bdf5b911e829a4124b49fc9b86f6a/Zope-4.5.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "14f0b495d5c3cac9ba235998c697c114",
+          "sha256": "ecd7d2a033e0a6a537fc1b159382f0037cd5694128f5929536e33ece07e69c3f"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.1.tar.gz",
+        "has_sig": true,
+        "md5_digest": "14f0b495d5c3cac9ba235998c697c114",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 12919126,
+        "upload_time": "2020-08-13T09:53:35",
+        "upload_time_iso_8601": "2020-08-13T09:53:35.166425Z",
+        "url": "https://files.pythonhosted.org/packages/da/d5/addf1471dcde00c32bbca823736a2edfe90ec227c597c9dd76927c5c83d5/Zope-4.5.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.5.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "04e4168ea9a3f6c737083b3fa1d0b2d8",
+          "sha256": "1f7d48282f9468c5b61df95c41f753c15c82ef2c72f1e98376cfa834817b20d9"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.2-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "04e4168ea9a3f6c737083b3fa1d0b2d8",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2895950,
+        "upload_time": "2020-11-12T08:46:43",
+        "upload_time_iso_8601": "2020-11-12T08:46:43.005876Z",
+        "url": "https://files.pythonhosted.org/packages/d7/2d/bf09a0fee8cbbd938eeb682e538e9050867e58816e3018bac51b4e123f3e/Zope-4.5.2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8e241a93658dcaf7c48025ed9a7fd68d",
+          "sha256": "9bcb0c27f3f0d79d616604ac2e217d13d0515dc82f487e166521cbff568f13e5"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.2.tar.gz",
+        "has_sig": true,
+        "md5_digest": "8e241a93658dcaf7c48025ed9a7fd68d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 12947918,
+        "upload_time": "2020-11-12T08:47:12",
+        "upload_time_iso_8601": "2020-11-12T08:47:12.039181Z",
+        "url": "https://files.pythonhosted.org/packages/3f/ed/db9d7340abea810bb2608f5df573f179c696085123364eeb8aad1cdddf4a/Zope-4.5.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.5.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "095c8705e72959bc5a24a7dafaab924a",
+          "sha256": "e524d9a0b90756916a260a2e7052e0648bc7c0cf915d4cd45255e1b150eb93af"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.3-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "095c8705e72959bc5a24a7dafaab924a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 2896271,
+        "upload_time": "2020-11-16T16:50:15",
+        "upload_time_iso_8601": "2020-11-16T16:50:15.295156Z",
+        "url": "https://files.pythonhosted.org/packages/ab/6a/41e04580a4d2372e273eacdfc726a4a50c21481f9edc5f35ddb4e5999155/Zope-4.5.3-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "43c692b4772c0204cb5701be906eedb9",
+          "sha256": "86f7820cb152cbbe5bb22d1d108c06497d98850114cfd367ad96f32788b30d9b"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.3.tar.gz",
+        "has_sig": true,
+        "md5_digest": "43c692b4772c0204cb5701be906eedb9",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 12948767,
+        "upload_time": "2020-11-16T16:50:44",
+        "upload_time_iso_8601": "2020-11-16T16:50:44.869380Z",
+        "url": "https://files.pythonhosted.org/packages/79/d9/4264026b6efd48a85cdadd059fff8ed69eeb8b8dba8e4361fdeb4ec7b86d/Zope-4.5.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.5.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d41a36c8d321c3675de1359d3db0a147",
+          "sha256": "30daf3d516289ccda82c0ab938d085e9a76769358aa1624301d9f21eaf25b512"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.4-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "d41a36c8d321c3675de1359d3db0a147",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 3033213,
+        "upload_time": "2021-02-10T10:24:04",
+        "upload_time_iso_8601": "2021-02-10T10:24:04.323914Z",
+        "url": "https://files.pythonhosted.org/packages/ce/e8/8ab3faf31a13860bdf44fd820ccec33cb39994aee47c0c37f737ae45cde5/Zope-4.5.4-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7cb2438528fc4022be31a77ed0718d76",
+          "sha256": "5509b1f2f84cb4d1213f989bf55e1d833fe032c344b1fe1b72a498e6eea75b78"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.4.tar.gz",
+        "has_sig": true,
+        "md5_digest": "7cb2438528fc4022be31a77ed0718d76",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*",
+        "size": 13086455,
+        "upload_time": "2021-02-10T10:24:36",
+        "upload_time_iso_8601": "2021-02-10T10:24:36.502790Z",
+        "url": "https://files.pythonhosted.org/packages/23/29/85fd805734954d95dbb61dd9495d7676f73c041934e8758bfebd44d593ee/Zope-4.5.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "4.5.5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e83421ea074a73f3979b81db3aaff1ad",
+          "sha256": "36d907843440755b1ffb7e61f2b1c0f02cf63bd57962cac9e89ac835942db194"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.5-py2.py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "e83421ea074a73f3979b81db3aaff1ad",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,<3.9",
+        "size": 3033760,
+        "upload_time": "2021-03-02T12:10:33",
+        "upload_time_iso_8601": "2021-03-02T12:10:33.670280Z",
+        "url": "https://files.pythonhosted.org/packages/52/fa/530d11d3d569b1ca434cceb6cdafe78f4bdb6dabf0406054738d5e5ba45e/Zope-4.5.5-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6ce9161f96f9234ac3e344c05ee2060d",
+          "sha256": "e3629ecc570cd8a650423fcdf7f187709a2f14661e5b280494d916aa8f95cc84"
+        },
+        "downloads": -1,
+        "filename": "Zope-4.5.5.tar.gz",
+        "has_sig": true,
+        "md5_digest": "6ce9161f96f9234ac3e344c05ee2060d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,<3.9",
+        "size": 13089121,
+        "upload_time": "2021-03-02T12:11:06",
+        "upload_time_iso_8601": "2021-03-02T12:11:06.455903Z",
+        "url": "https://files.pythonhosted.org/packages/9c/f2/5a851abb0059841b365e6464837984342a1c3c5df366b8b18ceb432dc75c/Zope-4.5.5.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "5.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2919eccbff641896bff9d77aad02f5b7",
+          "sha256": "46153ff95d8bb80606432e88e7eedff227326b882c63a9d75bbe5e010ae6ecf9"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "2919eccbff641896bff9d77aad02f5b7",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">= 3.6",
+        "size": 2856335,
+        "upload_time": "2020-10-08T13:07:21",
+        "upload_time_iso_8601": "2020-10-08T13:07:21.112328Z",
+        "url": "https://files.pythonhosted.org/packages/65/05/1cb788c75ace2f3aabc09b7233d03f5c383d7a26eef61a389c5ff6a90c3e/Zope-5.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b214f41634444647302790a87c146429",
+          "sha256": "bdf048841922c8e7e1e7fbe711df6962afd0041a5022315cf4b59455dd552773"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "b214f41634444647302790a87c146429",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">= 3.6",
+        "size": 8058483,
+        "upload_time": "2020-10-08T13:07:33",
+        "upload_time_iso_8601": "2020-10-08T13:07:33.575730Z",
+        "url": "https://files.pythonhosted.org/packages/ce/05/ff7b6a7bd2c39499692ae328023bf685bec97b79dc2738fa9e0891895cae/Zope-5.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "5.0a1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e5b1285642572cceaced4453410e65fc",
+          "sha256": "2acf8698960c617781b9d1a622785c87fd74c22b08d3ba7125c0e6a4a1f5f13c"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.0a1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "e5b1285642572cceaced4453410e65fc",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">= 3.5",
+        "size": 2831931,
+        "upload_time": "2020-02-28T13:07:13",
+        "upload_time_iso_8601": "2020-02-28T13:07:13.367851Z",
+        "url": "https://files.pythonhosted.org/packages/d6/bb/217978df32cde05d9f48bd65bdee22d06e5defe35a4c5952aa8d460c6288/Zope-5.0a1-py3-none-any.whl",
+        "yanked": true,
+        "yanked_reason": "Please switch to the final release."
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3c8b22e0af55edaba64585bc0824f5a4",
+          "sha256": "910806912a9f9d27187af6befb3bef8f89e0d24a22fa17ff5ed1778af27e2cd9"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.0a1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "3c8b22e0af55edaba64585bc0824f5a4",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">= 3.5",
+        "size": 7766342,
+        "upload_time": "2020-02-28T13:07:30",
+        "upload_time_iso_8601": "2020-02-28T13:07:30.723180Z",
+        "url": "https://files.pythonhosted.org/packages/c4/51/46eab34d247090da5d79d89820f2f3fc02fe1b02940aebaddd1f400faaf8/Zope-5.0a1.tar.gz",
+        "yanked": true,
+        "yanked_reason": "Please switch to the final release."
+      }
+    ],
+    "5.0a2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b5aae726eefe40c2f3cf245f91afbc99",
+          "sha256": "9c1f953ff4abe1c74aa2fe454c6ba7a0ea680f1ef87daae5de3a7b0671977e0f"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.0a2-py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "b5aae726eefe40c2f3cf245f91afbc99",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">= 3.5",
+        "size": 2840946,
+        "upload_time": "2020-04-24T09:11:33",
+        "upload_time_iso_8601": "2020-04-24T09:11:33.166925Z",
+        "url": "https://files.pythonhosted.org/packages/6f/42/adfd7da7c4653e7797723cb78c87ec12df31c49b889df3d8127d833b9cc4/Zope-5.0a2-py3-none-any.whl",
+        "yanked": true,
+        "yanked_reason": "Please switch to the final release."
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "89b852c34d19e10790da11d897b915a8",
+          "sha256": "9fb42cabb2e5e8ff084d125145a231ae414193a745d9a6d574480825f0cfae99"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.0a2.tar.gz",
+        "has_sig": true,
+        "md5_digest": "89b852c34d19e10790da11d897b915a8",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">= 3.5",
+        "size": 7772778,
+        "upload_time": "2020-04-24T09:11:53",
+        "upload_time_iso_8601": "2020-04-24T09:11:53.217492Z",
+        "url": "https://files.pythonhosted.org/packages/56/fe/81f8c8b5e4a148c3227565748426cc095ee5d10e2dc9205273b9dd5a4abe/Zope-5.0a2.tar.gz",
+        "yanked": true,
+        "yanked_reason": "Please switch to the final release."
+      }
+    ],
+    "5.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3ad6c9c1b85a6ff3b30b88073eec646d",
+          "sha256": "30f4439b3379cca0e80778a57271a40044b4d0690d55521ade1c6444390adad6"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.1-py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "3ad6c9c1b85a6ff3b30b88073eec646d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">= 3.6",
+        "size": 2861791,
+        "upload_time": "2020-11-12T10:09:26",
+        "upload_time_iso_8601": "2020-11-12T10:09:26.080112Z",
+        "url": "https://files.pythonhosted.org/packages/7d/9c/daced877aa30d30e143bbc43d6d45e53da01dab1daa7c8d7658846ae83b7/Zope-5.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f44e114fb12b392419cf3d2073dc8fbd",
+          "sha256": "9fa91c89ab4c05f1d6be68cc9dcb0518345c15fec4ad0e7d2ded5e5a87413a30"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.1.tar.gz",
+        "has_sig": true,
+        "md5_digest": "f44e114fb12b392419cf3d2073dc8fbd",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">= 3.6",
+        "size": 12592090,
+        "upload_time": "2020-11-12T10:09:49",
+        "upload_time_iso_8601": "2020-11-12T10:09:49.983476Z",
+        "url": "https://files.pythonhosted.org/packages/ec/de/f34a21f75b65aeb529deab52c6aad8f1b3ed4c4af34f6a7774c697d0e724/Zope-5.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "5.1.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "478d82bd2910078b3987a2bdc57b9535",
+          "sha256": "44a1f580feb2649128f0ffda6f01e956aaa8a5a55753d88219d69a34e4ba4da5"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.1.1-py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "478d82bd2910078b3987a2bdc57b9535",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">= 3.6",
+        "size": 2998942,
+        "upload_time": "2021-02-10T11:00:53",
+        "upload_time_iso_8601": "2021-02-10T11:00:53.744627Z",
+        "url": "https://files.pythonhosted.org/packages/5c/35/0b025732080127d9fd32c3901be55b67ce651e928dc95de109251037db61/Zope-5.1.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e3f3c2ab055d127c68281aa71043a9d0",
+          "sha256": "7d7a4c9d7cae37427437a39e5cfda8bc4e8c1dfc1704a717ebb272c4d2908063"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.1.1.tar.gz",
+        "has_sig": true,
+        "md5_digest": "e3f3c2ab055d127c68281aa71043a9d0",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">= 3.6",
+        "size": 12730849,
+        "upload_time": "2021-02-10T11:01:17",
+        "upload_time_iso_8601": "2021-02-10T11:01:17.423204Z",
+        "url": "https://files.pythonhosted.org/packages/f6/c5/7a7281526e2c7c9fbab1fa635d55a5fd94e691c9cdf319242b224f24e22a/Zope-5.1.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "5.1.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e520585a76d706030dbf0317c05e3924",
+          "sha256": "ecd85b0b5a9bc53987bfce59e595b51f3f450f9070f8940eaa5e51eecff0dd3e"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.1.2-py3-none-any.whl",
+        "has_sig": true,
+        "md5_digest": "e520585a76d706030dbf0317c05e3924",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">= 3.6",
+        "size": 2999385,
+        "upload_time": "2021-03-02T12:37:51",
+        "upload_time_iso_8601": "2021-03-02T12:37:51.813906Z",
+        "url": "https://files.pythonhosted.org/packages/e6/21/55f6bad360cd4f1870db8c9b0cf741cd565d745f00799f7ca23808392c3e/Zope-5.1.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "aa8549321a23503014e5d20fddc1c532",
+          "sha256": "6d12627f0856b6ef5c20ea2925510323c4f718d2d3779ea10d0ed11e74dc501c"
+        },
+        "downloads": -1,
+        "filename": "Zope-5.1.2.tar.gz",
+        "has_sig": true,
+        "md5_digest": "aa8549321a23503014e5d20fddc1c532",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">= 3.6",
+        "size": 12692617,
+        "upload_time": "2021-03-02T12:38:15",
+        "upload_time_iso_8601": "2021-03-02T12:38:15.706191Z",
+        "url": "https://files.pythonhosted.org/packages/be/23/bc29ac46d32fdcb65c783c9bc3a993603ace953556c26f1ea906714aab32/Zope-5.1.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "e520585a76d706030dbf0317c05e3924",
+        "sha256": "ecd85b0b5a9bc53987bfce59e595b51f3f450f9070f8940eaa5e51eecff0dd3e"
+      },
+      "downloads": -1,
+      "filename": "Zope-5.1.2-py3-none-any.whl",
+      "has_sig": true,
+      "md5_digest": "e520585a76d706030dbf0317c05e3924",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">= 3.6",
+      "size": 2999385,
+      "upload_time": "2021-03-02T12:37:51",
+      "upload_time_iso_8601": "2021-03-02T12:37:51.813906Z",
+      "url": "https://files.pythonhosted.org/packages/e6/21/55f6bad360cd4f1870db8c9b0cf741cd565d745f00799f7ca23808392c3e/Zope-5.1.2-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "aa8549321a23503014e5d20fddc1c532",
+        "sha256": "6d12627f0856b6ef5c20ea2925510323c4f718d2d3779ea10d0ed11e74dc501c"
+      },
+      "downloads": -1,
+      "filename": "Zope-5.1.2.tar.gz",
+      "has_sig": true,
+      "md5_digest": "aa8549321a23503014e5d20fddc1c532",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">= 3.6",
+      "size": 12692617,
+      "upload_time": "2021-03-02T12:38:15",
+      "upload_time_iso_8601": "2021-03-02T12:38:15.706191Z",
+      "url": "https://files.pythonhosted.org/packages/be/23/bc29ac46d32fdcb65c783c9bc3a993603ace953556c26f1ea906714aab32/Zope-5.1.2.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

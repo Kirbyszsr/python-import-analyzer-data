@@ -1,0 +1,3870 @@
+[
+  {
+    "cveID": "CVE-2020-0822",
+    "cveASSIGNER": "secure@microsoft.com",
+    "publishedDate": "2020-03-12T16:15Z",
+    "lastModifiedDate": "2021-05-25T10:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An elevation of privilege vulnerability exists when the Windows Language Pack Installer improperly handles file operations, aka 'Windows Language Pack Installer Elevation of Privilege Vulnerability'."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0822",
+        "name": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0822",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5be80ba868a11a1f64e4922399f171b8619bca4bc2039f79cf913928@%3Cjava-dev.axis.apache.org%3E",
+        "name": "[axis-java-dev] 20210228 axis2 1.7.9 is exposed to CVE-2020-8022 via tomcat dependency",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r393d4f431683e99c839b4aed68f720b8583bca6c35cd84adccaa02be@%3Cjava-dev.axis.apache.org%3E",
+        "name": "[axis-java-dev] 20210307 Re: axis2 1.7.9 is exposed to CVE-2020-8022 via tomcat dependency",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r31d9c450e6d84e82e85c2dd1a7586f56ae4ed6776e5b8765c30fe2ac@%3Cjava-user.axis.apache.org%3E",
+        "name": "[axis-java-user] 20210419 RE: Axis2 1.8.0 Release timelines",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r492afeeeb1bfe484f2f4a1f5d296eee49b13eb0c579ac460e3d7d957@%3Cjava-user.axis.apache.org%3E",
+        "name": "[axis-java-user] 20210419 Re: Axis2 1.8.0 Release timelines",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r02687681920bb91816b735cc48847eef77c473a749678d855fbb565d@%3Cjava-dev.axis.apache.org%3E",
+        "name": "[axis-java-dev] 20210525 [jira] [Created] (AXIS2-6002) AXIS 2 1.7.9 jars with vulnerability CVE-2020-0822",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-27216",
+    "cveASSIGNER": "security@eclipse.org",
+    "publishedDate": "2020-10-23T13:15Z",
+    "lastModifiedDate": "2021-05-24T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Eclipse Jetty versions 1.0 thru 9.4.32.v20200930, 10.0.0.alpha1 thru 10.0.0.beta2, and 11.0.0.alpha1 thru 11.0.0.beta2O, on Unix like systems, the system's temporary directory is shared between all users on that system. A collocated user can observe the process of creating a temporary sub directory in the shared temporary directory and race to complete the creation of the temporary subdirectory. If the attacker wins the race then they will have read and write permission to the subdirectory used to unpack web applications, including their WEB-INF/lib jar files and JSP files. If any code is ever executed out of this temporary directory, this can lead to a local privilege escalation vulnerability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=567921",
+        "name": "https://bugs.eclipse.org/bugs/show_bug.cgi?id=567921",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/eclipse/jetty.project/security/advisories/GHSA-g3wg-6mcf-8jj6#advisory-comment-63053",
+        "name": "https://github.com/eclipse/jetty.project/security/advisories/GHSA-g3wg-6mcf-8jj6#advisory-comment-63053",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re08b03cd1754b32f342664eead415af48092c630c8e3e0deba862a26@%3Ccommits.shiro.apache.org%3E",
+        "name": "[shiro-commits] 20201104 [GitHub] [shiro] coheigea opened a new pull request #262: Update Jetty to 9.4.33.v20201020 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0e9efe032cc65433251ee6470c66c334d4e7db9101e24cf91a3961f2@%3Ccommits.directory.apache.org%3E",
+        "name": "[directory-commits] 20201104 [directory-server] branch master updated: Updating Jetty to 9.4.33 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5494fdaf4a0a42a15c49841ba7ae577d466d09239ee1050458da0f29@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20201104 [GitHub] [kafka] niteshmor opened a new pull request #9556: MINOR: Update jetty to 9.4.33",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd58b60ab2e49ebf21022e59e280feb25899ff785c88f31fe314aa5b9@%3Ccommits.shiro.apache.org%3E",
+        "name": "[shiro-commits] 20201104 [shiro] branch master updated: Update Jetty to 9.4.33.v20201020 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra55e04d5a73afcb8383f4386e2b26832c6e3972e53827021ab885943@%3Ccommits.shiro.apache.org%3E",
+        "name": "[shiro-commits] 20201104 [GitHub] [shiro] fpapon merged pull request #262: Update Jetty to 9.4.33.v20201020 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r93d5e81e879120d8d87925dbdd4045cb3afa9b066f4370f60b626ce3@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20201106 [GitHub] [druid] suneet-s opened a new pull request #10563: Bump jetty to latest version",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r59e0878013d329dcc481eeafebdb0ee445b1e2852d0c4827b1ddaff2@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20201110 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20201123-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20201123-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raf9c581b793c30ff8f55f2415c7bd337eb69775aae607bf9ed1b16fb@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20201123 Owasp test failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rafb023a7c61180a1027819678eb2068b0b60cd5c2559cb8490e26c81@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201123 [jira] [Created] (ZOOKEEPER-4017) Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1ed79516bd6d248ea9f0e704dbfd7de740d5a75b71c7be8699fec824@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201123 [GitHub] [zookeeper] anmolnar opened a new pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r568d354961fa88f206dc345411fb11d245c6dc1a8da3e80187fc6706@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20201123 Re: Owasp test failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4f29fb24639ebc5d15fc477656ebc2b3aa00fcfbe197000009c26b40@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201123 [jira] [Updated] (ZOOKEEPER-4017) Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0df8fe10fc36028cf6d0381ab66510917d0d68bc5ef7042001d03830@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20201123 [jira] [Created] (ZOOKEEPER-4017) Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r100c5c7586a23a19fdb54d8a32e17cd0944bdaa46277b35c397056f6@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201123 [GitHub] [zookeeper] anmolnar commented on pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2d17b2a4803096ba427f3575599ea29b55f5cf9dbc1f12ba044cae1a@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201123 [GitHub] [zookeeper] ztzg commented on pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rde782fd8e133f7e04e50c8aaa4774df524367764eb5b85bf60d96747@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201123 [GitHub] [zookeeper] eolivelli commented on pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r18b6f10d9939419bae9c225d5058c97533cb376c9d6d0a0733ddd48d@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201124 [GitHub] [zookeeper] anmolnar commented on pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re5706141ca397587f7ee0f500a39ccc590a41f802fc125fc135cb92f@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201124 [GitHub] [zookeeper] anmolnar edited a comment on pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rad255c736fad46135f1339408cb0147d0671e45c376c3be85ceeec1a@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201124 [GitHub] [zookeeper] asfgit closed pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r66e99d973fd79ddbcb3fbdb24f4767fe9b911f5b0abb05d7b6f65801@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20201124 [zookeeper] branch master updated: ZOOKEEPER-4017: Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1dbb87c9255ecefadd8de514fa1d35c1d493c0527d7672cf40505d04@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20201124 [zookeeper] branch branch-3.5 updated: ZOOKEEPER-4017: Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdbf1cd0ab330c032f3a09b453cb6405dccc905ad53765323bddab957@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201124 [jira] [Resolved] (ZOOKEEPER-4017) Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3a763de620be72b6d74f46ec4bf39c9f35f8a0b39993212c0ac778ec@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20201124 [zookeeper] branch branch-3.6 updated: ZOOKEEPER-4017: Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra1f19625cc67ac1b459c558f2ea5647d71ce51c6fe4f4cb03baec849@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20201124 [GitHub] [zookeeper] nkalmar commented on pull request #1549: ZOOKEEPER-4017. Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfe6ba83d14545e982400dea89e68b10113cb5202a3dcb558ce64842d@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201124 [jira] [Updated] (ZOOKEEPER-4017) Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra5b7313d8cc9411db6790adfba33f2cf0665cb77adb7b02043c95867@%3Cdev.felix.apache.org%3E",
+        "name": "[felix-dev] 20201125 [GitHub] [felix-dev] abhishekgarg18 opened a new pull request #63: FELIX-6364 Security vulnerability CVE-2020-27216 ,update jetty",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb8c007f87dc57731a7b9a3b05364530422535b7e0bc6a0c5b68d4d55@%3Cdev.felix.apache.org%3E",
+        "name": "[felix-dev] 20201125 [jira] [Created] (FELIX-6364) Security vulnerability CVE-2020-27216 ,update jetty",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r07525dc424ed69b3919618599e762f9ac03791490ca9d724f2241442@%3Cdev.felix.apache.org%3E",
+        "name": "[felix-dev] 20201125 [jira] [Updated] (FELIX-6364) Security vulnerability CVE-2020-27216 ,update jetty",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0f5e9b93133ef3aaf31484bc3e15cc4b85f8af0fe4de2dacd9379d72@%3Cdev.felix.apache.org%3E",
+        "name": "[felix-dev] 20201125 [jira] [Assigned] (FELIX-6364) Security vulnerability CVE-2020-27216 ,update jetty",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc2e24756d28580eeac811c5c6a12012c9f424b6e5bffb89f98ee3d03@%3Cdev.felix.apache.org%3E",
+        "name": "[felix-dev] 20201125 [jira] [Resolved] (FELIX-6364) Security vulnerability CVE-2020-27216 ,update jetty",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7da5ae60d7973e8894cfe92f49ecb5b47417eefab4c77cc87514d3cf@%3Cdev.felix.apache.org%3E",
+        "name": "[felix-dev] 20201125 [GitHub] [felix-dev] cziegeler merged pull request #63: FELIX-6364 Security vulnerability CVE-2020-27216 ,update jetty",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc4b972ea10c5a65c6a88a6e233778718ab9af7f484affdd5e5de0cff@%3Ccommits.felix.apache.org%3E",
+        "name": "[felix-commits] 20201125 [felix-dev] branch master updated: FELIX-6364 Security vulnerability CVE-2020-27216 , update jetty (#63)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1d45051310b11c6d6476f20d71b08ea97cb76846cbf61d196bac1c3f@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20201205 [jira] [Created] (ZOOKEEPER-4023) CLONE - Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbc5a8d7a0a13bc8152d427a7e9097cdeb139c6cfe111b2f00f26d16b@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201205 [jira] [Updated] (ZOOKEEPER-4023) dependency-check:check failing - Jetty 9.4.34.v20201102 - CVE-2020-27218",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r874688141495df766e62be095f1dfb0bf4a24ca0340d8e0215c03fab@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201205 [jira] [Assigned] (ZOOKEEPER-4023) CLONE - Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r09b345099b4f88d2bed7f195a96145849243fb4e53661aa3bcf4c176@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20201205 [jira] [Created] (ZOOKEEPER-4023) CLONE - Owasp check failing - Jetty 9.4.32 - CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rde11c433675143d8d27551c3d9e821fe1955f1551a518033d3716553@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20201208 Re: [VOTE] Apache ZooKeeper release 3.5.9 candidate 0",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r769411eb43dd9ef77665700deb7fc491fc3ceb532914260c90b56f2f@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20201211 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3e05ab0922876e74fea975d70af82b98580f4c14ba643c4f8a9e3a94@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20201211 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201215 [GitHub] [pulsar] yanshuchong opened a new issue #8967: CVSS issue list",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3b0ce1549a1ccdd7e51ec66daf8d54d46f1571edbda88ed09c96d7da@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20201218 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc1d9b8e9d17749d4d2b9abaaa72c422d090315bd6bc0ae73a16abc1c@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20201218 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rae15d73cabef55bad148e4e6449b05da95646a2a8db3fc938e858dff@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20201218 [jira] [Assigned] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8045eedd6bb74efcd8e01130796adbab98ee4a0d1273509fb1f2077a@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210126 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb077d35f2940191daeefca0d6449cddb2e9d06bcf8f5af4da2df3ca2@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210127 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb5f2558ea2ac63633dfb04db1e8a6ea6bb1a2b8614899095e16c6233@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210219 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1d40368a309f9d835dcdd900249966e4fcbdf98c1cc4c84db2cd9964@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210219 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r87d8337300a635d66f0bb838bf635cdfcbba6b92c608a7813adbf4f4@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210219 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf00ea6376f3d0e8b8f62cf6d4a4f28b24e27193acd2c851f618aa41e@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210220 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1fe31643fc34b4a33ae3d416d92c271aa97663f1782767d25e1d9ff8@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210220 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r70f8bcccd304bd66c1aca657dbfc2bf11f73add9032571b01f1f733d@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210222 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8dd01541fc49d24ec223365a9974231cbd7378b749247a89b0a52210@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210223 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1ef28b89ff0281c87ba3a7659058789bf28a99b8074191f1c3678db8@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210223 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4179c71908778cc0598ee8ee1eaed9b88fc5483c65373f45e087f650@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210223 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcfb95a7c69c4b9c082ea1918e812dfc45aa0d1e120fd47f68251a336@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210302 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb81a018f83fe02c95a2138a7bb4f1e1677bd7e1fc1e7024280c2292d@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210302 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r503045a75f4419d083cb63ac89e765d6fb8b10c7dacc0c54fce07cff@%3Creviews.iotdb.apache.org%3E",
+        "name": "[iotdb-reviews] 20210303 [GitHub] [iotdb] wangchao316 commented on pull request #2768: [IOTDB-1181] Upgrade jetty jar to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcdd56ab4255801a0964dcce3285e87f2c6994e6469e189f6836f34e3@%3Cnotifications.iotdb.apache.org%3E",
+        "name": "[iotdb-notifications] 20210303 [jira] [Created] (IOTDB-1181) Upgrade jetty jar to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc8dd95802be0cca8d7d0929c0c8484ede384ecb966b2a9dc7197b089@%3Creviews.iotdb.apache.org%3E",
+        "name": "[iotdb-reviews] 20210303 [GitHub] [iotdb] wangchao316 opened a new pull request #2768: [IOTDB-1181] Upgrade jetty jar to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2aa316d008dab9ae48350b330d15dc1b863ea2a933558fbfc42b91a6@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210303 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc77918636d8744d50312e4f67ba2e01f47db3ec5144540df8745cb38@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210303 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r58f5b14dc5ae43583db3a7e872419aca97ebe47bcd7f7334f4128016@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210303 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r71da5f51ef04cb95abae560425dce9667740cbd567920f516f76efb7@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210304 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r547bb14c88c5da2588d853ed3030be0109efa537dd797877dff14afd@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210305 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r351298dd39fc1ab63303be94b0c0d08acd72b17448e0346d7386189b@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210305 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r382870d6ccfd60533eb0d980688261723ed8a0704dafa691c4e9aa68@%3Ccommits.iotdb.apache.org%3E",
+        "name": "[iotdb-commits] 20210308 [iotdb] branch master updated: [IOTDB-1181] Upgrade jetty jar to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9f8c45a2a4540911cd8bd0485f67e8091883c9234d7a3aeb349c46c1@%3Creviews.iotdb.apache.org%3E",
+        "name": "[iotdb-reviews] 20210308 [GitHub] [iotdb] jixuan1989 commented on pull request #2768: [IOTDB-1181] Upgrade jetty jar to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcff5caebfd535195276aaabc1b631fd55a4ff6b14e2bdfe33f18ff91@%3Creviews.iotdb.apache.org%3E",
+        "name": "[iotdb-reviews] 20210308 [GitHub] [iotdb] jixuan1989 merged pull request #2768: [IOTDB-1181] Upgrade jetty jar to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r911c1879258ebf98bca172c0673350eb7ea6569ca1735888d4cb7adc@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210308 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rff0ad6a7dac2182421e2db2407e44fbb61a89904adfd91538f21fbf8@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210309 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r352e40ca9874d1beb4ad95403792adca7eb295e6bc3bd7b65fabcc21@%3Ccommits.samza.apache.org%3E",
+        "name": "[samza-commits] 20210310 [GitHub] [samza] Telesia opened a new pull request #1471: SAMZA-2630: Upgrade dependencies for security fixes",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r827d17bf6900eddc686f4b6ee16fc5e52ca0070f8df7612222c40ac5@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210310 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rccedec4cfd5df6761255b71349e3b7c27ee0745bd33698a71b1775cf@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210310 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9cd444f944241dc26d9b8b007fe8971ed7f005b56befef7a4f4fb827@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210311 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r556787f1ab14da034d79dfff0c123c05877bbe89ef163fd359b4564c@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210311 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3f32cb4965239399c22497a0aabb015b28b2372d4897185a6ef0ccd7@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210311 [jira] [Assigned] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbf99e4495461099cad9aa62e0164f8f25a7f97b791b4ace56e375f8d@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210312 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ree506849c4f04376793b1a3076bc017da60b8a2ef2702dc214ff826f@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210312 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf3bc023a7cc729aeac72f482e2eeeab9008aa6b1dadbeb3f45320cae@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210312 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r407c316f6113dfc76f7bb3cb1693f08274c521064a92e5214197548e@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210312 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfd9f102864a039f7fda64a580dfe1a342d65d7b723ca06dc9fbceb31@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210312 [jira] [Assigned] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8cacf91ae1b17cc6531d20953c52fa52f6fd3191deb3383446086ab7@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210313 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2f732ee49d00610683ab5ddb4692ab25136b00bfd132ca3a590218a9@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210315 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raa9c370ab42d737e93bc1795bb6a2187d7c60210cd5e3b3ce8f3c484@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210315 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r916b6542bd5b15a8a7ff8fc14a0e0331e8e3e9d682f22768ae71d775@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210315 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r93b240be16e642579ed794325bae31b040e1af896ecc12466642e19d@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210316 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0d7ad4f02c44d5d53a9ffcbca7ff4a8138241322da9c5c35b5429630@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210316 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc1646894341450fdc4f7e96a88f5e2cf18d8004714f98aec6b831b3e@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210322 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb8ad3745cb94c60d44cc369aff436eaf03dbc93112cefc86a2ed53ba@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210322 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r90b5ac6e2bf190a5297bda58c7ec76d01cd86ff050b2470fcd9f4b35@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210323 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2122537d3f9beb0ce59f44371a951b226406719919656ed000984bd0@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210324 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r279254a1bd6434c943da52000476f307e62b6910755387aeca1ec9a1@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210325 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r185d10aae8161c08726f3ba9a1f1c47dfb97624ea6212fa217173204@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210326 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6236ae4adc401e3b2f2575c22865f2f6c6ea9ff1d7b264b40d9602af@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210327 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb69b1d7008a4b3de5ce5867e41a455693907026bc70ead06867aa323@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210329 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r19e8b338af511641d211ff45c43646fe1ae19dc9897d69939c09cabe@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210330 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8866f0cd2a3b319288b7eea20ac137b9f260c813d10ee2db88b65d32@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210331 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5a07f274f355c914054c7357ad6d3456ffaca064f26cd780acb90a9a@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210402 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd7e62e2972a41c2658f41a824b8bdd15644d80fcadc51fe7b7c855de@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210402 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r87b0c69fef09277333a7e1716926d1f237d462e143a335854ddd922f@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210405 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdddb4b06e86fd58a1beda132f22192af2f9b56aae8849cb3767ccd55@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210406 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9b790fe3a93121199f41258474222f15002b2f729495aa7ecbf90718@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210407 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc9d2ab8a6c7835182f20b01104798e67c75db655c869733a0713a590@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210408 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9cc76b98f87738791b8ec3736755f92444d3c8cb26bd4e4ffdb5c1cc@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210409 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc44d1147f78496ec9932a38b28795ff4fd0c4fa6e3b6f5cc33c14d29@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210409 [jira] [Reopened] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfe5caef1fd6cf4b8ceac1b63c33195f2908517b665c946c020d3fbd6@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210409 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0259b14ae69b87821e27fed1f5333ea86018294fd31aab16b1fac84e@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210410 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6b83ca85c8f9a6794b1f85bc70d1385ed7bc1ad07750d0977537154a@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210410 [jira] [Comment Edited] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6f51a654ac2e67e3d1c65a8957cbbb127c3f15b64b4fcd626df03633@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210415 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r819857361f5a156e90d6d06ccf6c41026bc99030d60d0804be3a9957@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210416 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r77dd041d8025a869156481d2268c67ad17121f64e31f9b4a1a220145@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210422 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r171846414347ec5fed38241a9f8a009bd2c89d902154c6102b1fb39a@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210423 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9c010b79140452294292379183e7fe8e3533c5bb4db3f3fb39a6df61@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210426 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8fead0144bb84d8714695c43607dca9c5101aa028a431ec695882fe5@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210510 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r73b5a9b677b707bbb7c1469ea746312c47838b312603bada9e382bba@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210510 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2e02700f7cfecb213de50be83e066086bea90278cd753db7fdc2ccff@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210511 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r44115ebfbf3b7d294d7a75f2d30bcc822dab186ebbcc2dce11915ca9@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210512 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r336b1694a01858111e4625fb9ab2b07ad43a64a525cf6402e06aa6bf@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210513 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/05/msg00016.html",
+        "name": "[debian-lts-announce] 20210514 [SECURITY] [DLA 2661-1] jetty9 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb7e159636b26156f6ef2b2a1a79b3ec9a026923b5456713e68f7c18e@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210514 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbc5a622401924fadab61e07393235838918228b3d8a1a6704295b032@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210517 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6dfa64ecc3d67c1a71c08bfa04064549179d499f8e20a8285c57bd51@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210519 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4946ffd86ad6eb7cb7863311235c914cb41232380de8d9dcdb3c115c@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210520 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3042a9dd2973aa229e52d022df7813e4d74b67df73bfa6d97bb0caf8@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210520 [jira] [Updated] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0d95e01f52667f44835c40f6dea72bb4397f33cd70a564ea74f3836d@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210521 [jira] [Work logged] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/refbbb0eb65c185d1fa491cee08ac8ed32708ce3b269133a6da264317@%3Cissues.beam.apache.org%3E",
+        "name": "[beam-issues] 20210524 [jira] [Commented] (BEAM-11227) Upgrade beam-vendor-grpc-1_26_0-0.3 to fix CVE-2020-27216",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-21234",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-05-21T23:15Z",
+    "lastModifiedDate": "2021-05-24T21:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Jodd before 5.0.4 performs Deserialization of Untrusted JSON Data when setClassMetadataName is set."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/oblac/jodd/compare/v5.0.3...v5.0.4",
+        "name": "https://github.com/oblac/jodd/compare/v5.0.3...v5.0.4",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/oblac/jodd/issues/628",
+        "name": "https://github.com/oblac/jodd/issues/628",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/oblac/jodd/commit/9bffc3913aeb8472c11bb543243004b4b4376f16",
+        "name": "https://github.com/oblac/jodd/commit/9bffc3913aeb8472c11bb543243004b4b4376f16",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0bacc701ab7105500a0ab2769270d18f332cb379e6a62ec7553f3327@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210423 [jira] [Updated] (HIVE-25054) Upgrade jodd-core due to CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc23200043872384e0fc48a4a4502f4c6b4b5ddc79ba4076414150d59@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210423 [jira] [Assigned] (HIVE-25054) Upgrade jodd-core due to CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf458683390d6650b26a2c8ba8ad396e038e520ad1cc3f3f1e20514d9@%3Cdev.hive.apache.org%3E",
+        "name": "[hive-dev] 20210423 [jira] [Created] (HIVE-25054) Upgrade jodd-core due to CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r965503b27d67a2d934e34fc1d088c9547d51d927c43b8b9bd9b7e695@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210423 [jira] [Work started] (HIVE-25054) Upgrade jodd-core due to CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r157d01c96a2c10e7ceb3e005f42c52cfe87b11dd018935e1c4277433@%3Cgitbox.hive.apache.org%3E",
+        "name": "[hive-gitbox] 20210423 [GitHub] [hive] achennagiri opened a new pull request #2217: HIVE:25054 Upgrade `jodd-core` dependency to get rid of CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r729bc1e0f367fe8a857ac8a14641dba284ac4cf5131edf483022cf59@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210518 [jira] [Commented] (HIVE-25054) Upgrade jodd-core due to CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdce006b282e56c5cc73cdf452c51c5097154d0503396d62f48abbeae@%3Cgitbox.hive.apache.org%3E",
+        "name": "[hive-gitbox] 20210520 [GitHub] [hive] achennagiri commented on a change in pull request #2217: HIVE:25054 Upgrade `jodd-core` dependency to get rid of CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc85b650b4ad2c77d7c39c69824488e40dce6d0ebbb4204777d094375@%3Cgitbox.hive.apache.org%3E",
+        "name": "[hive-gitbox] 20210521 [GitHub] [hive] jcamachor merged pull request #2217: HIVE:25054 Upgrade `jodd-core` dependency to get rid of CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdbb99b43334b59d3d3478d360c87e3235ba22edb1de7d39019194347@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210521 [jira] [Resolved] (HIVE-25054) Upgrade jodd-core due to CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd575d9877424a2d8776f5c2ff33bf3dc3382cd83f031d483f29c11ab@%3Cissues.hive.apache.org%3E",
+        "name": "[hive-issues] 20210524 [jira] [Commented] (HIVE-25054) Upgrade jodd-core due to CVE-2018-21234",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-29509",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-05-11T17:15Z",
+    "lastModifiedDate": "2021-05-24T19:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Puma is a concurrent HTTP 1.1 server for Ruby/Rack applications. The fix for CVE-2019-16770 was incomplete. The original fix only protected existing connections that had already been accepted from having their requests starved by greedy persistent-connections saturating all threads in the same process. However, new connections may still be starved by greedy persistent-connections saturating all threads in all processes in the cluster. A `puma` server which received more concurrent `keep-alive` connections than the server had threads in its threadpool would service only a subset of connections, denying service to the unserved connections. This problem has been fixed in `puma` 4.3.8 and 5.3.1. Setting `queue_requests false` also fixes the issue. This is not advised when using `puma` without a reverse proxy, such as `nginx` or `apache`, because you will open yourself to slow client attacks (e.g. slowloris). The fix is very small and a git patch is available for those using unsupported versions of Puma."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://rubygems.org/gems/puma",
+        "name": "https://rubygems.org/gems/puma",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/puma/puma/security/policy",
+        "name": "https://github.com/puma/puma/security/policy",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/puma/puma/security/advisories/GHSA-q28m-8xjw-8vr5",
+        "name": "https://github.com/puma/puma/security/advisories/GHSA-q28m-8xjw-8vr5",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837",
+        "name": "https://gist.github.com/nateberkopec/4b3ea5676c0d70cbb37c82d54be25837",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-36329",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2021-05-21T17:15Z",
+    "lastModifiedDate": "2021-05-24T18:17Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A flaw was found in libwebp in versions before 1.0.1. A use-after-free was found due to a thread being killed too early. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1956843",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1956843",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-5237",
+    "cveASSIGNER": "secalert@redhat.com",
+    "publishedDate": "2017-09-25T17:29Z",
+    "lastModifiedDate": "2021-05-24T15:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "protobuf allows remote authenticated attackers to cause a heap-based buffer overflow."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/google/protobuf/issues/760",
+        "name": "https://github.com/google/protobuf/issues/760",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1256426",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1256426",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2015/08/27/2",
+        "name": "[oss-security] 20150827 CVE-2015-5237: Integer overflow in protobuf serialization (currently minor)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191017 Dependencies used by Drill contain known vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra28fed69eef3a71e5fe5daea001d0456b05b102044237330ec5c7c82@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200425 [GitHub] [pulsar] guyv opened a new issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+        "name": "[drill-issues] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r17dc6f394429f6bffb5e4c66555d93c2e9923cbbdc5a93db9a56c1c7@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200428 [GitHub] [pulsar] gaoran10 edited a comment on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r42e47994734cd1980ef3e204a40555336e10cc80096927aca2f37d90@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200428 [GitHub] [pulsar] gaoran10 commented on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re6d04a214424a97ea59c62190d79316edf311a0a6346524dfef3b940@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200428 [GitHub] [pulsar] guyv commented on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1263fa5b51e4ec3cb8f09ff40e4747428c71198e9bee93349ec96a3c@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200428 [GitHub] [pulsar] guyv edited a comment on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r42ef6acfb0d86a2df0c2390702ecbe97d2104a331560f2790d17ca69@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200430 [GitHub] [pulsar] sijie commented on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb71dac1d9dd4e8a8ae3dbc033aeae514eda9be1263c1df3b42a530a2@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200506 [GitHub] [pulsar] gaoran10 commented on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r320dc858da88846ba00bb077bcca2cdf75b7dde0f6eb3a3d60dba6a1@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200506 [GitHub] [pulsar] gaoran10 edited a comment on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r85c9a764b573c786224688cc906c27e28343e18f5b33387f94cae90f@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200506 [GitHub] [pulsar] sijie commented on issue #6818: pulsar-client vulnerability CVE-2015-5237 (shaded protobuf-java:2.4.1)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r02e39d7beb32eebcdbb4b516e95f67d71c90d5d462b26f4078d21eeb@%3Cuser.flink.apache.org%3E",
+        "name": "[flink-user] 20200806 Dependency vulnerabilities with Apache Flink 1.10.1 version",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r02e39d7beb32eebcdbb4b516e95f67d71c90d5d462b26f4078d21eeb@%3Cdev.flink.apache.org%3E",
+        "name": "[flink-dev] 20200806 Dependency vulnerabilities with Apache Flink 1.10.1 version",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5e52caf41dc49df55b4ee80758356fe1ff2a88179ff24c685de7c28d@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210120 [GitHub] [pulsar] fmiguelez opened a new issue #9250: Protobuf version used in broker and client affected by vulnerability CVE-2015-5237",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf7539287c90be979bac94af9aaba34118fbf968864944b4871af48dd@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210120 [GitHub] [pulsar] merlimat commented on issue #9250: Protobuf version used in broker and client affected by vulnerability CVE-2015-5237",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1d274d647b3c2060df9be21eade4ce56d3a59998cf19ac72662dd994@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210128 [GitHub] [pulsar] codelipenghui closed issue #9250: Protobuf version used in broker and client affected by vulnerability CVE-2015-5237",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-17516",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-02-03T17:15Z",
+    "lastModifiedDate": "2021-05-23T22:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Cassandra versions 2.1.0 to 2.1.22, 2.2.0 to 2.2.19, 3.0.0 to 3.0.23, and 3.11.0 to 3.11.9, when using 'dc' or 'rack' internode_encryption setting, allows both encrypted and unencrypted internode connections. A misconfigured node or a malicious user can use the unencrypted connection despite not being in the same rack or dc, and bypass mutual TLS requirement."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://mail-archives.apache.org/mod_mbox/cassandra-user/202102.mbox/%3c6E4340A5-D7BE-4D33-9EC5-3B505A626D8D@apache.org%3e",
+        "name": "http://mail-archives.apache.org/mod_mbox/cassandra-user/202102.mbox/%3c6E4340A5-D7BE-4D33-9EC5-3B505A626D8D@apache.org%3e",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd84bec24907617bdb72f7ec907cd7437a0fd5a8886eb55aa84dd1eb8@%3Ccommits.cassandra.apache.org%3E",
+        "name": "[cassandra-commits] 20210217 [jira] [Created] (CASSANDRA-16455) CVE-2020-17516 mitigation in 2.2.x branch",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210521-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20210521-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcb16f36cafa184dd159e94033f87d0fc274c4752d467f3a09f2ceae4@%3Ccommits.cassandra.apache.org%3E",
+        "name": "[cassandra-commits] 20210523 [jira] [Updated] (CASSANDRA-16455) CVE-2020-17516 mitigation in 2.2.x branch",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-3273",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-09-21T19:30Z",
+    "lastModifiedDate": "2019-09-26T17:05Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "iPhone Mail in Apple iPhone OS, and iPhone OS for iPod touch, does not validate X.509 certificates, which allows man-in-the-middle attackers to spoof arbitrary SSL e-mail servers via a crafted certificate."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/36370",
+        "name": "36370",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/53234",
+        "name": "ipod-iphone-ssl-spoofing(53234)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/506428/100/0/threaded",
+        "name": "20090911 iphone email client does not validate ssl certificates",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-9484",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-05-20T19:15Z",
+    "lastModifiedDate": "2021-05-22T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "When using Apache Tomcat versions 10.0.0-M1 to 10.0.0-M4, 9.0.0.M1 to 9.0.34, 8.5.0 to 8.5.54 and 7.0.0 to 7.0.103 if a) an attacker is able to control the contents and name of a file on the server; and b) the server is configured to use the PersistenceManager with a FileStore; and c) the PersistenceManager is configured with sessionAttributeValueClassNameFilter=\"null\" (the default unless a SecurityManager is used) or a sufficiently lax filter to allow the attacker provided object to be deserialized; and d) the attacker knows the relative file path from the storage location used by FileStore to the file the attacker has control over; then, using a specifically crafted request, the attacker will be able to trigger remote code execution via deserialization of the file under their control. Note that all of conditions a) to d) must be true for the attack to succeed."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/r77eae567ed829da9012cadb29af17f2df8fa23bf66faf88229857bb1%40%3Cannounce.tomcat.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r77eae567ed829da9012cadb29af17f2df8fa23bf66faf88229857bb1%40%3Cannounce.tomcat.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf70f53af27e04869bdac18b1fc14a3ee529e59eb12292c8791a77926@%3Cusers.tomcat.apache.org%3E",
+        "name": "[tomcat-users] 20200521 Re: [SECURITY] CVE-2020-9484 Apache Tomcat Remote Code Execution via session persistence",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/05/msg00020.html",
+        "name": "[debian-lts-announce] 20200523 [SECURITY] [DLA 2217-1] tomcat7 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r26950738f4b4ca2d256597cf391d52d3450fa665c297ea5ca38f5469@%3Cusers.tomcat.apache.org%3E",
+        "name": "[tomcat-users] 20200524 Re: [SECURITY] CVE-2020-9484 Apache Tomcat Remote Code Execution via session persistence",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00057.html",
+        "name": "openSUSE-SU-2020:0711",
+        "refsource": "SUSE",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7bc247fffcb1d58415215c861d2354bd653c86266230d78a93c71ae2@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20200527 Re: [SECURITY] CVE-2020-9484 Apache Tomcat Remote Code Execution via session persistence",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20200528-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20200528-0005/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/05/msg00026.html",
+        "name": "[debian-lts-announce] 20200528 [SECURITY] [DLA 2209-1] tomcat8 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://seclists.org/fulldisclosure/2020/Jun/6",
+        "name": "20200602 [CVE-2020-9484] Apache Tomcat RCE via PersistentManager",
+        "refsource": "FULLDISC",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/157924/Apache-Tomcat-CVE-2020-9484-Proof-Of-Concept.html",
+        "name": "http://packetstormsecurity.com/files/157924/Apache-Tomcat-CVE-2020-9484-Proof-Of-Concept.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202006-21",
+        "name": "GLSA-202006-21",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WJ7XHKWJWDNWXUJH6UB7CLIW4TWOZ26N/",
+        "name": "FEDORA-2020-ce396e7d5c",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GIQHXENTLYUNOES4LXVNJ2NCUQQRF5VJ/",
+        "name": "FEDORA-2020-d9169235a8",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rb1c0fb105ce2b93b7ec6fc1b77dd208022621a91c12d1f580813cfed@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20200625 svn commit: r1879208 - in /tomcat/site/trunk: docs/security-10.html docs/security-8.html docs/security-9.html xdocs/security-10.xml xdocs/security-8.xml xdocs/security-9.xml",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00010.html",
+        "name": "[debian-lts-announce] 20200712 [SECURITY] [DLA 2279-1] tomcat8 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujul2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2020/dsa-4727",
+        "name": "DSA-4727",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4448-1/",
+        "name": "USN-4448-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc8473b08abdf3c16494ed817bec1717a0ee0c8080315bc27db5f21c3@%3Ccommits.tomee.apache.org%3E",
+        "name": "[tomee-commits] 20201013 [jira] [Assigned] (TOMEE-2909) Impact of security vulnerability(CVE-2020-9484) on TOMEE plus (7.0.7)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raa4123e472175bb052fbba165d37187cea923f755e8f3f30d124cb3f@%3Ccommits.tomee.apache.org%3E",
+        "name": "[tomee-commits] 20201013 [jira] [Updated] (TOMEE-2909) Impact of security vulnerability(CVE-2020-9484) on TOMEE plus (7.0.7)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r123b3ebe389f46f9d337923f393cdae4d3e9b78d982d706712f0898c@%3Ccommits.tomee.apache.org%3E",
+        "name": "[tomee-commits] 20201013 [jira] [Created] (TOMEE-2909) Impact of security vulnerability(CVE-2020-9484) on TOMEE plus (7.0.7)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf59c72572b9fee674a5d5cc6afeca4ffc3918a02c354a81cc50b7119@%3Ccommits.tomee.apache.org%3E",
+        "name": "[tomee-commits] 20201013 [jira] [Commented] (TOMEE-2909) Impact of security vulnerability(CVE-2020-9484) on TOMEE plus (7.0.7)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10332",
+        "name": "https://kc.mcafee.com/corporate/index?page=content&id=SB10332",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4596-1/",
+        "name": "USN-4596-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2021.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf6d5d57b114678d8898005faef31e9fd6d7c981fcc4ccfc3bc272fc9@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20210301 svn commit: r1887027 - in /tomcat/site/trunk: docs/security-10.html docs/security-7.html docs/security-8.html docs/security-9.html xdocs/security-10.xml xdocs/security-7.xml xdocs/security-8.xml xdocs/security-9.xml",
+        "refsource": "MLIST",
+        "tags": [
+          "Exploit",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cdev.tomcat.apache.org%3E",
+        "name": "[tomcat-dev] 20210301 [SECURITY] CVE-2021-25329 Apache Tomcat Incomplete fix for CVE-2020-9484 (RCE via session persistence)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cannounce.tomcat.apache.org%3E",
+        "name": "[tomcat-announce] 20210301 [SECURITY] CVE-2021-25329 Apache Tomcat Incomplete fix for CVE-2020-9484 (RCE via session persistence)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20210301 [SECURITY] CVE-2021-25329 Apache Tomcat Incomplete fix for CVE-2020-9484 (RCE via session persistence)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cusers.tomcat.apache.org%3E",
+        "name": "[tomcat-users] 20210301 [SECURITY] CVE-2021-25329 Apache Tomcat Incomplete fix for CVE-2020-9484 (RCE via session persistence)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/01/2",
+        "name": "[oss-security] 20210301 CVE-2021-25329: Apache Tomcat Incomplete fix for CVE-2020-9484",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r8dd19c514face6dd85fd4eab0271854883f40c7307926c1f7cd5400c@%3Ccommits.tomee.apache.org%3E",
+        "name": "[tomee-commits] 20210522 [jira] [Closed] (TOMEE-2909) Impact of security vulnerability(CVE-2020-9484) on TOMEE plus (7.0.7)",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27737",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-05-14T21:15Z",
+    "lastModifiedDate": "2021-05-21T18:55Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Traffic Server 9.0.0 is vulnerable to a remote DOS attack on the experimental Slicer plugin."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/r74f72650c3590478f028ea3a1b8cab2a33d20ad9ff407e894ca70525%40%3Cannounce.trafficserver.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r74f72650c3590478f028ea3a1b8cab2a33d20ad9ff407e894ca70525%40%3Cannounce.trafficserver.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r74f72650c3590478f028ea3a1b8cab2a33d20ad9ff407e894ca70525@%3Cdev.trafficserver.apache.org%3E",
+        "name": "[trafficserver-dev] 20210513 Apache Traffic Server is vulnerable to a DOS attack in the experimental Slicer plugin",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r74f72650c3590478f028ea3a1b8cab2a33d20ad9ff407e894ca70525@%3Cannounce.trafficserver.apache.org%3E",
+        "name": "[trafficserver-announce] 20210513 Apache Traffic Server is vulnerable to a DOS attack in the experimental Slicer plugin",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r74f72650c3590478f028ea3a1b8cab2a33d20ad9ff407e894ca70525@%3Cusers.trafficserver.apache.org%3E",
+        "name": "[trafficserver-users] 20210513 Apache Traffic Server is vulnerable to a DOS attack in the experimental Slicer plugin",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27807",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-03-19T16:15Z",
+    "lastModifiedDate": "2021-05-21T16:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A carefully crafted PDF file can trigger an infinite loop while loading the file. This issue affects Apache PDFBox version 2.0.22 and prior 2.0.x versions."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/r818058ff1e4b9f6bef4e5a2e74faff38cb3d3885c1e2db398bc55cfb%40%3Cusers.pdfbox.apache.org%3E",
+        "name": "N/A",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r818058ff1e4b9f6bef4e5a2e74faff38cb3d3885c1e2db398bc55cfb@%3Cusers.pdfbox.apache.org%3E",
+        "name": "[pdfbox-users] 20210319 CVE-2021-27807: A carefully crafted PDF file can trigger an infinite loop while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/19/9",
+        "name": "[oss-security] 20210319 CVE-2021-27807: Apache PDFBox: A carefully crafted PDF file can trigger an infinite loop while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4717f902f8bc36d47b3fa978552a25e4ed3ddc2fffb52b94fbc4ab36@%3Cusers.pdfbox.apache.org%3E",
+        "name": "[pdfbox-users] 20210320 CVE-2021-27807: Apache PDFBox: a carefully crafted PDF file can trigger an infinite loop while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r043edc5dcf9199f7f882ed7906b41cb816753766e88b8792dbf319a9@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20210320 CVE-2021-27807: Apache PDFBox: a carefully crafted PDF file can trigger an infinite loop while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1d268642f8b52456ee8f876b888b8ed7a9e9568c7770789f3ded7f9e@%3Ccommits.ofbiz.apache.org%3E",
+        "name": "[ofbiz-commits] 20210321 [ofbiz-framework] branch trunk updated: Fixed: Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906 (OFBIZ-12205)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc69140d894c6a9c67a8097a25656cce59b46a5620c354ceba10543c3@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Updated] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7ee634c21816c69ce829d0c41f35afa2a53a99bdd3c7cce8644fdc0e@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Created] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re1e35881482e07dc2be6058d9b44483457f36133cac67956686ad9b9@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Commented] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ffe179385637b0b5cbdabd0246118005b4b8232909d2d14cd68ccd3@%3Ccommits.ofbiz.apache.org%3E",
+        "name": "[ofbiz-commits] 20210321 [ofbiz-framework] branch release17.12 updated: Fixed: Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906 (OFBIZ-12205)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5c8e2125d18af184c80f7a986fbe47eaf0d30457cd450133adc235ac@%3Ccommits.ofbiz.apache.org%3E",
+        "name": "[ofbiz-commits] 20210321 [ofbiz-framework] branch release18.12 updated: Fixed: Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906 (OFBIZ-12205)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raa35746227f3f8d50fff1db9899524423a718f6f35cd39bd4769fa6c@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Closed] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1218e60c32829f76943ecaca79237120c2ec1ab266459d711a578b50@%3Cdev.pdfbox.apache.org%3E",
+        "name": "[pdfbox-dev] 20210322 OSS-Fuzz integration",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PT72QOFDXLJ7PLTN66EMG5EHPTE7TFZ/",
+        "name": "FEDORA-2021-93469e0030",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6KDA2U4KL2N3XT3PM4ZJEBBA6JJIH2G4/",
+        "name": "FEDORA-2021-8b17a2725e",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2AVLKAHFMPH72TTP25INPZPGX5FODK3H/",
+        "name": "FEDORA-2021-dc83ae690a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6e067a6d83ccb6892d0ff867bd216704f21fb0b6a854dea34be04f12@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210405 [jira] [Updated] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4cbc3f6981cd0a1a482531df9d44e4c42a7f63342a7ba78b7bff8a1b@%3Cnotifications.james.apache.org%3E",
+        "name": "[james-notifications] 20210501 [GitHub] [james-project] chibenwa opened a new pull request #414: [UPGRADE] Adopt Apache Tika 1.26",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r54594251369e14c185da9662a5340a52afbbdf75d61c9c3a69c8f2e8@%3Cdev.pdfbox.apache.org%3E",
+        "name": "[pdfbox-dev] 20210518 CVE's",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-11797",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2018-10-05T20:29Z",
+    "lastModifiedDate": "2021-05-21T16:16Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Apache PDFBox 1.8.0 to 1.8.15 and 2.0.0RC1 to 2.0.11, a carefully crafted PDF file can trigger an extremely long running computation when parsing the page tree."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/a9760973a873522f4d4c0a99916ceb74f361d91006b663a0a418d34a@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20181005 [CVE-2018-11797] DoS vulnerability in Apache PDFBox parser",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/645574bc50b886d39c20b4065d51ccb1cd5d3a6b4750a22edbb565eb@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20181006 [UPDATE][CVE-2018-11797] DoS vulnerability in Apache PDFBox parser",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/10/msg00008.html",
+        "name": "[debian-lts-announce] 20181016 [SECURITY] [DLA 1547-1] libpdfbox-java security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6HKVPTJWZGUB4MH4AAOWMRJHRDBYFHGJ/",
+        "name": "FEDORA-2019-6fa01d12b4",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/POPOGHJ5CVMUVCRQU7APBAN5IVZGZFDX/",
+        "name": "FEDORA-2019-9e91afa2be",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r54594251369e14c185da9662a5340a52afbbdf75d61c9c3a69c8f2e8@%3Cdev.pdfbox.apache.org%3E",
+        "name": "[pdfbox-dev] 20210518 CVE's",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-27906",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-03-19T16:15Z",
+    "lastModifiedDate": "2021-05-21T16:13Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A carefully crafted PDF file can trigger an OutOfMemory-Exception while loading the file. This issue affects Apache PDFBox version 2.0.22 and prior 2.0.x versions."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/rf35026148ccc0e1af133501c0d003d052883fcc65107b3ff5d3b61cd%40%3Cusers.pdfbox.apache.org%3E",
+        "name": "N/A",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf35026148ccc0e1af133501c0d003d052883fcc65107b3ff5d3b61cd@%3Cusers.pdfbox.apache.org%3E",
+        "name": "[pdfbox-users] 20210319 CVE-2021-27906: A carefully crafted PDF file can trigger an OutOfMemory-Exception while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/03/19/10",
+        "name": "[oss-security] 20210319 CVE-2021-27906: Apache PDFBox: A carefully crafted PDF file can trigger an OutOfMemory-Exception while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdf78aef4793362e778e21e34328b0456e302bde4b7e74f229df0ee04@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20210320 CVE-2021-27906: Apache PDFBox: a carefully crafted PDF file can trigger an OutOfMemory-Exception while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r64982b768c8a2220b07aaf813bd099a9863de0d13eb212fd4efe208f@%3Cusers.pdfbox.apache.org%3E",
+        "name": "[pdfbox-users] 20210320 CVE-2021-27906: Apache PDFBox: a carefully crafted PDF file can trigger an OutOfMemory-Exception while loading the file",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1d268642f8b52456ee8f876b888b8ed7a9e9568c7770789f3ded7f9e@%3Ccommits.ofbiz.apache.org%3E",
+        "name": "[ofbiz-commits] 20210321 [ofbiz-framework] branch trunk updated: Fixed: Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906 (OFBIZ-12205)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc69140d894c6a9c67a8097a25656cce59b46a5620c354ceba10543c3@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Updated] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7ee634c21816c69ce829d0c41f35afa2a53a99bdd3c7cce8644fdc0e@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Created] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re1e35881482e07dc2be6058d9b44483457f36133cac67956686ad9b9@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Commented] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ffe179385637b0b5cbdabd0246118005b4b8232909d2d14cd68ccd3@%3Ccommits.ofbiz.apache.org%3E",
+        "name": "[ofbiz-commits] 20210321 [ofbiz-framework] branch release17.12 updated: Fixed: Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906 (OFBIZ-12205)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5c8e2125d18af184c80f7a986fbe47eaf0d30457cd450133adc235ac@%3Ccommits.ofbiz.apache.org%3E",
+        "name": "[ofbiz-commits] 20210321 [ofbiz-framework] branch release18.12 updated: Fixed: Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906 (OFBIZ-12205)",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raa35746227f3f8d50fff1db9899524423a718f6f35cd39bd4769fa6c@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210321 [jira] [Closed] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1218e60c32829f76943ecaca79237120c2ec1ab266459d711a578b50@%3Cdev.pdfbox.apache.org%3E",
+        "name": "[pdfbox-dev] 20210322 OSS-Fuzz integration",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PT72QOFDXLJ7PLTN66EMG5EHPTE7TFZ/",
+        "name": "FEDORA-2021-93469e0030",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6KDA2U4KL2N3XT3PM4ZJEBBA6JJIH2G4/",
+        "name": "FEDORA-2021-8b17a2725e",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2AVLKAHFMPH72TTP25INPZPGX5FODK3H/",
+        "name": "FEDORA-2021-dc83ae690a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r6e067a6d83ccb6892d0ff867bd216704f21fb0b6a854dea34be04f12@%3Cnotifications.ofbiz.apache.org%3E",
+        "name": "[ofbiz-notifications] 20210405 [jira] [Updated] (OFBIZ-12205) Upgrade Apache PDFBox to 2.0.23 because of CVE-2021-27807 and CVE-2021-27906",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4cbc3f6981cd0a1a482531df9d44e4c42a7f63342a7ba78b7bff8a1b@%3Cnotifications.james.apache.org%3E",
+        "name": "[james-notifications] 20210501 [GitHub] [james-project] chibenwa opened a new pull request #414: [UPGRADE] Adopt Apache Tika 1.26",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r54594251369e14c185da9662a5340a52afbbdf75d61c9c3a69c8f2e8@%3Cdev.pdfbox.apache.org%3E",
+        "name": "[pdfbox-dev] 20210518 CVE's",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-14718",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-01-02T18:29Z",
+    "lastModifiedDate": "2021-05-21T15:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "FasterXML jackson-databind 2.x before 2.9.7 might allow remote attackers to execute arbitrary code by leveraging failure to block the slf4j-ext class from polymorphic deserialization."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/FasterXML/jackson-databind/issues/2097",
+        "name": "https://github.com/FasterXML/jackson-databind/issues/2097",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/FasterXML/jackson-databind/commit/87d29af25e82a249ea15858e2d4ecbf64091db44",
+        "name": "https://github.com/FasterXML/jackson-databind/commit/87d29af25e82a249ea15858e2d4ecbf64091db44",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.7",
+        "name": "https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.7",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/03/msg00005.html",
+        "name": "[debian-lts-announce] 20190304 [SECURITY] [DLA 1703-1] jackson-databind security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/82b01bfb6787097427ce97cec6a7127e93718bc05d1efd5eaffc228f@%3Cdev.lucene.apache.org%3E",
+        "name": "[lucene-dev] 20190325 [jira] [Updated] (SOLR-13112) CVE-2018-14718(-14719),sonatype-2017-0312, CVE-2018-14720(-14721) Threat Level 8 Against Solr v7.6. com.fasterxml.jackson.core : jackson-databind : 2.9.6. FasterXML jackson-databind 2.x before 2.9.7 Remote Hackers...",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/6a78f88716c3c57aa74ec05764a37ab3874769a347805903b393b286@%3Cdev.lucene.apache.org%3E",
+        "name": "[lucene-dev] 20190325 [jira] [Assigned] (SOLR-13112) CVE-2018-14718(-14719),sonatype-2017-0312, CVE-2018-14720(-14721) Threat Level 8 Against Solr v7.6. com.fasterxml.jackson.core : jackson-databind : 2.9.6. FasterXML jackson-databind 2.x before 2.9.7 Remote Hackers...",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ba973114605d936be276ee6ce09dfbdbf78aa56f6cdc6e79bfa7b8df@%3Cdev.lucene.apache.org%3E",
+        "name": "[lucene-dev] 20190325 [jira] [Updated] (SOLR-13112) CVE-2018-14718(-14719),sonatype-2017-0312, CVE-2018-14720(-14721) Threat Level 8 Against Solr v7.6. com.fasterxml.jackson.core : jackson-databind : 2.9.6. FasterXML jackson-databind 2.x before 2.9.7 Remote Hackers...",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0782",
+        "name": "RHSA-2019:0782",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/106601",
+        "name": "106601",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0877",
+        "name": "RHSA-2019:0877",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHBA-2019:0959",
+        "name": "RHBA-2019:0959",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4452",
+        "name": "DSA-4452",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/May/68",
+        "name": "20190527 [SECURITY] [DSA 4452-1] jackson-databind security update",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190530-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20190530-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1782",
+        "name": "RHSA-2019:1782",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1797",
+        "name": "RHSA-2019:1797",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1823",
+        "name": "RHSA-2019:1823",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1822",
+        "name": "RHSA-2019:1822",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2804",
+        "name": "RHSA-2019:2804",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2858",
+        "name": "RHSA-2019:2858",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3002",
+        "name": "RHSA-2019:3002",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3140",
+        "name": "RHSA-2019:3140",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191017 Dependencies used by Drill contain known vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3149",
+        "name": "RHSA-2019:3149",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+        "name": "[drill-issues] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3892",
+        "name": "RHSA-2019:3892",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:4037",
+        "name": "RHSA-2019:4037",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1d4a247329a8478073163567bbc8c8cb6b49c6bfc2bf58153a857af1@%3Ccommits.druid.apache.org%3E",
+        "name": "[druid-commits] 20210324 [GitHub] [druid] jihoonson opened a new pull request #11030: Suppress cves",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-14719",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-01-02T18:29Z",
+    "lastModifiedDate": "2021-05-21T15:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "FasterXML jackson-databind 2.x before 2.9.7 might allow remote attackers to execute arbitrary code by leveraging failure to block the blaze-ds-opt and blaze-ds-core classes from polymorphic deserialization."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/FasterXML/jackson-databind/issues/2097",
+        "name": "https://github.com/FasterXML/jackson-databind/issues/2097",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/FasterXML/jackson-databind/commit/87d29af25e82a249ea15858e2d4ecbf64091db44",
+        "name": "https://github.com/FasterXML/jackson-databind/commit/87d29af25e82a249ea15858e2d4ecbf64091db44",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.7",
+        "name": "https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.7",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/03/msg00005.html",
+        "name": "[debian-lts-announce] 20190304 [SECURITY] [DLA 1703-1] jackson-databind security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ff8dcfe29377088ab655fda9d585dccd5b1f07fabd94ae84fd60a7f8@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20190416 [GitHub] [pulsar] one70six opened a new issue #4057: Security Vulnerabilities - Black Duck Scan - Pulsar v.2.3.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0782",
+        "name": "RHSA-2019:0782",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0877",
+        "name": "RHSA-2019:0877",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHBA-2019:0959",
+        "name": "RHBA-2019:0959",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2019/dsa-4452",
+        "name": "DSA-4452",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/May/68",
+        "name": "20190527 [SECURITY] [DSA 4452-1] jackson-databind security update",
+        "refsource": "BUGTRAQ",
+        "tags": [
+          "Issue Tracking",
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190530-0003/",
+        "name": "https://security.netapp.com/advisory/ntap-20190530-0003/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1782",
+        "name": "RHSA-2019:1782",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1797",
+        "name": "RHSA-2019:1797",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1823",
+        "name": "RHSA-2019:1823",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1822",
+        "name": "RHSA-2019:1822",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2804",
+        "name": "RHSA-2019:2804",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2858",
+        "name": "RHSA-2019:2858",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3002",
+        "name": "RHSA-2019:3002",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3140",
+        "name": "RHSA-2019:3140",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191017 Dependencies used by Drill contain known vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3149",
+        "name": "RHSA-2019:3149",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+        "name": "[drill-dev] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+        "name": "[drill-issues] 20191021 [jira] [Created] (DRILL-7416) Updates required to dependencies to resolve potential security vulnerabilities",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3892",
+        "name": "RHSA-2019:3892",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:4037",
+        "name": "RHSA-2019:4037",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+        "name": "N/A",
+        "refsource": "N/A",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf1bbc0ea4a9f014cf94df9a12a6477d24a27f52741dbc87f2fd52ff2@%3Cissues.geode.apache.org%3E",
+        "name": "[geode-issues] 20200831 [jira] [Created] (GEODE-8471) Dependency security issues in geode-core-1.12",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-21409",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-30T15:15Z",
+    "lastModifiedDate": "2021-05-21T15:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Netty is an open-source, asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In Netty (io.netty:netty-codec-http2) before version 4.1.61.Final there is a vulnerability that enables request smuggling. The content-length header is not correctly validated if the request only uses a single Http2HeaderFrame with the endStream set to to true. This could lead to request smuggling if the request is proxied to a remote peer and translated to HTTP/1.1. This is a followup of GHSA-wm47-8v5p-wjpj/CVE-2021-21295 which did miss to fix this one case. This was fixed as part of 4.1.61.Final."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21295",
+        "name": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21295",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/netty/netty/security/advisories/GHSA-f256-j965-7f32",
+        "name": "https://github.com/netty/netty/security/advisories/GHSA-f256-j965-7f32",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/netty/netty/security/advisories/GHSA-wm47-8v5p-wjpj",
+        "name": "https://github.com/netty/netty/security/advisories/GHSA-wm47-8v5p-wjpj",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/netty/netty/commit/b0fa4d5aab4215f3c22ce6123dd8dd5f38dc0432",
+        "name": "https://github.com/netty/netty/commit/b0fa4d5aab4215f3c22ce6123dd8dd5f38dc0432",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2021/dsa-4885",
+        "name": "DSA-4885",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra66e93703e3f4bd31bdfd0b6fb0c32ae96b528259bb1aa2b6d38e401@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210407 [jira] [Assigned] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r2732aa3884cacfecac4c54cfaa77c279ba815cad44b464a567216f83@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210407 [jira] [Created] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r70c3a7bfa904f06a1902f4df20ee26e4f09a46b8fd3eb304dc57a2de@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20210407 [jira] [Created] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0ca82fec33334e571fe5b388272260778883e307e15415d7b1443de2@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210408 [jira] [Comment Edited] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r823d4b27fcba8dad5fe945bdefce3ca5a0031187966eb6ef3cc22ba9@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210408 [jira] [Commented] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r101f82d8f3b5af0bf79aecbd5b2dd3b404f6bb51d1a54c2c3d29bed9@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20210408 [GitHub] [zookeeper] ayushmantri opened a new pull request #1678: ZOOKEEPER-4278: dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf521ff2be2e2dd38984174d3451e6ee935c845948845c8fccd86371d@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210408 [jira] [Updated] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5cbea8614812289a9b98d0cfc54b47f54cef424ac98d5e315b791795@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20210408 [GitHub] [zookeeper] arshadmohammad commented on pull request #1678: ZOOKEEPER-4278: dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r69efd8ef003f612c43e4154e788ca3b1f837feaacd16d97854402355@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20210408 [zookeeper] branch branch-3.7 updated: ZOOKEEPER-4278: dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdd206d9dd7eb894cc089b37fe6edde2932de88d63a6d8368b44f5101@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20210408 [zookeeper] branch master updated: ZOOKEEPER-4278: dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4a98827bb4a7edbd69ef862f2351391845697c40711820d10df52ca5@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20210408 [zookeeper] branch branch-3.6 updated: ZOOKEEPER-4278: dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rac8cf45a1bab9ead5c9a860cbadd6faaeb7792203617b6ec3874736d@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210408 [jira] [Resolved] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re4b0141939370304d676fe23774d0c6fbc584b648919825402d0cb39@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20210408 [GitHub] [zookeeper] asfgit closed pull request #1678: ZOOKEEPER-4278: dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4b8be87acf5b9c098a2ee350b5ca5716fe7afeaf0a21a4ee45a90687@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210408 [jira] [Assigned] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rdd5715f3ee5e3216d5e0083a07994f67da6dbb9731ce9e7a6389b18e@%3Ccommits.zookeeper.apache.org%3E",
+        "name": "[zookeeper-commits] 20210408 [zookeeper] 01/02: ZOOKEEPER-4278: dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1b3cb056364794f919aaf26ceaf7423de64e7fdd05a914066e7d5219@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210409 [jira] [Commented] (ZOOKEEPER-4278) dependency-check:check failing - netty-transport-4.1.60.Final CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf38e4dcdefc7c59f7ba0799a399d6d6e37b555d406a1dfc2fcbf0b35@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210419 [GitHub] [pulsar] lhotari opened a new pull request #10266: [Security] Upgrade Netty to 4.1.63.Final to address CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r61564d86a75403b854cdafee67fc69c8b88c5f6802c2c838f4282cc8@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210419 [GitHub] [pulsar] lhotari commented on pull request #10266: [Security] Upgrade Netty to 4.1.63.Final to address CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7879ddcb990c835c6b246654770d836f9d031dee982be836744e50ed@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20210420 [GitHub] [pulsar] eolivelli merged pull request #10266: [Security] Upgrade Netty to 4.1.63.Final to address CVE-2021-21409",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra64d56a8a331ffd7bdcd24a9aaaeeedeacd5d639f5a683389123f898@%3Cdev.flink.apache.org%3E",
+        "name": "[flink-dev] 20210424 [jira] [Created] (FLINK-22441) In Flink v1.11.3 contains netty(version:3.10.6) netty(version:4.1.60) . There are many vulnerabilities, like CVE-2021-21409 etc. please confirm these version and fix. thx",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5baac01f9e06c40ff7aab209d5751b3b58802c63734e33324b70a06a@%3Cissues.flink.apache.org%3E",
+        "name": "[flink-issues] 20210424 [jira] [Created] (FLINK-22441) In Flink v1.11.3 contains netty(version:3.10.6) netty(version:4.1.60) . There are many vulnerabilities, like CVE-2021-21409 etc. please confirm these version and fix. thx",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd8f72411fb75b98d366400ae789966373b5c3eb3f511e717caf3e49e@%3Cissues.flink.apache.org%3E",
+        "name": "[flink-issues] 20210426 [jira] [Commented] (FLINK-22441) In Flink v1.11.3 contains netty(version:3.10.6) netty(version:4.1.60) . There are many vulnerabilities, like CVE-2021-21409 etc. please confirm these version and fix. thx",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re7c69756a102bebce8b8681882844a53e2f23975a189363e68ad0324@%3Cissues.flink.apache.org%3E",
+        "name": "[flink-issues] 20210426 [jira] [Updated] (FLINK-22441) In Flink v1.11.3 contains netty(version:3.10.6) netty(version:4.1.60) . There are many vulnerabilities, like CVE-2021-21409 etc. please confirm these version and fix. thx",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbde2f13daf4911504f0eaea43eee4f42555241b5f6d9d71564b6c5fa@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210506 [GitHub] [kafka] dongjinleekr opened a new pull request #10642: KAFKA-12756: Update Zookeeper to 3.6.3 or higher",
+        "refsource": "MLIST",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r855b4b6814ac829ce2d48dd9d8138d07f33387e710de798ee92c011e@%3Cissues.flink.apache.org%3E",
+        "name": "[flink-issues] 20210511 [jira] [Commented] (FLINK-22441) In Flink v1.11.3 contains netty(version:3.10.6) netty(version:4.1.60) . There are many vulnerabilities, like CVE-2021-21409 etc. please confirm these version and fix. thx",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rafc77f9f03031297394f3d372ccea751b23576f8a2ae9b6b053894c5@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210517 [jira] [Updated] (ZOOKEEPER-4295) Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21409 in branch-3.5",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re39391adcb863f0e9f3f15e7986255948f263f02e4700b82453e7102@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210517 [jira] [Created] (ZOOKEEPER-4295) Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21409 in branch-3.5",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re9e6ed60941da831675de2f8f733c026757fb4fa28a7b6c9f3dfb575@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20210517 [jira] [Created] (ZOOKEEPER-4295) Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21409 in branch-3.5",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re1911e05c08f3ec2bab85744d788773519a0afb27272a31ac2a0b4e8@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20210517 [GitHub] [zookeeper] gpiyush-dev opened a new pull request #1696: ZOOKEEPER-4295: Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21409 in branch-3.5",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/redef0fb5474fd686781007de9ddb852b24f1b04131a248d9a4789183@%3Cnotifications.zookeeper.apache.org%3E",
+        "name": "[zookeeper-notifications] 20210521 [GitHub] [zookeeper] maoling commented on pull request #1696: ZOOKEEPER-4295: Upgrade Netty library to > 4.1.60 due to security vulnerability CVE-2021-21409 in branch-3.5",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-25013",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-04T18:15Z",
+    "lastModifiedDate": "2021-05-21T14:44Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The iconv feature in the GNU C Library (aka glibc or libc6) through 2.32, when processing invalid multi-byte input sequences in the EUC-KR encoding, may have a buffer over-read."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceware.org/git/?p=glibc.git;a=commit;h=ee7a3144c9922808181009b7b3e50e852fb4999b",
+        "name": "https://sourceware.org/git/?p=glibc.git;a=commit;h=ee7a3144c9922808181009b7b3e50e852fb4999b",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=24973",
+        "name": "https://sourceware.org/bugzilla/show_bug.cgi?id=24973",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4Y6TX47P47KABSFOL26FLDNVCWXDKDEZ/",
+        "name": "FEDORA-2021-6feb090c97",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TVCUNLQ3HXGS4VPUQKWTJGRAW2KTFGXS/",
+        "name": "FEDORA-2021-6e581c051a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210205-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20210205-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E",
+        "name": "[mina-dev] 20210225 [jira] [Created] (FTPSERVER-500) Security vulnerability in common/lib/log4j-1.2.17.jar",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r32d767ac804e9b8aad4355bb85960a6a1385eab7afff549a5e98660f@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210420 [jira] [Created] (KAFKA-12698) CVE-2019-25013 vulnerability reported in Kafka",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r448bb851cc8e6e3f93f3c28c70032b37062625d81214744474ac49e7@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210420 [jira] [Created] (KAFKA-12698) CVE-2019-25013 vulnerability reported in Kafka",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r750eee18542bc02bd8350861c424ee60a9b9b225568fa09436a37ece@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210423 [jira] [Created] (ZOOKEEPER-4285) High CVE-2019-25013 reported by Clair scanner for Zookeeper 3.6.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r499e4f96d0b5109ef083f2feccd33c51650c1b7d7068aa3bd47efca9@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210423 [jira] [Commented] (KAFKA-12698) CVE-2019-25013 high priority vulnerability reported in Kafka",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7a2e94adfe0a2f0a1d42e4927e8c32ecac97d37db9cb68095fe9ddbc@%3Cdev.zookeeper.apache.org%3E",
+        "name": "[zookeeper-dev] 20210423 [jira] [Created] (ZOOKEEPER-4285) High CVE-2019-25013 reported by Clair scanner for Zookeeper 3.6.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5af4430421bb6f9973294691a7904bbd260937e9eef96b20556f43ff@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210423 [jira] [Updated] (KAFKA-12698) CVE-2019-25013 high priority vulnerability reported in Kafka",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4806a391091e082bdea17266452ca656ebc176e51bb3932733b3a0a2@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210423 [jira] [Comment Edited] (KAFKA-12698) CVE-2019-25013 high priority vulnerability reported in Kafka",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd2354f9ccce41e494fbadcbc5ad87218de6ec0fff8a7b54c8462226c@%3Cissues.zookeeper.apache.org%3E",
+        "name": "[zookeeper-issues] 20210506 [jira] [Resolved] (ZOOKEEPER-4285) High CVE-2019-25013 reported by Clair scanner for Zookeeper 3.6.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-26291",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-04-23T15:15Z",
+    "lastModifiedDate": "2021-05-21T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Apache Maven will follow repositories that are defined in a dependency\u2019s Project Object Model (pom) which may be surprising to some users, resulting in potential risk if a malicious actor takes over that repository or is able to insert themselves into a position to pretend to be that repository. Maven is changing the default behavior in 3.8.1+ to no longer follow http (non-SSL) repository references by default. More details available in the referenced urls. If you are currently using a repository manager to govern the repositories used by your builds, you are unaffected by the risks present in the legacy behavior, and are unaffected by this vulnerability and change to default behavior. See this link for more information about repository management: https://maven.apache.org/repository-management.html"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00%40%3Cusers.maven.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r06db4057b74e0598a412734f693a34a8836ac6f06d16d139e5e1027c@%3Cdev.maven.apache.org%3E",
+        "name": "[maven-dev] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9a027668558264c4897633e66bcb7784099fdec9f9b22c38c2442f00@%3Cusers.maven.apache.org%3E",
+        "name": "[maven-users] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/04/23/5",
+        "name": "[oss-security] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0556ce5db7231025785477739ee416b169d8aff5ee9bac7854d64736@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20210423 CVE-2021-26291: Apache Maven: block repositories using http by default",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra88a0eba7f84658cefcecc0143fd8bbad52c229ee5dfcbfdde7b6457@%3Cdev.jena.apache.org%3E",
+        "name": "[jena-dev] 20210428 FYI: Maven CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3f0450dcab7e63b5f233ccfbc6fca5f1867a75c8aa2493ea82732381@%3Cdev.jena.apache.org%3E",
+        "name": "[jena-dev] 20210429 Re: FYI: Maven CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfc27e2727a20a574f39273e0432aa97486a332f9b3068f6ac1346594@%3Cdev.myfaces.apache.org%3E",
+        "name": "[myfaces-dev] 20210506 [GitHub] [myfaces-tobago] lofwyr14 opened a new pull request #817: build: CVE fix",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r86e1c81e03f441855f127980e9b3d41939d04a7caea2b7ab718e2288@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210520 [jira] [Created] (KAFKA-12820) Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/red3bf6cbfd99e36b0c0a4fa1cea1eef1eb300c6bd8f372f497341265@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210520 [jira] [Created] (KAFKA-12820) Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r78fb6d2cf0ca332cfa43abd4471e75fa6c517ed9cdfcb950bff48d40@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210520 [jira] [Assigned] (KAFKA-12820) Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r340e75c9bb6e8661b89e1cf2c52f4638a18312e57bd884722bc28f52@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210520 [GitHub] [kafka] dongjinleekr opened a new pull request #10739: KAFKA-12820: Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0a5e4ff2a7ca7ad8595d7683afbaeb3b8788ba974681907f97e7dc8e@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210521 [jira] [Resolved] (KAFKA-12820) Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5ae6aaa8a2ce86145225c3516bb45d315c0454e3765d651527e5df8a@%3Ccommits.kafka.apache.org%3E",
+        "name": "[kafka-commits] 20210521 [kafka] branch 2.8 updated: KAFKA-12820: Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc7ae2530063d1cd1cf8e9fa130d10940760f927168d4063d23b8cd0a@%3Ccommits.kafka.apache.org%3E",
+        "name": "[kafka-commits] 20210521 [kafka] branch 2.6 updated: KAFKA-12820: Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r86aebd0387ae19b740b3eb28bad83fe6aceca0d6257eaa810a6e0002@%3Ccommits.kafka.apache.org%3E",
+        "name": "[kafka-commits] 20210521 [kafka] branch 2.7 updated: KAFKA-12820: Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r30e9fcba679d164158cc26236704c351954909c18cb2485d11038aa6@%3Cdev.kafka.apache.org%3E",
+        "name": "[kafka-dev] 20210521 [jira] [Resolved] (KAFKA-12820) Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r39fa6ec4b7e912d3e04ea68efd23e554ec9c8efa2c96f5b45104fc61@%3Cjira.kafka.apache.org%3E",
+        "name": "[kafka-jira] 20210521 [GitHub] [kafka] omkreddy merged pull request #10739: KAFKA-12820: Upgrade maven-artifact dependency to resolve CVE-2021-26291",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7212b874e575e59d648980d91bc22e684906aee9b211ab92da9591f5@%3Cdev.kafka.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r7212b874e575e59d648980d91bc22e684906aee9b211ab92da9591f5@%3Cdev.kafka.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcd6c3a36f1dbc130da1b89d0f320db7040de71661a512695a8d513ac@%3Cdev.kafka.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/rcd6c3a36f1dbc130da1b89d0f320db7040de71661a512695a8d513ac@%3Cdev.kafka.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-26117",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2021-01-27T19:15Z",
+    "lastModifiedDate": "2021-05-21T12:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The optional ActiveMQ LDAP login module can be configured to use anonymous access to the LDAP server. In this case, for Apache ActiveMQ Artemis prior to version 2.16.0 and Apache ActiveMQ prior to versions 5.16.1 and 5.15.14, the anonymous context is used to verify a valid users password in error, resulting in no check on the password."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://mail-archives.apache.org/mod_mbox/activemq-users/202101.mbox/%3cCAH+vQmMeUEiKN4wYX9nLBbqmFZFPXqajNvBKmzb2V8QZANcSTA@mail.gmail.com%3e",
+        "name": "https://mail-archives.apache.org/mod_mbox/activemq-users/202101.mbox/%3cCAH+vQmMeUEiKN4wYX9nLBbqmFZFPXqajNvBKmzb2V8QZANcSTA@mail.gmail.com%3e",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rffa5cd05d01c4c9853b17f3004d80ea6eb8856c422a8545c5f79b1a6@%3Ccommits.activemq.apache.org%3E",
+        "name": "[activemq-commits] 20210128 [activemq-website] branch master updated: CVE-2021-26117 - add mitigation section",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re1b98da90a5f2e1c2e2d50e31c12e2578d61fe01c0737f9d0bd8de99@%3Cannounce.apache.org%3E",
+        "name": "[announce] 20210128 CVE-2021-26117: ActiveMQ: LDAP-Authentication does not verify passwords on servers with anonymous bind",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r946488fb942fd35c6a6e0359f52504a558ed438574a8f14d36d7dcd7@%3Ccommits.activemq.apache.org%3E",
+        "name": "[activemq-commits] 20210208 [activemq-website] branch master updated: Publish CVE-2020-13947",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210304-0008/",
+        "name": "https://security.netapp.com/advisory/ntap-20210304-0008/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2021/03/msg00005.html",
+        "name": "[debian-lts-announce] 20210305 [SECURITY] [DLA 2583-1] activemq security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r70389648227317bdadcdecbd9f238571a6047469d156bd72bb0ca2f7@%3Cgitbox.activemq.apache.org%3E",
+        "name": "[activemq-gitbox] 20210323 [GitHub] [activemq-artemis] trevorlinton opened a new pull request #3515: Update activmq5 version to fix CVE-2021-26117",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rec93794f8aeddf8a5f1a643d264b4e66b933f06fd72a38f31448f0ac@%3Cgitbox.activemq.apache.org%3E",
+        "name": "[activemq-gitbox] 20210409 [GitHub] [activemq-artemis] brusdev closed pull request #3515: Update activmq5 version to fix CVE-2021-26117",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5899ece90bcae5805ad6142fdb05c58595cff19cb2e98cc58a91f55b@%3Cgitbox.activemq.apache.org%3E",
+        "name": "[activemq-gitbox] 20210409 [GitHub] [activemq-artemis] brusdev commented on pull request #3515: Update activmq5 version to fix CVE-2021-26117",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r110cacfa754471361234965ffe851a046e302ff2693b055f49f47b02@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210421 [jira] [Created] (AMQ-8245) CVE-2021-26117 on AMQ 5.16.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r22cdc0fb45e223ac92bc2ceff7af92f1193dfc614c8b248534456229@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210421 [jira] [Created] (AMQ-8246) CVE-2021-26117 still exists on 5.16.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/raea451de09baed76950d6a60cc4bb1b74476c505e03205a3c68c9808@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210421 [jira] [Created] (AMQ-8244) CVE-2021-26117 on AMQ 5.16.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd75600cee29cb248d548edcf6338fe296466d63a69e2ed0afc439ec7@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210421 [jira] [Updated] (AMQ-8246) CVE-2021-26117 still exists on 5.16.1",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3341d96d8f956e878fb7b463b08d57ca1d58fec9c970aee929b58e0d@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210509 [jira] [Commented] (AMQ-8246) CVE-2021-26117 still exists on 5.16.1",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r519bfafd67091d0b91243efcb1c49b1eea27321355ba5594f679277d@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210509 [jira] [Deleted] (AMQ-8244) CVE-2021-26117 on AMQ 5.16.1",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd05b1c9d61dbd220664d559aa0e2b55e5830f006a09e82057f3f7863@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210509 [jira] [Deleted] (AMQ-8245) CVE-2021-26117 on AMQ 5.16.1",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/ra255ddfc8b613b80e9fa22ff3e106168b245f38a22316bfb54d21159@%3Cissues.activemq.apache.org%3E",
+        "name": "[activemq-issues] 20210421 [jira] [Updated] (AMQ-8246) CVE-2021-26117 still exists on 5.16.1",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-13946",
+    "cveASSIGNER": "security@apache.org",
+    "publishedDate": "2020-09-01T21:15Z",
+    "lastModifiedDate": "2021-05-21T09:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In Apache Cassandra, all versions prior to 2.1.22, 2.2.18, 3.0.22, 3.11.8 and 4.0-beta2, it is possible for a local attacker without access to the Apache Cassandra process or configuration files to manipulate the RMI registry to perform a man-in-the-middle attack and capture user names and passwords used to access the JMX interface. The attacker can then use these credentials to access the JMX interface and perform unauthorised operations. Users should also be aware of CVE-2019-2684, a JRE vulnerability that enables this issue to be exploited remotely."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lists.apache.org/thread.html/rcd7544b24d8fc32b7950ec4c117052410b661babaa857fb1fc641152%40%3Cuser.cassandra.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/rcd7544b24d8fc32b7950ec4c117052410b661babaa857fb1fc641152%40%3Cuser.cassandra.apache.org%3E",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r718e01f61b35409a4f7a3ccbc1cb5136a1558a9f9c2cb8d4ca9be1ce@%3Cuser.cassandra.apache.org%3E",
+        "name": "[cassandra-user] 20200901 Re: CVE-2020-13946 Apache Cassandra RMI Rebind Vulnerability",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1fd117082b992e7d43c1286e966c285f98aa362e685695d999ff42f7@%3Cuser.cassandra.apache.org%3E",
+        "name": "[cassandra-user] 20200902 Re: CVE-2020-13946 Apache Cassandra RMI Rebind Vulnerability",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rab8d90d28f944d84e4d7852f355a25c89451ae02c2decc4d355a9cfc@%3Cuser.cassandra.apache.org%3E",
+        "name": "[cassandra-user] 20200911 Re: CVE-2020-13946 Apache Cassandra RMI Rebind Vulnerability",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20210521-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20210521-0005/",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  }
+]

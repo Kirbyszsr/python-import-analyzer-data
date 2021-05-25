@@ -1,0 +1,2152 @@
+[
+  {
+    "cveID": "CVE-2019-9947",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-23T18:29Z",
+    "lastModifiedDate": "2021-02-04T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the path component of a URL that lacks a ? character) followed by an HTTP header or a Redis command. This is similar to the CVE-2019-9740 query string issue. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.python.org/issue35906",
+        "name": "https://bugs.python.org/issue35906",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190404-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20190404-0004/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXASHCDD4PQFKTMKQN4YOP5ZH366ABN4/",
+        "name": "FEDORA-2019-1ffd6b6064",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1260",
+        "name": "RHSA-2019:1260",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JMWSKTNOHSUOT3L25QFJAVCFYZX46FYK/",
+        "name": "FEDORA-2019-ec26883852",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00023.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-1] python3.4 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00022.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1834-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00026.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-2] python3.4 regression update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2030",
+        "name": "RHSA-2019:2030",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-2/",
+        "name": "USN-4127-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-1/",
+        "name": "USN-4127-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00062.html",
+        "name": "openSUSE-SU-2019:2389",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00063.html",
+        "name": "openSUSE-SU-2019:2393",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3335",
+        "name": "RHSA-2019:3335",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3520",
+        "name": "RHSA-2019:3520",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3725",
+        "name": "RHSA-2019:3725",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00040.html",
+        "name": "openSUSE-SU-2020:0086",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-26",
+        "name": "GLSA-202003-26",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html",
+        "name": "[debian-lts-announce] 20200715 [SECURITY] [DLA 2280-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00034.html",
+        "name": "[debian-lts-announce] 20200822 [SECURITY] [DLA 2337-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/02/04/2",
+        "name": "[oss-security] 20210204 [CVE-2020-15693, CVE-2020-15694] Nim - stdlib Httpclient - Header Crlf Injection & Server Response Validation",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9740",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-13T03:29Z",
+    "lastModifiedDate": "2021-02-04T13:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the query string after a ? character) followed by an HTTP header or a Redis command. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.python.org/issue36276",
+        "name": "https://bugs.python.org/issue36276",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/107466",
+        "name": "107466",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXASHCDD4PQFKTMKQN4YOP5ZH366ABN4/",
+        "name": "FEDORA-2019-1ffd6b6064",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1260",
+        "name": "RHSA-2019:1260",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JMWSKTNOHSUOT3L25QFJAVCFYZX46FYK/",
+        "name": "FEDORA-2019-ec26883852",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190619-0005/",
+        "name": "https://security.netapp.com/advisory/ntap-20190619-0005/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00023.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-1] python3.4 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00022.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1834-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00026.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-2] python3.4 regression update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/44TS66GJMO5H3RLMVZEBGEFTB6O2LJJU/",
+        "name": "FEDORA-2019-7723d4774a",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2ORNTF62QPLMJXIQ7KTZQ2776LMIXEKL/",
+        "name": "FEDORA-2019-7df59302e0",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2030",
+        "name": "RHSA-2019:2030",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-2/",
+        "name": "USN-4127-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00039.html",
+        "name": "openSUSE-SU-2019:2131",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-09/msg00041.html",
+        "name": "openSUSE-SU-2019:2133",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-1/",
+        "name": "USN-4127-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Oct/29",
+        "name": "20191021 [slackware-security] python (SSA:2019-293-01)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/154927/Slackware-Security-Advisory-python-Updates.html",
+        "name": "http://packetstormsecurity.com/files/154927/Slackware-Security-Advisory-python-Updates.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3335",
+        "name": "RHSA-2019:3335",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3520",
+        "name": "RHSA-2019:3520",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3725",
+        "name": "RHSA-2019:3725",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M34WOYCDKTDE5KLUACE2YIEH7D37KHRX/",
+        "name": "FEDORA-2019-b06ec6159b",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JCPGLTTOBB3QEARDX4JOYURP6ELNNA2V/",
+        "name": "FEDORA-2019-d202cda4f8",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4X3HW5JRZ7GCPSR7UHJOLD7AWLTQCDVR/",
+        "name": "FEDORA-2019-57462fa10d",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-26",
+        "name": "GLSA-202003-26",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html",
+        "name": "[debian-lts-announce] 20200715 [SECURITY] [DLA 2280-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00034.html",
+        "name": "[debian-lts-announce] 20200822 [SECURITY] [DLA 2337-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/02/04/2",
+        "name": "[oss-security] 20210204 [CVE-2020-15693, CVE-2020-15694] Nim - stdlib Httpclient - Header Crlf Injection & Server Response Validation",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-24901",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2021-01-07T13:15Z",
+    "lastModifiedDate": "2021-01-11T15:34Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The default installation of Krpano Panorama Viewer version <=1.20.8 is vulnerable to Reflected XSS due to insecure remote js load in file viewer/krpano.html, parameter plugin[test].url."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://packetstormsecurity.com/files/159477/Krpano-Panorama-Viewer-1.20.8-Cross-Site-Scripting.html",
+        "name": "https://packetstormsecurity.com/files/159477/Krpano-Panorama-Viewer-1.20.8-Cross-Site-Scripting.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-14063",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2017-08-31T16:29Z",
+    "lastModifiedDate": "2020-12-16T06:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Async Http Client (aka async-http-client) before 2.0.35 can be tricked into connecting to a host different from the one extracted by java.net.URI if a '?' character occurs in a fragment identifier. Similar bugs were previously identified in cURL (CVE-2016-8624) and Oracle Java 8 java.net.URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/AsyncHttpClient/async-http-client/issues/1455",
+        "name": "https://github.com/AsyncHttpClient/async-http-client/issues/1455",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://openwall.com/lists/oss-security/2017/08/31/4",
+        "name": "http://openwall.com/lists/oss-security/2017/08/31/4",
+        "refsource": "MISC",
+        "tags": [
+          "Mailing List",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2669",
+        "name": "RHSA-2018:2669",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfaa4d578587f52a9c4d176af516a681a712c664e3be440a4163691d5@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200914 [GitHub] [pulsar] klwilson227 opened a new issue #8061: CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r79d9bab405414af45568c4683386f5e9fd02c10ca87ffa2ee33512dc@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200924 [GitHub] [pulsar] jiazhai closed issue #8061: CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re2510852c4a1f635b14b35e5dfd7597076928e723ab08559ede575e0@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20200925 [GitHub] [pulsar] jiazhai closed issue #8061: CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7046a51116207588e36ca8c2e291327e391dae40712d267117475a98@%3Cdev.tez.apache.org%3E",
+        "name": "[tez-dev] 20201002 [jira] [Created] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r04b15fd898a6b1612153543375daaa8145a0fd1804ec9fa2e0d95c97@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201002 [jira] [Created] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rcb46acc25917e01ebecca132e870da9ab935d5796686ed8a2785b026@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201002 [jira] [Assigned] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r7879a48644f708be0529bd39f0679ad3ad951f3dc24442878a008fd8@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201004 [jira] [Updated] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r683d78c6d7a15659f2bb82dd4120dab8c45a870eaa7f1a15cce4ed3b@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201004 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/re7367895ccbf64523efcd39a9181baf2eaa30b069d8d6496852fba56@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201005 [jira] [Updated] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfd823a733b02cffbef5a69953fdcbed2d1d0afad5e1ea4e96ff6bf0a@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201005 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r9ea5d489e004b40baf73880c4e11dd4de24b799d15e091e1f4017108@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201009 [jira] [Updated] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbbad61e1ba5b21e234a6664963618acfee237af754eb20300d938e1e@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201009 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r3df4b7ccc363b4850a24842138117aa4451b875bc4773a845b828fc6@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201014 [jira] [Updated] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r868875e67494a18d31e88cba2672f45c3fc6708ffdde445723004da4@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201014 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r4ebb9596d890f3528630492bd78237b3eef06f093bac238a0da9b630@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201020 [jira] [Updated] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rbc4fbb06ccb10e26e6064f57f6bd4935eabe2d18a0cb9a7183699396@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201020 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rc550b8955b37b40fee18db99f167337c41c930d8c3763b9631e01dda@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201021 [jira] [Updated] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5f794dc07913c5f2ec08f540813b40e61b562d36f8b1f916e8705c56@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201021 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r41a0e2c36f7d1854a4d56cb1e4aa720ef501782d887ece1c9b1e2d60@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201110 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5b8666c4414500ff6e993bfa69cb6afa19b1b67c4585a045c0c21662@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201111 [jira] [Commented] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r5f07c30721503d4c02d5451f77a611a1a0bb2a94ddcdf071c9485ea3@%3Cissues.tez.apache.org%3E",
+        "name": "[tez-issues] 20201111 [jira] [Updated] (TEZ-4237) Upgrade async-http-client-1.9.40 due to CVE-2017-14063",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rfe55d83e4070bcc9285bbbf6bc39635dbcbba6d14d89aab0f339c83a@%3Ccommits.tez.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/rfe55d83e4070bcc9285bbbf6bc39635dbcbba6d14d89aab0f339c83a@%3Ccommits.tez.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r0a6b6429a7558051dbb70bd06584b4b1c334a80ec9203d3d39b7045a@%3Ccommits.tez.apache.org%3E",
+        "name": "https://lists.apache.org/thread.html/r0a6b6429a7558051dbb70bd06584b4b1c334a80ec9203d3d39b7045a@%3Ccommits.tez.apache.org%3E",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r14a74d204f285dd3a4fa203de6dbb4e741ddb7fdfff7915590e5b3db@%3Cdev.tez.apache.org%3E",
+        "name": "[tez-dev] 20201112 Build failed in Jenkins: Tez-qbt-0.10-Build #12",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E",
+        "name": "[pulsar-commits] 20201215 [GitHub] [pulsar] yanshuchong opened a new issue #8967: CVSS issue list",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18348",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-23T17:15Z",
+    "lastModifiedDate": "2020-11-16T20:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in urllib2 in Python 2.x through 2.7.17 and urllib in Python 3.x through 3.8.0. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the host component of a URL) followed by an HTTP header. This is similar to the CVE-2019-9740 query string issue and the CVE-2019-9947 path string issue. (This is not exploitable when glibc has CVE-2016-10739 fixed.). This is fixed in: v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1; v3.6.11, v3.6.11rc1, v3.6.12; v3.7.8, v3.7.8rc1, v3.7.9; v3.8.3, v3.8.3rc1, v3.8.4, v3.8.4rc1, v3.8.5, v3.8.6, v3.8.6rc1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugs.python.org/issue30458#msg347282",
+        "name": "https://bugs.python.org/issue30458#msg347282",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1727276",
+        "name": "https://bugzilla.redhat.com/show_bug.cgi?id=1727276",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20191107-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20191107-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M34WOYCDKTDE5KLUACE2YIEH7D37KHRX/",
+        "name": "FEDORA-2019-b06ec6159b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JCPGLTTOBB3QEARDX4JOYURP6ELNNA2V/",
+        "name": "FEDORA-2019-d202cda4f8",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4X3HW5JRZ7GCPSR7UHJOLD7AWLTQCDVR/",
+        "name": "FEDORA-2019-57462fa10d",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4333-1/",
+        "name": "USN-4333-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4333-2/",
+        "name": "USN-4333-2",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00041.html",
+        "name": "openSUSE-SU-2020:0696",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UESGYI5XDAHJBATEZN3MHNDUBDH47AS6/",
+        "name": "FEDORA-2020-8bdd3fd7a4",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/A5NSAX4SC3V64PGZUPH7PRDLSON34Q5A/",
+        "name": "FEDORA-2020-ea5bdbcc90",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html",
+        "name": "[debian-lts-announce] 20200715 [SECURITY] [DLA 2280-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Technical Description"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpuoct2020.html",
+        "refsource": "MISC",
+        "tags": [
+          "Technical Description"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-11015",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-10-16T11:15Z",
+    "lastModifiedDate": "2020-11-10T19:40Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "NETGEAR JNR1010 devices before 1.0.0.32 allow cgi-bin/webproc CSRF via the :InternetGatewayDevice.X_TWSZ-COM_URL_Filter.BlackList.1.URL parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://packetstormsecurity.com/files/135215/Netgear-1.0.0.24-Cross-Site-Request-Forgery.html",
+        "name": "https://packetstormsecurity.com/files/135215/Netgear-1.0.0.24-Cross-Site-Request-Forgery.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://lists.openwall.net/full-disclosure/2016/01/11/4",
+        "name": "https://lists.openwall.net/full-disclosure/2016/01/11/4",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/cybersecurityworks/Disclosed/issues/13",
+        "name": "https://github.com/cybersecurityworks/Disclosed/issues/13",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://pmcg2k15.wordpress.com/2016/01/11/fd-cross-site-request-forgery-in-netgear-router-jnr1010-version-1-0-0-24/",
+        "name": "https://pmcg2k15.wordpress.com/2016/01/11/fd-cross-site-request-forgery-in-netgear-router-jnr1010-version-1-0-0-24/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cybersecurityworks.com/zerodays/cve-2016-11015-netgear.html",
+        "name": "https://cybersecurityworks.com/zerodays/cve-2016-11015-netgear.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9636",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-08T21:29Z",
+    "lastModifiedDate": "2020-10-29T14:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Python 2.7.x through 2.7.16 and 3.x through 3.7.2 is affected by: Improper Handling of Unicode Encoding (with an incorrect netloc) during NFKC normalization. The impact is: Information disclosure (credentials, cookies, etc. that are cached against a given hostname). The components are: urllib.parse.urlsplit, urllib.parse.urlparse. The attack vector is: A specially crafted URL could be incorrectly parsed to locate cookies or authentication data and send that information to a different host than when parsed correctly. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.7, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.3, v3.7.3rc1, v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://python-security.readthedocs.io/vuln/urlsplit-nfkc-normalization.html",
+        "name": "https://python-security.readthedocs.io/vuln/urlsplit-nfkc-normalization.html",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/python/cpython/pull/12201",
+        "name": "https://github.com/python/cpython/pull/12201",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.python.org/issue36216",
+        "name": "https://bugs.python.org/issue36216",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/107400",
+        "name": "107400",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L25RTMKCF62DLC2XVSNXGX7C7HXISLVM/",
+        "name": "FEDORA-2019-243442e600",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JSKPGPZQNTAULHW4UH63KGOOUIDE4RRB/",
+        "name": "FEDORA-2019-6e1938a3c5",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/D3LXPABKVLFYUHRYJPM3CSS5MS6FXKS7/",
+        "name": "FEDORA-2019-6baeb15da3",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AEZ5IQT7OF7Q2NCGIVABOWYGKO7YU3NJ/",
+        "name": "FEDORA-2019-cf725dd20b",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ICBEGRHIPHWPG2VGYS6R4EVKVUUF4AQW/",
+        "name": "FEDORA-2019-6b02154aa0",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TR6GCO3WTV4D5L23WTCBF275VE6BVNI3/",
+        "name": "FEDORA-2019-7d9f3cf3ce",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CFBAAGM27H73OLYBUA2IAZFSUN6KGLME/",
+        "name": "FEDORA-2019-a122fe704d",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/46PVWY5LFP4BRPG3BVQ5QEEFYBVEXHCK/",
+        "name": "FEDORA-2019-51f1e08207",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IFAXBEY2TGOBDRKTR556JBXBVFSAKD6I/",
+        "name": "FEDORA-2019-86f32cbab1",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0710",
+        "name": "RHSA-2019:0710",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0765",
+        "name": "RHSA-2019:0765",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0806",
+        "name": "RHSA-2019:0806",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00092.html",
+        "name": "openSUSE-SU-2019:1273",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00097.html",
+        "name": "openSUSE-SU-2019:1282",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0902",
+        "name": "RHSA-2019:0902",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0997",
+        "name": "RHSA-2019:0997",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0981",
+        "name": "RHSA-2019:0981",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHBA-2019:0959",
+        "name": "RHBA-2019:0959",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00024.html",
+        "name": "openSUSE-SU-2019:1371",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JXASHCDD4PQFKTMKQN4YOP5ZH366ABN4/",
+        "name": "FEDORA-2019-1ffd6b6064",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190517-0001/",
+        "name": "https://security.netapp.com/advisory/ntap-20190517-0001/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JMWSKTNOHSUOT3L25QFJAVCFYZX46FYK/",
+        "name": "FEDORA-2019-ec26883852",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1467",
+        "name": "RHSA-2019:1467",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00050.html",
+        "name": "openSUSE-SU-2019:1580",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00022.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1834-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00023.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1835-1] python3.4 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHBA-2019:0763",
+        "name": "RHBA-2019:0763",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHBA-2019:0764",
+        "name": "RHBA-2019:0764",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/44TS66GJMO5H3RLMVZEBGEFTB6O2LJJU/",
+        "name": "FEDORA-2019-7723d4774a",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2ORNTF62QPLMJXIQ7KTZQ2776LMIXEKL/",
+        "name": "FEDORA-2019-7df59302e0",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KRYFIMISZ47NTAU3XWZUOFB7CYL62KES/",
+        "name": "FEDORA-2019-9bfb4a3e4b",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HQEQLXLOCR3SNM3AA5RRYJFQ5AZBYJ4L/",
+        "name": "FEDORA-2019-60a1defcd1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00042.html",
+        "name": "openSUSE-SU-2019:1906",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-2/",
+        "name": "USN-4127-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-1/",
+        "name": "USN-4127-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ER6LONC2B2WYIO56GBQUDU6QTWZDPUNQ/",
+        "name": "FEDORA-2019-5dc275c9f2",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E2HP37NUVLQSBW3J735A2DQDOZ4ZGBLY/",
+        "name": "FEDORA-2019-2b1f72899a",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2980",
+        "name": "RHSA-2019:2980",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3170",
+        "name": "RHSA-2019:3170",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M34WOYCDKTDE5KLUACE2YIEH7D37KHRX/",
+        "name": "FEDORA-2019-b06ec6159b",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JCPGLTTOBB3QEARDX4JOYURP6ELNNA2V/",
+        "name": "FEDORA-2019-d202cda4f8",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4X3HW5JRZ7GCPSR7UHJOLD7AWLTQCDVR/",
+        "name": "FEDORA-2019-57462fa10d",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "name": "https://www.oracle.com/security-alerts/cpujan2020.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-01/msg00040.html",
+        "name": "openSUSE-SU-2020:0086",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-26",
+        "name": "GLSA-202003-26",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html",
+        "name": "[debian-lts-announce] 20200715 [SECURITY] [DLA 2280-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00034.html",
+        "name": "[debian-lts-announce] 20200822 [SECURITY] [DLA 2337-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-7616",
+    "cveASSIGNER": "security@elastic.co",
+    "publishedDate": "2019-07-30T22:15Z",
+    "lastModifiedDate": "2020-10-19T11:57Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Kibana versions before 6.8.2 and 7.2.1 contain a server side request forgery (SSRF) flaw in the graphite integration for Timelion visualizer. An attacker with administrative Kibana access could set the timelion:graphite.url configuration option to an arbitrary URL. This could possibly lead to an attacker accessing external URL resources as the Kibana process on the host system."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.elastic.co/community/security/",
+        "name": "https://www.elastic.co/community/security/",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-11054",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-05-07T21:15Z",
+    "lastModifiedDate": "2020-09-21T02:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In qutebrowser versions less than 1.11.1, reloading a page with certificate errors shows a green URL. After a certificate error was overridden by the user, qutebrowser displays the URL as yellow (colors.statusbar.url.warn.fg). However, when the affected website was subsequently loaded again, the URL was mistakenly displayed as green (colors.statusbar.url.success_https). While the user already has seen a certificate error prompt at this point (or set content.ssl_strict to false, which is not recommended), this could still provide a false sense of security. This has been fixed in 1.11.1 and 1.12.0. All versions of qutebrowser are believed to be affected, though versions before v0.11.x couldn't be tested. Backported patches for older versions (greater than or equal to 1.4.0 and less than or equal to 1.10.2) are available, but no further releases are planned."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/19f01bb42d02da539446a52a25bb0c1232b86327",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/19f01bb42d02da539446a52a25bb0c1232b86327",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/4020210b193f77cf1785b21717f6ef7c5de5f0f8",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/4020210b193f77cf1785b21717f6ef7c5de5f0f8",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/a45ca9c788f648d10cccce2af41405bf25ee2948",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/a45ca9c788f648d10cccce2af41405bf25ee2948",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/021ab572a319ca3db5907a33a59774f502b3b975",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/021ab572a319ca3db5907a33a59774f502b3b975",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/d28ed758d077a5bf19ddac4da468f7224114df23",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/d28ed758d077a5bf19ddac4da468f7224114df23",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/6821c236f9ae23adf21d46ce0d56768ac8d0c467",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/6821c236f9ae23adf21d46ce0d56768ac8d0c467",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/9bd1cf585fccdfe8318fff7af793730e74a04db3",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/9bd1cf585fccdfe8318fff7af793730e74a04db3",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://tracker.die-offenbachs.homelinux.org/eric/issue328",
+        "name": "https://tracker.die-offenbachs.homelinux.org/eric/issue328",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/security/advisories/GHSA-4rcq-jv2f-898j",
+        "name": "https://github.com/qutebrowser/qutebrowser/security/advisories/GHSA-4rcq-jv2f-898j",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/f5d801251aa5436aff44660c87d7013e29ac5864",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/f5d801251aa5436aff44660c87d7013e29ac5864",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/2281a205c3e70ec20f35ec8fafecee0d5c4f3478",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/2281a205c3e70ec20f35ec8fafecee0d5c4f3478",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://bugs.kde.org/show_bug.cgi?id=420902",
+        "name": "https://bugs.kde.org/show_bug.cgi?id=420902",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/issues/5403",
+        "name": "https://github.com/qutebrowser/qutebrowser/issues/5403",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/qutebrowser/qutebrowser/commit/1b7946ed14b386a24db050f2d6dba81ba6518755",
+        "name": "https://github.com/qutebrowser/qutebrowser/commit/1b7946ed14b386a24db050f2d6dba81ba6518755",
+        "refsource": "MISC",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7YWJ5QNHXKTGG5NLV7EGEOKPBVZBA5GS/",
+        "name": "FEDORA-2020-fcd5fd47bd",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MKAZOOTJ2MBHTYVYQQ52NL53F5CB2XAP/",
+        "name": "FEDORA-2020-f0812d6aad",
+        "refsource": "FEDORA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-20483",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-12-26T18:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "set_file_metadata in xattr.c in GNU Wget before 1.20.1 stores a file's origin URL in the user.xdg.origin.url metadata attribute of the extended attributes of the downloaded file, which allows local users to obtain sensitive information (e.g., credentials contained in the URL) by reading this attribute, as demonstrated by getfattr. This also applies to Referer information in the user.xdg.referrer.url metadata attribute. According to 2016-07-22 in the Wget ChangeLog, user.xdg.origin.url was partially based on the behavior of fwrite_xattr in tool_xattr.c in curl."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://twitter.com/marcan42/status/1077676739877232640",
+        "name": "https://twitter.com/marcan42/status/1077676739877232640",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://git.savannah.gnu.org/cgit/wget.git/tree/NEWS",
+        "name": "http://git.savannah.gnu.org/cgit/wget.git/tree/NEWS",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/106358",
+        "name": "106358",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201903-08",
+        "name": "GLSA-201903-08",
+        "refsource": "GENTOO",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190321-0002/",
+        "name": "https://security.netapp.com/advisory/ntap-20190321-0002/",
+        "refsource": "CONFIRM",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/3943-1/",
+        "name": "USN-3943-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3701",
+        "name": "RHSA-2019:3701",
+        "refsource": "REDHAT",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-9948",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-23T18:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "urllib in Python 2.x through 2.7.16 supports the local_file: scheme, which makes it easier for remote attackers to bypass protection mechanisms that blacklist file: URIs, as demonstrated by triggering a urllib.urlopen('local_file:///etc/passwd') call."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/python/cpython/pull/11842",
+        "name": "https://github.com/python/cpython/pull/11842",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://bugs.python.org/issue35907",
+        "name": "https://bugs.python.org/issue35907",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Issue Tracking",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/107549",
+        "name": "107549",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://security.netapp.com/advisory/ntap-20190404-0004/",
+        "name": "https://security.netapp.com/advisory/ntap-20190404-0004/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00092.html",
+        "name": "openSUSE-SU-2019:1273",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00050.html",
+        "name": "openSUSE-SU-2019:1580",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/06/msg00022.html",
+        "name": "[debian-lts-announce] 20190625 [SECURITY] [DLA 1834-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1700",
+        "name": "RHSA-2019:1700",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2019/07/msg00011.html",
+        "name": "[debian-lts-announce] 20190711 [SECURITY] [DLA 1852-1] python3.4 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KRYFIMISZ47NTAU3XWZUOFB7CYL62KES/",
+        "name": "FEDORA-2019-9bfb4a3e4b",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HQEQLXLOCR3SNM3AA5RRYJFQ5AZBYJ4L/",
+        "name": "FEDORA-2019-60a1defcd1",
+        "refsource": "FEDORA",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:2030",
+        "name": "RHSA-2019:2030",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-2/",
+        "name": "USN-4127-2",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://usn.ubuntu.com/4127-1/",
+        "name": "USN-4127-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      },
+      {
+        "url": "https://seclists.org/bugtraq/2019/Oct/29",
+        "name": "20191021 [slackware-security] python (SSA:2019-293-01)",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/154927/Slackware-Security-Advisory-python-Updates.html",
+        "name": "http://packetstormsecurity.com/files/154927/Slackware-Security-Advisory-python-Updates.html",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3335",
+        "name": "RHSA-2019:3335",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:3520",
+        "name": "RHSA-2019:3520",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/202003-26",
+        "name": "GLSA-202003-26",
+        "refsource": "GENTOO",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/07/msg00011.html",
+        "name": "[debian-lts-announce] 20200715 [SECURITY] [DLA 2280-1] python3.5 security update",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E",
+        "name": "[bookkeeper-issues] 20200729 [GitHub] [bookkeeper] padma81 opened a new issue #2387: Security vulnerabilities in the apache/bookkeeper-4.9.2 image",
+        "refsource": "MLIST",
+        "tags": []
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2020/08/msg00034.html",
+        "name": "[debian-lts-announce] 20200822 [SECURITY] [DLA 2337-1] python2.7 security update",
+        "refsource": "MLIST",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-1999042",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-08-23T18:29Z",
+    "lastModifiedDate": "2019-05-08T22:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability exists in Jenkins 2.137 and earlier, 2.121.2 and earlier in XStream2.java that allows attackers to have Jenkins resolve a domain name when deserializing an instance of java.net.URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://jenkins.io/security/advisory/2018-08-15/#SECURITY-637",
+        "name": "https://jenkins.io/security/advisory/2018-08-15/#SECURITY-637",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-10648",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-03-30T13:29Z",
+    "lastModifiedDate": "2019-04-01T14:52Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Robocode through 1.9.3.5 allows remote attackers to cause external service interaction (DNS), as demonstrated by a query for a unique subdomain name within an attacker-controlled DNS zone, because of a .openStream call within java.net.URL."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://sourceforge.net/p/robocode/bugs/406/",
+        "name": "https://sourceforge.net/p/robocode/bugs/406/",
+        "refsource": "MISC",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/robo-code/robocode/commit/836c84635e982e74f2f2771b2c8640c3a34221bd#diff-0296a8f9d4a509789f4dc4f052d9c36f",
+        "name": "https://github.com/robo-code/robocode/commit/836c84635e982e74f2f2771b2c8640c3a34221bd#diff-0296a8f9d4a509789f4dc4f052d9c36f",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-7536",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-03-09T20:29Z",
+    "lastModifiedDate": "2019-02-28T21:21Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An issue was discovered in Django 2.0 before 2.0.3, 1.11 before 1.11.11, and 1.8 before 1.8.19. The django.utils.html.urlize() function was extremely slow to evaluate certain inputs due to catastrophic backtracking vulnerabilities in two regular expressions (only one regular expression for Django 1.8.x). The urlize() function is used to implement the urlize and urlizetrunc template filters, which were thus vulnerable."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2018/mar/06/security-releases/",
+        "name": "https://www.djangoproject.com/weblog/2018/mar/06/security-releases/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.debian.org/debian-lts-announce/2018/03/msg00006.html",
+        "name": "[debian-lts-announce] 20180308 [SECURITY] [DLA 1303-1] python-django security update",
+        "refsource": "MLIST",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/103361",
+        "name": "103361",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/3591-1/",
+        "name": "USN-3591-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4161",
+        "name": "DSA-4161",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2018:2927",
+        "name": "RHSA-2018:2927",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0082",
+        "name": "RHSA-2019:0082",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0051",
+        "name": "RHSA-2019:0051",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0265",
+        "name": "RHSA-2019:0265",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-0480",
+    "cveASSIGNER": "security@debian.org",
+    "publishedDate": "2014-08-26T14:55Z",
+    "lastModifiedDate": "2018-10-30T16:27Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The core.urlresolvers.reverse function in Django before 1.4.14, 1.5.x before 1.5.9, 1.6.x before 1.6.6, and 1.7 before release candidate 3 does not properly validate URLs, which allows remote attackers to conduct phishing attacks via a // (slash slash) in a URL, which triggers a scheme-relative URL to be generated."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.djangoproject.com/weblog/2014/aug/20/security/",
+        "name": "https://www.djangoproject.com/weblog/2014/aug/20/security/",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-3010",
+        "name": "DSA-3010",
+        "refsource": "DEBIAN",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/59782",
+        "name": "59782",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-updates/2014-09/msg00023.html",
+        "name": "openSUSE-SU-2014:1132",
+        "refsource": "SUSE",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/69425",
+        "name": "69425",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/61281",
+        "name": "61281",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/61276",
+        "name": "61276",
+        "refsource": "SECUNIA",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-4582",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-10-15T20:08Z",
+    "lastModifiedDate": "2018-10-30T16:25Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Mozilla Firefox 3.0.1 through 3.0.3, Firefox 2.x before 2.0.0.18, and SeaMonkey 1.x before 1.1.13, when running on Windows, do not properly identify the context of Windows .url shortcut files, which allows user-assisted remote attackers to bypass the Same Origin Policy and obtain sensitive information via an HTML document that is directly accessible through a filesystem, as demonstrated by documents in (1) local folders, (2) Windows share folders, and (3) RAR archives, and as demonstrated by IFRAMEs referencing shortcuts that point to (a) about:cache?device=memory and (b) about:cache?device=disk, a variant of CVE-2008-2810."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/32192",
+        "name": "32192",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://liudieyu0.blog124.fc2.com/blog-entry-6.html",
+        "name": "http://liudieyu0.blog124.fc2.com/blog-entry-6.html",
+        "refsource": "MISC",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/31747",
+        "name": "31747",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=455311",
+        "name": "https://bugzilla.mozilla.org/show_bug.cgi?id=455311",
+        "refsource": "MISC",
+        "tags": [
+          "Issue Tracking"
+        ]
+      },
+      {
+        "url": "http://www.mozilla.org/security/announce/2008/mfsa2008-47.html",
+        "name": "http://www.mozilla.org/security/announce/2008/mfsa2008-47.html",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/32721",
+        "name": "32721",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2008-November/msg00385.html",
+        "name": "FEDORA-2008-9669",
+        "refsource": "FEDORA",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://www.us-cert.gov/cas/techalerts/TA08-319A.html",
+        "name": "TA08-319A",
+        "refsource": "CERT",
+        "tags": [
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/32845",
+        "name": "32845",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1669",
+        "name": "DSA-1669",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/32693",
+        "name": "32693",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/32714",
+        "name": "32714",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1671",
+        "name": "DSA-1671",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/31611",
+        "name": "31611",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://securitytracker.com/alerts/2008/Nov/1021212.html",
+        "name": "1021212",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/33433",
+        "name": "33433",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1697",
+        "name": "DSA-1697",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/4416",
+        "name": "4416",
+        "refsource": "SREASON",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1696",
+        "name": "DSA-1696",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/33434",
+        "name": "33434",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/34501",
+        "name": "34501",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/0977",
+        "name": "ADV-2009-0977",
+        "refsource": "VUPEN",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-256408-1",
+        "name": "256408",
+        "refsource": "SUNALERT",
+        "tags": [
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id?1021190",
+        "name": "1021190",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2008/2818",
+        "name": "ADV-2008-2818",
+        "refsource": "VUPEN",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/32684",
+        "name": "32684",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "name": "USN-667-1",
+        "refsource": "UBUNTU",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/32853",
+        "name": "32853",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.redhat.com/archives/fedora-package-announce/2008-November/msg00366.html",
+        "name": "FEDORA-2008-9667",
+        "refsource": "FEDORA",
+        "tags": [
+          "Not Applicable"
+        ]
+      },
+      {
+        "url": "http://secunia.com/advisories/32778",
+        "name": "32778",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Permissions Required",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/45740",
+        "name": "firefox-internet-shortcut-info-disclosure(45740)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/497091/100/0/threaded",
+        "name": "20081007 Firefox Privacy Broken If Used to Open Web Page File",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-3351",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-07-06T01:05Z",
+    "lastModifiedDate": "2018-10-18T16:46Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Buffer overflow in Windows Explorer (explorer.exe) on Windows XP and 2003 allows user-assisted attackers to cause a denial of service (repeated crash) and possibly execute arbitrary code via a .url file with an InternetShortcut tag containing a long URL and a large number of \"file:\" specifiers."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/18838",
+        "name": "18838",
+        "refsource": "BID",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/1186",
+        "name": "1186",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/27567",
+        "name": "win-explorer-url-dos(27567)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/439660/100/200/threaded",
+        "name": "20060706 Re: Windows Explorer URL File format overflow",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/439153/100/0/threaded",
+        "name": "20060705 Windows Explorer URL File format overflow",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2016-3353",
+    "cveASSIGNER": "secure@microsoft.com",
+    "publishedDate": "2016-09-14T10:59Z",
+    "lastModifiedDate": "2018-10-12T22:12Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Microsoft Internet Explorer 9 through 11 mishandles .url files from the Internet zone, which allows remote attackers to bypass intended access restrictions via a crafted file, aka \"Internet Explorer Security Feature Bypass.\""
+      }
+    ],
+    "references": [
+      {
+        "url": "http://zerodayinitiative.com/advisories/ZDI-16-506/",
+        "name": "http://zerodayinitiative.com/advisories/ZDI-16-506/",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/92827",
+        "name": "92827",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1036788",
+        "name": "1036788",
+        "refsource": "SECTRACK",
+        "tags": []
+      },
+      {
+        "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-104",
+        "name": "MS16-104",
+        "refsource": "MS",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-1915",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-06-04T17:30Z",
+    "lastModifiedDate": "2018-10-10T19:39Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Stack-based buffer overflow in the URL Search Hook (ICQToolBar.dll) in ICQ 6.5 allows remote attackers to cause a denial of service (persistent crash) and possibly execute arbitrary code via an Internet shortcut .URL file containing a long URL parameter, which triggers a crash when browsing a folder that contains this file."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.securityfocus.com/bid/35150",
+        "name": "35150",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://osvdb.org/54893",
+        "name": "54893",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/50858",
+        "name": "icq-icqtoolbar-bo(50858)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/8832",
+        "name": "8832",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/503935/100/0/threaded",
+        "name": "20090530 ICQ 6.5 URL Search Hook/ICQToolBar.dll .URL file processing Windows Explorer remote buffer overflow poc",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2017-1000434",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-01-02T23:29Z",
+    "lastModifiedDate": "2018-01-17T18:23Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Wordpress plugin Furikake version 0.1.0 is vulnerable to an Open Redirect The furikake-redirect parameter on a page allows for a redirect to an attacker controlled page classes/Furigana.php: header('location:'.urldecode($_GET['furikake-redirect']));"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://cjc.im/advisories/0008/",
+        "name": "https://cjc.im/advisories/0008/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://wpvulndb.com/vulnerabilities/8992",
+        "name": "https://wpvulndb.com/vulnerabilities/8992",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  }
+]

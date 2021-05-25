@@ -1,0 +1,190 @@
+[
+  {
+    "cveID": "CVE-2021-21368",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2021-03-12T17:15Z",
+    "lastModifiedDate": "2021-03-19T19:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "msgpack5 is a msgpack v5 implementation for node.js and the browser. In msgpack5 before versions 3.6.1, 4.5.1, and 5.2.1 there is a \"Prototype Poisoning\" vulnerability. When msgpack5 decodes a map containing a key \"__proto__\", it assigns the decoded value to __proto__. Object.prototype.__proto__ is an accessor property for the receiver's prototype. If the value corresponding to the key __proto__ decodes to an object or null, msgpack5 sets the decoded object's prototype to that value. An attacker who can submit crafted MessagePack data to a service can use this to produce values that appear to be of other types; may have unexpected prototype properties and methods (for example length, numeric properties, and push et al if __proto__'s value decodes to an Array); and/or may throw unexpected exceptions when used (for example if the __proto__ value decodes to a Map or Date). Other unexpected behavior might be produced for other types. There is no effect on the global prototype. This \"prototype poisoning\" is sort of a very limited inversion of a prototype pollution attack. Only the decoded value's prototype is affected, and it can only be set to msgpack5 values (though if the victim makes use of custom codecs, anything could be a msgpack5 value). We have not found a way to escalate this to true prototype pollution (absent other bugs in the consumer's code). This has been fixed in msgpack5 version 3.6.1, 4.5.1, and 5.2.1. See the referenced GitHub Security Advisory for an example and more details."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/mcollina/msgpack5/releases/tag/v3.6.1",
+        "name": "https://github.com/mcollina/msgpack5/releases/tag/v3.6.1",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/mcollina/msgpack5/releases/tag/v5.2.1",
+        "name": "https://github.com/mcollina/msgpack5/releases/tag/v5.2.1",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/mcollina/msgpack5/releases/tag/v4.5.1",
+        "name": "https://github.com/mcollina/msgpack5/releases/tag/v4.5.1",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/mcollina/msgpack5/commit/d4e6cb956ae51c8bb2828e71c7c1107c340cf1e8",
+        "name": "https://github.com/mcollina/msgpack5/commit/d4e6cb956ae51c8bb2828e71c7c1107c340cf1e8",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/mcollina/msgpack5/security/advisories/GHSA-gmjw-49p4-pcfm",
+        "name": "https://github.com/mcollina/msgpack5/security/advisories/GHSA-gmjw-49p4-pcfm",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.npmjs.com/package/msgpack5",
+        "name": "https://www.npmjs.com/package/msgpack5",
+        "refsource": "MISC",
+        "tags": [
+          "Product",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-11218",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-06-17T17:29Z",
+    "lastModifiedDate": "2020-08-24T17:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Memory Corruption was discovered in the cmsgpack library in the Lua subsystem in Redis before 3.2.12, 4.x before 4.0.10, and 5.x before 5.0 RC2 because of stack-based buffer overflows."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES",
+        "name": "https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/antirez/redis/4.0/00-RELEASENOTES",
+        "name": "https://raw.githubusercontent.com/antirez/redis/4.0/00-RELEASENOTES",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/antirez/redis/issues/5017",
+        "name": "https://github.com/antirez/redis/issues/5017",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/antirez/redis/commit/5ccb6f7a791bf3490357b00a898885759d98bab0",
+        "name": "https://github.com/antirez/redis/commit/5ccb6f7a791bf3490357b00a898885759d98bab0",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/antirez/redis/commit/52a00201fca331217c3b4b8b634f6a0f57d6b7d3",
+        "name": "https://github.com/antirez/redis/commit/52a00201fca331217c3b4b8b634f6a0f57d6b7d3",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://antirez.com/news/119",
+        "name": "http://antirez.com/news/119",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.debian.org/security/2018/dsa-4230",
+        "name": "DSA-4230",
+        "refsource": "DEBIAN",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/104553",
+        "name": "104553",
+        "refsource": "BID",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0094",
+        "name": "RHSA-2019:0094",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:0052",
+        "name": "RHSA-2019:0052",
+        "refsource": "REDHAT",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "name": "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+        "refsource": "MISC",
+        "tags": [
+          "Third Party Advisory",
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://access.redhat.com/errata/RHSA-2019:1860",
+        "name": "RHSA-2019:1860",
+        "refsource": "REDHAT",
+        "tags": []
+      },
+      {
+        "url": "https://security.gentoo.org/glsa/201908-04",
+        "name": "GLSA-201908-04",
+        "refsource": "GENTOO",
+        "tags": []
+      }
+    ]
+  }
+]

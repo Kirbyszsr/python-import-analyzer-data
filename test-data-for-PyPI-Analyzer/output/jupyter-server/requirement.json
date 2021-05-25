@@ -1,0 +1,2637 @@
+{
+  "info": {
+    "author": "Jupyter Development Team",
+    "author_email": "jupyter@googlegroups.com",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Intended Audience :: Developers",
+      "Intended Audience :: Science/Research",
+      "Intended Audience :: System Administrators",
+      "License :: OSI Approved :: BSD License",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9"
+    ],
+    "description": "# Jupyter Server\n\n[![Build Status](https://github.com/jupyter/jupyter_server/workflows/CI/badge.svg?query=branch%3Amaster++)](https://github.com/jupyter-server/jupyter_server/actions?query=branch%3Amaster++)\n[![Documentation Status](https://readthedocs.org/projects/jupyter-server/badge/?version=latest)](http://jupyter-server.readthedocs.io/en/latest/?badge=latest)\n\nThe Jupyter Server provides the backend (i.e. the core services, APIs, and REST endpoints) for Jupyter web applications like Jupyter notebook, JupyterLab, and Voila.\n\nFor more information, read our [documentation here](http://jupyter-server.readthedocs.io/en/latest/?badge=latest).\n\n## Installation and Basic usage\n\nTo install the latest release locally, make sure you have\n[pip installed](https://pip.readthedocs.io/en/stable/installing/) and run:\n\n    pip install jupyter_server\n\nJupyter Server currently supports Python>=3.6 on Linux, OSX and Windows.\n\n### Versioning and Branches\n\nIf Jupyter Server is a dependency of your project/application, it is important that you pin it to a version that works for your application. Currently, Jupyter Server only has minor and patch versions. Different minor versions likely include API-changes while patch versions do not change API.\n\nWhen a new minor version is released on PyPI, a branch for that version will be created in this repository, and the version of the master branch will be bumped to the next minor version number. That way, the master branch always reflects the latest un-released version.\n\nTo see the changes between releases, checkout the [CHANGELOG](https://github.com/jupyter/jupyter_server/blob/master/CHANGELOG.md).\n\n\n## Usage - Running Jupyter Server\n\n### Running in a local installation\n\nLaunch with:\n\n    jupyter server\n\n### Testing\n\nTo test an installed `jupyter_server`, run the following:\n\n    pip install jupyter_server[test]\n    pytest jupyter_server\n\n## Contributing\n\nIf you are interested in contributing to the project, see [`CONTRIBUTING.rst`](CONTRIBUTING.rst).\n\n## Team Meetings and Roadmap\n\n* When: Thursdays [8:00am, Pacific time](https://www.thetimezoneconverter.com/?t=8%3A00%20am&tz=San%20Francisco&)\n* Where: [Jovyan Zoom](https://zoom.us/my/jovyan?pwd=c0JZTHlNdS9Sek9vdzR3aTJ4SzFTQT09)\n* What: [Meeting notes](https://github.com/jupyter/jupyter_server/issues/126)\n\nSee our tentative [roadmap here](https://github.com/jupyter/jupyter_server/issues/127).\n\n\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": "",
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "home_page": "https://jupyter.org",
+    "keywords": "ipython,jupyter",
+    "license": "",
+    "maintainer": "",
+    "maintainer_email": "",
+    "name": "jupyter-server",
+    "package_url": "https://pypi.org/project/jupyter-server/",
+    "platform": "Linux",
+    "project_url": "https://pypi.org/project/jupyter-server/",
+    "project_urls": {
+      "Homepage": "https://jupyter.org"
+    },
+    "release_url": "https://pypi.org/project/jupyter-server/1.6.4/",
+    "requires_dist": [
+      "jinja2",
+      "tornado (>=6.1.0)",
+      "pyzmq (>=17)",
+      "argon2-cffi",
+      "ipython-genutils",
+      "traitlets (>=4.2.1)",
+      "jupyter-core (>=4.4.0)",
+      "jupyter-client (>=6.1.1)",
+      "jupyter-packaging (~=0.9)",
+      "nbformat",
+      "nbconvert",
+      "Send2Trash",
+      "terminado (>=0.8.3)",
+      "prometheus-client",
+      "anyio (<3,>=2.0.2)",
+      "pywin32 (>=1.0) ; sys_platform == \"win32\"",
+      "coverage ; extra == 'test'",
+      "pytest ; extra == 'test'",
+      "pytest-cov ; extra == 'test'",
+      "pytest-mock ; extra == 'test'",
+      "requests ; extra == 'test'",
+      "pytest-tornasync ; extra == 'test'",
+      "pytest-console-scripts ; extra == 'test'",
+      "ipykernel ; extra == 'test'"
+    ],
+    "requires_python": ">=3.6",
+    "summary": "The backend\u2014i.e. core services, APIs, and REST endpoints\u2014to Jupyter web applications.",
+    "version": "1.6.4",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 10280392,
+  "releases": {
+    "0.0.0": [],
+    "0.0.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "24631895b9b60870d1bdce63284243f2",
+          "sha256": "086b8d01998bed83c574d7cf5f9316f24a33331412420a80b604864293b9313d"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "24631895b9b60870d1bdce63284243f2",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 160160,
+        "upload_time": "2018-07-28T21:41:02",
+        "upload_time_iso_8601": "2018-07-28T21:41:02.501704Z",
+        "url": "https://files.pythonhosted.org/packages/91/24/27838ba624cf750ddf9de0f083e9c0ecbb7b9e82154a20e6517c7d54d935/jupyter_server-0.0.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "714cb499194401b2b28e3870895c777a",
+          "sha256": "8e70fb75fe2c0eb081ecdcd11107b3932f5e1c3bf9c0e468e28cfb44e7a73caa"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "714cb499194401b2b28e3870895c777a",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5406481,
+        "upload_time": "2018-07-28T21:42:06",
+        "upload_time_iso_8601": "2018-07-28T21:42:06.368113Z",
+        "url": "https://files.pythonhosted.org/packages/92/05/7ad727d8c9b8d7cb7214b6cebcd0a6e89da9e1054d360ee3f9dd26cfc57f/jupyter_server-0.0.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.0.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "455b6721f23339aabcee72d3d37eb0f8",
+          "sha256": "098a3b32a120d2e569c7a52c0353aace97647033bb12bcbc3b4815555b3bbeaf"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.2-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "455b6721f23339aabcee72d3d37eb0f8",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 203553,
+        "upload_time": "2018-07-31T14:15:16",
+        "upload_time_iso_8601": "2018-07-31T14:15:16.116754Z",
+        "url": "https://files.pythonhosted.org/packages/a6/d4/a717bba2afcd58fff5642bfd6e50d060ab0c4dcadec2ac5501233a3bc272/jupyter_server-0.0.2-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c1b6ddc090de4e4b519a17fc6157fd0c",
+          "sha256": "c1d489cff57a1a60130d978c1304ec5a36eb2215c64ef74a4dbabb086d3c70e0"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c1b6ddc090de4e4b519a17fc6157fd0c",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5444319,
+        "upload_time": "2018-07-31T14:15:20",
+        "upload_time_iso_8601": "2018-07-31T14:15:20.747796Z",
+        "url": "https://files.pythonhosted.org/packages/04/2d/32dd671fd6a1a236310f0b96fac978bf01dd199c0d6d1e0de327bbe3f6a0/jupyter_server-0.0.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.0.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5ff947ec4d09d21d767aaafed4034396",
+          "sha256": "9f8dd0aa4bf960e63b2b2b8116485a6fff7217afee570b004a971817e82cab47"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.3-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "5ff947ec4d09d21d767aaafed4034396",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 203842,
+        "upload_time": "2019-01-23T15:41:07",
+        "upload_time_iso_8601": "2019-01-23T15:41:07.626821Z",
+        "url": "https://files.pythonhosted.org/packages/66/ef/4380543f2f5ef5a8d14ce284054e4f1985615f17769cde9ac87084498e63/jupyter_server-0.0.3-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "93c5bf3b0ce18b7862006e4a8a4a5239",
+          "sha256": "750e919006480b85a9ae4fa0f336046a2f12fcb1a033f21d29acf9207baa7bda"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "93c5bf3b0ce18b7862006e4a8a4a5239",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5423609,
+        "upload_time": "2019-01-23T15:41:11",
+        "upload_time_iso_8601": "2019-01-23T15:41:11.143055Z",
+        "url": "https://files.pythonhosted.org/packages/ce/d3/23d470e5fb47377bf8f2317fb1633ab91e6d0891c59a045b18ca72aad8fe/jupyter_server-0.0.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.0.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4e32221c5b532323c7e42655b9330642",
+          "sha256": "392d65fb6952cda9c3bee814168dc530f0b6e9a161b904efd54cc7e61221da83"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.4-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "4e32221c5b532323c7e42655b9330642",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 204244,
+        "upload_time": "2019-03-22T15:39:27",
+        "upload_time_iso_8601": "2019-03-22T15:39:27.596771Z",
+        "url": "https://files.pythonhosted.org/packages/be/77/bfbf7ed1350111d6647689545382f5c3e499a1260e151303cc9fdc157179/jupyter_server-0.0.4-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1710bcdc9afe3571103fe2ee8963e85b",
+          "sha256": "b1098c4598e764eb64335401987cdb11a24e355e3b6ab49bf8673f33323fc08b"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "1710bcdc9afe3571103fe2ee8963e85b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5424020,
+        "upload_time": "2019-03-22T15:39:30",
+        "upload_time_iso_8601": "2019-03-22T15:39:30.699058Z",
+        "url": "https://files.pythonhosted.org/packages/9b/67/dcf16d421fad4bb6779d2367629e3be4e9d22c13daddf0a50d42161a5a57/jupyter_server-0.0.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.0.5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a11dc18682107d5bfdcde18ad298c44f",
+          "sha256": "f5b39346dd80272a98501dd87e1bc3c801406618b784a180652b3a52712765b1"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.5-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "a11dc18682107d5bfdcde18ad298c44f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 190307,
+        "upload_time": "2019-05-16T10:43:04",
+        "upload_time_iso_8601": "2019-05-16T10:43:04.337699Z",
+        "url": "https://files.pythonhosted.org/packages/56/30/aa35d2a53796736a64783fe81c828b7a18a3ffcbf51eba8df5c9d0d76411/jupyter_server-0.0.5-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1546900884068dcd36e7f6c41458113a",
+          "sha256": "c7c8a9f685cbcad669763f5fd9295fd1361eb9a454290bf726de6714739e1815"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.0.5.tar.gz",
+        "has_sig": false,
+        "md5_digest": "1546900884068dcd36e7f6c41458113a",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5412759,
+        "upload_time": "2019-05-16T10:43:07",
+        "upload_time_iso_8601": "2019-05-16T10:43:07.707442Z",
+        "url": "https://files.pythonhosted.org/packages/a8/66/97eb132f91a3c80a9a5c4a81967fb733555da196daa0dfb2c31ed3e62743/jupyter_server-0.0.5.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.1.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "11b345ddb2d9bad1517c082e2812b779",
+          "sha256": "5e4bdb1fd0f0fa14fa7eb608e7fc6688901498173f53b2248135393b54a35d4f"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.1.0-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "11b345ddb2d9bad1517c082e2812b779",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 194711,
+        "upload_time": "2019-07-16T15:23:28",
+        "upload_time_iso_8601": "2019-07-16T15:23:28.352864Z",
+        "url": "https://files.pythonhosted.org/packages/a4/47/3e0a3a9e8c6a81fb38b4ce401aece06af8b3a942ff3c095ff7829003abe1/jupyter_server-0.1.0-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5bc82fec55b47affa05a804c12502899",
+          "sha256": "6704b6a70048487d8cec8365fefc8186b742b17a02e30203b502b570ddd0668a"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.1.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "5bc82fec55b47affa05a804c12502899",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5407905,
+        "upload_time": "2019-07-16T15:23:36",
+        "upload_time_iso_8601": "2019-07-16T15:23:36.183205Z",
+        "url": "https://files.pythonhosted.org/packages/1f/42/204ccb2f49123e9defdc28f648d85e5102389ce48ca7d48ed20ea18a3392/jupyter_server-0.1.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.1.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4bdb711f0243b375d6a899e8df31d729",
+          "sha256": "cf2151b39d258eefddbfdc8e21ae486ab30618b176612b2e1fa15b3ddb9aec3f"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.1.1-py2.py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "4bdb711f0243b375d6a899e8df31d729",
+        "packagetype": "bdist_wheel",
+        "python_version": "py2.py3",
+        "requires_python": null,
+        "size": 183417,
+        "upload_time": "2019-08-06T00:25:06",
+        "upload_time_iso_8601": "2019-08-06T00:25:06.499460Z",
+        "url": "https://files.pythonhosted.org/packages/0f/9e/4b5bddfbab2f56b561b672d04c300d6c2d4b3f2c7c99e7935892104f2efa/jupyter_server-0.1.1-py2.py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c905efb376c6fedd6b0e9f71cb76b24d",
+          "sha256": "3eb8e6cccab8da5e13df954fb6e3544ad9b0591948fe1e017428824e23303888"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.1.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c905efb376c6fedd6b0e9f71cb76b24d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 5407935,
+        "upload_time": "2019-08-06T00:28:08",
+        "upload_time_iso_8601": "2019-08-06T00:28:08.627242Z",
+        "url": "https://files.pythonhosted.org/packages/77/78/b2d93b9aee1f48ace8695fd2790b204bb5d688064c368bab9f65544f5e7f/jupyter_server-0.1.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "235430ad6f1716dac2e7add8387aa5cd",
+          "sha256": "f810054a2a4fc6b1d4c98a9f16ce0c3a395c8ec4895110ad408cae2daece000e"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.2.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "235430ad6f1716dac2e7add8387aa5cd",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 146406,
+        "upload_time": "2019-12-19T19:41:52",
+        "upload_time_iso_8601": "2019-12-19T19:41:52.609249Z",
+        "url": "https://files.pythonhosted.org/packages/3c/f0/c711d60b1eb9758dd87585f77fdff88203aae55f0ce0cc64fb0b2a21810e/jupyter_server-0.2.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "06265115e22f60904f1aba91188ae1e9",
+          "sha256": "d91faa808a8853e820fd53165afa61819163dfc14c136050fbd63eca942391e3"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.2.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "06265115e22f60904f1aba91188ae1e9",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 639034,
+        "upload_time": "2019-12-19T19:41:55",
+        "upload_time_iso_8601": "2019-12-19T19:41:55.286729Z",
+        "url": "https://files.pythonhosted.org/packages/4d/b9/5fb14a874df0624a567c4a16e6661bf413ed910ed280ed4ffe1ce6d8e0e3/jupyter_server-0.2.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.2.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ff1ad09dd0aa687c51cb9fec9def9ce9",
+          "sha256": "c07de66583bc29d22986f9b77556b7dc09735b5a10a25b9eed8d36abea1039e8"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.2.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "ff1ad09dd0aa687c51cb9fec9def9ce9",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 148106,
+        "upload_time": "2020-01-10T19:50:19",
+        "upload_time_iso_8601": "2020-01-10T19:50:19.368526Z",
+        "url": "https://files.pythonhosted.org/packages/d3/8d/e169d6e13d0693a5c309c64f7e38bab388941e89498ad8dcf843019c4c39/jupyter_server-0.2.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "9d20599f60b463bf9f31eae282cd4c75",
+          "sha256": "906ecd782925c78063db65dc17d30173372708e314e2a10b3c05366f743e9469"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.2.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "9d20599f60b463bf9f31eae282cd4c75",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 641018,
+        "upload_time": "2020-01-10T19:50:21",
+        "upload_time_iso_8601": "2020-01-10T19:50:21.234082Z",
+        "url": "https://files.pythonhosted.org/packages/dc/68/c95fc5dccccd0e6a9f7c7d58f21435dccb578464663b06f7efc2f690bd11/jupyter_server-0.2.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.3.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cc39576c6fb4ae2b71e33b356024824e",
+          "sha256": "ed26d67195ea27a0a24d058793bbe93c344c1daa8d3c745bf9f7d396faedcb17"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.3.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "cc39576c6fb4ae2b71e33b356024824e",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.5",
+        "size": 150547,
+        "upload_time": "2020-04-22T22:32:26",
+        "upload_time_iso_8601": "2020-04-22T22:32:26.823231Z",
+        "url": "https://files.pythonhosted.org/packages/20/22/c55b67b17586f50c27f6be58997df13a36bf6e66f7783eab7b415730b26e/jupyter_server-0.3.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2e4e07bef8c948fb22ff60d80efde189",
+          "sha256": "88d8ac1b399c83d01717bc73002f03999f217df66c09a1c97ef968a994f57e4c"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-0.3.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "2e4e07bef8c948fb22ff60d80efde189",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.5",
+        "size": 674132,
+        "upload_time": "2020-04-22T22:32:28",
+        "upload_time_iso_8601": "2020-04-22T22:32:28.466525Z",
+        "url": "https://files.pythonhosted.org/packages/6a/bd/8e8068e3a6705ade090f538b343894fd1ff86cbe4b5e5612efd10158f1a0/jupyter_server-0.3.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0a72f4fabc54b577a40d137698f9c0ac",
+          "sha256": "5f14a3bf1d9d0cf4214c4ebc3d4d5c2c1145db6805db24b34b19974c945a48c2"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "0a72f4fabc54b577a40d137698f9c0ac",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 205320,
+        "upload_time": "2020-09-18T16:12:55",
+        "upload_time_iso_8601": "2020-09-18T16:12:55.102791Z",
+        "url": "https://files.pythonhosted.org/packages/b3/6d/2f87614455daa8dc8df3220d06201499350698a9eac2c997f5fca13f9414/jupyter_server-1.0.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0d5a9814cff612f6615c4220a498c3a5",
+          "sha256": "b81e1ace7a9c4875ffe6870f9038237e1d74e82c11bb38a3e1dc86bab0c38f56"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "0d5a9814cff612f6615c4220a498c3a5",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 233920,
+        "upload_time": "2020-09-18T16:12:57",
+        "upload_time_iso_8601": "2020-09-18T16:12:57.333919Z",
+        "url": "https://files.pythonhosted.org/packages/01/b9/a008fc6ef885f0099c9bf1bf18050b66c417b233c0c2fe1493edb4148bfc/jupyter_server-1.0.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "683d0d51c8bc7a23caf064d9f0030c33",
+          "sha256": "bbde267d1026d0f9b3788a0b4684ffa083e5e769401703a873fb40616b91b916"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "683d0d51c8bc7a23caf064d9f0030c33",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 180445,
+        "upload_time": "2020-08-04T15:52:54",
+        "upload_time_iso_8601": "2020-08-04T15:52:54.365327Z",
+        "url": "https://files.pythonhosted.org/packages/35/fe/6263e8ce184c41a99dac2945462ead8976d250bea4c74c7b9c190a8b765b/jupyter_server-1.0.0rc0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "266b4fb508cfa72c04c6a76657709e75",
+          "sha256": "dce22014d7e265f553fd01c59629cf8a2d2f00d9b2cf244c20d577e05b400f42"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "266b4fb508cfa72c04c6a76657709e75",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 696415,
+        "upload_time": "2020-08-04T15:52:55",
+        "upload_time_iso_8601": "2020-08-04T15:52:55.802142Z",
+        "url": "https://files.pythonhosted.org/packages/c6/c4/acf09bdd2f640592e3a2486157e6cc8076610f3746f21fd665cb68a626ae/jupyter_server-1.0.0rc0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4a31cbbb580f344c50d810fe081362d4",
+          "sha256": "f9a3a9cc574200837f4aca448d30096ee82911d249011c392f909dc3b7ef72b9"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "4a31cbbb580f344c50d810fe081362d4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 180594,
+        "upload_time": "2020-08-04T16:08:41",
+        "upload_time_iso_8601": "2020-08-04T16:08:41.158773Z",
+        "url": "https://files.pythonhosted.org/packages/6a/1e/8ba2428f8f12d5144eb08abfcdaf14c864510f8067c7fb16d51a4137560d/jupyter_server-1.0.0rc1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5a9b6ec896e34acc93901c75b65baf13",
+          "sha256": "da2c583df7d1e17cafbd241eea4cfe62f413b7c33b339c857ba9ca91adba090c"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "5a9b6ec896e34acc93901c75b65baf13",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 695646,
+        "upload_time": "2020-08-04T16:08:43",
+        "upload_time_iso_8601": "2020-08-04T16:08:43.055536Z",
+        "url": "https://files.pythonhosted.org/packages/ac/7b/38cee48a79db39466f266077f1d8a4c2e5699906d99b51e5dcdb356208f4/jupyter_server-1.0.0rc1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc10": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8ce29c791537e8b22f13dd6702bb5371",
+          "sha256": "abbb2f37263a8cbd36a676794b8b7e4fe2b281442a50503697534334e5637ff7"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc10-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "8ce29c791537e8b22f13dd6702bb5371",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198849,
+        "upload_time": "2020-08-27T17:08:12",
+        "upload_time_iso_8601": "2020-08-27T17:08:12.041662Z",
+        "url": "https://files.pythonhosted.org/packages/69/07/f8c1d58b23b3f4a9f99d3a58abe460df3db349f9f07d3e4ba64cc8d6613f/jupyter_server-1.0.0rc10-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f27f08e30535a483c8f7bcdfd052d4a3",
+          "sha256": "2cb26d40124ca9a213a3c653f10773e4a64bd8272249e62a818a0f85daf27cb6"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc10.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f27f08e30535a483c8f7bcdfd052d4a3",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 240907,
+        "upload_time": "2020-08-27T17:08:13",
+        "upload_time_iso_8601": "2020-08-27T17:08:13.569979Z",
+        "url": "https://files.pythonhosted.org/packages/36/71/97df16835be912847af2e79bdbb359495073e9ccbbbc2a07b4317f9aee05/jupyter_server-1.0.0rc10.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc11": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c83b6d8feaea6cb37531d313b6ff9fcf",
+          "sha256": "403aa6895ad4bbffbf44f6fecfb2bb29ea2a3f95e1794516ab0eca342085abf1"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc11-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "c83b6d8feaea6cb37531d313b6ff9fcf",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 222990,
+        "upload_time": "2020-08-27T17:10:44",
+        "upload_time_iso_8601": "2020-08-27T17:10:44.406779Z",
+        "url": "https://files.pythonhosted.org/packages/ff/fe/86170ce5614c37bcad1c1b8a49ee071ce54ceebb64674e1d57d4dc3a284f/jupyter_server-1.0.0rc11-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "fc98ba1d0619656fc438ab40306f8f13",
+          "sha256": "ce27f2cf169c8439b72f3b3692c2e06bde3cf2f809367848794e376a211ccb6b"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc11.tar.gz",
+        "has_sig": false,
+        "md5_digest": "fc98ba1d0619656fc438ab40306f8f13",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 240867,
+        "upload_time": "2020-08-27T17:10:45",
+        "upload_time_iso_8601": "2020-08-27T17:10:45.893006Z",
+        "url": "https://files.pythonhosted.org/packages/45/e3/71108dd1009459294b503ab27af8bf81b7171e5b90d35110bdbfae460e66/jupyter_server-1.0.0rc11.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc12": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3dcddbbbf62090439d82a2704317e71a",
+          "sha256": "3cbbc72b917e0ec3cb188238b1f27dd342384b89ebae417f56017b2d4efea959"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc12-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "3dcddbbbf62090439d82a2704317e71a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 223007,
+        "upload_time": "2020-08-31T21:12:51",
+        "upload_time_iso_8601": "2020-08-31T21:12:51.798855Z",
+        "url": "https://files.pythonhosted.org/packages/f3/5a/18c08ca623c2460f35225f6ce68f2ab4b0bffd82fec6b3fc3a42968a5d69/jupyter_server-1.0.0rc12-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4628be0c7fefbccae31eb4ae1741a7c6",
+          "sha256": "ddf98b75319694ab491a2e567fe756b8e1311994570a2a9c9ddd487d8dfc29b4"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc12.tar.gz",
+        "has_sig": false,
+        "md5_digest": "4628be0c7fefbccae31eb4ae1741a7c6",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 240814,
+        "upload_time": "2020-08-31T21:12:53",
+        "upload_time_iso_8601": "2020-08-31T21:12:53.658779Z",
+        "url": "https://files.pythonhosted.org/packages/df/38/6cc219ed8978723f6fb75e4ab8d88a9a003d8379998e8bb9f8a3df66493a/jupyter_server-1.0.0rc12.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc13": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8e715adc4e9d660a68c86d949ac2f0f1",
+          "sha256": "c6832601d28f06c5921a52604a6edb512265f5a8df52bb4256e5e6f285be8ef8"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc13-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "8e715adc4e9d660a68c86d949ac2f0f1",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 223588,
+        "upload_time": "2020-09-01T17:01:24",
+        "upload_time_iso_8601": "2020-09-01T17:01:24.313625Z",
+        "url": "https://files.pythonhosted.org/packages/4e/de/e389f6183ca53b09fe1a1832dd0979d8f09691ad04a070a7bbe08d30ba22/jupyter_server-1.0.0rc13-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ab751970cf4d1eb735ff65a7b831c04e",
+          "sha256": "a3cb64861574465277ae49d95840f25ca97793224b8c6c43ef396db0fb164841"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc13.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ab751970cf4d1eb735ff65a7b831c04e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 241464,
+        "upload_time": "2020-09-01T17:01:25",
+        "upload_time_iso_8601": "2020-09-01T17:01:25.826201Z",
+        "url": "https://files.pythonhosted.org/packages/bd/99/cde2c63157646deae27d271f9732344c8e8a31b163ab6b3b77b6558881c1/jupyter_server-1.0.0rc13.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc14": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b669f4e8c6e4311d2f1c20bd4043b298",
+          "sha256": "0dafc865d247a8da58a6639cbf9aae8d17a37eeb57439779c860876db9b5ebb9"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc14-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "b669f4e8c6e4311d2f1c20bd4043b298",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 223643,
+        "upload_time": "2020-09-03T17:32:48",
+        "upload_time_iso_8601": "2020-09-03T17:32:48.722777Z",
+        "url": "https://files.pythonhosted.org/packages/f6/b6/f3f001f414f3484d4950e14cdfaceb3224dbb8d54f6340e4eb3ce2cb23ea/jupyter_server-1.0.0rc14-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "789782f98fb1ae6baa2d3f1b2b894c94",
+          "sha256": "ef67ef84324bd13ba207fe13bc8e76a3d1cbdbf0f2f279208354b943e12ba0e8"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc14.tar.gz",
+        "has_sig": false,
+        "md5_digest": "789782f98fb1ae6baa2d3f1b2b894c94",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 241528,
+        "upload_time": "2020-09-03T17:32:50",
+        "upload_time_iso_8601": "2020-09-03T17:32:50.310120Z",
+        "url": "https://files.pythonhosted.org/packages/19/10/5ad3ebbf5309e97851c9503ecc1ad3970e89433759281add20a83bd4662e/jupyter_server-1.0.0rc14.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc15": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "aaa99ff935f5a6ceab409aa8c85682ca",
+          "sha256": "ebbc9fce7b0f499054769dfb00d0336718635d59546752d9bd9acd6b83d4bb63"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc15-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "aaa99ff935f5a6ceab409aa8c85682ca",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 223680,
+        "upload_time": "2020-09-08T15:42:15",
+        "upload_time_iso_8601": "2020-09-08T15:42:15.795910Z",
+        "url": "https://files.pythonhosted.org/packages/43/a8/7a9beecc26378e85a60bc929eab03a1a91087bf4b98bcf365d6bb5896eaa/jupyter_server-1.0.0rc15-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0def5aaab17932d95ffc1a74f269be93",
+          "sha256": "481f40a0b51b298a3146531d6862f74a33e165006e11f734d2e7d096e88988df"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc15.tar.gz",
+        "has_sig": false,
+        "md5_digest": "0def5aaab17932d95ffc1a74f269be93",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 241596,
+        "upload_time": "2020-09-08T15:42:17",
+        "upload_time_iso_8601": "2020-09-08T15:42:17.590081Z",
+        "url": "https://files.pythonhosted.org/packages/3c/79/159268df9e8fbdfe2f72001b5418490e8c0ed5e876fb0d209113556ff3e7/jupyter_server-1.0.0rc15.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc16": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "101f1a367b49d2c265189e71e4901740",
+          "sha256": "32c3a4b48fd98654131d669d52e6a7f09e9fe7cda995809cd840be60a22a5235"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc16-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "101f1a367b49d2c265189e71e4901740",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 223650,
+        "upload_time": "2020-09-08T18:55:22",
+        "upload_time_iso_8601": "2020-09-08T18:55:22.562515Z",
+        "url": "https://files.pythonhosted.org/packages/2d/53/f5e3b9d51c93cdccb6fce97ecd6a54cc75423ba7ae3c10630c38a5724816/jupyter_server-1.0.0rc16-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "2294577c80fb10ddcb9033b983c52566",
+          "sha256": "781bb12f7487c55af1209573735c504af6f3bc2ff81b96180d1091c3efad15dd"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc16.tar.gz",
+        "has_sig": false,
+        "md5_digest": "2294577c80fb10ddcb9033b983c52566",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 241592,
+        "upload_time": "2020-09-08T18:55:24",
+        "upload_time_iso_8601": "2020-09-08T18:55:24.046534Z",
+        "url": "https://files.pythonhosted.org/packages/6d/4f/7b0038bfed0b441e66dcfa0ca618f217d40fe5bda4bed002c9509c3308a2/jupyter_server-1.0.0rc16.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "42d8907bb51b0609cfd29270b7a62f02",
+          "sha256": "530109acfe901c8f097ad725581e069e12978e7e52f54d43bd53cb23bc3ce4d2"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "42d8907bb51b0609cfd29270b7a62f02",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 180594,
+        "upload_time": "2020-08-04T16:27:53",
+        "upload_time_iso_8601": "2020-08-04T16:27:53.715152Z",
+        "url": "https://files.pythonhosted.org/packages/9a/49/4985afc42676e71b9b8441f9e275435f9ffce9b35b0f8bcac64f01fc5042/jupyter_server-1.0.0rc2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "156ecf800f53497e90a0e62a181cae83",
+          "sha256": "000c009e1c66e80234ba935b5ebb2de794d7df548c411b9f6783aba448dd408a"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "156ecf800f53497e90a0e62a181cae83",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 211518,
+        "upload_time": "2020-08-04T16:27:55",
+        "upload_time_iso_8601": "2020-08-04T16:27:55.426624Z",
+        "url": "https://files.pythonhosted.org/packages/5e/b4/769d6f3cc280dd0a365f0d44f1378d41b4162587140adb469edc98351d00/jupyter_server-1.0.0rc2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3ae3758d00c841c87fa4cfa9fa217ecb",
+          "sha256": "427e91b689a9dd770cc3f94535bec4a0107ffb0495f862da218afcab7ebeb37e"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "3ae3758d00c841c87fa4cfa9fa217ecb",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198192,
+        "upload_time": "2020-08-04T16:44:00",
+        "upload_time_iso_8601": "2020-08-04T16:44:00.206260Z",
+        "url": "https://files.pythonhosted.org/packages/db/cd/767105bcdde4ce8330bec6dbe50f9de519a4697afcc29df9a9675cdc0336/jupyter_server-1.0.0rc3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "34e10dece31be7ba91ce9d5df75bde48",
+          "sha256": "cb194d0aac98599d23bf278ce9c00ccd7157142a0ee4fec10ba3d72c0c81fe1e"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "34e10dece31be7ba91ce9d5df75bde48",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 226898,
+        "upload_time": "2020-08-04T16:44:02",
+        "upload_time_iso_8601": "2020-08-04T16:44:02.017923Z",
+        "url": "https://files.pythonhosted.org/packages/87/ef/ac5ecd68ceee6ceb240b1ddab175658483157301e11aeb09041ec688e5ff/jupyter_server-1.0.0rc3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "67b4df9838a9de25bb51785764ccf526",
+          "sha256": "2a265a1600244e3e52e27ea23a10dac0438d6ac563134c5e81c6114d3481c520"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc4-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "67b4df9838a9de25bb51785764ccf526",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198234,
+        "upload_time": "2020-08-04T18:14:28",
+        "upload_time_iso_8601": "2020-08-04T18:14:28.441186Z",
+        "url": "https://files.pythonhosted.org/packages/f4/47/4135ffe13e19cdfa9a52f13df59570d78d390d9f6bded5bd454df0de3c47/jupyter_server-1.0.0rc4-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b3c2088c5a783fe6150c0ecde0ef4f78",
+          "sha256": "1ffefaf5e1b79f1b2f1a78df3575b12f2f7c64f7be20909d2a2201150cfd6620"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "b3c2088c5a783fe6150c0ecde0ef4f78",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 226926,
+        "upload_time": "2020-08-04T18:14:30",
+        "upload_time_iso_8601": "2020-08-04T18:14:30.384077Z",
+        "url": "https://files.pythonhosted.org/packages/d3/b9/ac1ed5dcc4bc28bb9ece02f61537d4907bc88676fc2c9604bc98eb870f20/jupyter_server-1.0.0rc4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b14158385fbdc95b164cfda4cb5c62c4",
+          "sha256": "d09a155b688ce661ad198f697d4a7d7767c6ddd66d9a0984339a059cc6d3d012"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc5-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "b14158385fbdc95b164cfda4cb5c62c4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198205,
+        "upload_time": "2020-08-07T12:55:58",
+        "upload_time_iso_8601": "2020-08-07T12:55:58.857815Z",
+        "url": "https://files.pythonhosted.org/packages/8b/0a/2ca0869efa662a45d93aee0f8023f40dc2348a60da55c2314786c46f6922/jupyter_server-1.0.0rc5-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ef172055b75771ced19c7a36c5f28691",
+          "sha256": "f8d811f5ce04e4b9f476a82f5758b36345acf47a526b81798f86a39d520ccd81"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc5.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ef172055b75771ced19c7a36c5f28691",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 229606,
+        "upload_time": "2020-08-07T12:56:00",
+        "upload_time_iso_8601": "2020-08-07T12:56:00.784516Z",
+        "url": "https://files.pythonhosted.org/packages/c9/88/8b2f9b1382a7bc8675cf4bfc53b735bc24197aab9c8d641acfcc8da4fbbc/jupyter_server-1.0.0rc5.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc6": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7fe24c84c465c23807021823daf6f8c1",
+          "sha256": "0eb02585d1f44364824cd07684351df7f8868862d8b00f6205b2b5a215f23930"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc6-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "7fe24c84c465c23807021823daf6f8c1",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198562,
+        "upload_time": "2020-08-18T21:36:18",
+        "upload_time_iso_8601": "2020-08-18T21:36:18.728593Z",
+        "url": "https://files.pythonhosted.org/packages/b2/5d/458a56862115ca61445da03446a9dcdf2d0429e1099b0daa2e728d6d0b85/jupyter_server-1.0.0rc6-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "16391244d3b48b7c8a77e9e3beff8d31",
+          "sha256": "4a5c00035739cde46dcf9f37c2a4c240582f5f59c5ad61f22a3085d2be3a6827"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc6.tar.gz",
+        "has_sig": false,
+        "md5_digest": "16391244d3b48b7c8a77e9e3beff8d31",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 229994,
+        "upload_time": "2020-08-18T21:36:20",
+        "upload_time_iso_8601": "2020-08-18T21:36:20.457055Z",
+        "url": "https://files.pythonhosted.org/packages/9b/75/9f9c358863c9506d056f1d1186add41eed158581d28c275fe8e77c4b188c/jupyter_server-1.0.0rc6.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc7": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8bed2c51962815a67540a8c1697931d0",
+          "sha256": "4d13e402d9f2c415c482731f7d6fd42d4995ec9ba44c080b904a78da696b75f4"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc7-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "8bed2c51962815a67540a8c1697931d0",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198558,
+        "upload_time": "2020-08-24T11:31:54",
+        "upload_time_iso_8601": "2020-08-24T11:31:54.871404Z",
+        "url": "https://files.pythonhosted.org/packages/b2/07/2a8c58b8a41c545fcaa0b0445c1b7671e2a94256882dcc2dae18e4406798/jupyter_server-1.0.0rc7-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4604664167cdd0db9f0c26ec509d0774",
+          "sha256": "834cb6104f70ed321ea19ba2275e71a687390dec1af3b47bad038657a71eddcb"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc7.tar.gz",
+        "has_sig": false,
+        "md5_digest": "4604664167cdd0db9f0c26ec509d0774",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 230045,
+        "upload_time": "2020-08-24T11:31:56",
+        "upload_time_iso_8601": "2020-08-24T11:31:56.944074Z",
+        "url": "https://files.pythonhosted.org/packages/b8/70/0155fb67037c5f9c955701157d0290c6f2c2d752b4bfaa3d5cf527327f8b/jupyter_server-1.0.0rc7.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc8": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1b1c835d56d5349d7a535963b97310b5",
+          "sha256": "ee09d9ddb094577843bdb20c62c28eabbbf7638f86e7833a580721c8709a05b3"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc8-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "1b1c835d56d5349d7a535963b97310b5",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198838,
+        "upload_time": "2020-08-26T22:32:20",
+        "upload_time_iso_8601": "2020-08-26T22:32:20.428181Z",
+        "url": "https://files.pythonhosted.org/packages/f1/81/a5dcbb6c8e04622a74e9b2bbd526335aa708b0c7a509b818b339a4d1b57e/jupyter_server-1.0.0rc8-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "37251c0c202143d4ede13db30c9ca77f",
+          "sha256": "03ab2bfb5684b905dbdd71ffc9bc8a99fc6b2c75d706ea17a888496335cf700b"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc8.tar.gz",
+        "has_sig": false,
+        "md5_digest": "37251c0c202143d4ede13db30c9ca77f",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 230493,
+        "upload_time": "2020-08-26T22:32:22",
+        "upload_time_iso_8601": "2020-08-26T22:32:22.095853Z",
+        "url": "https://files.pythonhosted.org/packages/33/f7/72249fa80e4a5a966bc6373ce2624dc453a197ba6d7df7d66a86cd9d8ba1/jupyter_server-1.0.0rc8.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.0rc9": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4789fd17ee1a3be157f6e22b0efb1727",
+          "sha256": "985f8dda28346366588f0a1706eaa4d3d2a7cc13e555c57184f510d99571d52b"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc9-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "4789fd17ee1a3be157f6e22b0efb1727",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": null,
+        "size": 198838,
+        "upload_time": "2020-08-27T15:57:46",
+        "upload_time_iso_8601": "2020-08-27T15:57:46.577783Z",
+        "url": "https://files.pythonhosted.org/packages/17/2d/f3f1c1992bd9c4b6d42b05389654e949486573ab55b2611f71d3d8a86984/jupyter_server-1.0.0rc9-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "b3b326dbc5be9dced7901acfe90ae69b",
+          "sha256": "df3e77193442c59fd85622a6de3239b50c8a96aaf879dde7739cd7658210eda1"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.0rc9.tar.gz",
+        "has_sig": false,
+        "md5_digest": "b3b326dbc5be9dced7901acfe90ae69b",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": null,
+        "size": 240890,
+        "upload_time": "2020-08-27T15:57:48",
+        "upload_time_iso_8601": "2020-08-27T15:57:48.248622Z",
+        "url": "https://files.pythonhosted.org/packages/f1/ad/28c66a23692b9887721792df9ab61d620b117dda0290cc77b7308f5aa8b8/jupyter_server-1.0.0rc9.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8d9b9b084dc8d98cf3d92ce7e4ec4f93",
+          "sha256": "7e50dc36c60ddbe9899b8ccfc6d8ad1e2e063b1532814e0b9fcf06a3a534a329"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "8d9b9b084dc8d98cf3d92ce7e4ec4f93",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 209049,
+        "upload_time": "2020-09-18T18:20:16",
+        "upload_time_iso_8601": "2020-09-18T18:20:16.632197Z",
+        "url": "https://files.pythonhosted.org/packages/6a/ef/6260074bfcc0e97824abed0815c8072a7065a0f97b913dc57a19afb525ce/jupyter_server-1.0.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ba28f0492bc083925641ce7cf063a153",
+          "sha256": "1c4ce65d46dc6e37f6f05467bbedefce2fc55e7b1bb8895db902317f065df1e5"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ba28f0492bc083925641ce7cf063a153",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 244855,
+        "upload_time": "2020-09-18T18:20:18",
+        "upload_time_iso_8601": "2020-09-18T18:20:18.713756Z",
+        "url": "https://files.pythonhosted.org/packages/e3/d7/8ddbf2220aeb11ce1864d6b6c57e46e0c32e2ccbdfd3328d27c57d53c26c/jupyter_server-1.0.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.10": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0395a6ecfa08802e5f81d280febe4e99",
+          "sha256": "7b79490195c41b184c976b31d3c84fcae0f4920d92e884a05f1dd9d8ed07f941"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.10-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "0395a6ecfa08802e5f81d280febe4e99",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 179790,
+        "upload_time": "2020-12-10T20:12:40",
+        "upload_time_iso_8601": "2020-12-10T20:12:40.554490Z",
+        "url": "https://files.pythonhosted.org/packages/39/34/996f196ffbcbec3f4fa855816fd37251d24b15c6f62bc770e3be60475c83/jupyter_server-1.0.10-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "9102525f0f81287e3bd725f2c9188ed4",
+          "sha256": "0c7c74ca31113523feee9c39b02494381175ea6079a39b0422aaaa9463c5796d"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.10.tar.gz",
+        "has_sig": false,
+        "md5_digest": "9102525f0f81287e3bd725f2c9188ed4",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 229367,
+        "upload_time": "2020-12-10T20:12:42",
+        "upload_time_iso_8601": "2020-12-10T20:12:42.396125Z",
+        "url": "https://files.pythonhosted.org/packages/cd/75/ec1e855c37eeacd0c3ce06ec5b44c1a597965887f7665d5613fd75cc65cb/jupyter_server-1.0.10.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.11": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e1f5c9d26a90cca39f03c8c0e7955e04",
+          "sha256": "99a470be0cbf2d61d4d789a6b11bf1d6014a656c17d5e4095c19fbb98c52e1a0"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.11-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "e1f5c9d26a90cca39f03c8c0e7955e04",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 179930,
+        "upload_time": "2020-12-16T22:23:24",
+        "upload_time_iso_8601": "2020-12-16T22:23:24.030784Z",
+        "url": "https://files.pythonhosted.org/packages/9f/32/38fb177370915171c13fa1e733ae10936b10108437dda459d405bc739b52/jupyter_server-1.0.11-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a1226c247debf589c589c34a53cf0fc5",
+          "sha256": "28ea9ecd066b32fa21c8e8e9d7c006c89d7c50a3131a10b0729fe5f09b1beb2e"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.11.tar.gz",
+        "has_sig": false,
+        "md5_digest": "a1226c247debf589c589c34a53cf0fc5",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 229684,
+        "upload_time": "2020-12-16T22:23:25",
+        "upload_time_iso_8601": "2020-12-16T22:23:25.794222Z",
+        "url": "https://files.pythonhosted.org/packages/4f/2f/c03a23c7ca42645a81ca13c4bc216a7964d07f8563b73e94f05d995386f8/jupyter_server-1.0.11.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "707e6b6f8f1f1cb7e8ce5f9cddf063e9",
+          "sha256": "7673e2897166d798b29b67ce12c65afda25b64c73f404dd8e43d91db60aa61a0"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "707e6b6f8f1f1cb7e8ce5f9cddf063e9",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 207202,
+        "upload_time": "2020-09-29T19:01:42",
+        "upload_time_iso_8601": "2020-09-29T19:01:42.846860Z",
+        "url": "https://files.pythonhosted.org/packages/ff/50/249781723db270c52bb712b732d415422887391967d49c8e9c3b734b0118/jupyter_server-1.0.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "788bcb1287ed42dbb846dccc13762685",
+          "sha256": "39b594cf4fbadda161b8a5f3761b0b67e4837bd2874a103a55686c4ae5315612"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "788bcb1287ed42dbb846dccc13762685",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 235331,
+        "upload_time": "2020-09-29T19:01:45",
+        "upload_time_iso_8601": "2020-09-29T19:01:45.237944Z",
+        "url": "https://files.pythonhosted.org/packages/2a/85/297db1af1e6a4ea371553b5687246e1ccdf957fc96296cbbd9b648975986/jupyter_server-1.0.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3d7b0324d6f390e876fb66984a077f58",
+          "sha256": "ff47f625143be360de036e464bed963c6e4f039b751a2153463fa6dcb06fe4f7"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "3d7b0324d6f390e876fb66984a077f58",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 208106,
+        "upload_time": "2020-09-29T23:23:33",
+        "upload_time_iso_8601": "2020-09-29T23:23:33.227094Z",
+        "url": "https://files.pythonhosted.org/packages/2e/91/b0bec2386596ead92c735996fb123379e3d6a27a9214e5df322540758f0a/jupyter_server-1.0.3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8dd1bea05bcbd3dd33f6e1dfd1698e3e",
+          "sha256": "d65f63d2de788b8a2cba6f7fc4c63940d8aca494713e36a6535bde21c1583620"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "8dd1bea05bcbd3dd33f6e1dfd1698e3e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 244385,
+        "upload_time": "2020-09-29T23:23:35",
+        "upload_time_iso_8601": "2020-09-29T23:23:35.218744Z",
+        "url": "https://files.pythonhosted.org/packages/d0/9a/6ab3712841120e2ca915e510af4aea775ab18d52fc6bc00d0a366e363e67/jupyter_server-1.0.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "78b4979478dedc52466591cfdca04dee",
+          "sha256": "529cf2bde475e53cb3555d33fd770bb58577850daa9a3ea0bc5d8f5043d140c8"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.4-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "78b4979478dedc52466591cfdca04dee",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 208070,
+        "upload_time": "2020-10-02T15:56:39",
+        "upload_time_iso_8601": "2020-10-02T15:56:39.040422Z",
+        "url": "https://files.pythonhosted.org/packages/26/bb/1201994ff163adfaba0ec9f4ad78b7330defb6bc2155376052f6af549273/jupyter_server-1.0.4-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3b692f192998ece360485a806d1e2d6c",
+          "sha256": "9f5bc746cffde97f003a040e48b8bceeb642f5ee90d36baa58531dabce131635"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "3b692f192998ece360485a806d1e2d6c",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 235848,
+        "upload_time": "2020-10-02T15:56:40",
+        "upload_time_iso_8601": "2020-10-02T15:56:40.691050Z",
+        "url": "https://files.pythonhosted.org/packages/99/b5/4c2669c26160de6580044ae7d64d29c6f280eea9d866e251ddad0c807929/jupyter_server-1.0.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.5": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4d3fde46f25beda228f72696cc564203",
+          "sha256": "b7c82e9f1d9950e11341ece043e16e58a56c1d09f9b9621891e77b1dd2148258"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.5-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "4d3fde46f25beda228f72696cc564203",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 196737,
+        "upload_time": "2020-10-15T15:33:19",
+        "upload_time_iso_8601": "2020-10-15T15:33:19.350266Z",
+        "url": "https://files.pythonhosted.org/packages/34/3f/627202d2a042c2b1f1f4d9ebc8a932fb06e0a2dee06ebcf0bbca92011ffb/jupyter_server-1.0.5-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "67c83abfd45e2050ac9839aed0c4c85e",
+          "sha256": "04750c3a9d1888e2848f3c9851314ffb3d4aebd0cb650f4906e9381384de859a"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.5.tar.gz",
+        "has_sig": false,
+        "md5_digest": "67c83abfd45e2050ac9839aed0c4c85e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 225498,
+        "upload_time": "2020-10-15T15:33:21",
+        "upload_time_iso_8601": "2020-10-15T15:33:21.022858Z",
+        "url": "https://files.pythonhosted.org/packages/29/80/49ac8ef38634b4fa75422445519c6055b4472f4a488724c95010b82ff3a8/jupyter_server-1.0.5.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.6": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "3b82f6553bca91ce3cd391c923186307",
+          "sha256": "7778ca6ff405353db0dbdb4eb6b63b62e76d65ac78a5c12cb27fc639192dad94"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.6-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "3b82f6553bca91ce3cd391c923186307",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 197594,
+        "upload_time": "2020-11-18T17:46:46",
+        "upload_time_iso_8601": "2020-11-18T17:46:46.528640Z",
+        "url": "https://files.pythonhosted.org/packages/7f/0d/1eafbdca04feecdf596382d0776603f09ed971562cc41aaf8fc1067b75cc/jupyter_server-1.0.6-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0482eb179a54227a9561a4e045ce19e1",
+          "sha256": "74adb51b7570fa72026558920989588ff787bed0d2ec81675b66c9340d2c764a"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.6.tar.gz",
+        "has_sig": false,
+        "md5_digest": "0482eb179a54227a9561a4e045ce19e1",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 235376,
+        "upload_time": "2020-11-18T17:46:48",
+        "upload_time_iso_8601": "2020-11-18T17:46:48.208577Z",
+        "url": "https://files.pythonhosted.org/packages/53/29/d027d8cd8d6014fb788bc4b89a2bb82a57b9319d4162c6672ea50c25d620/jupyter_server-1.0.6.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.7": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ff549f0b08c6a8e241fc10ff65acf297",
+          "sha256": "a0b22cf27e73d4fbc5dd3ed4c67517d3ceea8232216811047edfe4ce987e4e72"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.7-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "ff549f0b08c6a8e241fc10ff65acf297",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 223669,
+        "upload_time": "2020-11-19T23:59:57",
+        "upload_time_iso_8601": "2020-11-19T23:59:57.123789Z",
+        "url": "https://files.pythonhosted.org/packages/d7/05/8c10383226a8b0d4f59c9fdd43df37fe3a28723c7468d071e589aa7482ff/jupyter_server-1.0.7-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "25057e28340484f7d05a2127a54bb949",
+          "sha256": "b0b3185975b32a03520aa577d90145bc288a3a12124e0e80306ec6216c9b8634"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.7.tar.gz",
+        "has_sig": false,
+        "md5_digest": "25057e28340484f7d05a2127a54bb949",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 258811,
+        "upload_time": "2020-11-19T23:59:58",
+        "upload_time_iso_8601": "2020-11-19T23:59:58.647145Z",
+        "url": "https://files.pythonhosted.org/packages/66/81/67f173bcfeba772d2b95cb22ccbf5b68ff4fde538985a996868526b414fd/jupyter_server-1.0.7.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.8": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e8c7dc173d59a8e46ab157f3639e0201",
+          "sha256": "d11e2c5e4f43fafeeba76a232a2a306f103d5882ff319bff124c9e84ef96b222"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.8-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "e8c7dc173d59a8e46ab157f3639e0201",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 223682,
+        "upload_time": "2020-12-03T02:06:44",
+        "upload_time_iso_8601": "2020-12-03T02:06:44.549250Z",
+        "url": "https://files.pythonhosted.org/packages/84/5d/07a43d43e6f89a26344de2b7f8bf2ab6569e5d6b9db6bb3b1147aaf7bb26/jupyter_server-1.0.8-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ae3d88f5115815ff2a0a1f6fe51edb95",
+          "sha256": "58913ab2dac9dd85d5a00d71a4735f745b1fc823217a60eaad1881d0837380b6"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.8.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ae3d88f5115815ff2a0a1f6fe51edb95",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 258799,
+        "upload_time": "2020-12-03T02:06:46",
+        "upload_time_iso_8601": "2020-12-03T02:06:46.303173Z",
+        "url": "https://files.pythonhosted.org/packages/56/9f/16fb31cec5dcc055dc0506939c61d01581bc9cc0502ce809d5b95291c235/jupyter_server-1.0.8.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.0.9": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "90a4def3aa36a2cccab2d3fda558f91f",
+          "sha256": "26c895bf662dcc5cb677901b02cac3e491b3db514eac0fe7ce7e9a531874e01a"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.9-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "90a4def3aa36a2cccab2d3fda558f91f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 179753,
+        "upload_time": "2020-12-08T22:41:40",
+        "upload_time_iso_8601": "2020-12-08T22:41:40.706805Z",
+        "url": "https://files.pythonhosted.org/packages/54/3f/00bc4dc3d62fe9359977c7878990704b36620f597c1e887337f1a1c6aa5c/jupyter_server-1.0.9-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d97d0fc0a63f002a18f3b49bc6093cc2",
+          "sha256": "117ff1f5208d38a66a8df8b3ff745db855b3f6dc9dab4262bbd9dd10d078ef40"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.0.9.tar.gz",
+        "has_sig": false,
+        "md5_digest": "d97d0fc0a63f002a18f3b49bc6093cc2",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 229389,
+        "upload_time": "2020-12-08T22:41:42",
+        "upload_time_iso_8601": "2020-12-08T22:41:42.452215Z",
+        "url": "https://files.pythonhosted.org/packages/96/23/6bff69c629e43d5c0d252aedcd007d35a04599ce62983e696d91dfc2cbd3/jupyter_server-1.0.9.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.1.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "19a048c2ab63490615b736db891e638b",
+          "sha256": "cd26ea958834b1a86cc08bbaedc9d1b61b6dc5fc58c8381ac8e497d9def5dd06"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "19a048c2ab63490615b736db891e638b",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 227852,
+        "upload_time": "2020-12-11T22:39:08",
+        "upload_time_iso_8601": "2020-12-11T22:39:08.627096Z",
+        "url": "https://files.pythonhosted.org/packages/4c/f5/eb6e35615f2fa56f9dad0d48acad135bdaae986337a81ed52106ea719b96/jupyter_server-1.1.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "74c51491c968f2b2f2e5f97857fd004f",
+          "sha256": "0cb19a9f310583acef29f090720bd87e25212003246962c97ed77dc8a5c6448f"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "74c51491c968f2b2f2e5f97857fd004f",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 264250,
+        "upload_time": "2020-12-11T22:39:10",
+        "upload_time_iso_8601": "2020-12-11T22:39:10.315671Z",
+        "url": "https://files.pythonhosted.org/packages/ae/49/9831be8b72c4b420084dfa755e91a8ca8068ae8c2dbbe4c22d80ea903445/jupyter_server-1.1.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.1.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cf3140df563df77f20e815e744276e89",
+          "sha256": "60983ed6f0a86b40d123e7464691eca63548c84f6b66d05121d0292df955e2f9"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "cf3140df563df77f20e815e744276e89",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 229093,
+        "upload_time": "2020-12-16T22:11:21",
+        "upload_time_iso_8601": "2020-12-16T22:11:21.088863Z",
+        "url": "https://files.pythonhosted.org/packages/17/df/387061ea6da3e499c17bd4c58a94273227f1e7aec627e680ae088a949aaa/jupyter_server-1.1.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "0fccb2e3db2bb3da2c676b078313b960",
+          "sha256": "cdb54295d7a362e5853a0bbd734bd0e1eea06810564a6f1529e8e400f4474084"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "0fccb2e3db2bb3da2c676b078313b960",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 265330,
+        "upload_time": "2020-12-16T22:11:22",
+        "upload_time_iso_8601": "2020-12-16T22:11:22.928912Z",
+        "url": "https://files.pythonhosted.org/packages/90/24/867f5f0157138941422daaa12c0965faf93554d92f6bb1a5cfa99ba5831a/jupyter_server-1.1.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.1.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "659ac03f2481bec933fc43929ddf849a",
+          "sha256": "0db32d00541124ff333e90049f98043898b4a346bbec0a1025a48cfc23b63adf"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "659ac03f2481bec933fc43929ddf849a",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 230273,
+        "upload_time": "2020-12-21T23:14:06",
+        "upload_time_iso_8601": "2020-12-21T23:14:06.158280Z",
+        "url": "https://files.pythonhosted.org/packages/ba/0d/57db6c48ac0b995b22cd08c3f6db252e7339c35705626d2cb75f931a7e85/jupyter_server-1.1.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "351f0e64d1d3c6c0d79aa4eb07ef0b8e",
+          "sha256": "b4b1f8f0c38e1faf418f3ff536cdb6d84dfb477d150abee5f0e65c7fd95fa527"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "351f0e64d1d3c6c0d79aa4eb07ef0b8e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 266453,
+        "upload_time": "2020-12-21T23:14:08",
+        "upload_time_iso_8601": "2020-12-21T23:14:08.544325Z",
+        "url": "https://files.pythonhosted.org/packages/b9/dd/42463dfdaec2cc739877a1ac5979913871f5f667d06d89b89da84394f37d/jupyter_server-1.1.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.1.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e851e47fc9e2ca08bd23e40595feee89",
+          "sha256": "1c684fa73cad376b09f307ce817be50a50bca78c8be52aa059ec5481098dba1f"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "e851e47fc9e2ca08bd23e40595feee89",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 231318,
+        "upload_time": "2020-12-23T23:08:14",
+        "upload_time_iso_8601": "2020-12-23T23:08:14.752751Z",
+        "url": "https://files.pythonhosted.org/packages/70/0d/fedbcc3d238dacaeee07821d8c2ab7e64825a1dcd12db13f340fa8833b89/jupyter_server-1.1.3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6ad4dcafabdb1f47eb760afabc3bd151",
+          "sha256": "23ce959718592ba472db7982a5daf15dda3397fd50bb54d05ad10c09fe122905"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "6ad4dcafabdb1f47eb760afabc3bd151",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 267004,
+        "upload_time": "2020-12-23T23:08:16",
+        "upload_time_iso_8601": "2020-12-23T23:08:16.503129Z",
+        "url": "https://files.pythonhosted.org/packages/d1/3d/db398fe096d71f2fa9838ec6d7970eddc40f22c048ec35430bcf8363f66f/jupyter_server-1.1.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.1.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "70413ed2ca7c85adf1f25ddac0a6f4dc",
+          "sha256": "a6df8cfa3e44cae958154ee3d7804f824e88e84fc77e88116d2eecd71e145d32"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.4-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "70413ed2ca7c85adf1f25ddac0a6f4dc",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 184633,
+        "upload_time": "2021-01-04T16:59:16",
+        "upload_time_iso_8601": "2021-01-04T16:59:16.635929Z",
+        "url": "https://files.pythonhosted.org/packages/5b/49/1f5bbdf9c5cc56a4b12616ae926860b7592317bc238b195768fd88cee71d/jupyter_server-1.1.4-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "13f47cd9d2822f330f631ee648a2f493",
+          "sha256": "b939a28709b38cf9e0b1ad4b1b6896ac0f78f6bb26eda0612f73649ad137b92b"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.1.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "13f47cd9d2822f330f631ee648a2f493",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 235655,
+        "upload_time": "2021-01-04T16:59:18",
+        "upload_time_iso_8601": "2021-01-04T16:59:18.216040Z",
+        "url": "https://files.pythonhosted.org/packages/aa/d3/6779ca0da27e861696032eaf7a7dcc2d1be8fe332448ff69a2b1b321faaf/jupyter_server-1.1.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.2.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "81a84b2b962803cd64beeccaa6061881",
+          "sha256": "749491132fce0c052136ec1a7138a507937589ba24388809e1329d9b7f6ab770"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "81a84b2b962803cd64beeccaa6061881",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 186241,
+        "upload_time": "2021-01-07T00:43:15",
+        "upload_time_iso_8601": "2021-01-07T00:43:15.180957Z",
+        "url": "https://files.pythonhosted.org/packages/f3/73/6343f9681afeb5c04cab43243228cef7f1a02a8ec637fb6542184f1e518a/jupyter_server-1.2.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "e42c2d15d90e462c9fa43ee23a9dfa64",
+          "sha256": "34ae64b53efe5d99e1e55b0313bc57bb8811cc30e9b338c42000fce6dbfff924"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "e42c2d15d90e462c9fa43ee23a9dfa64",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 237340,
+        "upload_time": "2021-01-07T00:43:16",
+        "upload_time_iso_8601": "2021-01-07T00:43:16.465206Z",
+        "url": "https://files.pythonhosted.org/packages/e4/2e/67f47316af9a0478a4684268d7d31f6638d2eb1737c4b6b942a5b570d24b/jupyter_server-1.2.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.2.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "02b7b6a23aad8850e82695c98c8f9134",
+          "sha256": "27d0f7e28bf356d4e016b9a5bdc179321b7df5ad48ed9098aa0a963ddb06e498"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "02b7b6a23aad8850e82695c98c8f9134",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 186727,
+        "upload_time": "2021-01-08T18:53:21",
+        "upload_time_iso_8601": "2021-01-08T18:53:21.650303Z",
+        "url": "https://files.pythonhosted.org/packages/9b/41/adf4b3f55ed580fd7cd8c84bd4758df4666ae3f5a486491c68290121d9f2/jupyter_server-1.2.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "cc231ba69422d313746a1615c491f021",
+          "sha256": "5c55bdd098159f3e57faad102fa91de5b3f2f46ca8be01ad3d289e85a5beba9c"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "cc231ba69422d313746a1615c491f021",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 237805,
+        "upload_time": "2021-01-08T18:53:23",
+        "upload_time_iso_8601": "2021-01-08T18:53:23.433648Z",
+        "url": "https://files.pythonhosted.org/packages/a5/c9/598bb365be05b65184b2bf62ae4f66a5dd61a10f3bf955477e730c3619fd/jupyter_server-1.2.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.2.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ff0eb390ac07c1b4735ea82960ff05be",
+          "sha256": "49fd3f9f6f4e866c2b8d7494baa2b6e6a7e44236006e443f2c04c407f7f55918"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "ff0eb390ac07c1b4735ea82960ff05be",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 184597,
+        "upload_time": "2021-01-15T00:52:13",
+        "upload_time_iso_8601": "2021-01-15T00:52:13.104099Z",
+        "url": "https://files.pythonhosted.org/packages/9f/fc/a28a6b99faa75fefd4399d14903030b45b0705a37d2aba7ccfdb14c5b8b7/jupyter_server-1.2.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "daf4cd636dd37d40cdca6d5d93170de0",
+          "sha256": "26a98cd5c45b8ebd1e10215586c350a8fa3ca2971e757ee6bf517a180f9933ae"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "daf4cd636dd37d40cdca6d5d93170de0",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 236229,
+        "upload_time": "2021-01-15T00:52:14",
+        "upload_time_iso_8601": "2021-01-15T00:52:14.422735Z",
+        "url": "https://files.pythonhosted.org/packages/91/ba/051592cc9478f1674d0d4dc20d57878f89d209972f455ae744c4f492d7de/jupyter_server-1.2.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.2.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "44cbeb619bef81b36ab46fb06b239018",
+          "sha256": "e33b1e00d9981e3c1a31c7f610f75ac070f3379f97133cdf2cddabb7a2579501"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "44cbeb619bef81b36ab46fb06b239018",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 188884,
+        "upload_time": "2021-01-29T23:36:22",
+        "upload_time_iso_8601": "2021-01-29T23:36:22.649936Z",
+        "url": "https://files.pythonhosted.org/packages/73/5c/ab0878b9f045a419b199a3ad74222ead98125099a7161964cb153499a4aa/jupyter_server-1.2.3-py3-none-any.whl",
+        "yanked": true,
+        "yanked_reason": "Breaking changes downstream"
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "7414fe70fa0fefdf6ec21e3070285b11",
+          "sha256": "d8a723668725be65cc81c2bfe8a805d3e53d26dbe29953cb0fe4d8ae69d71b00"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.2.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "7414fe70fa0fefdf6ec21e3070285b11",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 240272,
+        "upload_time": "2021-01-29T23:36:24",
+        "upload_time_iso_8601": "2021-01-29T23:36:24.305914Z",
+        "url": "https://files.pythonhosted.org/packages/20/e1/562cc8c2ab4bba29c550040f59a81dbb4c592df667626cd994fce735793d/jupyter_server-1.2.3.tar.gz",
+        "yanked": true,
+        "yanked_reason": "Breaking changes downstream"
+      }
+    ],
+    "1.3.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "70480769b950049011aaeb143ea3a914",
+          "sha256": "ae992e84f9ce38af804b5487e44ec5fd10f60d0d4c79a40eb46d66697b7cea89"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.3.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "70480769b950049011aaeb143ea3a914",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 188853,
+        "upload_time": "2021-02-05T01:42:12",
+        "upload_time_iso_8601": "2021-02-05T01:42:12.494295Z",
+        "url": "https://files.pythonhosted.org/packages/32/e9/924ae8b645ab12799de625d561ca9d47b617509cf7cf04e88d1bac3b08ec/jupyter_server-1.3.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d5dd06a5adb016ab1c25a18bc8e44caa",
+          "sha256": "b9d32d102df25f66ec3c1fe508c62cd0c856123452d973741da84fee4be01912"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.3.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "d5dd06a5adb016ab1c25a18bc8e44caa",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 240509,
+        "upload_time": "2021-02-05T01:42:14",
+        "upload_time_iso_8601": "2021-02-05T01:42:14.360128Z",
+        "url": "https://files.pythonhosted.org/packages/da/e0/dab7f3a473e5bbe73f90f9e235cb2a154353dc3d2d4c04f8ddd96978c3fd/jupyter_server-1.3.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.4.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "84e5c855c076eab6f57dc8d3d3cc0246",
+          "sha256": "c21f4a607aab1f3a1289209b5483ec42aeefaf6f9cc6f51ccdc23d9c09ea2387"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.4.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "84e5c855c076eab6f57dc8d3d3cc0246",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 241913,
+        "upload_time": "2021-02-18T22:23:52",
+        "upload_time_iso_8601": "2021-02-18T22:23:52.629760Z",
+        "url": "https://files.pythonhosted.org/packages/00/4e/88ebdbdaa7b56a15ff88b6af94473ec029a16fe3154928275b6d07f864a7/jupyter_server-1.4.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "925cf2abb2f046e0bd96deec98d0b826",
+          "sha256": "023431125ffeae8330eb0daab78658dffc51b3886ec5621ee006dcb0f267cc49"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.4.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "925cf2abb2f046e0bd96deec98d0b826",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 275350,
+        "upload_time": "2021-02-18T22:23:55",
+        "upload_time_iso_8601": "2021-02-18T22:23:55.681168Z",
+        "url": "https://files.pythonhosted.org/packages/e8/eb/e2508a03d5ab27a54e82bd102703d77f62a8102e1803dc9dc477f542d319/jupyter_server-1.4.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.4.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "dd25b5842c72199e34b5ca194fed896c",
+          "sha256": "af518ce295bfaa0d5c05031f963bdcfcd2ab156cb2223c0a70665219aed338da"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.4.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "dd25b5842c72199e34b5ca194fed896c",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 241909,
+        "upload_time": "2021-02-22T19:15:21",
+        "upload_time_iso_8601": "2021-02-22T19:15:21.086681Z",
+        "url": "https://files.pythonhosted.org/packages/ec/b7/f8964ca33e61c6fa8f4e494e4940fb6de021f5caa52c2dce32316fac8611/jupyter_server-1.4.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "195f5f007326f00f86d7e9d5cecc0d8e",
+          "sha256": "b0126f237f679533eec46244cfc66d61e3a1f8ec0fad2d47352fa19d3e754e47"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.4.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "195f5f007326f00f86d7e9d5cecc0d8e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 275822,
+        "upload_time": "2021-02-22T19:15:22",
+        "upload_time_iso_8601": "2021-02-22T19:15:22.638459Z",
+        "url": "https://files.pythonhosted.org/packages/1e/b7/507cdd40692b93305ab75306dc90dab0b96f54deac2d8c1efaeceeb8c4ab/jupyter_server-1.4.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.5.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a876961f97ce5af006b125da1503d17c",
+          "sha256": "028277d67cb4a9705758b304c6f3727c8e1bd052ea83769ffaedfd0ffaac23c4"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.5.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "a876961f97ce5af006b125da1503d17c",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 374881,
+        "upload_time": "2021-03-23T20:06:28",
+        "upload_time_iso_8601": "2021-03-23T20:06:28.220975Z",
+        "url": "https://files.pythonhosted.org/packages/84/de/88c1603bb47d595bfe8293aeb05f4a10f78fe094832177d940f37f4d353c/jupyter_server-1.5.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c9885959c18192723d74d82d69da4fe8",
+          "sha256": "ff127713a57ab7aa7b23f7df9b082951cc4b05d8d64cc0949d01ea02ac24c70c"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.5.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c9885959c18192723d74d82d69da4fe8",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 405997,
+        "upload_time": "2021-03-23T20:06:30",
+        "upload_time_iso_8601": "2021-03-23T20:06:30.304248Z",
+        "url": "https://files.pythonhosted.org/packages/06/c5/3b5b2333efd42fea9066958e2cc7f64993dc3e9f0f0f9c07b408d8c72ecb/jupyter_server-1.5.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.5.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ee8f2ea217da720396a4fa578a62f309",
+          "sha256": "951b944f25dcf7e34106415859630273f59a472fdb24e866f63ef431b232d3a0"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.5.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "ee8f2ea217da720396a4fa578a62f309",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 374991,
+        "upload_time": "2021-03-24T20:07:36",
+        "upload_time_iso_8601": "2021-03-24T20:07:36.099343Z",
+        "url": "https://files.pythonhosted.org/packages/09/60/668563d081a26e1b300e489090f792b394cb8543466d000eb8f6812048da/jupyter_server-1.5.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "ecf68d6c1d7c687167b69bfc7ed6e28d",
+          "sha256": "db646c991c17ad3dff12e419d36e2b91025912dfd21d13f8ddd524531e6d63bf"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.5.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "ecf68d6c1d7c687167b69bfc7ed6e28d",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 406413,
+        "upload_time": "2021-03-24T20:07:37",
+        "upload_time_iso_8601": "2021-03-24T20:07:37.896783Z",
+        "url": "https://files.pythonhosted.org/packages/61/cb/61b144edbca9314c95c7b67c9bce8a5aabec43d4946c43366301de51befb/jupyter_server-1.5.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.6.0": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "de7e1f079009be37e3d26292d44dc6c4",
+          "sha256": "b0ae09aeaf4a73d4f195d55ade9bfdc2e399276c158e27ce820796d2e10ba1f5"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.0-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "de7e1f079009be37e3d26292d44dc6c4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 375312,
+        "upload_time": "2021-04-08T10:51:32",
+        "upload_time_iso_8601": "2021-04-08T10:51:32.855136Z",
+        "url": "https://files.pythonhosted.org/packages/25/6b/6c2effb554bfe121b4b053ea4672a3415b8b7c9e029669d3e88b3d8c8f18/jupyter_server-1.6.0-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "d469c196ae3985395ecbdb9cf884f73a",
+          "sha256": "348f2c744d1fa1676d314475e0be357a95b21cbe6e19d15c2a25a9ea647f99d2"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.0.tar.gz",
+        "has_sig": false,
+        "md5_digest": "d469c196ae3985395ecbdb9cf884f73a",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 407632,
+        "upload_time": "2021-04-08T10:51:34",
+        "upload_time_iso_8601": "2021-04-08T10:51:34.756326Z",
+        "url": "https://files.pythonhosted.org/packages/d8/1b/0beca40d3c64abe3862351a21a8db0dd4e359ba73cc9dc8304590ec730c3/jupyter_server-1.6.0.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.6.1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "1ac08cf3689d213e7c25661872bc09b6",
+          "sha256": "ce7609d75c624d2e6b6eb9159ef019a0320cc55c3b77795ee295c3eb72a08425"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "1ac08cf3689d213e7c25661872bc09b6",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 375627,
+        "upload_time": "2021-04-12T19:10:35",
+        "upload_time_iso_8601": "2021-04-12T19:10:35.296851Z",
+        "url": "https://files.pythonhosted.org/packages/c8/12/05d6ec3576611696acc736dc80f0254f5b98cc19a38449a09f05b5517b52/jupyter_server-1.6.1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "f386525e9e0156cd7b90c9ba2acd8646",
+          "sha256": "242ddd0b644f10e030f917019b47c381e0f2d2b950164af45cbd791d572198ac"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "f386525e9e0156cd7b90c9ba2acd8646",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 408243,
+        "upload_time": "2021-04-12T19:10:37",
+        "upload_time_iso_8601": "2021-04-12T19:10:37.305639Z",
+        "url": "https://files.pythonhosted.org/packages/ea/0e/cc2d32465af4420cb741a17b61790dcada1b66e454be072ef3b111ac6a07/jupyter_server-1.6.1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.6.2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "8cf5ed790bbd8d3c09494d09ab4e9c8d",
+          "sha256": "c863481c4f6fc7c9fcb82b5f903b5a73742bb89b2b4d1babc814116a3dc40635"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "8cf5ed790bbd8d3c09494d09ab4e9c8d",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 375953,
+        "upload_time": "2021-04-16T09:22:00",
+        "upload_time_iso_8601": "2021-04-16T09:22:00.202824Z",
+        "url": "https://files.pythonhosted.org/packages/b8/75/7b99df23c1e7a12b4259d1642e7bbdeb9b151ef1c3a30ad2387d93e91d25/jupyter_server-1.6.2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "4191c430ebfc5959c21933f0ea5f2c07",
+          "sha256": "17b5216a09104202fca73e51df21465f2a3e34e795f0a0f7004f6c67d9527f85"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "4191c430ebfc5959c21933f0ea5f2c07",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 402332,
+        "upload_time": "2021-04-16T09:22:02",
+        "upload_time_iso_8601": "2021-04-16T09:22:02.432041Z",
+        "url": "https://files.pythonhosted.org/packages/40/c7/429d06645c2b62f59ec8eab81cbf81c6f6023e3d533b0f5fad195fb9ce21/jupyter_server-1.6.2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.6.3": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "48c18292bef7cf140a9784594622ce73",
+          "sha256": "76aaf747ed86edf526d0ee072e9b83c351701396b9922af2d92c8fe44da878be"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "48c18292bef7cf140a9784594622ce73",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 377230,
+        "upload_time": "2021-04-21T12:19:32",
+        "upload_time_iso_8601": "2021-04-21T12:19:32.098936Z",
+        "url": "https://files.pythonhosted.org/packages/a6/75/a1b6ee9a0e5ff6eda359db10103be5267ea075600c918f13e2121680394f/jupyter_server-1.6.3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "938bad3af0a848a244b948f1dc7ee8cc",
+          "sha256": "76e120be658080a63d0fba34e97b75a13dd8aae391d6f59e7f01b16cf7d495d5"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "938bad3af0a848a244b948f1dc7ee8cc",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 403711,
+        "upload_time": "2021-04-21T12:19:34",
+        "upload_time_iso_8601": "2021-04-21T12:19:34.102179Z",
+        "url": "https://files.pythonhosted.org/packages/b9/6f/b38fda9d45a3f774659b4d65436efa2f5ac0c38490d23e93c71995091ae6/jupyter_server-1.6.3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.6.4": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "6b89c884f6e02056495f942175b00a1f",
+          "sha256": "942b9a092f79b3663f78c8003a411e6672f0ca8cfc64a59657060a0e5a02a0cb"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.4-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "6b89c884f6e02056495f942175b00a1f",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 377362,
+        "upload_time": "2021-04-21T21:01:38",
+        "upload_time_iso_8601": "2021-04-21T21:01:38.752453Z",
+        "url": "https://files.pythonhosted.org/packages/ae/af/9181eb8e3759d04f591e4640c53fa276a5b630ad0c85e3b49fbd7c70579d/jupyter_server-1.6.4-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "a3410eece069d768f88aebd11c448c86",
+          "sha256": "21c20986047563aba2997cb10ba9441a162ec1d65b5aece9d5fa625602bb2b40"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.6.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "a3410eece069d768f88aebd11c448c86",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 403973,
+        "upload_time": "2021-04-21T21:01:40",
+        "upload_time_iso_8601": "2021-04-21T21:01:40.689446Z",
+        "url": "https://files.pythonhosted.org/packages/7e/1f/bfad98b47919b517b2d5f201916ec00414776ed500b306561388eeecf8a0/jupyter_server-1.6.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.7.0a1": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "de946320b4280ded1c4797bebb4c96be",
+          "sha256": "ec73214dfacc3344fd55e42dfb4bd44731aa69eb265dc85f22ed678a19d40997"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.7.0a1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "de946320b4280ded1c4797bebb4c96be",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 381927,
+        "upload_time": "2021-05-05T10:59:39",
+        "upload_time_iso_8601": "2021-05-05T10:59:39.964938Z",
+        "url": "https://files.pythonhosted.org/packages/6c/55/80fdbf72fca460c3e5775ad245a698f3a6d22a1e2f62b86f9dc8bd6137d9/jupyter_server-1.7.0a1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "c4c1ba2fb2bd8cb7dd85cb75cc56ccde",
+          "sha256": "71ab9cd520396d40898918253fdca318f9795698383bcfbafb62ec66910e93fd"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.7.0a1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c4c1ba2fb2bd8cb7dd85cb75cc56ccde",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 407767,
+        "upload_time": "2021-05-05T10:59:41",
+        "upload_time_iso_8601": "2021-05-05T10:59:41.846410Z",
+        "url": "https://files.pythonhosted.org/packages/bd/2d/49d7cf9aa9e36e50bce2f2f773888911b16c43fdfdf92208e26cef985ce8/jupyter_server-1.7.0a1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "1.7.0a2": [
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "531592e009789f61e9fa5892f0c500f9",
+          "sha256": "837d89b2672f0dc99f97e4045fafb7aff642ced0fb575c90b72a9d5e03e0a085"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.7.0a2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "531592e009789f61e9fa5892f0c500f9",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.6",
+        "size": 381929,
+        "upload_time": "2021-05-06T21:57:26",
+        "upload_time_iso_8601": "2021-05-06T21:57:26.644904Z",
+        "url": "https://files.pythonhosted.org/packages/2f/81/ab06774afc9782d0d73f8844657ee5a50e97d450970e4362b934c257ddb2/jupyter_server-1.7.0a2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": "",
+        "digests": {
+          "md5": "5c1447bac3592a42c39380905bf39b8f",
+          "sha256": "96aa93695888ff3e5b5c7c39ddd38c57924a36a9e7f4ab34f8428abd4d703650"
+        },
+        "downloads": -1,
+        "filename": "jupyter_server-1.7.0a2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "5c1447bac3592a42c39380905bf39b8f",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.6",
+        "size": 407848,
+        "upload_time": "2021-05-06T21:57:29",
+        "upload_time_iso_8601": "2021-05-06T21:57:29.159541Z",
+        "url": "https://files.pythonhosted.org/packages/ae/0c/bc7fc86d593a4fc0524b6688375b891b1d710cb3d5d6ebd2eadcd3eb09e1/jupyter_server-1.7.0a2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "6b89c884f6e02056495f942175b00a1f",
+        "sha256": "942b9a092f79b3663f78c8003a411e6672f0ca8cfc64a59657060a0e5a02a0cb"
+      },
+      "downloads": -1,
+      "filename": "jupyter_server-1.6.4-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "6b89c884f6e02056495f942175b00a1f",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.6",
+      "size": 377362,
+      "upload_time": "2021-04-21T21:01:38",
+      "upload_time_iso_8601": "2021-04-21T21:01:38.752453Z",
+      "url": "https://files.pythonhosted.org/packages/ae/af/9181eb8e3759d04f591e4640c53fa276a5b630ad0c85e3b49fbd7c70579d/jupyter_server-1.6.4-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "digests": {
+        "md5": "a3410eece069d768f88aebd11c448c86",
+        "sha256": "21c20986047563aba2997cb10ba9441a162ec1d65b5aece9d5fa625602bb2b40"
+      },
+      "downloads": -1,
+      "filename": "jupyter_server-1.6.4.tar.gz",
+      "has_sig": false,
+      "md5_digest": "a3410eece069d768f88aebd11c448c86",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">=3.6",
+      "size": 403973,
+      "upload_time": "2021-04-21T21:01:40",
+      "upload_time_iso_8601": "2021-04-21T21:01:40.689446Z",
+      "url": "https://files.pythonhosted.org/packages/7e/1f/bfad98b47919b517b2d5f201916ec00414776ed500b306561388eeecf8a0/jupyter_server-1.6.4.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ]
+}

@@ -1,0 +1,678 @@
+[
+  {
+    "cveID": "CVE-2021-0257",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-05-04T22:00Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On Juniper Networks MX Series and EX9200 Series platforms with Trio-based MPCs (Modular Port Concentrators) where Integrated Routing and Bridging (IRB) interfaces are configured and mapped to a VPLS instance or a Bridge-Domain, certain Layer 2 network events at Customer Edge (CE) devices may cause memory leaks in the MPC of Provider Edge (PE) devices which can cause an out of memory condition and MPC restart. When this issue occurs, there will be temporary traffic interruption until the MPC is restored. An administrator can use the following CLI command to monitor the status of memory usage level of the MPC: user@device> show system resource-monitor fpc FPC Resource Usage Summary Free Heap Mem Watermark : 20 % Free NH Mem Watermark : 20 % Free Filter Mem Watermark : 20 % * - Watermark reached Slot # % Heap Free RTT Average RTT 1 87 PFE # % ENCAP mem Free % NH mem Free % FW mem Free 0 NA 88 99 1 NA 89 99 When the issue is occurring, the value of \u201c% NH mem Free\u201d will go down until the MPC restarts. This issue affects MX Series and EX9200 Series with Trio-based PFEs (Packet Forwarding Engines), including MX-MPC1-3D, MX-MPC1E-3D, MX-MPC2-3D, MX-MPC2E-3D, MPC-3D-16XGE, and CHAS-MXxx Series MPCs. No other products or platforms are affected by this issue. This issue affects Juniper Networks Junos OS on MX Series, EX9200 Series: 17.3 versions prior to 17.3R3-S10; 17.4 versions prior to 17.4R3-S3; 18.2 versions prior to 18.2R3-S7; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R3-S6; 19.2 versions prior to 19.2R3-S2; 19.3 versions prior to 19.3R3-S1; 19.4 versions prior to 19.4R2-S2, 19.4R3; 20.2 versions prior to 20.2R1-S3, 20.2R2; 20.3 versions prior to 20.3R1-S1,, 20.3R2. This issue does not affect Juniper Networks Junos OS: 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R3-S2; 18.1; 18.2 versions prior to 18.2R3-S4; 18.3 versions prior to 18.3R3-S2; 18.4 versions prior to 18.4R3-S1; 19.1; 19.2 versions prior to 19.2R2; 19.3 versions prior to 19.3R3; 19.4 versions prior to 19.4R2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11148",
+        "name": "https://kb.juniper.net/JSA11148",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0273",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-05-04T20:26Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An always-incorrect control flow implementation in the implicit filter terms of Juniper Networks Junos OS and Junos OS Evolved on ACX5800, EX9200 Series, MX10000 Series, MX240, MX480, MX960 devices with affected Trio line cards allows an attacker to exploit an interdependency in the PFE UCODE microcode of the Trio chipset with various line cards to cause packets destined to the devices interfaces to cause a Denial of Service (DoS) condition by looping the packet with an unreachable exit condition ('Infinite Loop'). To break this loop once it begins one side of the affected LT interfaces will need to be disabled. Once disabled, the condition will clear and the disabled LT interface can be reenabled. Continued receipt and processing of these packets will create a sustained Denial of Service (DoS) condition. This issue only affects LT-LT interfaces. Any other interfaces are not affected by this issue. This issue affects the following cards: MPCE Type 3 3D MPC4E 3D 32XGE MPC4E 3D 2CGE+8XGE EX9200 32x10G SFP EX9200-2C-8XS FPC Type 5-3D FPC Type 5-LSR EX9200 4x40G QSFP An Indicator of Compromise (IoC) can be seen by examining the traffic of the LT-LT interfaces for excessive traffic using the following command: monitor interface traffic Before loop impact: Interface: lt-2/0/0, Enabled, Link is Up Encapsulation: Logical-tunnel, Speed: 100000mbps Traffic statistics: Current delta Input bytes: 3759900268942 (1456 bps) [0] <---------- LT interface utilization is low Output bytes: 3759900344309 (1456 bps) [0] <---------- LT interface utilization is low After loop impact: Interface: lt-2/0/0, Enabled, Link is Up Encapsulation: Logical-tunnel, Speed: 100000mbps Traffic statistics: Current delta Input bytes: 3765160313129 (2158268368 bps) [5260044187] <---------- LT interface utilization is very high Output bytes: 3765160399522 (2158266440 bps) [5260055213] <---------- LT interface utilization is very high This issue affects: Juniper Networks Junos OS on ACX5800, EX9200 Series, MX10000 Series, MX240, MX480, MX960. Versions 15.1F6, 16.1R1, and later versions prior to 16.1R7-S8; 17.1 versions prior to 17.1R2-S12; 17.2 versions prior to 17.2R3-S4; 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R2-S10, 17.4R3-S2; 18.1 versions prior to 18.1R3-S10; 18.2 versions prior to 18.2R2-S7, 18.2R3-S3; 18.3 versions prior to 18.3R1-S7, 18.3R3-S2; 18.4 versions prior to 18.4R1-S7, 18.4R2-S4, 18.4R3-S2; 19.1 versions prior to 19.1R1-S5, 19.1R2-S1, 19.1R3; 19.2 versions prior to 19.2R1-S4, 19.2R2; 19.3 versions prior to 19.3R2-S3, 19.3R3; 19.4 versions prior to 19.4R1-S1, 19.4R2. This issue does not affect the MX10001. This issue does not affect Juniper Networks Junos OS versions prior to 15.1F6, 16.1R1. Juniper Networks Junos OS Evolved on ACX5800, EX9200 Series, MX10000 Series, MX240, MX480, MX960 19.4 versions prior to 19.4R2-EVO. This issue does not affect the MX10001."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11164",
+        "name": "https://kb.juniper.net/JSA11164",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0228",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-04-22T20:15Z",
+    "lastModifiedDate": "2021-04-27T18:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "An improper check for unusual or exceptional conditions vulnerability in Juniper Networks MX Series platforms with Trio-based MPC (Modular Port Concentrator) deployed in (Ethernet VPN) EVPN-(Virtual Extensible LAN) VXLAN configuration, may allow an attacker sending specific Layer 2 traffic to cause Distributed Denial of Service (DDoS) protection to trigger unexpectedly, resulting in traffic impact. Continued receipt and processing of this specific Layer 2 frames will sustain the Denial of Service (DoS) condition. An indication of compromise is to check DDOS LACP violations: user@device> show ddos-protection protocols statistics brief | match lacp This issue only affects the MX Series platforms with Trio-based MPC. No other products or platforms are affected. This issue affects: Juniper Networks Junos OS on MX Series: 15.1 versions prior to 15.1R7-S9; 17.3 versions prior to 17.3R3-S11; 17.4 versions prior to 17.4R3-S4; 18.1 versions prior to 18.1R3-S12; 18.2 versions prior to 18.2R2-S8, 18.2R3-S8; 18.3 versions prior to 18.3R3-S4; 18.4 versions prior to 18.4R1-S8, 18.4R2-S7, 18.4R3-S7; 19.1 versions prior to 19.1R3-S4; 19.2 versions prior to 19.2R1-S6; 19.3 versions prior to 19.3R3-S2; 19.4 versions prior to 19.4R2-S4, 19.4R3-S2; 20.1 versions prior to 20.1R2, 20.1R3; 20.2 versions prior to 20.2R2-S1, 20.2R3; 20.3 versions prior to 20.3R1-S1, 20.3R2;"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11123",
+        "name": "https://kb.juniper.net/JSA11123",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2021-0202",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2021-01-15T18:15Z",
+    "lastModifiedDate": "2021-01-21T19:47Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On Juniper Networks MX Series and EX9200 Series platforms with Trio-based MPC (Modular Port Concentrator) where Integrated Routing and Bridging (IRB) interface is configured and it is mapped to a VPLS instance or a Bridge-Domain, certain network events at Customer Edge (CE) device may cause memory leak in the MPC which can cause an out of memory and MPC restarts. When this issue occurs, there will be temporary traffic interruption until the MPC is restored. An administrator can use the following CLI command to monitor the status of memory usage level of the MPC: user@device> show system resource-monitor fpc FPC Resource Usage Summary Free Heap Mem Watermark : 20 % Free NH Mem Watermark : 20 % Free Filter Mem Watermark : 20 % * - Watermark reached Slot # % Heap Free RTT Average RTT 1 87 PFE # % ENCAP mem Free % NH mem Free % FW mem Free 0 NA 88 99 1 NA 89 99 When the issue is occurring, the value of \u201c% NH mem Free\u201d will go down until the MPC restarts. This issue affects MX Series and EX9200 Series with Trio-based PFEs (Packet Forwarding Engines). Please refer to https://kb.juniper.net/KB25385 for the list of Trio-based PFEs. This issue affects Juniper Networks Junos OS on MX Series, EX9200 Series: 17.3R3-S8; 17.4R3-S2; 18.2R3-S4, 18.2R3-S5; 18.3R3-S2, 18.3R3-S3; 18.4 versions starting from 18.4R3-S1 and later versions prior to 18.4R3-S6; 19.2 versions starting from 19.2R2 and later versions prior to 19.2R3-S1; 19.4 versions starting from 19.4R2 and later versions prior to 19.4R2-S3, 19.4R3; 20.2 versions starting from 20.2R1 and later versions prior to 20.2R1-S3, 20.2R2. This issue does not affect Juniper Networks Junos OS: 18.1, 19.1, 19.3, 20.1."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/JSA11092",
+        "name": "https://kb.juniper.net/JSA11092",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-25191",
+    "cveASSIGNER": "ics-cert@hq.dhs.gov",
+    "publishedDate": "2020-12-11T02:15Z",
+    "lastModifiedDate": "2020-12-14T17:09Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Incorrect permissions are set by default for an API entry-point of a specific service, allowing a non-authenticated user to trigger a function that could reboot the CompactRIO (Driver versions prior to 20.5) remotely."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-338-01",
+        "name": "https://us-cert.cisa.gov/ics/advisories/icsa-20-338-01",
+        "refsource": "MISC",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory",
+          "US Government Resource"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-1665",
+    "cveASSIGNER": "sirt@juniper.net",
+    "publishedDate": "2020-10-16T21:15Z",
+    "lastModifiedDate": "2020-10-28T17:22Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "On Juniper Networks MX Series and EX9200 Series, in a certain condition the IPv6 Distributed Denial of Service (DDoS) protection might not take affect when it reaches the threshold condition. The DDoS protection allows the device to continue to function while it is under DDoS attack, protecting both the Routing Engine (RE) and the Flexible PIC Concentrator (FPC) during the DDoS attack. When this issue occurs, the RE and/or the FPC can become overwhelmed, which could disrupt network protocol operations and/or interrupt traffic. This issue does not affect IPv4 DDoS protection. This issue affects MX Series and EX9200 Series with Trio-based PFEs (Packet Forwarding Engines). Please refer to https://kb.juniper.net/KB25385 for the list of Trio-based PFEs. This issue affects Juniper Networks Junos OS on MX series and EX9200 Series: 17.2 versions prior to 17.2R3-S4; 17.2X75 versions prior to 17.2X75-D102, 17.2X75-D110; 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R2-S11, 17.4R3-S2; 18.2 versions prior to 18.2R2-S7, 18.2R3, 18.2R3-S3; 18.2X75 versions prior to 18.2X75-D30; 18.3 versions prior to 18.3R2-S4, 18.3R3-S2."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://kb.juniper.net/KB25385",
+        "name": "https://kb.juniper.net/KB25385",
+        "refsource": "MISC",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.juniper.net/JSA11062",
+        "name": "https://kb.juniper.net/JSA11062",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-4030",
+    "cveASSIGNER": "security-advisories@github.com",
+    "publishedDate": "2020-06-22T22:15Z",
+    "lastModifiedDate": "2020-09-08T10:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "In FreeRDP before version 2.1.2, there is an out of bounds read in TrioParse. Logging might bypass string length checks due to an integer overflow. This is fixed in version 2.1.2."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.freerdp.com/2020/06/22/2_1_2-released",
+        "name": "http://www.freerdp.com/2020/06/22/2_1_2-released",
+        "refsource": "MISC",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-fjr5-97f5-qq98",
+        "name": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-fjr5-97f5-qq98",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/FreeRDP/FreeRDP/commit/05cd9ea2290d23931f615c1b004d4b2e69074e27",
+        "name": "https://github.com/FreeRDP/FreeRDP/commit/05cd9ea2290d23931f615c1b004d4b2e69074e27",
+        "refsource": "MISC",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00080.html",
+        "name": "openSUSE-SU-2020:1090",
+        "refsource": "SUSE",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6Y35HBHG2INICLSGCIKNAR7GCXEHQACQ/",
+        "name": "FEDORA-2020-8d5f86e29a",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOZLH35OJWIQLM7FYDXAP2EAUBDXE76V/",
+        "name": "FEDORA-2020-a3432485db",
+        "refsource": "FEDORA",
+        "tags": [
+          "Mailing List",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://usn.ubuntu.com/4481-1/",
+        "name": "USN-4481-1",
+        "refsource": "UBUNTU",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-18845",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-11-09T18:15Z",
+    "lastModifiedDate": "2020-03-18T19:15Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The MsIo64.sys and MsIo32.sys drivers in Patriot Viper RGB before 1.1 allow local users (including low integrity processes) to read and write to arbitrary memory locations, and consequently gain NT AUTHORITY\\SYSTEM privileges, by mapping \\Device\\PhysicalMemory into the calling process via ZwOpenSection and ZwMapViewOfSection."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/active-labs/Advisories/blob/master/2019/ACTIVE-2019-012.md",
+        "name": "https://github.com/active-labs/Advisories/blob/master/2019/ACTIVE-2019-012.md",
+        "refsource": "MISC",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2020-9756",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-03-06T15:15Z",
+    "lastModifiedDate": "2020-03-07T02:35Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Patriot Viper RGB Driver 1.1 and prior exposes IOCTL and allows insufficient access control. The IOCTL Codes 0x80102050 and 0x80102054 allows a local user with low privileges to read/write 1/2/4 bytes from or to an IO port. This could be leveraged in a number of ways to ultimately run code with elevated privileges."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.coresecurity.com/advisories/viper-rgb-driver-multiple-vulnerabilities",
+        "name": "https://www.coresecurity.com/advisories/viper-rgb-driver-multiple-vulnerabilities",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-19452",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2020-02-21T15:15Z",
+    "lastModifiedDate": "2020-02-25T18:43Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A buffer overflow was found in Patriot Viper RGB through 1.1 when processing IoControlCode 0x80102040. Local attackers (including low integrity processes) can exploit this to gain NT AUTHORITY\\SYSTEM privileges."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.viper.patriotmemory.com",
+        "name": "https://www.viper.patriotmemory.com",
+        "refsource": "MISC",
+        "tags": [
+          "Product"
+        ]
+      },
+      {
+        "url": "https://www.coresecurity.com/advisories/viper-rgb-driver-multiple-vulnerabilities",
+        "name": "https://www.coresecurity.com/advisories/viper-rgb-driver-multiple-vulnerabilities",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit",
+          "Third Party Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-14934",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-11-15T20:29Z",
+    "lastModifiedDate": "2019-10-03T00:03Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Bluetooth subsystem on Polycom Trio devices with software before 5.5.4 has Incorrect Access Control. An attacker can connect without authentication and subsequently record audio from the device microphone."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.polycom.com/content/dam/polycom-support/global/documentation/bluetooth-authentication-weakness-trio.pdf",
+        "name": "https://support.polycom.com/content/dam/polycom-support/global/documentation/bluetooth-authentication-weakness-trio.pdf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2019-12948",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2019-07-29T16:15Z",
+    "lastModifiedDate": "2019-08-06T17:11Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "A vulnerability in the web-based management interface of VVX, Trio, SoundStructure, SoundPoint, and SoundStation phones running Polycom UC Software, if exploited, could allow an authenticated, remote attacker with admin privileges to cause a denial of service (DoS) condition or execute arbitrary code."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.polycom.com/content/dam/polycom-support/global/documentation/remote-code-execution-vulnerability-in-ucs-software-v1-1.pdf",
+        "name": "https://support.polycom.com/content/dam/polycom-support/global/documentation/remote-code-execution-vulnerability-in-ucs-software-v1-1.pdf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2018-14935",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2018-11-15T20:29Z",
+    "lastModifiedDate": "2018-12-17T15:53Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "The Web administration console on Polycom Trio devices with software before 5.5.4 has XSS."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://support.polycom.com/content/dam/polycom-support/global/documentation/stored-cross-site-scripting-in-trio.pdf",
+        "name": "https://support.polycom.com/content/dam/polycom-support/global/documentation/stored-cross-site-scripting-in-trio.pdf",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-1972",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-04-21T10:02Z",
+    "lastModifiedDate": "2018-10-18T16:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site scripting (XSS) vulnerability in EasyGallery.php in Wingnut EasyGallery allows remote attackers to inject arbitrary web script or HTML via the ordner parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://advisory.patriotichackers.com/index.php?itemid=5",
+        "name": "http://advisory.patriotichackers.com/index.php?itemid=5",
+        "refsource": "MISC",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/17624",
+        "name": "17624",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://secunia.com/advisories/19713",
+        "name": "19713",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/746",
+        "name": "746",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2006/1437",
+        "name": "ADV-2006-1437",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/25943",
+        "name": "easygallery-script-xss(25943)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/431430/100/0/threaded",
+        "name": "20060419 EasyGallery Cross-Site Scripting",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-1906",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-04-20T10:02Z",
+    "lastModifiedDate": "2018-10-18T16:37Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Cross-site scripting (XSS) vulnerability in index.php in jjgan852 phpLister 0.4.1 allows remote attackers to inject arbitrary web script or HTML via the page parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://advisory.patriotichackers.com/index.php?itemid=3",
+        "name": "http://advisory.patriotichackers.com/index.php?itemid=3",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/17591",
+        "name": "17591",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/735",
+        "name": "735",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/770",
+        "name": "770",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/25910",
+        "name": "phplister-index-xss(25910)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/431308/100/0/threaded",
+        "name": "20060418 phpLister v. 0.4.1 XSS Attacking",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2006-0970",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2006-03-03T11:02Z",
+    "lastModifiedDate": "2018-10-18T16:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "PHP remote file inclusion vulnerability in index.php in one or more ActiveCampaign products, possibly SupportTrio, allows remote attackers to include and execute arbitrary files via the page parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.osvdb.org/3228",
+        "name": "3228",
+        "refsource": "OSVDB",
+        "tags": []
+      },
+      {
+        "url": "http://securityreason.com/securityalert/505",
+        "name": "505",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24989",
+        "name": "activecampaign-index-command-execution(24989)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/426214/100/0/threaded",
+        "name": "20060227 Knowledgebases Remote Command Exucetion",
+        "refsource": "BUGTRAQ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2014-4511",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2014-07-22T14:55Z",
+    "lastModifiedDate": "2018-08-13T21:47Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Gitlist before 0.5.0 allows remote attackers to execute arbitrary commands via shell metacharacters in the file name in the URI of a request for a (1) blame, (2) file, or (3) stats page, as demonstrated by requests to blame/master/, master/, and stats/master/."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://www.exploit-db.com/exploits/33929",
+        "name": "33929",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://www.exploit-db.com/exploits/33990",
+        "name": "33990",
+        "refsource": "EXPLOIT-DB",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/127364/Gitlist-Unauthenticated-Remote-Command-Execution.html",
+        "name": "http://packetstormsecurity.com/files/127364/Gitlist-Unauthenticated-Remote-Command-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://hatriot.github.io/blog/2014/06/29/gitlist-rce/",
+        "name": "http://hatriot.github.io/blog/2014/06/29/gitlist-rce/",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "http://packetstormsecurity.com/files/127281/Gitlist-0.4.0-Remote-Code-Execution.html",
+        "name": "http://packetstormsecurity.com/files/127281/Gitlist-0.4.0-Remote-Code-Execution.html",
+        "refsource": "MISC",
+        "tags": [
+          "Exploit"
+        ]
+      },
+      {
+        "url": "https://groups.google.com/forum/#!topic/gitlist/Hw_KdZfA4js",
+        "name": "https://groups.google.com/forum/#!topic/gitlist/Hw_KdZfA4js",
+        "refsource": "CONFIRM",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2009-0262",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2009-01-23T19:00Z",
+    "lastModifiedDate": "2017-10-19T01:30Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Stack-based buffer overflow in Triologic Media Player 7 and 8.0.0.0 allows user-assisted remote attackers to execute arbitrary code via a long string in a .m3u playlist file.  NOTE: some of these details are obtained from third party information."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/33496",
+        "name": "33496",
+        "refsource": "SECUNIA",
+        "tags": []
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/33221",
+        "name": "33221",
+        "refsource": "BID",
+        "tags": []
+      },
+      {
+        "url": "http://www.vupen.com/english/advisories/2009/0097",
+        "name": "ADV-2009-0097",
+        "refsource": "VUPEN",
+        "tags": []
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/7737",
+        "name": "7737",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2015-7748",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2015-10-19T18:59Z",
+    "lastModifiedDate": "2017-10-06T01:29Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "Juniper chassis with Trio (Trinity) chipset line cards and Junos OS 13.3 before 13.3R8, 14.1 before 14.1R6, 14.2 before 14.2R5, and 15.1 before 15.1R2 allow remote attackers to cause a denial of service (MPC line card crash) via a crafted uBFD packet."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10701",
+        "name": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10701",
+        "refsource": "CONFIRM",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.securitytracker.com/id/1033858",
+        "name": "1033858",
+        "refsource": "SECTRACK",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry"
+        ]
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/101103",
+        "name": "101103",
+        "refsource": "BID",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "cveID": "CVE-2008-3418",
+    "cveASSIGNER": "cve@mitre.org",
+    "publishedDate": "2008-07-31T17:41Z",
+    "lastModifiedDate": "2017-09-29T01:31Z",
+    "description": [
+      {
+        "lang": "en",
+        "value": "SQL injection vulnerability in browse.php in TriO 2.1 and earlier allows remote attackers to execute arbitrary SQL commands via the id parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://secunia.com/advisories/31244",
+        "name": "31244",
+        "refsource": "SECUNIA",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://securityreason.com/securityalert/4077",
+        "name": "4077",
+        "refsource": "SREASON",
+        "tags": []
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/44033",
+        "name": "trio-browse-sql-injection(44033)",
+        "refsource": "XF",
+        "tags": []
+      },
+      {
+        "url": "https://www.exploit-db.com/exploits/6141",
+        "name": "6141",
+        "refsource": "EXPLOIT-DB",
+        "tags": []
+      }
+    ]
+  }
+]

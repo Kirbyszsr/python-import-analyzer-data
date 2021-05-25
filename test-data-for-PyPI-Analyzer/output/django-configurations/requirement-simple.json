@@ -1,0 +1,38 @@
+{
+  "name": "django-configurations",
+  "description": "django-configurations |latest-version|\n======================================\n\n|build-status| |codecov| |docs| |python-support| |jazzband|\n\ndjango-configurations eases Django project configuration by relying\non the composability of Python classes. It extends the notion of\nDjango's module based settings loading with well established\nobject oriented programming patterns.\n\nCheck out the `documentation`_ for more complete examples.\n\n.. |latest-version| image:: https://img.shields.io/pypi/v/django-configurations.svg\n   :alt: Latest version on PyPI\n   :target: https://pypi.python.org/pypi/django-configurations\n.. |build-status| image:: https://img.shields.io/travis/jazzband/django-configurations/master.svg\n   :alt: Build status\n   :target: https://travis-ci.org/jazzband/django-configurations\n.. |codecov| image:: https://codecov.io/github/jazzband/django-configurations/coverage.svg?branch=master\n   :alt: Codecov\n   :target: https://codecov.io/github/jazzband/django-configurations?branch=master\n.. |docs| image:: https://img.shields.io/readthedocs/django-configurations/latest.svg\n   :alt: Documentation status\n   :target: https://readthedocs.org/projects/django-configurations/\n.. |python-support| image:: https://img.shields.io/pypi/pyversions/django-configurations.svg\n   :target: https://pypi.python.org/pypi/django-configurations\n   :alt: Python versions\n.. |jazzband| image:: https://jazzband.co/static/img/badge.svg\n   :alt: Jazzband\n   :target: https://jazzband.co/\n.. _documentation: https://django-configurations.readthedocs.io/en/latest/\n\nQuickstart\n----------\n\nInstall django-configurations:\n\n.. code-block:: console\n\n    pip install django-configurations\n\nor, alternatively, if you want to use URL-based values:\n\n.. code-block:: console\n\n    pip install django-configurations[cache,database,email,search]\n\nThen subclass the included ``configurations.Configuration`` class in your\nproject's **settings.py** or any other module you're using to store the\nsettings constants, e.g.:\n\n.. code-block:: python\n\n    # mysite/settings.py\n\n    from configurations import Configuration\n\n    class Dev(Configuration):\n        DEBUG = True\n\nSet the ``DJANGO_CONFIGURATION`` environment variable to the name of the class\nyou just created, e.g. in bash:\n\n.. code-block:: console\n\n    export DJANGO_CONFIGURATION=Dev\n\nand the ``DJANGO_SETTINGS_MODULE`` environment variable to the module\nimport path as usual, e.g. in bash:\n\n.. code-block:: console\n\n    export DJANGO_SETTINGS_MODULE=mysite.settings\n\n*Alternatively* supply the ``--configuration`` option when using Django\nmanagement commands along the lines of Django's default ``--settings``\ncommand line option, e.g.\n\n.. code-block:: console\n\n    python manage.py runserver --settings=mysite.settings --configuration=Dev\n\nTo enable Django to use your configuration you now have to modify your\n**manage.py** or **wsgi.py** script to use django-configurations's versions\nof the appropriate starter functions, e.g. a typical **manage.py** using\ndjango-configurations would look like this:\n\n.. code-block:: python\n\n    #!/usr/bin/env python\n\n    import os\n    import sys\n\n    if __name__ == \"__main__\":\n        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')\n        os.environ.setdefault('DJANGO_CONFIGURATION', 'Dev')\n\n        from configurations.management import execute_from_command_line\n\n        execute_from_command_line(sys.argv)\n\nNotice in line 10 we don't use the common tool\n``django.core.management.execute_from_command_line`` but instead\n``configurations.management.execute_from_command_line``.\n\nThe same applies to your **wsgi.py** file, e.g.:\n\n.. code-block:: python\n\n    import os\n\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')\n    os.environ.setdefault('DJANGO_CONFIGURATION', 'Dev')\n\n    from configurations.wsgi import get_wsgi_application\n\n    application = get_wsgi_application()\n\nHere we don't use the default ``django.core.wsgi.get_wsgi_application``\nfunction but instead ``configurations.wsgi.get_wsgi_application``.\n\nThat's it! You can now use your project with ``manage.py`` and your favorite\nWSGI enabled server.\n\n\n",
+  "requires_dist": [
+    "six",
+    "django-cache-url ; extra == 'cache'",
+    "dj-database-url ; extra == 'database'",
+    "dj-email-url ; extra == 'email'",
+    "dj-search-url ; extra == 'search'",
+    "django-discover-runner ; extra == 'testing'",
+    "mock ; extra == 'testing'",
+    "django-cache-url (>=1.0.0) ; extra == 'testing'",
+    "dj-database-url ; extra == 'testing'",
+    "dj-email-url ; extra == 'testing'",
+    "dj-search-url ; extra == 'testing'",
+    "Sphinx (>=1.4) ; extra == 'testing'"
+  ],
+  "requires_python": "",
+  "current_version": "2.2",
+  "released_versions": [
+    "0.1",
+    "0.2",
+    "0.2.1",
+    "0.3",
+    "0.3.1",
+    "0.3.2",
+    "0.4",
+    "0.5",
+    "0.5.1",
+    "0.6",
+    "0.7",
+    "0.8",
+    "1.0",
+    "2.0",
+    "2.1",
+    "2.2"
+  ]
+}
